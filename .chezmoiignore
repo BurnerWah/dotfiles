@@ -2,15 +2,26 @@
 /README.md
 
 # Regular OS Directories
+/.CFUserTextEncoding
+/.Trash
 /Applications
+/Creative Cloud Files
 /Desktop
 /Documents
 /Downloads
 /Games
+/Library
 /Music
+/Movies
+/OneDrive
 /Pictures
 /Projects
 /Public
+/Sync
 /Templates
 /Vaults
 /Videos
+/Virtual Machines.localized
+
+# Other stuff
+**/.DS_Store
