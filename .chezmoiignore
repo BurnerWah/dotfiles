@@ -1,5 +1,13 @@
 # Project Files & Folders
 /README.md
+**/.editorconfig
+**/.prettierrc
+**/.prettierrc.*
+**/prettier.config.*
+**/package.json
+**/package-lock.json
+**/yarn.lock
+**/node_modules
 
 # Regular OS Directories
 /.CFUserTextEncoding
