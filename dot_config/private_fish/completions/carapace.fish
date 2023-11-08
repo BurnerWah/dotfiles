@@ -1,2 +1,4 @@
 # Generic carapace completion, to symlink things to
-carapace (status basename | string replace .fish '') fish | source
+if command -qs carapace
+    carapace (status basename | string replace .fish '') fish | source
+end
