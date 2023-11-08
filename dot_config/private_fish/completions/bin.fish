@@ -1,0 +1,1 @@
+bin completion fish | source
