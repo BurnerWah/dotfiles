@@ -10,7 +10,6 @@
 /Documents
 /Downloads
 /Games
-/Library
 /Music
 /Movies
 /OneDrive
@@ -22,6 +21,13 @@
 /Vaults
 /Videos
 /Virtual Machines.localized
+
+# Application folders
+/.vscode
+
+# Stuff chezmoi shouldn't mess with
+/.nix-defexpr
+/.nix-profile
 
 # Other stuff
 **/.DS_Store
