@@ -1,5 +1,9 @@
 {
-  "go-template.patterns": ["**/*.tmpl", "/.chezmoitemplates/**/*"],
+  "go-template.patterns": [
+    "**/*.tmpl",
+    "**/.chezmoiignore",
+    "/.chezmoitemplates/**/*"
+  ],
   "prettier.semi": false,
   "prettier.singleQuote": true,
   "prettier.trailingComma": "all"
