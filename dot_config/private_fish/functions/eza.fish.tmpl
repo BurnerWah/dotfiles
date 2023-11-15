@@ -2,7 +2,9 @@ if command -qs eza
     function eza
         set -l param --color=auto
         if isatty stdout
+            {{- if eq .chezmoi.os "darwin" }}
             set -a param --color-scale size
+            {{- end }}
         end
         command eza $param $argv
     end
