@@ -1,0 +1,3 @@
+#compdef delta
+# Needs to override built-in completions to work
+source <(carapace delta zsh)

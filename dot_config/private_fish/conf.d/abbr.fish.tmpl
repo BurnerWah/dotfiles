@@ -1,0 +1,17 @@
+abbr -a al la
+abbr -a cls clear
+abbr -a sl ls
+abbr -a l ls
+abbr -a dc cd
+# abbr -a wl-copy fish_clipboard_copy
+# abbr -a wl-paste fish_clipboard_paste
+# abbr -a wlcp fish_clipboard_copy
+# abbr -a wlp fish_clipboard_paste
+
+command -qs doggo && abbr -a dog doggo
+command -qs eza && abbr -a exa eza
+command -qs lima && abbr -a ligma lima
+command -qs delta && abbr -a diff delta
+
+abbr -a !! --position anywhere --function _last_history_item
+abbr -a dotdot --regex '^\.\.+$' --function _multicd
