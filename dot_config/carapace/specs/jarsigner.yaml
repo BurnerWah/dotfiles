@@ -1,0 +1,4 @@
+name: jarsigner
+description: Generate and verify signatures for Java Archive files
+completion:
+  positionalany: ['$_bridge.Zsh([jarsigner])']

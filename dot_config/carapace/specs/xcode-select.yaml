@@ -1,0 +1,13 @@
+# Fish generates perfectly fine completions for this, it's not a complicated program
+name: xcode-select
+description: Manage the active developer directory for Xcode and BSD tools
+flags:
+  --install: install command-line developer tools
+  -p, --print-path: display path of active developer directory
+  -r, --reset: reset to default developer directory
+  -s, --switch=: specify path of active developer directory
+  -h, --help: display help information
+  -v, --version: display version information
+completion:
+  flag:
+    switch: ['$directories']

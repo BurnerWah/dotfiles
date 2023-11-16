@@ -39,3 +39,17 @@
 
 # Other stuff
 **/.DS_Store
+
+# OS-Specific exclusions
+{{- if ne .chezmoi.os "linux" }}
+/.config/fish/functions/blkid.fish
+/.config/fish/functions/free.fish
+/.config/fish/functions/iostat.fish
+/.config/fish/functions/lastlog.fish
+/.config/fish/functions/lsattr.fish
+/.config/fish/functions/lsblk.fish
+/.config/fish/functions/lspci.fish
+/.config/fish/functions/pidstat.fish
+/.config/fish/functions/sar.fish
+/.config/fish/functions/vmstat.fish
+{{- end }}

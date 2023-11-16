@@ -1,0 +1,4 @@
+name: serialver
+description: Return the serialVersionUID for one or more classes
+completion:
+  positionalany: ['$_bridge.Zsh([serialver])']

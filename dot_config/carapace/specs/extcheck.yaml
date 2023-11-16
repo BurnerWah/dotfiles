@@ -1,0 +1,4 @@
+name: extcheck
+description: Detects JAR conflicts
+completion:
+  positionalany: ['$_bridge.Zsh([extcheck])']

@@ -1,0 +1,4 @@
+name: ykman
+description: YubiKey Manager
+completion:
+  positionalany: ['$_bridge.Click([ykman])']

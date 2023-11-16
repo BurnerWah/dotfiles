@@ -1,0 +1,5 @@
+# I'll maybe switch this to a custom spec later
+name: ssh-keyscan
+description: gather SSH public keys from servers
+completion:
+  positionalany: ['$_bridge.Zsh([ssh-keyscan])']

@@ -1,0 +1,4 @@
+name: dasel
+description: JSON, YAML, TOML, XML, and CSV query and modification tool
+completion:
+  positionalany: ['$_bridge.Cobra([dasel])']

@@ -1,0 +1,83 @@
+{
+  "carapace": {
+    "Error": "bold #FF5C57",
+    "FlagArg": "#57C7FF",
+    "FlagMultiArg": "#FF6AC1",
+    "FlagOptArg": "#F3F99D",
+    "Highlight1": "#57C7FF",
+    "Highlight10": "dim #5AF78E",
+    "Highlight2": "#F3F99D",
+    "Highlight3": "#FF6AC1",
+    "Highlight4": "#9AEDFE",
+    "Highlight5": "#5AF78E",
+    "Highlight6": "dim #57C7FF",
+    "Highlight7": "dim #F3F99D",
+    "Highlight8": "dim #FF6AC1",
+    "Highlight9": "dim #9AEDFE",
+    "KeywordAmbiguous": "#F3F99D",
+    "KeywordNegative": "#FF5C57",
+    "KeywordPositive": "#5AF78E",
+    "LogLevelCritical": "#FF5C57",
+    "LogLevelError": "#FF6AC1",
+    "LogLevelFatal": "#9AEDFE",
+    "LogLevelInfo": "#5AF78E",
+    "LogLevelTrace": "#57C7FF",
+    "LogLevelWarning": "#F3F99D"
+  },
+  "carapace-bin": {
+    "HttpMethodDELETE": "#FF5C57",
+    "HttpMethodGET": "#57C7FF",
+    "HttpMethodHEAD": "#FF6AC1",
+    "HttpMethodOPTIONS": "dim #57C7FF",
+    "HttpMethodPATCH": "#5AF78E",
+    "HttpMethodPOST": "dim #5AF78E",
+    "HttpMethodPUT": "#F3F99D",
+    "HttpStatusClientError": "#FF5C57",
+    "HttpStatusInformational": "#57C7FF",
+    "HttpStatusRedirection": "#F3F99D",
+    "HttpStatusServerError": "#FF6AC1",
+    "HttpStatusSuccessful": "#5AF78E",
+    "KillSignalCont": "#5AF78E",
+    "KillSignalCore": "#FF6AC1",
+    "KillSignalIgn": "#57C7FF",
+    "KillSignalStop": "#F3F99D",
+    "KillSignalTerm": "#FF5C57"
+  },
+  "docker": {
+    "Container": "#57C7FF",
+    "Image": "#F3F99D",
+    "Network": "#FF6AC1",
+    "Node": "#9AEDFE",
+    "Service": "#5AF78E"
+  },
+  "gh": {
+    "JobFailed": "#FF5C57",
+    "JobInProgress": "#F3F99D",
+    "JobSuccess": "#5AF78E",
+    "OwnerOrganization": "#57C7FF",
+    "RepoArchived": "#FF6AC1",
+    "RepoMirror": "#9AEDFE",
+    "RepoPrivate": "#FF5C57",
+    "RepoTemplate": "#F3F99D",
+    "StateClosed": "#FF5C57",
+    "StateMerged": "#FF6AC1",
+    "StateOpen": "#5AF78E"
+  },
+  "git": {
+    "Branch": "#57C7FF",
+    "Note": "#9AEDFE",
+    "Stash": "#5AF78E",
+    "Tag": "#F3F99D"
+  },
+  "golang": {
+    "Constant": "#FF6AC1",
+    "Field": "#5AF78E",
+    "Function": "#57C7FF",
+    "Type": "#F3F99D"
+  },
+  "tea": {
+    "StateClosed": "#FF5C57",
+    "StateMerged": "#FF6AC1",
+    "StateOpen": "#5AF78E"
+  }
+}

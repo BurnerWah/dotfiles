@@ -1,0 +1,6 @@
+# I don't really expect this to be getting data from docker/podman correctly
+# If it's not, that's a project for later
+name: whalebrew
+description: Homebrew, but with Docker images
+completion:
+  positionalany: ['$_bridge.Cobra([whalebrew])']

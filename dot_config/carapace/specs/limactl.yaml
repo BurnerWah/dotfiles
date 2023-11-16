@@ -1,0 +1,4 @@
+name: limactl
+description: Linux Virtual Machines
+completion:
+  positionalany: ['$_bridge.Cobra([limactl])']

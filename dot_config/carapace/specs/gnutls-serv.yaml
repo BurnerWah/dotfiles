@@ -1,0 +1,4 @@
+name: gnutls-serv
+description: GnuTLS server
+completion:
+  positionalany: ['$_bridge.Zsh([gnutls-serv])']

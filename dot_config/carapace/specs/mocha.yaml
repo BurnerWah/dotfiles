@@ -1,0 +1,5 @@
+# Probably will only be run with npm or something
+name: mocha
+description: simple, flexible, fun test framework
+completion:
+  positionalany: ['$_bridge.Yargs([mocha])']

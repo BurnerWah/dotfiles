@@ -1,0 +1,4 @@
+name: reindexdb
+description: reindex a PostgreSQL database
+completion:
+  positionalany: ['$_bridge.Zsh([reindexdb])']

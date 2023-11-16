@@ -1,0 +1,6 @@
+# These are a little janky because pipx spits out some strange completions
+# At some point it'd be worth it to write a custom spec
+name: pipx
+description: Install and Run Python Applications in Isolated Environments
+completion:
+  positionalany: ['$_bridge.Argcomplete([pipx])']

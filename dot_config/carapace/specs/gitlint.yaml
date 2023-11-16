@@ -1,0 +1,4 @@
+name: gitlint
+description: Linting for your git commit messages
+completion:
+  positionalany: ['$_bridge.Click([gitlint])']

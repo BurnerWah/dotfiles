@@ -1,0 +1,6 @@
+# Neon provides a completion script, but it's broken and doesn't work in fish
+# It's just using yargs though so carapace can handle it fine
+name: neon
+description: Neon CLI tool
+completion:
+  positionalany: ['$_bridge.Yargs([neon])']

@@ -1,0 +1,4 @@
+name: rmic
+description: Generate stubs for remote objects from source code containing RMI remote object references
+completion:
+  positionalany: ['$_bridge.Zsh([rmic])']

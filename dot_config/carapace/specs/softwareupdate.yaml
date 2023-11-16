@@ -1,0 +1,4 @@
+name: softwareupdate
+description: System software update tool
+completion:
+  positionalany: ['$_bridge.Zsh([softwareupdate])']

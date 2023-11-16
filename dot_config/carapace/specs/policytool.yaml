@@ -1,0 +1,6 @@
+# One of the many Java tools zsh has built-in completions for.
+# Also what is this? Why is the name so generic? I've never used it.
+name: policytool
+description: Policy administration GUI tool
+completion:
+  positionalany: ['$_bridge.Zsh([policytool])']

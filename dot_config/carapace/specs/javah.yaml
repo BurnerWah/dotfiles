@@ -1,0 +1,4 @@
+name: javah
+description: Generate C header and source files from a Java class
+completion:
+  positionalany: ['$_bridge.Zsh([javah])']

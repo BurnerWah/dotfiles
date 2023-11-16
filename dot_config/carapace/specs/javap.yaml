@@ -1,0 +1,4 @@
+name: javap
+description: The Java Class File Disassembler
+completion:
+  positionalany: ['$_bridge.Zsh([javap])']

@@ -1,0 +1,4 @@
+name: cookiecutter
+description: Utility that creates projects from templates
+completion:
+  positionalany: ['$_bridge.Click([cookiecutter])']

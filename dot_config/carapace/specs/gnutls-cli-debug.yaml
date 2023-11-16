@@ -1,0 +1,4 @@
+name: gnutls-cli-debug
+description: GnuTLS debug client
+completion:
+  positionalany: ['$_bridge.Zsh([gnutls-cli-debug])']

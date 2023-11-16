@@ -1,0 +1,4 @@
+name: postgres
+description: PostgreSQL database server
+completion:
+  positionalany: ['$_bridge.Zsh([postgres])']

@@ -1,0 +1,5 @@
+# Fish provides built-in completions too
+name: createdb
+description: create a new PostgreSQL database
+completion:
+  positionalany: ['$_bridge.Zsh([createdb])']

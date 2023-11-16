@@ -1,0 +1,5 @@
+# Eventually this should have a custom spec
+name: npq
+description: A safer npm install
+completion:
+  positionalany: ['$_bridge.Yargs([npq])']

@@ -1,0 +1,5 @@
+# I'll switch this to a custom spec later
+name: ssh-add
+description: adds private key identities to the OpenSSH authentication agent
+completion:
+  positionalany: ['$_bridge.Zsh([ssh-add])']

@@ -1,0 +1,4 @@
+name: clusterdb
+description: cluster a PostgreSQL database
+completion:
+  positionalany: ['$_bridge.Zsh([clusterdb])']

@@ -1,0 +1,6 @@
+# the built-in fish completions for rclone are broken, and while they can be
+# fixed, we may as well get them into carapace so they work in other shells
+name: rclone
+description: rsync for cloud storage
+completion:
+  positionalany: ['$_bridge.Cobra([rclone])']

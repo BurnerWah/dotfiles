@@ -1,0 +1,5 @@
+# Probably will only be run with npm or something
+name: jest
+description: Delightful JavaScript Testing
+completion:
+  positionalany: ['$_bridge.Yargs([jest])']

@@ -1,0 +1,4 @@
+name: fs_usage
+description: report system calls and page faults related to filesystem activity in real-time
+completion:
+  positionalany: ['$_bridge.Zsh([fs_usage])']

@@ -1,0 +1,5 @@
+# Probably will need a custom spec at some point
+name: act
+description: Run your GitHub Actions locally
+completion:
+  positionalany: ['$_bridge.Cobra([act])']

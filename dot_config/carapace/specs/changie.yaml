@@ -1,0 +1,4 @@
+name: changie
+description: Automated changelog tool for preparing releases
+completion:
+  positionalany: ['$_bridge.Cobra([changie])']

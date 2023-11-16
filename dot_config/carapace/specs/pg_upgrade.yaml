@@ -1,0 +1,4 @@
+name: pg_upgrade
+description: upgrade a PostgreSQL server instance
+completion:
+  positionalany: ['$_bridge.Zsh([pg_upgrade])']

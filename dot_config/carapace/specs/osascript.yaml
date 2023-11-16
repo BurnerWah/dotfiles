@@ -1,0 +1,5 @@
+# osascript is cursed and I don't really wanna write completions for it
+name: osascript
+description: execute OSA scripts
+completion:
+  positionalany: ['$_bridge.Zsh([osascript])']

@@ -1,0 +1,4 @@
+name: litecli
+description: CLI for SQLite Databases with auto-completion and syntax highlighting
+completion:
+  positionalany: ['$_bridge.Click([litecli])']

@@ -1,0 +1,6 @@
+# Fish also has a built-in completion for this, but I would like things the
+# sources of completions to be consistent for carapace
+name: native2ascii
+description: Convert files from native-encoded to ASCII-encoding
+completion:
+  positionalany: ['$_bridge.Zsh([native2ascii])']

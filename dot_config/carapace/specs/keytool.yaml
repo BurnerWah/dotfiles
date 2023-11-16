@@ -1,0 +1,4 @@
+name: keytool
+description: A certificate management utility included with Java
+completion:
+  positionalany: ['$_bridge.Zsh([keytool])']

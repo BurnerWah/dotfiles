@@ -1,0 +1,4 @@
+name: vacuumdb
+description: garbage-collect and analyze a PostgreSQL database
+completion:
+  positionalany: ['$_bridge.Zsh([vacuumdb])']

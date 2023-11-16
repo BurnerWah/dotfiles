@@ -1,0 +1,5 @@
+# Probably wouldn't be too hard to make a custom completer for this
+name: bpython
+description: Fancy interface to the Python interpreter
+completion:
+  positionalany: ['$_bridge.Zsh([bpython])']

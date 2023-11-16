@@ -1,0 +1,5 @@
+# Fish provides built-in completions too
+name: pg_dumpall
+description: extract a PostgreSQL database cluster into a script file
+completion:
+  positionalany: ['$_bridge.Zsh([pg_dumpall])']

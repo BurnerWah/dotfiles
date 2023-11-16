@@ -1,0 +1,4 @@
+name: jdb
+description: The Java Debugger
+completion:
+  positionalany: ['$_bridge.Zsh([jdb])']
