@@ -1,0 +1,3 @@
+name: carapace-spec-man
+description: generate carapace spec from manpages
+completion: { positionalany: ['$_bridge.Carapace([carapace-spec-man])'] }

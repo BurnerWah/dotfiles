@@ -1,6 +1,9 @@
-# One of the many Java tools zsh has built-in completions for.
-# Also what is this? Why is the name so generic? I've never used it.
+# Based on zsh completions
+# Also what is this?
 name: policytool
 description: Policy administration GUI tool
+flags:
+  -file=: policy file
 completion:
-  positionalany: ['$_bridge.Zsh([policytool])']
+  flag:
+    file: ['$files']

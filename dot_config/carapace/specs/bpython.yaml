@@ -1,5 +1,15 @@
-# Probably wouldn't be too hard to make a custom completer for this
+# Based on the zsh completions
+# Not 100% finished
 name: bpython
 description: Fancy interface to the Python interpreter
+flags:
+  --config=: configuration file
+  -h, --help: show help message
+  -i, --interactive: drop to bpython after running a file
+  -q, --quiet: do not flush the output to stdout
+  -V, --version: print version
 completion:
-  positionalany: ['$_bridge.Zsh([bpython])']
+  flag:
+    config: [$files]
+  positional:
+    - ['$files([.py])']

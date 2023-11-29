@@ -1,0 +1,4 @@
+name: devcontainer
+description: Use a Docker container as a development environment
+completion:
+  positionalany: ['$_bridge.Yargs([devcontainer])']

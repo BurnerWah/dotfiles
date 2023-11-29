@@ -1,2 +1,0 @@
-#compdef http https=http
-source <(carapace http zsh)

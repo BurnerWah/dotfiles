@@ -1,0 +1,21 @@
+# Based on fish completions
+name: zopflipng
+description: zopfli PNG compression utility
+flags:
+  -m: Compress more
+  --prefix: Add prefix
+  -s: Do not ask about overwriting
+  --lossy_transparent: Remove colors behind alpha channel 0
+  --lossy_8bit: Convert PNG16 to PNG8
+  -d: Dry run
+  --always_zopflify: For benchmarking the algorithm
+  -q: Use quick
+  --iterations: Number of iterations
+  --filters=: Filter strategies
+  --keepchunks: Keep metadata chunks
+  -h, --help: Show help
+completion:
+  flag:
+    filters: ['0', '1', '2', '3', '4', m, e, p, b]
+  positionalany:
+    - '$files([.png])'

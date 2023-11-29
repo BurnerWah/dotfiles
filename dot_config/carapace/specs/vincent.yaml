@@ -1,0 +1,3 @@
+name: vincent
+description: terminal color scheme chooser
+completion: { positionalany: ['$_bridge.Carapace([vincent])'] }

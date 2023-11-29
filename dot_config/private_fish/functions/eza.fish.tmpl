@@ -1,10 +1,15 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
 if command -qs eza
     function eza
         set -l param --color=auto
         if isatty stdout
-            {{- if eq .chezmoi.os "darwin" }}
+            # {{- if eq .chezmoi.os "darwin" }}
+            # This is both a fix for a bug in eza 0.15.3 and a fix for a bad
+            # color scheme I have set on mac OS at the moment
             set -a param --color-scale size
-            {{- end }}
+            # {{- else }}
+            set -a param --color-scale
+            # {{- end }}
         end
         command eza $param $argv
     end

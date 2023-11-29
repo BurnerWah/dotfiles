@@ -1,0 +1,3 @@
+name: carapace-bridge
+description: Bridge for carapace completions
+completion: { positionalany: ['$_bridge.Carapace([carapace-bridge])'] }

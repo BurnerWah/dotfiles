@@ -1,2 +1,0 @@
-#compdef yarn yarnpkg=yarn
-source <(carapace yarn zsh)

@@ -1,4 +1,24 @@
+# Based on and referencing zsh
+# Has a couple sequence arguments that still need to be passed to zsh
+# The fs.JarFileClasses macro would probably be useful here
 name: javah
 description: Generate C header and source files from a Java class
+flags:
+  -o=: specify output file
+  -d=: specify destination directory
+  -stubs: generate stubs
+  -verbose: print verbose messages
+  -help: print help message
+  -version: print version
+  -cp, -classpath=: specify path for user class files
+  -bootclasspath=: override location of bootstrap class files
+  -old: generate old JDK1.0-style header files
+  -force: overwrite existing files
+  -J: java runtime option
 completion:
+  flag:
+    o: ['$files']
+    d: ['$directories']
+    classpath: ['$_bridge.Zsh([javah])'] # This is a sequence
+    bootclasspath: ['$_bridge.Zsh([javah])'] # This is a sequence
   positionalany: ['$_bridge.Zsh([javah])']

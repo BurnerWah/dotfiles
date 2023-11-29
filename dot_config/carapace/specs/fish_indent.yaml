@@ -1,0 +1,7 @@
+# While a custom spec for this is probably possible to create, I don't think
+# it's worth bothering with right now since fish_indent always comes bundled
+# with fish
+name: fish_indent
+description: format fish code
+completion:
+  positionalany: ['$_bridge.Fish([fish_indent])']

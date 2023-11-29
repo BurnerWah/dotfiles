@@ -1,10 +1,22 @@
 {
+  "files.associations": {
+    "**/.chezmoitemplates/zsh/**": "shellscript",
+    "**/dot_config/private_zsh/functions/**": "shellscript",
+    "*.fish.tmpl": "fish",
+    "*.toml.tmpl": "toml",
+    "*.yaml.tmpl": "yaml",
+    "*.yml.tmpl": "yaml",
+    ".chezmoiignore": "ignore"
+  },
   "go-template.patterns": [
     "**/*.tmpl",
     "**/.chezmoiignore",
-    "/.chezmoitemplates/**/*"
+    "**/.chezmoitemplates/**/*"
   ],
   "prettier.semi": false,
   "prettier.singleQuote": true,
-  "prettier.trailingComma": "all"
+  "prettier.trailingComma": "all",
+  "yaml.schemas": {
+    "dot_config/carapace/executable_schema.json": "dot_config/carapace/specs/*.yaml"
+  }
 }

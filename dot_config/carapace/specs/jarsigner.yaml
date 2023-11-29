@@ -1,4 +1,24 @@
+# Based on zsh completions
 name: jarsigner
 description: Generate and verify signatures for Java Archive files
+flags:
+  -keystore=: keystore location
+  -storetype=: keystore type
+  -storepass=: keystore password
+  -keypass=: private key password
+  -sigfile=: base file name of .SF and .DSA files to be generated
+  -signedjar=: signed JAR file
+  -verify: verify mode
+  -certs: output certificate information in verify mode
+  -verbose: print verbose messages
+  -internalsf: old behaviour
+  -sectionsonly: omit header of hash of the whole manifest file
+  -J: pass argument to the Java runtime # Imperfect, the zsh version matches -J.+
 completion:
-  positionalany: ['$_bridge.Zsh([jarsigner])']
+  positional:
+    - ['$files([.jar, .zip])']
+    - ['$usage(alias)'] # I don't know what this is
+  flag:
+    keystore: ['$files']
+    sigfile: ['$files']
+    signedjar: ['$files([.jar, .zip])']

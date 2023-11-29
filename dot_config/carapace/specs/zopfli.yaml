@@ -1,0 +1,14 @@
+# Based on the Fish completions
+name: zopfli
+description: New zlib (gzip, deflate) compatible compressor
+flags:
+  -h: Print help
+  -c: Write the result on stdout
+  -v: Verbose mode
+  --i: Number of iterations # This isn't correct
+  --gzip: Output to gzip format (default)
+  --zlip: Output to zlib format
+  --deflate: Output to deflate format
+completion:
+  positionalany:
+    - $files

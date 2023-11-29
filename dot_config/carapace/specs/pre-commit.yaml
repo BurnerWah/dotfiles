@@ -1,0 +1,6 @@
+# pre-commit uses argparse but the argcomplete bridge doesn't work for it
+# fish has pre-made completions though
+name: pre-commit
+description: A framework for managing and maintaining multi-language pre-commit hooks
+completion:
+  positionalany: ['$_bridge.Fish([pre-commit])']

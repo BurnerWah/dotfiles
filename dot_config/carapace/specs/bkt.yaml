@@ -1,0 +1,20 @@
+name: bkt
+description: CLI utility for caching the output of subprocesses
+flags:
+  --ttl=: Duration the cached result will be valid for
+  --stale=: Duration after which the result will be asynchronously refreshed
+  --warm: Asynchronously execute and cache the given command, even if it's already cached
+  --force: Execute and cache the given command, even if it's already cached
+  --cwd: Includes the current working directory in the cache key, so that the same command run in different directories caches separately
+  --env=: Includes the given environment variable in the cache key, so that the same command run with different values for the given variables caches separately
+  --modtime=: Includes the last modification time of the given file(s) in the cache key, so that the same command run with different modtimes for the given files caches separately
+  --discard-failures: Don't cache invocations that fail (non-zero exit code)
+  --scope=: If set, all cached data will be scoped to this value, preventing collisions with commands cached with different scopes
+  --cache-dir=: The directory under which to persist cached invocations
+  -h, --help: Print help
+  -V, --version: Print version
+completion:
+  flag:
+    env: ['$_env.KnownEnvironmentVariables']
+    modtime: ['$files']
+    cache-dir: ['$directories']

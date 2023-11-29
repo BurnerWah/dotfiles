@@ -12,6 +12,8 @@
 # Regular OS Directories
 /.CFUserTextEncoding
 /.Trash
+/.thumbnails
+/.cache
 /Applications
 /Creative Cloud Files
 /Desktop
@@ -30,8 +32,31 @@
 /Videos
 /Virtual Machines.localized
 
-# Application folders
+# Application folders & files
+/.config/configstore
+/.config/flutter
+/.config/gatsby
+/.config/JetBrains
+/.config/MusicBrainz
+/.config/nodemon.json
+/.config/op
+/.config/raycast
+/.config/tabtab
+/.cups
+/.dart
+/.dart-tool
+/.dotnet
+/.fleet
+/.fly
+/.hawtjni
+/.inshellisense
+/.mono
+/.nuget
+/.redhat
+/.sonarlint
+/.swiftpm
 /.vscode
+/.warp
 
 # Stuff chezmoi shouldn't mess with
 /.nix-defexpr

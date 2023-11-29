@@ -1,1 +1,0 @@
-watchexec --completions fish | source

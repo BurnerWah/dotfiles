@@ -1,4 +1,7 @@
 name: extcheck
 description: Detects JAR conflicts
+flags:
+  -verbose: print verbose messages
 completion:
-  positionalany: ['$_bridge.Zsh([extcheck])']
+  positional:
+    - ['$files([.jar])']

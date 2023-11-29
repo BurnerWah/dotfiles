@@ -1,0 +1,3 @@
+#compdef sentry-cli
+# shellcheck disable=SC1090
+source <(sentry-cli completions zsh 2>/dev/null)

@@ -1,4 +1,43 @@
 name: gitlint
 description: Linting for your git commit messages
+flags:
+  --target=: Path of the target git repository
+  -C, --config=: Config file location
+  -c*=: Config flags
+  --commit=: Hash (SHA) of specific commit to lint
+  --commits=: The range of commits (refspec or comma-separated hashes) to lint
+  -e, --extra-path=: Path to a directory or python module with extra user-defined rules
+  --ignore=: Ignore rules (comma-separated by id or name)
+  --contrib=: Contrib rules to enable (comma-separated by id or name)
+  --msg-filename=: Path to a file containing a commit-msg
+  --ignore-stdin: Ignore any stdin data
+  --staged: Attempt smart guesses about meta info for staged commits
+  --fail-without-commits: Hard fail when the target commit range is empty
+  -v, --verbose: Verbosity
+  -s, --silent: Silent mode
+  -d, --debug: Enable debugging output
+  --version: Show version
+persistentflags:
+  --help: Show help
+commands:
+  - name: generate-config
+    description: Generates a sample gitlint config file
+  - name: install-hook
+    description: Install gitlint as a git commit-msg hook
+  - name: lint
+    description: Lints a git repository
+  - name: run-hook
+    description: Runs the gitlint commit-msg hook
+  - name: uninstall-hook
+    description: Uninstall gitlint commit-msg hook
 completion:
-  positionalany: ['$_bridge.Click([gitlint])']
+  flag:
+    target: ['$directories']
+    config: ['$files']
+    extra-path: ['$directories']
+    msg-filename: ['$files']
+    commit: ['$_tools.git.RecentCommits(20)']
+    commits:
+      - $_tools.git.HeadCommits(5)
+      - $_tools.git.RecentCommits(20)
+  # positionalany: ['$_bridge.Click([gitlint])']

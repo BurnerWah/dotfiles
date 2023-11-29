@@ -1,3 +1,0 @@
-#compdef tig
-# Should override default completions
-source <(carapace tig zsh)

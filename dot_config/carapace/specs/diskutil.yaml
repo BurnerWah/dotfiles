@@ -1,0 +1,4 @@
+name: diskutil
+description: modify, verify and repair local disks
+completion:
+  positionalany: ['$_bridge.Fish([diskutil])']

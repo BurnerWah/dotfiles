@@ -1,5 +1,18 @@
-# osascript is cursed and I don't really wanna write completions for it
+# Based on the zsh completions
 name: osascript
 description: execute OSA scripts
+flags:
+  -l=: specify script language
+  -i: run interactively
+  -e=: script to run
+  -s=: specify output style
 completion:
-  positionalany: ['$_bridge.Zsh([osascript])']
+  flag:
+    l: [AppleScript, JavaScript, Generic Scripting System]
+    s:
+      - "h\tprint values in human-readable form"
+      - "s\tprint values in recompilable source form"
+      - "e\tprint script errors to stderr"
+      - "o\tprint script errors to stdout"
+  positionalany:
+    - $files

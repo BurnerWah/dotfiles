@@ -1,0 +1,3 @@
+name: fly
+description: Command-Line tools for fly.io services
+completion: { positionalany: ['$_bridge.CarapaceBin([flyctl])'] }

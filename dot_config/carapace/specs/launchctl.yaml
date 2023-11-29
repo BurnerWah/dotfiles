@@ -1,0 +1,4 @@
+name: launchctl
+description: manage launchd jobs
+completion:
+  positionalany: ['$_bridge.Fish([launchctl])']

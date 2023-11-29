@@ -1,0 +1,3 @@
+#compdef {{ (includeTemplate "carapace/commands.yaml" "zsh" | fromYaml).commands | join " " }}
+# shellcheck disable=SC1090,SC2154
+source <(carapace "${words[1]}" zsh)

@@ -1,0 +1,56 @@
+name: dum
+description: An npm scripts runner written in Rust
+flags:
+  -i, --interactive: Interactive mode
+  -h, --help: Prints help information
+  -v, --version: Prints version number
+  -c=: Change working directory
+commands:
+  - name: run
+    description: Run an npm script
+    completion:
+      positional:
+        - [
+            # Fastest, most robust, generic way to get scripts from the package.json
+            # '$(jq -cr ''
+            # .scripts
+            # | to_entries[]
+            # | "\(.key)\t\(.value)"
+            # '' package.json)
+            # ||| $chdir($parent([package.json]))
+            # ||| $suppress(could not find)',
+            # Slower solution without descriptions
+            '$_bridge.CarapaceBin([npm, run]) ||| $suppress(could not find)',
+            # This is currently the only way I've got to list the diles in the node_modules/.bin directory
+            # '$(ls node_modules/.bin) ||| $chdir($parent([node_modules])) ||| $suppress(could not find)',
+          ]
+          # Currently there's no good way to complete arguments for scripts
+  - name: add
+    description: Add packages to the current project
+    completion:
+      positionalany: ['$_tools.npm.PackageNames']
+  - name: install
+    description: Install dependencies
+    aliases: [i]
+  - name: remove
+    description: Remove packages from the current project
+    completion:
+      positionalany:
+        # Fastest way to get dependencies from package.json
+        - '$chdir($parent([package.json]))'
+        - '$(jq -r ''
+          .dependencies, .devDependencies, .optionalDependencies
+          | to_entries?
+          | .[]
+          | "\(.key)\t\(.value)"
+          '' package.json)'
+        - '$suppress(could not find)'
+        # chdirs are done here to improve performance
+        # - '$_tools.pnpm.DependencyNames ||| $chdir($parent([pnpm-lock.yaml])) ||| $suppress(could not find)'
+        # - '$_tools.npm.DependencyNames ||| $chdir($parent([package-lock.json])) ||| $suppress(could not find) ||| $suppress(ELSPROBLEMS)'
+  - name: test
+    description: Run test script in nearest package.json
+    aliases: [t]
+completion:
+  flag:
+    c: ['$directories']
