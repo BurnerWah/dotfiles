@@ -34,6 +34,30 @@
 
 # Application folders & files
 /.config/configstore
+/.config/postybirb
+/.config/postybirb-plus
+/.config/Bootstrap Studio
+/.config/Cypress
+/.config/1Password
+/.config/Mullvad VPN
+/.config/bstudio
+/.config/vscode-sqltools
+/.config/evolution
+/.config/gnome-boxes
+/.config/gnome-initial-setup-done
+/.config/gnome-session
+/.config/gsconnect
+/.config/itch
+/.config/libvirt
+/.config/ookla
+/.config/Code
+/.config/pulse
+/.config/kera-desktop
+/.config/goa-1.0
+/.config/monitors.xml
+/.config/monitors.xml~
+/.config/user-share
+/.config/ibus
 /.config/flutter
 /.config/gatsby
 /.config/JetBrains
@@ -67,6 +91,15 @@
 
 # OS-Specific exclusions
 {{- if ne .chezmoi.os "linux" }}
+/.config/fish/functions/bussybox.fish
+/.config/fish/functions/xdg-open.fish
+/.config/fish/functions/lsmod.fish
+/.config/fish/functions/ip.fish
+/.config/fish/functions/iptables.fish
+/.config/fish/functions/iwconfig.fish
+/.config/fish/functions/findmnt.fish
+/.config/fish/functions/getsebool.fish
+/.config/fish/functions/getfacl.fish
 /.config/fish/functions/blkid.fish
 /.config/fish/functions/free.fish
 /.config/fish/functions/iostat.fish
