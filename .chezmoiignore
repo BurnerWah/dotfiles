@@ -10,48 +10,10 @@
 **/yarn.lock
 **/node_modules
 
-# Regular OS Directories
-/.CFUserTextEncoding
-/.Trash
-/.thumbnails
-/.cache
-/Applications
-/Application Data
-/3D Objects
-/Contacts
-/Cookies
-/Creative Cloud Files
-/Desktop
-/Documents
-/Downloads
-/Favorites
-/Games
-/Links
-/Local Settings
-/Movies
-/Music
-/My Documents
-/NetHood
-/OneDrive
-/Pictures
-/PrintHood
-/Projects
-/Public
-/Recent
-/Recorded Calls
-/Saved Games
-/Searches
-/SendTo
-/Start Menu
-/Sync
-/Templates
-/Vaults
-/Videos
-/Virtual Machines.localized
-/NTUSER.*
-/ntuser.*
-
 # Application folders & files
+{{ range ((includeTemplate "chezmoi/ignore.yaml" | fromYaml).home | compact) }}
+/{{ . }}
+{{- end }}
 {{ range ((includeTemplate "chezmoi/ignore.yaml" | fromYaml).dotfiles | compact) }}
 /.{{ . }}
 {{- end }}
