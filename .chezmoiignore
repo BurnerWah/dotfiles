@@ -67,7 +67,6 @@
 /.config/fish/conf.d/iterm2.fish
 {{- end }}
 {{- if eq .chezmoi.os "windows" }}
-/.config/carapace
 /.config/fish
 /.config/nushell
 /.config/rainbow
