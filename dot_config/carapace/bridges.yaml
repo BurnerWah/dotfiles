@@ -26,6 +26,7 @@ dotnet: fish
 dropdb: zsh # Fish provides built-in completions too
 dscacheutil: fish
 dua: fish
+exercism: cobra
 fc-match: zsh # Probably will be replaced by some built-in carapace completion in the future
 ffplay: fish
 ffprobe: fish
@@ -54,6 +55,7 @@ jest: yargs # Probably will only be run with npm or something
 keytool: zsh
 kind: cobra
 launchctl: fish
+lefthook: cobra
 legit: click
 limactl: cobra
 litecli: click
@@ -66,6 +68,8 @@ neonctl: yargs
 networksetup: zsh
 npq-hero: yargs # Eventually this should have a custom spec
 npq: yargs # Eventually this should have a custom spec
+oh-my-posh: cobra
+op: cobra
 # ops completions perform terribly because ops has a really long startup time.
 # this... helps, since we never run ops to generate the completion functions,
 # but it'd be even better if the completions didn't need to run ops as much.

@@ -5,6 +5,7 @@ xdg:
     - 1Password
     - Bootstrap Studio
     - bstudio
+    - carapace/bin
     - carapace/bridge/zsh/.zcompdump_capture
     - Code
     - configstore

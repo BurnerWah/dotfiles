@@ -79,4 +79,5 @@
 {{- end }}
 {{- if ne .chezmoi.os "windows" }}
 .chezmoiscripts/windows/**
+/AppData
 {{- end }}
