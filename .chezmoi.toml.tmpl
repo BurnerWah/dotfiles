@@ -31,7 +31,7 @@ persist = "{{ .chezmoi.homeDir }}/scoop/persist"
 
 [interpreters.ps1]
 command = "pwsh"
-args = ["-NoLogo"]
+args = ["-NoLogo", "-NonInteractive", "-NoProfile"]
 
 [data.device]
 # can be "laptop", "desktop", "convertible", "server", "tablet", "handset", "watch", "embedded", "vm", or "container"

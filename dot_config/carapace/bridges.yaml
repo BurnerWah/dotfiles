@@ -22,7 +22,7 @@ dasel: cobra
 devcontainer: yargs
 diskutil: fish
 djxl: fish
-dotnet: fish
+# using dotnet with the fish bridge breaks powershell completions
 dropdb: zsh # Fish provides built-in completions too
 dscacheutil: fish
 dua: fish
