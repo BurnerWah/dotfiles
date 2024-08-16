@@ -271,6 +271,12 @@ darwin:
     - WebKit
     - Workflows
 
+windows:
+  appdata: # These are include lists
+    roaming:
+      - bat
+      - carapace
+
 dotfiles:
   - 1password
   - affinity

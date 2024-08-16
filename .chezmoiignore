@@ -76,8 +76,11 @@
 !/Documents
 /Documents/*
 !/Documents/PowerShell
+/AppData/Roaming/*
+{{ range ((includeTemplate "chezmoi/ignore.yaml" | fromYaml).windows.appdata.roaming | compact) }}
+!/AppData/Roaming/{{ . }}
 {{- end }}
-{{- if ne .chezmoi.os "windows" }}
+{{- else }}
 .chezmoiscripts/windows/**
 /AppData
 {{- end }}
