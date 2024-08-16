@@ -25,6 +25,14 @@ data = "{{ .chezmoi.homeDir }}/Library/Application Support"
 state = "{{ .chezmoi.homeDir }}/.local/state"
 {{ end }}
 
+[data.pkg.scoop]
+apps = "{{ .chezmoi.homeDir }}/scoop/apps"
+persist = "{{ .chezmoi.homeDir }}/scoop/persist"
+
+[interpreters.ps1]
+command = "pwsh"
+args = ["-NoLogo"]
+
 [data.device]
 # can be "laptop", "desktop", "convertible", "server", "tablet", "handset", "watch", "embedded", "vm", or "container"
 chassis = "{{ $chassisType }}"

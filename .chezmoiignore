@@ -74,4 +74,10 @@
 /.config/starship.toml
 /.config/yt-dlp
 /.config/zsh
+!/Documents
+/Documents/*
+!/Documents/PowerShell
+{{- end }}
+{{- if ne .chezmoi.os "windows" }}
+.chezmoiscripts/windows/**
 {{- end }}

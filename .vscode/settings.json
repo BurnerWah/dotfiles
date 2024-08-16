@@ -13,7 +13,8 @@
     "dot_zshrc": "shellscript",
     "dot_bashrc": "shellscript",
     "*.sh.tmpl": "shellscript",
-    "**/dot_config/bat/config": "plaintext"
+    "**/dot_config/bat/config": "plaintext",
+    "*.ps1.tmpl": "powershell"
   },
   "go-template.patterns": [
     "**/*.tmpl",
