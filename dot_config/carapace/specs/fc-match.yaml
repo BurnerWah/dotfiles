@@ -1,5 +1,0 @@
-# Probably will be replaced by some built-in carapace completion in the future
-name: fc-match
-description: match available fonts
-completion:
-  positionalany: ['$_bridge.Zsh([fc-match])']

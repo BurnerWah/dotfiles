@@ -1,3 +1,3 @@
 name: yarnpkg
 description: Yarn is a package manager that doubles down as project manager
-completion: { positionalany: ['$_bridge.CarapaceBin([yarn])'] }
+completion: { positionalany: ['$carapace.bridge.CarapaceBin([yarn])'] }

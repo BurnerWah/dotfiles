@@ -1,0 +1,242 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = false
+
+format = """$username$directory$character"""
+right_format = """$all"""
+
+[aws]
+# nf-md-cloud_outline - all the aws icons are too small
+symbol = "󰅣 "
+
+[azure]
+# nf-cod-azure - looks better than nf-md-microsoft_azure
+symbol = " "
+
+[battery]
+full_symbol = "󰁹 "
+charging_symbol = "󰂅 "
+discharging_symbol = "󰂍 "
+unknown_symbol = "󰂑 "
+empty_symbol = "󰂎 "
+
+[buf]
+# nf-oct-bold
+symbol = " "
+
+[c]
+# nf-custom-c
+symbol = " "
+
+[conda]
+# nf-fa-circle_o
+symbol = " "
+
+[crystal]
+# nf-custom-crystal
+symbol = " "
+
+[dart]
+# nf-dev-dart - not very clear at term size
+symbol = " "
+
+[directory]
+read_only = " 󰌾"
+fish_style_pwd_dir_length = 1
+truncation_symbol = '…/'
+
+[docker_context]
+# nf-linux-docker
+symbol = " "
+
+[dotnet]
+# nf-md-dot_net
+symbol = "󰪮 "
+
+[elixir]
+# nf-fae-drop
+# nf-custom-elixir could probably work too - 
+symbol = " "
+
+[elm]
+# nf-seti-elm (same as nf-custom-elm)
+symbol = " "
+
+[fennel]
+# nf-custom-fennel
+symbol = " "
+
+[fossil_branch]
+symbol = " "
+
+[gcloud]
+# nf-md-google_cloud
+symbol = "󱇶 "
+
+[git_branch]
+symbol = " "
+
+[git_metrics]
+disabled = false
+
+[golang]
+# nf-seti-go - not very clear at term size
+symbol = " "
+
+[gradle]
+# nf-seti-gradle
+symbol = " "
+
+[guix_shell]
+# nf-linux-gnu_guix
+symbol = " "
+
+[haskell]
+# nf-seti-haskell - biggest haskell icon
+symbol = " "
+
+[haxe]
+# nf-seti-haxe
+symbol = " "
+
+[hostname]
+ssh_symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+# nf-fae-java - biggest java icon
+# nf-dev-java and nf-md-language_java are too small
+# nf-seti-java is just a big J
+symbol = " "
+
+[julia]
+# nf-seti-julia
+symbol = " "
+
+[kotlin]
+# nf-seti-kotlin - all the kotlin icons look the same
+symbol = " "
+
+[kubernetes]
+# nf-md-kubernetes - the only kubernetes icon
+symbol = "󱃾 "
+
+[lua]
+# nf-seti-lua - looks slightly better than nf-md-language_lua
+symbol = " "
+
+[memory_usage]
+# nf-md-memory
+symbol = "󰍛 "
+
+[meson]
+# nf-md-triangle_outline
+symbol = "󰔷 "
+
+[nim]
+disabled = true
+
+[nix_shell]
+# nf-linux-nixos - bigger than nf-md-nix
+symbol = " "
+
+[nodejs]
+# nf-md-nodejs
+symbol = "󰎙 "
+
+[ocaml]
+# nf-seti-ocaml - the only ocaml icon
+symbol = " "
+
+[os]
+disabled = false
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = "󰈺 "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+Ubuntu = " "
+Unknown = " "
+Windows = "󰍲 "
+
+[package]
+# nf-oct-package - big and readable
+# was suggested nf-md-package_variant_closed but it's too complex
+symbol = " "
+
+[perl]
+# nf-seti-perl - the only perl icon
+symbol = " "
+
+[pijul_channel]
+symbol = " "
+
+[python]
+# nf-fae-python - biggest python icon
+symbol = " "
+
+[rlang]
+# nf-seti-r - slightly bigger than nf-md-language_r
+symbol = " "
+
+[ruby]
+# nf-md-language_ruby - biggest ruby icon
+symbol = "󰴭 "
+
+[scala]
+disabled = true
+
+[shell]
+disabled = false
+fish_indicator = "" # Usually I'm using fish
+
+[solidity]
+disabled = true
+
+[swift]
+# nf-seti-swift - bigger than nf-dev-swift, looks the same as nf-md-language_swift
+symbol = " "
+
+[terraform]
+# nf-md-terraform
+symbol = "󱁢 "
+
+[username]
+show_always = true
+
+[zig]
+# nf-seti-zig - the only zig icon
+symbol = " "

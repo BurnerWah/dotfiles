@@ -1,4 +1,0 @@
-name: dotnet
-description: .NET Core SDK
-completion:
-  positionalany: ['$_bridge.Fish([dotnet])']

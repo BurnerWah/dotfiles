@@ -1,4 +1,0 @@
-name: tmutil
-description: Time Machine utility
-completion:
-  positionalany: ['$_bridge.Fish([tmutil])']

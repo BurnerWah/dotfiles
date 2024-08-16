@@ -1,0 +1,19 @@
+name: njsscan
+aliases: [nodejsscan]
+description: Static analysis tool for finding security vulnerabilities in Node.js applications
+flags:
+  -h, --help: Show help
+  --json: set output format as JSON
+  --sarif: set output format as SARIF
+  --sonarqube: set output format compatible with SonarQube
+  --html: set output format as HTML
+  -o, --output=: output filename to save the result
+  -c, --config=: Location to .njsscan config file
+  --missing-controls: enable missing security controls check
+  -w, --exit-warning: non zero exit code on warning
+  -v, --version: show njsscan version
+completion:
+  positionalany: [$files]
+  flag:
+    output: [$files]
+    config: [$files]

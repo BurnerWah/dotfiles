@@ -1,4 +1,0 @@
-name: networksetup
-description: configuration tool for network settings in System Preferences
-completion:
-  positionalany: ['$_bridge.Zsh([networksetup])']

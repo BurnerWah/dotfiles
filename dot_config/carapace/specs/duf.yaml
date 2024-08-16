@@ -1,0 +1,44 @@
+name: duf
+description: Disk Usage/Free Utility
+flags:
+  --all: include pseudo, duplicate, inaccessible file systems
+  --avail-threshold=: specifies the coloring threshold (yellow, red) of the avail column, must be integer with optional SI prefixes
+  --hide=: hide specific devices (comma separated list)
+  --hide-fs=: hide specific file systems (comma separated list)
+  --hide-mp=: hide specific mount points (comma separated list)
+  --inodes: list inode information instead of block usage
+  --json: output as JSON
+  --only=: only show specific devices (comma separated list)
+  --only-fs=: only show specific file systems (comma separated list)
+  --only-mp=: only show specific mount points (comma separated list)
+  --output=: output columns (comma separated list)
+  --sort=: sort output by (comma separated list)
+  --style=: output style
+  --theme=: color theme
+  --usage-threshold=: specifies the coloring threshold (yellow, red) of the usage bar
+  --version: show version information
+  --width=: width of the output
+  --warnings: show warnings
+  --help: show help information
+completion:
+  flag:
+    hide: &devices [local, network, fuse, special, loops, binds]
+    only: *devices
+    hide-fs: ['$carapace.fs.FilesystemTypes']
+    only-fs: ['$carapace.fs.FilesystemTypes']
+    # hide-mp and only-mp need to be tested on Linux
+    output: &columns
+      - mountpoint
+      - size
+      - used
+      - avail
+      - usage
+      - inodes
+      - inodes_used
+      - inodes_avail
+      - inodes_usage
+      - type
+      - filesystem
+    sort: *columns
+    style: [unicode, ascii]
+    theme: [dark, light, ansi]

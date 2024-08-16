@@ -1,4 +1,0 @@
-name: flyctl
-description: Command-Line tools for fly.io services
-completion:
-  positionalany: ['$_bridge.Cobra([flyctl])']

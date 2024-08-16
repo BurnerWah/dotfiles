@@ -1,4 +1,0 @@
-name: pg_isready
-description: check the connection status of a PostgreSQL server
-completion:
-  positionalany: ['$_bridge.Zsh([pg_isready])']

@@ -1,5 +1,0 @@
-# This runs very slooooow but it's the best thing I've got so far
-name: sam
-description: AWS Serverless Application Model (SAM) CLI
-completion:
-  positionalany: ['$_bridge.Click([sam])']

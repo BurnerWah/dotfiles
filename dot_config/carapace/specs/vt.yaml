@@ -1,4 +1,0 @@
-name: vt
-description: Command-line interface for VirusTotal
-completion:
-  positionalany: ['$_bridge.Cobra([vt])']

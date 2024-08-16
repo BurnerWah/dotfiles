@@ -1,3 +1,0 @@
-name: carapace-spec
-description: define simple completions using a spec file
-completion: { positionalany: ['$_bridge.Carapace([carapace-spec])'] }

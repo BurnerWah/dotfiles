@@ -3,4 +3,4 @@
 name: pipx
 description: Install and Run Python Applications in Isolated Environments
 completion:
-  positionalany: ['$_bridge.Argcomplete([pipx])']
+  positionalany: ['$carapace.bridge.Argcomplete([pipx])']

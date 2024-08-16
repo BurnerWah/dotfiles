@@ -2,11 +2,18 @@
   "files.associations": {
     "**/.chezmoitemplates/zsh/**": "shellscript",
     "**/dot_config/private_zsh/functions/**": "shellscript",
+    "**/dot_config/private_rainbow/*.cfg": "plaintext",
     "*.fish.tmpl": "fish",
     "*.toml.tmpl": "toml",
     "*.yaml.tmpl": "yaml",
     "*.yml.tmpl": "yaml",
-    ".chezmoiignore": "ignore"
+    "*.env.tmpl": "dotenv",
+    ".chezmoiignore": "ignore",
+    "*.sublime-syntax": "yaml",
+    "dot_zshrc": "shellscript",
+    "dot_bashrc": "shellscript",
+    "*.sh.tmpl": "shellscript",
+    "**/dot_config/bat/config": "plaintext"
   },
   "go-template.patterns": [
     "**/*.tmpl",
@@ -17,6 +24,9 @@
   "prettier.singleQuote": true,
   "prettier.trailingComma": "all",
   "yaml.schemas": {
-    "dot_config/carapace/executable_schema.json": "dot_config/carapace/specs/*.yaml"
+    "dot_config/carapace/executable_schema.json": [
+      "dot_config/carapace/specs/*.yaml",
+      "dot_config/carapace/overlays/*.yaml"
+    ]
   }
 }

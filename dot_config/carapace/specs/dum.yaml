@@ -20,7 +20,7 @@ commands:
             # ||| $chdir($parent([package.json]))
             # ||| $suppress(could not find)',
             # Slower solution without descriptions
-            '$_bridge.CarapaceBin([npm, run]) ||| $suppress(could not find)',
+            '$carapace.bridge.CarapaceBin([npm, run]) ||| $suppress(could not find)',
             # This is currently the only way I've got to list the diles in the node_modules/.bin directory
             # '$(ls node_modules/.bin) ||| $chdir($parent([node_modules])) ||| $suppress(could not find)',
           ]
@@ -28,7 +28,7 @@ commands:
   - name: add
     description: Add packages to the current project
     completion:
-      positionalany: ['$_tools.npm.PackageNames']
+      positionalany: ['$carapace.tools.npm.PackageNames']
   - name: install
     description: Install dependencies
     aliases: [i]
@@ -46,8 +46,8 @@ commands:
           '' package.json)'
         - '$suppress(could not find)'
         # chdirs are done here to improve performance
-        # - '$_tools.pnpm.DependencyNames ||| $chdir($parent([pnpm-lock.yaml])) ||| $suppress(could not find)'
-        # - '$_tools.npm.DependencyNames ||| $chdir($parent([package-lock.json])) ||| $suppress(could not find) ||| $suppress(ELSPROBLEMS)'
+        # - '$carapace.tools.pnpm.DependencyNames ||| $chdir($parent([pnpm-lock.yaml])) ||| $suppress(could not find)'
+        # - '$carapace.tools.npm.DependencyNames ||| $chdir($parent([package-lock.json])) ||| $suppress(could not find) ||| $suppress(ELSPROBLEMS)'
   - name: test
     description: Run test script in nearest package.json
     aliases: [t]

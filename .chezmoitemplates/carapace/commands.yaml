@@ -1,10 +1,14 @@
 commands:
+  # {{- if ne . "fish" }}
+  - 7z
+  - 7za
+  - 7zr
+  # {{- end }}
   - act
+  - asdf
   - age
   - agg
-  # {{- if ne . "zsh" }}
-  - appletviewer
-  # {{- end }}
+  - '{{- if ne . "zsh" }}appletviewer{{- end }}'
   - ar
   - aws # official completions use bash stuff
   - az
@@ -16,6 +20,7 @@ commands:
   - batman
   - bats
   - bc
+  - benthos
   - bkt
   - black # used for performance reasons
   - bpython
@@ -34,6 +39,7 @@ commands:
   - chroma
   - chromium
   - circleci
+  - '{{- if ne . "fish" }}cjxl{{- end }}'
   - clamav-config
   - clamav-milter
   - clambc
@@ -44,9 +50,7 @@ commands:
   - clamonacc
   - clamscan
   - clamsubmit
-  # {{- if ne . "zsh" }}
-  - clusterdb
-  # {{- end }}
+  - '{{- if ne . "zsh" }}clusterdb{{- end }}'
   - codecov
   - colima
   - concurrently
@@ -56,6 +60,8 @@ commands:
   - crontab
   # {{- end }}
   - cue
+  - '{{- if ne . "fish" }}cwebp{{- end }}'
+  - dark-mode
   - darktable
   - darktable-cli
   - dart
@@ -69,17 +75,15 @@ commands:
   # - dircolors
   - direnv
   # - dirname
-  # {{- if ne . "fish" }}
-  - diskutil
-  # {{- end }}
+  - '{{- if ne . "fish" }}diskutil{{- end }}'
+  - '{{- if ne . "fish" }}djxl{{- end }}'
   - dlv
   - doctl
-  # {{- if ne . "fish" }}
-  - dotnet
-  # {{- end }}
-  # {{- if ne . "zsh" }}
-  - dropdb
-  # {{- end }}
+  - '{{- if ne . "fish" }}dotnet{{- end }}'
+  - '{{- if ne . "zsh"  }}dropdb{{- end }}'
+  - '{{- if ne . "fish" }}dscacheutil{{- end }}'
+  - '{{- if ne . "fish" }}dua{{- end }}'
+  - duf
   - dum
   - elvish
   - envsubst
@@ -94,28 +98,30 @@ commands:
   - fc-cat
   - fc-conflist
   - fc-list
-  # {{- if ne . "zsh" }}
-  - fc-match
-  # {{- end }}
+  - '{{- if ne . "zsh" }}fc-match{{- end }}'
   - fd
   - fdisk
+  - '{{- if ne . "fish" }}ffplay{{- end }}'
+  - '{{- if ne . "fish" }}ffprobe{{- end }}'
   - file
   # {{- if ne . "fish" }}
   - fish
   - fish_indent
+  - fish_key_reader
   # {{- end }}
   - flutter
   - fly
   - flyctl
-  # {{- if ne . "zsh" }}
-  - fs_usage
-  # {{- end }}
+  - '{{- if ne . "zsh" }}fs_usage{{- end }}'
+  - fx
   - fzf
   - gatsby
   - gcloud
+  - '{{- if ne . "fish" }}gdbus{{- end }}'
   - get-env
   - gh
   - gimp
+  - '{{- if ne . "fish" }}gio{{- end }}'
   - git-clang-format
   - gitleaks
   - gitlint
@@ -141,19 +147,23 @@ commands:
   - goweight
   - gparted
   - gpg-agent
+  # {{- if ne . "fish" }}
+  - gping
+  - gresource
+  # {{- end }}
   - grype
   - gulp
   - gum
+  - gup
   - halt
   - helix
   # - hostid
   - http
+  - httpie
   - https
   - hugo
   - hx
-  # {{- if ne . "zsh" }}
-  - initdb
-  # {{- end }}
+  - '{{- if ne . "zsh" }}initdb{{- end }}'
   - inkscape
   - inshellisense
   - ion
@@ -170,16 +180,12 @@ commands:
   - just
   - kak
   - kak-lsp
-  # {{- if ne . "zsh" }}
-  - keytool
-  # {{- end }}
+  - '{{- if ne . "zsh" }}keytool{{- end }}'
   - kind
   - kotlin
   - kotlinc
   - ktlint
-  # {{- if ne . "fish" }}
-  - launchctl
-  # {{- end }}
+  - '{{- if ne . "fish" }}launchctl{{- end }}'
   - lazygit
   - legit
   - limactl
@@ -193,14 +199,10 @@ commands:
   - more
   - mvn
   - nano
-  # {{- if ne . "zsh" }}
   - native2ascii
-  # {{- end }}
   - neon
   - neonctl
-  # {{- if ne . "zsh" }}
-  - networksetup
-  # {{- end }}
+  - '{{- if ne . "zsh" }}networksetup{{- end }}'
   - newman
   - nilaway
   - nix
@@ -208,13 +210,20 @@ commands:
   - nix-channel
   - nix-instantiate
   - nix-shell
+  - njsscan
   - node
+  - nodejsscan
   - npq
   - npq-hero
   - nu
   - ops
   - osascript # Custom completions but very similar to the zsh ones
   - packer
+  - pacman
+  - pacman-db-upgrade
+  - pacman-key
+  - pacman-conf
+  - pacman-mirrors
   - palemoon
   - paru
   # - pathchk
@@ -227,38 +236,29 @@ commands:
   - pg_dumpall
   # {{- end }}
   - pg_isready
-  # {{- if ne . "fish" }}
-  - pg_restore
-  # {{- end }}
+  - '{{- if ne . "fish" }}pg_restore{{- end }}'
   - pg_upgrade
   # {{- end }}
   - picard
   # - pinky
   - pipx
+  - pkgsite
+  - pkgutil
   - pnpm
   - policytool
-  # {{- if ne . "zsh" }}
-  - postgres
-  # {{- end }}
+  - '{{- if ne . "zsh" }}postgres{{- end }}'
   - powertop
-  # {{- if ne . "fish" }}
-  - pre-commit
-  # {{- end }}
+  - '{{- if ne . "fish" }}pre-commit{{- end }}'
   - prettybat
   - prettyping
-  # {{- if ne . "zsh" }}
-  - psql
-  # {{- end }}
+  - pscale
+  - '{{- if ne . "zsh" }}psql{{- end }}'
   # - pwd
   - qmk
   - qutebrowser
-  # {{- if ne . "fish" }}
-  - rakudo
-  # {{- end }}
+  - '{{- if ne . "fish" }}rakudo{{- end }}'
   - redis-cli
-  # {{- if ne . "zsh" }}
-  - reindexdb
-  # {{- end }}
+  - '{{- if ne . "zsh" }}reindexdb{{- end }}'
   - rclone
   - reboot
   # {{- if ne . "zsh" }}
@@ -267,17 +267,17 @@ commands:
   - rmiregistry
   # {{- end }}
   - sam
+  - shadowenv
   - sdkmanager
   - semver
-  # {{- if ne . "zsh" }}
-  - serialver
-  # {{- end }}
+  - '{{- if ne . "zsh" }}serialver{{- end }}'
   - set-env
   - shutdown
   - skate
   # - sleep
   # {{- if ne . "zsh" }}
   - softwareupdate
+  - sqlite3
   - ssh-add
   - ssh-keyscan
   # {{- end }}
@@ -297,15 +297,14 @@ commands:
   - swiftc
   # {{- end }}
   - syft
-  # {{- if ne . "zsh" }}
-  - system_profiler
-  # {{- end }}
+  - '{{- if ne . "zsh" }}system_profiler{{- end }}'
   - task
   - tea
   - tesseract
   - tinygo
   # {{- if ne . "fish" }}
   - tmutil
+  - tokei
   # {{- end }}
   - tor-browser
   - tor-gencert
@@ -320,9 +319,7 @@ commands:
   - unset-env
   - upx
   # - users
-  # {{- if ne . "zsh" }}
-  - vacuumdb
-  # {{- end }}
+  - '{{- if ne . "zsh" }}vacuumdb{{- end }}'
   - vagrant
   - vault
   # - vdir
@@ -344,8 +341,11 @@ commands:
   - winepath
   - wineserver
   - winetricks
+  - wireshark
   - wrangler
+  - '{{- if ne . "zsh" }}xmllint{{- end }}'
   - xonsh
+  - '{{- if ne . "fish" }}xsv{{- end }}'
   - yarn
   - yarnpkg
   - yay
@@ -354,9 +354,8 @@ commands:
   - yq
   - yt-dlp
   - youtube-dl
+  - '{{- if ne . "fish" }}zig{{- end }}'
   - zopfli
   - zopflipng
   - zoxide
-  # {{- if ne . "zsh" }}
-  - zsh
-  # {{- end }}
+  - '{{- if ne . "zsh" }}zsh{{- end }}'

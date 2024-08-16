@@ -1,4 +1,0 @@
-name: perldoc
-description: Look up Perl documentation
-completion:
-  positionalany: ['$_bridge.Zsh([perldoc])']

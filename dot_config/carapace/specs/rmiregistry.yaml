@@ -1,4 +1,0 @@
-name: rmiregistry
-description: Create and start a remote object registry on the specified port on the current host
-completion:
-  positionalany: ['$_bridge.Zsh([rmiregistry])']

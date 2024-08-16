@@ -1,0 +1,185 @@
+# There's YAML anchors all over the place here to reduce redundant data while
+# still allowing for exhaustive completions. Most subcommands of asdf commands
+# can be run directly, which is... annoying for writing completions.
+name: asdf
+# Don't like this description much
+description: Extendable version manager with support for Ruby, Node.js, Elixir, Erlang & more
+flags:
+  -h, --help: Displays help
+  --version: Displays asdf version
+commands:
+  # This is just a place to put yaml anchors
+  - name: __FAKE_COMMAND_FOR_YAML_ANCHORS__
+    hidden: true
+    completion:
+      positionalany:
+        # Faster than `asdf plugin list`
+        - &plugins $(ls) ||| $chdir(${ASDF_DATA_DIR:-${HOME}/.asdf}/plugins)
+        # faster than `asdf list ${C_ARG0}`
+        - &localversions $(ls) ||| $chdir(${ASDF_DATA_DIR:-${HOME}/.asdf}/installs/${C_ARG0})
+        # this is slow and insecure
+        - &allversions $(asdf list-all ${C_ARG0})
+        # native method to list shims
+        - &shims $files ||| $chdir(${ASDF_DATA_DIR:-${HOME}/.asdf}/shims)
+
+  - name: plugin
+    group: plugins
+    description: Manage plugins
+    commands:
+      - &asdf_plugin_add
+        name: add
+        description: Add a plugin
+        completion:
+          positional:
+            - ['$carapace.tools.asdf.Plugins']
+      - &asdf_plugin_list
+        name: list
+        description: List installed plugins
+        flags:
+          --urls: Show git URLs
+          --refs: Show git refs
+        commands:
+          - &asdf_plugin_list_all
+            name: all
+            description: List all plugins
+      - { <<: *asdf_plugin_list_all, name: list-all, hidden: true }
+      - &asdf_plugin_remove
+        name: remove
+        description: Remove a plugin
+        completion:
+          positional:
+            - [*plugins]
+      - &asdf_plugin_update
+        name: update
+        description: Update plugins
+        flags:
+          --all: Update all plugins
+        completion:
+          positional:
+            - [*plugins]
+  - { <<: *asdf_plugin_add, name: plugin-add, hidden: true }
+  - { <<: *asdf_plugin_list, name: plugin-list, hidden: true }
+  - { <<: *asdf_plugin_list_all, name: plugin-list-all, hidden: true }
+  - { <<: *asdf_plugin_remove, name: plugin-remove, hidden: true }
+  - { <<: *asdf_plugin_update, name: plugin-update, hidden: true }
+
+  - name: current
+    group: packages
+    description: Display version set or being used for package
+    completion:
+      positional:
+        - [*plugins]
+  - name: global
+    group: packages
+    description: Set the package global version
+    completion:
+      positional:
+        - [*plugins]
+        - [latest, system, *localversions]
+  - name: help
+    group: packages
+    description: Output documentation for plugin and tool
+    completion:
+      positional:
+        - [*plugins]
+  - name: install
+    group: packages
+    description: Install a specific version of a package
+    completion:
+      positional:
+        - [*plugins]
+        - [latest, *allversions]
+  - name: latest
+    group: packages
+    description: Show latest stable version of a package
+    flags:
+      --all: Show latest stable version of all packages
+    completion:
+      positional:
+        - [*plugins]
+  - name: list
+    group: packages
+    description: List installed versions of a package
+    commands:
+      - &astf_list_all
+        name: all
+        description: Lists all versions of a package
+        completion:
+          positional:
+            - [*plugins]
+    completion:
+      positional:
+        - [*plugins]
+  - { <<: *astf_list_all, name: list-all }
+  - name: local
+    group: packages
+    description: Set local version for a plugin
+    completion:
+      positional:
+        - [*plugins]
+        - [latest, system, *localversions]
+  - name: shell
+    group: packages
+    description: Set version for a plugin in current shell session
+    completion:
+      positional:
+        - [*plugins]
+        - [latest, system, *localversions]
+  - name: uninstall
+    group: packages
+    description: Remove a specific version of a package
+    completion:
+      positional:
+        - [*plugins]
+        - [*localversions]
+  - name: where
+    group: packages
+    description: Display install path for an installed version
+    completion:
+      positional:
+        - [*plugins]
+        - [*localversions]
+  - name: which
+    group: packages
+    description: Display executable path for a command
+    completion:
+      positional:
+        - [*shims]
+
+  - name: exec
+    group: utils
+    description: Executes the command shim for current version
+    completion:
+      positional:
+        - [*shims]
+  - name: env
+    group: utils
+    description: Runs env in shim environment
+    completion:
+      positional:
+        - [*shims]
+  - name: info
+    group: utils
+    description: Print OS, Shell and ASDF debug information
+  - name: reshim
+    group: utils
+    description: Recreate shims for version of a package
+    completion:
+      positional:
+        - [*plugins]
+        - [*localversions]
+  - name: shim-versions
+    group: utils
+    description: List the plugins and versions that provide a command
+    completion:
+      positional:
+        - [*shims]
+  - name: update
+    group: utils
+    description: Update asdf
+    hidden: true # brew manages installing asdf
+    flags:
+      --head: Updates to master HEAD
+  - name: version
+    group: utils
+    description: Show current version of asdf

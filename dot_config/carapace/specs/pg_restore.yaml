@@ -1,5 +1,0 @@
-# Fish provides built-in completions too
-name: pg_restore
-description: restore a PostgreSQL database from an archive file created by pg_dump
-completion:
-  positionalany: ['$_bridge.Zsh([pg_restore])']

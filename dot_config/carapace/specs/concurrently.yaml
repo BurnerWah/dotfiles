@@ -1,4 +1,0 @@
-name: concurrently
-description: Run commands concurrently
-completion:
-  positionalany: ['$_bridge.Yargs([concurrently])']

@@ -1,0 +1,46 @@
+name: shadowenv
+description: maninpulate environment variables as you change directories
+persistentflags:
+  -h, --help: Prints help information
+  -V, --version: Prints version information
+commands:
+  - name: &diff_name diff
+    description: &diff_desc Display a diff of changed environment variables
+    flags:
+      -n, --no-color: Do not use color to highlight the diff
+      -v, --verbose: Show all environment variables as context to the diff
+  - name: &exec_name exec
+    description: &exec_desc Execute a command after loading the environment from the current directory
+    flags:
+      --dir=: The directory to search for a .shadowenv.d folder in
+  - name: &hook_name hook
+    description: &hook_desc Runs the shell hook. You shouldn't need to run this manually
+    flags:
+      --fish: Format variable assignments for fish shell
+      --force: Force the shadowenv to be applied, even if the working directory has not changed
+      --porcelain: Format variable assignments for machine parsing
+      --json: Format variable assignments as JSON
+      --posix: Format variable assignments for posix shells (default)
+      --pretty-json: Format variable assignments as pretty JSON
+      --silent: Suppress error printing
+      --shellpid=: Rather than looking up the PPID, use this as the shell's pid
+  - name: &init_name init
+    description: &init_desc Prints a script which can be eval'd to set up shadowenv in various shells
+    commands:
+      - name: bash
+        description: Bash setup script
+      - name: fish
+        description: Fish setup script
+      - name: zsh
+        description: Zsh setup script
+  - name: &trust_name trust
+    description: &trust_desc Mark this directory as 'trusted', allowing shadowenv programs to be run
+  - name: &help_name help
+    description: &help_desc Prints help info or the help of the given subcommand(s)
+    commands:
+      - { name: *diff_name, description: *diff_desc }
+      - { name: *exec_name, description: *exec_desc }
+      - { name: *hook_name, description: *hook_desc }
+      - { name: *init_name, description: *init_desc }
+      - { name: *trust_name, description: *trust_desc }
+      - { name: *help_name, description: *help_desc }

@@ -1,0 +1,11 @@
+name: fx
+description: Terminal JSON viewer
+flags:
+  -h, --help: print help
+  -v, --version: print version
+  --themes: print themes
+  -r, --raw: treat input as a raw string
+  -s, --slurp: read all inputs into an array
+completion:
+  positional:
+    - [$files]

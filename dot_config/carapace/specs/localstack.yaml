@@ -1,4 +1,0 @@
-name: localstack
-description: The LocalStack Command Line Interface
-completion:
-  positionalany: ['$_bridge.Click([localstack])']

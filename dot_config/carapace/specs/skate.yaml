@@ -1,6 +1,0 @@
-# Skate doesn't say that it has any completions but it uses cobra so that's
-# not a problem
-name: skate
-description: Personal key value store
-completion:
-  positionalany: ['$_bridge.Cobra([skate])']

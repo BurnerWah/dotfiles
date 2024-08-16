@@ -1,0 +1,52 @@
+name: pkgutil
+description: Query and manipulate Mac OS X Installer packages and receipts
+flags:
+  -h, --help: A brief summary of commands and usage
+  -f, --force: Perform all operations without asking for confirmation
+  -v, --verbose: Show contextual information and format for easy reading
+  --volume=: Perform all operations on the specified volume
+  --edit-pkg=: Adjust properties of package PKGID using --learn PATH
+  --only-files: List only files (not directories) in --files listing
+  --only-dirs: List only directories (not files) in --files listing
+  --regexp: Try all PKGID arguments as regular expressions
+  --packages: List all currently installed package IDs on --volume
+  --pkgs?: List all currently installed package IDs on --volume
+  --pkgs-plist: List all package IDs on --volume in plist format
+  --groups: List all GROUPIDs on --volume
+  --groups-plist: List all GROUPIDs on --volume in plist format
+  --group-pkgs=: List all PKGIDs in GROUPID
+  --files=: List files installed by the specified package
+  --lsbom=: List files in the same format as 'lsbom -s'
+  --pkg-groups=: List all GROUPIDs that PKGID is a member of
+  --export-plist=: Print all info about PKGID in plist format
+  --pkg-info=: Show metadata about PKGID
+  --pkg-info-plist=: Show metadata about PKGID in plist format
+  --file-info=: Show metadata known about PATH
+  --file-info-plist=: Show metadata known about PATH in plist format
+  --forget=: Discard receipt data for the specified package
+  --learn=: Update --edit-pkg PKGID with actual metadata from PATH
+  --expand=: Expand the flat package PKG to DIR # has two args
+  --flatten=: Flatten the files at DIR as PKG # has two args
+  --bom=: Extract any Bom files from the pkg at PATH into /tmp
+  --payload-files=: List the paths archived within the (m)pkg at PATH
+  --check-signature=: Validate the signature of the pkg at PATH and print certificate information
+completion:
+  flag:
+    volume: ['$directories']
+    edit-pkg: [&packages '$(pkgutil --packages)']
+    group-pkgs: [&groups '$(pkgutil --groups)']
+    files: [*packages]
+    lsbom: [*packages]
+    pkg-groups: [*packages]
+    export-plist: [*packages]
+    pkg-info: [*packages]
+    pkg-info-plist: [*packages]
+    file-info: ['$files']
+    file-info-plist: ['$files']
+    forget: [*packages]
+    learn: ['$files([.pkg])']
+    expand: ['$files([.pkg])']
+    flatten: ['$directories']
+    bom: ['$files([.pkg])']
+    payload-files: ['$files([.pkg, .mpkg])']
+    check-signature: ['$files([.pkg, .mpkg])']

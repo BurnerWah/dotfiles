@@ -1,0 +1,116 @@
+7z: fish
+7za: fish
+7zr: fish
+act: cobra # Probably will need a custom spec at some point
+appletviewer: zsh
+buf: cobra
+carapace-bridge: carapace
+carapace-spec-man: carapace
+carapace-spec: carapace
+changie: cobra
+chezmoi: cobra
+cjxl: fish
+clusterdb: zsh
+colima: cobra
+concurrently: yargs
+cookiecutter: click
+createdb: zsh # Fish provides built-in completions too
+crontab: zsh
+cue: cobra
+cwebp: fish
+dasel: cobra
+devcontainer: yargs
+diskutil: fish
+djxl: fish
+dotnet: fish
+dropdb: zsh # Fish provides built-in completions too
+dscacheutil: fish
+dua: fish
+fc-match: zsh # Probably will be replaced by some built-in carapace completion in the future
+ffplay: fish
+ffprobe: fish
+# While a custom spec for this is probably possible to create, I don't think
+# it's worth bothering with right now since fish_indent always comes bundled
+# with fish
+fish_indent: fish
+fish_key_reader: fish
+fly: cobra
+flyctl: cobra
+fs_usage: zsh
+gdbus: fish
+gio: fish
+gitleaks: cobra
+gnutls-cli-debug: zsh
+gnutls-cli: zsh
+gnutls-serv: zsh
+gping: fish
+gresource: fish
+gup: cobra
+initdb: zsh
+javadoc: zsh
+javap: zsh
+jdb: zsh
+jest: yargs # Probably will only be run with npm or something
+keytool: zsh
+kind: cobra
+launchctl: fish
+legit: click
+limactl: cobra
+litecli: click
+localstack: click
+mocha: yargs # Probably will only be run with npm or something
+# Neon provides a completion script, but it's broken and doesn't work in fish
+# It's just using yargs though so carapace can handle it fine
+neon: yargs
+neonctl: yargs
+networksetup: zsh
+npq-hero: yargs # Eventually this should have a custom spec
+npq: yargs # Eventually this should have a custom spec
+# ops completions perform terribly because ops has a really long startup time.
+# this... helps, since we never run ops to generate the completion functions,
+# but it'd be even better if the completions didn't need to run ops as much.
+# that's a project for later though.
+ops: cobra
+perldoc: zsh
+pg_config: zsh
+pg_ctl: zsh
+pg_dump: zsh # Fish provides built-in completions too
+pg_dumpall: zsh # Fish provides built-in completions too
+pg_isready: zsh
+pg_restore: zsh # Fish provides built-in completions too
+pg_upgrade: zsh
+postgres: zsh
+pre-commit: fish # pre-commit uses argparse but the argcomplete bridge doesn't work for it. fish has pre-made completions though.
+pscale: cobra
+psql: zsh
+rakudo: fish
+rclone: cobra # the built-in fish completions for rclone are broken, and while they can be fixed, we may as well get them into carapace so they work in other shells
+reindexdb: zsh
+rmic: zsh
+rmid: zsh
+rmiregistry: zsh
+sam: click # This runs very slooooow but it's the best thing I've got so far
+serialver: zsh
+skate: cobra # Skate doesn't say that it has any completions but it uses cobra so that's not a problem
+softwareupdate: zsh
+sqlite3: zsh
+ssh-add: zsh # I'll switch this to a custom spec later
+ssh-keyscan: zsh # I'll maybe switch this to a custom spec later
+swift: zsh
+swiftc: zsh
+system_profiler: zsh
+tmutil: fish
+tokei: fish
+vacuumdb: zsh
+vincent: carapace
+vt: cobra
+whalebrew: cobra # I don't really expect this to be getting data from docker/podman correctly. If it's not, that's a project for later
+wrangler: yargs
+xmllint: zsh
+xsv: fish
+ykman: click
+yq: cobra
+zfs: fish
+zig: fish
+zpool: fish
+zsh: zsh # This'll probably either get replaced by a built-in carapace completer, or a custom spec

@@ -1,5 +1,0 @@
-# Fish provides built-in completions too
-name: dropdb
-description: remove a PostgreSQL database
-completion:
-  positionalany: ['$_bridge.Zsh([dropdb])']

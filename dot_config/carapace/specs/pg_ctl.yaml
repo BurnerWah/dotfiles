@@ -1,4 +1,0 @@
-name: pg_ctl
-description: initialize, start, stop, or control a PostgreSQL server
-completion:
-  positionalany: ['$_bridge.Zsh([pg_ctl])']

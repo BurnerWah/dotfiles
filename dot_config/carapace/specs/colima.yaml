@@ -1,4 +1,0 @@
-name: colima
-description: Container runtimes on MacOS (and Linux) with minimal setup
-completion:
-  positionalany: ['$_bridge.Cobra([colima])']

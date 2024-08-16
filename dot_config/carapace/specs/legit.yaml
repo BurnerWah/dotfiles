@@ -1,4 +1,0 @@
-name: legit
-description: Git extension for clean, easier to review pull request
-completion:
-  positionalany: ['$_bridge.Click([legit])']

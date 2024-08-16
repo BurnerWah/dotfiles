@@ -1,5 +1,0 @@
-# Fish provides built-in completions too
-name: pg_dump
-description: extract a PostgreSQL database into a script file or other archive file
-completion:
-  positionalany: ['$_bridge.Zsh([pg_dump])']

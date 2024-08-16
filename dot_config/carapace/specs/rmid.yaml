@@ -1,4 +1,0 @@
-name: rmid
-description: Start the RMI Activation System Daemon
-completion:
-  positionalany: ['$_bridge.Zsh([rmid])']

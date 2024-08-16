@@ -1,4 +1,0 @@
-name: buf
-description: A new way of working with Protocol Buffers
-completion:
-  positionalany: ['$_bridge.Cobra([buf])']

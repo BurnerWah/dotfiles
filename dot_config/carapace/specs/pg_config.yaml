@@ -1,4 +1,0 @@
-name: pg_config
-description: retrieve information about the installed version of PostgreSQL
-completion:
-  positionalany: ['$_bridge.Zsh([pg_config])']

@@ -1,4 +1,0 @@
-name: swift
-description: Safe, fast, and expressive general-purpose programming language
-completion:
-  positionalany: ['$_bridge.Zsh([swift])']

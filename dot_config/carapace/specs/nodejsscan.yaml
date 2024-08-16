@@ -1,0 +1,3 @@
+name: nodejsscan
+description: Static analysis tool for finding security vulnerabilities in Node.js applications
+completion: { positionalany: ['$carapace.bridge.CarapaceBin([njsscan])'] }

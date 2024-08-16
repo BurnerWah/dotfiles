@@ -1,4 +1,0 @@
-name: psql
-description: PostgreSQL interactive terminal
-completion:
-  positionalany: ['$_bridge.Zsh([psql])']

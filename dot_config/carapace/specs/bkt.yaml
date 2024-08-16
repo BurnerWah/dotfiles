@@ -15,6 +15,6 @@ flags:
   -V, --version: Print version
 completion:
   flag:
-    env: ['$_env.KnownEnvironmentVariables']
+    env: ['$carapace.env.KnownEnvironmentVariables']
     modtime: ['$files']
     cache-dir: ['$directories']

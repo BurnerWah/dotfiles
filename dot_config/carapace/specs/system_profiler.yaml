@@ -1,4 +1,0 @@
-name: system_profiler
-description: report system hardware and software configuration
-completion:
-  positionalany: ['$_bridge.Zsh([system_profiler])']

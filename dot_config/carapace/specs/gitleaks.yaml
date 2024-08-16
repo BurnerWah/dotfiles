@@ -1,4 +1,0 @@
-name: gitleaks
-description: Audit git repos for secrets
-completion:
-  positionalany: ['$_bridge.Cobra([gitleaks])']

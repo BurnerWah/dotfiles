@@ -1,3 +1,0 @@
-name: neonctl
-description: Neon CLI tool
-completion: { positionalany: ['$_bridge.CarapaceBin([neon])'] }

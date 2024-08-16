@@ -1,4 +1,0 @@
-name: rakudo
-description: Mature, production-ready implementation of the Raku language
-completion:
-  positionalany: ['$_bridge.Fish([rakudo])']

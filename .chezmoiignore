@@ -1,5 +1,6 @@
 # Project Files & Folders
 /README.md
+/Brewfile
 **/.editorconfig
 **/.prettierrc
 **/.prettierrc.*
@@ -33,54 +34,18 @@
 /Virtual Machines.localized
 
 # Application folders & files
-/.config/configstore
-/.config/postybirb
-/.config/postybirb-plus
-/.config/Bootstrap Studio
-/.config/Cypress
-/.config/1Password
-/.config/Mullvad VPN
-/.config/bstudio
-/.config/vscode-sqltools
-/.config/evolution
-/.config/gnome-boxes
-/.config/gnome-initial-setup-done
-/.config/gnome-session
-/.config/gsconnect
-/.config/itch
-/.config/libvirt
-/.config/ookla
-/.config/Code
-/.config/pulse
-/.config/kera-desktop
-/.config/goa-1.0
-/.config/monitors.xml
-/.config/monitors.xml~
-/.config/user-share
-/.config/ibus
-/.config/flutter
-/.config/gatsby
-/.config/JetBrains
-/.config/MusicBrainz
-/.config/nodemon.json
-/.config/op
-/.config/raycast
-/.config/tabtab
-/.cups
-/.dart
-/.dart-tool
-/.dotnet
-/.fleet
-/.fly
-/.hawtjni
-/.inshellisense
-/.mono
-/.nuget
-/.redhat
-/.sonarlint
-/.swiftpm
-/.vscode
-/.warp
+{{ range ((includeTemplate "chezmoi/ignore.yaml" | fromYaml).dotfiles | compact) }}
+/.{{ . }}
+{{- end }}
+{{ range ((includeTemplate "chezmoi/ignore.yaml" | fromYaml).xdg.config | compact) }}
+/.config/{{ . }}
+{{- end }}
+{{ range ((includeTemplate "chezmoi/ignore.yaml" | fromYaml).darwin.library | compact) }}
+/Library/{{ . }}
+{{- end }}
+{{ range ((includeTemplate "chezmoi/ignore.yaml" | fromYaml).darwin.appsupport | compact) }}
+/Library/Application Support/{{ . }}
+{{- end }}
 
 # Stuff chezmoi shouldn't mess with
 /.nix-defexpr
@@ -88,6 +53,10 @@
 
 # Other stuff
 **/.DS_Store
+**/.localized
+**/.ACCC_Lock
+**/.ADCS_Lock
+**/.CCH_UPI_Lock
 
 # OS-Specific exclusions
 {{- if ne .chezmoi.os "linux" }}
@@ -108,6 +77,16 @@
 /.config/fish/functions/lspci.fish
 /.config/fish/functions/pidstat.fish
 /.config/fish/functions/sar.fish
+/.config/fish/functions/ss.fish
 /.config/fish/functions/vmstat.fish
 /.config/fish/functions/xdg-open.fish
+{{- end }}
+{{- if ne .chezmoi.os "darwin" }}
+.chezmoiscripts/darwin/**
+/Library
+/.config/homebrew
+/.config/karabiner
+/.config/iterm2
+/.config/fish/conf.d/darwin.fish
+/.config/fish/conf.d/iterm2.fish
 {{- end }}

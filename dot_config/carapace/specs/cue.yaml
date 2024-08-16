@@ -1,4 +1,0 @@
-name: cue
-description: Validate and define text-based and dynamic configuration
-completion:
-  positionalany: ['$_bridge.Cobra([cue])']

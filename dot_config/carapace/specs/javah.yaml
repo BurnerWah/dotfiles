@@ -19,6 +19,6 @@ completion:
   flag:
     o: ['$files']
     d: ['$directories']
-    classpath: ['$_bridge.Zsh([javah])'] # This is a sequence
-    bootclasspath: ['$_bridge.Zsh([javah])'] # This is a sequence
-  positionalany: ['$_bridge.Zsh([javah])']
+    classpath: ['$carapace.bridge.Zsh([javah])'] # This is a sequence
+    bootclasspath: ['$carapace.bridge.Zsh([javah])'] # This is a sequence
+  positionalany: ['$carapace.bridge.Zsh([javah])']

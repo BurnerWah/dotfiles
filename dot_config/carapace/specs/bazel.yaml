@@ -1,0 +1,5 @@
+name: bazel
+aliases: [bazelisk]
+description: A fast, scalable, multi-language and extensible build system
+completion:
+  positionalany: ['$carapace.bridge.Inshellisense([bazel])']

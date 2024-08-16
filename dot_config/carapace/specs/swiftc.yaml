@@ -1,4 +1,0 @@
-name: swiftc
-description: Swift compiler
-completion:
-  positionalany: ['$_bridge.Zsh([swiftc])']

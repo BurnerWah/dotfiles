@@ -1,0 +1,12 @@
+name: dark-mode
+description: Control the macOS dark mode from the command-line
+flags:
+  --help: show help
+  --version: show version
+commands:
+  - name: on
+    description: Turn on dark mode
+  - name: off
+    description: Turn off dark mode
+  - name: status
+    description: Print the current dark mode status

@@ -1,8 +1,0 @@
-# ops completions perform terribly because ops has a really long startup time.
-# this... helps, since we never run ops to generate the completion functions,
-# but it'd be even better if the completions didn't need to run ops as much.
-# that's a project for later though.
-name: ops
-description: Build and run Nanos Unikernels
-completion:
-  positionalany: ['$_bridge.Cobra([ops])']

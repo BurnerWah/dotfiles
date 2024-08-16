@@ -1,10 +1,3 @@
---map-syntax **/share/flatpak/overrides/*:INI
---map-syntax *.csproj:XML
---map-syntax *.jenkins:Groovy
---map-syntax *.nuspec:XML
---map-syntax *.resx:XML
---map-syntax *.rockspec:Lua
---map-syntax *.vssettings:XML
 --map-syntax .busted:Lua
 --map-syntax .clang-format:YAML
 --map-syntax .clang-tidy:YAML
@@ -22,8 +15,31 @@
 --map-syntax .oclint:YAML
 --map-syntax .prettierignore:INI
 --map-syntax .pylintrc:INI
+--map-syntax .shellcheckrc:INI
 --map-syntax .tcelldb:JSON
 --map-syntax .vscodeignore:'Git Ignore'
+--map-syntax *.csproj:XML
+--map-syntax *.godeps:JSON
+--map-syntax *.jenkins:Groovy
+--map-syntax *.nuspec:XML
+--map-syntax *.resx:XML
+--map-syntax *.rockspec:Lua
+--map-syntax *.thumbnailer:INI
+--map-syntax *.vcxproj:XML
+--map-syntax *.vcxproj.filters:XML
+--map-syntax *.vjson:JSON
+--map-syntax *.jsonc:JSON
+--map-syntax *.vmanifest:JSON
+--map-syntax *.vssettings:XML
+--map-syntax *.vyml:YAML
+--map-syntax **/.config/copr:INI
+--map-syntax **/.config/litecli/config:INI
+--map-syntax **/.config/neofetch/config.conf:'Bourne Again Shell (bash)'
+--map-syntax **/.config/pipewire/media-session.d/*:JSON
+--map-syntax **/.config/yamllint/config:YAML
+--map-syntax **/.config/zsh/functions/*:'Bourne Again Shell (bash)'
+--map-syntax **/share/flatpak/overrides/*:INI
+--map-syntax **/site-packages/*.pth:Python
 --map-syntax /etc/appstream.conf:INI
 --map-syntax /etc/group-:group
 --map-syntax /etc/koji.conf:INI
@@ -33,17 +49,19 @@
 --map-syntax /etc/vconsole.conf:'Bourne Again Shell (bash)'
 --map-syntax /etc/vimrc:VimL
 --map-syntax /etc/virc:VimL
---map-syntax /home/*/.config/copr:INI
---map-syntax /home/*/.config/pipewire/media-session.d/*:JSON
---map-syntax /home/*/.config/yamllint/config:YAML
+--map-syntax /opt/homebrew/Cellar/*/*/share/zsh/site-functions/*:'Bourne Again Shell (bash)'
+--map-syntax /opt/homebrew/Cellar/bash-completion/*/etc/bash_completion.d/*:'Bourne Again Shell (bash)'
+--map-syntax /opt/homebrew/etc/bash_completion.d/*:'Bourne Again Shell (bash)'
+--map-syntax /opt/homebrew/etc/dbus-1/*.conf:XML
+--map-syntax /opt/homebrew/share/zsh-completions/*:'Bourne Again Shell (bash)'
+--map-syntax /opt/homebrew/share/zsh/site-functions/*:'Bourne Again Shell (bash)'
 --map-syntax /proc/*/mounts:fstab
 --map-syntax /proc/mounts:fstab
---map-syntax BSDmakefile:Makefile
---map-syntax QtProject.conf:INI
---map-syntax ReText.conf:INI
---map-syntax Trolltech.conf:INI
+--map-syntax /usr/share/zsh/*/functions/*:'Bourne Again Shell (bash)'
 --map-syntax anacrontab:Crontab
+--map-syntax bash_completion:'Bourne Again Shell (bash)'
 --map-syntax bashrc:'Bourne Again Shell (bash)'
+--map-syntax BSDmakefile:Makefile
 --map-syntax conf:INI
 --map-syntax dleyna-server-service.conf:INI
 --map-syntax fprintd.conf:INI
@@ -64,6 +82,8 @@
 --map-syntax monoconfig:XML
 --map-syntax nfs.conf:INI
 --map-syntax proselintrc:JSON
+--map-syntax QtProject.conf:INI
+--map-syntax ReText.conf:INI
 --map-syntax rpkg.conf:INI
 --map-syntax rsyncd.conf:INI
 --map-syntax rygel.conf:INI
@@ -72,6 +92,7 @@
 --map-syntax thumbnailer:INI
 --map-syntax timer:INI
 --map-syntax touchegg.conf:XML
+--map-syntax Trolltech.conf:INI
 --map-syntax vlcrc:INI
 --map-syntax zlogin:'Bourne Again Shell (bash)'
 --map-syntax zlogout:'Bourne Again Shell (bash)'

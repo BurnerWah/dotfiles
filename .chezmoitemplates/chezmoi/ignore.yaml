@@ -1,0 +1,287 @@
+# Describes a lot of stuff to ignore in a more structured form
+xdg:
+  config:
+    - .semgrep
+    - 1Password
+    - Bootstrap Studio
+    - bstudio
+    - carapace/bridge/zsh/.zcompdump_capture
+    - Code
+    - configstore
+    - Cypress
+    - evolution
+    - flutter
+    - gatsby
+    - github-copilot
+    - gnome-boxes
+    - gnome-initial-setup-done
+    - gnome-session
+    - goa-1.0
+    - gsconnect
+    - ibus
+    - itch
+    - JetBrains
+    - kera-desktop
+    - libvirt
+    - monitors.xml*
+    - Mullvad VPN
+    - MusicBrainz
+    - nodemon.json
+    - ookla
+    - op
+    - postybirb
+    - postybirb-plus
+    - pulse
+    - raycast
+    - tabtab
+    - user-share
+    - vscode-sqltools
+    - zsh/.zcompdump
+darwin:
+  appsupport:
+    - '*.padl'
+    - '*.spadl'
+    - '*.data'
+    - com.*
+    - dev.*
+    - io.*
+    - net.*
+    - org.*
+    - 1Password
+    - AddressBook
+    - Adobe
+    - Animoji
+    - App Store
+    - Arc
+    - atuin
+    - Automator
+    - Bartender
+    - bash-completion
+    - BetterDisplay
+    - BetterTouchTool
+    - Blender
+    - Bootstrap Studio
+    - bstudio
+    - Caches
+    - CallHistoryDB
+    - CallHistoryTransactions
+    - CEF
+    - charm
+    - chezmoi # Chezmoi repo
+    - Chromium
+    - CleanMyMac*
+    - CleanShot
+    - CloudDocs
+    - CMakeTools
+    - cod
+    - Code
+    - Codux
+    - Compressor
+    - ConfigurationProfiles
+    - CrashReporter
+    - cups
+    - Cypress
+    - Dash
+    - Deskreen
+    - DiskImages
+    - Dock
+    - FaceTime
+    - Figma # who the hell is steve jobs?
+    - FileProvider
+    - Final Cut Pro
+    - Firefox
+    - fish
+    - fisher
+    - fnm
+    - frum
+    - gem
+    - go
+    - Google
+    - google-heartbeat-storage
+    - gops
+    - heroku
+    - homeenergyd
+    - HTTPie
+    - icdd
+    - iCloud
+    - iLifeMediaBrowser
+    - Instruments
+    - IsolatedStorage
+    - itch
+    - itch-setup
+    - iTerm2
+    - JetBrains
+    - Knowledge
+    - kpeoplevcard
+    - krita*
+    - LibreOffice
+    - Logitech
+    - Lunar
+    - Microsoft
+    - Microsoft Edge*
+    - Microsoft Visual Studio
+    - Mission Control Plus
+    - Motion
+    - Mozilla
+    - networkserviceproxy
+    - NuGet
+    - Numi
+    - nupm
+    - nushell/history.*
+    - NVIDIA
+    - NVIDIA Corporation
+    - nvim
+    - obs-studio
+    - obsidian
+    - omnisharp
+    - ops
+    - pnpm
+    - Podman Desktop
+    - PopClip
+    - Postman
+    - powershell
+    - ProApps
+    - quarto*
+    - RefSrcSymbols
+    - spacedrive
+    - Steam
+    - Stellarium
+    - Sublime Text
+    - SymbolSourceSymbols
+    - Syncthing
+    - Telegram Desktop
+    - TorBrowser-Data
+    - Transmission
+    - turborepo
+    - UninstallPKG
+    - Valve Corporation
+    - VencordDesktop
+    - videosubscriptionsd
+    - Vivaldi
+    - VMware Fusion*
+    - volta
+    - vscode-sqltools
+    - Wave
+    - Xcode
+    - xonsh
+    - yarn
+    - zoom.us
+    - zoxide
+  library:
+    - Accounts
+    - AppleMediaServices
+    - Application Scripts
+    - asdf
+    - Assistant
+    - Assistants
+    - Audio # No idea how to include this in dotfiles
+    - Autosave Information
+    - Biome
+    - Caches
+    - Calendars
+    - CallServices
+    - CloudStorage
+    - ColorPickers # Probably managed by homebrew
+    - Colors
+    - com.apple.*
+    - Compositions
+    - Contacts
+    - ContainerManager
+    - Containers
+    - Cookies
+    - CoreFollowUp
+    - Daemon Containers
+    - DataAccess
+    - DataDeliveryServices
+    - DES # DevSkim: ignore DS106863
+    - Developer
+    - Dictionaries # Probably managed by homebrew
+    - DoNotDisturb
+    - DuetExpertCenter
+    - Favorites
+    - Finance
+    - Fonts # Mostly managed by homebrew
+    - FontCollections
+    - FrontBoard
+    - GameKit
+    - Google
+    - Group Containers
+    - GroupContainersAlias
+    - HomeKit
+    - HTTPStorages
+    - IdentityServices
+    - Input Methods # Probably managed by homebrew
+    - IntelligencePlatform
+    - Intents
+    - Internet Plug-Ins # Probably managed by homebrew
+    - Jupyter
+    - Keyboard
+    - Keyboard Layouts # Probably managed by homebrew
+    - KeyboardServices
+    - Keychains
+    - LanguageModeling
+    - LockdownMode
+    - Logs
+    - Mail
+    - Messages
+    - Metadata
+    - Mobile Documents
+    - Mozilla
+    - News
+    - NGL
+    - org.swift.swiftpm
+    - Passes
+    - PDF Services
+    - PreferencePanes # Probably managed by homebrew
+    - PersonalizationPortrait
+    - Photos
+    - pipx
+    - Printers
+    - Python
+    - QuickLook # Mostly managed by homebrew
+    - Reminders
+    - Safari
+    - SafariSafeBrowsing
+    - SafariSandboxBroker
+    - Saved Application State
+    - Screen Savers # Probably managed by homebrew
+    - ScreenRecordings
+    - Scripts
+    - Services # Mostly managed by homebrew & apps
+    - Sharing
+    - Shortcuts
+    - Sounds
+    - Speech
+    - Spelling
+    - Staging
+    - StatusKit
+    - studentd
+    - Suggestions
+    - SyncedPreferences
+    - Thunderbird
+    - Translation
+    - Trial
+    - UnifiedAssetFramework
+    - virtualenvs
+    - Weather
+    - WebKit
+    - Workflows
+dotfiles:
+  - cups # Caused by Mac OS
+  - dart
+  - dart-tool
+  - dotnet
+  - fleet
+  - fly # Can't be prevented on Mac OS
+  - hawtjni # Not sure what causes this
+  - inshellisense
+  - mono
+  - netrc
+  - nuget
+  - redhat # Caused by VSCode extension
+  - ServiceHub
+  - sonarlint # Caused by VSCode extension
+  - swiftpm
+  - templateengine
+  - vscode
+  - warp

@@ -1,4 +1,0 @@
-name: yq
-description: Process YAML, JSON, XML, CSV and properties documents from the CLI
-completion:
-  positionalany: ['$_bridge.Cobra([yq])']

@@ -1,4 +1,0 @@
-name: initdb
-description: create a new PostgreSQL database cluster
-completion:
-  positionalany: ['$_bridge.Zsh([initdb])']

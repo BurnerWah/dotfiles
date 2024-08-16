@@ -1,6 +1,0 @@
-# This'll probably either get replaced by a built-in carapace completer, or a
-# custom spec
-name: zsh
-description: The Z shell
-completion:
-  positionalany: ['$_bridge.Zsh([zsh])']

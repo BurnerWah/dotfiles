@@ -1,4 +1,0 @@
-name: kind
-description: Kubernetes IN Docker - local clusters for testing Kubernetes
-completion:
-  positionalany: ['$_bridge.Cobra([kind])']

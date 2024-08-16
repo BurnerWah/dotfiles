@@ -1,4 +1,0 @@
-name: javadoc
-description: Generate Java API documentation in HTML format from source code
-completion:
-  positionalany: ['$_bridge.Zsh([javadoc])']

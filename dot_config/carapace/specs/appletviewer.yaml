@@ -1,4 +1,0 @@
-name: appletviewer
-description: Run a Java applet/application from the command line
-completion:
-  positionalany: ['$_bridge.Zsh([appletviewer])']

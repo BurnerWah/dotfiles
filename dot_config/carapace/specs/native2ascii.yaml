@@ -1,6 +1,14 @@
-# Fish also has a built-in completion for this, but I would like things the
-# sources of completions to be consistent for carapace
+# Based on fish & zsh completions
 name: native2ascii
 description: Convert files from native-encoded to ASCII-encoding
+flags:
+  -reverse: Perform the reverse operation
+  -encoding=: Specifies the name of the character encoding
 completion:
-  positionalany: ['$_bridge.Zsh([native2ascii])']
+  positional:
+    - ['$files']
+    - ['$files']
+  flag:
+    encoding:
+      - $carapace.text.Encodings
+      # - $carapace.bridge.Zsh([native2ascii]) # Has more encodings

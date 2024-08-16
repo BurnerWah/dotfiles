@@ -1,4 +1,0 @@
-name: crontab
-description: maintain crontab files for individual users
-completion:
-  positionalany: ['$_bridge.Zsh([crontab])']

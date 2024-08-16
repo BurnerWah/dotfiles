@@ -1,4 +1,0 @@
-name: wrangler
-description: A CLI tool for managing Cloudflare Workers
-completion:
-  positionalany: ['$_bridge.Yargs([wrangler])']
