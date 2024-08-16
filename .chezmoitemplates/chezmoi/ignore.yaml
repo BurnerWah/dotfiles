@@ -266,20 +266,36 @@ darwin:
     - Weather
     - WebKit
     - Workflows
+
 dotfiles:
+  - 1password
+  - affinity
+  - android
+  - bash_history
+  - chocolatey
   - cups # Caused by Mac OS
   - dart
   - dart-tool
+  - dbus-keyrings
   - dotnet
   - fleet
   - fly # Can't be prevented on Mac OS
   - hawtjni # Not sure what causes this
   - inshellisense
+  - insomniac
+  - lesshst
+  - m2
+  - matplotlib
+  - minikube
   - mono
   - netrc
+  - node_repl_history
   - nuget
+  - nvidia-omniverse
+  - omnisharp # Caused by VSCode extension
   - redhat # Caused by VSCode extension
   - ServiceHub
+  - shiv # Some python thing
   - sonarlint # Caused by VSCode extension
   - swiftpm
   - templateengine

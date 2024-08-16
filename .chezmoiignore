@@ -16,22 +16,40 @@
 /.thumbnails
 /.cache
 /Applications
+/Application Data
+/3D Objects
+/Contacts
+/Cookies
 /Creative Cloud Files
 /Desktop
 /Documents
 /Downloads
+/Favorites
 /Games
-/Music
+/Links
+/Local Settings
 /Movies
+/Music
+/My Documents
+/NetHood
 /OneDrive
 /Pictures
+/PrintHood
 /Projects
 /Public
+/Recent
+/Recorded Calls
+/Saved Games
+/Searches
+/SendTo
+/Start Menu
 /Sync
 /Templates
 /Vaults
 /Videos
 /Virtual Machines.localized
+/NTUSER.*
+/ntuser.*
 
 # Application folders & files
 {{ range ((includeTemplate "chezmoi/ignore.yaml" | fromYaml).dotfiles | compact) }}
@@ -46,10 +64,6 @@
 {{ range ((includeTemplate "chezmoi/ignore.yaml" | fromYaml).darwin.appsupport | compact) }}
 /Library/Application Support/{{ . }}
 {{- end }}
-
-# Stuff chezmoi shouldn't mess with
-/.nix-defexpr
-/.nix-profile
 
 # Other stuff
 **/.DS_Store
@@ -89,4 +103,13 @@
 /.config/iterm2
 /.config/fish/conf.d/darwin.fish
 /.config/fish/conf.d/iterm2.fish
+{{- end }}
+{{- if eq .chezmoi.os "windows" }}
+/.config/carapace
+/.config/fish
+/.config/nushell
+/.config/rainbow
+/.config/starship.toml
+/.config/yt-dlp
+/.config/zsh
 {{- end }}
