@@ -292,6 +292,7 @@ dotfiles:
   - dotnet
   - fleet # JetBrains
   - fly # Can't be prevented on Mac OS
+  - gradle
   - hawtjni # Not sure what causes this
   - inshellisense
   - insomniac
@@ -309,6 +310,7 @@ dotfiles:
   - ServiceHub
   - shiv # Some python thing
   - sonarlint # VSCode extension
+  - sqlite_history
   - swiftpm
   - templateengine
   - thumbnails # Blender mostly

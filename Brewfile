@@ -164,10 +164,13 @@ cask "1password"
 cask "1password-cli"
 cask "alt-tab"
 cask "apparency" # inspects app bundles + quicklook extension
+cask "aqua"
 cask "background-music" # volume mixer
 cask "bettertouchtool" # trackpad settings
 cask "blender"
 cask "bootstrap-studio"
+cask "dataspell"
+cask "datagrip"
 cask "dotnet-sdk"
 cask "eloston-chromium" # ungoogled chromium
 cask "eul" # system monitor
@@ -181,22 +184,30 @@ cask "font-jetbrains-mono"
 cask "font-jetbrains-mono-nerd-font"
 cask "font-monaspace"
 cask "font-monaspace-nerd-font"
+cask "goland"
 cask "handbrake" # encoder
 cask "hazeover" # dims windows that aren't focused
 cask "httpie"
 cask "iina" # video player
+cask "intellij-idea"
+cask "iterm2"
 cask "jetbrains-toolbox"
 cask "karabiner-elements" # keyboard remapper
 cask "kitty" # terminal emulator
+cask "launchpad-manager"
 cask "lulu" # firewall
 cask "menuwhere" # access menubar via cmd+right click
 cask "moonlight" # local game streaming
 cask "obs" # streaming & recording
 cask "obsidian" # note taking
+cask "phpstorm"
 cask "podman-desktop"
 cask "postico" # postgres client
+cask "pycharm"
 cask "raycast" # spotlight replacement
 cask "rectangle" # window management
+cask "rider"
+cask "rubymine"
 cask "signal"
 cask "soduto" # kde connect
 cask "swift-quit" # quit apps by closing them
@@ -205,6 +216,7 @@ cask "tower" # git client
 cask "unnaturalscrollwheels" # needed to mitigate mac os mouse misbehavior
 cask "visual-studio-code"
 cask "vmware-fusion" # virtualization
+cask "webstorm"
 cask "whisky" # WINE gui
 
 # App store apps
