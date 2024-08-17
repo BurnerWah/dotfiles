@@ -13,6 +13,7 @@
     "dot_zshrc": "shellscript",
     "dot_bashrc": "shellscript",
     "*.sh.tmpl": "shellscript",
+    "*.zsh.tmpl": "shellscript",
     "**/dot_config/bat/config": "plaintext",
     "*.ps1.tmpl": "powershell"
   },
