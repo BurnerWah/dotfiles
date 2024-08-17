@@ -40,6 +40,10 @@ chassis = "{{ $chassisType }}"
 [diff]
 command = "delta"
 
+[edit]
+command = "code"
+args = ["--wait"]
+
 [[textconv]]
 pattern = "**/*.plist"
 command = "plutil"
