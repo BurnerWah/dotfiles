@@ -20,7 +20,8 @@
   "go-template.patterns": [
     "**/*.tmpl",
     "**/.chezmoiignore",
-    "**/.chezmoitemplates/**/*"
+    "**/.chezmoitemplates/**/*",
+    "**/.chezmoidata/**/*"
   ],
   "prettier.semi": false,
   "prettier.singleQuote": true,

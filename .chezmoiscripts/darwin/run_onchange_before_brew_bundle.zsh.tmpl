@@ -1,9 +1,0 @@
-#!/usr/bin/env zsh
-
-# This installs programs described in the Brewfile
-# Brewfile hash: {{ include "Brewfile" | sha256sum }}
-
-# Don't auto update as that takes a fair bit
-export HOMEBREW_NO_AUTO_UPDATE=1
-
-brew bundle --no-lock --no-upgrade --file {{ joinPath .chezmoi.sourceDir "Brewfile" | quote }}
