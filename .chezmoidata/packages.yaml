@@ -32,5 +32,6 @@ packages:
       - main/scoop-search
       - main/tealdeer
       - main/uutils-coreutils
+      - main/winget-ps
       - main/yt-dlp
       - main/zoxide
