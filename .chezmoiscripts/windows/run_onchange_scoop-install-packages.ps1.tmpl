@@ -1,0 +1,4 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{ range .packages.windows.scoop }}
+scoop install # {{ . | quote }}
+# {{ end }}

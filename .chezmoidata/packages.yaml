@@ -1,0 +1,36 @@
+packages:
+  windows:
+    scoop:
+      - extras/carapace-bin
+      - extras/processhacker
+      - extras/regeditor
+      - extras/scoop-completion
+      - extras/shutup10
+      - games/lime3ds
+      - games/ryujinx
+      - games/steam-rom-manager
+      - main/1password-cli
+      - main/bat
+      - main/chezmoi
+      - main/curl
+      - main/delta
+      - main/doggo
+      - main/exercism
+      - main/exiftool
+      - main/eza
+      - main/fd
+      - main/flyctl
+      - main/fzf
+      - main/gh
+      - main/hyperfine
+      - main/jdupes
+      - main/kondo
+      - main/less
+      - main/mercurial
+      - main/oh-my-posh
+      - main/ripgrep
+      - main/scoop-search
+      - main/tealdeer
+      - main/uutils-coreutils
+      - main/yt-dlp
+      - main/zoxide
