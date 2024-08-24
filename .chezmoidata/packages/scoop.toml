@@ -66,3 +66,17 @@ scoop = [
     { name = "yt-dlp" },
     { name = "zoxide" },
 ]
+
+# Buckets aren't handled by my scripts yet
+[[packages.windows.buckets]]
+name = "extras"
+
+[[packages.windows.buckets]]
+name = "versions"
+
+[[packages.windows.buckets]]
+name = "games"
+
+[[packages.windows.buckets]]
+name = "xrtools"
+source = "https://github.com/babo4d/scoop-xrtools"
