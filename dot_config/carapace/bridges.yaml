@@ -48,6 +48,7 @@ gping: fish
 gresource: fish
 gup: cobra
 initdb: zsh
+istioctl: cobra
 javadoc: zsh
 javap: zsh
 jdb: zsh
@@ -68,6 +69,7 @@ neonctl: yargs
 networksetup: zsh
 npq-hero: yargs # Eventually this should have a custom spec
 npq: yargs # Eventually this should have a custom spec
+oc: cobra
 oh-my-posh: cobra
 op: cobra
 # ops completions perform terribly because ops has a really long startup time.
@@ -83,6 +85,7 @@ pg_dumpall: zsh # Fish provides built-in completions too
 pg_isready: zsh
 pg_restore: zsh # Fish provides built-in completions too
 pg_upgrade: zsh
+pipenv: click
 postgres: zsh
 pre-commit: fish # pre-commit uses argparse but the argcomplete bridge doesn't work for it. fish has pre-made completions though.
 pscale: cobra
