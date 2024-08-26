@@ -117,6 +117,7 @@ $env.ENV_CONVERSIONS = {
     DO_NOT_TRACK: $convert_env.setbool
     GHCUP_USE_XDG_DIRS: $convert_env.setbool
     GIT_CONFIG_NOSYSTEM: $convert_env.intbool
+    INFOPATH: $convert_env.paths
     KITTY_PID: $convert_env.int
     KITTY_WINDOW_ID: $convert_env.int
     MallocNanoZone: $convert_env.int
