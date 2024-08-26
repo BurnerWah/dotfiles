@@ -27,7 +27,7 @@
   "prettier.singleQuote": true,
   "prettier.trailingComma": "all",
   "yaml.schemas": {
-    "dot_config/carapace/executable_schema.json": [
+    "https://carapace.sh/schemas/command.json": [
       "dot_config/carapace/specs/*.yaml",
       "dot_config/carapace/overlays/*.yaml"
     ]
