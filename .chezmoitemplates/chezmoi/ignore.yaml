@@ -276,6 +276,7 @@ windows:
     roaming:
       - bat
       - carapace
+      - elvish
 
 dotfiles:
   - 1password
