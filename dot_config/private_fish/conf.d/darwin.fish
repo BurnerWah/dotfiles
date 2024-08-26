@@ -3,10 +3,12 @@
 set -gx XDG_RUNTIME_DIR $TMPDIR
 
 if status is-interactive
-    if command -qs brew
-        set -l HB_CNF_HANDLER (brew --repository)"/Library/Taps/homebrew/homebrew-command-not-found/handler.fish"
-        if test -f $HB_CNF_HANDLER
-            source $HB_CNF_HANDLER
-        end
+    and command -qs brew
+    # Skip running `brew --repository` if we already know what it should output
+    [ -n "$HOMEBREW_REPOSITORY" ] || set -l HOMEBREW_REPOSITORY (brew --repository)
+
+    set -l HB_CNF_HANDLER "$HOMEBREW_REPOSITORY/Library/Taps/homebrew/homebrew-command-not-found/handler.fish"
+    if test -f $HB_CNF_HANDLER
+        source $HB_CNF_HANDLER
     end
 end
