@@ -33,6 +33,10 @@ persist = "{{ .chezmoi.homeDir }}/scoop/persist"
 command = "pwsh"
 args = ["-NoLogo", "-NonInteractive", "-NoProfile"]
 
+[interpreters.elv]
+command = "elvish"
+args = ["-norc"]
+
 [data.device]
 # can be "laptop", "desktop", "convertible", "server", "tablet", "handset", "watch", "embedded", "vm", or "container"
 chassis = "{{ $chassisType }}"
