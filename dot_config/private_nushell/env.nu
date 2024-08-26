@@ -138,14 +138,15 @@ $env.ENV_CONVERSIONS = {
     XDG_DATA_DIRS: $convert_env.paths
 }
 
-$env.NUPM_HOME = ($env.XDG_DATA_HOME | path join "nupm")
+# I need to sort out a better way of loading nupm
+# $env.NUPM_HOME = ($env.XDG_DATA_HOME | path join "nupm")
 
 # Directories to search for scripts when calling source or use
 $env.NU_LIB_DIRS = [
     # FIXME: This default is not implemented in rust code as of 2023-09-06.
     ($nu.default-config-dir | path join 'scripts') # add <nushell-config-dir>/scripts
-    ($env.XDG_CONFIG_HOME | path join "nushell/modules")
-    ($env.NUPM_HOME | path join "modules")
+    ($nu.default-config-dir | path join 'modules')
+    # ($env.NUPM_HOME | path join "modules")
 ]
 
 # Directories to search for plugin binaries when calling register
