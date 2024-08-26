@@ -1,0 +1,5 @@
+variables:
+  DO_NOT_TRACK: Request programs do not track you
+completion:
+  variable:
+    DO_NOT_TRACK: ["1\tenabled\tgreen"]

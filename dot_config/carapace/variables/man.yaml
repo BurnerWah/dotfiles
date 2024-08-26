@@ -1,0 +1,7 @@
+variables:
+  MANPAGER: the pager for man
+  MANCOLOR: enable colors
+completion:
+  variable:
+    MANPAGER: ['$executables']
+    MANCOLOR: ['1\tenabled\tgreen']
