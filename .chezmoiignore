@@ -69,7 +69,6 @@
 /.config/fish
 /.config/nushell
 /.config/rainbow
-/.config/starship.toml
 /.config/yt-dlp
 /.config/zsh
 !/Documents
