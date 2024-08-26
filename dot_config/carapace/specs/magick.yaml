@@ -1,0 +1,362 @@
+# In-dev spec
+# Based on fish & zsh completions
+# A lot of the anchroing will be simplified later once I already have an exhaustive list of flags
+name: magick
+description: ImageMagick is a software suite to create, edit, compose, or convert bitmap images.
+persistentflags:
+  -debug=: display copious debugging information
+  -help: print program options
+  -list=: print a list of supported option arguments
+  -log=: format of debugging information
+  -version: print version information
+flags:
+  -usage: detailed usage information
+completion:
+  flag: &common_completion_flags
+    list: [$(magick -list List)]
+    debug: [$(magick -list Debug)]
+    # Everything past here is just for sharing common completions
+
+    alpha: [$(magick -list Alpha)]
+    channel: [$(magick -list Channel)]
+    colorspace: &Colorspace [$(magick -list Colorspace)]
+    compress: [$(magick -list Compress)]
+    direction: [$(magick -list Direction)]
+    dispose: [$(magick -list Dispose)]
+    distort: [$(magick -list Distort)]
+    dither: [$(magick -list Dither)]
+    endian: [$(magick -list Endian)]
+    filter: &Filter [$(magick -list Filter)]
+    function: [$(magick -list Function)]
+    gravity: [$(magick -list Gravity)]
+    intent: [$(magick -list Intent)]
+    interlace: [$(magick -list Interlace)]
+    interpolate: [$(magick -list Interpolate)]
+    layers: [$(magick -list Layers)]
+    morphology: [$(magick -list Morphology)]
+    orient: [$(magick -list Orient)]
+    preview: [$(magick -list Preview)]
+    process: *Filter
+    quantize: *Colorspace
+    sparse-color: [$(magick -list SparseColor)]
+    statistic: [$(magick -list Statistic)]
+    stretch: [$(magick -list Stretch)]
+    style: [$(magick -list Style)]
+    type: [$(magick -list Type)]
+    units: [$(magick -list Units)]
+    virtual-pixel: [$(magick -list VirtualPixel)]
+
+    __FAKE_FLAG_FILES__: &files [$files]
+
+    decipher: *files
+    encipher: *files
+
+commands:
+  - name: animate
+    description: animates an image sequence on any X server.
+    flags:
+      -alpha=: &d_alpha control alpha/matte channel of an image
+      -authenticate=: &d_authenticate decrypt image with this password
+      -backdrop: display the image centered on a backdrop
+      -channel=: &d_channel apply option to select image channels
+      -colormap=: Shared or Private
+      -colorspace=: &d_colorspace alternate image colorspace
+      -decipher=: &d_decipher convert cipher pixels to plain pixels
+      -define=: &d_define define one or more image format options
+      -delay=: &d_delay display the next image after pausing
+      -density=: &d_density horizontal and vertical resolution in pixels of the image
+      -depth=: &d_depth image depth
+      -display=: &d_display Get image or font from this X server [server]
+      -dispose=: &d_dispose layer disposal method
+      -dither=: &d_dither Apply error diffusion to image [method]
+      -filter=: &d_filter use this filter when resizing an image
+      -format=: &d_format output formatted image characteristics
+      -gamma=: &d_gamma level of gamma correction
+      -geometry=: &d_geometry preferred size or location of the image
+      -gravity=: &d_gravity horizontal and vertical text placement
+      -identify: &d_identify identify the format and characteristics of the image
+      -immutable: Displayed image cannot be modified
+      -interlace=: &d_interlace ype of interlacing scheme
+      -interpolate=: &d_interpolate pixel color interpolation method
+      -limit=: &d_limit Pixel cache resource limit [type value]
+      -loop=: Loop images then exit [iterations]
+    completion:
+      positionalany: [$files]
+      flag:
+        <<: *common_completion_flags
+        colormap: [Shared, Private]
+
+  - name: compare
+    description: mathematically and visually annotate the difference between an image and its reconstruction.
+
+  - name: composite
+    description: overlap one image over another.
+
+  - name: conjure
+    description: interprets and executes scripts written in the Magick Scripting Language (MSL).
+
+  - name: convert
+    description: converts an input file using one image format to an output file with a differing image format.
+    flags:
+      -adaptive-blur=: Adaptively blur pixels; decrease effect near edges
+      -adaptive-resize=: Adaptively resize image using 'mesh' interpolation
+      -adaptive-sharpen=: Adaptively sharpen pixels; increase effect near edges
+      -adjoin: join images into a single multi-image file
+      -affine=: affine transform [matrix]
+      -affinity=: relationship between pixels
+      -alpha=: *d_alpha
+      -annotate=: Annotate image with text
+      -antialias: remove pixel-aliasing
+      -append: append an image sequence
+      -attenuate=: lessen (or intensify) when adding noise to an image
+      -authenticate=: *d_authenticate
+      -auto-gamma: automagically adjust gamma level
+      -auto-level: automagically adjust color levels
+      -auto-orient: automagically orient image
+      -background=: background color
+      -bench=: measure performance
+      -bias=: add bias when convolving an image
+      -black-point-compensation: use black point compensation
+      -black-threshold=: force all pixels below the threshold into black
+      -blue-primary=: chromaticity blue primary point
+      -blue-shift=: simulate a scene at nighttime in the moonlight
+      -blur=: reduce image noise and reduce detail levels
+      -border=: surround image with a border of color
+      -bordercolor=: border color
+      -brightness-contrast=: improve brightness / contrast of the image
+      -caption=: assign a caption to an image
+      -cdl=: Color correct with a color decision list
+      -channel=: *d_channel
+      -charcoal=: simulate a charcoal drawing
+      -chop=: remove pixels from the interior of an image
+      -clamp: Restrict pixel range from 0 to the quantum depth
+      -clip-mask=: associate a clip mask with the image
+      -clip-path=: clip along a named path from the 8BIM profile
+      -clip: clip along the first path from the 8BIM profile
+      -clone: clone an image
+      -clut: Apply a color lookup table to the image
+      -coalesce: merge a sequence of images
+      -color-matrix=: apply color correction to the image
+      -colorize=: colorize the image with the fill color
+      -colors=: preferred number of colors in the image
+      -colorspace=: *d_colorspace
+      -combine: combine a sequence of images
+      -comment=: annotate image with comment
+      -compose=: set image composite operator
+      -composite: composite image
+      -compress=: type of pixel compression when writing the image
+      -contrast-stretch=: Improve contrast by 'stretching' the intensity range
+      -contrast: Enhance or reduce the image contrast
+      -convolve=: Convolve image with a kernel
+      -crop=: cut out a rectangular region of the image
+      -cycle=: Time-cycle an image map
+      -decipher=: *d_decipher
+      -deconstruct: break down an image sequence into constituent parts
+      -define=: *d_define
+      -delay=: *d_delay
+      -delete=: Delete the image from the image sequence
+      -density=: *d_density
+      -depth=: *d_depth
+      -deskew=: Straighten an image
+      -despeckle: Reduce the speckles within an image
+      -direction=: render text right-to-left or left-to-right
+      -display=: *d_display
+      -dispose=: *d_dispose
+      -distort=: Distort image
+      -dither=: *d_dither
+      -draw=: annotate an image with one or more graphic primitives
+      -duplicate=: duplicate an image one or more times
+      -edge=: Detect edges in the image
+      -emboss=: Emboss an image
+      -encipher=: convert plain pixels to cipher pixels
+      -encoding=: text encoding type
+      -endian=: endianness (MSB or LSB) of the image
+      -enhance: apply a digital filter to enhance a noisy image
+      -equalize: perform histogram equalization to an image
+      -evaluate-sequence=: evaluate an arithmetic, relational, or logical expression
+      -evaluate=: Alter channel pixels based on expression
+      -extent=: Set the image size
+      -extract=: extract area from image
+      -family=: render text with this font family
+      -fft: apply the Fast Fourier Transform to the image
+      -fill=: color to use when filling a graphic primitive
+      -filter=: *d_filter
+      -flatten: flatten a sequence of images
+      -flip: create a vertical mirror image
+      -floodfill=: floodfill the image with color
+      -flop: create a horizontal mirror image
+      -font=: render text with this font
+      -format=: *d_format
+      -frame=: surround image with an ornamental border
+      -function=: apply mathematical expression to an image channel
+      -fuzz=: colors within this distance are considered equal
+      -fx=: apply mathematical expression to an image channel
+      -gamma=: *d_gamma
+      -gaussian-blur=: reduce image noise and reduce detail levels
+      -geometry=: *d_geometry
+      -gravity=: *d_gravity
+      -green-primary=: chromaticity green primary point
+      -hald-clut: apply a Hald color lookup table to the image
+      -identify: *d_identify
+      -ift: inverse discrete Fourier transform
+      -implode=: implode image pixels about the center
+      -insert=: insert last image into the image sequence
+      -intent=: Type of rendering intent when managing the image color
+      -interlace=: *d_interlace
+      -interline-spacing=: set the space between two text lines
+      -interpolate=: *d_interpolate
+      -interword-spacing=: set the space between two words
+      -kerning=: set the space between two letters
+      -label=: assign a label to an image
+      -lat=: local adaptive thresholding
+      -layers=: optimize, merge, or compare image layers
+      -level-colors=: adjust the level of image contrast with color
+      -level=: adjust the level of image contrast
+      -limit=: *d_limit
+      -linear-stretch=: improve contrast by 'stretching' the intensity range
+      -liquid-rescale=: rescale image with seam-carving
+      -loop=: add Netscape loop extension to your GIF animation
+      -mask=: associate a mask with the image
+      -matte: store matte channel if the image has one
+      -mattecolor=: frame color
+      -median=: apply a median filter to the image
+      -mode=: Make each pixel the 'predominant color' of the neighborhood
+      -modulate=: vary the brightness, saturation, and hue
+      -monitor: monitor progress
+      -monochrome: transform image to black and white
+      -morph=: morph an image sequence
+      -morphology=: apply a custom convolution kernel to the image
+      -mosaic: create a mosaic from an image sequence
+      -motion-blur=: simulate motion blur
+      -negate: replace each pixel with its complementary color
+      -noise=: add or reduce noise in an image
+      -normalize: transform image to span the full range of color values
+      -opaque=: change this color to the fill color
+      -ordered-dither=: dither image using an ordered dither algorithm
+      -orient=: image orientation
+      -origin=: image origin
+      -page=: size and location of an image canvas
+      -paint=: simulate an oil painting
+      -ping: efficiently determine image attributes
+      -pointsize=: font point size
+      -polaroid=: simulate a Polaroid picture
+      -posterize=: reduce the image to a limited number of color levels
+      -precision=: maximum number of significant digits to print
+      -preview=: image preview type
+      -print=: interpret string and print to console
+      -process=: process the image with a custom image filter
+      -profile=: add, delete, or apply an image profile
+      -quality=: JPEG/MIFF/PNG compression level
+      -quantize=: reduce image colors in this colorspace
+      -quiet: suppress all warning messages
+      -radial-blur=: radial blur the image
+      -raise=: lighten or darken image edges to create a 3-D effect
+      -random-threshold=: random threshold the image
+      -red-primary=: chromaticity red primary point
+      -regard-warnings: pay attention to warning messages
+      -region=: apply options to a portion of the image
+      -remap=: transform image colors to match this set of colors
+      -render: render vector graphics
+      -repage=: size and location of an image canvas
+      -resample=: change an images resolution
+      -resize=: resize an image
+      -respect-parentheses: settings remain in effect until parenthesis boundary
+      -reverse: reverse image sequence
+      -roll=: roll an image vertically or horizontally
+      -rotate=: apply Paeth rotation to the image
+      -sample=: scale image with pixel sampling
+      -sampling-factor=: horizontal and vertical sampling factor
+      -scale=: scale image
+      -scene=: image scene number
+      -seed=: seed a new sequence of pseudo-random numbers
+      -segment=: segment an image
+      -selective-blur=: selectively blur pixels within a contrast threshold
+      -separate: separate an image channel into a grayscale image
+      -sepia-tone=: simulate a sepia-toned photo
+      -set=: set an image attribute
+      -shade=: shade the image using a distant light source
+      -shadow=: simulate an image shadow
+      -sharpen=: sharpen the image
+      -shave=: shave pixels from the image edges
+      -shear=: slide one edge of the image along the X or Y axis
+      -sigmoidal-contrast=: increase the contrast without saturating highlights or shadows
+      -size=: width and height of the image
+      -sketch=: simulate a pencil sketch
+      -smush=: smush an image sequence together
+      -solarize=: negate all pixels above the threshold level
+      -sparse-color=: fill in a region by surrounding the target pixel with a 'fuzzy' region
+      -splice=: splice the background color into the image
+      -spread=: displace image pixels by a random amount
+      -statistic=: replace each pixel with corresponding statistic from the neighborhood
+      -stretch=: render text with this font stretch
+      -strip: strip image of all profiles and comments
+      -stroke=: graphic primitive stroke color
+      -strokewidth=: graphic primitive stroke width
+      -style=: render text with this font style
+      -support=: Resize support - > 1.0 is blurry, < 1.0 is sharp
+      -swap=: swap two images in the image sequence
+      -swirl=: swirl image pixels about the center
+      -synchronize: synchronize image to storage device
+      -taint: declare the image as modified
+      -texture=: name of texture to tile onto the image background
+      -threshold=: threshold the image
+      -thumbnail=: create a thumbnail of the image
+      -tile-offset=: set the image tile offset
+      -tile=: repeat composite operation across and down image
+      -tint=: tint the image with the fill color
+      -transform=: affine transform image
+      -transparent-color=: transparent color
+      -transparent=: make this color transparent within the image
+      -transpose: create a horizontal mirror image
+      -transverse: create a vertical mirror image
+      -treedepth=: color tree depth
+      -trim: trim image edges
+      -type=: image type
+      -undercolor=: annotation bounding box color
+      -unique-colors: discard all but one of any pixel color
+      -units=: the units of image resolution
+      -unsharp=: sharpen the image
+      -verbose: print detailed information about the image
+      -view: FlashPix viewing transforms
+      -vignette=: simulate the vignetting effect
+      -virtual-pixel=: access method for pixels outside the boundaries of the image
+      -wave=: alter an image along a sine wave
+      -weight=: render text with this font weight
+      -white-point=: chromaticity white point
+      -white-threshold=: force all pixels above the threshold into white
+      -write=: write images to this file
+      # -auto-threshold: automagically perform thresholding
+      # -canny: use a multi-stage algorithm to detect a wide range of edges in images
+      # -clahe: contrast limited adaptive histogram equalization
+      # -compare: mathematically and visually annotate the difference between an image and
+    completion:
+      positionalany: [$files]
+      flag:
+        <<: *common_completion_flags
+        affinity: [$files]
+        cdl: [$files]
+        clip-mask: [$files]
+        mask: [$files]
+        profile: [$files]
+        remap: [$files]
+        texture: [$files]
+        tile: [$files]
+        write: [$files]
+
+  - name: display
+    description: displays an image or image sequence on any X server.
+
+  - name: identify
+    description: describes the format and characteristics of one or more image files.
+
+  - name: import
+    description: saves any visible window on an X server and outputs it as an image file.
+
+  - name: mogrify
+    description: transforms an image or a sequence of images.
+
+  - name: montage
+    description: creates a composite image by combining several separate images.
+
+  - name: stream
+    description: reads an image from the X server and writes it to a file or standard output.
