@@ -277,6 +277,7 @@ windows:
       - bat
       - carapace
       - elvish
+      - nushell
 
 dotfiles:
   - 1password

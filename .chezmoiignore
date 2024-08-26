@@ -67,7 +67,6 @@
 {{- end }}
 {{- if eq .chezmoi.os "windows" }}
 /.config/fish
-/.config/nushell
 /.config/rainbow
 /.config/yt-dlp
 /.config/zsh
