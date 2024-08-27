@@ -1,0 +1,12 @@
+singleQuote: true
+semi: false
+trailingComma: all
+
+overrides:
+  - files:
+      - .vscode/extensions.json
+      - .vscode/launch.json
+      - .vscode/settings.json
+      - .vscode/tasks.json
+    options:
+      parser: jsonc
