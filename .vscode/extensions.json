@@ -9,5 +9,7 @@
     "redhat.vscode-yaml",
     "thenuprojectcontributors.vscode-nushell-lang",
     "elves.elvish",
+    "esbenp.prettier-vscode",
+    "mads-hartmann.bash-ide-vscode",
   ],
 }
