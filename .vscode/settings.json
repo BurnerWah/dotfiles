@@ -15,13 +15,13 @@
     "*.sh.tmpl": "shellscript",
     "*.zsh.tmpl": "shellscript",
     "**/dot_config/bat/config": "plaintext",
-    "*.ps1.tmpl": "powershell"
+    "*.ps1.tmpl": "powershell",
   },
   "go-template.patterns": [
     "**/*.tmpl",
     "**/.chezmoiignore",
     "**/.chezmoitemplates/**/*",
-    "**/.chezmoidata/**/*"
+    "**/.chezmoidata/**/*",
   ],
   "prettier.semi": false,
   "prettier.singleQuote": true,
@@ -29,13 +29,13 @@
   "yaml.schemas": {
     "https://carapace.sh/schemas/command.json": [
       "home/dot_config/carapace/specs/*.yaml",
-      "home/dot_config/carapace/overlays/*.yaml"
-    ]
+      "home/dot_config/carapace/overlays/*.yaml",
+    ],
   },
   "python.autoComplete.extraPaths": [
-    "/opt/homebrew/opt/xonsh/libexec/lib/python3.12/site-packages"
+    "/opt/homebrew/opt/xonsh/libexec/lib/python3.12/site-packages",
   ],
   "python.analysis.extraPaths": [
-    "/opt/homebrew/opt/xonsh/libexec/lib/python3.12/site-packages"
-  ]
+    "/opt/homebrew/opt/xonsh/libexec/lib/python3.12/site-packages",
+  ],
 }

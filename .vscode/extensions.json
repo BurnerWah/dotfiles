@@ -8,6 +8,6 @@
     "ms-vscode.powershell",
     "redhat.vscode-yaml",
     "thenuprojectcontributors.vscode-nushell-lang",
-    "elves.elvish"
-  ]
+    "elves.elvish",
+  ],
 }

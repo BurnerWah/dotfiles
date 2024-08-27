@@ -6,7 +6,7 @@
     {
       "label": "chezmoi apply",
       "type": "shell",
-      "command": "chezmoi apply -v"
-    }
-  ]
+      "command": "chezmoi apply -v",
+    },
+  ],
 }
