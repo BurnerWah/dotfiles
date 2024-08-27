@@ -1,4 +1,5 @@
 # {{ if ne (lookPath "miniserve") "" }}
 # miniserve hash: {{ include (joinPath .pkg.scoop.apps "miniserve/current/miniserve.exe") | sha256sum }}
-miniserve --print-completions powershell > ~\Documents\PowerShell\Modules\Burner.Completions\Scripts\miniserve.ps1
+$Script:TargetPath = "{{ .chezmoi.targetFile }}"
+miniserve --print-completions powershell > $Script:TargetPath
 # {{ end }}

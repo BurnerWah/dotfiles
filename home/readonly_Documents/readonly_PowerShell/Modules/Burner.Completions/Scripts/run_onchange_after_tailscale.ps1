@@ -1,4 +1,5 @@
 # {{ if ne (lookPath "tailscale") "" }}
 # tailscale hash: {{ include (lookPath "tailscale") | sha256sum }}
-tailscale completion powershell > ~\Documents\PowerShell\Modules\Burner.Completions\Scripts\tailscale.ps1
+$Script:TargetPath = "{{ .chezmoi.targetFile }}"
+tailscale completion powershell > $Script:TargetPath
 # {{ end }}
