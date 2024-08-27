@@ -31,5 +31,11 @@
       "dot_config/carapace/specs/*.yaml",
       "dot_config/carapace/overlays/*.yaml"
     ]
-  }
+  },
+  "python.autoComplete.extraPaths": [
+    "/opt/homebrew/opt/xonsh/libexec/lib/python3.12/site-packages"
+  ],
+  "python.analysis.extraPaths": [
+    "/opt/homebrew/opt/xonsh/libexec/lib/python3.12/site-packages"
+  ]
 }
