@@ -1,10 +1,25 @@
 # {{ if eq .chezmoi.os "linux" }}
 # We need that to ensure these externals are skipped on windows & mac os
 
+# The other names for some architectures
+# {{ $altArch := "unknown" }}
+# {{ if eq .chezmoi.arch "amd64" }}
+# {{ $altArch = "x86_64" }}
+# {{ else if eq .chezmoi.arch "arm64" }}
+# {{ $altArch = "aarch64" }}
+# {{ end }}
+
 [".local/bin/carapace"]
 type = "archive-file"
 url = '{{ gitHubLatestReleaseAssetURL "carapace-sh/carapace-bin" (printf "carapace-bin_%s_%s.tar.gz" .chezmoi.os .chezmoi.arch) }}'
 path = "carapace"
+executable = true
+refreshPeriod = "744h"
+
+[".local/bin/vivid"]
+type = "archive-file"
+url = '{{ gitHubLatestReleaseAssetURL "sharkdp/vivid" (printf "vivid-*-%s-unknown-linux-gnu.tar.gz" $altArch) }}'
+path = "vivid"
 executable = true
 refreshPeriod = "744h"
 
