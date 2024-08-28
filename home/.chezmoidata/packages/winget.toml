@@ -47,4 +47,5 @@ Packages = [
     { PackageIdentifier = "VideoLAN.VLC" },
     { PackageIdentifier = "ViGEm.ViGEmBus" },                                   # Virtual gamepad driver, needed for sunshine
     { PackageIdentifier = "VRChat.CreatorCompanion", Scope = "user" },
+    { PackageIdentifier = "VRCX.VRCX", Scope = "machine" },                     # VRChat helper app
 ]
