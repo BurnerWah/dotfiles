@@ -1,4 +1,3 @@
 [[rule]]
 include = ["home/.chezmoidata/packages/**"]
-[schema]
-path = "./schemas/packages.json"
+schema.path = "./schemas/packages.json"
