@@ -22,7 +22,6 @@
     "**/.chezmoiignore",
     "**/.chezmoitemplates/**/*",
     "**/.chezmoidata/**/*",
-    "**/.chezmoidata/*",
     "**/modify_*",
   ],
   "prettier.semi": false,
