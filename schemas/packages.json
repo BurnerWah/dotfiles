@@ -1,6 +1,39 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
+  "$defs": {
+    "Scoop": {
+      "type": "object",
+      "properties": {
+        "apps": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/ScoopApp" }
+        },
+        "buckets": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/ScoopBucket" }
+        }
+      }
+    },
+    "ScoopApp": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Name": { "type": "string" },
+        "Source": { "type": "string" }
+      },
+      "required": ["Name", "Source"]
+    },
+    "ScoopBucket": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "Name": { "type": "string" },
+        "Source": { "type": "string" }
+      },
+      "required": ["Name"]
+    }
+  },
   "properties": {
     "packages": {
       "type": "object",
@@ -10,7 +43,8 @@
           "properties": {
             "winget": {
               "$ref": "https://aka.ms/winget-packages.schema.2.0.json#/properties/Sources"
-            }
+            },
+            "scoop": { "$ref": "#/$defs/Scoop" }
           }
         }
       }
