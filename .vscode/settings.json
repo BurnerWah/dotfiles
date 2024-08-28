@@ -31,8 +31,8 @@
   "prettier.trailingComma": "all",
   "yaml.schemas": {
     "https://carapace.sh/schemas/command.json": [
-      "home/dot_config/carapace/specs/*.yaml",
-      "home/dot_config/carapace/overlays/*.yaml",
+      "home/dot_config/carapace/exact_specs/*.yaml",
+      "home/dot_config/carapace/exact_overlays/*.yaml",
     ],
   },
   "python.autoComplete.extraPaths": [
