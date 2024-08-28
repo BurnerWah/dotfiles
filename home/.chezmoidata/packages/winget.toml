@@ -1,0 +1,50 @@
+# This is the equivalent of the Sources property in a winget export/import file
+
+[[packages.windows.winget]]
+
+SourceDetails.Name = "winget"
+SourceDetails.Argument = "https://cdn.winget.microsoft.com/cache"
+SourceDetails.Identifier = "Microsoft.Winget.Source_8wekyb3d8bbwe"
+SourceDetails.Type = "Microsoft.PreIndexed.Package"
+
+Packages = [
+    { PackageIdentifier = "AgileBits.1Password", Scope = "user" },              # Password manager
+    { PackageIdentifier = "Appest.TickTick" },                                  # Task manager
+    { PackageIdentifier = "Apple.Bonjour" },
+    { PackageIdentifier = "ArmCord.ArmCord" },                                  # Discord client
+    { PackageIdentifier = "ebkr.r2modman", Scope = "user" },                    # BepInEx mod manager
+    { PackageIdentifier = "EpicGames.EpicGamesLauncher" },
+    { PackageIdentifier = "Git.Git", Scope = "machine" },
+    { PackageIdentifier = "goatcorp.XIVLauncher" },                             # Alternate launcher for FF14
+    { PackageIdentifier = "HandBrake.HandBrake" },                              # Encoder
+    { PackageIdentifier = "HTTPie.HTTPie", Scope = "user" },                    # HTTP client
+    { PackageIdentifier = "ImageMagick.Q16-HDRI" },                             # ImageMagick as a MSIX package
+    { PackageIdentifier = "Intel.PresentMon" },                                 # Performance monitor
+    { PackageIdentifier = "ItchIo.Itch" },
+    { PackageIdentifier = "JetBrains.Toolbox" },                                # JetBrains IDE manager
+    { PackageIdentifier = "Klocman.BulkCrapUninstaller" },                      # Advanced uninstall tool
+    { PackageIdentifier = "LizardByte.Sunshine" },                              # Game streaming server
+    { PackageIdentifier = "M2Team.NanaZip" },                                   # 7Zip with enhanced Windows integration
+    { PackageIdentifier = "MicaForEveryone.MicaForEveryone", Scope = "user" },
+    { PackageIdentifier = "Microsoft.EdgeWebView2Runtime", Scope = "machine" },
+    { PackageIdentifier = "Microsoft.Office" },
+    { PackageIdentifier = "Microsoft.PowerToys", Scope = "user" },
+    { PackageIdentifier = "Microsoft.VisualStudio.2022.Community" },
+    { PackageIdentifier = "Microsoft.VisualStudioCode", Scope = "user" },
+    { PackageIdentifier = "Microsoft.WingetCreate", Scope = "user" },
+    { PackageIdentifier = "Nvidia.Broadcast" },                                 # Various camera/microphone effects for Nvidia GPUs
+    { PackageIdentifier = "Obsidian.Obsidian", Scope = "user" },                # Note-taking app
+    { PackageIdentifier = "OBSProject.OBSStudio" },
+    { PackageIdentifier = "OpenWhisperSystems.Signal" },
+    { PackageIdentifier = "PrismLauncher.PrismLauncher", Scope = "user" },      # Minecraft launcher
+    { PackageIdentifier = "qBittorrent.qBittorrent" },                          # BitTorrent client
+    { PackageIdentifier = "RedHat.Podman-Desktop", Scope = "user" },            # Podman container manager
+    { PackageIdentifier = "RedHat.Podman", Scope = "machine" },
+    { PackageIdentifier = "Sandboxie.Plus" },                                   # Sandboxing tool
+    { PackageIdentifier = "tailscale.tailscale" },                              # VPN
+    { PackageIdentifier = "Unity.UnityHub" },                                   # Unity version manager
+    { PackageIdentifier = "Valve.Steam" },
+    { PackageIdentifier = "VideoLAN.VLC" },
+    { PackageIdentifier = "ViGEm.ViGEmBus" },                                   # Virtual gamepad driver, needed for sunshine
+    { PackageIdentifier = "VRChat.CreatorCompanion", Scope = "user" },
+]

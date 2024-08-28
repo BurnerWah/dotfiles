@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "packages": {
+      "type": "object",
+      "properties": {
+        "windows": {
+          "type": "object",
+          "properties": {
+            "winget": {
+              "$ref": "https://aka.ms/winget-packages.schema.2.0.json#/properties/Sources"
+            }
+          }
+        }
+      }
+    }
+  }
+}
