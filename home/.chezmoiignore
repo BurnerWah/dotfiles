@@ -55,6 +55,7 @@
 /.config/fish/functions/ss.fish
 /.config/fish/functions/vmstat.fish
 /.config/fish/functions/xdg-open.fish
+.chezmoiexternals/linux.*
 {{- end }}
 {{- if ne .chezmoi.os "darwin" }}
 .chezmoiscripts/darwin/**
