@@ -19,6 +19,7 @@ refreshPeriod = "744h"
 [".local/bin/vivid"]
 type = "archive-file"
 url = '{{ gitHubLatestReleaseAssetURL "sharkdp/vivid" (printf "vivid-*-%s-unknown-linux-gnu.tar.gz" $altArch) }}'
+stripComponents = 1
 path = "vivid"
 executable = true
 refreshPeriod = "744h"
