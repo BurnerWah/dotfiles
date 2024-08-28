@@ -1,0 +1,57 @@
+diff:
+  command: delta
+
+edit:
+  command: code
+  args: [--wait]
+
+interpreters:
+  ps1:
+    command: pwsh
+    args: [-NoLogo, -NonInteractive, -NoProfile]
+  elv:
+    command: elvish
+    args: [-norc]
+  js:
+    command: node
+
+textconv:
+  - pattern: '**/*.plist'
+    command: plutil
+    args: [-convert, xml1, -o, '-', '-']
+
+# {{- $chassisType := "desktop" }}
+# {{- if eq .chezmoi.os "darwin" }}
+# {{-   if contains "MacBook" (output "sysctl" "-n" "hw.model") }}
+# {{-     $chassisType = "laptop" }}
+# {{-   else }}
+# {{-     $chassisType = "desktop" }}
+# {{-   end }}
+# {{- else if eq .chezmoi.os "linux" }}
+# {{-   $chassisType = (output "hostnamectl" "--json=short" | mustFromJson).Chassis }}
+# {{- else if eq .chezmoi.os "windows" }}
+# {{-   $chassisType = (output "powershell.exe" "-NoProfile" "-NonInteractive" "-Command" "if ((Get-CimInstance -Class Win32_Battery | Measure-Object).Count -gt 0) { Write-Output 'laptop' } else { Write-Output 'desktop' }") | trim }}
+# {{- end }}
+
+# {{- $xdgConfig := joinPath .chezmoi.homeDir ".config" }}
+# {{- $xdgCache := joinPath .chezmoi.homeDir ".cache" }}
+# {{- $xdgData := joinPath .chezmoi.homeDir ".local/share" }}
+# {{- $xdgState := joinPath .chezmoi.homeDir ".local/state" }}
+# {{- if eq .chezmoi.os "darwin" }}
+# {{-   $xdgCache = joinPath .chezmoi.homeDir "Library/Caches" }}
+# {{-   $xdgData = joinPath .chezmoi.homeDir "Library/Application Support" }}
+# {{- end }}
+
+data:
+  xdg:
+    config: '{{ $xdgConfig }}'
+    cache: '{{ $xdgCache }}'
+    data: '{{ $xdgData }}'
+    state: '{{ $xdgState }}'
+  pkg:
+    scoop:
+      apps: '{{ joinPath .chezmoi.homeDir "scoop/apps" }}'
+      persist: '{{ joinPath .chezmoi.homeDir "scoop/persist" }}'
+  device:
+    # can be "laptop", "desktop", "convertible", "server", "tablet", "handset", "watch", "embedded", "vm", or "container"
+    chassis: '{{ $chassisType }}'
