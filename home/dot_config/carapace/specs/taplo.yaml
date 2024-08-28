@@ -1,0 +1,90 @@
+name: taplo
+description: TOML toolkit
+flags:
+  -V, --version: Print version information
+persistentflags:
+  --colors=: Colorize output
+  -h, --help: Print help information
+  --log-spans: Enable logging spans
+  --verbose: Enable a verbose logging format
+completion:
+  flag:
+    colors: [auto, always, never]
+commands:
+  - name: config
+    description: Operations with the Taplo config file
+    commands:
+      - name: default
+        description: Print the default '.taplo.toml' configuration file
+      - name: help
+      - name: schema
+        description: Print the JSON schema of the '.taplo.toml' configuration file
+
+  - name: lsp
+    description: Language server operations
+    commands:
+      - name: help
+      - name: stdio
+        description: Run the language server over the standard input and output
+      - name: tcp
+        description: Run the language server and listen on a TCP address
+        flags:
+          --address=: 'The address to listen on [default: 0.0.0.0:9181]'
+    flags: &lsp_flags
+      -c, --config=: Path to the Taplo configuration file
+      --cache-path=: Set a cache path
+      --no-auto-config: Do not search for a configuration file
+    completion:
+      flag:
+        config: [$files]
+        cache-path: [$files]
+
+  - name: format
+    description: Format TOML documents
+    flags:
+      <<: *lsp_flags
+      --check: Dry-run and report any files that are not correctly formatted
+      --diff: Print the differences in patch formatting
+      -f, --force: Ignore syntax errors and force formatting
+      -o, --option=*: A formatter option given as a "key=value", can be set multiple times
+      --stdin-filepath=: A path to the file that the Taplo CLI will treat like stdin
+    completion:
+      positionalany: [$files]
+      flag:
+        config: [$files]
+        cache-path: [$files]
+        stdin-filepath: [$files]
+
+  - name: get
+    description: Extract a value from the given TOML document
+    flags:
+      -f, --file-path=: Path to the TOML document, if omitted the standard input will be used
+      -o, --output-format=: The format specifying how the output is printed
+      -s, --strip-newline: Strip the trailing newline from the output
+      --separator=: A string that separates array values when printing to stdout
+    exclusiveflags:
+      - [output-format, separator] # Probably only one can be used
+    completion:
+      flag:
+        file-path: [$files]
+        output-format: [value, json, toml]
+
+  - name: lint
+    description: Lint TOML documents
+    flags:
+      <<: *lsp_flags
+      --default-schema-catalogs: Use the default online catalogs for schemas
+      --no-schema: Disable all schema validations
+      --schema=: URL to the schema to be used for validation
+      --schema-catalog=*: URL to a schema catalog (index) that is compatible with Schema Store or Taplo catalogs
+    exclusiveflags:
+      - [no-schema, default-schema-catalogs] # --default-schema-catalogs will be ignored
+      - [no-schema, schema-catalog] # --schema-catalog will be ignored
+    completion:
+      positionalany: [$files]
+      flag:
+        config: [$files]
+        cache-path: [$files]
+
+  - name: help
+    description: Print this message or the help of the given subcommand(s)
