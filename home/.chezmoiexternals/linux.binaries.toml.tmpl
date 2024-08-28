@@ -8,10 +8,34 @@
 # {{ else if eq .chezmoi.arch "arm64" }}
 # {{ $altArch = "aarch64" }}
 # {{ end }}
+# {{ $target := (printf "%s-unknown-linux-gnu" $altArch) }}
+
+[".local/bin/act"]
+type = "archive-file"
+url = '{{ gitHubLatestReleaseAssetURL "nektos/act" (printf "act_Linux_%s.tar.gz" $altArch) }}'
+path = "act"
+executable = true
+refreshPeriod = "744h"
+
+[".local/bin/atuin"]
+type = "archive-file"
+url = '{{ gitHubLatestReleaseAssetURL "atuinsh/atuin" (printf "atuin-%s.tar.gz" $target) }}'
+stripComponents = 1
+path = "atuin"
+executable = true
+refreshPeriod = "744h"
 
 [".local/bin/biome"]
 type = "file"
 url = '{{ gitHubLatestReleaseAssetURL "biomejs/biome" (printf "biome-%s-%s" .chezmoi.os (eq .chezmoi.arch "amd64" | ternary "x64" .chezmoi.arch)) }}'
+executable = true
+refreshPeriod = "744h"
+
+[".local/bin/boxxy"]
+type = "archive-file"
+url = '{{ gitHubLatestReleaseAssetURL "queer/boxxy" (printf "boxxy-*-%s.tar.xz" $target) }}'
+stripComponents = 1
+path = "boxxy"
 executable = true
 refreshPeriod = "744h"
 
@@ -22,9 +46,23 @@ path = "carapace"
 executable = true
 refreshPeriod = "744h"
 
+[".local/bin/hugo"]
+type = "archive-file"
+url = '{{ gitHubLatestReleaseAssetURL "gohugoio/hugo" (printf "hugo_extended_*_%s-%s.tar.gz" .chezmoi.os .chezmoi.arch) }}'
+path = "hugo"
+executable = true
+refreshPeriod = "168h"
+
+[".local/bin/kondo"]
+type = "archive-file"
+url = '{{ gitHubLatestReleaseAssetURL "tbillington/kondo" (printf "kondo-%s.tar.gz" $target) }}'
+path = "kondo"
+executable = true
+refreshPeriod = "744h"
+
 [".local/bin/vivid"]
 type = "archive-file"
-url = '{{ gitHubLatestReleaseAssetURL "sharkdp/vivid" (printf "vivid-*-%s-unknown-linux-gnu.tar.gz" $altArch) }}'
+url = '{{ gitHubLatestReleaseAssetURL "sharkdp/vivid" (printf "vivid-*-%s.tar.gz" $target) }}'
 stripComponents = 1
 path = "vivid"
 executable = true
