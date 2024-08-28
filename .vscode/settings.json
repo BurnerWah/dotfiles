@@ -16,6 +16,8 @@
     "*.zsh.tmpl": "shellscript",
     "**/dot_config/bat/config": "plaintext",
     "*.ps1.tmpl": "powershell",
+    "*.plist": "xml",
+    "*.plist.tmpl": "xml",
   },
   "go-template.patterns": [
     "**/*.tmpl",
