@@ -1,9 +1,0 @@
-# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
-# {{ $apps := .pkg.scoop.apps -}}
-# {{ range .packages.windows.scoop -}}
-# {{ $name := .name -}}
-# {{ $bucket := (get . "bucket" | default "main") -}}
-# {{ if not (stat (joinPath $apps $name)) }}
-scoop install # {{ printf "%s/%s" $bucket $name | quote }}
-# {{- end }}
-# {{- end }}

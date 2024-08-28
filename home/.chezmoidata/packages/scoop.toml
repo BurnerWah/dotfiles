@@ -1,82 +1,92 @@
-[packages.windows]
-# The default bucket is "main".
-scoop = [
-    { name = "1password-cli" },
-    { name = "act" },
-    { name = "actionlint" },
-    { name = "age", bucket = "extras" },
-    { name = "aria2" },
-    { name = "bat" },
-    { name = "biome" },
-    { name = "carapace-bin", bucket = "extras" },
-    { name = "chezmoi" },
-    { name = "curl" },
-    { name = "dasel", bucket = "extras" },
-    { name = "delta" },
-    { name = "deno" },
-    { name = "docker-compose" },
-    { name = "doggo" },
-    { name = "exercism" },
-    { name = "exiftool" },
-    { name = "eza" },
-    { name = "fd" },
-    { name = "ffmpeg" },
-    { name = "flyctl" },
-    { name = "fossil" },
-    { name = "fzf" },
-    { name = "gallery-dl" },
-    { name = "gh" },
-    { name = "gifski" },
-    { name = "gitleaks" },
-    { name = "godot-mono", bucket = "extras" },
-    { name = "grex" },
-    { name = "helm" },
-    { name = "hexyl" },
-    { name = "hugo-extended" },
-    { name = "hyperfine" },
-    { name = "jdupes" },
-    { name = "jq" },
-    { name = "kind" },
-    { name = "kompose" },
-    { name = "kondo" },
-    { name = "kubectl" },
-    { name = "kustomize" },
-    { name = "lefthook" },
-    { name = "less" },
-    { name = "lime3ds", bucket = "games" },
-    { name = "mercurial" },
-    { name = "minikube" },
-    { name = "nodejs" },
-    { name = "oh-my-posh" },
-    { name = "pandoc" },
-    { name = "processhacker", bucket = "extras" },
-    { name = "rclone" },
-    { name = "regeditor", bucket = "extras" },
-    { name = "ripgrep" },
-    { name = "ruffle-nightly", bucket = "versions" },
-    { name = "ryujinx", bucket = "games" },
-    { name = "scoop-completion", bucket = "extras" },
-    { name = "scoop-search" },
-    { name = "shutup10", bucket = "extras" },
-    { name = "steam-rom-manager", bucket = "games" },
-    { name = "tealdeer" },
-    { name = "tokei" },
-    { name = "uutils-coreutils" },
-    { name = "winget-ps" },
-    { name = "yt-dlp" },
-    { name = "zoxide" },
+# This is effectively a scoopfile that gives scoop the bare minimum for it to parse.
+# There's a decent chance the format for scoopfiles will get redone at some point,
+# and also there's the possibility that I'll just make my own proper format later.
+#
+# There's an info property in scoopfiles which specifies things like whether an app
+# is global, what arch to use, and whether it's held. I'm not really using it since
+# global installs will require self-elevating scripts.
+
+[packages.windows.scoop]
+apps = [
+    { Name = "1password-cli", Source = "main" },
+    { Name = "act", Source = "main" },
+    { Name = "actionlint", Source = "main" },
+    { Name = "age", Source = "extras" },
+    { Name = "aria2", Source = "main" },
+    { Name = "bat", Source = "main" },
+    { Name = "biome", Source = "main" },
+    { Name = "carapace-bin", Source = "extras" },
+    { Name = "chezmoi", Source = "main" },
+    { Name = "curl", Source = "main" },
+    { Name = "dasel", Source = "extras" },
+    { Name = "delta", Source = "main" },
+    { Name = "deno", Source = "main" },
+    { Name = "docker-compose", Source = "main" },
+    { Name = "doggo", Source = "main" },
+    { Name = "exercism", Source = "main" },
+    { Name = "exiftool", Source = "main" },
+    { Name = "eza", Source = "main" },
+    { Name = "fd", Source = "main" },
+    { Name = "ffmpeg", Source = "main" },
+    { Name = "flyctl", Source = "main" },
+    { Name = "fossil", Source = "main" },
+    { Name = "fzf", Source = "main" },
+    { Name = "gallery-dl", Source = "main" },
+    { Name = "gh", Source = "main" },
+    { Name = "gifski", Source = "main" },
+    { Name = "gitleaks", Source = "main" },
+    { Name = "godot-mono", Source = "extras" },
+    { Name = "grex", Source = "main" },
+    { Name = "helm", Source = "main" },
+    { Name = "hexyl", Source = "main" },
+    { Name = "hugo-extended", Source = "main" },
+    { Name = "hyperfine", Source = "main" },
+    { Name = "jdupes", Source = "main" },
+    { Name = "jq", Source = "main" },
+    { Name = "kind", Source = "main" },
+    { Name = "kompose", Source = "main" },
+    { Name = "kondo", Source = "main" },
+    { Name = "kubectl", Source = "main" },
+    { Name = "kustomize", Source = "main" },
+    { Name = "lefthook", Source = "main" },
+    { Name = "less", Source = "main" },
+    { Name = "lime3ds", Source = "games" },
+    { Name = "mercurial", Source = "main" },
+    { Name = "minikube", Source = "main" },
+    { Name = "nodejs", Source = "main" },
+    { Name = "oh-my-posh", Source = "main" },
+    { Name = "pandoc", Source = "main" },
+    { Name = "processhacker", Source = "extras" },
+    { Name = "rclone", Source = "main" },
+    { Name = "regeditor", Source = "extras" },
+    { Name = "ripgrep", Source = "main" },
+    { Name = "ruffle-nightly", Source = "versions" },
+    { Name = "ryujinx", Source = "games" },
+    { Name = "scoop-completion", Source = "extras" },
+    { Name = "scoop-search", Source = "main" },
+    { Name = "shutup10", Source = "extras" },
+    { Name = "steam-rom-manager", Source = "games" },
+    { Name = "tealdeer", Source = "main" },
+    { Name = "tokei", Source = "main" },
+    { Name = "uutils-coreutils", Source = "main" },
+    { Name = "winget-ps", Source = "main" },
+    { Name = "yt-dlp", Source = "main" },
+    { Name = "zoxide", Source = "main" },
 ]
 
-# Buckets aren't handled by my scripts yet
-[[packages.windows.buckets]]
-name = "extras"
+# Known buckets seem to be able to skip the Source property.
+[[packages.windows.scoop.buckets]]
+Name = "main"
 
-[[packages.windows.buckets]]
-name = "versions"
+[[packages.windows.scoop.buckets]]
+Name = "extras"
 
-[[packages.windows.buckets]]
-name = "games"
+[[packages.windows.scoop.buckets]]
+Name = "versions"
 
-[[packages.windows.buckets]]
-name = "xrtools"
-source = "https://github.com/babo4d/scoop-xrtools"
+[[packages.windows.scoop.buckets]]
+Name = "games"
+
+[[packages.windows.scoop.buckets]]
+Name = "xrtools"
+Source = "https://github.com/babo4d/scoop-xrtools"

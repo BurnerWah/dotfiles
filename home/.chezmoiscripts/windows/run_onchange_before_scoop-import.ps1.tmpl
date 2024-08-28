@@ -1,0 +1,7 @@
+$Script:Scoopfile = New-TemporaryFile
+$Script:ScoopfileContent = @'
+{{ .packages.windows.scoop | toJson }}
+'@
+$Script:ScoopfileContent | Out-File -FilePath $Script:Scoopfile
+
+scoop import $Script:Scoopfile.FullName
