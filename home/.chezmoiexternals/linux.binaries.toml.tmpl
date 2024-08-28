@@ -1,6 +1,11 @@
+# {{ if eq .chezmoi.os "linux" }}
+# We need that to ensure these externals are skipped on windows & mac os
+
 [".local/bin/carapace"]
 type = "archive-file"
 url = '{{ gitHubLatestReleaseAssetURL "carapace-sh/carapace-bin" (printf "carapace-bin_%s_%s.tar.gz" .chezmoi.os .chezmoi.arch) }}'
 path = "carapace"
 executable = true
 refreshPeriod = "744h"
+
+# {{ end }}
