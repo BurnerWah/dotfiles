@@ -35,6 +35,7 @@
 
 # OS-Specific exclusions
 {{- if ne .chezmoi.os "linux" }}
+/.config/systemd
 /.config/fish/functions/blkid.fish
 /.config/fish/functions/bussybox.fish
 /.config/fish/functions/findmnt.fish
