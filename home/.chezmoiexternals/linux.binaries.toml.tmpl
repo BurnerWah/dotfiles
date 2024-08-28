@@ -9,6 +9,12 @@
 # {{ $altArch = "aarch64" }}
 # {{ end }}
 
+[".local/bin/biome"]
+type = "file"
+url = '{{ gitHubLatestReleaseAssetURL "biomejs/biome" (printf "biome-%s-%s" .chezmoi.os (eq .chezmoi.arch "amd64" | ternary "x64" .chezmoi.arch)) }}'
+executable = true
+refreshPeriod = "744h"
+
 [".local/bin/carapace"]
 type = "archive-file"
 url = '{{ gitHubLatestReleaseAssetURL "carapace-sh/carapace-bin" (printf "carapace-bin_%s_%s.tar.gz" .chezmoi.os .chezmoi.arch) }}'
