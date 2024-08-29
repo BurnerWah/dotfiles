@@ -35,6 +35,7 @@
 
 # OS-Specific exclusions
 {{- if ne .chezmoi.os "linux" }}
+/.config/boxxy
 /.config/environment.d
 /.config/systemd
 /.config/fish/functions/blkid.fish

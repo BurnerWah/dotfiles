@@ -1,0 +1,16 @@
+rules:
+  - name: Fake home directory
+    target: '~'
+    rewrite: /run/user/1000/fakehome
+
+  - name: Redirect ~/.fly to ~/.config/fly
+    target: /run/user/1000/fakehome/.fly
+    rewrite: ~/.config/fly
+
+  - name: Redirect ~/.degit to ~/.cache/degit
+    target: /run/user/1000/fakehome/.degit
+    rewrite: ~/.cache/degit
+
+  - name: Redirect ~/.giget to ~/.cache/giget
+    target: /run/user/1000/fakehome/.giget
+    rewrite: ~/.cache/giget
