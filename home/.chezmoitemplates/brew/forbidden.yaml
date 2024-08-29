@@ -32,6 +32,8 @@ cask:
   - element@nightly # matrix (security)
   - elephas # ai
   - elephas@beta # ai
+  - firefly # cryptocurrency
+  - firefly-shimmer # cryptocurrency
   - fixkey # ai
   - forkgram-telegram # telegram
   - greenery # cryptocurrency
@@ -99,6 +101,7 @@ formula:
   - erigon # cryptocurrency
   - ethereum
   - envd # ai
+  - firefly # cryptocurrency
   - flow-cli # cryptocurrency
   - gloox # xmpp (security)
   - gptline
