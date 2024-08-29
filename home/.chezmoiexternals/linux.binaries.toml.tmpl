@@ -60,6 +60,13 @@ path = "kondo"
 executable = true
 refreshPeriod = "744h"
 
+[".local/bin/taplo"]
+type = "file"
+url = '{{ gitHubLatestReleaseAssetURL "tamasfe/taplo" (printf "taplo-full-%s-%s.gz" .chezmoi.os $altArch) }}'
+decompress = "gzip"
+executable = true
+refreshPeriod = "744h"
+
 [".local/bin/vivid"]
 type = "archive-file"
 url = '{{ gitHubLatestReleaseAssetURL "sharkdp/vivid" (printf "vivid-*-%s.tar.gz" $target) }}'
