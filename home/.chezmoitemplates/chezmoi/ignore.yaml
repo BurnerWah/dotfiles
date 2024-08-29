@@ -56,6 +56,7 @@ darwin:
     - Animoji
     - App Store
     - Arc
+    - ArmCord
     - atuin
     - Automator
     - Bartender
@@ -117,9 +118,11 @@ darwin:
     - Knowledge
     - kpeoplevcard
     - krita*
+    - Launchpad Manager
     - LibreOffice
     - Logitech
     - Lunar
+    - MBHaxe-*
     - Microsoft
     - Microsoft Edge*
     - Microsoft Visual Studio
@@ -146,10 +149,14 @@ darwin:
     - ProApps
     - quarto*
     - RefSrcSymbols
+    - Signal
     - spacedrive
+    - Stats
     - Steam
     - Stellarium
+    - stickersd
     - Sublime Text
+    - summary-events
     - SymbolSourceSymbols
     - Syncthing
     - Telegram Desktop
@@ -211,6 +218,7 @@ darwin:
     - Google
     - Group Containers
     - GroupContainersAlias
+    - homeenergyd
     - HomeKit
     - HTTPStorages
     - IdentityServices
@@ -259,6 +267,7 @@ darwin:
     - Spelling
     - Staging
     - StatusKit
+    - Stickers
     - studentd
     - Suggestions
     - SyncedPreferences
