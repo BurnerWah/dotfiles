@@ -1,0 +1,23 @@
+{{- if ne .chezmoi.os "linux" }}
+/blender
+/clion
+/code
+/datagrip
+/firefox
+/fly
+/gimp
+/gnome-maps
+/goland
+/idea
+/inkscape
+/obs
+/phpstorm
+/picard
+/pycharm
+/rider
+/rubymine
+/trash
+/vlc
+/waterfox
+/webstorm
+{{- end }}

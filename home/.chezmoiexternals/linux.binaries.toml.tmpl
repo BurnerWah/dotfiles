@@ -46,6 +46,13 @@ path = "carapace"
 executable = true
 refreshPeriod = "744h"
 
+[".local/bin/flyctl"]
+type = "archive-file"
+url = '{{ gitHubLatestReleaseAssetURL "superfly/flyctl" (printf "flyctl_0.2.123_Linux_%s.tar.gz" (eq .chezmoi.arch "amd64" | ternary "x86_64" .chezmoi.arch)) }}'
+path = "flyctl"
+executable = true
+refreshPeriod = "24h" # flyctl updates a lot
+
 [".local/bin/hugo"]
 type = "archive-file"
 url = '{{ gitHubLatestReleaseAssetURL "gohugoio/hugo" (printf "hugo_extended_*_%s-%s.tar.gz" .chezmoi.os .chezmoi.arch) }}'

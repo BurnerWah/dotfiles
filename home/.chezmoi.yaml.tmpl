@@ -55,6 +55,9 @@ data:
     scoop:
       apps: '{{ joinPath .chezmoi.homeDir "scoop/apps" }}'
       persist: '{{ joinPath .chezmoi.homeDir "scoop/persist" }}'
+    flatpak:
+      system: '{{ default "/var/lib/flatpak" (env "FLATPAK_SYSTEM_DIR") }}'
+      user: '{{ default (joinPath $xdgData "flatpak") (env "FLATPAK_USER_DIR") }}'
   device:
     # can be "laptop", "desktop", "convertible", "server", "tablet", "handset", "watch", "embedded", "vm", or "container"
     chassis: '{{ $chassisType }}'
