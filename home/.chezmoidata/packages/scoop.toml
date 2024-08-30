@@ -16,6 +16,7 @@ apps = [
   { Name = "bat", Source = "main" },
   { Name = "biome", Source = "main" },
   { Name = "carapace-bin", Source = "extras" },
+  { Name = "CascadiaCode-NF", Source = "nerd-fonts" },
   { Name = "chezmoi", Source = "main" },
   { Name = "curl", Source = "main" },
   { Name = "dasel", Source = "extras" },
@@ -28,6 +29,9 @@ apps = [
   { Name = "eza", Source = "main" },
   { Name = "fd", Source = "main" },
   { Name = "ffmpeg", Source = "main" },
+  { Name = "FiraCode-NF", Source = "nerd-fonts" },
+  { Name = "FiraCode", Source = "nerd-fonts" },
+  { Name = "FiraMono-NF", Source = "nerd-fonts" },
   { Name = "flyctl", Source = "main" },
   { Name = "fossil", Source = "main" },
   { Name = "fzf", Source = "main" },
@@ -38,10 +42,13 @@ apps = [
   { Name = "godot-mono", Source = "extras" },
   { Name = "grex", Source = "main" },
   { Name = "helm", Source = "main" },
+  { Name = "Hermit-NF", Source = "nerd-fonts" },
   { Name = "hexyl", Source = "main" },
   { Name = "hugo-extended", Source = "main" },
   { Name = "hyperfine", Source = "main" },
   { Name = "jdupes", Source = "main" },
+  { Name = "JetBrains-Mono", Source = "nerd-fonts" },
+  { Name = "JetBrainsMono-NF", Source = "nerd-fonts" },
   { Name = "jq", Source = "main" },
   { Name = "kind", Source = "main" },
   { Name = "kompose", Source = "main" },
@@ -51,8 +58,13 @@ apps = [
   { Name = "lefthook", Source = "main" },
   { Name = "less", Source = "main" },
   { Name = "lime3ds", Source = "games" },
+  { Name = "luarocks", Source = "main" },
   { Name = "mercurial", Source = "main" },
   { Name = "minikube", Source = "main" },
+  { Name = "Monaspace-NF", Source = "nerd-fonts" },
+  { Name = "Monaspace", Source = "nerd-fonts" },
+  { Name = "msys2", Source = "main" },
+  { Name = "neovim", Source = "main" },
   { Name = "nodejs", Source = "main" },
   { Name = "oh-my-posh", Source = "main" },
   { Name = "pandoc", Source = "main" },
@@ -65,10 +77,13 @@ apps = [
   { Name = "scoop-completion", Source = "extras" },
   { Name = "scoop-search", Source = "main" },
   { Name = "shutup10", Source = "extras" },
+  { Name = "starship", Source = "main" },
   { Name = "steam-rom-manager", Source = "games" },
   { Name = "tealdeer", Source = "main" },
   { Name = "tokei", Source = "main" },
+  { Name = "tree-sitter", Source = "main" },
   { Name = "uutils-coreutils", Source = "main" },
+  { Name = "vfox", Source = "main" },
   { Name = "winget-ps", Source = "main" },
   { Name = "yt-dlp", Source = "main" },
   { Name = "zoxide", Source = "main" },
@@ -86,6 +101,9 @@ Name = "versions"
 
 [[packages.windows.scoop.buckets]]
 Name = "games"
+
+[[packages.windows.scoop.buckets]]
+Name = "nerd-fonts"
 
 [[packages.windows.scoop.buckets]]
 Name = "xrtools"
