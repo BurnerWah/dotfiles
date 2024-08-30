@@ -76,10 +76,9 @@ packages:
       - age # encryption tool
       - age-plugin-yubikey
       - as-tree
-      - asdf # version manager
       # {{ if eq .chezmoi.arch "arm64" }}
       - asitop # Apple Silicon performance monitor
-      # {{ end}}
+      # {{ end }}
       - atuin # history sync
       - b3sum
       - bash-completion
@@ -113,9 +112,7 @@ packages:
       - fish
       - fisher
       - flyctl
-      - fnm # Node.js version manager
       - fossil # version control
-      - frum # Ruby version manager
       - fx # JSON viewer
       - fzf
       - gallery-dl
@@ -157,6 +154,7 @@ packages:
       - mas # Mac App Store CLI
       - mercurial # version control
       - miniserve # file server
+      - mise # really good version manager
       - most # another pager, handles manpages well
       - neofetch
       - neovim
