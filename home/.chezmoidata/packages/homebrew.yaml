@@ -92,6 +92,7 @@ packages:
       - breezy
       - btop # htop alternative
       - bzip3 # compression tool
+      - cargo-binstall
       - chezmoi
       - cloudflared
       - colima # Container runtime
@@ -191,6 +192,7 @@ packages:
       - typescript
       - util-linux # subset of the util-linux commands for mac OS
       - uutils-coreutils
+      - uv
       - virtualenv
       - virtualfish # virtualenv for fish
       - viu # terminal image viewer
