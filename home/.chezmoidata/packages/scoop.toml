@@ -83,7 +83,6 @@ apps = [
   { Name = "tokei", Source = "main" },
   { Name = "tree-sitter", Source = "main" },
   { Name = "uutils-coreutils", Source = "main" },
-  { Name = "vfox", Source = "main" },
   { Name = "winget-ps", Source = "main" },
   { Name = "yt-dlp", Source = "main" },
   { Name = "zoxide", Source = "main" },
