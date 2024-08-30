@@ -6,9 +6,12 @@ local lspconfig = require("lspconfig")
 -- EXAMPLE
 local servers = {
   "awk_ls",
+  "basedpyright",
   "bashls",
   "biome",
   "cssls",
+  "docker_compose_language_service",
+  "dockerls",
   "eslint",
   "fish_lsp",
   "html",
@@ -16,6 +19,10 @@ local servers = {
   "nushell",
   "powershell_es",
   "ruff",
+  "stylelint_lsp",
+  "tailwindcss",
+  "taplo",
+  "tsserver",
   "vimls",
   "yamlls",
 }
