@@ -1,9 +1,0 @@
-[settings]
-experimental = true
-cargo_binstall = true
-pipx_uvx = true
-paranoid = true
-
-[tools]
-"pipx:njsscan" = "latest"
-"pipx:rainbow" = "latest"
