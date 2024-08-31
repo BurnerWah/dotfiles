@@ -1,0 +1,4 @@
+[tools]
+"ubi:evilmartians/lefthook" = "latest"
+"cargo:stylua" = "latest"
+"cargo:taplo-cli" = "latest"
