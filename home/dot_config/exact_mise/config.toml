@@ -5,10 +5,10 @@ pipx_uvx = true
 paranoid = false
 
 [tools]
-"pipx:njsscan" = "latest"
-"pipx:rainbow" = "latest"
-"pipx:litecli" = "latest"
-"pipx:ddgr" = "latest"
+# "pipx:njsscan" = "latest"
+# "pipx:rainbow" = "latest"
+# "pipx:litecli" = "latest"
+# "pipx:ddgr" = "latest"
 "npm:prettier" = "latest"
 "npm:npm-check-updates" = "latest"
 "cargo:ubi" = "latest"
