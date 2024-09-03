@@ -1,15 +1,10 @@
-# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
 if command -qs eza
     function ls --wraps='eza -F' --description 'List contents of directory'
         set -l cmd ls
         set -l param --color=auto
         if isatty stdout
             set cmd eza
-            # {{- if eq .chezmoi.os "darwin" }}
             set -a param --classify --color-scale size
-            # {{- else }}
-            set -a param --classify --color-scale
-            # {{- end }}
         end
         command $cmd $param $argv
     end
