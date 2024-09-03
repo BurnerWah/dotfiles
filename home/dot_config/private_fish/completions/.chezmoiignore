@@ -1,3 +1,8 @@
 {{- if ne .chezmoi.os "linux" }}
+/antidot.fish
+/atuin.fish
+/luarocks.fish
+/miniserve.fish
+/mise.fish
 /uv.fish
 {{- end }}
