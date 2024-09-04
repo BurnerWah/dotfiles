@@ -7,7 +7,6 @@ packages:
       - homebrew/command-not-found
       - homebrew/services
       - buo/cask-upgrade
-      - oven-sh/bun
       - rsteube/tap
       - egoist/tap
 
@@ -71,14 +70,10 @@ packages:
       - whisky
 
     formulae:
-      - act # GitHub Actions runner
-      - actionlint # GitHub Actions linter
       - age # encryption tool
       - age-plugin-yubikey
       - as-tree
-      # {{ if eq .chezmoi.arch "arm64" }}
       - asitop # Apple Silicon performance monitor
-      # {{ end }}
       - atuin # history sync
       - b3sum
       - bash-completion
@@ -163,12 +158,10 @@ packages:
       - npm-check-updates
       - nushell
       - oh-my-posh
-      - oven-sh/bun/bun
       - p7zip
       - pandoc
       - pidof # process ID lookup
       - pigz # parallel gzip
-      - pipx
       - podman
       - podman-compose
       - postgresql@16

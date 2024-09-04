@@ -5,7 +5,7 @@ pipx_uvx = true
 paranoid = false
 
 [tools]
-"npm:prettier" = "latest"
-"npm:npm-check-updates" = "latest"
+# "npm:prettier" = "latest"
+# "npm:npm-check-updates" = "latest"
 # "cargo:ubi-cli" = "latest"
 "npm:npq" = "latest"
