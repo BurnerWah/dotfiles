@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+exec boxxy -l error "/opt/1Password/op-ssh-sign" "$@"

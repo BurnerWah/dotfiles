@@ -1,0 +1,22 @@
+/atuin
+/bun
+/charm
+/chezmoi
+/gnome-boxes
+/golang
+/grilo-plugins
+/gstreamer-1.0
+/gvfs-metadata
+/mise
+/nvim
+/pnpm
+/systemd
+/Trash
+/uv
+/vscode
+/vscode-sqltools
+/zoxide
+
+{{- if ne .chezmoi.os "linux" }}
+/applications
+{{- end }}

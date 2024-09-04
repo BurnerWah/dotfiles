@@ -6,7 +6,6 @@
 /catj
 /gallery-dl
 /litecli
-/mergerfs*
 /npq
 /npq-hero
 /ops
@@ -21,6 +20,7 @@
 /yt-dlp
 
 {{- if ne .chezmoi.os "linux" }}
+/1password
 /asdf
 /blender
 /clion
@@ -34,6 +34,7 @@
 /idea
 /inkscape
 /obs
+/op-ssh-sign
 /phpstorm
 /picard
 /pycharm
@@ -43,4 +44,11 @@
 /vlc
 /waterfox
 /webstorm
+{{- end }}
+
+{{- if eq .chezmoi.os "windows" }}
+# Almost everything in here won't work on windows
+/*
+!/*.cmd
+!/*.ps1
 {{- end }}
