@@ -1,3 +1,25 @@
+/all-the-package-names
+/asciinema
+/atuin
+/boxxy
+/carapace
+/catj
+/gallery-dl
+/litecli
+/mergerfs*
+/npq
+/npq-hero
+/ops
+/pdu
+/pnpm
+/pnpx
+/tmsu*
+/ts-node*
+/ts-script
+/tsc
+/tsserver
+/yt-dlp
+
 {{- if ne .chezmoi.os "linux" }}
 /asdf
 /blender

@@ -38,6 +38,7 @@
 /boxxy
 /environment.d
 /systemd
+/user-tmpfiles.d
 {{- end }}
 
 {{- if ne .chezmoi.os "darwin" }}
