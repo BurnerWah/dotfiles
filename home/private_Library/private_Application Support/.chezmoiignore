@@ -1,0 +1,150 @@
+/*.data
+/*.padl
+/*.spadl
+/1Password
+/AddressBook
+/Adobe
+/Animoji
+/App Store
+/Arc
+/ArmCord
+/atuin
+/Automator
+/bash-completion
+/BetterDisplay
+/BetterTouchTool
+/Blender
+/Bootstrap Studio
+/bstudio
+/Caches
+/CallHistoryDB
+/CallHistoryTransactions
+/CEF
+/charm
+/chezmoi
+/Chromium
+/CleanMyMac X
+/CleanMyMac X Menu
+/CleanShot
+/CloudDocs
+/CMakeTools
+/cod
+/Code
+/Codux
+/com.adobe.dunamis
+/com.apple.*
+/com.bugsnag.Bugsnag
+/com.colliderli.iina
+/com.dmitrynikolaev.numi
+/com.fournova.Tower3
+/com.github.domt4.homebrew-autoupdate
+/com.hegenberg.BetterTouchTool
+/com.isaacmarovitz.Whisky
+/com.lwouis.alt-tab-macos
+/com.malwarebytes.mbam
+/com.microsoft.SharePoint-mac
+/com.paragon-software.*
+/com.raycast.macos
+/com.turborepo.turborepo
+/Compressor
+/ConfigurationProfiles
+/CrashReporter
+/cups
+/Cypress
+/Dash
+/Deskreen
+/DiskImages
+/Dock
+/FaceTime
+/Figma
+/FileProvider
+/Final Cut Pro
+/Firefox
+/fish
+/fisher
+/gem
+/go
+/Google
+/google-heartbeat-storage
+/gops
+/heroku
+/homeenergyd
+/HTTPie
+/icdd
+/iCloud
+/iLifeMediaBrowser
+/Instruments
+/io.fadel.MissionControlPlus
+/io.sentry
+/IsolatedStorage
+/itch
+/itch-setup
+/iTerm2
+/JetBrains
+/Knowledge
+/kpeoplevcard
+/krita
+/krita-sysinfo.log
+/krita.log
+/Launchpad Manager
+/LibreOffice
+/Logitech
+/Lunar
+/MBHaxe-MBG
+/Microsoft
+/Microsoft Edge
+/Microsoft Edge Beta
+/Microsoft Edge Canary
+/Microsoft Edge Dev
+/Microsoft Visual Studio
+/Mission Control Plus
+/Motion
+/Mozilla
+/networkserviceproxy
+/NuGet
+/Numi
+/nupm
+/NVIDIA
+/NVIDIA Corporation
+/nvim
+/obs-studio
+/obsidian
+/omnisharp
+/ops
+/org.videolan.vlc
+/pnpm
+/Podman Desktop
+/PopClip
+/powershell
+/ProApps
+/quarto
+/quarto-writer
+/RefSrcSymbols
+/Signal
+/spacedrive
+/Stats
+/Steam
+/Stellarium
+/stickersd
+/Sublime Text
+/summary-events
+/SymbolSourceSymbols
+/Syncthing
+/TorBrowser-Data
+/Transmission
+/turborepo
+/UninstallPKG
+/Valve Corporation
+/VencordDesktop
+/videosubscriptionsd
+/Vivaldi
+/VMware Fusion
+/VMware Fusion Applications Menu
+/volta
+/vscode-sqltools
+/Wave
+/Xcode
+/xonsh
+/yarn
+/zoom.us
+/zoxide

@@ -1,0 +1,104 @@
+/Accounts
+/AppleMediaServices
+/Application Scripts
+/asdf
+/Assistant
+/Assistants
+/Autosave Information
+/Biome
+/Caches
+/Calendars
+/CallServices
+/CloudStorage
+/Colors
+/com.apple.*
+/Compositions
+/Contacts
+/ContainerManager
+/Containers
+/Cookies
+/CoreFollowUp
+/Daemon Containers
+/DataAccess
+/DataDeliveryServices
+/DES
+/Developer
+/DoNotDisturb
+/DuetExpertCenter
+/Favorites
+/Finance
+/FontCollections
+/FrontBoard
+/GameKit
+/Google
+/Group Containers
+/GroupContainersAlias
+/homeenergyd
+/HomeKit
+/HTTPStorages
+/IdentityServices
+/IntelligencePlatform
+/Intents
+/Jupyter
+/Keyboard
+/KeyboardServices
+/Keychains
+/LanguageModeling
+/LockdownMode
+/Logs
+/Mail
+/Messages
+/Metadata
+/Mobile Documents
+/Mozilla
+/News
+/NGL
+/org.swift.swiftpm
+/Passes
+/PDF Services
+/PersonalizationPortrait
+/Photos
+/pipx
+/Printers
+/Python
+/Reminders
+/Safari
+/SafariSafeBrowsing
+/SafariSandboxBroker
+/Saved Application State
+/ScreenRecordings
+/Scripts
+/Sharing
+/Shortcuts
+/Sounds
+/Speech
+/Spelling
+/Staging
+/StatusKit
+/Stickers
+/studentd
+/Suggestions
+/SyncedPreferences
+/Thunderbird
+/Translation
+/Trial
+/UnifiedAssetFramework
+/virtualenvs
+/Weather
+/WebKit
+/Workflows
+
+# No idea how to include this in dotfiles
+/Audio
+
+# Probaly managed by homebrew
+/ColorPickers
+/Dictionaries
+/Fonts
+/Input Methods
+/Internet Plug-Ins
+/Keyboard Layouts
+/PreferencePanes
+/QuickLook
+/Screen Savers
+/Services

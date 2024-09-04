@@ -8,6 +8,7 @@
 **/package-lock.json
 **/yarn.lock
 **/node_modules
+**/.ropeproject
 
 # Application folders & files
 {{ range ((includeTemplate "chezmoi/ignore.yaml" | fromYaml).home | compact) }}
@@ -16,15 +17,9 @@
 {{ range ((includeTemplate "chezmoi/ignore.yaml" | fromYaml).dotfiles | compact) }}
 /.{{ . }}
 {{- end }}
-{{ range ((includeTemplate "chezmoi/ignore.yaml" | fromYaml).xdg.config | compact) }}
-/.config/{{ . }}
-{{- end }}
-{{ range ((includeTemplate "chezmoi/ignore.yaml" | fromYaml).darwin.library | compact) }}
-/Library/{{ . }}
-{{- end }}
-{{ range ((includeTemplate "chezmoi/ignore.yaml" | fromYaml).darwin.appsupport | compact) }}
-/Library/Application Support/{{ . }}
-{{- end }}
+
+# Generated files
+**/.zcompdump
 
 # Other stuff
 **/.DS_Store
@@ -32,49 +27,19 @@
 **/.ACCC_Lock
 **/.ADCS_Lock
 **/.CCH_UPI_Lock
+**/.COSY_Lock
 
 # OS-Specific exclusions
 {{- if ne .chezmoi.os "linux" }}
-/.config/boxxy
-/.config/environment.d
-/.config/systemd
-/.config/fish/functions/blkid.fish
-/.config/fish/functions/bussybox.fish
-/.config/fish/functions/findmnt.fish
-/.config/fish/functions/free.fish
-/.config/fish/functions/getfacl.fish
-/.config/fish/functions/getsebool.fish
-/.config/fish/functions/iostat.fish
-/.config/fish/functions/ip.fish
-/.config/fish/functions/iptables.fish
-/.config/fish/functions/iwconfig.fish
-/.config/fish/functions/lastlog.fish
-/.config/fish/functions/lsattr.fish
-/.config/fish/functions/lsblk.fish
-/.config/fish/functions/lsmod.fish
-/.config/fish/functions/lspci.fish
-/.config/fish/functions/pidstat.fish
-/.config/fish/functions/sar.fish
-/.config/fish/functions/ss.fish
-/.config/fish/functions/vmstat.fish
-/.config/fish/functions/xdg-open.fish
 /.var
+.chezmoiscripts/linux/**
 .chezmoiexternals/linux.*
 {{- end }}
 {{- if ne .chezmoi.os "darwin" }}
 .chezmoiscripts/darwin/**
 /Library
-/.config/homebrew
-/.config/karabiner
-/.config/iterm2
-/.config/fish/conf.d/darwin.fish
-/.config/fish/conf.d/iterm2.fish
 {{- end }}
 {{- if eq .chezmoi.os "windows" }}
-/.config/fish
-/.config/rainbow
-/.config/yt-dlp
-/.config/zsh
 !/Documents
 /Documents/*
 !/Documents/PowerShell

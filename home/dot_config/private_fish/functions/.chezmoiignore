@@ -1,0 +1,22 @@
+{{- if ne .chezmoi.os "linux" }}
+/blkid.fish
+/bussybox.fish
+/findmnt.fish
+/free.fish
+/getfacl.fish
+/getsebool.fish
+/iostat.fish
+/ip.fish
+/iptables.fish
+/iwconfig.fish
+/lastlog.fish
+/lsattr.fish
+/lsblk.fish
+/lsmod.fish
+/lspci.fish
+/pidstat.fish
+/sar.fish
+/ss.fish
+/vmstat.fish
+/xdg-open.fish
+{{- end }}

@@ -1,0 +1,54 @@
+/.semgrep
+/1Password
+/Bootstrap Studio
+/bstudio
+/Code
+/configstore
+/Cypress
+/evolution
+/flutter
+/gatsby
+/github-copilot
+/gnome-boxes
+/gnome-initial-setup-done
+/gnome-session
+/goa-1.0
+/gsconnect
+/ibus
+/itch
+/JetBrains
+/jgit
+/kera-desktop
+/libvirt
+/monitors.xml*
+/Mullvad VPN
+/MusicBrainz
+/nodemon.json
+/ookla
+/op
+/postybirb
+/postybirb-plus
+/pulse
+/raycast
+/tabtab
+/user-share
+/vscode-sqltools
+
+{{- if ne .chezmoi.os "linux" }}
+/boxxy
+/environment.d
+/systemd
+{{- end }}
+
+{{- if ne .chezmoi.os "darwin" }}
+/homebrew
+/karabiner
+/iterm2
+{{- end }}
+
+{{- if eq .chezmoi.os "windows" }}
+/fish
+/rainbow
+/yt-dlp
+/zsh
+{{- end }}

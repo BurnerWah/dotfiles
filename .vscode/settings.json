@@ -18,6 +18,7 @@
     "*.ps1.tmpl": "powershell",
     "*.plist": "xml",
     "*.plist.tmpl": "xml",
+    ".chezmoiremove": "ignore",
   },
   "go-template.patterns": [
     "**/*.tmpl",
