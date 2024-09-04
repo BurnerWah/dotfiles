@@ -1,12 +1,4 @@
 # Describes a lot of stuff to ignore in a more structured form
-windows:
-  appdata: # These are include lists
-    roaming:
-      - bat
-      - carapace
-      - elvish
-      - nushell
-
 dotfiles:
   - 1password
   - affinity

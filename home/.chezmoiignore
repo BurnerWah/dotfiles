@@ -41,12 +41,6 @@
 {{- end }}
 {{- if eq .chezmoi.os "windows" }}
 !/Documents
-/Documents/*
-!/Documents/PowerShell
-/AppData/Roaming/*
-{{ range ((includeTemplate "chezmoi/ignore.yaml" | fromYaml).windows.appdata.roaming | compact) }}
-!/AppData/Roaming/{{ . }}
-{{- end }}
 {{- else }}
 .chezmoiscripts/windows/**
 /AppData
