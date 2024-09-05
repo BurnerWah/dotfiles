@@ -6,6 +6,15 @@ url = "https://github.com/ohmyzsh/ohmyzsh/archive/master.tar.gz"
 exact = true
 stripComponents = 1
 refreshPeriod = "168h"
+include = [
+  "*/plugins",
+  "*/plugins/command-not-found/**",
+  "*/plugins/direnv/**",
+  "*/plugins/iterm2/**",
+  "*/plugins/mise/**",
+  "*/plugins/starship/**",
+  "*/plugins/thefuck/**",
+]
 
 [".config/zsh/plugins/fast-syntax-highlighting"]
 type = "archive"
@@ -13,7 +22,15 @@ url = "https://github.com/zdharma-continuum/fast-syntax-highlighting/archive/mas
 exact = true
 stripComponents = 1
 refreshPeriod = "744h"
-exclude = ["*/images", "*/test", "*/tests"]
+exclude = [
+  "*/.github",
+  "*/.gitignore",
+  "*/.zunit.yml",
+  "*/images",
+  "*/test",
+  "*/tests",
+  "**/*.adoc",
+]
 
 [".config/zsh/plugins/zsh-autosuggestions"]
 type = "archive"

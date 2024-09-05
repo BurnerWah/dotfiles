@@ -2,19 +2,6 @@ autoload -Uz zrecompile
 autoload -Uz add-zsh-hook
 # autoload -Uz run-help
 
-# Terminal integration & prompt
-case "$TERM_PROGRAM" in
-iTerm.app)
-    # source /Applications/iTerm.app/Contents/Resources/iterm2_shell_integration.zsh
-    eval "$(starship init zsh)"
-    # eval "$(oh-my-posh init zsh)"
-    ;;
-*)
-    eval "$(starship init zsh)"
-    # eval "$(oh-my-posh init zsh)"
-    ;;
-esac
-
 # History file in caches
 HISTFILE=${XDG_CACHE_HOME}/zsh_history
 setopt APPEND_HISTORY

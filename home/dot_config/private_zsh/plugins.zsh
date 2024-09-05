@@ -13,6 +13,7 @@
         mise
         iterm2
         shadowenv
+        starship
         thefuck
     )
     for plugin in $plugins; do
