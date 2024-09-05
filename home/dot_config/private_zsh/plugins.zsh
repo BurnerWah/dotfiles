@@ -6,10 +6,13 @@
         zsh-autopair
         zsh-history-substring-search
 
+        command-not-found
         atuin
         direnv
         zoxide
         mise
+        iterm2
+        shadowenv
         thefuck
     )
     for plugin in $plugins; do

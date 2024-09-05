@@ -5,7 +5,7 @@ autoload -Uz add-zsh-hook
 # Terminal integration & prompt
 case "$TERM_PROGRAM" in
 iTerm.app)
-    source /Applications/iTerm.app/Contents/Resources/iterm2_shell_integration.zsh
+    # source /Applications/iTerm.app/Contents/Resources/iterm2_shell_integration.zsh
     eval "$(starship init zsh)"
     # eval "$(oh-my-posh init zsh)"
     ;;
@@ -52,5 +52,7 @@ compinit
 zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh"
+
+zstyle :omz:plugins:iterm2 shell-integration yes
 
 source "$ZDOTDIR/plugins.zsh"
