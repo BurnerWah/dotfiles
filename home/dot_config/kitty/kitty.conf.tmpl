@@ -1,4 +1,4 @@
-#: New {{{1
+#: New
 #: I don't want to categorize these
 
 #: Disable automatic shell integrations.
@@ -11,7 +11,7 @@
 #: Oh also it unsets the
 #: shell_integration no-rc
 
-#: Fonts {{{1
+#: Fonts
 
 #: kitty has very powerful font management. You can configure
 #: individual font faces and even specify special fonts for particular
@@ -34,7 +34,7 @@ bold_italic_font auto
 #:     italic_font      Operator Mono Book Italic
 #:     bold_italic_font Operator Mono Medium Italic
 
-font_size 13.0
+font_size {{ eq .chezmoi.os "darwin" | ternary "13.0" "10.0" }}
 
 #: Font size (in pts)
 
@@ -84,7 +84,7 @@ box_drawing_scale 0.001, 1, 1.5, 2
 #: monitor DPI to arrive at a pixel value. There must be four values
 #: corresponding to thin, normal, thick, and very thick lines.
 
-#: Cursor customization {{{1
+#: Cursor customization
 
 cursor #cccccc
 
@@ -112,7 +112,7 @@ cursor_stop_blinking_after 15.0
 #: Stop blinking cursor after the specified number of seconds of
 #: keyboard inactivity.  Set to zero to never stop blinking.
 
-#: Scrollback {{{1
+#: Scrollback
 
 scrollback_lines 20000
 
@@ -154,7 +154,7 @@ touch_scroll_multiplier 7.5
 #: for high precision scrolling devices on platforms such as macOS and
 #: Wayland. Use negative numbers to change scroll direction.
 
-#: Mouse {{{1
+#: Mouse
 
 mouse_hide_wait 3.0
 
@@ -224,7 +224,7 @@ focus_follows_mouse no
 #: Set the active window to the window under the mouse when moving the
 #: mouse around
 
-#: Performance tuning {{{1
+#: Performance tuning
 
 repaint_delay 10
 
@@ -252,7 +252,7 @@ sync_to_monitor yes
 #: keyboard repeat rate, you may notice some slight input latency. If
 #: so, set this to no.
 
-#: Terminal bell {{{1
+#: Terminal bell
 
 enable_audio_bell yes
 
@@ -279,7 +279,7 @@ command_on_bell none
 
 #: Program to run when a bell occurs.
 
-#: Window layout {{{1
+#: Window layout
 
 remember_window_size  yes
 initial_window_width  640
@@ -386,7 +386,7 @@ resize_draw_strategy static
 #: scaled. A value of blank means draw a blank window. A value of size
 #: means show the window size in cells.
 
-#: Tab bar {{{1
+#: Tab bar
 
 tab_bar_edge bottom
 
@@ -448,7 +448,7 @@ tab_bar_margin_color none
 
 #: Tab bar colors and styles
 
-#: Color scheme {{{1
+#: Color scheme
 
 foreground #dddddd
 background #000000
@@ -540,7 +540,7 @@ color15 #ffffff
 
 # include base16-kitty/colors/base16-3024-256.conf
 
-#: Advanced {{{1
+#: Advanced
 
 # shell fish
 
@@ -635,7 +635,7 @@ term xterm-kitty
 #: from key-presses, to colors, to various advanced features may not
 #: work.
 
-#: OS specific tweaks {{{1
+#: OS specific tweaks
 
 # macos_titlebar_color system
 
@@ -704,7 +704,7 @@ wayland_titlebar_color background
 #: backend based on the system state is chosen automatically. Set it
 #: to x11 or wayland to force the choice.
 
-#: Keyboard shortcuts {{{1
+#: Keyboard shortcuts
 
 #: For a list of key names, see: GLFW keys
 #: <https://www.glfw.org/docs/latest/group__keys.html>. The name to
@@ -769,7 +769,7 @@ clear_all_shortcuts no
 #: You can have kitty remove all shortcut definition seen up to this
 #: point. Useful, for instance, to remove the default shortcuts.
 
-#: Clipboard {{{2
+#: Clipboard
 
 map kitty_mod+c copy_to_clipboard
 
@@ -795,7 +795,7 @@ map kitty_mod+o  pass_selection_to_program
 
 #      map kitty_mod+y new_window less @selection
 
-#: Scrolling {{{2
+#: Scrolling
 
 map kitty_mod+up        scroll_line_up
 map kitty_mod+k         scroll_line_up
@@ -817,7 +817,7 @@ map kitty_mod+h         show_scrollback
 #: For more details on piping screen and buffer contents to external
 #: programs, see pipe.
 
-#: Window management {{{2
+#: Window management
 
 map kitty_mod+enter new_window
 
@@ -857,7 +857,7 @@ map kitty_mod+8 eighth_window
 map kitty_mod+9 ninth_window
 map kitty_mod+0 tenth_window
 
-#: Tab management {{{2
+#: Tab management
 
 map kitty_mod+right next_tab
 map kitty_mod+left  previous_tab
@@ -881,7 +881,7 @@ map kitty_mod+alt+t set_tab_title
 
 #      map ctrl+t new_tab !neighbor [optional cmd to run]
 
-#: Layout management {{{2
+#: Layout management
 
 map kitty_mod+l next_layout
 
@@ -894,7 +894,7 @@ map kitty_mod+l next_layout
 
 #     map ctrl+alt+p last_used_layout
 
-#: Font sizes {{{2
+#: Font sizes
 
 #: You can change the font size for all top-level kitty OS windows at
 #: a time or only the current one.
@@ -912,7 +912,7 @@ map kitty_mod+backspace change_font_size all 0
 
 #      map kitty_mod+f6 change_font_size current 10.0
 
-#: Select and act on visible text {{{2
+#: Select and act on visible text
 
 #: Use the hints kitten to select text and either pass it to an
 #: external program or insert it into the terminal or copy it to the
@@ -952,7 +952,7 @@ map kitty_mod+p>h kitten hints --type hash --program -
 #: The hints kitten has many more modes of operation that you can map
 #: to different shortcuts. For a full description see kittens/hints.
 
-#: Miscellaneous {{{2
+#: Miscellaneous
 
 map kitty_mod+f11    toggle_fullscreen
 map kitty_mod+f10    toggle_maximized
@@ -1012,5 +1012,3 @@ map kitty_mod+delete clear_terminal reset active
 
 #      map ctrl+alt+a send_text normal Word\x1b[H
 #      map ctrl+alt+a send_text application Word\x1bOH
-
-# vim:fenc=utf-8 ft=kitty fdm=marker tw=79
