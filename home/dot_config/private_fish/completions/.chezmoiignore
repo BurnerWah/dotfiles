@@ -23,6 +23,7 @@
 /gtk-launch.fish
 /gtk-update-icon-cache.fish
 /io.neovim.nvim.fish
+/kmod.fish
 /lsattr.fish
 /lsmod.fish
 /luarocks.fish
@@ -70,7 +71,9 @@
 /yay.fish
 /zellij.fish
 {{- end }}
+
 {{- if ne .chezmoi.os "darwin" }}
+/dark-mode.fish
 /fs_usage.fish
 /pbcopy.fish
 /pbpaste.fish
