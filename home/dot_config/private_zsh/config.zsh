@@ -35,11 +35,7 @@ setopt NO_BEEP
 # setopt REMATCH_PCRE
 setopt CSH_JUNKIE_LOOPS # fuck you this is better
 
-eval "$(zoxide init zsh)"
-
-eval "$(direnv hook zsh)"
-
-eval "$(bkt --env BKT_SHELL_KEY --ttl 1week --modtime /opt/homebrew/opt/thefuck/INSTALL_RECEIPT.json -- thefuck --alias)"
+# eval "$(bkt --env BKT_SHELL_KEY --ttl 1week --modtime /opt/homebrew/opt/thefuck/INSTALL_RECEIPT.json -- thefuck --alias)"
 
 source "$ZDOTDIR/aliases.zsh"
 
