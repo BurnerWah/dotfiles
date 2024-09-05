@@ -1,0 +1,7 @@
+[Unit]
+Description=atuin daemon service
+Requires=atuin-daemon.socket
+After=atuin-daemon.socket
+
+[Service]
+ExecStart=/home/burner/.local/bin/atuin daemon

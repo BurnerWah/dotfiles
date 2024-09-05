@@ -1,0 +1,9 @@
+[Unit]
+Description=atuin daemon socket
+
+[Socket]
+ListenStream=%t/atuin/atuin.sock
+SocketMode=0700
+
+[Install]
+WantedBy=sockets.target
