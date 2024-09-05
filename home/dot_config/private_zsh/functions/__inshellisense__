@@ -1,6 +1,0 @@
-#autoload
-input=$LBUFFER
-LBUFFER=
-inshellisense -c "$input" -s zsh <$TTY
-print -s $(inshellisense --history)
-zle reset-prompt
