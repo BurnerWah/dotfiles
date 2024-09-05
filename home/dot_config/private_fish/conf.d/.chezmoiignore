@@ -2,3 +2,9 @@
 /darwin.fish
 /iterm2.fish
 {{- end }}
+
+# I'm unsure if I even want to include 1password-cli plugins in here
+/op-plugins.fish
+
+# This file is generated, I haven't decided what to do with it yet
+/virtualfish-loader.fish
