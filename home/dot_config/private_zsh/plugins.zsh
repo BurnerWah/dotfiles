@@ -9,6 +9,8 @@
         atuin
         direnv
         zoxide
+        mise
+        thefuck
     )
     for plugin in $plugins; do
         source $ZDOTDIR/plugins/$plugin/*.plugin.zsh

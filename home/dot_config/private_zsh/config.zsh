@@ -35,8 +35,6 @@ setopt NO_BEEP
 # setopt REMATCH_PCRE
 setopt CSH_JUNKIE_LOOPS # fuck you this is better
 
-# eval "$(bkt --env BKT_SHELL_KEY --ttl 1week --modtime /opt/homebrew/opt/thefuck/INSTALL_RECEIPT.json -- thefuck --alias)"
-
 source "$ZDOTDIR/aliases.zsh"
 
 fpath=(
