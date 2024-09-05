@@ -3,3 +3,4 @@ experimental = true
 cargo_binstall = true
 pipx_uvx = true
 paranoid = false
+not_found_auto_install = false

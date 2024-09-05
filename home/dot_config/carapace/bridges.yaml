@@ -14,6 +14,7 @@ clusterdb: zsh
 colima: cobra
 concurrently: yargs
 cookiecutter: click
+cosign: cobra
 createdb: zsh # Fish provides built-in completions too
 crontab: zsh
 cue: cobra
@@ -41,6 +42,7 @@ fs_usage: zsh
 gdbus: fish
 gio: fish
 gitleaks: cobra
+gitsign: cobra
 gnutls-cli-debug: zsh
 gnutls-cli: zsh
 gnutls-serv: zsh
