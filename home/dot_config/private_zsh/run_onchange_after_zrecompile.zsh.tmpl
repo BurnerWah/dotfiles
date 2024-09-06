@@ -1,0 +1,15 @@
+#!/usr/bin/env zsh
+
+# {{ lookPath "zsh" }}: {{ include (lookPath "zsh") | sha256sum }}
+
+autoload -Uz zrecompile
+
+{{- $scripts := glob (joinPath .xdg.config "zsh/{plugins,vendor}/**/*.zsh") }}
+
+# script hashes:
+{{ range $scripts -}}
+# {{ . }}: {{ include . | sha256sum }}
+{{ end -}}
+
+zrecompile -p \
+    {{ range $scripts }}-M {{ . }} -- {{ end }}
