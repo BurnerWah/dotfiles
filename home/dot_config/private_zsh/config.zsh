@@ -36,6 +36,8 @@ fpath=(
 autoload -Uz compinit
 compinit
 
+zrecompile -p -M "$ZDOTDIR/.zcompdump"
+
 zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh"
