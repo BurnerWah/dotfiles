@@ -21,4 +21,5 @@
 
 {{- if ne .chezmoi.os "linux" }}
 /applications
+/mime
 {{- end }}
