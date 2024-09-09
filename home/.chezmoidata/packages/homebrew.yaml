@@ -56,7 +56,6 @@ packages:
       - pycharm
       - raycast # spotlight replacement
       - rectangle # window management, probably can remove with macOS 15
-      - rider
       - rubymine
       - signal
       - soduto # KDE connect for macOS
@@ -152,7 +151,6 @@ packages:
       - miniserve # file server
       - mise # really good version manager
       - most # another pager, handles manpages well
-      - neofetch
       - neovim
       - node
       - npm-check-updates
@@ -182,7 +180,6 @@ packages:
       - texinfo # info documentation viewer
       - thefuck
       - tokei # count lines of code
-      - typescript
       - util-linux # subset of the util-linux commands for mac OS
       - uutils-coreutils
       - uv
@@ -198,8 +195,4 @@ packages:
       - yt-dlp
       - zellij # tmux alternative
       - zoxide # directory jumping
-      - zsh-autopair
-      - zsh-autosuggestions
-      - zsh-fast-syntax-highlighting
-      - zsh-history-substring-search
       - zstd

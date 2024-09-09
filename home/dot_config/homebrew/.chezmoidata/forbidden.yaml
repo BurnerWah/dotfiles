@@ -6,13 +6,18 @@ homebrew:
   forbiddden:
     cask:
       - aifun
+      - anchor-wallet # cryptocurrency
       - anythingllm
+      - armory # cryptocurrency
       - atomic-wallet
       - battle-net # activison-blizzard
       - beeper # matrix (security)
       - binance
+      - bisq # cryptocurrency
+      - bitbox # cryptocurrency
       - bitcoin-core
       - blockstream-green
+      - bluewallet
       - boltai
       - brave-browser # homophobia
       - brave-browser@beta # homophobia
@@ -30,6 +35,11 @@ homebrew:
       - dash-dash
       - decentr # cryptocurrency
       - dogecoin
+      - electron-cash # cryptocurrency
+      - electrum # cryptocurrency
+      - electrum-grs
+      - electrum-ltc
+      - electrumsv
       - element # matrix (security)
       - element@nightly # matrix (security)
       - elephas # ai
@@ -40,6 +50,7 @@ homebrew:
       - forkgram-telegram # telegram
       - greenery # cryptocurrency
       - groestlcoin-core # cryptocurrency
+      - grs-bluewallet
       - guilded # roblox
       - impel # ai
       - infoflow # ai
@@ -50,6 +61,9 @@ homebrew:
       - limitless # ai
       - litecoin
       - llamachat
+      - microsoft-edge
+      - microsoft-edge@beta
+      - microsoft-edge@dev
       - mindmac # ai
       - mixin # cryptocurrency
       - monero-wallet
@@ -75,6 +89,8 @@ homebrew:
       - roblox # roblox
       - robloxstudio # roblox
       - sparkplate # cryptocurrency
+      - sparrow # cryptocurrency
+      - specter # cryptocurrency
       - swift # xmpp (security)
       - telegram # telegram
       - telegram-a # telegram
@@ -85,6 +101,7 @@ homebrew:
       - threema-work # threema
       - vertcoin-core
       - vincelwt-chatgpt
+      - wasabi-wallet
 
     formula:
       - aichat
@@ -121,6 +138,7 @@ homebrew:
       - monero
       - nim # homophobia
       - openssl@1.1 # security, deprecated
+      - ord # cryptocurrency
       - qxmpp # xmpp (security)
       - slither-analyzer # cryptocurrency, leaf dependency
       - sysaidmin # ai
