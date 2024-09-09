@@ -1,0 +1,23 @@
+packages:
+  linux:
+    flatpak:
+      # I need to sort out adding flathub without messing up filtering
+      - remote:
+          name: flathub
+        apps:
+          - com.github.johnfactotum.Foliate # E-book reader
+          - com.github.rafostar.Clapper # Video player
+          - com.github.tchx84.Flatseal # Flatpak permissions manager
+          - com.github.wwmm.easyeffects # Audio effects
+          - com.obsproject.Studio
+          - com.ticktick.TickTick # To-do list app
+          - com.visualstudio.code
+          - fr.handbrake.ghb # Encoder
+          - io.podman_desktop.PodmanDesktop # Podman GUI
+          - md.obsidian.Obsidian # Note-taking app
+          - org.gnome.Geary # Email client
+          - org.gnome.Lollypop # Music player
+          - org.libreoffice.LibreOffice
+          - org.mozilla.firefox
+          - org.musicbrainz.Picard # Music tagger
+          - org.qbittorrent.qBittorrent # Torrent client
