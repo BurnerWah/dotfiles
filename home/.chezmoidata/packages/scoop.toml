@@ -9,8 +9,6 @@
 [packages.windows.scoop]
 apps = [
   { Name = "1password-cli", Source = "main" },
-  { Name = "act", Source = "main" },
-  { Name = "actionlint", Source = "main" },
   { Name = "age", Source = "extras" },
   { Name = "aria2", Source = "main" },
   { Name = "bat", Source = "main" },
@@ -21,7 +19,6 @@ apps = [
   { Name = "curl", Source = "main" },
   { Name = "dasel", Source = "extras" },
   { Name = "delta", Source = "main" },
-  { Name = "deno", Source = "main" },
   { Name = "docker-compose", Source = "main" },
   { Name = "doggo", Source = "main" },
   { Name = "exercism", Source = "main" },

@@ -103,6 +103,7 @@ packages:
       - exercism
       - exiftool
       - eza # ls alternative
+      - fastfetch # better neofetch
       - fd # find alternative
       - fish
       - fisher
@@ -125,7 +126,6 @@ packages:
       - go-task
       - grc # CLI output colorizer
       - grex # regex generator
-      - hadolint # Dockerfile linter
       - hexyl # hex viewer
       - htop
       - httpie
