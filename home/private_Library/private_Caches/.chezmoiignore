@@ -1,0 +1,8 @@
+# Needed to make sure cache directories that won't automatically be created exist
+/*
+!/zsh
+/zsh/*
+!/oh-my-zsh
+/oh-my-zsh/*
+!/oh-my-zsh/completions
+/oh-my-zsh/completions/*

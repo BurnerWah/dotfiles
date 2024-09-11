@@ -33,11 +33,11 @@
 {{- if ne .chezmoi.os "linux" }}
 /.var
 .chezmoiscripts/linux/**
-.chezmoiexternals/linux.*
 {{- end }}
 {{- if ne .chezmoi.os "darwin" }}
 .chezmoiscripts/darwin/**
 /Library
+/Logs
 {{- end }}
 {{- if eq .chezmoi.os "windows" }}
 !/Documents
