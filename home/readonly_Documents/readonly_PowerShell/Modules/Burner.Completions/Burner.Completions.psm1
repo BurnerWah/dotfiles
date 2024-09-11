@@ -2,7 +2,6 @@
 
 . (Join-Path $PSScriptRoot "Scripts" "vrc-get.ps1")
 . (Join-Path $PSScriptRoot "Scripts" "tailscale.ps1")
-. (Join-Path $PSScriptRoot "Scripts" "zola.ps1")
 . (Join-Path $PSScriptRoot "Scripts" "ruff.ps1")
 . (Join-Path $PSScriptRoot "Scripts" "miniserve.ps1")
 
