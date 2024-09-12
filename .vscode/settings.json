@@ -44,4 +44,7 @@
   "python.analysis.extraPaths": [
     "/opt/homebrew/opt/xonsh/libexec/lib/python3.12/site-packages",
   ],
+  "nushellLanguageServer.includeDirs": [
+    "./home/dot_config/private_nushell/modules",
+  ],
 }
