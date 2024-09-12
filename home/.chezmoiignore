@@ -11,10 +11,10 @@
 **/.ropeproject
 
 # Application folders & files
-{{ range ((includeTemplate "chezmoi/ignore.yaml" | fromYaml).home | compact) }}
+{{ range (compact .settings.chezmoi.ignored.home) }}
 /{{ . }}
 {{- end }}
-{{ range ((includeTemplate "chezmoi/ignore.yaml" | fromYaml).dotfiles | compact) }}
+{{ range (compact .settings.chezmoi.ignored.dotfiles) }}
 /.{{ . }}
 {{- end }}
 
