@@ -1,0 +1,53 @@
+# {{ if eq .chezmoi.os "linux" }}
+# {{ $nerdFontsVersion := "3.2.1" }}
+
+# Refresh periods are very long in this. This is both because some things are
+# manually updated, and because fonts just don't require frequent updates.
+
+# Once I remember how to make these override default fonts, I'll only include the symbols font
+.local/share/fonts/nerd-font-symbols:
+  type: archive
+  url: 'https://github.com/ryanoasis/nerd-fonts/releases/download/v{{ $nerdFontsVersion }}/NerdFontsSymbolsOnly.zip'
+  exact: true
+  refreshPeriod: 8766h
+  include: ['*.ttf', '*.otf']
+
+.local/share/fonts/fira-code-nf:
+  type: archive
+  url: 'https://github.com/ryanoasis/nerd-fonts/releases/download/v{{ $nerdFontsVersion }}/FiraCode.zip'
+  exact: true
+  refreshPeriod: 8766h
+  include: ['*.ttf', '*.otf']
+
+.local/share/fonts/fira-mono-nf:
+  type: archive
+  url: 'https://github.com/ryanoasis/nerd-fonts/releases/download/v{{ $nerdFontsVersion }}/FiraMono.zip'
+  exact: true
+  refreshPeriod: 8766h
+  include: ['*.ttf', '*.otf']
+
+.local/share/fonts/jetbrains-mono-nf:
+  type: archive
+  url: 'https://github.com/ryanoasis/nerd-fonts/releases/download/v{{ $nerdFontsVersion }}/JetBrainsMono.zip'
+  exact: true
+  refreshPeriod: 8766h
+  include: ['*.ttf', '*.otf']
+
+# This one *could* be done with automatic updates, but the monaspace repo is really big
+.local/share/fonts/monaspace:
+  type: archive
+  url: 'https://github.com/githubnext/monaspace/releases/download/v1.101/monaspace-v1.101.zip'
+  exact: true
+  refreshPeriod: 8766h
+  stripComponents: 3
+  include:
+    - monaspace-*/fonts/otf/*.otf
+    - monaspace-*/fonts/variable/*.ttf
+
+.local/share/fonts/monaspace-nf:
+  type: archive
+  url: 'https://github.com/ryanoasis/nerd-fonts/releases/download/v{{ $nerdFontsVersion }}/Monaspace.zip'
+  exact: true
+  refreshPeriod: 8766h
+  include: ['*.ttf', '*.otf']
+# {{ end }}
