@@ -29,3 +29,11 @@ settings:
       adjust:
         line_height: 0
         column_width: 0
+    scrollback:
+      lines: 20000
+      pager:
+        command: less --chop-long-lines --RAW-CONTROL-CHARS +INPUT_LINE_NUMBER
+        history_size: 0
+      multiplier:
+        wheel: 5.0
+        touch: 7.5

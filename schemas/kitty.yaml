@@ -50,6 +50,38 @@ $defs:
         font:
           type: string
           minLength: 1
+  Scrollback:
+    type: object
+    requried: [lines, pager, multiplier]
+    properties:
+      lines:
+        type: integer
+        minimum: -1
+        description: Number of lines of history to keep in memory for scrolling back
+      pager:
+        type: object
+        description: Pager settings
+        required: [command, history_size]
+        properties:
+          command:
+            type: string
+            minLength: 1
+            description: Program with which to view scrollback in a new window
+          history_size:
+            type: integer
+            minimum: 0
+            maximum: 4000
+            description: Separate scrollback history size, used only for browsing the scrollback buffer (in MB)
+      multiplier:
+        type: object
+        required: [wheel, touch]
+        properties:
+          wheel:
+            type: number
+            description: Modify the amount scrolled by the mouse wheel
+          touch:
+            type: number
+            description: Modify the amount scrolled by touchpad gestures
 
 type: object
 properties:
@@ -66,5 +98,8 @@ properties:
       - adjust
       - main
       - symbol_map
+  scrollback:
+    $ref: '#/$defs/Scrollback'
 required:
   - fonts
+  - scrollback
