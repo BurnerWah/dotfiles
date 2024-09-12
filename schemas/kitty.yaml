@@ -1,0 +1,70 @@
+# yaml-language-server: $schema=https://json-schema.org/draft/2020-12/schema
+description: ''
+$defs:
+  FontAdjust:
+    type: object
+    description: Change the size of each character cell kitty renders. You can use either numbers, which are interpreted as pixels or percentages (number followed by %), which are interpreted as percentages of the unmodified values. You can use negative pixels or percentages less than 100% to reduce sizes
+    properties:
+      column_width:
+        type: [number, string]
+      line_height:
+        type: [number, string]
+      required:
+        - column_width
+        - line_height
+  FontMain:
+    type: object
+    properties:
+      bold:
+        type: string
+        minLength: 1
+      bold_italic:
+        type: string
+        minLength: 1
+      family:
+        type: string
+        minLength: 1
+      italic:
+        type: string
+        minLength: 1
+    required:
+      - bold
+      - bold_italic
+      - family
+      - italic
+  FontSymbolMap:
+    type: array
+    uniqueItems: true
+    minItems: 0
+    description: Map the specified unicode codepoints to a particular font. Useful if you need special rendering for some symbols, such as for Powerline.
+    items:
+      required:
+        - font
+        - codepoints
+      properties:
+        codepoints:
+          type: array
+          items:
+            type: string
+          minItems: 1
+        font:
+          type: string
+          minLength: 1
+
+type: object
+properties:
+  fonts:
+    type: object
+    properties:
+      adjust:
+        $ref: '#/$defs/FontAdjust'
+      main:
+        $ref: '#/$defs/FontMain'
+      symbol_map:
+        $ref: '#/$defs/FontSymbolMap'
+    required:
+      - adjust
+      - main
+      - symbol_map
+required:
+  - fonts

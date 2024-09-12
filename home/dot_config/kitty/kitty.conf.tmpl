@@ -1,3 +1,4 @@
+{{ $config := .settings.kitty }}
 #: New
 #: I don't want to categorize these
 
@@ -13,107 +14,22 @@
 
 #: Fonts
 
-#: kitty has very powerful font management. You can configure
-#: individual font faces and even specify special fonts for particular
-#: characters.
+{{ $fonts := $config.fonts }}
 
-font_family      JetBrains Mono
-bold_font        auto
-italic_font      auto
-bold_italic_font auto
-
-#: You can specify different fonts for the bold/italic/bold-italic
-#: variants. To get a full list of supported fonts use the `kitty
-#: list-fonts` command. By default they are derived automatically, by
-#: the OSes font system. Setting them manually is useful for font
-#: families that have many weight variants like Book, Medium, Thick,
-#: etc. For example::
-
-#:     font_family      Operator Mono Book
-#:     bold_font        Operator Mono Medium
-#:     italic_font      Operator Mono Book Italic
-#:     bold_italic_font Operator Mono Medium Italic
-
-font_size {{ eq .chezmoi.os "darwin" | ternary "13.0" "10.0" }}
+font_family {{ $fonts.main.family }}
+bold_font {{ $fonts.main.bold }}
+italic_font {{ $fonts.main.italic }}
+bold_italic_font {{ $fonts.main.bold_italic }}
 
 #: Font size (in pts)
+font_size {{ eq .chezmoi.os "darwin" | ternary "13.0" "10.0" }}
 
-adjust_line_height  0
-adjust_column_width 0
+adjust_line_height {{ $fonts.adjust.line_height }}
+adjust_column_width {{ $fonts.adjust.column_width }}
 
-#: Change the size of each character cell kitty renders. You can use
-#: either numbers, which are interpreted as pixels or percentages
-#: (number followed by %), which are interpreted as percentages of the
-#: unmodified values. You can use negative pixels or percentages less
-#: than 100% to reduce sizes (but this might cause rendering
-#: artifacts).
-
-# symbol_map U+E0A0-U+E0A2,U+E0B0-U+E0B3 PowerlineSymbols
-# symbol_map U+EA60-U+EBC3 codicon
-{{ range .settings.kitty.fonts.symbol_map }}
+{{ range $config.fonts.symbol_map }}
 symbol_map {{ .codepoints | join "," }} {{ .font }}
 {{ end }}
-
-#: NOTE this ends up misalinged.
-
-#: Map the specified unicode codepoints to a particular font. Useful
-#: if you need special rendering for some symbols, such as for
-#: Powerline. Avoids the need for patched fonts. Each unicode code
-#: point is specified in the form U+<code point in hexadecimal>. You
-#: can specify multiple code points, separated by commas and ranges
-#: separated by hyphens. symbol_map itself can be specified multiple
-#: times. Syntax is::
-
-#      symbol_map codepoints Font Family Name
-
-disable_ligatures never
-
-#: Choose how you want to handle multi-character ligatures. The
-#: default is to always render them.  You can tell kitty to not render
-#: them when the cursor is over them by using cursor to make editing
-#: easier, or have kitty never render them at all by using always, if
-#: you don't like them. The ligature strategy can be set per-window
-#: either using the kitty remote control facility or by defining
-#: shortcuts for it in kitty.conf, for example::
-
-#:     map alt+1 disable_ligatures_in active always
-#:     map alt+2 disable_ligatures_in all never
-#:     map alt+3 disable_ligatures_in tab cursor
-
-box_drawing_scale 0.001, 1, 1.5, 2
-
-#: Change the sizes of the lines used for the box drawing unicode
-#: characters These values are in pts. They will be scaled by the
-#: monitor DPI to arrive at a pixel value. There must be four values
-#: corresponding to thin, normal, thick, and very thick lines.
-
-#: Cursor customization
-
-cursor #cccccc
-
-#: Default cursor color
-
-cursor_text_color #111111
-
-#: Choose the color of text under the cursor. If you want it rendered
-#: with the background color of the cell underneath instead, use the
-#: special keyword: background
-
-cursor_shape block
-
-#: The cursor shape can be one of (block, beam, underline)
-
-cursor_blink_interval -1
-
-#: The interval (in seconds) at which to blink the cursor. Set to zero
-#: to disable blinking. Negative values mean use system default. Note
-#: that numbers smaller than repaint_delay will be limited to
-#: repaint_delay.
-
-cursor_stop_blinking_after 15.0
-
-#: Stop blinking cursor after the specified number of seconds of
-#: keyboard inactivity.  Set to zero to never stop blinking.
 
 #: Scrollback
 

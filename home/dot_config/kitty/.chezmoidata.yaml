@@ -1,6 +1,12 @@
 settings:
   kitty:
     fonts:
+      main:
+        family: JetBrains Mono
+        bold: auto
+        italic: auto
+        bold_italic: auto
+
       symbol_map:
         - font: Symbols Nerd Font Mono
           codepoints:
@@ -19,3 +25,7 @@ settings:
             - U+ea60-U+ec1e # Codicons
             - U+276c-U+2771 # Heavy Angle Brackets
             - U+2500-U+259f # Box Drawing
+
+      adjust:
+        line_height: 0
+        column_width: 0
