@@ -1,4 +1,4 @@
-# {{ if ne (lookPath "zoxide") "" }}
+# {{ if lookPath "zoxide" }}
 # zoxide hash: {{ include (joinPath .pkg.scoop.apps "zoxide/current/zoxide.exe") | sha256sum }}
 $Script:TargetPath = "{{ .chezmoi.targetFile }}"
 zoxide init powershell > $Script:TargetPath
