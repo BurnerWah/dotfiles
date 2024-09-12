@@ -29,6 +29,7 @@ apps = [
   { Name = "FiraCode-NF", Source = "nerd-fonts" },
   { Name = "FiraCode", Source = "nerd-fonts" },
   { Name = "FiraMono-NF", Source = "nerd-fonts" },
+  { Name = "fastfetch", Source = "main" },
   { Name = "flyctl", Source = "main" },
   { Name = "fossil", Source = "main" },
   { Name = "fzf", Source = "main" },
