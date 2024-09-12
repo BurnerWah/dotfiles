@@ -4,6 +4,7 @@
 . (Join-Path $PSScriptRoot "Scripts" "tailscale.ps1")
 . (Join-Path $PSScriptRoot "Scripts" "ruff.ps1")
 . (Join-Path $PSScriptRoot "Scripts" "miniserve.ps1")
+. (Join-Path $PSScriptRoot "Scripts" "uv.ps1")
 
 $Script:scoop = "~\scoop\apps"
 
