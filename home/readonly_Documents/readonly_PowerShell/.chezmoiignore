@@ -1,0 +1,6 @@
+# Ignore modules I didn't make
+/Modules/*
+!/Modules/Burner.*
+
+# Ignore help
+/Help
