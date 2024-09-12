@@ -1,0 +1,21 @@
+settings:
+  kitty:
+    fonts:
+      symbol_map:
+        - font: Symbols Nerd Font Mono
+          codepoints:
+            - U+e5fa-U+e6b5 # Seti-UI + Custom
+            - U+e700-U+e7c5 # Devicons
+            - U+ed00-U+f2ff # Font Awesome (with a gap)
+            - U+e200-U+e2a9 # Font Awesome Extension
+            - U+f0001-U+f1af0 # Material Design Icons
+            - U+e300-U+e3e3 # Weather
+            - U+f400-U+f533,U+2665,U+26A1 # Octicons
+            - U+e0a0-U+e0a2,U+e0b0-U+e0b3 # Powerline Symbols
+            - U+e0a3,U+e0b4-U+e0c8,U+e0ca,U+e0cc-U+e0d7 # Powerline Extra Symbols
+            - U+23fb-U+23fe,U+2b58 # IEC Power Symbols
+            - U+f300-U+f375 # Font Logos
+            - U+e000-U+e00a # Pomicons
+            - U+ea60-U+ec1e # Codicons
+            - U+276c-U+2771 # Heavy Angle Brackets
+            - U+2500-U+259f # Box Drawing
