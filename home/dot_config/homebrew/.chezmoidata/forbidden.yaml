@@ -2,151 +2,152 @@
 # as dependencies of other packages. Deorecated formulae are fine though.
 # Reasoning for some packages is omitted where it's easy to guess from the name.
 
-homebrew:
-  forbiddden:
-    cask:
-      - aifun
-      - anchor-wallet # cryptocurrency
-      - anythingllm
-      - armory # cryptocurrency
-      - atomic-wallet
-      - battle-net # activison-blizzard
-      - beeper # matrix (security)
-      - binance
-      - bisq # cryptocurrency
-      - bitbox # cryptocurrency
-      - bitcoin-core
-      - blockstream-green
-      - bluewallet
-      - boltai
-      - brave-browser # homophobia
-      - brave-browser@beta # homophobia
-      - brave-browser@dev # homophobia
-      - brave-browser@nightly # homophobia
-      - chatall
-      - chatbox
-      - chatgpt
-      - chia # cryptocurrency
-      - cityofzion-neon # cryptocurrency
-      - coin-wallet
-      - coinomi-wallet
-      - cursor # ai
-      - daedalus-mainnet
-      - dash-dash
-      - decentr # cryptocurrency
-      - dogecoin
-      - electron-cash # cryptocurrency
-      - electrum # cryptocurrency
-      - electrum-grs
-      - electrum-ltc
-      - electrumsv
-      - element # matrix (security)
-      - element@nightly # matrix (security)
-      - elephas # ai
-      - elephas@beta # ai
-      - firefly # cryptocurrency
-      - firefly-shimmer # cryptocurrency
-      - fixkey # ai
-      - forkgram-telegram # telegram
-      - greenery # cryptocurrency
-      - groestlcoin-core # cryptocurrency
-      - grs-bluewallet
-      - guilded # roblox
-      - impel # ai
-      - infoflow # ai
-      - itermai # ai
-      - jamie # ai
-      - jan # ai
-      - ledger-live # cryptocurrency
-      - limitless # ai
-      - litecoin
-      - llamachat
-      - microsoft-edge
-      - microsoft-edge@beta
-      - microsoft-edge@dev
-      - mindmac # ai
-      - mixin # cryptocurrency
-      - monero-wallet
-      - mumu-x # ai
-      - mycrypto
-      - mymonero
-      - nano # cryptocurrency
-      - nault # cryptocurrency
-      - nheko # matrix (security)
-      - onekey # cryptocurrency
-      - opencat # ai
-      - opera # loan-shark
-      - opera@beta # loan-shark
-      - opera@developer # loan-shark
-      - opera-gx # loan-shark
-      - operadriver # loan-shark
-      - pdf-pals # ai
-      - planet # cryptocurrency
-      - poe # ai
-      - psi # xmpp (security)
-      - psi-plus # xmpp (security)
-      - quaternion # matrix (security)
-      - roblox # roblox
-      - robloxstudio # roblox
-      - sparkplate # cryptocurrency
-      - sparrow # cryptocurrency
-      - specter # cryptocurrency
-      - swift # xmpp (security)
-      - telegram # telegram
-      - telegram-a # telegram
-      - telegram-desktop # telegram
-      - telegram-desktop@beta # telegram
-      - threema # threema
-      - threema@beta # threema
-      - threema-work # threema
-      - vertcoin-core
-      - vincelwt-chatgpt
-      - wasabi-wallet
+settings:
+  homebrew:
+    forbiddden:
+      cask:
+        - aifun
+        - anchor-wallet # cryptocurrency
+        - anythingllm
+        - armory # cryptocurrency
+        - atomic-wallet
+        - battle-net # activison-blizzard
+        - beeper # matrix (security)
+        - binance
+        - bisq # cryptocurrency
+        - bitbox # cryptocurrency
+        - bitcoin-core
+        - blockstream-green
+        - bluewallet
+        - boltai
+        - brave-browser # homophobia
+        - brave-browser@beta # homophobia
+        - brave-browser@dev # homophobia
+        - brave-browser@nightly # homophobia
+        - chatall
+        - chatbox
+        - chatgpt
+        - chia # cryptocurrency
+        - cityofzion-neon # cryptocurrency
+        - coin-wallet
+        - coinomi-wallet
+        - cursor # ai
+        - daedalus-mainnet
+        - dash-dash
+        - decentr # cryptocurrency
+        - dogecoin
+        - electron-cash # cryptocurrency
+        - electrum # cryptocurrency
+        - electrum-grs
+        - electrum-ltc
+        - electrumsv
+        - element # matrix (security)
+        - element@nightly # matrix (security)
+        - elephas # ai
+        - elephas@beta # ai
+        - firefly # cryptocurrency
+        - firefly-shimmer # cryptocurrency
+        - fixkey # ai
+        - forkgram-telegram # telegram
+        - greenery # cryptocurrency
+        - groestlcoin-core # cryptocurrency
+        - grs-bluewallet
+        - guilded # roblox
+        - impel # ai
+        - infoflow # ai
+        - itermai # ai
+        - jamie # ai
+        - jan # ai
+        - ledger-live # cryptocurrency
+        - limitless # ai
+        - litecoin
+        - llamachat
+        - microsoft-edge
+        - microsoft-edge@beta
+        - microsoft-edge@dev
+        - mindmac # ai
+        - mixin # cryptocurrency
+        - monero-wallet
+        - mumu-x # ai
+        - mycrypto
+        - mymonero
+        - nano # cryptocurrency
+        - nault # cryptocurrency
+        - nheko # matrix (security)
+        - onekey # cryptocurrency
+        - opencat # ai
+        - opera # loan-shark
+        - opera@beta # loan-shark
+        - opera@developer # loan-shark
+        - opera-gx # loan-shark
+        - operadriver # loan-shark
+        - pdf-pals # ai
+        - planet # cryptocurrency
+        - poe # ai
+        - psi # xmpp (security)
+        - psi-plus # xmpp (security)
+        - quaternion # matrix (security)
+        - roblox # roblox
+        - robloxstudio # roblox
+        - sparkplate # cryptocurrency
+        - sparrow # cryptocurrency
+        - specter # cryptocurrency
+        - swift # xmpp (security)
+        - telegram # telegram
+        - telegram-a # telegram
+        - telegram-desktop # telegram
+        - telegram-desktop@beta # telegram
+        - threema # threema
+        - threema@beta # threema
+        - threema-work # threema
+        - vertcoin-core
+        - vincelwt-chatgpt
+        - wasabi-wallet
 
-    formula:
-      - aichat
-      - aicommits
-      - aider
-      - aptos # cryptocurrency
-      - ata # ai
-      - bcoin
-      - bitcoin
-      - chainhook
-      - chatblade # ai
-      - cointop
-      - cortexso # ai
-      - crytic-compile # cryptocurrency, leaf dependency
-      - ejabberd # xmpp (security)
-      - erigon # cryptocurrency
-      - ethereum
-      - envd # ai
-      - firefly # cryptocurrency
-      - flow-cli # cryptocurrency
-      - gloox # xmpp (security)
-      - gptline
-      - grin # cryptocurrency
-      - grin-wallet
-      - groestlcoin
-      - iamb # matrix (security)
-      - ignite # cryptocurrency
-      - libbitcoin-consensus # cryptocurrency, leaf dependency
-      - libbitcoin-system # cryptocurrency, leaf dependency
-      - libstrophe # xmpp (security), leaf dependency
-      - lighthouse # cryptocurrency
-      - mentat # ai
-      - mods # ai
-      - monero
-      - nim # homophobia
-      - openssl@1.1 # security, deprecated
-      - ord # cryptocurrency
-      - qxmpp # xmpp (security)
-      - slither-analyzer # cryptocurrency, leaf dependency
-      - sysaidmin # ai
-      - tdlib # telegram
-      - teku # cryptocurrency
-      - telegram-downloader # telegram
-      - truffle # cryptocurrency
-      - vespa-cli # ai
-      - wagyu # cryptocurrency
-      - wasmer # preference
-      - wownero # cryptocurrency
+      formula:
+        - aichat
+        - aicommits
+        - aider
+        - aptos # cryptocurrency
+        - ata # ai
+        - bcoin
+        - bitcoin
+        - chainhook
+        - chatblade # ai
+        - cointop
+        - cortexso # ai
+        - crytic-compile # cryptocurrency, leaf dependency
+        - ejabberd # xmpp (security)
+        - erigon # cryptocurrency
+        - ethereum
+        - envd # ai
+        - firefly # cryptocurrency
+        - flow-cli # cryptocurrency
+        - gloox # xmpp (security)
+        - gptline
+        - grin # cryptocurrency
+        - grin-wallet
+        - groestlcoin
+        - iamb # matrix (security)
+        - ignite # cryptocurrency
+        - libbitcoin-consensus # cryptocurrency, leaf dependency
+        - libbitcoin-system # cryptocurrency, leaf dependency
+        - libstrophe # xmpp (security), leaf dependency
+        - lighthouse # cryptocurrency
+        - mentat # ai
+        - mods # ai
+        - monero
+        - nim # homophobia
+        - openssl@1.1 # security, deprecated
+        - ord # cryptocurrency
+        - qxmpp # xmpp (security)
+        - slither-analyzer # cryptocurrency, leaf dependency
+        - sysaidmin # ai
+        - tdlib # telegram
+        - teku # cryptocurrency
+        - telegram-downloader # telegram
+        - truffle # cryptocurrency
+        - vespa-cli # ai
+        - wagyu # cryptocurrency
+        - wasmer # preference
+        - wownero # cryptocurrency
