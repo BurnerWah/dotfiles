@@ -93,7 +93,6 @@ packages:
       - corepack
       - dark-mode # macOS dark mode toggle
       - ddgr # DuckDuckGo search
-      - deno
       - detect-secrets
       - direnv # directory-specific env vars
       - doggo # DNS lookup tool
