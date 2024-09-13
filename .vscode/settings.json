@@ -37,10 +37,9 @@
       "home/dot_config/carapace/exact_specs/*.yaml",
       "home/dot_config/carapace/exact_overlays/*.yaml",
     ],
-    "./schemas/app-settings.yaml": [
-      "home/dot_config/kitty/.chezmoidata.yaml",
-      "home/dot_config/homebrew/.chezmoidata.yaml",
-      "home/.chezmoidata/chezmoi/**/*",
+    "./schemas/chezmoi/data.yaml": [
+      "**/.chezmoidata.yaml",
+      "home/.chezmoidata/**/*",
     ],
     "./schemas/chezmoi/externals.yaml": ["home/.chezmoiexternals/**/*"],
     "./schemas/chezmoi/config.yaml": ["home/.chezmoi.yaml.tmpl"],

@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=https://json-schema.org/draft/2020-12/schema
+title: chezmoi data
+description: template data for chezmoi
+
+type: object
+additionalProperties: true
+properties:
+  packages: { $ref: ../packages.json }
+  settings: { $ref: ../app-settings.yaml }
