@@ -2,9 +2,6 @@
 title: App Settings
 type: object
 properties:
-  settings:
-    type: object
-    properties:
-      chezmoi: { $ref: ./settings/chezmoi.yaml }
-      homebrew: { $ref: ./settings/homebrew.yaml }
-      kitty: { $ref: ./settings/kitty.yaml }
+  chezmoi: { $ref: ./settings/chezmoi.yaml }
+  homebrew: { $ref: ./settings/homebrew.yaml }
+  kitty: { $ref: ./settings/kitty.yaml }
