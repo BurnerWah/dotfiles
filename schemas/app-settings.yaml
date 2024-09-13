@@ -1,8 +1,9 @@
 # yaml-language-server: $schema=https://json-schema.org/draft/2020-12/schema
+title: App Settings
 type: object
 properties:
   settings:
     type: object
     properties:
-      kitty:
-        $ref: ./kitty.yaml
+      homebrew: { $ref: ./settings/homebrew.yaml }
+      kitty: { $ref: ./settings/kitty.yaml }

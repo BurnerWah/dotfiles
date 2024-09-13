@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=https://json-schema.org/draft/2020-12/schema
+title: homebrew config schema
+description: homebrew config
+type: object
+properties:
+  forbidden:
+    type: object
+    properties:
+      cask:
+        type: array
+        items: { type: string }
+      formula:
+        type: array
+        items: { type: string }
