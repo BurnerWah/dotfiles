@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=https://json-schema.org/draft/2020-12/schema
+title: chezmoi data settings schema
+type: object
+properties:
+  ignored:
+    type: object
+    properties:
+      dotfiles:
+        type: array
+        items: { type: string }
+      home:
+        type: array
+        items: { type: string }

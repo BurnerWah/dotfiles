@@ -40,6 +40,7 @@
     "./schemas/app-settings.yaml": [
       "home/dot_config/kitty/.chezmoidata.yaml",
       "home/dot_config/homebrew/.chezmoidata.yaml",
+      "home/.chezmoidata/chezmoi/**/*",
     ],
     "./schemas/chezmoi/externals.yaml": ["home/.chezmoiexternals/**/*"],
     "./schemas/chezmoi/config.yaml": ["home/.chezmoi.yaml.tmpl"],
