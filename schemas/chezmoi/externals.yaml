@@ -1,0 +1,186 @@
+# yaml-language-server: $schema=https://json-schema.org/draft/2020-12/schema
+title: Chezmoi Externals
+description: Chezmoi externals schema
+$defs:
+  ChezmoiExternal:
+    allOf:
+      - $ref: '#/$defs/Common'
+      - oneOf:
+          - $ref: '#/$defs/Archive'
+          - $ref: '#/$defs/ArchiveFile'
+          - $ref: '#/$defs/File'
+          - $ref: '#/$defs/GitRepo'
+
+  Archive:
+    allOf:
+      - $ref: '#/$defs/ArchiveOnly'
+      - $ref: '#/$defs/ArchiveCommon'
+      - $ref: '#/$defs/RefreshPeriod'
+
+  ArchiveOnly:
+    type: object
+    required: [type]
+    properties:
+      type:
+        const: archive
+        description: External type
+      exact:
+        type: boolean
+        description: Add `exact_` attribute to directories in archive
+        default: false
+      exclude:
+        type: array
+        description: Patterns to exclude from archive
+        items:
+          type: string
+      include:
+        type: array
+        description: Patterns to include in archive
+        items:
+          type: string
+
+  ArchiveFile:
+    allOf:
+      - $ref: '#/$defs/ArchiveFileOnly'
+      - $ref: '#/$defs/ArchiveCommon'
+      - $ref: '#/$defs/Executable'
+
+  ArchiveFileOnly:
+    type: object
+    required: [type]
+    properties:
+      type:
+        const: archive-file
+        description: External type
+      path:
+        type: string
+        description: Path to file in archive
+
+  File:
+    allOf:
+      - $ref: '#/$defs/FileOnly'
+      - $ref: '#/$defs/Executable'
+      - $ref: '#/$defs/RefreshPeriod'
+
+  FileOnly:
+    type: object
+    required: [type]
+    properties:
+      type:
+        const: file
+        description: External type
+      decompress:
+        type: string
+        description: Decompression for file
+        emum: [bzip2, gzip, xz, zstd]
+      filter:
+        type: object
+        required: [command]
+        properties:
+          command:
+            type: string
+            description: Command to filter contents
+          args:
+            type: array
+            description: Extra args to command to filter contents
+            items:
+              type: string
+
+  GitRepo:
+    type: object
+    required: [type]
+    properties:
+      type:
+        const: git-repo
+        description: External type
+      clone:
+        type: object
+        required: [args]
+        properties:
+          args:
+            type: array
+            description: Extra args to `git clone`
+            items:
+              type: string
+      pull:
+        type: object
+        required: [args]
+        properties:
+          args:
+            type: array
+            description: Extra args to `git pull`
+            items:
+              type: string
+
+  Common:
+    type: object
+    required: [url]
+    properties:
+      encrypted:
+        type: boolean
+        description: Whether the external is encrypted
+        default: false
+      private:
+        type: boolean
+        description: Add `private_` attribute to file
+        default: false
+      readonly:
+        type: boolean
+        description: Add `readonly_` attribute to file
+        default: false
+      url:
+        type: string
+        format: uri
+        description: URL of external
+      checksum:
+        type: object
+        properties:
+          sha256:
+            type: string
+            description: Expected SHA256 checksum of data
+          sha384:
+            type: string
+            description: Expected SHA384 checksum of data
+          sha512:
+            type: string
+            description: Expected SHA512 checksum of data
+          size:
+            type: integer
+            description: Expected size of data
+
+  RefreshPeriod:
+    type: object
+    properties:
+      refreshPeriod:
+        type: string
+        description: Refresh period
+        default: '0'
+
+  ArchiveCommon:
+    type: object
+    properties:
+      archive:
+        type: object
+        properties:
+          extractAppleDouble:
+            type: boolean
+            description: Extract AppleDouble files
+            default: false
+      stripComponents:
+        type: integer
+        description: Number of leading directory components to strip from archives
+        default: 0
+      format:
+        type: string
+        description: Format of archive
+
+  Executable:
+    type: object
+    properties:
+      executable:
+        type: boolean
+        description: Add `executable_` attribute to file
+        default: false
+
+additionalProperties:
+  $ref: '#/$defs/ChezmoiExternal'

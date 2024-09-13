@@ -1,0 +1,601 @@
+# yaml-language-server: $schema=https://json-schema.org/draft/2020-12/schema
+title: Chezmoi Config
+description: Chezmoi config schema
+
+$defs:
+  AutoBool:
+    type: [string, boolean]
+    description: Auto boolean type
+    enum: [auto, true, false]
+    default: auto
+
+  ExtraArgs:
+    type: array
+    description: Extra args to the command
+    items: { type: string }
+    minItems: 1
+
+  Hook:
+    type: object
+    additionalProperties: false
+    properties:
+      post:
+        type: object
+        description: Post hook
+        additionalProperties: false
+        properties:
+          args: { $ref: '#/$defs/ExtraArgs' }
+          command:
+            type: array
+            description: Command to run after command
+            items: { type: string }
+      pre:
+        type: object
+        description: Pre hook
+        additionalProperties: false
+        properties:
+          args: { $ref: '#/$defs/ExtraArgs' }
+          command:
+            type: array
+            description: Command to run before command
+            items: { type: string }
+
+  Interpreters:
+    type: object
+    additionalProperties: false
+    properties:
+      command: { type: string, description: Interpreter command }
+      args: { $ref: '#/$defs/ExtraArgs' }
+
+  Prompt:
+    type: boolean
+    description: Prompt for password
+    default: true
+
+  Command:
+    type: string
+    description: CLI command
+
+  Symmetric:
+    type: boolean
+    description: Use symmetric encryption
+    default: false
+
+  Suffix:
+    type: string
+    description: Suffix appended to encrypted files
+
+  EntryType:
+    type: string
+    description: Entry type
+    enum:
+      - all
+      - always
+      - dirs
+      - files
+      - remove
+      - scripts
+      - symlinks
+      - encrypted
+      - externals
+      - templates
+
+  AddConfig:
+    type: object
+    properties:
+      encrypt:
+        type: boolean
+        description: Encrypt by default
+        default: false
+      secrets:
+        type: string
+        description: Action when secrets are found when adding files
+        enum: [ignore, warning, error]
+        default: warning
+      templateSymlinks:
+        type: boolean
+        description: Template symlinks to source and home dirs
+        default: false
+    additionalProperties: false
+
+  AgeConfig:
+    type: object
+    description: Age configuration
+    properties:
+      command: { $ref: '#/$defs/Command', default: age }
+      args: { $ref: '#/$defs/ExtraArgs' }
+      identities:
+        type: array
+        description: age identity files
+        items: { type: string }
+      identity: { type: string, description: age identity file }
+      passphrase:
+        type: boolean
+        description: Use age passphrase instead of identity
+        default: false
+      recipient: { type: string, description: age recipient }
+      recipients:
+        type: array
+        description: age recipients
+        items: { type: string }
+      recipientsFile: { type: string, description: age recipients file }
+      recipientsFiles:
+        type: array
+        description: age recipients files
+        items: { type: string }
+      suffix: { $ref: '#/$defs/Suffix', default: .age }
+      symmetric: { $ref: '#/$defs/Symmetric' }
+    additionalProperties: false
+
+  AwsSecretsManagerConfig:
+    type: object
+    description: AWS Secrets Manager configuration
+    properties:
+      profile: { type: string, description: AWS shared profile name }
+      region: { type: string, description: AWS region }
+    additionalProperties: false
+
+  AzureKeyVaultConfig:
+    type: object
+    description: Azure Key Vault configuration
+    properties:
+      defaultVault: { type: string, description: default vault name }
+    additionalProperties: false
+
+  BitwardenConfig:
+    type: object
+    description: Official Bitwarden CLI configuration
+    properties: { command: { $ref: '#/$defs/Command', default: bw } }
+    additionalProperties: false
+
+  BitwardenSecretsConfig:
+    type: object
+    description: Bitwarden secrets configuration
+    properties: { command: { $ref: '#/$defs/Command', default: bws } }
+    additionalProperties: false
+
+  CDConfig:
+    type: object
+    properties:
+      command: { type: string, description: Shell to run in cd command }
+      args: { $ref: '#/$defs/ExtraArgs' }
+    additionalProperties: false
+
+  CompletionConfig:
+    type: object
+    properties:
+      custom:
+        type: boolean
+        description: Enable custom shell completions
+        default: false
+    additionalProperties: false
+
+  DashlaneConfig:
+    type: object
+    description: Dashlane CLI configuration
+    properties:
+      command: { $ref: '#/$defs/Command', default: dcli }
+      args: { $ref: '#/$defs/ExtraArgs' }
+    additionalProperties: false
+
+  DiffConfig:
+    type: object
+    properties:
+      command: { type: string, description: External diff command }
+      args: { $ref: '#/$defs/ExtraArgs' }
+      exclude:
+        type: array
+        description: Entry types to exclude from diffs
+        items: { $ref: '#/$defs/EntryType' }
+      pager: { type: string, description: Diff-specific pager }
+      reverse:
+        type: boolean
+        description: Reverse order of arguments to diff
+        default: false
+      scriptContents:
+        type: boolean
+        description: Show script contents
+        default: true
+    additionalProperties: false
+
+  DopplerConfig:
+    type: object
+    description: Doppler CLI configuration
+    properties:
+      command: { $ref: '#/$defs/Command', default: doppler }
+      args: { $ref: '#/$defs/ExtraArgs' }
+      config:
+        type: string
+        description: Default config (aka environment) if none is specified
+      project:
+        type: string
+        description: Default project name if none is specified
+    additionalProperties: false
+
+  EditConfig:
+    type: object
+    properties:
+      apply:
+        type: boolean
+        description: Apply changes on exit
+        default: false
+      command: { $ref: '#/$defs/Command' }
+      args: { $ref: '#/$defs/ExtraArgs' }
+      hardlink:
+        type: boolean
+        description: Invoke editor with a hardlink to the source file
+        default: true
+      minDuration:
+        type: string
+        description: Minimum duration for edit command
+        default: 1s
+      watch:
+        type: boolean
+        description: Automatically apply changes when files are saved
+        default: false
+    additionalProperties: false
+
+  EJsonConfig:
+    type: object
+    properties:
+      key:
+        type: string
+        description: The private key to use for decryption, will supersede using the keyDir if set
+      keyDir:
+        type: string
+        description: Path to directory containing private keys
+    additionalProperties: false
+
+  GitConfig:
+    type: object
+    properties:
+      autoAdd:
+        type: boolean
+        description: Add changes to the source state after any change
+        default: false
+      autoCommit:
+        type: boolean
+        description: Commit changes to the source state after any change
+        default: false
+      autoPush:
+        type: boolean
+        description: Push changes to the source state after any change
+        default: false
+      command: { $ref: '#/$defs/Command', default: git }
+      commitMessageTemplate:
+        type: string
+        description: Commit message template
+      commitMessageTemplateFile:
+        type: string
+        description: Commit message template file (relative to source directory)
+    additionalProperties: false
+
+  GitHubConfig:
+    type: object
+    properties:
+      refreshPeriod:
+        type: string
+        description: Minimum duration between identical GitHub API requests
+        default: 1m
+    additionalProperties: false
+
+  GopassConfig:
+    type: object
+    description: Gopass configuration
+    properties: { command: { $ref: '#/$defs/Command', default: gopass } }
+    additionalProperties: false
+
+  GPGConfig:
+    type: object
+    description: GPG configuration
+    properties:
+      command: { $ref: '#/$defs/Command', default: gpg }
+      args: { $ref: '#/$defs/ExtraArgs' }
+      recipient: { type: string, description: GPG recipient }
+      recipients:
+        type: array
+        description: GPG recipients
+        items: { type: string }
+      suffix: { $ref: '#/$defs/Suffix', default: .gpg }
+      symmetric: { $ref: '#/$defs/Symmetric' }
+    additionalProperties: false
+
+  HCPVaultSecretsConfig:
+    type: object
+    description: HCP Vault Secrets configuration
+    properties:
+      applicationName:
+        type: string
+        description: Default application name if none is specified
+      command: { $ref: '#/$defs/Command', default: vlt }
+      args: { $ref: '#/$defs/ExtraArgs' }
+      organizationId:
+        type: string
+        description: Default organization ID if none is specified
+      projectId:
+        type: string
+        description: Default project ID if none is specified
+    additionalProperties: false
+
+  HooksConfig:
+    type: object
+    description: Chezmoi Hooks configuration
+    additionalProperties: { $ref: '#/$defs/Hook' }
+
+  InterpretersConfig:
+    type: object
+    description: Windows script configuration
+    additionalProperties: { $ref: '#/$defs/Interpreters' }
+
+  KeepassxcConfig:
+    type: object
+    description: KeePassXC configuration
+    properties:
+      command: { $ref: '#/$defs/Command', default: keepassxc-cli }
+      args: { $ref: '#/$defs/ExtraArgs' }
+      database: { type: string, description: KeePassXC database }
+      mode:
+        type: string
+        description: KeePassXC mode
+        enum: [cache-password, open]
+        default: cache-password
+      prompt: { $ref: '#/$defs/Prompt' }
+    additionalProperties: false
+
+  KeeperConfig:
+    type: object
+    description: Keeper configuration
+    properties:
+      command: { $ref: '#/$defs/Command', default: keeper }
+      args: { $ref: '#/$defs/ExtraArgs' }
+    additionalProperties: false
+
+  LastpassConfig:
+    type: object
+    description: LastPass configuration
+    properties: { command: { $ref: '#/$defs/Command', default: lpass } }
+    additionalProperties: false
+
+  MergeConfig:
+    type: object
+    properties:
+      command: { type: string, description: Three-way merge CLI command }
+      args: { $ref: '#/$defs/ExtraArgs' }
+    additionalProperties: false
+
+  OnepasswordConfig:
+    type: object
+    description: 1Password CLI configuration
+    properties:
+      cache:
+        type: boolean
+        description: Enable optional caching provided by `op`
+        default: true
+      command: { $ref: '#/$defs/Command', default: op }
+      mode:
+        type: string
+        description: 1Password mode
+        enum: [account, connect, service]
+        default: account
+      prompt:
+        $ref: '#/$defs/Prompt'
+        description: Prompt for sign-in when no valid session is available
+    additionalProperties: false
+
+  OnepasswordSDKConfig:
+    type: object
+    description: 1Password SDK configuration
+    properties:
+      token:
+        type: string
+        description: 1Password SDK token
+      tokenEnvVar:
+        type: string
+        description: 1Password SDK token environment variable
+    additionalProperties: false
+
+  PassConfig:
+    type: object
+    description: Pass configuration
+    properties: { command: { $ref: '#/$defs/Command', default: pass } }
+    additionalProperties: false
+
+  PassholeConfig:
+    type: object
+    description: Passhole configuration
+    properties:
+      command: { $ref: '#/$defs/Command', default: ph }
+      args: { $ref: '#/$defs/ExtraArgs' }
+      prompt: { $ref: '#/$defs/Prompt' }
+    additionalProperties: false
+
+  PinentryConfig:
+    type: object
+    properties:
+      command: { type: string, description: Pinentry CLI command }
+      args: { $ref: '#/$defs/ExtraArgs' }
+      options:
+        type: array
+        description: Pinentry options
+        items: { type: string }
+    additionalProperties: false
+
+  RBWConfig:
+    type: object
+    description: Unofficial Bitwarden CLI configuration
+    properties: { command: { $ref: '#/$defs/Command', default: rbw } }
+    additionalProperties: false
+
+  SecretConfig:
+    type: object
+    additionalProperties: false
+    properties:
+      command: { type: string, description: Secret CLI command }
+      args: { $ref: '#/$defs/ExtraArgs' }
+
+  StatusConfig:
+    type: object
+    additionalProperties: false
+    properties:
+      exclude:
+        type: array
+        description: Entry types to exclude from status
+        items: { $ref: '#/$defs/EntryType' }
+      pathStyle:
+        type: string
+        description: Path style for status output
+        enum: [absolute, relative, source-absolute, source-relative]
+        default: relative
+
+  TemplateConfig:
+    type: object
+    additionalProperties: false
+    properties:
+      options:
+        type: array
+        description: Template options
+        items: { type: string }
+
+  TextconvConfig:
+    type: array
+    description: Textconv configuration
+    items:
+      type: object
+      additionalProperties: false
+      properties:
+        pattern: { type: string, description: Target path pattern to match }
+        command: { type: string, description: Command to transform contents }
+        args: { $ref: '#/$defs/ExtraArgs' }
+      required: [pattern, command, args]
+
+  UpdateConfig:
+    type: object
+    additionalProperties: false
+    properties:
+      apply:
+        type: boolean
+        description: Apply after pulling
+        default: true
+      args: { $ref: '#/$defs/ExtraArgs' }
+      command: { type: string, description: Update command }
+      recurseSubmodules:
+        type: boolean
+        description: Update submodules recursively
+        default: true
+
+  VaultConfig:
+    type: object
+    description: Hashicorp Vault configuration
+    additionalProperties: false
+    properties: { command: { $ref: '#/$defs/Command', default: vault } }
+
+  VerifyConfig:
+    type: object
+    additionalProperties: false
+    properties:
+      exclude:
+        type: array
+        description: Entry types to exclude from verification
+        items: { $ref: '#/$defs/EntryType' }
+
+  WarningsConfig:
+    type: object
+    additionalProperties: true
+    properties:
+      configFileTemplateHasChanged:
+        type: boolean
+        description: Warn when the config file template has changed
+        default: true
+
+type: object
+additionalProperties: false
+properties:
+  cacheDir: { type: string, description: Cache directory }
+  color:
+    $ref: '#/$defs/AutoBool'
+    description: Colorize output
+  data:
+    type: object
+    description: Template data
+    additionalProperties: true
+  destDir: { type: string, description: Destination directory }
+  encryption:
+    type: string
+    description: Encryption type
+    enum: [age, gpg]
+  env:
+    type: object
+    description: Extra environment variables for scripts and commands
+    additionalProperties: { type: string }
+  format:
+    type: string
+    description: Format for data output
+    enum: [json, yaml]
+    default: json
+  mode:
+    type: string
+    description: Mode in target dir
+    enum: [file, symlink]
+    default: file
+  pager: { type: string, description: Pager for CLI command }
+  persistentState:
+    type: string
+    description: Location of the persistent state file
+  progress: { type: boolean, description: Show progress, default: false }
+  scriptEnv:
+    type: object
+    description: Extra environment variables for scripts and commands
+    additionalProperties: { type: string }
+  scriptTempDir:
+    type: string
+    description: Temporary directory for scripts
+  sourceDir: { type: string, description: Source directory }
+  tempDir: { type: string, description: Temporary directory }
+  umask: { type: integer, description: Umask }
+  useBuiltinAge:
+    $ref: '#/$defs/AutoBool'
+    description: Use builtin age if `age` command is not found in `$PATH`
+  useBuiltinGit:
+    $ref: '#/$defs/AutoBool'
+    description: Use builtin git if `git` command is not found in `$PATH`
+  verbose: { type: boolean, description: Verbose output, default: false }
+  workingTree: { type: string, description: Working tree }
+
+  add: { $ref: '#/$defs/AddConfig' }
+  age: { $ref: '#/$defs/AgeConfig' }
+  awsSecretsManager: { $ref: '#/$defs/AwsSecretsManagerConfig' }
+  azureKeyVault: { $ref: '#/$defs/AzureKeyVaultConfig' }
+  bitwarden: { $ref: '#/$defs/BitwardenConfig' }
+  bitwardenSecrets: { $ref: '#/$defs/BitwardenSecretsConfig' }
+  cd: { $ref: '#/$defs/CDConfig' }
+  completion: { $ref: '#/$defs/CompletionConfig' }
+  dashlane: { $ref: '#/$defs/DashlaneConfig' }
+  diff: { $ref: '#/$defs/DiffConfig' }
+  doppler: { $ref: '#/$defs/DopplerConfig' }
+  edit: { $ref: '#/$defs/EditConfig' }
+  ejson: { $ref: '#/$defs/EJsonConfig' }
+  git: { $ref: '#/$defs/GitConfig' }
+  gitHub: { $ref: '#/$defs/GitHubConfig' }
+  gopass: { $ref: '#/$defs/GopassConfig' }
+  gpg: { $ref: '#/$defs/GPGConfig' }
+  hcpVaultSecrets: { $ref: '#/$defs/HCPVaultSecretsConfig' }
+  hooks: { $ref: '#/$defs/HooksConfig' }
+  interpreters: { $ref: '#/$defs/InterpretersConfig' }
+  keepassxc: { $ref: '#/$defs/KeepassxcConfig' }
+  keeper: { $ref: '#/$defs/KeeperConfig' }
+  lastpass: { $ref: '#/$defs/LastpassConfig' }
+  merge: { $ref: '#/$defs/MergeConfig' }
+  onepassword: { $ref: '#/$defs/OnepasswordConfig' }
+  onepasswordSDK: { $ref: '#/$defs/OnepasswordSDKConfig' }
+  pass: { $ref: '#/$defs/PassConfig' }
+  passhole: { $ref: '#/$defs/PassholeConfig' }
+  pinentry: { $ref: '#/$defs/PinentryConfig' }
+  rbw: { $ref: '#/$defs/RBWConfig' }
+  secret: { $ref: '#/$defs/SecretConfig' }
+  status: { $ref: '#/$defs/StatusConfig' }
+  template: { $ref: '#/$defs/TemplateConfig' }
+  textconv: { $ref: '#/$defs/TextconvConfig' }
+  update: { $ref: '#/$defs/UpdateConfig' }
+  vault: { $ref: '#/$defs/VaultConfig' }
+  verify: { $ref: '#/$defs/VerifyConfig' }
+  warnings: { $ref: '#/$defs/WarningsConfig' }

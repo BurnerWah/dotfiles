@@ -38,6 +38,8 @@
       "home/dot_config/carapace/exact_overlays/*.yaml",
     ],
     "./schemas/app-settings.yaml": ["home/dot_config/kitty/.chezmoidata.yaml"],
+    "./schemas/chezmoi/externals.yaml": ["home/.chezmoiexternals/**/*"],
+    "./schemas/chezmoi/config.yaml": ["home/.chezmoi.yaml.tmpl"],
   },
   "python.autoComplete.extraPaths": [
     "/opt/homebrew/opt/xonsh/libexec/lib/python3.12/site-packages",
