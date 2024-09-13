@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=https://json-schema.org/draft/2020-12/schema
+title: Flatpak packages
+description: Flatpak packages
+
+$defs:
+  Remote:
+    type: object
+    properties:
+      name:
+        type: string
+        description: The name of the remote
+
+type: array
+items:
+  type: object
+  properties:
+    remote:
+      $ref: '#/$defs/Remote'
+    apps:
+      type: array
+      items:
+        type: string
+        description: The name of the app

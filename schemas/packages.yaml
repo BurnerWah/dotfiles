@@ -1,0 +1,11 @@
+# yaml-language-server: $schema=https://json-schema.org/draft/2020-12/schema
+title: Packages
+description: Packages to install
+type: object
+properties:
+  darwin:
+    oneOf:
+      - $ref: ./packages/homebrew.yaml
+  linux:
+    properties:
+      flatpak: { $ref: ./packages/flatpak.yaml }
