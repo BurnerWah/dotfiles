@@ -37,3 +37,8 @@ settings:
       multiplier:
         wheel: 5.0
         touch: 7.5
+    advanced:
+      shell_integration: [enabled] # Likely will change to no-rc later
+      terminfo:
+        type: path # change this to none once proper terminfo handling is set up
+        term: xterm-kitty

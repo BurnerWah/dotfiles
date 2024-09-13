@@ -83,6 +83,42 @@ $defs:
             type: number
             description: Modify the amount scrolled by touchpad gestures
 
+  Terminfo:
+    type: object
+    additionalProperties: false
+    required: [type, term]
+    properties:
+      type:
+        type: string
+        enum: [path, direct, none]
+        default: path
+      term:
+        type: string
+        default: xterm-kitty
+
+  ShellIntegration:
+    type: array
+    items:
+      type: string
+      enum:
+        - enabled
+        - disabled
+        - no-rc
+        - no-cursor
+        - no-title
+        - no-cwd
+        - no-prompt-mark
+        - no-complete
+        - no-sudo
+
+  Advanced:
+    type: object
+    additionalProperties: false
+    required: [terminfo, shell_integration]
+    properties:
+      terminfo: { $ref: '#/$defs/Terminfo' }
+      shell_integration: { $ref: '#/$defs/ShellIntegration' }
+
 type: object
 properties:
   fonts:
@@ -98,8 +134,9 @@ properties:
       - adjust
       - main
       - symbol_map
-  scrollback:
-    $ref: '#/$defs/Scrollback'
+  scrollback: { $ref: '#/$defs/Scrollback' }
+  advanced: { $ref: '#/$defs/Advanced' }
 required:
   - fonts
   - scrollback
+  - advanced
