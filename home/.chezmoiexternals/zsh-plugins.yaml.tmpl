@@ -1,0 +1,56 @@
+# {{ if ne .chezmoi.os "windows" }}
+
+.config/zsh/plugins/fast-syntax-highlighting:
+  type: archive
+  url: https://github.com/zdharma-continuum/fast-syntax-highlighting/archive/master.tar.gz
+  exact: true
+  stripComponents: 1
+  refreshPeriod: 744h
+  exclude:
+    - '*/.github'
+    - '*/.gitignore'
+    - '*/.zunit.yml'
+    - '*/images'
+    - '*/test'
+    - '*/tests'
+    - '**/*.adoc'
+
+.config/zsh/plugins/zsh-autopair:
+  type: archive
+  url: https://github.com/hlissner/zsh-autopair/archive/master.tar.gz
+  exact: true
+  stripComponents: 1
+  refreshPeriod: 744h
+  include: ['*/zsh-autopair.plugin.zsh', '*/autopair.zsh', '*/*.md']
+
+.config/zsh/plugins/zsh-autosuggestions:
+  type: archive
+  url: https://github.com/zsh-users/zsh-autosuggestions/archive/master.tar.gz
+  exact: true
+  stripComponents: 1
+  refreshPeriod: 744h
+  include: ['*/*.zsh', '*/*.md']
+
+.config/zsh/plugins/zsh-history-substring-search:
+  type: archive
+  url: https://github.com/zsh-users/zsh-history-substring-search/archive/master.tar.gz
+  exact: true
+  stripComponents: 1
+  refreshPeriod: 744h
+  include: ['*/*.zsh', '*/*.md']
+
+.config/zsh/vendor/oh-my-zsh:
+  type: archive
+  url: https://github.com/ohmyzsh/ohmyzsh/archive/master.tar.gz
+  exact: true
+  stripComponents: 1
+  refreshPeriod: 168h
+  include:
+    - '*/plugins'
+    - '*/plugins/command-not-found/**'
+    - '*/plugins/direnv/**'
+    - '*/plugins/iterm2/**'
+    - '*/plugins/mise/**'
+    - '*/plugins/starship/**'
+    - '*/plugins/thefuck/**'
+# {{ end }}
