@@ -124,6 +124,7 @@ settings:
         - firefly # cryptocurrency
         - flow-cli # cryptocurrency
         - gloox # xmpp (security)
+        - gollama # ai
         - gptline
         - grin # cryptocurrency
         - grin-wallet

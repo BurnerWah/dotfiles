@@ -1,0 +1,1 @@
+erd --completions fish | source
