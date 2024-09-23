@@ -10,6 +10,9 @@ settings:
       # Flyctl
       FLY_CONFIG_DIR: $XDG_CONFIG_HOME/fly
 
+      # GnuPG
+      GNUPGHOME: $XDG_DATA_HOME/gnupg
+
       # libice
       ICEAUTHORITY: ${XDG_STATE_HOME:-$XDG_CACHE_HOME}/ICEauthority
 
@@ -32,6 +35,9 @@ settings:
       # sccache
       SCCACHE_CACHE_SIZE: 5G
 
+      # SQLite
+      SQLITE_HISTORY: ${XDG_STATE_HOME:-$XDG_CACHE_HOME}/sqlite_history
+
       # ncurses
       TERMINFO: $XDG_DATA_HOME/terminfo
       TERMINFO_DIRS:
@@ -49,3 +55,14 @@ settings:
 
       # ykman
       YKMAN_XDG_EXPERIMENTAL: 1
+
+      # Path
+      PATH:
+        - $XDG_DATA_HOME/mise/shims
+        # Usually stuff that needs to shadow ~/.local/bin or something else,
+        # but starting to be less needed
+        - $XDG_DATA_HOME/wrappers/bin
+        - $HOME/.local/bin
+        - $PATH # Initial PATH is set earlier
+        - $XDG_DATA_HOME/cargo/bin
+        - $XDG_DATA_HOME/golang/bin
