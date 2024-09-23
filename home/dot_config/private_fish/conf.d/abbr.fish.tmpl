@@ -46,6 +46,9 @@ abbr -a gdl gallery-dl
 abbr -a ydl yt-dlp
 abbr -a ydlmp3 'yt-dlp -x --audio-format mp3'
 {{- end }}
+{{- if lookPath "uv" }}
+abbr -a pipx 'uv tool'
+{{- end }}
 
 {{- if eq .chezmoi.os "linux" }}
 # Linux abbreviations
