@@ -5,3 +5,4 @@ properties:
   chezmoi: { $ref: ./settings/chezmoi.yaml }
   homebrew: { $ref: ./settings/homebrew.yaml }
   kitty: { $ref: ./settings/kitty.yaml }
+  systemd: { $ref: ./settings/systemd.yaml }

@@ -1,0 +1,4 @@
+settings:
+  systemd:
+    environment:
+      FLY_CONFIG_DIR: $XDG_CONFIG_HOME/fly

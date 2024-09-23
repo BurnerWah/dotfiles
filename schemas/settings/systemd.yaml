@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=https://json-schema.org/draft/2020-12/schema
+title: systemd settings
+description: systemd settings
+type: object
+$defs:
+  Environment:
+    type: object
+    additionalProperties:
+      oneOf:
+        - type: string
+        - { $ref: '#/$defs/EnvironmentScalar' }
+
+  EnvironmentScalar:
+    type: array
+    items: { type: string }
+
+properties:
+  environment: { $ref: '#/$defs/Environment' }
