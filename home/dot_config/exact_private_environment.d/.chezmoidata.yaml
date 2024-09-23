@@ -1,6 +1,11 @@
 settings:
   systemd:
     environment:
+      # Ansible
+      ANSIBLE_HOME: $XDG_CONFIG_HOME/ansible
+      ANSIBLE_CONFIG: $XDG_CONFIG_HOME/ansible.cfg
+      ANSIBLE_GALAXY_CACHE_DIR: $XDG_CACHE_HOME/ansible/galaxy_cache
+
       # Bootsnap
       BOOTSNAP_CACHE_DIR: $XDG_CACHE_HOME/bootsnap
 

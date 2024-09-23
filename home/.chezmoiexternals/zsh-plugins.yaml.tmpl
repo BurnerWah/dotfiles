@@ -1,5 +1,11 @@
 # {{ if ne .chezmoi.os "windows" }}
 
+.config/zsh/functions/async:
+  type: file
+  url: https://github.com/mafredri/zsh-async/raw/refs/heads/main/async.zsh
+  refreshPeriod: 744h
+  readonly: true
+
 .config/zsh/plugins/fast-syntax-highlighting:
   type: archive
   url: https://github.com/zdharma-continuum/fast-syntax-highlighting/archive/master.tar.gz

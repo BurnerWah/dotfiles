@@ -70,6 +70,7 @@ packages:
     formulae:
       - age # encryption tool
       - age-plugin-yubikey
+      - ansible
       - as-tree
       - asitop # Apple Silicon performance monitor
       - atuin # history sync
