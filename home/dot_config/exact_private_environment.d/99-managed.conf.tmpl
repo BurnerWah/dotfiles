@@ -1,6 +1,6 @@
 # File managed by chezmoi, do not edit manually
 {{- range $key, $value := .settings.systemd.environment }}
-{{-   if (kindIs "string" $value) }}
+{{-   if or (kindIs "string" $value) (kindIs "int" $value) }}
 {{ $key }}={{ $value | quote }}
 {{-   else if (kindIs "slice" $value) }}
 {{ $key }}={{ $value | join ":" | quote }}

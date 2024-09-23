@@ -8,6 +8,7 @@ $defs:
     additionalProperties:
       oneOf:
         - type: string
+        - type: integer
         - { $ref: '#/$defs/EnvironmentScalar' }
 
   EnvironmentScalar:

@@ -1,4 +1,10 @@
 settings:
   systemd:
     environment:
+      CARGO_HOME: $XDG_DATA_HOME/cargo
       FLY_CONFIG_DIR: $XDG_CONFIG_HOME/fly
+      MYPY_CACHE_DIR: $XDG_CACHE_HOME/mypy
+      RUSTUP_HOME: $XDG_DATA_HOME/rustup
+      SCCACHE_CACHE_SIZE: 5G
+      WGETRC: $XDG_CONFIG_HOME/wgetrc
+      YKMAN_XDG_EXPERIMENTAL: 1
