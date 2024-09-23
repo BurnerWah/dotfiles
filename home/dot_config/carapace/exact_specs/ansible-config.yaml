@@ -1,0 +1,58 @@
+name: ansible-config
+description: Manage ansible configuration
+flags:
+  --version: Display version information
+
+persistentflags:
+  -h, --help: Display help
+  -v, --verbose: verbose mode
+  -c, --config=: path to configuration file
+  -t, --type=: Filter down to a specific plugin type
+
+commands:
+  - name: list
+    description: Print all config options
+    flags:
+      -f, --format=: Output format for list
+    completion:
+      flag:
+        format: [json, yaml]
+
+  - name: dump
+    description: Dump configuration
+    flags:
+      --only-changed: Only show configurations that have changed from the default
+      -f, --format=: Output format for dump
+    completion:
+      flag:
+        format: [json, yaml, display]
+
+  - name: view
+    description: View configuration file
+
+  - name: init
+    description: Create initial configuration
+    flags:
+      -f, --format=: Output format for init
+      --disabled: Prefixes all entries with a comment character to disable them
+    completion:
+      flag:
+        format: [ini, env, vars]
+
+completion:
+  flag:
+    config: [$files]
+    type:
+      - all
+      - base
+      - become
+      - cache
+      - callback
+      - cliconf
+      - connection
+      - httpapi
+      - inventory
+      - lookup
+      - netconf
+      - shell
+      - vars
