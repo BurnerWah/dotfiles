@@ -48,6 +48,7 @@
 {{- end }}
 
 {{- if eq .chezmoi.os "windows" }}
+/ansible.cfg
 /fish
 /rainbow
 /yt-dlp
