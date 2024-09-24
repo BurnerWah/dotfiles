@@ -175,9 +175,9 @@ packages:
       - starship # prompt for fish & zsh
       - svgo # SVG optimizer
       - syncthing
-      - tealdeer # fast tldr page viewer
       - texinfo # info documentation viewer
       - thefuck
+      - tlrc # fast tldr page viewer
       - tokei # count lines of code
       - util-linux # subset of the util-linux commands for mac OS
       - uutils-coreutils

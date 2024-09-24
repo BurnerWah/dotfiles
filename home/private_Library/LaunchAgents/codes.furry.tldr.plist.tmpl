@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <!-- This works for tealdeer or tlrc -->
+    <dict>
+        <key>Label</key>
+        <string>codes.furry.tldr</string>
+        <key>ProgramArguments</key>
+        <array>
+            <string>{{ joinPath (env "HOMEBREW_PREFIX") "bin/tldr" }}</string>
+            <string>--update</string>
+        </array>
+        <key>StartCalendarInterval</key>
+        <array>
+            <dict>
+                <key>Day</key>
+                <integer>1</integer>
+                <key>Hour</key>
+                <integer>12</integer>
+                <key>Minute</key>
+                <integer>00</integer>
+            </dict>
+        </array>
+    </dict>
+</plist>

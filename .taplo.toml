@@ -1,3 +1,9 @@
+# If this file isn't named .taplo.toml, VSCode will get confused
+
 [[rule]]
 include = ["home/.chezmoidata/packages/**"]
 schema.path = "./schemas/packages.json"
+
+[[rule]]
+include = ["home/dot_config/exact_mise/config.*"]
+schema.path = "https://mise.jdx.dev/schema/mise.json"

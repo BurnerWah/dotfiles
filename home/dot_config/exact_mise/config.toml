@@ -4,3 +4,17 @@ cargo_binstall = true
 pipx_uvx = true
 paranoid = false
 not_found_auto_install = false
+go_default_packages_file = "~/.config/mise/default-go-packages"
+python_default_packages_file = "~/.config/mise/default-python-packages"
+disable_tools = [
+  "exa",
+  "nim",
+  "ollama",
+  "rome",
+  "solidity",
+  "wasmtime",
+  "youtube-dl",
+]
+
+[settings.ruby]
+default_packages_file = "~/.config/mise/default-gems"
