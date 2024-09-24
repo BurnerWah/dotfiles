@@ -17,10 +17,11 @@ set edit:command-abbr['vim'] = 'nvim'
 set edit:command-abbr['gdl'] = 'gallery-dl'
 set edit:command-abbr['ydl'] = 'yt-dlp'
 set edit:command-abbr['ydlmp3'] = 'yt-dlp -x --audio-format mp3'
+set edit:command-abbr['pipx'] = 'uv tool'
 
 if (eq $platform:os "darwin") {
     set edit:command-abbr['wl-copy'] = 'pbcopy'
     set edit:command-abbr['wlcp'] = 'pbcopy'
     set edit:command-abbr['wl-paste'] = 'pbpaste'
-    set edit:command-abbr['wlp'] = 'wl-paste'
+    set edit:command-abbr['wlp'] = 'pbpaste'
 }
