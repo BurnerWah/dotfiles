@@ -19,6 +19,7 @@
     "*.plist": "xml",
     "*.plist.tmpl": "xml",
     ".chezmoiremove": "ignore",
+    "**/litecli/config.tmpl": "ini",
   },
   "go-template.patterns": [
     "**/*.tmpl",

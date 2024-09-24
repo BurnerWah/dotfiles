@@ -1,3 +1,4 @@
 [tools]
 "ubi:evilmartians/lefthook" = "latest"
 "cargo:stylua" = "latest"
+"pipx:ruff" = "latest"

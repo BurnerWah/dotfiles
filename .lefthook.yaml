@@ -10,3 +10,8 @@ pre-commit:
       run: taplo format {staged_files}
       glob: '*.toml'
       stage_fixed: true
+
+    ruff:
+      run: ruff format {staged_files}
+      glob: '*.py'
+      stage_fixed: true

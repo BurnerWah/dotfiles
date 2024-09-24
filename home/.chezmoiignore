@@ -9,6 +9,7 @@
 **/yarn.lock
 **/node_modules
 **/.ropeproject
+**/__pycache__/
 
 # Application folders & files
 {{ range (compact .settings.chezmoi.ignored.home) }}

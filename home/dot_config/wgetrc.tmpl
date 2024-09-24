@@ -1,0 +1,5 @@
+{{- $hstsFile := joinPath .xdg.state "wget-hsts" }}
+{{- if eq .chezmoi.os "darwin" }}
+{{-   $hstsFile = joinPath .xdg.cache "wget-hsts" }}
+{{- end -}}
+hsts-file = {{ $hstsFile }}

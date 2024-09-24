@@ -181,7 +181,7 @@ packages:
       - tokei # count lines of code
       - util-linux # subset of the util-linux commands for mac OS
       - uutils-coreutils
-      - uv
+      - uv # Python package manager
       - virtualenv
       - virtualfish # virtualenv for fish
       - viu # terminal image viewer

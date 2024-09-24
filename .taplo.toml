@@ -7,3 +7,7 @@ schema.path = "./schemas/packages.json"
 [[rule]]
 include = ["home/dot_config/exact_mise/config.*"]
 schema.path = "https://mise.jdx.dev/schema/mise.json"
+
+[[rule]]
+include = ["home/dot_config/bottom/*"]
+schema.path = "https://github.com/ClementTsang/bottom/raw/refs/heads/main/schema/v0.10/bottom.json"

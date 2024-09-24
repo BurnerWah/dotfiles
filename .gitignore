@@ -415,3 +415,5 @@ zsdoc/data
 !/tests/_output/.gitkeep
 
 # End of https://www.toptal.com/developers/gitignore/api/linux,macos,windows,visualstudiocode,node,kate,powershell,ruby,sublimetext,vim,zsh,fish,xcode
+
+/.mise.local.toml

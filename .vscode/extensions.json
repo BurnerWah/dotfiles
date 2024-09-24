@@ -12,5 +12,6 @@
     "esbenp.prettier-vscode",
     "mads-hartmann.bash-ide-vscode",
     "tamasfe.even-better-toml",
+    "charliermarsh.ruff",
   ],
 }
