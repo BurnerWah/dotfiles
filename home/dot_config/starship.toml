@@ -139,8 +139,7 @@ symbol = "󰔷 "
 disabled = true
 
 [nix_shell]
-# nf-linux-nixos - bigger than nf-md-nix
-symbol = " "
+disabled = true
 
 [nodejs]
 # nf-md-nodejs
