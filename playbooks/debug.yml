@@ -1,0 +1,21 @@
+---
+- name: Debug playbook
+  hosts: localhost
+  tasks:
+    - name: Print all available facts
+      ansible.builtin.debug: { var: ansible_facts }
+
+    - name: Print system
+      ansible.builtin.debug: { var: ansible_system }
+
+    - name: Print distribution
+      ansible.builtin.debug: { var: ansible_distribution }
+
+    - name: Print service manager
+      ansible.builtin.debug: { var: ansible_service_mgr }
+
+    - name: Print package manager
+      ansible.builtin.debug: { var: ansible_pkg_mgr }
+
+    - name: Print all variables
+      ansible.builtin.debug: { var: vars }
