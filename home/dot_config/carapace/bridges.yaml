@@ -2,6 +2,16 @@
 7za: fish
 7zr: fish
 act: cobra # Probably will need a custom spec at some point
+ansible: argcomplete
+ansible-config: argcomplete
+ansible-console: argcomplete
+ansible-doc: argcomplete
+ansible-galaxy: argcomplete
+ansible-inventory: argcomplete
+ansible-playbook: argcomplete
+ansible-pull: argcomplete
+ansible-test: argcomplete
+ansible-vault: argcomplete
 appletviewer: zsh
 buf: cobra
 carapace-bridge: carapace
@@ -101,6 +111,7 @@ rmiregistry: zsh
 sam: click # This runs very slooooow but it's the best thing I've got so far
 serialver: zsh
 skate: cobra # Skate doesn't say that it has any completions but it uses cobra so that's not a problem
+skopeo: cobra
 softwareupdate: zsh
 sqlite3: zsh
 ssh-add: zsh # I'll switch this to a custom spec later
@@ -110,6 +121,7 @@ swiftc: zsh
 system_profiler: zsh
 tmutil: fish
 tokei: fish
+toolbox: cobra
 vacuumdb: zsh
 vincent: carapace
 vt: cobra

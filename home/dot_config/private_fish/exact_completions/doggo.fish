@@ -1,0 +1,1 @@
+doggo completions fish | source
