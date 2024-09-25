@@ -1,0 +1,5 @@
+[tools]
+java = "lts"
+node = "lts"
+go = "latest"
+zig = "latest"

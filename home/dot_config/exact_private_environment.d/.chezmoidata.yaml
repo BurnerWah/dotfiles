@@ -1,6 +1,10 @@
 settings:
   systemd:
     environment:
+      # Commands
+      EDITOR: nvim
+      MANPAGER: most
+
       # Ansible
       ANSIBLE_HOME: $XDG_CONFIG_HOME/ansible
       ANSIBLE_CONFIG: $XDG_CONFIG_HOME/ansible.cfg
@@ -14,14 +18,35 @@ settings:
       # Bootsnap
       BOOTSNAP_CACHE_DIR: $XDG_CACHE_HOME/bootsnap
 
+      # C flags
+      # Consider enabling these eventually
+      # CFLAGS: --config ${XDG_CONFIG_HOME}/clang/clang.cfg
+      # CXXFLAGS: --config ${XDG_CONFIG_HOME}/clang/clang++.cfg
+
       # Cargo
       CARGO_HOME: $XDG_DATA_HOME/cargo
+
+      # Cookiecutter
+      COOKIECUTTER_CONFIG: $XDG_CONFIG_HOME/cookiecutter/config.yml
+
+      # Conan
+      # Arch wiki suggests setting this directly to $XDG_CONFIG_HOME, while I
+      # was previously using $XDG_DATA_HOME/conan. I'll use this until I
+      # remember what files conan even generates.
+      CONAN_USER_HOME: $XDG_CONFIG_HOME/conan
+
+      # CMake
+      CMAKE_GENERATOR: Ninja
 
       # Flyctl
       FLY_CONFIG_DIR: $XDG_CONFIG_HOME/fly
 
       # GnuPG
       GNUPGHOME: $XDG_DATA_HOME/gnupg
+
+      # Java
+      # I kinda want to see if I can remove this
+      # _JAVA_OPTIONS: -Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java
 
       # libice
       ICEAUTHORITY: ${XDG_STATE_HOME:-$XDG_CACHE_HOME}/ICEauthority
@@ -35,6 +60,11 @@ settings:
       # Node.js
       NODE_REPL_HISTORY: ${XDG_STATE_HOME:-$XDG_CACHE_HOME}/node_repl_history
       TS_NODE_HISTORY: ${XDG_STATE_HOME:-$XDG_CACHE_HOME}/ts_node_repl_history
+      COREPACK_HOME: $XDG_CACHE_HOME/corepack # dunno what this is anymore
+      # npm edits the config file for auth, so this lets me separate auth from the config
+      NPM_CONFIG_GLOBALCONFIG: $XDG_CONFIG_HOME/npm/npmrc
+      NPM_CONFIG_USERCONFIG: $XDG_CONFIG_HOME/npm/auth
+      npm_config_cache: ${XDG_CACHE_HOME}/npm # needed for nodeenv to respect my settings
 
       # .NET
       DOTNET_CLI_HOME: $XDG_DATA_HOME/dotnet
@@ -45,11 +75,19 @@ settings:
       # OmniSharp
       OMNISHARPHOME: $XDG_DATA_HOME/OmniSharp # undocumented
 
+      # Python
+      # Jupyter/IPython stuff is omitted because my setup for that is broken beyond repair
+      WORKON_HOME: $XDG_DATA_HOME/virtualenvs
+      # KERAS_HOME: $XDG_CACHE_HOME/keras # Seems to just be caches
+
       # rustup
       RUSTUP_HOME: $XDG_DATA_HOME/rustup
 
       # sccache
       SCCACHE_CACHE_SIZE: 5G
+
+      # sigstore (gitsign, cosign)
+      TUF_DIR: $XDG_DATA_HOME/sigstore/root
 
       # SQLite
       SQLITE_HISTORY: ${XDG_STATE_HOME:-$XDG_CACHE_HOME}/sqlite_history
@@ -62,15 +100,24 @@ settings:
         - /usr/share/terminfo
 
       # TeX Live
-      TEXMFHOME: $XDG_DATA_HOME/texmf
-      TEXMFVAR: $XDG_CACHE_HOME/texlive/texmf-var
-      TEXMFCONFIG: $XDG_CONFIG_HOME/texlive/texmf-config
+      # TEXMFHOME: $XDG_DATA_HOME/texmf
+      # TEXMFVAR: $XDG_CACHE_HOME/texlive/texmf-var
+      # TEXMFCONFIG: $XDG_CONFIG_HOME/texlive/texmf-config
+
+      # VSCode
+      # Just kept here for future reference, but basically irrelevant with me
+      # using the flatpak now
+      # VSCODE_PORTABLE: $XDG_DATA_HOME/vscode
+      # VSCODE_CLI_DATA_DIR: $XDG_CACHE_HOME/vscode-cli
 
       # wget
       WGETRC: $XDG_CONFIG_HOME/wgetrc
 
       # ykman
       YKMAN_XDG_EXPERIMENTAL: 1
+
+      # Zsh
+      ZDOTDIR: $XDG_CONFIG_HOME/zsh
 
       # Path
       PATH:

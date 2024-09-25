@@ -1,5 +1,7 @@
 # If this file isn't named .taplo.toml, VSCode will get confused
 
+exclude = ["**/symlink_*"]
+
 [[rule]]
 include = ["home/.chezmoidata/packages/**"]
 schema.path = "./schemas/packages.json"
