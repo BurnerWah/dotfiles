@@ -18,64 +18,55 @@ abbr -a h help
 abbr -a ? if
 abbr -a which whereis
 
-{{- if lookPath "doggo" }}
-abbr -a dog doggo
-{{- end }}
-{{- if lookPath "eza" }}
-abbr -a exa eza
-{{- end }}
-{{- if lookPath "lima" }}
-abbr -a ligma lima
-{{- end }}
-{{- if lookPath "delta" }}
-abbr -a diff delta
-{{- end }}
-{{- if lookPath "bat" }}
-abbr -a cat bat
-abbr -a batp 'bat -p'
-{{- end }}
-{{- if lookPath "fd" }}
-abbr -a find fd
-{{- end }}
-{{- if lookPath "rg" }}
-abbr -a grep rg
-abbr -a egrep rg
-abbr -a fgrep 'rg -F'
+command -qs doggo && abbr -a dog doggo
+command -qs eza && abbr -a exa eza
+command -qs lima && abbr -a ligma lima
+command -qs delta && abbr -a diff delta
+command -qs fd && abbr -a find fd
+command -qs gallery-dl && abbr -a gdl gallery-dl
+command -qs uv && abbr -a pipx 'uv tool'
+command -qs ncat && abbr -a nc ncat
 
-abbr -a bzgrep 'rg -z'
-abbr -a bzegrep 'rg -z'
-abbr -a bzfgrep 'rg -zF'
+if command -qs bat
+    abbr -a cat bat
+    abbr -a batp 'bat -p'
+end
 
-abbr -a lzgrep 'rg -z'
-abbr -a lzegrep 'rg -z'
-abbr -a lzfgrep 'rg -zF'
+if command -qs rg
+    abbr -a grep rg
+    abbr -a egrep rg
+    abbr -a fgrep 'rg -F'
 
-abbr -a xzgrep 'rg -z'
-abbr -a xzegrep 'rg -z'
-abbr -a xzfgrep 'rg -zF'
+    abbr -a bzgrep 'rg -z'
+    abbr -a bzegrep 'rg -z'
+    abbr -a bzfgrep 'rg -zF'
 
-abbr -a zgrep 'rg -z'
-abbr -a zegrep 'rg -z'
-abbr -a zfgrep 'rg -zF'
+    abbr -a lzgrep 'rg -z'
+    abbr -a lzegrep 'rg -z'
+    abbr -a lzfgrep 'rg -zF'
 
-abbr -a zstdgrep 'rg -z'
+    abbr -a xzgrep 'rg -z'
+    abbr -a xzegrep 'rg -z'
+    abbr -a xzfgrep 'rg -zF'
 
-abbr -a psrg 'ps aux | rg'
-{{- end }}
-{{- if lookPath "nvim" }}
-abbr -a vi nvim
-abbr -a vim nvim
-{{- end }}
-{{- if lookPath "gallery-dl" }}
-abbr -a gdl gallery-dl
-{{- end }}
-{{- if lookPath "yt-dlp" }}
-abbr -a ydl yt-dlp
-abbr -a ydlmp3 'yt-dlp -x --audio-format mp3'
-{{- end }}
-{{- if lookPath "uv" }}
-abbr -a pipx 'uv tool'
-{{- end }}
+    abbr -a zgrep 'rg -z'
+    abbr -a zegrep 'rg -z'
+    abbr -a zfgrep 'rg -zF'
+
+    abbr -a zstdgrep 'rg -z'
+
+    abbr -a psrg 'ps aux | rg'
+end
+
+if command -qs nvim
+    abbr -a vi nvim
+    abbr -a vim nvim
+end
+
+if command -qs yt-dlp
+    abbr -a ydl yt-dlp
+    abbr -a ydlmp3 'yt-dlp -x --audio-format mp3'
+end
 
 {{- if eq .chezmoi.os "linux" }}
 # Linux abbreviations
@@ -88,18 +79,17 @@ abbr -a ping4 'ping -4'
 abbr -a ping6 'ping -6'
 abbr -a ports 'netstat -ntup'
 abbr -a trash 'gio trash'
-{{- if lookPath "rpm" }}
-abbr -a rpmq 'rpm -q'
-{{- end }}
-{{- if lookPath "dnf" }}
-abbr -a yum dnf
-{{- end }}
+
+command -qs rpm && abbr -a rpmq 'rpm -q'
+command -qs dnf && abbr -a yum dnf
+
 {{- else if eq .chezmoi.os "darwin" }}
 # Mac OS abbreviations
 abbr -a wl-copy pbcopy
 abbr -a wlcp pbcopy
 abbr -a wl-paste pbpaste
 abbr -a wlp pbpaste
+
 {{- end }}
 
 # Complex abbreviations

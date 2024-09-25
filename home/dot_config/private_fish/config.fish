@@ -1,5 +1,5 @@
 #!/usr/bin/env fish
-if isatty
+if status is-interactive
     # Mark scalar arrays
     set -q XDG_DATA_DIRS && set --path XDG_DATA_DIRS $XDG_DATA_DIRS
     set -q XDG_CONFIG_DIRS && set --path XDG_CONFIG_DIRS $XDG_CONFIG_DIRS
