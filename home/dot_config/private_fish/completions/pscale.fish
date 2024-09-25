@@ -1,0 +1,1 @@
+pscale completion fish | source
