@@ -1,0 +1,216 @@
+# Taps
+tap "homebrew/autoupdate" if OS.mac?
+tap "homebrew/aliases"
+tap "homebrew/bundle"
+tap "homebrew/command-not-found" if OS.mac?
+tap "homebrew/services"
+tap "buo/cask-upgrade" if OS.mac?
+tap "rsteube/tap"
+tap "egoist/tap"
+
+# Packages
+brew "age" # encryption tool
+brew "age-plugin-yubikey" if OS.mac?
+brew "ansible" if OS.mac?
+brew "as-tree"
+brew "asitop" if OS.mac? && Hardware::CPU.arm? # Apple Silicon performance monitor
+brew "atuin" # history sync
+brew "b3sum"
+brew "bash-completion" if OS.mac?
+brew "bat" if OS.mac? # cat alternative
+brew "bingrep"
+brew "biome"
+brew "bkt" # CLI output caching tool
+brew "black" if OS.mac? # Python code formatter
+brew "blueutil" if OS.mac? # bluetooth util, used by a raycast extension
+brew "bottom" # system monitor
+brew "breezy" if OS.mac?
+brew "btop" # htop alternative
+brew "bzip3" # compression tool
+brew "cargo-binstall"
+brew "chezmoi"
+brew "cloudflared"
+brew "colima" if OS.mac? # Container runtime
+brew "corepack" if OS.mac?
+brew "dark-mode" if OS.mac? # macOS dark mode toggle
+brew "ddgr" if OS.mac? # DuckDuckGo search
+brew "detect-secrets" if OS.mac?
+brew "direnv" if OS.mac? # directory-specific env vars
+brew "doggo" # DNS lookup tool
+brew "duf" # disk usage
+brew "elvish" if OS.mac?
+brew "exercism"
+brew "exiftool" if OS.mac?
+brew "eza" if OS.mac? # ls alternative
+brew "fastfetch" if OS.mac? # better neofetch
+brew "fd" if OS.mac? # find alternative
+brew "fish" if OS.mac?
+brew "fisher" if OS.mac?
+brew "flyctl"
+brew "fossil" if OS.mac? # version control
+brew "fx" if OS.mac? # JSON viewer
+brew "fzf" if OS.mac?
+brew "gallery-dl" if OS.mac?
+brew "gawk" if OS.mac?
+brew "gh" # GitHub CLI
+brew "git" if OS.mac?
+brew "git-delta" if OS.mac?
+brew "git-lfs" if OS.mac?
+brew "git-open"
+brew "git-remote-hg" if OS.mac?
+brew "gitleaks"
+brew "gitlint" if OS.mac?
+brew "glow" # markdown reader
+brew "go" if OS.mac?
+brew "go-task"
+brew "grc" if OS.mac? # CLI output colorizer
+brew "grex" # regex generator
+brew "hexyl" if OS.mac? # hex viewer
+brew "htop" if OS.mac?
+brew "httpie" if OS.mac?
+brew "hugo"
+brew "hyperfine" if OS.mac? # benchmarking tool
+brew "imagemagick" if OS.mac?
+brew "iproute2mac" if OS.mac?
+brew "jc" if OS.mac? # JSON parser for various CLIs
+brew "jdupes" if OS.mac? # duplicate file finder
+brew "jq" if OS.mac? # JSON manipulator
+brew "just" # task runner
+brew "kondo" # Disk cleanup tool for coding
+brew "lefthook" # Git hooks manager
+brew "less" if OS.mac? # Mac OS has an ancient version of Less
+brew "lima" if OS.mac? # Linux VM manager
+brew "litecli" if OS.mac? # SQLite client
+brew "lnav" if OS.mac? # log file viewer
+brew "luarocks" if OS.mac?
+brew "m-cli" if OS.mac? # macOS utils
+brew "macos-trash" if OS.mac? # trash CLI
+brew "mas" if OS.mac? # Mac App Store CLI
+brew "mercurial" if OS.mac? # version control
+brew "miniserve" # file server
+brew "mise" if OS.mac? # really good version manager
+brew "most" if OS.mac? # another pager, handles manpages well
+brew "neovim" if OS.mac?
+brew "node" if OS.mac?
+brew "npm-check-updates" if OS.mac?
+brew "nushell" if OS.mac?
+brew "oh-my-posh"
+brew "p7zip" if OS.mac?
+brew "pandoc"
+brew "pidof" if OS.mac? # process ID lookup
+brew "pigz" if OS.mac? # parallel gzip
+brew "podman" if OS.mac?
+brew "podman-compose" if OS.mac?
+brew "postgresql@16" if OS.mac?
+brew "pre-commit" if OS.mac?
+brew "prettier" if OS.mac?
+brew "rclone" if OS.mac? # cloud storage manager
+brew "rename" if OS.mac? # rename files
+brew "ripgrep" if OS.mac? # grep alternative
+brew "ruby" if OS.mac?
+brew "shadowenv" # directory-specific env vars
+brew "starship" if OS.mac? # prompt for fish & zsh
+brew "svgo" if OS.mac? # SVG optimizer
+brew "syncthing"
+brew "texinfo" if OS.mac?
+brew "tlrc" # fast tldr page viewer
+brew "tokei" # count lines of code
+brew "util-linux" if OS.mac? # subset of the util-linux commands for mac OS
+brew "uutils-coreutils" if OS.mac?
+brew "uv" # Python package manager
+brew "virtualenv" if OS.mac?
+brew "virtualfish" if OS.mac? # virtualenv for fish
+brew "viu" # terminal image viewer
+brew "vivid" # LS_COLORS generator
+brew "watchman" if OS.mac?
+brew "whalebrew"
+brew "xonsh" if OS.mac?
+brew "xz" if OS.mac?
+brew "ykman" if OS.mac? # YubiKey manager
+brew "zellij" if OS.mac? # tmux alternative
+brew "zoxide" # directory jumping
+brew "zstd" if OS.mac?
+
+brew "egoist/tap/dum" # fast npm script runner
+brew "rsteube/tap/carapace" # completions
+brew "rsteube/tap/carapace-bridge" # useful for testing stuff in carapace
+brew "rsteube/tap/vincent" # term color scheme generator
+
+cask "1password"
+cask "1password-cli"
+cask "apparency" # inspects app bundles + quicklook extension
+cask "aqua"
+cask "blender"
+cask "bootstrap-studio"
+cask "dataspell"
+cask "datagrip"
+cask "dotnet-sdk"
+cask "eloston-chromium" # ungoogled chromium
+cask "eul" # system monitor
+cask "figma" # figma balls
+cask "firefox"
+cask "font-fira-code"
+cask "font-jetbrains-mono"
+cask "font-monaspace"
+cask "font-symbols-only-nerd-font"
+cask "goland"
+cask "handbrake" # encoder
+cask "hazeover" # dims windows that aren't focused
+cask "httpie"
+cask "iina" # video player
+cask "intellij-idea"
+cask "iterm2" # terminal emulator
+cask "jetbrains-toolbox"
+cask "kitty" # terminal emulator
+cask "menuwhere" # access menubar via cmd+right click
+cask "moonlight" # local game streaming
+cask "obs" # streaming & recording
+cask "obsidian" # note taking
+cask "phpstorm"
+cask "podman-desktop"
+cask "postico" # postgres client
+cask "pycharm"
+cask "rubymine"
+cask "signal"
+cask "soduto" # KDE connect for macOS
+cask "tor-browser"
+cask "tower" # git client
+cask "visual-studio-code"
+cask "vmware-fusion"
+cask "webstorm"
+cask "whisky"
+
+# as the years go by, i will never die (mac os mitigations)
+cask "alt-tab"
+cask "background-music" # volume mixer
+cask "bettertouchtool" # trackpad settings
+cask "karabiner-elements" # keyboard remapper
+cask "launchpad-manager"
+cask "lulu" # firewall
+cask "raycast" # spotlight replacement
+cask "rectangle" # window management, probably can remove with macOS 15
+cask "swift-quit" # quit apps with cmd+q
+cask "unnaturalscrollwheels" # reverse scroll direction
+
+mas "Affinity Designer 2", id: 1_616_831_348
+mas "Affinity Photo 2", id: 1_616_822_987
+mas "Affinity Publisher 2", id: 1_606_941_598
+mas "Amphetamine", id: 937_984_704 # Keep mac awake
+mas "BrightIntosh", id: 6_452_471_855 # Higher brightness
+mas "DaVinci Resolve", id: 571_213_070
+mas "Dropover", id: 1_355_679_052 # Drag and drop manager
+mas "iBar", id: 6_443_843_900 # Menu bar manager
+mas "Keynote", id: 409_183_694
+mas "Numbers", id: 409_203_825
+mas "Pages", id: 409_201_541
+mas "Parcel", id: 639_968_404 # Package tracker
+mas "Shareful", id: 1_522_267_256
+mas "Slack", id: 803_453_959
+mas "Tailscale", id: 1_475_387_142
+mas "TickTick", id: 966_085_870 # Task manager
+mas "Whisper", id: 1_668_083_311 # Transcription app
+mas "Xcode", id: 497_799_835
+mas "Yubico Authenticator", id: 1_497_506_650
+
+# Put at the end of the file because copilot doesn't like profanity lol
+brew "thefuck" if OS.mac?

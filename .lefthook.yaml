@@ -6,6 +6,11 @@ pre-commit:
       glob: '*.{css,yml,yaml,md,html,json,jsonc,code-snippets}'
       stage_fixed: true
 
+    prettier-ruby:
+      run: npx prettier --write {staged_files}
+      glob: '{*.rb,Gemfile,Rakefile,Brewfile}'
+      stage_fixed: true
+
     taplo:
       run: taplo format {staged_files}
       glob: '*.toml'
