@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Use the brewfile directly from the source directory, since there's no templating
-# Brewfile hash: {{ include (joinPath (dir .chezmoi.targetFile) "Brewfile") | sha256sum }}
+# Brewfile hash: {{ include (joinPath (dir .chezmoi.sourceFile) "Brewfile") | sha256sum }}
 
 # Don't auto update as that takes a fair bit
 export HOMEBREW_NO_AUTO_UPDATE=1
