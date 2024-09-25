@@ -11,6 +11,7 @@ export HOMEBREW_BOOTSNAP=1 # Try to improve performance
 export HOMEBREW_NO_INSECURE_REDIRECT=1 # Security
 export HOMEBREW_VERIFY_ATTESTATIONS=1 # Security
 export HOMEBREW_BUNDLE_FILE={{ $Brewfile | quote }}
+export HOMEBREW_BUNDLE_NO_LOCK=1
 
 # Bundle dependencies
 brew tap homebrew/bundle

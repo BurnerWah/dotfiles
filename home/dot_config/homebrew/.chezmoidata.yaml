@@ -157,10 +157,17 @@ settings:
       # If it needs to be built from source, do that another way.
       # If it's python, use `uv tool`
       linux:
+        - cmake
         - dbus
+        - dotnet
         - fish
+        - git-open # Broken on Linux
+        - glib
         - go
+        - ncurses
         - node
-        - openssl@3 # if it links against openssl just install it manually
-        - pkg-config
+        - openssl@3 # Broken with my setup
+        - perl
+        - pkg-config # Bottle not relocatable
+        - ruby
         - systemd
