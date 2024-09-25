@@ -11,6 +11,8 @@
 **/.ropeproject
 **/__pycache__/
 
+**/*.src.ini
+
 # Application folders & files
 {{ range (compact .settings.chezmoi.ignored.home) }}
 /{{ . }}
