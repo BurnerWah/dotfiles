@@ -1,0 +1,20 @@
+{{- if lookPath "llvm-ar" -}}
+AR=llvm-ar
+{{- end }}
+{{- if lookPath "clang" }}
+CC=clang
+{{- end }}
+{{- if eq .chezmoi.arch "amd64" }}
+CGO_CFLAGS=-g -O2 -march=native
+CGO_CXXFLAGS=-g -O2 -march=native
+CGO_FFLAGS=-g -O2 -march=native
+CGO_LDFLAGS=-g -O2 -march=native
+{{- end }}
+{{- if lookPath "clang++" }}
+CXX=clang++
+{{- end }}
+GOAMD64=v3
+GOBIN={{ joinPath .xdg.data "golang" "bin" }}
+GOMODCACHE={{ joinPath .xdg.cache "go" "mod" }}
+GOPATH={{ joinPath .xdg.data "golang" }}
+GOPROXY=https://proxy.golang.org,direct

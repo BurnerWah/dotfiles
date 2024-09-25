@@ -1,6 +1,7 @@
 /.semgrep
 /1Password
 /Bootstrap Studio
+/bpytop
 /bstudio
 /btop
 /Code
@@ -15,6 +16,9 @@
 /gnome-initial-setup-done
 /gnome-session
 /goa-1.0
+/google-chrome
+/google-chrome-beta
+/google-chrome-unstable
 /gsconnect
 /ibus
 /itch
@@ -22,6 +26,7 @@
 /jgit
 /kera-desktop
 /libvirt
+/microsoft-edge-dev
 /monitors.xml*
 /Mullvad VPN
 /MusicBrainz
@@ -34,17 +39,19 @@
 /raycast
 /tabtab
 /user-share
+/vivaldi
+/vivaldi-snapshot
 /vscode-sqltools
 
 {{- if ne .chezmoi.os "linux" }}
 /boxxy
+/BraveSoftware
 /environment.d
 /systemd
 /user-tmpfiles.d
 {{- end }}
 
 {{- if ne .chezmoi.os "darwin" }}
-/homebrew
 /karabiner
 /iterm2
 {{- end }}
@@ -52,6 +59,7 @@
 {{- if eq .chezmoi.os "windows" }}
 /ansible.cfg
 /fish
+/homebrew
 /rainbow
 /wgetrc
 /yt-dlp

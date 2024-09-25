@@ -12,3 +12,6 @@ properties:
       formula:
         type: array
         items: { type: string }
+      linux:
+        type: array
+        items: { type: string }

@@ -152,3 +152,15 @@ settings:
         - wagyu # cryptocurrency
         - wasmer # preference
         - wownero # cryptocurrency
+
+      # These are only forbidden to prevent unexpected from-source builds
+      # If it needs to be built from source, do that another way.
+      # If it's python, use `uv tool`
+      linux:
+        - dbus
+        - fish
+        - go
+        - node
+        - openssl@3 # if it links against openssl just install it manually
+        - pkg-config
+        - systemd

@@ -6,6 +6,11 @@ settings:
       ANSIBLE_CONFIG: $XDG_CONFIG_HOME/ansible.cfg
       ANSIBLE_GALAXY_CACHE_DIR: $XDG_CACHE_HOME/ansible/galaxy_cache
 
+      # Bundler
+      BUNDLE_USER_CACHE: $XDG_CACHE_HOME/bundle
+      BUNDLE_USER_CONFIG: $XDG_CONFIG_HOME/bundle/config
+      BUNDLE_USER_PLUGIN: $XDG_DATA_HOME/bundle
+
       # Bootsnap
       BOOTSNAP_CACHE_DIR: $XDG_CACHE_HOME/bootsnap
 
@@ -30,6 +35,12 @@ settings:
       # Node.js
       NODE_REPL_HISTORY: ${XDG_STATE_HOME:-$XDG_CACHE_HOME}/node_repl_history
       TS_NODE_HISTORY: ${XDG_STATE_HOME:-$XDG_CACHE_HOME}/ts_node_repl_history
+
+      # .NET
+      DOTNET_CLI_HOME: $XDG_DATA_HOME/dotnet
+      DOTNET_TOOLS_PATH: $XDG_DATA_HOME/dotnet/tools # dunno what this is anymore
+      DOTNET_PACKAGES: $XDG_CACHE_HOME/NuGetPackages # dunno what this is anymore
+      NUGET_PACKAGES: $XDG_CACHE_HOME/NuGetPackages
 
       # OmniSharp
       OMNISHARPHOME: $XDG_DATA_HOME/OmniSharp # undocumented
