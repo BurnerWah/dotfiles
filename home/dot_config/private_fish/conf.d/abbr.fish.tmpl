@@ -12,6 +12,11 @@ abbr -a fnsv funcsave
 abbr -a fun function
 abbr -a func function
 abbr -a loop 'while true'
+abbr -a local 'set -l'
+abbr -a export 'set -x'
+abbr -a h help
+abbr -a ? if
+abbr -a which whereis
 
 {{- if lookPath "doggo" }}
 abbr -a dog doggo
@@ -34,6 +39,28 @@ abbr -a find fd
 {{- end }}
 {{- if lookPath "rg" }}
 abbr -a grep rg
+abbr -a egrep rg
+abbr -a fgrep 'rg -F'
+
+abbr -a bzgrep 'rg -z'
+abbr -a bzegrep 'rg -z'
+abbr -a bzfgrep 'rg -zF'
+
+abbr -a lzgrep 'rg -z'
+abbr -a lzegrep 'rg -z'
+abbr -a lzfgrep 'rg -zF'
+
+abbr -a xzgrep 'rg -z'
+abbr -a xzegrep 'rg -z'
+abbr -a xzfgrep 'rg -zF'
+
+abbr -a zgrep 'rg -z'
+abbr -a zegrep 'rg -z'
+abbr -a zfgrep 'rg -zF'
+
+abbr -a zstdgrep 'rg -z'
+
+abbr -a psrg 'ps aux | rg'
 {{- end }}
 {{- if lookPath "nvim" }}
 abbr -a vi nvim
@@ -57,6 +84,10 @@ abbr -a wlcp wl-copy
 abbr -a xcp wl-copy
 abbr -a pbpaste wl-paste
 abbr -a wlp wl-paste
+abbr -a ping4 'ping -4'
+abbr -a ping6 'ping -6'
+abbr -a ports 'netstat -ntup'
+abbr -a trash 'gio trash'
 {{- if lookPath "rpm" }}
 abbr -a rpmq 'rpm -q'
 {{- end }}
