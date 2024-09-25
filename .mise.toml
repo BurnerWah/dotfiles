@@ -3,3 +3,4 @@
 "cargo:stylua" = "latest"
 "pipx:ruff" = "latest"
 ruby = "latest"
+"ubi:VorpalBlade/chezmoi_modify_manager" = "latest"
