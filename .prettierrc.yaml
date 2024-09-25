@@ -3,6 +3,7 @@ semi: false
 trailingComma: all
 plugins:
   - '@prettier/plugin-ruby'
+  - '@prettier/plugin-xml'
 
 overrides:
   - files:
@@ -12,3 +13,7 @@ overrides:
       - .vscode/tasks.json
     options:
       parser: jsonc
+  - files:
+      - '*.plist.tmpl'
+    options:
+      parser: xml
