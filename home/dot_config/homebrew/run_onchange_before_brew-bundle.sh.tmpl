@@ -1,13 +1,16 @@
 #!/usr/bin/env bash
 
 # Use the brewfile directly from the source directory, since there's no templating
-# Brewfile hash: {{ include (joinPath (dir .chezmoi.sourceFile) "Brewfile") | sha256sum }}
+# {{ $Brewfile := (joinPath (dir .chezmoi.sourceDir) "home/dot_config/homebrew/Brewfile") }}
+# Brewfile: {{ $Brewfile }}
+# Brewfile hash: {{ include $Brewfile | sha256sum }}
 
 # Don't auto update as that takes a fair bit
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_BOOTSNAP=1 # Try to improve performance
 export HOMEBREW_NO_INSECURE_REDIRECT=1 # Security
 export HOMEBREW_VERIFY_ATTESTATIONS=1 # Security
+export HOMEBREW_BUNDLE_FILE={{ $Brewfile | quote }}
 
 # Bundle dependencies
 brew tap homebrew/bundle
