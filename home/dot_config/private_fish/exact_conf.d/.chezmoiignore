@@ -3,6 +3,10 @@
 /iterm2.fish
 {{- end }}
 
+{{- if ne .chezmoi.os "linux" }}
+/vscode.fish
+{{- end }}
+
 # I'm unsure if I even want to include 1password-cli plugins in here
 /op-plugins.fish
 
