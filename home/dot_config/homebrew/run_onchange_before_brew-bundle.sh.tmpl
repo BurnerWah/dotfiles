@@ -5,6 +5,15 @@
 
 # Don't auto update as that takes a fair bit
 export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_BOOTSNAP=1 # Try to improve performance
+export HOMEBREW_NO_INSECURE_REDIRECT=1 # Security
+export HOMEBREW_VERIFY_ATTESTATIONS=1 # Security
+
+# Bundle dependencies
+brew tap homebrew/bundle
+if ! command -v gh 2>&1 >/dev/null; then
+  brew install --formula --force-bottle gh
+fi
 
 brew bundle --no-lock --no-upgrade
 
