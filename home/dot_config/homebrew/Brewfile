@@ -9,11 +9,12 @@ tap "rsteube/tap"
 tap "egoist/tap"
 
 # Packages
-brew "act" if OS.linux? # GitHub Actions runner
-brew "actionlint" if OS.linux? # GitHub Actions linter
+brew "act" # GitHub Actions runner
+brew "actionlint" # GitHub Actions linter
 brew "age" # encryption tool
 brew "age-plugin-yubikey" if OS.mac?
 brew "ansible" if OS.mac?
+brew "ansible-lint" if OS.mac?
 brew "as-tree"
 brew "asitop" if OS.mac? && Hardware::CPU.arm? # Apple Silicon performance monitor
 brew "atuin" # history sync
@@ -23,7 +24,6 @@ brew "bat" if OS.mac? # cat alternative
 brew "bingrep"
 brew "biome"
 brew "bkt" # CLI output caching tool
-brew "black" if OS.mac? # Python code formatter
 brew "blueutil" if OS.mac? # bluetooth util, used by a raycast extension
 brew "bottom" # system monitor
 brew "breezy" if OS.mac?
@@ -38,19 +38,20 @@ brew "dark-mode" if OS.mac? # macOS dark mode toggle
 brew "dasel" if OS.linux? # JQ for more stuff
 brew "ddgr" if OS.mac? # DuckDuckGo search
 brew "detect-secrets" if OS.mac?
+brew "devcontainer" if OS.mac? # VSCode devcontainers
 brew "direnv" if OS.mac? # directory-specific env vars
 brew "doggo" # DNS lookup tool
-brew "dua-cli" if OS.linux? # disk usage
+brew "dua-cli" # disk usage
 brew "duf" # disk usage
-brew "dust" if OS.linux? # du alternative
+brew "dust" # du alternative
 brew "elvish" if OS.mac?
 brew "exercism"
 brew "exiftool" if OS.mac?
 brew "eza" if OS.mac? # ls alternative
 brew "fastfetch" if OS.mac? # better neofetch
 brew "fd" if OS.mac? # find alternative
+brew "ffmpeg" if OS.mac?
 brew "fish" if OS.mac?
-brew "fisher" if OS.mac?
 brew "flyctl"
 brew "fossil" if OS.mac? # version control
 brew "fx" if OS.mac? # JSON viewer
@@ -67,7 +68,6 @@ brew "gitleaks"
 brew "gitlint" if OS.mac?
 brew "gitsign" if OS.linux?
 brew "glow" # markdown reader
-brew "go" if OS.mac?
 brew "go-task"
 brew "grc" if OS.mac? # CLI output colorizer
 brew "grex" # regex generator
@@ -83,14 +83,14 @@ brew "jdupes" if OS.mac? # duplicate file finder
 brew "jq" if OS.mac? # JSON manipulator
 brew "just" # task runner
 brew "kondo" # Disk cleanup tool for coding
-brew "lazygit" if OS.linux? # Git terminal UI
+brew "lazygit" # Git terminal UI
 brew "lefthook" # Git hooks manager
 brew "less" if OS.mac? # Mac OS has an ancient version of Less
 brew "lima" if OS.mac? # Linux VM manager
 brew "litecli" if OS.mac? # SQLite client
 brew "lnav" if OS.mac? # log file viewer
 brew "luarocks" if OS.mac?
-brew "lux" if OS.linux? # Video downloader
+brew "lux" # Video downloader
 brew "m-cli" if OS.mac? # macOS utils
 brew "macos-trash" if OS.mac? # trash CLI
 brew "mas" if OS.mac? # Mac App Store CLI
@@ -100,34 +100,32 @@ brew "miniserve" # file server
 brew "mise" if OS.mac? # really good version manager
 brew "most" if OS.mac? # another pager, handles manpages well
 brew "neovim" if OS.mac?
-brew "node" if OS.mac?
 brew "npm-check-updates" if OS.mac?
 brew "nushell" if OS.mac?
 brew "oh-my-posh"
-brew "p7zip" if OS.mac?
+brew "openjdk" if OS.mac?
 brew "pandoc"
 brew "pidof" if OS.mac? # process ID lookup
 brew "pigz" if OS.mac? # parallel gzip
 brew "podman" if OS.mac?
+brew "podman-tui" if OS.mac?
 brew "podman-compose" if OS.mac?
 brew "postgresql@16" if OS.mac?
-brew "pre-commit" if OS.mac?
-brew "prettier" if OS.mac?
 brew "rclone" if OS.mac? # cloud storage manager
 brew "rename" if OS.mac? # rename files
 brew "ripgrep" if OS.mac? # grep alternative
-brew "ruby" if OS.mac?
 brew "shadowenv" # directory-specific env vars
 brew "starship" if OS.mac? # prompt for fish & zsh
 brew "svgo" if OS.mac? # SVG optimizer
 brew "syncthing" if OS.mac?
-brew "taplo" if OS.linux?
+brew "taplo"
 brew "texinfo" if OS.mac?
 brew "tlrc" # fast tldr page viewer
 brew "tokei" # count lines of code
 brew "util-linux" if OS.mac? # subset of the util-linux commands for mac OS
 brew "uutils-coreutils" if OS.mac?
 brew "uv" # Python package manager
+brew "vhs" if OS.mac? # terminal recorder
 brew "virtualenv" if OS.mac?
 brew "virtualfish" if OS.mac? # virtualenv for fish
 brew "viu" # terminal image viewer
@@ -138,7 +136,7 @@ brew "xonsh" if OS.mac?
 brew "xz" if OS.mac?
 brew "ykman" if OS.mac? # YubiKey manager
 brew "zellij" if OS.mac? # tmux alternative
-brew "zenith" if OS.linux? # Another htop thing
+brew "zenith" # Another htop thing
 brew "zoxide" # directory jumping
 brew "zstd" if OS.mac?
 
@@ -148,30 +146,32 @@ brew "rsteube/tap/carapace-bridge" # useful for testing stuff in carapace
 brew "rsteube/tap/carapace-spec-man" if OS.linux? # carapace spec generator
 brew "rsteube/tap/vincent" # term color scheme generator
 
+cask_args require_sha: true
+
 # Casks
-cask "1password" if OS.mac?
+cask "1password", greedy: true if OS.mac?
 cask "1password-cli" if OS.mac?
 cask "apparency" if OS.mac? # inspects app bundles + quicklook extension
-cask "aqua" if OS.mac?
+cask "aqua", greedy: false if OS.mac?
 cask "blender" if OS.mac?
 cask "bootstrap-studio" if OS.mac?
-cask "dataspell" if OS.mac?
-cask "datagrip" if OS.mac?
+cask "dataspell", greedy: false if OS.mac?
+cask "datagrip", greedy: false if OS.mac?
 cask "dotnet-sdk" if OS.mac?
 cask "eloston-chromium" if OS.mac? # ungoogled chromium
 cask "eul" if OS.mac? # system monitor
 cask "figma" if OS.mac? # figma balls
-cask "firefox" if OS.mac?
+cask "firefox", greedy: true if OS.mac?
 cask "font-fira-code" if OS.mac?
 cask "font-jetbrains-mono" if OS.mac?
 cask "font-monaspace" if OS.mac?
 cask "font-symbols-only-nerd-font" if OS.mac?
-cask "goland" if OS.mac?
+cask "goland", greedy: false if OS.mac?
 cask "handbrake" if OS.mac? # encoder
 cask "hazeover" if OS.mac? # dims windows that aren't focused
 cask "httpie" if OS.mac?
 cask "iina" if OS.mac? # video player
-cask "intellij-idea" if OS.mac?
+cask "intellij-idea", greedy: false if OS.mac?
 cask "iterm2" if OS.mac? # terminal emulator
 cask "jetbrains-toolbox" if OS.mac?
 cask "kitty" if OS.mac? # terminal emulator
@@ -179,28 +179,30 @@ cask "menuwhere" if OS.mac? # access menubar via cmd+right click
 cask "moonlight" if OS.mac? # local game streaming
 cask "obs" if OS.mac? # streaming & recording
 cask "obsidian" if OS.mac? # note taking
-cask "phpstorm" if OS.mac?
+cask "phpstorm", greedy: false if OS.mac?
 cask "podman-desktop" if OS.mac?
 cask "postico" if OS.mac? # postgres client
-cask "pycharm" if OS.mac?
-cask "rubymine" if OS.mac?
-cask "signal" if OS.mac?
+cask "pycharm", greedy: false if OS.mac?
+cask "rubymine", greedy: false if OS.mac?
+cask "signal", greedy: true if OS.mac?
 cask "soduto" if OS.mac? # KDE connect for macOS
-cask "tor-browser" if OS.mac?
+cask "tor-browser", greedy: true if OS.mac?
 cask "tower" if OS.mac? # git client
 cask "visual-studio-code" if OS.mac?
 cask "vmware-fusion" if OS.mac?
-cask "webstorm" if OS.mac?
+cask "webstorm", greedy: false if OS.mac?
 cask "whisky" if OS.mac?
+cask "zoom", greedy: true if OS.mac?
 
 # as the years go by, i will never die (mac os mitigations)
 cask "alt-tab" if OS.mac?
-cask "background-music" if OS.mac? # volume mixer
-cask "bettertouchtool" if OS.mac? # trackpad settings
-cask "karabiner-elements" if OS.mac? # keyboard remapper
+cask "background-music", greedy: false if OS.mac? # volume mixer
+cask "bettertouchtool", greedy: true if OS.mac? # trackpad settings
+cask "karabiner-elements", greedy: false if OS.mac? # keyboard remapper
 cask "launchpad-manager" if OS.mac?
-cask "lulu" if OS.mac? # firewall
-cask "raycast" if OS.mac? # spotlight replacement
+cask "lulu", greedy: false if OS.mac? # firewall
+cask "macfuse", greedy: true if OS.mac? # filesystem extender
+cask "raycast", greedy: true if OS.mac? # spotlight replacement
 cask "rectangle" if OS.mac? # window management, probably can remove with macOS 15
 cask "swift-quit" if OS.mac? # quit apps with cmd+q
 cask "unnaturalscrollwheels" if OS.mac? # reverse scroll direction
