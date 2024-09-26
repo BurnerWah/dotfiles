@@ -171,3 +171,12 @@ settings:
         - pkg-config # Bottle not relocatable
         - ruby
         - systemd
+
+      tap:
+        - gromgit/fuse # Very outdated
+        - homebrew/cask-fonts # Deprecated
+        - homebrew/cask-versions # Deprecated
+        - homebrew/cask-drivers # Deprecated
+        - teamookla/speedtest # Mac OS only
+        - render-oss/render # Mac OS only
+        - nanovms/ops # Builds from source with a weird script

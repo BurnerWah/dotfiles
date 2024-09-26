@@ -1,7 +1,20 @@
 #!/usr/bin/env bash
+# shellcheck disable=all
+# Go Templates break a lot of shellcheck rules
+
+{{ $Prefixes := list
+  "/opt/homebrew/bin"
+  "/usr/local/bin"
+  "/home/linuxbrew/.linuxbrew/bin"
+  (joinPath .chezmoi.homeDir ".linuxbrew/bin")
+  (joinPath .chezmoi.homeDir ".var/lib/homebrew/bin") -}}
+{{ $Brew := findExecutable "brew" (list "/opt/homebrew/bin") -}}
+{{ if $Brew -}}
+# Bootstrap the homebrew environment
+eval "$({{ $Brew }} shellenv bash)"
 
 # Use the brewfile directly from the source directory, since there's no templating
-# {{ $Brewfile := (joinPath (dir .chezmoi.sourceDir) "home/dot_config/homebrew/Brewfile") }}
+{{ $Brewfile := (joinPath (dir .chezmoi.sourceDir) "home/dot_config/homebrew/Brewfile") -}}
 # Brewfile: {{ $Brewfile }}
 # Brewfile hash: {{ include $Brewfile | sha256sum }}
 
@@ -10,12 +23,14 @@ export HOMEBREW_NO_INSECURE_REDIRECT=1 # Security
 export HOMEBREW_VERIFY_ATTESTATIONS=1 # Security
 export HOMEBREW_BUNDLE_FILE={{ $Brewfile | quote }}
 export HOMEBREW_BUNDLE_NO_LOCK=1
+export HOMEBREW_CHEZMOI=1 # Lets the brewfile know it's being run by chezmoi
 
 # Bundle dependencies
 brew tap homebrew/bundle
-if ! command -v gh 2>&1 >/dev/null; then
+if ! command -v gh  >/dev/null 2>&1; then
   brew install --formula --force-bottle gh
 fi
 
 brew bundle --no-lock
 
+{{ end -}}

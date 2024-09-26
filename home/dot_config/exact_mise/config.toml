@@ -15,6 +15,7 @@ disable_tools = [
   "wasmtime",
   "youtube-dl",
 ]
+disable_hints = ["registry"]
 
 [settings.ruby]
 default_packages_file = "~/.config/mise/default-gems"

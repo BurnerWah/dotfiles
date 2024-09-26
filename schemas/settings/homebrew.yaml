@@ -5,6 +5,7 @@ type: object
 properties:
   forbidden:
     type: object
+    additionalProperties: false
     properties:
       cask:
         type: array
@@ -13,5 +14,8 @@ properties:
         type: array
         items: { type: string }
       linux:
+        type: array
+        items: { type: string }
+      tap:
         type: array
         items: { type: string }
