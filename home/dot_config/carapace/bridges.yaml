@@ -108,11 +108,13 @@ psql: zsh
 rakudo: fish
 rclone: cobra # the built-in fish completions for rclone are broken, and while they can be fixed, we may as well get them into carapace so they work in other shells
 reindexdb: zsh
+rekor-cli: cobra
 rmic: zsh
 rmid: zsh
 rmiregistry: zsh
 sam: click # This runs very slooooow but it's the best thing I've got so far
 serialver: zsh
+sget: cobra
 skate: cobra # Skate doesn't say that it has any completions but it uses cobra so that's not a problem
 skopeo: cobra
 softwareupdate: zsh
