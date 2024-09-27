@@ -1,2 +1,0 @@
-#compdef {{ . }}
-source <({{ . }} --generate-completion-script=zsh)

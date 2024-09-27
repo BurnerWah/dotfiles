@@ -1,0 +1,2 @@
+#compdef swift-inspect
+source <(swift-inspect --generate-completion-script=zsh)

@@ -1,0 +1,2 @@
+#compdef swift-format
+source <(swift-format --generate-completion-script=zsh)

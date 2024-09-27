@@ -1,8 +1,0 @@
-{{- if kindIs "slice" . -}}
-{{- $cmd := (first .) -}}
-#compdef {{ $cmd }}{{ range (rest .) }} {{ print . (printf "=%s" $cmd)}}{{ end }}
-source <(carapace {{ first . }} zsh)
-{{- else -}}
-#compdef {{ . }}
-source <(carapace {{ . }} zsh)
-{{- end }}

@@ -27,7 +27,6 @@ source "$ZDOTDIR/aliases.zsh"
 fpath=(
     "$ZDOTDIR/functions/override" # Limited to fixes for things
     $fpath
-    "$ZDOTDIR/functions/carapace"
     "$ZDOTDIR/functions"
     "/opt/homebrew/share/zsh/site-functions"
     "/opt/homebrew/opt/zsh-completions/share/zsh-completions" # Zsh accepts this dir as secure

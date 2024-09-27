@@ -1,0 +1,2 @@
+#compdef kmutil
+source <(kmutil --generate-completion-script=zsh)
