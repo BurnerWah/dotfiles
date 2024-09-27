@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# shellcheck disable=all
+{{- range $key, $value := .settings.launchd.environment }}
+launchctl setenv {{$key}} "{{$value}}"
+{{- end }}

@@ -4,6 +4,7 @@ type: object
 properties:
   chezmoi: { $ref: ./settings/chezmoi.yaml }
   homebrew: { $ref: ./settings/homebrew.yaml }
+  launchd: { $ref: ./settings/launchd.yaml }
   kitty: { $ref: ./settings/kitty.yaml }
   shell: { $ref: ./settings/shell.yaml }
   systemd: { $ref: ./settings/systemd.yaml }

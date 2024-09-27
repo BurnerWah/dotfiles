@@ -1,0 +1,11 @@
+settings:
+  launchd:
+    # Minimize references to other environment variables here, as they're actually getting set here
+    environment:
+      XDG_CACHE_HOME: $HOME/Library/Caches
+      XDG_CONFIG_HOME: $HOME/.config
+
+      DOCKER_CONFIG: $HOME/.config/docker
+      GNUPGHOME: $HOME/.local/share/gnupg
+      LIMA_HOME: $HOME/.local/share/lima
+      ZDOTDIR: $HOME/.config/zsh
