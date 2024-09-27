@@ -11,9 +11,8 @@ overrides:
       - .vscode/launch.json
       - .vscode/settings.json
       - .vscode/tasks.json
-    options:
-      parser: jsonc
-  - files:
-      - '*.plist.tmpl'
-    options:
-      parser: xml
+    options: { parser: jsonc }
+  - files: ['*.plist.tmpl']
+    options: { parser: xml }
+  - files: ['*.yaml.tmpl', '*.yml.tmpl']
+    options: { parser: yaml }

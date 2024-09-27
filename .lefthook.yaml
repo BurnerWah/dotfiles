@@ -4,35 +4,41 @@ pre-commit:
     fish_indent:
       run: fish_indent -w {staged_files}
       glob: '*.fish'
-      exclude: 'symlink_*'
+      exclude: symlink_*
       stage_fixed: true
 
     prettier:
       run: npx prettier --write {staged_files}
-      glob: '*.{css,yml,yaml,md,html,json,jsonc,code-snippets}'
-      exclude: 'symlink_*'
+      glob: '*.{css,md,html,json,jsonc,code-snippets}'
+      exclude: symlink_*
       stage_fixed: true
 
     prettier-ruby:
       run: npx prettier --write {staged_files}
       glob: '{*.rb,Gemfile,Rakefile,Brewfile}'
-      exclude: 'symlink_*'
+      exclude: symlink_*
       stage_fixed: true
 
     prettier-xml:
       run: npx prettier --write {staged_files}
       glob: '*.{xml,plist}{,.tmpl}'
-      exclude: 'symlink_*'
+      exclude: symlink_*
+      stage_fixed: true
+
+    prettier-yaml:
+      run: npx prettier --write {staged_files}
+      glob: '*.{yml,yaml}{,.tmpl}'
+      exclude: symlink_*
       stage_fixed: true
 
     ruff:
       run: ruff format {staged_files}
       glob: '*.py'
-      exclude: 'symlink_*'
+      exclude: symlink_*
       stage_fixed: true
 
     taplo:
       run: taplo format {staged_files}
       glob: '*.toml'
-      exclude: 'symlink_*'
+      exclude: symlink_*
       stage_fixed: true

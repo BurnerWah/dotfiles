@@ -1,3 +1,4 @@
 **/lazy-lock.json
-/pnpm-lock.yaml
+**/symlink_*
 /.ruby-lsp
+/pnpm-lock.yaml
