@@ -220,6 +220,7 @@ mas "BrightIntosh", id: 6_452_471_855 if OS.mac? # Higher brightness
 mas "DaVinci Resolve", id: 571_213_070 if OS.mac?
 mas "Dropover", id: 1_355_679_052 if OS.mac? # Drag and drop manager
 mas "iBar", id: 6_443_843_900 if OS.mac? # Menu bar manager
+mas "Ivory", id: 6_444_602_274 if OS.mac? # Mastodon client
 mas "Keynote", id: 409_183_694 if OS.mac?
 mas "Numbers", id: 409_203_825 if OS.mac?
 mas "Pages", id: 409_201_541 if OS.mac?
