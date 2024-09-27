@@ -10,6 +10,7 @@
 /evolution
 /flutter
 /fly
+/gh/hosts.yml
 /github-copilot
 /gnome-boxes
 /gnome-initial-setup-done
@@ -29,14 +30,12 @@
 /monitors.xml*
 /Mullvad VPN
 /MusicBrainz
-/nodemon.json
 /ookla
 /op
 /postybirb
 /postybirb-plus
 /pulse
 /raycast
-/tabtab
 /user-share
 /vivaldi
 /vivaldi-snapshot

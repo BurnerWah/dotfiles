@@ -1,11 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/linux,macos,windows,visualstudiocode,node,kate,powershell,ruby,sublimetext,vim,zsh,fish,xcode
-# Edit at https://www.toptal.com/developers/gitignore?templates=linux,macos,windows,visualstudiocode,node,kate,powershell,ruby,sublimetext,vim,zsh,fish,xcode
-
-### Fish ###
-fishd.*
-fish_history
-fish_variables
-config.local.fish
+# Created by https://www.toptal.com/developers/gitignore/api/kate,node,ruby,linux,macos,xcode,windows,powershell,visualstudiocode
+# Edit at https://www.toptal.com/developers/gitignore?templates=kate,node,ruby,linux,macos,xcode,windows,powershell,visualstudiocode
 
 ### Kate ###
 # Swap Files #
@@ -35,6 +29,7 @@ config.local.fish
 
 # Icon must end with two \r
 Icon
+
 
 # Thumbnails
 ._*
@@ -263,59 +258,6 @@ build-iPhoneSimulator/
 # Used by RuboCop. Remote config files pulled in from inherit_from directive.
 # .rubocop-https?--*
 
-### SublimeText ###
-# Cache files for Sublime Text
-*.tmlanguage.cache
-*.tmPreferences.cache
-*.stTheme.cache
-
-# Workspace files are user-specific
-*.sublime-workspace
-
-# Project files should be checked into the repository, unless a significant
-# proportion of contributors will probably not be using Sublime Text
-# *.sublime-project
-
-# SFTP configuration file
-sftp-config.json
-sftp-config-alt*.json
-
-# Package control specific files
-Package Control.last-run
-Package Control.ca-list
-Package Control.ca-bundle
-Package Control.system-ca-bundle
-Package Control.cache/
-Package Control.ca-certs/
-Package Control.merged-ca-bundle
-Package Control.user-ca-bundle
-oscrypto-ca-bundle.crt
-bh_unicode_properties.cache
-
-# Sublime-github package stores a github token in this file
-# https://packagecontrol.io/packages/sublime-github
-GitHub.sublime-settings
-
-### Vim ###
-# Swap
-[._]*.s[a-v][a-z]
-!*.svg # comment out if you don't need vector files
-[._]*.sw[a-p]
-[._]s[a-rt-v][a-z]
-[._]ss[a-gi-z]
-[._]sw[a-p]
-
-# Session
-Session.vim
-Sessionx.vim
-
-# Temporary
-.netrwhist
-# Auto-generated tag files
-tags
-# Persistent undo
-[._]*.un~
-
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json
@@ -378,42 +320,7 @@ xcuserdata/
 /*.gcno
 **/xcshareddata/WorkspaceSettings.xcsettings
 
-### Zsh ###
-# Zsh compiled script + zrecompile backup
-*.zwc
-*.zwc.old
-
-# Zsh completion-optimization dumpfile
-*zcompdump*
-
-# Zsh history
-.zsh_history
-
-# Zsh sessions
-.zsh_sessions
-
-# Zsh zcalc history
-.zcalc_history
-
-# A popular plugin manager's files
-._zinit
-.zinit_lstupd
-
-# zdharma/zshelldoc tool's files
-zsdoc/data
-
-# robbyrussell/oh-my-zsh/plugins/per-directory-history plugin's files
-# (when set-up to store the history in the local directory)
-.directory_history
-
-# MichaelAquilina/zsh-autoswitch-virtualenv plugin's files
-# (for Zsh plugins using Python)
-.venv
-
-# Zunit tests' output
-/tests/_output/*
-!/tests/_output/.gitkeep
-
-# End of https://www.toptal.com/developers/gitignore/api/linux,macos,windows,visualstudiocode,node,kate,powershell,ruby,sublimetext,vim,zsh,fish,xcode
+# End of https://www.toptal.com/developers/gitignore/api/kate,node,ruby,linux,macos,xcode,windows,powershell,visualstudiocode
 
 /.mise.local.toml
+/.lefthook-local.*

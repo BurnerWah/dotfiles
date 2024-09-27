@@ -21,9 +21,6 @@
 /.{{ . }}
 {{- end }}
 
-# Generated files
-**/.zcompdump
-
 # Other stuff
 **/.DS_Store
 **/.localized
