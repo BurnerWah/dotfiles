@@ -180,6 +180,7 @@ cask "intellij-idea", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
 cask "iterm2" if OS.mac? # terminal emulator
 cask "jetbrains-toolbox", greedy: true if OS.mac?
 cask "kitty" if OS.mac? # terminal emulator
+cask "krita" if OS.mac?
 cask "menuwhere" if OS.mac? # access menubar via cmd+right click
 cask "moonlight" if OS.mac? # local game streaming
 cask "obs" if OS.mac? # streaming & recording
