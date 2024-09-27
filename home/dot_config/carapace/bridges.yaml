@@ -59,6 +59,7 @@ gnutls-serv: zsh
 gping: fish
 gresource: fish
 gup: cobra
+incus: cobra
 initdb: zsh
 istioctl: cobra
 javadoc: zsh

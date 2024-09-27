@@ -24,6 +24,7 @@ settings:
         - brave-browser@beta # homophobia
         - brave-browser@dev # homophobia
         - brave-browser@nightly # homophobia
+        - btcpayserver-vault
         - chatall
         - chatbox
         - chatgpt
@@ -33,7 +34,7 @@ settings:
         - coinomi-wallet
         - cursor # ai
         - daedalus-mainnet
-        - dash-dash
+        - dash-dash # cryptocurrency
         - decentr # cryptocurrency
         - dogecoin
         - electron-cash # cryptocurrency
@@ -49,6 +50,10 @@ settings:
         - firefly-shimmer # cryptocurrency
         - fixkey # ai
         - forkgram-telegram # telegram
+        - google-chrome
+        - google-chrome@beta
+        - google-chrome@canary
+        - google-chrome@dev
         - greenery # cryptocurrency
         - groestlcoin-core # cryptocurrency
         - grs-bluewallet
@@ -58,6 +63,7 @@ settings:
         - itermai # ai
         - jamie # ai
         - jan # ai
+        - league-of-legends # your honor, league of legends
         - ledger-live # cryptocurrency
         - limitless # ai
         - litecoin
@@ -100,6 +106,7 @@ settings:
         - threema # threema
         - threema@beta # threema
         - threema-work # threema
+        - upm # deprecated
         - vertcoin-core
         - vincelwt-chatgpt
         - wasabi-wallet
