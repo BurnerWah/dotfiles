@@ -22,6 +22,7 @@
     "**/litecli/config.tmpl": "ini",
     "**/private_go/*env.tmpl": "dotenv",
     "*.elv.tmpl": "elvish",
+    "*.json.tmpl": "go-template",
   },
   "go-template.patterns": [
     "**/*.tmpl",
