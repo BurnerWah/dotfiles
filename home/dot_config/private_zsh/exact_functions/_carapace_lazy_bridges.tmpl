@@ -1,4 +1,0 @@
-#compdef {{- range $cmd, $bridge := include (joinPath .chezmoi.sourceDir "dot_config/carapace/bridges.yaml") | fromYaml }}
-{{- if ne $bridge "zsh" }} {{ $cmd }}{{ end }}
-{{- end }}
-source <(carapace "${words[1]}" zsh)
