@@ -1,0 +1,36 @@
+# yaml-language-server: $schema=https://json-schema.org/draft/2020-12/schema
+title: Shell Settings
+description: Shell settings
+type: object
+$defs:
+  Abbrev:
+    description: Abbreviations
+    type: object
+    additionalProperties: { type: string }
+
+  ShellCommon:
+    description: Common shell settings
+    type: object
+    additionalProperties: false
+    properties:
+      abbrev: { $ref: '#/$defs/Abbrev' }
+
+  ShellElvish:
+    description: Elvish settings
+    type: object
+    additionalProperties: false
+    properties:
+      abbrev: { $ref: '#/$defs/Abbrev' }
+
+  ShellFish:
+    description: Fish settings
+    type: object
+    additionalProperties: false
+    properties:
+      abbrev: { $ref: '#/$defs/Abbrev' }
+
+additionalProperties: false
+properties:
+  common: { $ref: '#/$defs/ShellCommon' }
+  elvish: { $ref: '#/$defs/ShellElvish' }
+  fish: { $ref: '#/$defs/ShellFish' }

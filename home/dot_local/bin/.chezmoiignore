@@ -46,6 +46,10 @@
 /webstorm
 {{- end }}
 
+{{- if ne .chezmoi.os "darwin" }}
+/tailscale
+{{- end }}
+
 {{- if eq .chezmoi.os "windows" }}
 # Almost everything in here won't work on windows
 /*

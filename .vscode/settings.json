@@ -21,6 +21,7 @@
     ".chezmoiremove": "ignore",
     "**/litecli/config.tmpl": "ini",
     "**/private_go/*env.tmpl": "dotenv",
+    "*.elv.tmpl": "elvish",
   },
   "go-template.patterns": [
     "**/*.tmpl",

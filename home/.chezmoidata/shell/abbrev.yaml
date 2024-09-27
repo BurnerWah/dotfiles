@@ -1,0 +1,66 @@
+settings:
+  shell:
+    common:
+      abbrev:
+        diff: delta
+        dog: doggo
+        exa: eza
+        find: fd
+        gdl: gallery-dl
+        ligma: lima
+        nc: ncat
+        pipx: uv tool
+        rpmq: rpm -q
+        yum: dnf
+
+        l: ls
+        sl: ls
+        cls: clear
+        dc: cd
+
+        cat: bat
+        batp: bat -p
+
+        vi: nvim
+        vim: nvim
+        view: nvim -R
+        ex: nvim -e
+
+        grep: rg
+        egrep: rg
+        fgrep: rg -F
+        zgrep: rg -z
+        zegrep: rg -z
+        zfgrep: rg -zF
+        bzgrep: rg -z
+        bzegrep: rg -z
+        bzfgrep: rg -zF
+        lzgrep: rg -z
+        lzegrep: rg -z
+        lzfgrep: rg -zF
+        xzgrep: rg -z
+        xzegrep: rg -z
+        xzfgrep: rg -zF
+        zstdgrep: rg -z
+
+        ydl: yt-dlp
+        ydlmp3: yt-dlp -x --audio-format mp3
+        youtube-dl: yt-dlp
+    fish:
+      abbrev:
+        ?: if
+        .: source
+        al: la
+        cmd: command
+        export: set -x
+        fn: function
+        fns: functions
+        fnsv: funcsave
+        fun: function
+        func: function
+        h: help
+        local: set -l
+        loop: while true
+        psrg: ps aux | rg
+        which: whereis
+        xopen: open
