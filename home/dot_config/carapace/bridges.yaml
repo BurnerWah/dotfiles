@@ -117,7 +117,6 @@ softwareupdate: zsh
 sqlite3: zsh
 ssh-add: zsh # I'll switch this to a custom spec later
 ssh-keyscan: zsh # I'll maybe switch this to a custom spec later
-swift: zsh
 swiftc: zsh
 system_profiler: zsh
 tmutil: fish

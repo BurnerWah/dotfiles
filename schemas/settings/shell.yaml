@@ -8,6 +8,11 @@ $defs:
     type: object
     additionalProperties: { type: string }
 
+  Carapace:
+    description: commands to use carapace for completions with
+    type: array
+    items: { type: string }
+
   ShellCommon:
     description: Common shell settings
     type: object
@@ -29,8 +34,17 @@ $defs:
     properties:
       abbrev: { $ref: '#/$defs/Abbrev' }
 
+  ShellZsh:
+    description: Zsh settings
+    type: object
+    additionalProperties: false
+    properties:
+      carapace: { $ref: '#/$defs/Carapace' }
+    #   abbrev: { $ref: '#/$defs/Abbrev' }
+
 additionalProperties: false
 properties:
   common: { $ref: '#/$defs/ShellCommon' }
   elvish: { $ref: '#/$defs/ShellElvish' }
   fish: { $ref: '#/$defs/ShellFish' }
+  zsh: { $ref: '#/$defs/ShellZsh' }
