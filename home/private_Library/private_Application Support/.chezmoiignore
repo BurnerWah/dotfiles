@@ -6,9 +6,7 @@
 /Adobe
 /Animoji
 /App Store
-/Arc
 /ArmCord
-/atuin
 /Automator
 /bash-completion
 /BetterDisplay
@@ -25,12 +23,10 @@
 /Chromium
 /CleanMyMac X
 /CleanMyMac X Menu
-/CleanShot
 /CloudDocs
 /CMakeTools
 /cod
 /Code
-/Codux
 /com.adobe.dunamis
 /com.apple.*
 /com.bugsnag.Bugsnag
@@ -61,24 +57,18 @@
 /Final Cut Pro
 /Firefox
 /fish
-/fisher
 /gem
 /go
 /Google
-/google-heartbeat-storage
 /gops
-/heroku
 /homeenergyd
 /HTTPie
 /icdd
 /iCloud
 /iLifeMediaBrowser
 /Instruments
-/io.fadel.MissionControlPlus
 /io.sentry
 /IsolatedStorage
-/itch
-/itch-setup
 /iTerm2
 /JetBrains
 /Knowledge
@@ -97,8 +87,6 @@
 /Microsoft Edge Canary
 /Microsoft Edge Dev
 /Microsoft Visual Studio
-/mise
-/Mission Control Plus
 /Motion
 /Mozilla
 /networkserviceproxy
@@ -115,37 +103,27 @@
 /org.videolan.vlc
 /pnpm
 /Podman Desktop
-/PopClip
 /powershell
 /ProApps
-/quarto
-/quarto-writer
-/RefSrcSymbols
 /Signal
 /spacedrive
 /Stats
 /Steam
-/Stellarium
 /stickersd
 /Sublime Text
 /summary-events
-/SymbolSourceSymbols
 /Syncthing
 /TorBrowser-Data
 /Transmission
 /turborepo
 /UninstallPKG
 /Valve Corporation
-/VencordDesktop
 /videosubscriptionsd
 /Vivaldi
 /VMware Fusion
 /VMware Fusion Applications Menu
-/volta
 /vscode-sqltools
-/Wave
 /Xcode
 /xonsh
 /yarn
 /zoom.us
-/zoxide

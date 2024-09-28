@@ -192,7 +192,7 @@ common_subcommands = [
 ]
 
 ## Set commands that should be totally stripped and ignored from stats
-common_prefix = ["boxxy", "command", "sudo"]
+common_prefix = ["boxxy", "command", "lima", "sudo"]
 
 ## Set commands that will be completely ignored from stats
 ignored_commands = ["cd", "for", "la", "ll", "ls", "nvim"]
@@ -224,7 +224,7 @@ sync_frequency = 300
 ## The path to the unix socket used by the daemon (on unix systems)
 ## linux/mac: ~/.local/share/atuin/atuin.sock
 ## windows: Not Supported
-# {{ $socketPath := "~/.local/share/atuin/atuin.sock" }}
+# {{ $socketPath := joinPath .chezmoi.homeDir "/.local/share/atuin/atuin.sock" }}
 # {{ if eq .chezmoi.os "linux" }}
 # {{   $socketPath = joinPath (env "XDG_RUNTIME_DIR") "atuin" "atuin.sock" }}
 # {{ end }}
@@ -233,7 +233,7 @@ socket_path = "{{ $socketPath }}"
 ## Use systemd socket activation rather than opening the given path (the path must still be correct for the client)
 ## linux: false
 ## mac/windows: Not Supported
-systemd_socket = {{ eq .chezmoi.os "linux" }}
+systemd_socket = {{ ne .chezmoi.os "windows" }}
 
 ## The port that should be used for TCP on non unix systems
 tcp_port = 8889

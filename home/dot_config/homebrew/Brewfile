@@ -43,6 +43,7 @@ brew "detect-secrets" if OS.mac?
 brew "devcontainer" if OS.mac? # VSCode devcontainers
 brew "direnv" if OS.mac? # directory-specific env vars
 brew "doggo" # DNS lookup tool
+brew "dotnet", link: true if OS.mac?
 brew "dua-cli" # disk usage
 brew "duf" # disk usage
 brew "dust" # du alternative
@@ -162,7 +163,6 @@ cask "blender" if OS.mac?
 cask "bootstrap-studio" if OS.mac?
 cask "dataspell", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
 cask "datagrip", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
-cask "dotnet-sdk" if OS.mac?
 cask "eloston-chromium" if OS.mac? # ungoogled chromium
 cask "eul" if OS.mac? # system monitor
 cask "figma" if OS.mac? # figma balls
