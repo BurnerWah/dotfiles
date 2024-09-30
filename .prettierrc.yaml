@@ -1,6 +1,7 @@
 singleQuote: true
 semi: false
 trailingComma: all
+tabWidth: 2
 plugins:
   - '@prettier/plugin-ruby'
   - '@prettier/plugin-xml'
@@ -12,7 +13,13 @@ overrides:
       - .vscode/settings.json
       - .vscode/tasks.json
     options: { parser: jsonc }
+
   - files: ['*.plist.tmpl']
     options: { parser: xml }
+
   - files: ['*.yaml.tmpl', '*.yml.tmpl']
     options: { parser: yaml }
+
+  - files: ['*.plist', '*.plist.tmpl']
+    options:
+      printWidth: 120
