@@ -19,13 +19,11 @@
 /CallHistoryTransactions
 /CEF
 /charm
-/chezmoi
 /Chromium
 /CleanMyMac X
 /CleanMyMac X Menu
 /CloudDocs
 /CMakeTools
-/cod
 /Code
 /com.adobe.dunamis
 /com.apple.*
@@ -41,7 +39,6 @@
 /com.microsoft.SharePoint-mac
 /com.paragon-software.*
 /com.raycast.macos
-/com.turborepo.turborepo
 /Compressor
 /ConfigurationProfiles
 /CrashReporter
@@ -56,7 +53,6 @@
 /FileProvider
 /Final Cut Pro
 /Firefox
-/fish
 /gem
 /go
 /Google
@@ -95,11 +91,9 @@
 /nupm
 /NVIDIA
 /NVIDIA Corporation
-/nvim
 /obs-studio
 /obsidian
 /omnisharp
-/ops
 /org.videolan.vlc
 /pnpm
 /Podman Desktop
@@ -115,7 +109,6 @@
 /Syncthing
 /TorBrowser-Data
 /Transmission
-/turborepo
 /UninstallPKG
 /Valve Corporation
 /videosubscriptionsd

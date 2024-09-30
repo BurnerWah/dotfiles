@@ -7,6 +7,7 @@ settings:
     forbiddden:
       cask:
         - aifun
+        - amazon-q # ai AND absurdly questionably behavior
         - anchor-wallet # cryptocurrency
         - anythingllm
         - armory # cryptocurrency
@@ -46,6 +47,7 @@ settings:
         - element@nightly # matrix (security)
         - elephas # ai
         - elephas@beta # ai
+        - fig # see amazon-q
         - firefly # cryptocurrency
         - firefly-shimmer # cryptocurrency
         - fixkey # ai

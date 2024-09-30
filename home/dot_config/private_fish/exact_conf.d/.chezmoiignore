@@ -1,10 +1,11 @@
 {{- if ne .chezmoi.os "darwin" }}
-/20-darwin.fish
-/90-iterm2.fish
+/*-darwin.fish
+/*-iterm2.fish
 {{- end }}
 
 {{- if ne .chezmoi.os "linux" }}
-/90-vscode.fish
+/*-direnv.fish
+/*-vscode.fish
 {{- end }}
 
 # I'm unsure if I even want to include 1password-cli plugins in here

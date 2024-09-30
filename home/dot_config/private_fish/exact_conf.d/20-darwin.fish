@@ -2,6 +2,10 @@
 # On Mac OS, TMPDIR is already user-specific so that should be fine
 set -gx XDG_RUNTIME_DIR $TMPDIR
 
+# Sonarlint stores temporary files in ~/.sonarlint and that folder can
+# get *really* big
+set -gx SONARLINT_USER_HOME "$TMPDIR/sonarlint"
+
 if status is-interactive
     and command -qs brew
     # Skip running `brew --repository` if we already know what it should output
