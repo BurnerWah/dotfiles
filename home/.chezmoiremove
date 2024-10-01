@@ -8,6 +8,7 @@
 /.fly
 /.gnupg
 /.hawtjni
+/.lesshst
 /.lima
 /.mono
 /.mypy*
