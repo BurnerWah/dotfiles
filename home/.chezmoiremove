@@ -5,11 +5,15 @@
 /.colima
 /.cups
 /.docker
+/.dug
 /.fly
+/.gk
 /.gnupg
 /.hawtjni
+/.kube
 /.lesshst
 /.lima
+/.minikube
 /.mono
 /.mypy*
 /.npm

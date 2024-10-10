@@ -12,6 +12,7 @@ settings:
         - anythingllm
         - armory # cryptocurrency
         - atomic-wallet
+        - backyard-ai
         - battle-net # activison-blizzard
         - beeper # matrix (security)
         - binance
@@ -72,6 +73,7 @@ settings:
         - llamachat
         - microsoft-edge
         - microsoft-edge@beta
+        - microsoft-edge@canary
         - microsoft-edge@dev
         - mindmac # ai
         - mixin # cryptocurrency
@@ -97,6 +99,7 @@ settings:
         - quaternion # matrix (security)
         - roblox # roblox
         - robloxstudio # roblox
+        - sanctum # ai
         - sparkplate # cryptocurrency
         - sparrow # cryptocurrency
         - specter # cryptocurrency
@@ -108,6 +111,7 @@ settings:
         - threema # threema
         - threema@beta # threema
         - threema-work # threema
+        - typefully # twitter
         - upm # deprecated
         - vertcoin-core
         - vincelwt-chatgpt
@@ -135,6 +139,7 @@ settings:
         - gloox # xmpp (security)
         - gollama # ai
         - gptline
+        - gptme
         - grin # cryptocurrency
         - grin-wallet
         - groestlcoin

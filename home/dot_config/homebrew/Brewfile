@@ -42,6 +42,7 @@ brew "ddgr" if OS.mac? # DuckDuckGo search
 brew "detect-secrets" if OS.mac?
 brew "devcontainer" if OS.mac? # VSCode devcontainers
 brew "direnv" if OS.mac? # directory-specific env vars
+brew "docker-compose" if OS.mac?
 brew "doggo" # DNS lookup tool
 brew "dotnet", link: true if OS.mac?
 brew "dua-cli" # disk usage
@@ -75,6 +76,7 @@ brew "go-task"
 brew "gnupg" if OS.mac?
 brew "grc" if OS.mac? # CLI output colorizer
 brew "grex" # regex generator
+brew "helm" if OS.mac?
 brew "hexyl" if OS.mac? # hex viewer
 brew "htop" if OS.mac?
 brew "httpie" if OS.mac?
@@ -86,6 +88,7 @@ brew "jc" if OS.mac? # JSON parser for various CLIs
 brew "jdupes" if OS.mac? # duplicate file finder
 brew "jq" if OS.mac? # JSON manipulator
 brew "just" # task runner
+brew "kind" if OS.mac? # Kubernetes in Docker
 brew "kondo" # Disk cleanup tool for coding
 brew "lazygit" # Git terminal UI
 brew "lefthook" # Git hooks manager
@@ -100,6 +103,7 @@ brew "macos-trash" if OS.mac? # trash CLI
 brew "mas" if OS.mac? # Mac App Store CLI
 brew "mercurial" if OS.mac? # version control
 brew "microsocks" if OS.linux? # SOCKS5 proxy
+brew "minikube" if OS.mac?
 brew "miniserve" # file server
 brew "mise" if OS.mac? # really good version manager
 brew "most" if OS.mac? # another pager, handles manpages well
@@ -114,7 +118,6 @@ brew "pigz" if OS.mac? # parallel gzip
 brew "podman" if OS.mac?
 brew "podman-tui" if OS.mac?
 brew "podman-compose" if OS.mac?
-brew "postgresql@16" if OS.mac?
 brew "rclone" if OS.mac? # cloud storage manager
 brew "rename" if OS.mac? # rename files
 brew "ripgrep" if OS.mac? # grep alternative
