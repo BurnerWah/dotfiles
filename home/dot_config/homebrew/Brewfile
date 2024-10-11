@@ -133,8 +133,6 @@ brew "util-linux" if OS.mac? # subset of the util-linux commands for mac OS
 brew "uutils-coreutils" if OS.mac?
 brew "uv" # Python package manager
 brew "vhs" if OS.mac? # terminal recorder
-brew "virtualenv" if OS.mac?
-brew "virtualfish" if OS.mac? # virtualenv for fish
 brew "viu" # terminal image viewer
 brew "vivid" # LS_COLORS generator
 brew "watchman" if OS.mac?
@@ -142,6 +140,7 @@ brew "whalebrew"
 brew "xonsh" if OS.mac?
 brew "xz" if OS.mac?
 brew "ykman" if OS.mac? # YubiKey manager
+brew "yt-dlp" if OS.mac?
 brew "zellij" if OS.mac? # tmux alternative
 brew "zenith" # Another htop thing
 brew "zoxide" # directory jumping
@@ -189,7 +188,7 @@ cask "moonlight" if OS.mac? # local game streaming
 cask "obs" if OS.mac? # streaming & recording
 cask "obsidian" if OS.mac? # note taking
 cask "phpstorm", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
-cask "podman-desktop" if OS.mac?
+cask "podman-desktop", greedy: false if OS.mac?
 cask "postico" if OS.mac? # postgres client
 cask "pycharm", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
 cask "rubymine", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
