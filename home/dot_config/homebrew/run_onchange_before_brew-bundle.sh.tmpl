@@ -8,7 +8,7 @@
   "/home/linuxbrew/.linuxbrew/bin"
   (joinPath .chezmoi.homeDir ".linuxbrew/bin")
   (joinPath .chezmoi.homeDir ".var/lib/homebrew/bin") -}}
-{{ $Brew := findExecutable "brew" (list "/opt/homebrew/bin") -}}
+{{ $Brew := findExecutable "brew" $Prefixes -}}
 {{ if $Brew -}}
 # Bootstrap the homebrew environment
 eval "$({{ $Brew }} shellenv bash)"

@@ -42,13 +42,13 @@ brew "ddgr" if OS.mac? # DuckDuckGo search
 brew "detect-secrets" if OS.mac?
 brew "devcontainer" if OS.mac? # VSCode devcontainers
 brew "direnv" if OS.mac? # directory-specific env vars
-brew "docker-compose" if OS.mac?
+brew "docker-compose"
 brew "doggo" # DNS lookup tool
 brew "dotnet", link: true if OS.mac?
 brew "dua-cli" # disk usage
 brew "duf" # disk usage
 brew "dust" # du alternative
-brew "elvish" if OS.mac?
+brew "elvish"
 brew "exercism"
 brew "exiftool" if OS.mac?
 brew "eza" if OS.mac? # ls alternative
@@ -65,7 +65,7 @@ brew "gawk" if OS.mac?
 brew "gh" # GitHub CLI
 brew "git" if OS.mac?
 brew "git-delta" if OS.mac?
-brew "git-lfs" if OS.mac?
+brew "git-lfs"
 brew "git-open" if OS.mac? # Broken on linux
 brew "git-remote-hg" if OS.mac?
 brew "gitleaks"
@@ -76,7 +76,7 @@ brew "go-task"
 brew "gnupg" if OS.mac?
 brew "grc" if OS.mac? # CLI output colorizer
 brew "grex" # regex generator
-brew "helm" if OS.mac?
+brew "helm"
 brew "hexyl" if OS.mac? # hex viewer
 brew "htop" if OS.mac?
 brew "httpie" if OS.mac?
@@ -88,7 +88,7 @@ brew "jc" if OS.mac? # JSON parser for various CLIs
 brew "jdupes" if OS.mac? # duplicate file finder
 brew "jq" if OS.mac? # JSON manipulator
 brew "just" # task runner
-brew "kind" if OS.mac? # Kubernetes in Docker
+brew "kind" # Kubernetes in Docker
 brew "kondo" # Disk cleanup tool for coding
 brew "lazygit" # Git terminal UI
 brew "lefthook" # Git hooks manager
@@ -103,7 +103,7 @@ brew "macos-trash" if OS.mac? # trash CLI
 brew "mas" if OS.mac? # Mac App Store CLI
 brew "mercurial" if OS.mac? # version control
 brew "microsocks" if OS.linux? # SOCKS5 proxy
-brew "minikube" if OS.mac?
+brew "minikube"
 brew "miniserve" # file server
 brew "mise" if OS.mac? # really good version manager
 brew "most" if OS.mac? # another pager, handles manpages well
@@ -116,7 +116,7 @@ brew "pandoc"
 brew "pidof" if OS.mac? # process ID lookup
 brew "pigz" if OS.mac? # parallel gzip
 brew "podman" if OS.mac?
-brew "podman-tui" if OS.mac?
+brew "podman-tui"
 brew "podman-compose" if OS.mac?
 brew "rclone" if OS.mac? # cloud storage manager
 brew "rename" if OS.mac? # rename files
