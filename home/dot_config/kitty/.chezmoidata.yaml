@@ -30,10 +30,10 @@ settings:
         line_height: 0
         column_width: 0
     scrollback:
-      lines: 20000
+      lines: 2000
       pager:
         command: less --chop-long-lines --RAW-CONTROL-CHARS +INPUT_LINE_NUMBER
-        history_size: 0
+        history_size: 100 # About 1 million lines
       multiplier:
         wheel: 5.0
         touch: 7.5

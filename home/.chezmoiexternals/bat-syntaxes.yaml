@@ -1,10 +1,13 @@
 # Bat syntaxes
 # Syntaxes I can't get working in bat (they cause the cache to not build)
-# https://github.com/SublimeText/Astro
-# https://github.com/SublimeText/MDX
+# https://github.com/SublimeText/Astro (build fails)
+# https://github.com/SublimeText/MDX (build fails)
 # https://github.com/kurokirasama/nushell_sublime_syntax (alternatives exist tho)
 # https://github.com/Drako/SublimeBrainfuck (no .sublime-syntax)
 # https://github.com/evhub/sublime-coconut (no .sublime-syntax)
+# https://github.com/supergra/tcsh-sublime (no .sublime-syntax or license)
+# https://github.com/eugenesvk/sublime-xonsh (build fails)
+# https://github.com/jnoortheen/vscode-xonsh (converted syntax build fails)
 
 .config/bat/syntaxes/Bison.sublime-syntax:
   type: file
@@ -29,6 +32,16 @@
 .config/bat/syntaxes/Gleam.sublime-syntax:
   type: file
   url: https://github.com/digitalcora/sublime-text-gleam/raw/main/package/Gleam.sublime-syntax
+  refreshPeriod: 744h
+
+.config/bat/syntaxes/Gomod.sublime-syntax:
+  type: file
+  url: https://github.com/mitranim/sublime-gomod/raw/refs/heads/master/Gomod.sublime-syntax
+  refreshPeriod: 744h
+
+.config/bat/syntaxes/Gosum.sublime-syntax:
+  type: file
+  url: https://github.com/mitranim/sublime-gomod/raw/refs/heads/master/Gosum.sublime-syntax
   refreshPeriod: 744h
 
 .config/bat/syntaxes/Just.sublime-syntax:
@@ -56,12 +69,12 @@
   url: https://github.com/odin-lang/sublime-odin/raw/master/Odin.sublime-syntax
   refreshPeriod: 744h
 
+.config/bat/syntaxes/Quarto.sublime-syntax:
+  type: file
+  url: https://github.com/quarto-dev/quarto-sublime/raw/refs/heads/main/Quarto.sublime-syntax
+  refreshPeriod: 744h
+
 .config/bat/syntaxes/Red.sublime-syntax:
   type: file
   url: https://github.com/Oldes/Sublime-Red/raw/master/Red.sublime-syntax
-  refreshPeriod: 744h
-
-.config/bat/syntaxes/RON.sublime-syntax:
-  type: file
-  url: https://github.com/ron-rs/sublime-ron/raw/master/RON.sublime-syntax
   refreshPeriod: 744h

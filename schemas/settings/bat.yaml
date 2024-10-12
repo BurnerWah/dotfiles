@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=https://json-schema.org/draft/2020-12/schema
+title: bat settings
+description: bat settings
+
+$defs:
+  SyntaxMapping:
+    type: object
+    description: Mapping of syntaxes to file extensions
+    additionalProperties:
+      type: array
+      items: { type: string }
+
+type: object
+additionalProperties: false
+properties:
+  syntax: { $ref: '#/$defs/SyntaxMapping' }
+required:
+  - syntax

@@ -296,6 +296,11 @@ color15 #ffffff
 shell_integration {{ $advanced.shell_integration | join " " }}
 
 # shell fish
+{{ if eq .chezmoi.os "darwin" }}
+# Avoids a massive memory leak in login on mac os
+exe_search_path /opt/homebrew/bin
+shell fish
+{{ end }}
 
 #: The shell program to execute. The default value of . means to use
 #: whatever shell is set as the default shell for the current user.
@@ -435,8 +440,8 @@ macos_quit_when_last_window_closed yes
 #: Show the title of the currently active window in the MacOS menu-
 #: bar, making use of otherwise wasted space.
 
-# macos_custom_beam_cursor no
-
+macos_custom_beam_cursor yes
+# defaults to no
 #: Enable/disable custom mouse cursor for MacOS that is easier to see
 #: on both light and dark backgrounds. WARNING: this might make your
 #: mouse cursor invisible on dual GPU machines.
