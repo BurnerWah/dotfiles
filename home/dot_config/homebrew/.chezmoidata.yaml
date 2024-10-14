@@ -71,6 +71,7 @@ settings:
         - limitless # ai
         - litecoin
         - llamachat
+        - meta-quest-developer-hub # facebook
         - microsoft-edge
         - microsoft-edge@beta
         - microsoft-edge@canary
@@ -143,12 +144,14 @@ settings:
         - grin # cryptocurrency
         - grin-wallet
         - groestlcoin
+        - huggingface-cli # ai
         - iamb # matrix (security)
         - ignite # cryptocurrency
         - libbitcoin-consensus # cryptocurrency, leaf dependency
         - libbitcoin-system # cryptocurrency, leaf dependency
         - libstrophe # xmpp (security), leaf dependency
         - lighthouse # cryptocurrency
+        - llm # ai
         - mentat # ai
         - mods # ai
         - monero

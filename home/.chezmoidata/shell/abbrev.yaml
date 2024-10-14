@@ -5,7 +5,9 @@ settings:
         diff: delta
         dog: doggo
         exa: eza
+        faas: faas-cli
         find: fd
+        fly: flyctl
         gdl: gallery-dl
         ligma: lima
         nc: ncat

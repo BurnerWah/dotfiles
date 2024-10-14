@@ -13,7 +13,12 @@ ansible-pull: argcomplete
 ansible-test: argcomplete
 ansible-vault: argcomplete
 ansible: argcomplete
+apko: cobra
 appletviewer: zsh
+apptainer: cobra
+apptainer.lima: cobra
+argo: cobra
+argocd: cobra
 az: argcomplete
 boundary: complete
 buf: cobra
@@ -21,6 +26,8 @@ carapace-bridge: carapace
 carapace-spec-man: carapace
 carapace-spec: carapace
 carapace: carapaace
+cdebug: cobra
+cekit: click
 changie: cobra
 chezmoi: cobra
 cjxl: fish
@@ -28,6 +35,7 @@ clusterdb: zsh
 colima: cobra
 concurrently: yargs
 cookiecutter: click
+copa: cobra # very slow
 cosign: cobra
 createdb: zsh # Fish provides built-in completions too
 crontab: zsh
@@ -35,13 +43,19 @@ cue: cobra
 cwebp: fish
 dasel: cobra
 devcontainer: yargs
+devpod: cobra
 diskutil: fish
 djxl: fish
+docker-buildx: cobra
+docker: cobra
+docker.lima: cobra
 doctl: cobra
 dropdb: zsh # Fish provides built-in completions too
 dscacheutil: fish
 dua: fish
 exercism: cobra
+faas: cobra
+faas-cli: cobra
 fc-match: zsh # Probably will be replaced by some built-in carapace completion in the future
 ffplay: fish
 ffprobe: fish
@@ -64,6 +78,7 @@ gnutls-cli: zsh
 gnutls-serv: zsh
 gping: fish
 gresource: fish
+grype: cobra
 gup: cobra
 hugo: cobra
 incus: cobra
@@ -75,23 +90,33 @@ jdb: zsh
 jest: yargs # Probably will only be run with npm or something
 keytool: zsh
 kind: cobra
+kompose: cobra
+kubectl: cobra
+kubectl.lima: cobra
 launchctl: fish
 lefthook: cobra
 legit: click
 limactl: cobra
 litecli: click
 localstack: click
+mcap: cobra
 mocha: yargs # Probably will only be run with npm or something
 neon: yargs # built in completion is broken but it's based on yargs
 neonctl: yargs
+nerdctl: cobra
+nerdctl.colima: cobra
+nerdctl.lima: cobra
 networksetup: zsh
 nomad: complete
+notation: cobra
 npq-hero: yargs # Eventually this should have a custom spec
 npq: yargs # Eventually this should have a custom spec
 oc: cobra
 oh-my-posh: cobra
 op: cobra
 ops: cobra # veeery slow
+orb: cobra
+orbctl: cobra
 perldoc: zsh
 pg_config: zsh
 pg_ctl: zsh
@@ -102,6 +127,7 @@ pg_restore: zsh # Fish provides built-in completions too
 pg_upgrade: zsh
 pipenv: click
 podman: cobra
+podman.lima: cobra
 postgres: zsh
 pre-commit: fish # pre-commit uses argparse but the argcomplete bridge doesn't work for it. fish has pre-made completions though.
 pscale: cobra
@@ -123,16 +149,19 @@ sqlite3: zsh
 ssh-add: zsh # I'll switch this to a custom spec later
 ssh-keyscan: zsh # I'll maybe switch this to a custom spec later
 swiftc: zsh
+syft: cobra
 system_profiler: zsh
 tmutil: fish
 tokei: fish
 toolbox: cobra
+trivy: cobra
 vacuumdb: zsh
 vault: complete
 vincent: carapace
 vt: cobra
 whalebrew: cobra # I don't really expect this to be getting data from docker/podman correctly. If it's not, that's a project for later
 wrangler: yargs
+xeol: cobra
 xmllint: zsh
 xsv: fish
 ykman: click
