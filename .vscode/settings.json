@@ -43,6 +43,12 @@
       "home/dot_config/carapace/exact_specs/*.yaml",
       "home/dot_config/carapace/exact_overlays/*.yaml",
     ],
+    "https://github.com/sharkdp/vivid/raw/refs/heads/master/schemas/filetypes.json": [
+      "home/dot_config/vivid/filetypes.yml",
+    ],
+    "https://github.com/sharkdp/vivid/raw/refs/heads/master/schemas/theme.json": [
+      "home/dot_config/vivid/themes/*",
+    ],
     "./schemas/chezmoi/data.yaml": [
       "**/.chezmoidata.yaml",
       "home/.chezmoidata/**/*",
