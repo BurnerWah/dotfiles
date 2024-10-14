@@ -1,7 +1,7 @@
 {
   "files.associations": {
     "**/.chezmoitemplates/zsh/**": "shellscript",
-    "**/dot_config/private_zsh/functions/**": "shellscript",
+    "**/dot_config/*_zsh/*_functions/**": "shellscript",
     "**/dot_config/private_rainbow/*.cfg": "plaintext",
     "*.fish.tmpl": "fish",
     "*.toml.tmpl": "toml",
