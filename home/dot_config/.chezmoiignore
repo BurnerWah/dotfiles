@@ -1,7 +1,6 @@
 /.semgrep
 /1Password
 /Bootstrap Studio
-/bpytop
 /bstudio
 /btop
 /Code
@@ -11,7 +10,6 @@
 /flutter
 /fly
 /gh/hosts.yml
-/github-copilot
 /gnome-boxes
 /gnome-initial-setup-done
 /gnome-session
@@ -21,7 +19,6 @@
 /google-chrome-unstable
 /gsconnect
 /ibus
-/itch
 /JetBrains
 /jgit
 /kera-desktop
@@ -39,12 +36,13 @@
 /user-share
 /vivaldi
 /vivaldi-snapshot
-/vscode-sqltools
 
 {{- if ne .chezmoi.os "linux" }}
+/autostart
 /boxxy
 /BraveSoftware
 /environment.d
+/firejail
 /systemd
 /user-tmpfiles.d
 {{- end }}

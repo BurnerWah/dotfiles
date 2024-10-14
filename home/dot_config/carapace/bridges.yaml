@@ -13,6 +13,7 @@ ansible-pull: argcomplete
 ansible-test: argcomplete
 ansible-vault: argcomplete
 ansible: argcomplete
+antidot: cobra
 apko: cobra
 appletviewer: zsh
 apptainer: cobra
@@ -142,6 +143,7 @@ rmiregistry: zsh
 sam: click # This runs very slooooow but it's the best thing I've got so far
 serialver: zsh
 sget: cobra
+singularity: cobra
 skate: cobra # Skate doesn't say that it has any completions but it uses cobra so that's not a problem
 skopeo: cobra
 softwareupdate: zsh

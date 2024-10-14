@@ -1,1 +1,0 @@
-antidot completion fish | source
