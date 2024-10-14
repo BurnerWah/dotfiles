@@ -67,24 +67,21 @@ text:
       - .config
       - .ini
       - .json
+      - .jsonc # JSON with comments
       - .tml
       - .toml
       - .webmanifest
       - .yaml
       - .yml
 
-    metadata:
-      - .xmp
+    metadata: [.xmp]
 
-    bibtex:
-      - .bib
-      - .bst
+    bibtex: [.bib, .bst]
 
     dockerfile:
       - Dockerfile
 
-    nix:
-      - .nix
+    nix: [.nix]
 
     qt:
       - .ui
@@ -125,6 +122,7 @@ programming:
     applescript: [.applescript]
     asp: [.asa]
     assembly: [.asm]
+    astro: [.astro]
     awk: [.awk]
     basic: [.vb]
     cabal: [.cabal]
@@ -168,7 +166,7 @@ programming:
     haskell: [.hs]
     ipython: [.ipynb]
     java: [.java, .bsh]
-    javascript: [.js, .jsx, .htc]
+    javascript: [.js, .jsx, .cjs, .mjs, .htc]
     julia: [.jl]
     kotlin: [.kt, .kts]
     latex: [.tex, .ltx]
@@ -179,7 +177,6 @@ programming:
     mathematica: [.nb]
     matlab: [.matlab, .m, .mn]
     mojo: [.mojo]
-    nim: [.nim, .nims, .nimble]
     ocaml: [.ml, .mli]
     openscad: [.scad]
     pascal: [.pas, .p, .dpr]
@@ -189,21 +186,24 @@ programming:
     prql: [.prql]
     puppet: [.pp, .epp]
     purescript: [.purs]
-    python: [.py]
+    python: [.py, .pyi, .pyx]
     r: [.r]
     raku: [.raku]
-    ruby: [.rb]
+    renpy: [.rpy, .rpym]
+    ruby: [.rb, .erb]
     rust: [.rs]
     sass: [.sass, .scss]
     scala: [.scala, .sbt]
-    shell: [.sh, .bash, .nu, .bashrc, .bash_profile, .zsh, .fish]
+    shell: [.sh, .bash, .csh, .nu, .bashrc, .bash_profile, .zsh, .fish]
     sql: [.sql]
     swift: [.swift]
     tablegen: [.td]
     tcl: [.tcl]
-    typescript: [.ts, .tsx]
+    typescript: [.ts, .cts, .mts, .tsx]
     v: [.v, .vsh]
+    vala: [.vala, .vapi]
     viml: [.vim]
+    vue: [.vue]
     zig: [.zig]
 
   tooling:
@@ -216,13 +216,21 @@ programming:
         - .mailmap
 
       hg:
+        - .hgignore
         - .hgrc
+        - .hgtags
         - hgrc
 
       other:
         - CODEOWNERS
         - .ignore
+        - .chezmoiignore
+        - .chezmoiremove
+        - .dockerignore
+        - .eslintignore
         - .fdignore
+        - .npmignore
+        - .prettierignore
         - .rgignore
         - .tfignore
 
@@ -248,40 +256,32 @@ programming:
         - SConscript
         - SConstruct
 
-      pip:
-        - requirements.txt
+      pip: [requirements.txt]
 
     packaging:
-      go:
-        - go.mod
+      go: [go.mod]
       python:
         - MANIFEST.in
         - setup.py
         - pyproject.toml
-      ruby:
-        - .gemspec
-      v:
-        - v.mod
+      lua: [.rockspec]
+      ruby: [.gemspec]
+      v: [v.mod]
 
     code-style:
-      python:
-        - .flake8
-
-      cxx:
-        - .clang-format
+      python: [.flake8]
+      cxx: [.clang-format, .uncrustify.cfg]
+      javascript: [.prettierrc]
+      lua: [.stylua.toml, .lua-format]
+      rust: [rustfmt.toml]
 
     editors:
-      editorconfig:
-        - .editorconfig
-      qt:
-        - .pro
-      kdevelop:
-        - .kdevelop
+      editorconfig: [.editorconfig]
+      qt: [.pro]
+      kdevelop: [.kdevelop]
 
     documentation:
-      doxygen:
-        - Doxyfile
-        - .dox
+      doxygen: [Doxyfile, .dox]
 
     continuous-integration:
       - appveyor.yml
@@ -509,6 +509,7 @@ executable:
     - .bat
     - .com
     - .exe
+    - .cmd
 
   library:
     - .so
@@ -516,36 +517,19 @@ executable:
     - .dll
     - .dylib
 
-  linux:
-    - .ko
+  linux: [.ko]
 
 unimportant:
   build_artifacts:
-    cxx:
-      - .o
-      - .la
-      - .lo
-    cmake:
-      - CMakeCache.txt
-    automake:
-      - Makefile.in
-    rust:
-      - .rlib
-      - .rmeta
-    python:
-      - .pyc
-      - .pyd
-      - .pyo
-    haskell:
-      - .dyn_hi
-      - .dyn_o
-      - .cache
-      - .hi
-    java:
-      - .class
-    scons:
-      - .scons_opt
-      - .sconsign.dblite
+    cxx: [.o, .la, .lo]
+    cmake: [CMakeCache.txt]
+    automake: [Makefile.in]
+    rust: [.rlib, .rmeta]
+    python: [.pyc, .pyd, .pyo]
+    renpy: [.rpyc, .rpymc]
+    haskell: [.dyn_hi, .dyn_o, .cache, .hi]
+    java: [.class]
+    scons: [.scons_opt, .sconsign.dblite]
     latex:
       - .aux
       - .bbl
@@ -560,8 +544,8 @@ unimportant:
       - .sty
       - .synctex.gz
       - .toc
-    llvm:
-      - .bc
+    llvm: [.bc]
+    zsh: [.zwc]
 
   macos:
     - .CFUserTextEncoding
