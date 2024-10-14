@@ -9,4 +9,12 @@ Host *
 	IgnoreUnknown UseKeychain
 	UseKeychain yes
 
+Host *.onion
+	# We probably shouldn't leave this in a readable form here
+	HashKnownHosts yes
+	# Tor is very slow, so compression is beneficial here
+	Compression yes
+	# This lets us use torsocks transparently (if it's set up)
+	ProxyCommand nc --proxy-type socks5 --proxy 127.0.0.1:9050 %h %p
+
 Include config.d/1password-{{ .chezmoi.os }}
