@@ -75,19 +75,11 @@ text:
       - .yml
 
     metadata: [.xmp]
-
     bibtex: [.bib, .bst]
-
-    dockerfile:
-      - Dockerfile
-
+    dockerfile: [Dockerfile]
     nix: [.nix]
-
-    qt:
-      - .ui
-
-    desktop:
-      - .desktop
+    qt: [.ui]
+    desktop: [.desktop]
 
     system:
       - passwd
@@ -114,6 +106,9 @@ markup:
     - .rst
     - .typ
     - .xml
+    - .adoc
+    - .asciidoc
+    - .mkd
 
 programming:
   source:
@@ -196,6 +191,7 @@ programming:
     scala: [.scala, .sbt]
     shell: [.sh, .bash, .csh, .nu, .bashrc, .bash_profile, .zsh, .fish]
     sql: [.sql]
+    svlte: [.svelte]
     swift: [.swift]
     tablegen: [.td]
     tcl: [.tcl]
@@ -245,16 +241,13 @@ programming:
         - .make
         - .mk
 
-      automake:
-        - Makefile.am
+      automake: [Makefile.am]
 
       configure:
         - configure
         - configure.ac
 
-      scons:
-        - SConscript
-        - SConstruct
+      scons: [SConscript, SConstruct]
 
       pip: [requirements.txt]
 
@@ -463,8 +456,7 @@ office:
     - .kex
     - .pps
 
-  calendar:
-    - .ics
+  calendar: [.ics]
 
 archives:
   packages:
@@ -474,8 +466,7 @@ archives:
     - .rpm
     - .xbps
 
-  ros:
-    - .bag
+  ros: [.bag]
 
   images:
     - .bin
