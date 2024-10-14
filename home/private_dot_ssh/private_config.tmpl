@@ -9,8 +9,4 @@ Host *
 	IgnoreUnknown UseKeychain
 	UseKeychain yes
 
-{{ if eq .chezmoi.os "darwin" }}
-# 1Password SSH Agent
-Host *
-	IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
-{{ end }}
+Include config.d/1password-{{ .chezmoi.os }}
