@@ -1,0 +1,11 @@
+[Unit]
+Description=Brew Automatic Update
+
+[Timer]
+OnCalendar=daily
+RandomizedDelaySec=3600
+Persistent=true
+Unit=brew-auto-update.service
+
+[Install]
+WantedBy=timers.target

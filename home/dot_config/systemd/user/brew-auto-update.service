@@ -1,0 +1,13 @@
+[Unit]
+Description=Brew Automatic Update
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/.var/lib/homebrew/bin/brew
+
+Environment=HOMEBREW_PREFIX=%h/.var/lib/homebrew
+Environment=HOMEBREW_CELLAR=%h/.var/lib/homebrew/Cellar
+Environment=HOMEBREW_REPOSITORY=%h/.var/lib/homebrew
+
+Environment=HOMEBREW_NO_INSECURE_REDIRECT=1
