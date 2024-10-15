@@ -42,3 +42,5 @@ settings:
       terminfo:
         type: path # change this to none once proper terminfo handling is set up
         term: xterm-kitty
+      env:
+        TERM_PROGRAM: kitty # for terminal integration

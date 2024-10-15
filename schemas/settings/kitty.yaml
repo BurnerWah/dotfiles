@@ -97,13 +97,19 @@ $defs:
         - no-complete
         - no-sudo
 
+  Env:
+    type: object
+    additionalProperties: { type: string }
+    description: Environment variables to set when running kitty
+
   Advanced:
     type: object
     additionalProperties: false
-    required: [terminfo, shell_integration]
+    required: [terminfo, shell_integration, env]
     properties:
       terminfo: { $ref: '#/$defs/Terminfo' }
       shell_integration: { $ref: '#/$defs/ShellIntegration' }
+      env: { $ref: '#/$defs/Env' }
 
 type: object
 properties:
