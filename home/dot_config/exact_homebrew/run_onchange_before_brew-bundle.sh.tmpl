@@ -14,7 +14,7 @@
 eval "$({{ $Brew }} shellenv bash)"
 
 # Use the brewfile directly from the source directory, since there's no templating
-{{ $Brewfile := (joinPath (dir .chezmoi.sourceDir) "home/dot_config/homebrew/Brewfile") -}}
+{{ $Brewfile := (joinPath (dir .chezmoi.sourceDir) "home/dot_config/exact_homebrew/Brewfile") -}}
 # Brewfile: {{ $Brewfile }}
 # Brewfile hash: {{ include $Brewfile | sha256sum }}
 
