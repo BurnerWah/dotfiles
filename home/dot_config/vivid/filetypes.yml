@@ -73,6 +73,7 @@ text:
       - .webmanifest
       - .yaml
       - .yml
+      - .plist
 
     metadata: [.xmp]
     bibtex: [.bib, .bst]
@@ -84,6 +85,7 @@ text:
     system:
       - passwd
       - shadow
+      - fstab
 
   other:
     - .txt
@@ -124,6 +126,7 @@ programming:
     clojure: [.clj]
     crystal: [.cr]
     csharp: [.cs, .csx]
+    cshell: [.csh, .cshrc]
     css: [.css]
     cxx:
       [
@@ -150,6 +153,7 @@ programming:
     elixir: [.ex, .exs]
     emacs: [.elc]
     elm: [.elm]
+    elvish: [.elv]
     erlang: [.erl]
     fsharp: [.fs, .fsi, .fsx]
     gcode: [.gcode]
@@ -189,7 +193,7 @@ programming:
     rust: [.rs]
     sass: [.sass, .scss]
     scala: [.scala, .sbt]
-    shell: [.sh, .bash, .csh, .nu, .bashrc, .bash_profile, .zsh, .fish]
+    shell: [.sh, .bash, .nu, .bashrc, .bash_profile, .zsh, .fish]
     sql: [.sql]
     svlte: [.svelte]
     swift: [.swift]
@@ -200,6 +204,7 @@ programming:
     vala: [.vala, .vapi]
     viml: [.vim]
     vue: [.vue]
+    xonsh: [.xsh]
     zig: [.zig]
 
   tooling:
@@ -242,13 +247,8 @@ programming:
         - .mk
 
       automake: [Makefile.am]
-
-      configure:
-        - configure
-        - configure.ac
-
+      configure: [configure, configure.ac]
       scons: [SConscript, SConstruct]
-
       pip: [requirements.txt]
 
     packaging:
@@ -272,6 +272,7 @@ programming:
       editorconfig: [.editorconfig]
       qt: [.pro]
       kdevelop: [.kdevelop]
+      sublime: [.sublime-syntax]
 
     documentation:
       doxygen: [Doxyfile, .dox]
@@ -494,6 +495,7 @@ archives:
     - .z
     - .zip
     - .zst
+    - .sqlite3
 
 executable:
   windows:
@@ -520,6 +522,7 @@ unimportant:
     renpy: [.rpyc, .rpymc]
     haskell: [.dyn_hi, .dyn_o, .cache, .hi]
     java: [.class]
+    javascript: [.map]
     scons: [.scons_opt, .sconsign.dblite]
     latex:
       - .aux
@@ -536,7 +539,7 @@ unimportant:
       - .synctex.gz
       - .toc
     llvm: [.bc]
-    zsh: [.zwc]
+    zsh: [.zwc, .zcompdump]
 
   macos:
     - .CFUserTextEncoding
@@ -556,6 +559,7 @@ unimportant:
     - .swp
     - .timestamp
     - .tmp
+    - .old
     - stderr
     - stdin
     - stdout

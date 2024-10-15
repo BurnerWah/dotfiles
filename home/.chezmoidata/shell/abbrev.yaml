@@ -2,6 +2,7 @@ settings:
   shell:
     common:
       abbrev:
+        asdf: mise
         diff: delta
         dog: doggo
         exa: eza
@@ -12,7 +13,9 @@ settings:
         ligma: lima
         nc: ncat
         pipx: uv tool
+        rb: ruby
         rpmq: rpm -q
+        vfox: mise
         yum: dnf
 
         l: ls
