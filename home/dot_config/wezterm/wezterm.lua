@@ -1,6 +1,7 @@
-local wezterm = require('wezterm')
-return {
-  font = wezterm.font('JetBrains Mono'),
-  color_scheme = 'ChallengerDeep',
-  default_prog = {'fish'},
-}
+local wezterm = require("wezterm")
+local config = wezterm.config_builder()
+
+config.font = wezterm.font("JetBrains Mono")
+config.color_scheme = "ChallengerDeep"
+
+return config
