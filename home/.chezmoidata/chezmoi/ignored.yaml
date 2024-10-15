@@ -19,7 +19,6 @@ settings:
         - matplotlib
         - netrc
         - nvidia-omniverse
-        - shiv # Some python thing
         - swiftpm
         - thumbnails # Blender mostly
         - Trash # Mac OS

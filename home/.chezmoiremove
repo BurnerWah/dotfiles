@@ -39,6 +39,7 @@
 /.redhat
 /.rustup
 /.ServiceHub
+/.shiv
 /.sonarlint
 /.tcshrc
 /.templateengine
