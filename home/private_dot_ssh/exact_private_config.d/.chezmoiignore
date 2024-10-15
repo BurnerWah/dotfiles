@@ -1,0 +1,2 @@
+1password-*
+!1password-{{ .chezmoi.os }}

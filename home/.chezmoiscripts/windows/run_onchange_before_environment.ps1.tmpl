@@ -1,0 +1,12 @@
+# Set up windows environment
+
+using namespace System
+
+$target = [EnvironmentVariableTarget]::User
+
+[Environment]::SetEnvironmentVariable("DOCKER_CONFIG", "%UserProfile%\.config\docker", $target)
+[Environment]::SetEnvironmentVariable("FLY_CONFIG_DIR", "%UserProfile%\.config\fly", $target)
+[Environment]::SetEnvironmentVariable("MINIKUBE_HOME", "%UserProfile%\.local\share\minikube", $target)
+[Environment]::SetEnvironmentVariable("OMNISHARPHOME", "%LocalAppData%\dotfiles\OmniSharp", $target)
+[Environment]::SetEnvironmentVariable("SONARLINT_USER_HOME", "%Temp%\sonarlint", $target)
+[Environment]::SetEnvironmentVariable("DOTNET_CLI_HOME", "%LocalAppData%\dotfiles\dotnet", $target)

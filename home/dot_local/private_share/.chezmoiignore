@@ -25,3 +25,7 @@
 /flatpak
 /mime
 {{- end }}
+
+{{- if eq .chezmoi.os "windows" }}
+/gnupg
+{{- end }}

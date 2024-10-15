@@ -57,8 +57,12 @@
 /ansible.cfg
 /fish
 /homebrew
+/kitty
 /rainbow
+/thefuck
+/vivid
 /wgetrc
+/whalebrew
 /yt-dlp
 /zsh
 {{- end }}
