@@ -18,6 +18,11 @@ interpreters:
   js:
     command: node
 
+# {{- if eq .chezmoi.os "windows" }}
+cd:
+  command: pwsh
+# {{- end }}
+
 textconv:
   - pattern: '**/*.plist'
     command: plutil
