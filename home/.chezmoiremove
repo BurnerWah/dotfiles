@@ -8,6 +8,7 @@
 /.cshrc
 /.cups
 /.docker
+/.dotnet
 /.dug
 /.earthly
 /.fly
@@ -22,6 +23,7 @@
 /.mono
 /.mypy*
 /.nimble
+/.node_repl_history
 /.nodenv
 /.npm
 /.nuget
