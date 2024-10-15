@@ -17,6 +17,7 @@
 /uv
 /vscode
 /vscode-sqltools
+/wezterm
 /zoxide
 
 {{- if ne .chezmoi.os "linux" }}
