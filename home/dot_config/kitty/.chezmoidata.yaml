@@ -44,3 +44,18 @@ settings:
         term: xterm-kitty
       env:
         TERM_PROGRAM: kitty # for terminal integration
+    os:
+      linux:
+        titleBarColor: background
+        displayServer: x11
+        waylandIme: true
+      macos:
+        titleBarColor: system
+        optionAsAlt: false
+        hideFromTasks: false
+        quitWhenNoWindows: true
+        windowResizable: true
+        traditionalFullscreen: false
+        showWindowTitleIn: all
+        beamCursor: false # previously was true
+        colorspace: srgb

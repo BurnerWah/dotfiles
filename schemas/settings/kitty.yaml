@@ -111,6 +111,94 @@ $defs:
       shell_integration: { $ref: '#/$defs/ShellIntegration' }
       env: { $ref: '#/$defs/Env' }
 
+  OSSettings:
+    type: object
+    additionalProperties: false
+    required: [linux, macos]
+    properties:
+      linux: { $ref: '#/$defs/LinuxSettings' }
+      macos: { $ref: '#/$defs/MacOSSettings' }
+
+  LinuxSettings:
+    type: object
+    additionalProperties: false
+    properties:
+      titleBarColor:
+        $ref: '#/$defs/TitleBarColor'
+        description: Wayland title bar color
+      displayServer:
+        type: string
+        enum: [wayland, x11, auto]
+        default: auto
+        description: Display server to use
+      waylandIme:
+        type: boolean
+        default: true
+        description: Enable Wayland IME support
+    required:
+      - titleBarColor
+      - displayServer
+      - waylandIme
+
+  MacOSSettings:
+    type: object
+    additionalProperties: false
+    properties:
+      titleBarColor:
+        $ref: '#/$defs/TitleBarColor'
+        description: macOS title bar color
+      optionAsAlt:
+        oneOf:
+          - const: false
+          - const: left
+          - const: right
+          - const: both
+      hideFromTasks:
+        type: boolean
+        default: false
+        description: Hide kitty from running tasks (Opption+Tab)
+      quitWhenNoWindows:
+        type: boolean
+        default: false
+        description: Quit kitty when the last window is closed
+      windowResizable:
+        type: boolean
+        default: true
+        description: Make the kitty window resizable
+      traditionalFullscreen:
+        type: boolean
+        default: false
+        description: Use traditional fullscreen mode, which is faster but less pretty
+      showWindowTitleIn:
+        type: string
+        enum: [window, menubar, all, none]
+        default: all
+      beamCursor:
+        type: boolean
+        default: false
+        description: Use a custom mousse cursor
+      colorspace:
+        type: string
+        enum: [srgb, default, displayp3]
+        default: srgb
+    required:
+      - titleBarColor
+      - optionAsAlt
+      - hideFromTasks
+      - quitWhenNoWindows
+      - windowResizable
+      - traditionalFullscreen
+      - showWindowTitleIn
+      - beamCursor
+      - colorspace
+
+  TitleBarColor:
+    oneOf:
+      - const: system
+      - const: background
+      - type: string
+        pattern: '^#[0-9a-fA-F]{6}$'
+
 type: object
 properties:
   fonts:
@@ -125,7 +213,9 @@ properties:
       - symbol_map
   scrollback: { $ref: '#/$defs/Scrollback' }
   advanced: { $ref: '#/$defs/Advanced' }
+  os: { $ref: '#/$defs/OSSettings' }
 required:
   - fonts
   - scrollback
   - advanced
+  - os

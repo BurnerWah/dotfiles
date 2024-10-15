@@ -247,72 +247,25 @@ terminfo_type {{ $advanced.terminfo.type }}
 
 #: OS specific tweaks
 
-# macos_titlebar_color system
+{{ $os := $config.os }}
 
-#: Change the color of the kitty window's titlebar on MacOS. A value
-#: of system means to use the default system color, a value of
-#: background means to use the background color of the currently
-#: active window and finally you can use an arbitrary color, such as
-#: #12af59 or red. WARNING: This option works by using a hack, as
-#: there is no proper Cocoa API for it. It sets the background color
-#: of the entire window and makes the titlebar transparent. As such it
-#: is incompatible with background_opacity. If you want to use both,
-#: you are probably better off just hiding the titlebar with
-#: hide_window_decorations.
+{{ $linux := $os.linux }}
 
-# macos_option_as_alt no
+wayland_titlebar_color {{ $linux.titleBarColor }}
+linux_display_server {{ $linux.displayServer }}
+wayland_enable_ime {{ $linux.waylandIme }}
 
-#: Use the option key as an alt key. With this set to no, kitty will
-#: use the MacOS native Option+Key = unicode character behavior. This
-#: will break any Alt+key keyboard shortcuts in your terminal
-#: programs, but you can use the MacOS unicode input technique. You
-#: can use the values: left, right, or both to use only the left,
-#: right or both Option keys as Alt, instead.
+{{ $macos := $os.macos }}
 
-# macos_hide_from_tasks no
-
-#: Hide the kitty window from running tasks (Option+Tab) on MacOS.
-
-macos_quit_when_last_window_closed yes
-
-#: Have kitty quit when all the top-level windows are closed. By
-#: default, kitty will stay running, even with no open windows, as is
-#: the expected behavior on MacOS.
-
-# macos_window_resizable yes
-
-#: Disable this if you want kitty top-level (OS) windows to not be
-#: resizable on MacOS.
-
-# macos_thicken_font 0
-
-#: Draw an extra border around the font with the given width, to
-#: increase legibility at small font sizes. For example, a value of
-#: 0.75 will result in rendering that looks similar to sub-pixel
-#: anti-aliasing at common font sizes.
-
-# macos_traditional_fullscreen no
-
-#: Use the traditional full-screen transition, that is faster, but
-#: less pretty.
-
-# macos_show_window_title_in menubar
-
-#: Show the title of the currently active window in the MacOS menu-
-#: bar, making use of otherwise wasted space.
-
-macos_custom_beam_cursor yes
-# defaults to no
-#: Enable/disable custom mouse cursor for MacOS that is easier to see
-#: on both light and dark backgrounds. WARNING: this might make your
-#: mouse cursor invisible on dual GPU machines.
-
-linux_display_server x11
-wayland_titlebar_color background
-
-#: Choose between Wayland and X11 backends. By default, an appropriate
-#: backend based on the system state is chosen automatically. Set it
-#: to x11 or wayland to force the choice.
+macos_titlebar_color {{ $macos.titleBarColor }}
+macos_option_as_alt {{ $macos.optionAsAlt }}
+macos_hide_from_tasks {{ $macos.hideFromTasks }}
+macos_quit_when_last_window_closed {{ $macos.quitWhenNoWindows }}
+macos_window_resizable {{ $macos.windowResizable }}
+macos_traditional_fullscreen {{ $macos.traditionalFullscreen }}
+macos_show_window_title_in {{ $macos.showWindowTitleIn }}
+macos_custom_beam_cursor {{ $macos.beamCursor }}
+macos_colorspace {{ $macos.colorspace }}
 
 #: Keyboard shortcuts
 
