@@ -6,6 +6,7 @@ atuin.fish
 luarocks.fish
 miniserve.fish
 mise.fish
+pixi.fish
 uv.fish
 zellij.fish
 {{- end }}

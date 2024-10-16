@@ -1,0 +1,2 @@
+#compdef pixi
+source <(pixi completion --shell zsh)
