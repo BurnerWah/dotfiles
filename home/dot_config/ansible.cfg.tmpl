@@ -1,0 +1,11 @@
+[defaults]
+home = ${XDG_CONFIG_HOME}/ansible
+# {{ $ansibleTemp := "${XDG_RUNTIME_DIR}/ansible" }}
+# {{ if eq .chezmoi.os "darwin" }}
+# {{   $ansibleTemp = "${TMPDIR}/ansible" }}
+# {{ end }}
+remote_tmp = {{ $ansibleTemp }}
+local_tmp = {{ $ansibleTemp }}
+
+[galaxy]
+cache_dir = ${XDG_CACHE_HOME}/ansible/galaxy
