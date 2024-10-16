@@ -16,7 +16,6 @@
 /Blender
 /Bootstrap Studio
 /bstudio
-/Caches
 /CallHistoryDB
 /CallHistoryTransactions
 /CEF
@@ -122,6 +121,5 @@
 /vscode-sqltools
 /wezterm
 /Xcode
-/xonsh
 /yarn
 /zoom.us
