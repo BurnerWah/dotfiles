@@ -24,7 +24,7 @@
     "*.elv.tmpl": "elvish",
     "*.json.tmpl": "go-template",
     "**/*_dot_ssh/*config.tmpl": "ssh_config",
-    "**/*_dot_ssh/*_config.d/*": "ssh_config",
+    "**/*_dot_ssh/*_config.d/*.conf": "ssh_config",
   },
   "go-template.patterns": [
     "**/*.tmpl",

@@ -1,2 +1,2 @@
-1password-*
-!1password-{{ .chezmoi.os }}
+1password-*.conf
+!1password-{{ .chezmoi.os }}.conf

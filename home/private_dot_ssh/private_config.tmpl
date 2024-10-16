@@ -17,4 +17,4 @@ Host *.onion
 	# This lets us use torsocks transparently (if it's set up)
 	ProxyCommand nc --proxy-type socks5 --proxy 127.0.0.1:9050 %h %p
 
-Include config.d/1password-{{ .chezmoi.os }}
+Include config.d/1password-{{ .chezmoi.os }}.conf

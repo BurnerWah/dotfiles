@@ -89,6 +89,7 @@ settings:
       Markdown: [mkd]
       passwd: [passwd-]
       Python: ['**/site-packages/*.pth']
+      SSH Config: ['**/.ssh/config.d/*']
       Swift: ['*.swiftinterface']
       VimL: [virc]
       XML:
