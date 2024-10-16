@@ -1,7 +1,3 @@
-{{ if eq .chezmoi.os "darwin" }}
-Include {{ joinPath .chezmoi.homeDir ".config/colima/ssh_config" }}
-{{ end }}
-
 # Security
 StrictHostKeyChecking accept-new
 
@@ -18,3 +14,4 @@ Host *.onion
 	ProxyCommand nc --proxy-type socks5 --proxy 127.0.0.1:9050 %h %p
 
 Include config.d/1password-{{ .chezmoi.os }}.conf
+# vim: ft=sshconfig

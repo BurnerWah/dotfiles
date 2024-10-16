@@ -25,6 +25,7 @@
     "*.json.tmpl": "go-template",
     "**/*_dot_ssh/*config.tmpl": "ssh_config",
     "**/*_dot_ssh/*_config.d/*.conf": "ssh_config",
+    "**/*_dot_ssh/*_config.d/*.conf.tmpl": "ssh_config",
   },
   "go-template.patterns": [
     "**/*.tmpl",
@@ -68,4 +69,5 @@
   "[xml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
+  "gitconfig-lsp.format.gitattributes.tabSize": 16,
 }

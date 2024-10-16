@@ -1,0 +1,17 @@
+# Templates
+*.bash.tmpl     text eol=lf linguist-language=Shell
+*.fish.tmpl     text eol=lf linguist-language=fish
+*.sh.tmpl       text eol=lf linguist-language=Shell
+*.zsh.tmpl      text eol=lf linguist-language=Shell
+*.elv.tmpl      text eol=lf linguist-language=Elvish
+*.ps1.tmpl      text linguist-language=PowerShell
+*.json.tmpl     text linguist-language=JSON
+*.toml.tmpl     text linguist-language=TOML
+*.xml.tmpl      text linguist-language=XML
+*.yaml.tmpl     text linguist-language=YAML
+*.yml.tmpl      text linguist-language=YAML
+
+# Chezmoi files
+*.chezmoiignore text linguist-language=Ignore-List
+*.chezmoiremove text linguist-language=Ignore-List
+*/symlink_*     text

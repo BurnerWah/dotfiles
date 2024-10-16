@@ -1,8 +1,32 @@
-*.yaml.tmpl linguist-language=YAML
-*.yml.tmpl linguist-language=YAML
-*.toml.tmpl linguist-language=TOML
-*.ps1.tmpl linguist-language=PowerShell
-*.sh.tmpl  linguist-language=Shell
-*.bash.tmpl linguist-language=Shell
-*.zsh.tmpl linguist-language=Shell
-*.fish.tmpl linguist-language=fish
+# Auto detect text files and perform LF normalization
+*               text=auto
+
+# Scripts
+*.bash          text eol=lf
+*.fish          text eol=lf
+*.sh            text eol=lf
+*.zsh           text eol=lf
+*.elv           text eol=lf
+# These are explicitly windows files and should use crlf
+*.bat           text eol=crlf
+*.cmd           text eol=crlf
+# I think powershel requires a little bit more care
+# *.ps1									text eol=crlf
+
+# Serialisation
+*.json          text
+*.toml          text
+*.xml           text
+*.yaml          text
+*.yml           text
+
+# Project files
+.vscode/*.json  linguist-language=JSON-with-Comments
+
+# Markup
+*.md            linguist-detectable
+
+# Source files
+*.lua           text
+*.py            text diff=python
+*.vim           text eol=lf
