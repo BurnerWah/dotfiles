@@ -216,7 +216,7 @@ strategy = "auto"
 
 [daemon]
 ## Enables using the daemon to sync. Requires the daemon to be running in the background. Start it with `atuin daemon`
-enabled = {{ eq .chezmoi.os "linux" }}
+enabled = {{ ne .chezmoi.os "windows" }}
 
 ## How often the daemon should sync in seconds
 sync_frequency = 300
@@ -227,13 +227,15 @@ sync_frequency = 300
 # {{ $socketPath := joinPath .chezmoi.homeDir "/.local/share/atuin/atuin.sock" }}
 # {{ if eq .chezmoi.os "linux" }}
 # {{   $socketPath = joinPath (env "XDG_RUNTIME_DIR") "atuin" "atuin.sock" }}
+# {{ else if eq .chezmoi.os "darwin" }}
+# {{   $socketPath = joinPath (env "TMPDIR") "atuin.sock" }}
 # {{ end }}
 socket_path = "{{ $socketPath }}"
 
 ## Use systemd socket activation rather than opening the given path (the path must still be correct for the client)
 ## linux: false
 ## mac/windows: Not Supported
-systemd_socket = {{ ne .chezmoi.os "windows" }}
+systemd_socket = {{ eq .chezmoi.os "linux" }}
 
 ## The port that should be used for TCP on non unix systems
 tcp_port = 8889

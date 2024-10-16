@@ -57,12 +57,15 @@
     "./schemas/chezmoi/config.yaml": ["home/.chezmoi.yaml.tmpl"],
   },
   "python.autoComplete.extraPaths": [
-    "/opt/homebrew/opt/xonsh/libexec/lib/python3.12/site-packages",
+    "/opt/homebrew/opt/xonsh/libexec/lib/python3.13/site-packages",
   ],
   "python.analysis.extraPaths": [
-    "/opt/homebrew/opt/xonsh/libexec/lib/python3.12/site-packages",
+    "/opt/homebrew/opt/xonsh/libexec/lib/python3.13/site-packages",
   ],
   "nushellLanguageServer.includeDirs": [
     "./home/dot_config/private_nushell/modules",
   ],
+  "[xml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
 }
