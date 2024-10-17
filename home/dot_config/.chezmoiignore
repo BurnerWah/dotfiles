@@ -49,8 +49,9 @@
 {{- end }}
 
 {{- if ne .chezmoi.os "darwin" }}
-/karabiner
 /iterm2
+/karabiner
+/lima
 {{- end }}
 
 {{- if eq .chezmoi.os "windows" }}

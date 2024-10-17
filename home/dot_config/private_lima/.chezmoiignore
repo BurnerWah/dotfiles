@@ -1,0 +1,23 @@
+_config/user
+_config/user.pub
+_networks
+*/basedisk
+*/cidata.iso
+*/copied-from-guest
+*/diffdisk
+*/ga.*
+*/ha.*
+*/launchd.*
+*/lima-version
+*/qemu.*
+*/qmp.*
+*/serial.*
+*/serialp.*
+*/serialv.*
+*/sock
+*/ssh.*
+*/vz-*
+*/vz.*
+
+# This maybe could be included?
+_config/networks.yaml

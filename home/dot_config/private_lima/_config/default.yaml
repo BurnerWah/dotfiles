@@ -1,0 +1,25 @@
+# VM type: "qemu" or "vz" (on macOS 13 and later).
+# The vmType can be specified only on creating the instance.
+# The vmType of existing instances cannot be changed.
+# 🟢 Builtin default: "qemu"
+vmType: vz # Remove after 1.0 releases
+
+# Memory size
+# 🟢 Builtin default: min("4GiB", half of host memory)
+memory: 2GiB # Manually set it to 4GiB for non-utility VMs
+
+# Disk size
+# 🟢 Builtin default: "100GiB"
+disk: 60GiB # Manually set it to 100GiB for non-utility VMs
+
+ssh:
+  # Load ~/.ssh/*.pub in addition to $LIMA_HOME/_config/user.pub .
+  # This option is useful when you want to use other SSH-based
+  # applications such as rsync with the Lima instance.
+  # If you have an insecure key under ~/.ssh, do not use this option.
+  # 🟢 Builtin default: true
+  loadDotSSHPubKeys: true
+
+networks:
+  # configuring vzNAT here *at all* will prevent the creation of qemu VMs entirely
+  - lima: user-v2

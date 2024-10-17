@@ -11,6 +11,6 @@ settings:
       GNUPGHOME: $HOME/.local/share/gnupg
       KUBECACHEDIR: $HOME/Library/Caches/kube
       KUBECONFIG: $HOME/.config/kube
-      LIMA_HOME: $HOME/.local/share/lima
+      LIMA_HOME: $HOME/.config/lima
       MINIKUBE_HOME: $HOME/.local/share/minikube # For podman-desktop
       ZDOTDIR: $HOME/.config/zsh
