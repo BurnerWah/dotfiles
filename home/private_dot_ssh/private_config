@@ -13,5 +13,10 @@ Host *.onion
 	# This lets us use torsocks transparently (if it's set up)
 	ProxyCommand nc --proxy-type socks5 --proxy 127.0.0.1:9050 %h %p
 
+# This has to be in the main config file to let us SSH into lima VMs, which
+# I think is necessary for ansible to interact with them.
+Host lima-*
+	StrictHostKeyChecking no
+
 Include config.d/*
 # vim: ft=sshconfig
