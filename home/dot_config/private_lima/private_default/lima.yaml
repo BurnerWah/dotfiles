@@ -14,9 +14,7 @@ mounts:
 memory: 4GiB
 disk: 100GiB
 
-rosetta:
-  enabled: true
-  binfmt: true
+# Rosetta causes the binfmt service to fail, so it's not turned on
 
 networks:
   - vzNAT: true
