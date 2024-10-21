@@ -15,6 +15,7 @@ settings:
         pipx: uv tool
         rb: ruby
         rpmq: rpm -q
+        rtx: mise
         vfox: mise
         yum: dnf
 

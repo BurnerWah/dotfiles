@@ -1,0 +1,1 @@
+../../op/plugins.sh

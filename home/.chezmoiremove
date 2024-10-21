@@ -13,12 +13,14 @@
 /.earthly
 /.fly
 /.gnupg
+/.gradle
 /.hawtjni
 /.inputrc
 /.ipfs
 /.kube
 /.lesshst
 /.lima
+/.m2
 /.minikube
 /.mono
 /.mypy*
@@ -42,6 +44,7 @@
 /.ServiceHub
 /.shiv
 /.sonarlint
+/.swiftpm
 /.tcshrc
 /.templateengine
 /.vagrant.d
@@ -59,3 +62,7 @@
 /RiderProjects
 /RubymineProjects
 /WebstormProjects
+
+{{ if ne .chezmoi.os "windows" }}
+/.gitconfig
+{{ end }}

@@ -28,3 +28,7 @@
 /wrap-systemd.scope.fish
 /xdg-open.fish
 {{- end }}
+
+{{- if ne .chezmoi.os "darwin" }}
+/ln.fish
+{{- end }}

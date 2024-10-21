@@ -23,6 +23,7 @@
     "**/private_go/*env.tmpl": "dotenv",
     "*.elv.tmpl": "elvish",
     "*.json.tmpl": "go-template",
+    "**/*_dot_ssh/*config": "ssh_config",
     "**/*_dot_ssh/*config.tmpl": "ssh_config",
     "**/*_dot_ssh/*_config.d/*.conf": "ssh_config",
     "**/*_dot_ssh/*_config.d/*.conf.tmpl": "ssh_config",

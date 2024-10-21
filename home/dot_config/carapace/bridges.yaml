@@ -55,8 +55,6 @@ dropdb: zsh # Fish provides built-in completions too
 dscacheutil: fish
 dua: fish
 exercism: cobra
-faas: cobra
-faas-cli: cobra
 fc-match: zsh # Probably will be replaced by some built-in carapace completion in the future
 ffplay: fish
 ffprobe: fish

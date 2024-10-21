@@ -132,6 +132,7 @@ settings:
         - cointop
         - cortexso # ai
         - crytic-compile # cryptocurrency, leaf dependency
+        - daemontools # cryptocurrency
         - ejabberd # xmpp (security)
         - erigon # cryptocurrency
         - ethereum
@@ -198,3 +199,4 @@ settings:
         - teamookla/speedtest # Mac OS only
         - render-oss/render # Mac OS only
         - nanovms/ops # Builds from source with a weird script
+        - pkgxdev/made # Cryptocurrency adjacent

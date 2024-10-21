@@ -1,3 +1,9 @@
 com.github.domt4.homebrew-autoupdate.plist
 com.lwouis.alt-tab-macos.plist
+homebrew.mxcl.dura.plist
+homebrew.mxcl.postgresql@*.plist
+homebrew.mxcl.pueue.plist
+homebrew.mxcl.runit.plist
+homebrew.mxcl.syncthing.plist
+homebrew.mxcl.yubikey-agent.plist
 org.git-scm.git.*.plist

@@ -7,6 +7,3 @@
 /*-direnv.fish
 /*-vscode.fish
 {{- end }}
-
-# I'm unsure if I even want to include 1password-cli plugins in here
-/op-plugins.fish
