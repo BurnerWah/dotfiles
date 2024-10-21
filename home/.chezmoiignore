@@ -35,15 +35,18 @@
 /.var
 {{- end }}
 
-{{- if ne .chezmoi.os "darwin" }}
+{{- if eq .chezmoi.os "darwin" }}
+/.CFUserTextEncoding
+/.Trash
+{{- else }}
 .chezmoiscripts/darwin/**
 /Library
-/Logs
 {{- end }}
 
 {{- if eq .chezmoi.os "windows" }}
 !/Documents
 /.chocolatey
+/.insomniac
 /.nvidia-omniverse
 /3D Objects
 /Application Data

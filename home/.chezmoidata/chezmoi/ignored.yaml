@@ -6,16 +6,12 @@ settings:
         - affinity
         - android
         - cache # Standard linux cache dir, but shows up on Mac OS and Windows too
-        - CFUserTextEncoding # Mac OS
         - dbus-keyrings # Appeared on windows for some reason
         - fleet # JetBrains
-        - insomniac
         - matplotlib
         - netrc
         - thumbnails # Blender mostly
-        - Trash # Mac OS
         - vscode
-        - warp
 
       home:
         - ansel # NVIDIA
