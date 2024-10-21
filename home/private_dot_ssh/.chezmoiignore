@@ -1,0 +1,4 @@
+/*.pub
+/id_*
+/known_hosts*
+/podman-machine-*

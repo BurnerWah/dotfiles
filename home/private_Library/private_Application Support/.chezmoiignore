@@ -7,7 +7,6 @@
 /Animoji
 /App Store
 /Arc
-/ArmCord
 /Automator
 /bash-completion
 /BetterDisplay
@@ -19,12 +18,10 @@
 /CallHistoryDB
 /CallHistoryTransactions
 /CEF
-/charm
 /Chromium
 /CleanMyMac X
 /CleanMyMac X Menu
 /CloudDocs
-/CMakeTools
 /Code
 /com.adobe.dunamis
 /com.apple.*
@@ -45,14 +42,11 @@
 /CrashReporter
 /cups
 /Cypress
-/Dash
-/Deskreen
 /DiskImages
 /Dock
 /FaceTime
 /Figma
 /FileProvider
-/Final Cut Pro
 /Firefox
 /gem
 /go
@@ -74,6 +68,7 @@
 /krita-sysinfo.log
 /krita.log
 /Launchpad Manager
+/legcord
 /LibreOffice
 /Logitech
 /Lunar
@@ -108,11 +103,13 @@
 /Sublime Text
 /summary-events
 /Syncthing
+/TabNine
 /TorBrowser-Data
 /Transmission
 /UninstallPKG
 /uv
 /Valve Corporation
+/vfkit
 /videosubscriptionsd
 /VirtualBuddy
 /Vivaldi

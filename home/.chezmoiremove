@@ -7,8 +7,6 @@
 /.colima
 /.cshrc
 /.cups
-/.docker
-/.dotnet
 /.dug
 /.earthly
 /.fly
@@ -46,7 +44,6 @@
 /.sonarlint
 /.swiftpm
 /.tcshrc
-/.templateengine
 /.vagrant.d
 /.viminfo
 /.yarnrc
@@ -64,5 +61,8 @@
 /WebstormProjects
 
 {{ if ne .chezmoi.os "windows" }}
+/.docker
+/.dotnet
 /.gitconfig
+/.templateengine
 {{ end }}

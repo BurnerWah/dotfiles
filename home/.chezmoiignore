@@ -31,16 +31,38 @@
 
 # OS-Specific exclusions
 {{- if ne .chezmoi.os "linux" }}
-/.var
 .chezmoiscripts/linux/**
+/.var
 {{- end }}
+
 {{- if ne .chezmoi.os "darwin" }}
 .chezmoiscripts/darwin/**
 /Library
 /Logs
 {{- end }}
+
 {{- if eq .chezmoi.os "windows" }}
 !/Documents
+/.chocolatey
+/.nvidia-omniverse
+/3D Objects
+/Application Data
+/Contacts
+/Cookies
+/Favorites
+/Links
+/Local Settings
+/My Documents
+/NetHood
+/ntuser.*
+/NTUSER.*
+/PrintHood
+/Recent
+/Recorded Calls
+/Saved Games
+/Searches
+/SendTo
+/Start Menu
 {{- else }}
 .chezmoiscripts/windows/**
 /AppData
