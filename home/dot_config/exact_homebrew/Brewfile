@@ -142,6 +142,7 @@ brew "xonsh" if OS.mac?
 brew "xz" if OS.mac?
 brew "ykman" if OS.mac? # YubiKey manager
 brew "yt-dlp" if OS.mac?
+brew "yubikey-agent", restart_service: true if OS.mac? # SSH Agent for YubiKeys
 brew "zellij" if OS.mac? # tmux alternative
 brew "zenith" # Another htop thing
 brew "zoxide" # directory jumping

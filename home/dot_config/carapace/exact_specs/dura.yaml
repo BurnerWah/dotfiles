@@ -1,0 +1,61 @@
+name: dura
+description: Automatically back up your Git repos with commits
+
+persistentflags:
+  -h, --help: Print help information
+
+flags:
+  -V, --version: Print version information
+
+commands:
+  - name: capture
+    description: Run a single backup of an entire repository
+    completion:
+      positional:
+        - [$directories]
+
+  - name: help
+    description: Print help about subcommands
+    completion:
+      positional:
+        - [capture, help, kill, metrics, serve, watch, unwatch]
+
+  - name: kill
+    description: Stop the running worker
+
+  - name: metrics
+    description: Convert logs into richer metrics about snapshots
+    flags:
+      -i, --input=: The log file to read. Defaults to stdin.
+      -o, --output=: The json file to write. Defaults to stdout.
+    completion:
+      flag:
+        input: [$files]
+        output: [$files]
+
+  - name: serve
+    description: Starts the worker that listens for file changes
+    flags:
+      --logfie=: Sets custom logfile. Default is logging to stdout
+    completion:
+      flag:
+        logfie: [$files]
+
+  - name: watch
+    description: Add the current working directory as a repository to watch
+    flags:
+      -d, --maxdepth=: 'Determines the depth to recurse into when scanning directories [default: 255]'
+      -e, --exclude=: Excludes specific directories relative to the watch directory
+      -i, --include=: Overrides excludes by re-including specific directories relative to the watch directory
+    completion:
+      positional:
+        - [$directories]
+      flag:
+        exclude: [$files]
+        include: [$files]
+
+  - name: unwatch
+    description: Remove the current working directory as a repository to watch
+    completion:
+      positional:
+        - [$directories]
