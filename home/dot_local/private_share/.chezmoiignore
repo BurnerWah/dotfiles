@@ -2,22 +2,32 @@
 /bun
 /charm
 /chezmoi
+/containers
+/dotnet
+/fish
+/gem
+/gh
 /gnome-boxes
 /golang
 /grilo-plugins
 /gstreamer-1.0
 /gvfs-metadata
+/IsolatedStorage
 /JetBrains
 /karabiner
+/man
 /mise
+/NuGet
 /nvim
 /pnpm
+/powershell
 /systemd
 /Trash
 /uv
 /vscode
 /vscode-sqltools
 /wezterm
+/xonsh
 /zoxide
 
 {{- if ne .chezmoi.os "linux" }}
