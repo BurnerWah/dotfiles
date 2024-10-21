@@ -1,0 +1,17 @@
+#!/usr/bin/env zsh
+
+set -eufo pipefail
+
+if pkgutil --pkg-info sh.brew.homebrew &> /dev/null; then
+    echo "Brew (pkg) already installed, skipping."
+    exit 0
+elif [[ '{{ .chezmoi.arch }}' == 'arm64' ]] && [[ -x /opt/homebrew/bin/brew ]]; then
+    echo "Brew (apple silicon) already installed, skipping."
+    exit 0
+elif [[ '{{ .chezmoi.arch }}' == 'amd64' ]] && [[ -x /usr/local/bin/brew ]]; then
+    echo "Brew (intel) already installed, skipping."
+    exit 0
+else
+    # Try and figure out how to switch this to the pkg installer
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi

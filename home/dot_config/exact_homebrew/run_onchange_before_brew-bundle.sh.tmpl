@@ -2,6 +2,8 @@
 # shellcheck disable=all
 # Go Templates break a lot of shellcheck rules
 
+set -eufo pipefail
+
 {{ $Prefixes := list
   "/opt/homebrew/bin"
   "/usr/local/bin"

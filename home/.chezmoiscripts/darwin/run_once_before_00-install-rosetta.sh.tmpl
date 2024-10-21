@@ -1,0 +1,8 @@
+#!/bin/bash
+# shellcheck disable=SC2050
+
+set -eufo pipefail
+
+if [ '{{ .chezmoi.arch }}' = 'arm64' ]; then
+    softwareupdate --install-rosetta --agree-to-license
+fi  
