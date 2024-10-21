@@ -4,6 +4,9 @@
 /boxxy
 /carapace
 /catj
+/dnd
+/do-not-disturb
+/empty-trash
 /gallery-dl
 /litecli
 /npq
@@ -12,6 +15,7 @@
 /pdu
 /pnpm
 /pnpx
+/sort-package-json
 /tmsu*
 /ts-node*
 /ts-script
