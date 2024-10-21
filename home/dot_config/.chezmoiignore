@@ -20,6 +20,7 @@
 /google-chrome-unstable
 /gsconnect
 /ibus
+/iterm2
 /JetBrains
 /jgit
 /kera-desktop
@@ -49,7 +50,6 @@
 {{- end }}
 
 {{- if ne .chezmoi.os "darwin" }}
-/iterm2
 /karabiner
 /lima
 {{- end }}
