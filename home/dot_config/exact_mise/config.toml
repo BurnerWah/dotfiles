@@ -7,15 +7,15 @@ not_found_auto_install = false
 go_default_packages_file = "~/.config/mise/default-go-packages"
 python_default_packages_file = "~/.config/mise/default-python-packages"
 disable_tools = [
+  "asdf-plugin-manager",
   "exa",
+  "go-sdk",
   "nim",
   "ollama",
   "rome",
   "solidity",
   "wasmtime",
   "youtube-dl",
-  "go-sdk",
-  "asdf-plugin-manager",
 ]
 disable_hints = ["registry"]
 
