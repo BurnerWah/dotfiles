@@ -1,1 +1,2 @@
-# TODO
+[tools]
+"npm:do-not-disturb-cli" = "latest"
