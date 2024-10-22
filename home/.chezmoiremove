@@ -39,6 +39,7 @@
 /.rd
 /.redhat
 /.rustup
+/.sentryclirc
 /.ServiceHub
 /.shiv
 /.sonarlint
