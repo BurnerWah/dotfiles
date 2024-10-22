@@ -1,9 +1,9 @@
 {{- if ne .chezmoi.os "darwin" }}
-/*-darwin.fish
-/*-iterm2.fish
+*-darwin.fish
+*-iterm2.fish
 {{- end }}
 
 {{- if ne .chezmoi.os "linux" }}
-/*-direnv.fish
-/*-vscode.fish
+*-direnv.fish
+*-vscode.fish
 {{- end }}

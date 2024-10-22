@@ -1,34 +1,36 @@
 {{- if ne .chezmoi.os "linux" }}
-/blkid.fish
-/btrfs.fish
-/bussybox.fish
-/create_icons.fish
-/dnf.fish
-/duperemove.fish
-/findmnt.fish
-/free.fish
-/getfacl.fish
-/getsebool.fish
-/iostat.fish
-/ip.fish
-/iptables.fish
-/iwconfig.fish
-/lastlog.fish
-/lsattr.fish
-/lsblk.fish
-/lsmod.fish
-/lspci.fish
-/lutris_create_icon.fish
-/pidstat.fish
-/procenv.fish
-/sar.fish
-/spec_needs_buildrequires.fish
-/ss.fish
-/vmstat.fish
-/wrap-systemd.scope.fish
-/xdg-open.fish
+blkid.fish
+btrfs.fish
+bussybox.fish
+clang.fish
+clang++.fish
+create_icons.fish
+dnf.fish
+duperemove.fish
+findmnt.fish
+free.fish
+getfacl.fish
+getsebool.fish
+iostat.fish
+ip.fish
+iptables.fish
+iwconfig.fish
+lastlog.fish
+lsattr.fish
+lsblk.fish
+lsmod.fish
+lspci.fish
+lutris_create_icon.fish
+pidstat.fish
+procenv.fish
+sar.fish
+spec_needs_buildrequires.fish
+ss.fish
+vmstat.fish
+wrap-systemd.scope.fish
+xdg-open.fish
 {{- end }}
 
 {{- if ne .chezmoi.os "darwin" }}
-/ln.fish
+ln.fish
 {{- end }}
