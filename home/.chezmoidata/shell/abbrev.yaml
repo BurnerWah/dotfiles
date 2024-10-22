@@ -3,10 +3,12 @@ settings:
     common:
       abbrev:
         asdf: mise
+        bvm: mise
         diff: delta
         dog: doggo
         exa: eza
         faas: faas-cli
+        fades: uv run
         find: fd
         fly: flyctl
         gdl: gallery-dl

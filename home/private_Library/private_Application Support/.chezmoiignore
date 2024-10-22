@@ -8,7 +8,6 @@
 /App Store
 /Arc
 /Automator
-/bash-completion
 /BetterDisplay
 /BetterTouchTool
 /Binary Ninja
@@ -18,6 +17,7 @@
 /CallHistoryDB
 /CallHistoryTransactions
 /CEF
+/chezmoi
 /Chromium
 /CleanMyMac X
 /CleanMyMac X Menu
@@ -53,6 +53,7 @@
 /go
 /Google
 /gops
+/gradle
 /homeenergyd
 /HTTPie
 /icdd
@@ -73,6 +74,7 @@
 /LibreOffice
 /Logitech
 /Lunar
+/maven
 /MBHaxe-MBG
 /Microsoft
 /Microsoft Edge

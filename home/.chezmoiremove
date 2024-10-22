@@ -43,6 +43,7 @@
 /.shiv
 /.sonarlint
 /.swiftpm
+/.tabnine
 /.tcshrc
 /.vagrant.d
 /.viminfo

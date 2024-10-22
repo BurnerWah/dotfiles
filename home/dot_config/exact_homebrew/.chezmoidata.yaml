@@ -88,9 +88,9 @@ settings:
         - onekey # cryptocurrency
         - opencat # ai
         - opera # loan-shark
+        - opera-gx # loan-shark
         - opera@beta # loan-shark
         - opera@developer # loan-shark
-        - opera-gx # loan-shark
         - operadriver # loan-shark
         - orion # i don't like kagi
         - pdf-pals # ai
@@ -111,8 +111,8 @@ settings:
         - telegram-desktop # telegram
         - telegram-desktop@beta # telegram
         - threema # threema
-        - threema@beta # threema
         - threema-work # threema
+        - threema@beta # threema
         - typefully # twitter
         - upm # deprecated
         - vertcoin-core
@@ -134,9 +134,10 @@ settings:
         - crytic-compile # cryptocurrency, leaf dependency
         - daemontools # cryptocurrency
         - ejabberd # xmpp (security)
+        - envd # ai
         - erigon # cryptocurrency
         - ethereum
-        - envd # ai
+        - fades # use `uv run`
         - firefly # cryptocurrency
         - flow-cli # cryptocurrency
         - gloox # xmpp (security)
@@ -162,6 +163,8 @@ settings:
         - ord # cryptocurrency
         - qxmpp # xmpp (security)
         - slither-analyzer # cryptocurrency, leaf dependency
+        - solc-select # cryptocurrency
+        - solidity # cryptocurrency
         - sysaidmin # ai
         - tdlib # telegram
         - teku # cryptocurrency
