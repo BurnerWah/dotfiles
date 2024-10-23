@@ -122,6 +122,7 @@ brew "podman-compose" if OS.mac?
 brew "rclone" if OS.mac? # cloud storage manager
 brew "rename" if OS.mac? # rename files
 brew "ripgrep" if OS.mac? # grep alternative
+brew "rustup" if OS.mac?
 brew "shadowenv" # directory-specific env vars
 brew "starship" if OS.mac? # prompt for fish & zsh
 brew "svgo" if OS.mac? # SVG optimizer
