@@ -1,7 +1,4 @@
-$Script:Scoopfile = New-TemporaryFile
-$Script:ScoopfileContent = @'
-{{ .packages.windows.scoop | toJson }}
-'@
-$Script:ScoopfileContent | Out-File -FilePath $Script:Scoopfile
+# Scoopfile hash: {{ include "../assets/scoopfile.json" | sha256sum }}
+$Script:Scoopfile = '{{ joinPath .chezmoi.sourceDir "../assets/scoopfile.json" }}'
 
-scoop import $Script:Scoopfile.FullName
+scoop import $Script:Scoopfile
