@@ -44,7 +44,6 @@
 {{- end }}
 
 {{- if eq .chezmoi.os "windows" }}
-!/Documents
 /.chocolatey
 /.docker
 /.dotnet
@@ -73,4 +72,5 @@
 {{- else }}
 .chezmoiscripts/windows/**
 /AppData
+/Documents
 {{- end }}

@@ -4,8 +4,9 @@ using namespace System
 
 $target = [EnvironmentVariableTarget]::User
 
-[Environment]::SetEnvironmentVariable("DOCKER_CONFIG", "%UserProfile%\.config\docker", $target)
-[Environment]::SetEnvironmentVariable("FLY_CONFIG_DIR", "%UserProfile%\.config\fly", $target)
-[Environment]::SetEnvironmentVariable("MINIKUBE_HOME", "%UserProfile%\.local\share\minikube", $target)
-[Environment]::SetEnvironmentVariable("OMNISHARPHOME", "%LocalAppData%\dotfiles\OmniSharp", $target)
-[Environment]::SetEnvironmentVariable("SONARLINT_USER_HOME", "%Temp%\sonarlint", $target)
+# Minimize the use of %Variable% expansions. Programs won't reliably pick them up.
+[Environment]::SetEnvironmentVariable("DOCKER_CONFIG", "$env:UserProfile\.config\docker", $target)
+[Environment]::SetEnvironmentVariable("FLY_CONFIG_DIR", "$env:UserProfile\.config\fly", $target)
+[Environment]::SetEnvironmentVariable("MINIKUBE_HOME", "$env:UserProfile\.local\share\minikube", $target)
+[Environment]::SetEnvironmentVariable("OMNISHARPHOME", "$env:LocalAppData\dotfiles\OmniSharp", $target)
+[Environment]::SetEnvironmentVariable("SONARLINT_USER_HOME", "$env:Temp\sonarlint", $target)
