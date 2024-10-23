@@ -46,8 +46,12 @@
 {{- if eq .chezmoi.os "windows" }}
 !/Documents
 /.chocolatey
+/.docker
+/.dotnet
+/.gitconfig
 /.insomniac
 /.nvidia-omniverse
+/.templateengine
 /3D Objects
 /Application Data
 /Contacts

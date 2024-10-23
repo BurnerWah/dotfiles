@@ -7,9 +7,12 @@
 /.colima
 /.cshrc
 /.cups
+/.docker
+/.dotnet
 /.dug
 /.earthly
 /.fly
+/.gitconfig
 /.gnupg
 /.gradle
 /.hawtjni
@@ -46,6 +49,7 @@
 /.swiftpm
 /.tabnine
 /.tcshrc
+/.templateengine
 /.vagrant.d
 /.viminfo
 /.yarnrc
@@ -61,10 +65,3 @@
 /RiderProjects
 /RubymineProjects
 /WebstormProjects
-
-{{ if ne .chezmoi.os "windows" }}
-/.docker
-/.dotnet
-/.gitconfig
-/.templateengine
-{{ end }}
