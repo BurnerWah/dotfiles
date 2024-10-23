@@ -7,20 +7,41 @@ not_found_auto_install = false
 go_default_packages_file = "~/.config/mise/default-go-packages"
 python_default_packages_file = "~/.config/mise/default-python-packages"
 disable_tools = [
+  "1password-cli",       # Security
+  "age-plugin-yubikey",  # Security, prefer ubi or cargo backends, archived repo
+  "age",                 # Security, prefer ubi backend
   "asdf-plugin-manager",
+  "bitwarden",           # Security
+  "bundler",             # Redundant with ruby plugin
+  "cloudflared",         # Security
+  "cosign",              # Security, prefer ubi backend
   "exa",
+  "github-cli",          # Redundant
+  "gitsign",             # Security, prefer ubi backend
   "go-sdk",
   "nim",
   "ollama",
+  "pnpm",                # Redundant if node corepack is enabled
+  "rclone",              # Install normally
   "rome",
   "solidity",
   "wasmtime",
   "youtube-dl",
+  "zoxide",
 ]
 disable_hints = ["registry"]
 
 [settings.ruby]
 default_packages_file = "~/.config/mise/default-gems"
+
+[settings.pipx]
+uvx = true
+
+[settings.cargo]
+binstall = true
+
+[settings.python]
+default_packages_file = "~/.config/mise/default-python-packages"
 
 [tools]
 "cargo:ubi-cli" = "latest"
