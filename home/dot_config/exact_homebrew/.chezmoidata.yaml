@@ -155,6 +155,7 @@ settings:
         - libstrophe # xmpp (security), leaf dependency
         - lighthouse # cryptocurrency
         - llm # ai
+        - localai
         - mentat # ai
         - mods # ai
         - monero
