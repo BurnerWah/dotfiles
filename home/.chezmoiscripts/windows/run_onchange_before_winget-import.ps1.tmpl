@@ -1,13 +1,4 @@
-$Script:ManifestTemp = New-TemporaryFile
+# Winget Manifest hash: {{ include "../assets/winget.json" | sha256sum }}
+$Script:WingetManifest = '{{ joinPath .chezmoi.sourceDir "../assets/winget.json" }}'
 
-# I tried to use actual powershell objects here but it just did not work.
-$Script:Manifest = @'
-{
-    "$schema": "https://aka.ms/winget-packages.schema.2.0.json",
-    "Sources": {{ .packages.windows.winget | toJson }}
-}
-'@
-
-$Script:Manifest | Out-File -FilePath $Script:ManifestTemp
-
-winget import --no-upgrade --import-file $Script:ManifestTemp.FullName
+winget import --no-upgrade --import-file $Script:WingetManifest

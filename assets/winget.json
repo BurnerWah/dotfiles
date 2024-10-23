@@ -1,0 +1,61 @@
+{
+  "$schema": "https://aka.ms/winget-packages.schema.2.0.json",
+  "Sources": [
+    {
+      "Packages": [
+        { "PackageIdentifier": "AgileBits.1Password", "Scope": "user" },
+        { "PackageIdentifier": "Appest.TickTick" },
+        { "PackageIdentifier": "Apple.Bonjour" },
+        { "PackageIdentifier": "ArmCord.ArmCord" },
+        { "PackageIdentifier": "ebkr.r2modman", "Scope": "user" },
+        { "PackageIdentifier": "EpicGames.EpicGamesLauncher" },
+        { "PackageIdentifier": "Git.Git", "Scope": "machine" },
+        { "PackageIdentifier": "goatcorp.XIVLauncher" },
+        { "PackageIdentifier": "HandBrake.HandBrake" },
+        { "PackageIdentifier": "HTTPie.HTTPie", "Scope": "user" },
+        { "PackageIdentifier": "ImageMagick.Q16-HDRI" },
+        { "PackageIdentifier": "Intel.PresentMon" },
+        { "PackageIdentifier": "ItchIo.Itch" },
+        { "PackageIdentifier": "JetBrains.Toolbox" },
+        { "PackageIdentifier": "Klocman.BulkCrapUninstaller" },
+        { "PackageIdentifier": "LizardByte.Sunshine" },
+        { "PackageIdentifier": "M2Team.NanaZip" },
+        {
+          "PackageIdentifier": "MicaForEveryone.MicaForEveryone",
+          "Scope": "user"
+        },
+        {
+          "PackageIdentifier": "Microsoft.EdgeWebView2Runtime",
+          "Scope": "machine"
+        },
+        { "PackageIdentifier": "Microsoft.Office" },
+        { "PackageIdentifier": "Microsoft.PowerToys", "Scope": "user" },
+        { "PackageIdentifier": "Microsoft.VisualStudio.2022.Community" },
+        { "PackageIdentifier": "Microsoft.VisualStudioCode", "Scope": "user" },
+        { "PackageIdentifier": "Microsoft.WingetCreate", "Scope": "user" },
+        { "PackageIdentifier": "Nvidia.Broadcast" },
+        { "PackageIdentifier": "Obsidian.Obsidian", "Scope": "user" },
+        { "PackageIdentifier": "OBSProject.OBSStudio" },
+        { "PackageIdentifier": "OpenWhisperSystems.Signal" },
+        { "PackageIdentifier": "PrismLauncher.PrismLauncher", "Scope": "user" },
+        { "PackageIdentifier": "qBittorrent.qBittorrent" },
+        { "PackageIdentifier": "RedHat.Podman-Desktop", "Scope": "user" },
+        { "PackageIdentifier": "RedHat.Podman", "Scope": "machine" },
+        { "PackageIdentifier": "Sandboxie.Plus" },
+        { "PackageIdentifier": "tailscale.tailscale" },
+        { "PackageIdentifier": "Unity.UnityHub" },
+        { "PackageIdentifier": "Valve.Steam" },
+        { "PackageIdentifier": "VideoLAN.VLC" },
+        { "PackageIdentifier": "ViGEm.ViGEmBus" },
+        { "PackageIdentifier": "VRChat.CreatorCompanion", "Scope": "user" },
+        { "PackageIdentifier": "VRCX.VRCX", "Scope": "machine" }
+      ],
+      "SourceDetails": {
+        "Argument": "https://cdn.winget.microsoft.com/cache",
+        "Identifier": "Microsoft.Winget.Source_8wekyb3d8bbwe",
+        "Name": "winget",
+        "Type": "Microsoft.PreIndexed.Package"
+      }
+    }
+  ]
+}
