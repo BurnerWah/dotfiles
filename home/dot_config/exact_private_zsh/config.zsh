@@ -29,7 +29,6 @@ fpath=(
     $fpath
     "$ZDOTDIR/functions"
     "/opt/homebrew/share/zsh/site-functions"
-    "/opt/homebrew/opt/zsh-completions/share/zsh-completions" # Zsh accepts this dir as secure
 )
 
 autoload -Uz compinit

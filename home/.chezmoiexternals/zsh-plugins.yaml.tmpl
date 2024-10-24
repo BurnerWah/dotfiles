@@ -60,4 +60,20 @@
     - '*/plugins/starship/**'
     - '*/plugins/zoxide/**'
     - '*/plugins/thefuck/**'
+
+.config/zsh/vendor/zsh-completions:
+  type: archive
+  url: https://github.com/zsh-users/zsh-completions/archive/master.tar.gz
+  exact: true
+  stripComponents: 1
+  refreshPeriod: 744h
+  include:
+    - '*/src'
+    - '*/src/_cmake'
+    - '*/src/_openssl'
+    - '*/src/_port'
+    - '*/src/_rspec'
+    - '*/src/_rubocop'
+    - '*/src/_setup.py'
+    - '*/src/_shellcheck'
 # {{ end }}

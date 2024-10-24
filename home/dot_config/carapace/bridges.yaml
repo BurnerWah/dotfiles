@@ -23,6 +23,7 @@ argocd: cobra
 az: argcomplete
 boundary: complete
 buf: cobra
+bundle: fish
 carapace-bridge: carapace
 carapace-spec-man: carapace
 carapace-spec: carapace
