@@ -61,6 +61,7 @@ settings:
         - groestlcoin-core # cryptocurrency
         - grs-bluewallet
         - guilded # roblox
+        - huggingchat # ai
         - impel # ai
         - infoflow # ai
         - itermai # ai

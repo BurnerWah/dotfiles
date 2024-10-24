@@ -7,13 +7,17 @@ not_found_auto_install = false
 go_default_packages_file = "~/.config/mise/default-go-packages"
 python_default_packages_file = "~/.config/mise/default-python-packages"
 disable_tools = [
+  "alias",
   "asdf-plugin-manager",
+  "batect",
+  "bin",
   "exa",
   "nim",
   "ollama",
   "rome",
   "solidity",
-  "wasmtime",
+  "tool-versions-to-env",
+  "wasmer",
   "youtube-dl",
 ]
 disable_hints = ["python_precompiled", "registry"]
