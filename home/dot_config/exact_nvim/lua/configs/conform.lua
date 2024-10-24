@@ -1,28 +1,37 @@
 local options = {
+  -- Avoid prettierd as it tends to create leftover processes
   formatters_by_ft = {
-    css = { "stylelint", "prettierd" },
+    css = { "stylelint", "prettier" },
     fish = { "fish_indent" },
-    html = { "prettierd" },
-    javascript = { "biome-check", "eslint_d", "prettierd" },
-    javascriptreact = { "biome-check", "eslint_d", "prettierd" },
-    json = { "prettierd" },
-    jsonc = { "prettierd" },
-    less = { "prettierd" },
+    html = { "prettier" },
+    javascript = { "biome-check", "prettier" },
+    javascriptreact = { "biome-check", "prettier" },
+    json = { "prettier" },
+    jsonc = { "prettier" },
+    less = { "prettier" },
     lua = { "stylua" },
-    markdown = { "markdownlint-cli2", "prettierd" },
-    python = { "ruff_fix", "black" },
-    scss = { "prettierd" },
-    toml = { "taplo" },
-    typescript = { "biome-check", "eslint_d", "prettierd" },
-    typescriptreact = { "biome-check", "eslint_d", "prettierd" },
-    vue = { "prettierd" },
-    yaml = { "prettierd" },
+    markdown = { "markdownlint-cli2", "prettier" },
+    python = { "ruff_fix", "ruff_format" },
+    scss = { "prettier" },
+    toml = { "taplo", lsp_fallback = "never" },
+    typescript = { "biome-check", "prettier" },
+    typescriptreact = { "biome-check", "prettier" },
+    vue = { "prettier" },
+    yaml = { "prettier" },
   },
 
   format_on_save = {
     -- These options will be passed to conform.format()
     timeout_ms = 500,
-    lsp_fallback = true,
+    lsp_fallback = "fallback",
+  },
+
+  formatters = {
+    taplo = {
+      -- Don't run if taplo hasn't been configured
+      cwd = require("conform.util").root_file { ".taplo.toml", "taplo.toml" },
+      require_cwd = true,
+    },
   },
 }
 
