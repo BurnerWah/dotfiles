@@ -27,7 +27,7 @@ settings:
       CARGO_HOME: $XDG_DATA_HOME/cargo
 
       # Cookiecutter
-      COOKIECUTTER_CONFIG: $XDG_CONFIG_HOME/cookiecutter/config.yml
+      # COOKIECUTTER_CONFIG: $XDG_CONFIG_HOME/cookiecutter/config.yml
 
       # Conan
       # Arch wiki suggests setting this directly to $XDG_CONFIG_HOME, while I
@@ -37,6 +37,10 @@ settings:
 
       # CMake
       CMAKE_GENERATOR: Ninja
+
+      # Docker
+      DOCKER_CONFIG: $XDG_CONFIG_HOME/docker
+      # MACHINE_STORAGE_PATH: $XDG_DATA_HOME/docker-machine
 
       # Flyctl
       FLY_CONFIG_DIR: $XDG_CONFIG_HOME/fly
@@ -48,11 +52,15 @@ settings:
       # I kinda want to see if I can remove this
       # _JAVA_OPTIONS: -Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java
 
+      # Kubernetes
+      KUBECONFIG: $XDG_CONFIG_HOME/kube
+      KUBECACHEDIR: $XDG_CACHE_HOME/kube
+
       # libice
       ICEAUTHORITY: ${XDG_STATE_HOME:-$XDG_CACHE_HOME}/ICEauthority
 
-      # Readline
-      INPUTRC: $XDG_CONFIG_HOME/readline/inputrc
+      # minikube
+      MINIKUBE_HOME: $XDG_DATA_HOME/minikube
 
       # MyPy
       MYPY_CACHE_DIR: $XDG_CACHE_HOME/mypy
@@ -64,11 +72,11 @@ settings:
       # npm edits the config file for auth, so this lets me separate auth from the config
       NPM_CONFIG_GLOBALCONFIG: $XDG_CONFIG_HOME/npm/npmrc
       NPM_CONFIG_USERCONFIG: $XDG_CONFIG_HOME/npm/auth
-      npm_config_cache: ${XDG_CACHE_HOME}/npm # needed for nodeenv to respect my settings
+      # npm_config_cache: ${XDG_CACHE_HOME}/npm # needed for nodeenv to respect my settings
 
       # .NET
       DOTNET_CLI_HOME: $XDG_DATA_HOME/dotnet
-      DOTNET_TOOLS_PATH: $XDG_DATA_HOME/dotnet/tools # dunno what this is anymore
+      # DOTNET_TOOLS_PATH: $XDG_DATA_HOME/dotnet/tools # dunno what this is anymore
       DOTNET_PACKAGES: $XDG_CACHE_HOME/NuGetPackages # dunno what this is anymore
       NUGET_PACKAGES: $XDG_CACHE_HOME/NuGetPackages
 
@@ -79,6 +87,9 @@ settings:
       # Jupyter/IPython stuff is omitted because my setup for that is broken beyond repair
       WORKON_HOME: $XDG_DATA_HOME/virtualenvs
       # KERAS_HOME: $XDG_CACHE_HOME/keras # Seems to just be caches
+
+      # Readline
+      INPUTRC: $XDG_CONFIG_HOME/readline/inputrc
 
       # rustup
       RUSTUP_HOME: $XDG_DATA_HOME/rustup
