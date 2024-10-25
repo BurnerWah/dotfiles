@@ -2,23 +2,15 @@
 /asciinema
 /atuin
 /boxxy
-/carapace
-/catj
 /gallery-dl
 /litecli
 /npq
 /npq-hero
-/ops
 /pdu
 /pnpm
 /pnpx
 /sort-package-json
 /tmsu*
-/ts-node*
-/ts-script
-/tsc
-/tsserver
-/yt-dlp
 
 {{- if ne .chezmoi.os "linux" }}
 /1password

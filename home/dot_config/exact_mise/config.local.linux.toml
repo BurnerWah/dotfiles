@@ -1,3 +1,4 @@
 [tools]
 usage = "latest"
 cargo-binstall = "latest"
+"npm:npm-check-updates" = "latest"
