@@ -85,7 +85,7 @@ settings:
 
       # Python
       # Jupyter/IPython stuff is omitted because my setup for that is broken beyond repair
-      WORKON_HOME: $XDG_DATA_HOME/virtualenvs
+      # WORKON_HOME: $XDG_DATA_HOME/virtualenvs
       # KERAS_HOME: $XDG_CACHE_HOME/keras # Seems to just be caches
 
       # Readline
@@ -135,7 +135,7 @@ settings:
         - $XDG_DATA_HOME/mise/shims
         # Usually stuff that needs to shadow ~/.local/bin or something else,
         # but starting to be less needed
-        - $XDG_DATA_HOME/wrappers/bin
+        # - $XDG_DATA_HOME/wrappers/bin
         - $HOME/.local/bin
         - $PATH # Initial PATH is set earlier
         - $XDG_DATA_HOME/cargo/bin
