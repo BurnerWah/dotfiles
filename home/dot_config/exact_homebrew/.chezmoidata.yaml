@@ -114,6 +114,8 @@ settings:
         - threema # threema
         - threema-work # threema
         - threema@beta # threema
+        - trezor-bridge # cryptocurrency
+        - trezor-suite # cryptocurrency
         - typefully # twitter
         - upm # deprecated
         - vertcoin-core
@@ -122,14 +124,18 @@ settings:
 
       formula:
         - aichat
+        - aicommit
         - aicommits
         - aider
         - aptos # cryptocurrency
         - ata # ai
         - bcoin
         - bitcoin
+        - cadence # cryptocurrency
+        - caracal # cryptocurrency
         - chainhook
         - chatblade # ai
+        - clarinet # cryptocurrency
         - cointop
         - cortexso # ai
         - crytic-compile # cryptocurrency, leaf dependency
@@ -145,18 +151,21 @@ settings:
         - gollama # ai
         - gptline
         - gptme
+        - gptscript
         - grin # cryptocurrency
         - grin-wallet
         - groestlcoin
         - huggingface-cli # ai
         - iamb # matrix (security)
         - ignite # cryptocurrency
+        - k8sgpt
         - libbitcoin-consensus # cryptocurrency, leaf dependency
         - libbitcoin-system # cryptocurrency, leaf dependency
         - libstrophe # xmpp (security), leaf dependency
         - lighthouse # cryptocurrency
         - llm # ai
         - localai
+        - mallet # ai
         - mentat # ai
         - mods # ai
         - monero
@@ -167,15 +176,20 @@ settings:
         - slither-analyzer # cryptocurrency, leaf dependency
         - solc-select # cryptocurrency
         - solidity # cryptocurrency
+        - sui # cryptocurrency
         - sysaidmin # ai
         - tdlib # telegram
         - teku # cryptocurrency
         - telegram-downloader # telegram
+        - trezor-agent # cryptocurrency
+        - trezor-bridge # cryptocurrency
         - truffle # cryptocurrency
         - vespa-cli # ai
         - wagyu # cryptocurrency
+        - wally # roblox
         - wasmer # preference
         - wownero # cryptocurrency
+        - xlearn # ai
 
       # These are only forbidden to prevent unexpected from-source builds
       # If it needs to be built from source, do that another way.
