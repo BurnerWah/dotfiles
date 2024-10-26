@@ -1,5 +1,5 @@
 [tools]
-"ubi:evilmartians/lefthook" = "latest"
+lefthook = "latest"
 "cargo:stylua" = "latest"
 "pipx:ruff" = "latest"
 ruby = "latest"
