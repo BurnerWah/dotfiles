@@ -36,7 +36,6 @@ brew "cargo-binstall"
 brew "chezmoi"
 brew "cloudflared" if OS.mac?
 brew "colima" if OS.mac? # Container runtime
-brew "corepack" if OS.mac?
 brew "dark-mode" if OS.mac? # macOS dark mode toggle
 brew "dasel" if OS.linux? # JQ for more stuff
 brew "ddgr" if OS.mac? # DuckDuckGo search

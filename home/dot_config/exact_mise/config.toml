@@ -1,18 +1,14 @@
 [settings]
 experimental = true
-cargo_binstall = true
-pipx_uvx = true
 paranoid = false
 not_found_auto_install = false
 go_default_packages_file = "~/.config/mise/default-go-packages"
-python_default_packages_file = "~/.config/mise/default-python-packages"
 disable_tools = [
   "alias",
   "asdf-plugin-manager",
   "batect",
   "bin",
   "container-diff",
-  "exa",
   "nim",
   "ollama",
   "rome",
