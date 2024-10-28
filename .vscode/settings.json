@@ -27,6 +27,7 @@
     "**/*_dot_ssh/*config.tmpl": "ssh_config",
     "**/*_dot_ssh/*_config.d/*.conf": "ssh_config",
     "**/*_dot_ssh/*_config.d/*.conf.tmpl": "ssh_config",
+    "*.desktop": "ini",
   },
   "go-template.patterns": [
     "**/*.tmpl",
