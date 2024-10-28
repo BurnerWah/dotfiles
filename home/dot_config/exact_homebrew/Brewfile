@@ -12,7 +12,6 @@ tap "powershell/tap" if OS.mac?
 
 # Packages
 brew "act" # GitHub Actions runner
-brew "actionlint" # GitHub Actions linter
 brew "age" # encryption tool
 brew "age-plugin-yubikey" if OS.mac?
 brew "ansible" if OS.mac?
