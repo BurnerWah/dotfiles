@@ -32,7 +32,6 @@ brew "bottom" # system monitor
 brew "breezy" if OS.mac?
 brew "btop" # htop alternative
 brew "bzip3" # compression tool, also in Fedora repos
-brew "cargo-binstall"
 brew "chezmoi"
 brew "cloudflared" if OS.mac?
 brew "colima" if OS.mac? # Container runtime
@@ -41,7 +40,6 @@ brew "dasel" if OS.linux? # JQ for more stuff
 brew "ddgr" if OS.mac? # DuckDuckGo search
 brew "detect-secrets" if OS.mac?
 brew "devcontainer" if OS.mac? # VSCode devcontainers
-brew "direnv" if OS.mac? # directory-specific env vars
 brew "docker-compose"
 brew "doggo" # DNS lookup tool
 brew "dotnet", link: true if OS.mac?
