@@ -3,6 +3,8 @@
 /charm
 /chezmoi
 /containers
+/delta
+/direnv
 /dotnet
 /fish
 /gem
