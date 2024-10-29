@@ -1,3 +1,4 @@
 [tools]
 "npm:do-not-disturb-cli" = "latest"
 "npm:empty-trash-cli" = "latest"
+"pipx:rainbow" = "latest"
