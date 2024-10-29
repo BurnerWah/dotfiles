@@ -48,6 +48,9 @@ settings:
       # GnuPG
       GNUPGHOME: $XDG_DATA_HOME/gnupg
 
+      # GTK
+      GSK_RENDERER: gl # emergency fix for fedora 41
+
       # Java
       # I kinda want to see if I can remove this
       # _JAVA_OPTIONS: -Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java
