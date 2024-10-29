@@ -1,0 +1,163 @@
+name: npm-check-updates
+description: Find newer versions of dependencies than what your package.json allows
+
+# TODO finish this
+# This would be improved a lot with carapace allowing flags to be required for other flags
+
+flags:
+  --help=: Print help
+  --cache: Cache versions to a local cache file
+  --no-cache: Disable the cache file
+  --cacheClear: Clear the cache
+  --no-cacheClear: Don't clear the cache
+  --cacheExpiration=: 'Cache expiration in minutes (default: 10)'
+  --cacheFile=: 'Filepath for the cache file (default: "~/.ncu-cache.json")'
+  --color: Force color in terminal
+  --no-color: Force color off
+  --concurrency=: 'Max number of concurrent HTTP requests to registry (default: 8)'
+  --configFileName=: 'Config file name (default: .ncurc.{json,yml,js,cjs})'
+  --configFilePath=: 'Directory of .ncurc config file (default: directory of packageFile)'
+  --cwd=: Working directory in which npm will be executed
+  --deep: Run recursively in current working directory
+  --no-deep: Don't run recursively in the current working directory
+  --dep=: Check one or more sections of dependencies only
+  --deprecated: Include deprecated packages
+  --no-deprecated: Exclude deprecated packages (uses more bandwidth)
+  -d, --doctor: Iteratively installs upgrades and runs tests to identify breaking upgrades
+  --no-doctor: Don't do --doctor tasks
+  --doctorInstall=: Specifies the install script to use in doctor mode
+  --doctorTest=: Specifies the test script to use in doctor mode
+  --enginesNode: Include only packages that satisfy engines.node as specified in the package file
+  --no-enginesNode: Don't require packages to satisfy engines.node
+  -e, --errorLevel=: Set the error level
+  -f, --filter=: Include only package names matching the given filter
+  --filterResults*: Filters out upgrades based on a user provided function
+  --filterVersion*: Filter on package version using comma-or-space-delimited list, /regex/, or predicate function
+  --format=: Modify the output formatting or show additional information. Specify one or more comma-delimited values
+  -g, --global: Check global packages instead of in the current project
+  --groupFunction*: Customize how packages are divided into groups when using --format group
+  --install=: Control the auto-install behavior
+  -i, --interactive: Enable interactive prompts for each dependency
+  -j, --jsonAll: Output new package file instead of human-readable message
+  --jsonDeps: Like jsonAll but only lists dependencies, devDependencies, optionalDependencies, etc of the new package data
+  --jsonUpgraded: Output upgraded dependencies in json
+  -l, --loglevel=: Amount to log
+  --mergeConfig: Merges nested configs with the root config file for --deep or --packageFile options
+  -m, --minimal: Do not upgrade newer versions that are already satisfied by the version range according to semver
+  --packageData=: Package file data (you can also use stdin)
+  --packageFile=: 'Package file(s) location. (default: ./package.json)'
+  -p, --packageManager=: 'npm, yarn, pnpm, deno, bun, staticRegistry'
+  --peer: Check peer dependencies of installed packages and filter updates to compatible versions
+  --pre=: Include prerelease versions, e.g. -alpha.0, -beta.5, -rc.2
+  --prefix=: Current working directory of npm
+  -r, --registry=: Specify the registry to use when looking up package versions
+  --registryType=: Specify whether --registry refers to a full npm registry or a simple JSON file or url
+  -x, --reject=: Exclude packages matching the given filter
+  --rejectVersion=: Exclude package.json versions using comma-or-space-delimited list, /regex/, or predicate function
+  --removeRange: Remove version ranges from the final package version
+  --retry=: 'Number of times to retry failed requests for package info. (default: 3)'
+  --root: Runs updates on the root project in addition to specified workspaces
+  -s, --silent: Don't output anything (Alias for --loglevel silent)
+  --stdin: Read package.json from stdin
+  -t, --target=: Determines the version to upgrade to
+  --timeout=: 'Global timeout in milliseconds. (default: no global timeout and 30 seconds per npm-registry-fetch)'
+  -u, --upgrade: Overwrite package file with upgraded versions instead of just outputting to console
+  --verbose: Log additional information for debugging (Alias for --loglevel verbose)
+  -w, --workspace=: Run on one or more specified workspaces
+  -ws, --workspaces: Run on all workspaces
+  -v, --version: Output the version number of npm-check-updates
+
+exclusiveflags:
+  - [cache, no-cache]
+  - [cacheClear, no-cacheClear, no-cache]
+  - [cacheExpiration, no-cache]
+  - [cacheFile, no-cache]
+  - [color, no-color]
+  - [deep, no-deep]
+  - [deprecated, no-deprecated]
+  - [doctor, no-doctor]
+  - [doctorInstall, no-doctor]
+  - [doctorTest, no-doctor]
+  - [enginesNode, no-enginesNode]
+  - [loglevel, silent, verbose]
+  - [packageFile, deep, global]
+  - [global, workspace]
+  - [global, workspaces]
+  - [global, root]
+  - [global, packageData]
+  - [global, doctor]
+  - [global, doctorInstall]
+  - [global, doctorTest]
+  - [global, enginesNode]
+
+completion:
+  flag:
+    help:
+      - cache
+      - cacheClear
+      - cacheExpiration
+      - cacheFile
+      - color
+      - concurrency
+      - configFileName
+      - configFilePath
+      - cwd
+      - deep
+      - deprecated
+      - doctor
+      - doctorInstall
+      - doctorTest
+      - enginesNode
+      - errorLevel
+      - filter
+      - filterResults
+      - filterVersion
+      - format
+      - groupFunction
+      - install
+      - packageManager
+      - peer
+      - registryType
+      - reject
+      - rejectVersion
+      - target
+    cacheFile: [$files]
+    configFilePath: [$directories]
+    cwd: [$directories]
+    dep: [dev, optional, peer, prod, packageManager, '$uniquelist(,)']
+    errorLevel:
+      - "1\texits with error code 0 if no errors occur (default)"
+      - "2\texits with error code 0 if no packages need updating (useful for continuous integration)"
+    format:
+      - "group\tGroups packages by major, minor, patch, and major version zero updates"
+      - "ownerChanged\tShows if the package owner has changed"
+      - "repo\tInfers and displays links to the package's source code repository"
+      - "time\tShows the publish time of each upgrade"
+      - "lines\tPrints name@version on separate lines (Useful for piping to npm install)"
+      - "installedVersion\tPrints the exact current version number instead of a range"
+      - $uniquelist(,)
+    install:
+      - "always\tRuns your package manager's install command automatically after upgrading"
+      - "never\tDoes not install and does not prompt"
+      - "propmt\tPrompts for install (default)"
+    loglevel: [silent, error, minimal, "warn\tdefault", info, verbose, silly]
+    packageData: [$files, stdin]
+    packageFile: [$files]
+    packageManager:
+      - "npm\tDefault"
+      - "yarn\tAutomatically used if yarn.lock is present"
+      - "pnpm\tAutomatically used if pnpm-lock.yaml is present"
+      - deno
+      - "bun\tAutomatically used if bun.lockb is present"
+      - staticRegistry # dunno what this is
+    prefix: [$directories]
+    registryType:
+      - "npm\tDefault npm registry"
+      - "json\tChecks versions from a file or url to a simple JSON registry"
+    target:
+      - "latest\tUpgrade to whatever the package's 'latest' git tag points to (default)"
+      - "newest\tUpgrade to the version with the most recent publish date, even if there are other version numbers that are higher"
+      - "greatest\tUpgrade to the highest version number published, regardless of release date or tag"
+      - "minor\tUpgrade to the highest minor version without bumping the major version"
+      - "patch\tUpgrade to the highest patch version without bumping the minor or major versions"
+      - "semver\tUpgrade to the highest version within the semver range specified in your package.json"

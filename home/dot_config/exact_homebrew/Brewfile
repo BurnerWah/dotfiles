@@ -128,7 +128,6 @@ brew "texinfo" if OS.mac?
 brew "tlrc" # fast tldr page viewer
 brew "tokei" # count lines of code
 brew "util-linux" if OS.mac? # subset of the util-linux commands for mac OS
-brew "uutils-coreutils" if OS.mac?
 brew "uv" # Python package manager
 brew "vhs" if OS.mac? # terminal recorder
 brew "viu" # terminal image viewer

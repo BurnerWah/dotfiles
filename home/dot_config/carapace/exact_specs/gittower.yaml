@@ -1,0 +1,11 @@
+name: gittower
+description: CLI for Tower 3
+
+flags:
+  -h, --help: Print help
+  -v, --version: Print version
+  -n, --new-window: Open a new window
+
+completion:
+  positional:
+    - [$files, $chdir($gitdir)]

@@ -35,6 +35,7 @@ symbol = " "
 [crystal]
 # nf-custom-crystal
 symbol = " "
+detect_files = ["shard.yml", ".crystal-version"]
 
 [dart]
 # nf-dev-dart - not very clear at term size
@@ -57,6 +58,7 @@ symbol = "󰪮 "
 # nf-fae-drop
 # nf-custom-elixir could probably work too - 
 symbol = " "
+detect_files = ["mix.exs", ".exenv-version"]
 
 [elm]
 # nf-seti-elm (same as nf-custom-elm)
@@ -110,6 +112,17 @@ symbol = " "
 # nf-dev-java and nf-md-language_java are too small
 # nf-seti-java is just a big J
 symbol = " "
+detect_files = [
+  "pom.xml",
+  "build.gradle.kts",
+  "build.sbt",
+  ".java-version",
+  "deps.edn",
+  "project.clj",
+  "build.boot",
+  ".sdkmanrc",
+  "mvnvm.properties", # From mise plugin
+]
 
 [julia]
 # nf-seti-julia
@@ -206,6 +219,17 @@ symbol = " "
 [python]
 # nf-fae-python - biggest python icon
 symbol = " "
+detect_files = [
+  "requirements.txt",
+  ".python-version",
+  "pyproject.toml",
+  "Pipfile",
+  "tox.ini",
+  "setup.py",
+  "__init__.py",
+  "pixi.toml",
+  ".poetry-version",  # from mise plugin
+]
 
 [rlang]
 # nf-seti-r - slightly bigger than nf-md-language_r
@@ -232,6 +256,7 @@ symbol = " "
 [terraform]
 # nf-md-terraform
 symbol = "󱁢 "
+detect_files = [".terraform-version", ".packer-version"]
 
 [username]
 show_always = true
