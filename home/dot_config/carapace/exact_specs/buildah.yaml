@@ -9,8 +9,8 @@ persistentflags:
   --log-level=: the log level to be used
   --registries-conf=: path to registries.conf file (not usually used)
   --registries-conf-dir=: path to registries.conf.d directory (not usually used)
-  --root=: storage root dir (default "/home/burner/.local/share/containers/storage")
-  --runroot=: storage state dir (default "/run/user/1000/containers")
+  --root=: storage root dir (default "~/.local/share/containers/storage")
+  --runroot=: storage state dir (default "$XDG_RUNTIME_DIR/containers")
   --short-name-alias-conf=: path to short name alias cache file (not usually used)
   --storage-driver=: storage-driver (default "overlay")
   --storage-opt=: storage driver option
