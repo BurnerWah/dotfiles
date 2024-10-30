@@ -3,7 +3,7 @@ settings:
     environment:
       # Commands
       EDITOR: nvim
-      MANPAGER: most
+      # MANPAGER: most
 
       # Ansible
       ANSIBLE_HOME: $XDG_CONFIG_HOME/ansible
