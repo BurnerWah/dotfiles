@@ -1,0 +1,118 @@
+name: buildah
+description: A tool that facilitates building OCI images
+
+# TODO finish this
+
+persistentflags:
+  --cgroup-manager=: cgroup manager
+  -h, --help: help for buildah
+  --log-level=: the log level to be used
+  --registries-conf=: path to registries.conf file (not usually used)
+  --registries-conf-dir=: path to registries.conf.d directory (not usually used)
+  --root=: storage root dir (default "/home/burner/.local/share/containers/storage")
+  --runroot=: storage state dir (default "/run/user/1000/containers")
+  --short-name-alias-conf=: path to short name alias cache file (not usually used)
+  --storage-driver=: storage-driver (default "overlay")
+  --storage-opt=: storage driver option
+  --userns-gid-map=: default ctrID:hostID:length GID mapping to use
+  --userns-uid-map=: default ctrID:hostID:length UID mapping to use
+  -v, --version: version for buildah
+
+completion:
+  flag:
+    cgroup-manager: [cgroupfs, "systemd\tdefault"]
+    log-level: [trace, debug, info, "warn\tdefault", error, fatal, panic]
+    registries-conf: [$files]
+    registries-conf-dir: [$directories]
+    root: [$directories]
+    runroot: [$directories]
+    short-name-alias-conf: [$files]
+    storage-driver: ["overlay\tdefault", vfs]
+
+commands:
+  - name: add
+    description: Add content to the container
+
+  - name: build
+    description: Build an image using instructions in a Containerfile
+
+  - name: commit
+    description: Create an image from a working container
+
+  - name: config
+    description: Update image configuration settings
+
+  - name: containers
+    description: List working containers and their base images
+
+  - name: copy
+    description: Copy content into the container
+
+  - name: from
+    description: Create a working container based on an image
+
+  - name: help
+    description: Help about any command
+    completion:
+      positional:
+        - ['$carapace.bridge.CarapaceBin([buildah])'] # Gets subcommands from this spec
+
+  - name: images
+    description: List images in local storage
+
+  - name: info
+    description: Display Buildah system information
+
+  - name: inspect
+    description: Inspect the configuration of a container or image
+
+  - name: login
+    description: Login to a container registry
+
+  - name: logout
+    description: Logout of a container registry
+
+  - name: manifest
+    description: Manipulate manifest lists and image indexes
+
+  - name: mkcw
+    description: Convert a conventional image to a confidential workload image
+
+  - name: mount
+    description: Mount a working container's root filesystem
+
+  - name: prune
+    description: Cleanup intermediate images as well as build and mount cache
+
+  - name: pull
+    description: Pull an image from the specified location
+
+  - name: push
+    description: Push an image to a specified destination
+
+  - name: rename
+    description: Rename a container
+
+  - name: rm
+    description: Remove one or more working containers
+
+  - name: rmi
+    description: Remove one or more images from local storage
+
+  - name: run
+    description: Run a command inside of the container
+
+  - name: source
+    description: Manage source containers
+
+  - name: tag
+    description: Add an additional name to a local image
+
+  - name: umount
+    description: Unmount the root file system of the specified working containers
+
+  - name: unshare
+    description: Run a command in a modified user namespace
+
+  - name: version
+    description: Display the Buildah version information
