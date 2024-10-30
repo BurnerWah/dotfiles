@@ -1,0 +1,3 @@
+# Really not a fan of throwing telemetry data into config folders
+/telemetry/local
+/telemetry/upload

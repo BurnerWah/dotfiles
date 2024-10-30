@@ -1,10 +1,8 @@
+/.gsd-keyboard.settings-ported
 /.semgrep
 /1Password
-/Bootstrap Studio
-/bstudio
 /btop
 /chezmoi
-/Code
 /configstore
 /Cypress
 /evolution
@@ -15,19 +13,13 @@
 /gnome-initial-setup-done
 /gnome-session
 /goa-1.0
-/google-chrome
-/google-chrome-beta
-/google-chrome-unstable
 /gsconnect
 /ibus
 /iterm2
 /JetBrains
 /jgit
-/kera-desktop
 /libvirt
-/microsoft-edge-dev
 /monitors.xml*
-/Mullvad VPN
 /MusicBrainz
 /ookla
 /op
@@ -36,13 +28,10 @@
 /pulse
 /raycast
 /user-share
-/vivaldi
-/vivaldi-snapshot
 
 {{- if ne .chezmoi.os "linux" }}
 /autostart
 /boxxy
-/BraveSoftware
 /environment.d
 /firejail
 /systemd
