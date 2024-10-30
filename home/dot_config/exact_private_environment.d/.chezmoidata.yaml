@@ -18,6 +18,9 @@ settings:
       # Bootsnap
       BOOTSNAP_CACHE_DIR: $XDG_CACHE_HOME/bootsnap
 
+      # bkt
+      BKT_CACHE_DIR: $XDG_RUNTIME_DIR/bkt # Could also be set to the $XDG_CACHE_HOME
+
       # C flags
       # Consider enabling these eventually
       # CFLAGS: --config ${XDG_CONFIG_HOME}/clang/clang.cfg
