@@ -1,5 +1,1 @@
-#!/usr/bin/env zsh
-# lima.yaml hash: {{ include (joinPath .chezmoi.sourceFile ".." "lima.yaml") | sha256sum }}
-if (( $+commands[limactl] )); then
-    limactl stop --force "{{ .chezmoi.targetFile | dir | base }}"
-fi
+../.stop-vm.zsh.tmpl
