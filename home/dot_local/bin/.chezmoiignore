@@ -3,14 +3,12 @@
 /atuin
 /boxxy
 /gallery-dl
-/litecli
 /npq
 /npq-hero
 /pdu
 /pnpm
 /pnpx
 /sort-package-json
-/tmsu*
 
 {{- if ne .chezmoi.os "linux" }}
 /1password

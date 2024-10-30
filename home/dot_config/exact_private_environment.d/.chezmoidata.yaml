@@ -76,8 +76,10 @@ settings:
       TS_NODE_HISTORY: ${XDG_STATE_HOME:-$XDG_CACHE_HOME}/ts_node_repl_history
       COREPACK_HOME: $XDG_CACHE_HOME/corepack # dunno what this is anymore
       # npm edits the config file for auth, so this lets me separate auth from the config
-      NPM_CONFIG_GLOBALCONFIG: $XDG_CONFIG_HOME/npm/npmrc
-      NPM_CONFIG_USERCONFIG: $XDG_CONFIG_HOME/npm/auth
+      # NPM_CONFIG_GLOBALCONFIG: $XDG_CONFIG_HOME/npm/npmrc
+      # NPM_CONFIG_USERCONFIG: $XDG_CONFIG_HOME/npm/auth
+      # userconfig has to be set to the real npmrc to not break with flatpaks
+      NPM_CONFIG_USERCONFIG: $XDG_CONFIG_HOME/npm/npmrc
       # npm_config_cache: ${XDG_CACHE_HOME}/npm # needed for nodeenv to respect my settings
 
       # .NET

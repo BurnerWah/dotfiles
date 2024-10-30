@@ -33,5 +33,5 @@ default_packages_file = "~/.config/mise/default-python-packages"
 
 [tools]
 cargo-binstall = "latest"
-"cargo:ubi-cli" = "latest"
+ubi = "latest"
 "ubi:VorpalBlade/chezmoi_modify_manager" = "latest"

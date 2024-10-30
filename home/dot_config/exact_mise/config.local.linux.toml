@@ -1,3 +1,4 @@
 [tools]
 usage = "latest"
 "npm:npm-check-updates" = "latest"
+"pipx:litecli" = "latest"

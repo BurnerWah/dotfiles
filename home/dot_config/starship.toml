@@ -64,6 +64,11 @@ detect_files = ["mix.exs", ".exenv-version"]
 # nf-seti-elm (same as nf-custom-elm)
 symbol = " "
 
+[env_var.FLATPAK_ID]
+symbol = " "
+format = "[$symbol$env_value]($style) "
+description = "The flatpak indicator, if inside a flatpak"
+
 [fennel]
 # nf-custom-fennel
 symbol = " "
