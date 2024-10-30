@@ -166,6 +166,11 @@ commands:
         # - &dnf_installed $(sqlite3 /var/cache/dnf/packages.db "SELECT pkg FROM installed WHERE pkg LIKE '${C_VALUE}%'") # Strings need to run
       flag: *common_completion_flags
 
+  - name: upgrade-minimal
+    hidden: true
+    completion:
+      positionalany: ['$carapace.bridge.CarapaceBin([dnf, install])']
+
   - name: remove
     description: Remove (uninstall) software
     group: core
