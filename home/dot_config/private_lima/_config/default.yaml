@@ -17,8 +17,8 @@ ssh:
   # This option is useful when you want to use other SSH-based
   # applications such as rsync with the Lima instance.
   # If you have an insecure key under ~/.ssh, do not use this option.
-  # 🟢 Builtin default: true
-  loadDotSSHPubKeys: true
+  # 🟢 Builtin default: true (will change to false in 1.0)
+  loadDotSSHPubKeys: false # remove after 1.0
 
 networks:
   # configuring vzNAT here *at all* will prevent the creation of qemu VMs entirely
