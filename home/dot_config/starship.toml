@@ -244,7 +244,6 @@ disabled = true
 
 [shell]
 disabled = false
-fish_indicator = "" # Usually I'm using fish
 
 [solidity]
 disabled = true
