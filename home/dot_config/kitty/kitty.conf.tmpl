@@ -19,6 +19,12 @@ adjust_column_width {{ $fonts.adjust.column_width }}
 symbol_map {{ .codepoints | join "," }} {{ .font }}
 {{ end }}
 
+#: Text cursor customization
+
+cursor_trail 1
+cursor_trail_decay 0.1 0.4
+cursor_trail_start_threshold 5
+
 #: Scrollback
 
 {{ $scrollback := $config.scrollback }}
