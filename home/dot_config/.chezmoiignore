@@ -1,10 +1,12 @@
 /.gsd-keyboard.settings-ported
 /.semgrep
 /1Password
+/background
 /btop
 /chezmoi
 /configstore
 /Cypress
+/dconf
 /evolution
 /flutter
 /fly
@@ -19,6 +21,7 @@
 /JetBrains
 /jgit
 /libvirt
+/menus
 /monitors.xml*
 /MusicBrainz
 /ookla
@@ -27,7 +30,10 @@
 /postybirb-plus
 /pulse
 /raycast
+/systemd/user/*.wants
+/toolbox
 /user-share
+/zap
 
 {{- if ne .chezmoi.os "linux" }}
 /autostart
