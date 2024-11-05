@@ -1,6 +1,6 @@
 [tools]
 lefthook = "latest"
 "cargo:stylua" = "latest"
-"pipx:ruff" = "latest"
+ruff = "latest"
 ruby = "latest"
 "ubi:VorpalBlade/chezmoi_modify_manager" = "latest"
