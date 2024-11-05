@@ -11,7 +11,6 @@ tap "egoist/tap"
 tap "powershell/tap" if OS.mac?
 
 # Packages
-brew "act" # GitHub Actions runner
 brew "age" # encryption tool
 brew "age-plugin-yubikey" if OS.mac?
 brew "ansible" if OS.mac?
@@ -69,7 +68,6 @@ brew "gitleaks"
 brew "gitlint" if OS.mac?
 brew "gitsign" if OS.linux?
 brew "glow" # markdown reader
-brew "go-task"
 brew "gnupg" if OS.mac?
 brew "grc" if OS.mac? # CLI output colorizer
 brew "grex" # regex generator
@@ -84,7 +82,6 @@ brew "iproute2mac" if OS.mac?
 brew "jc" if OS.mac? # JSON parser for various CLIs
 brew "jdupes" if OS.mac? # duplicate file finder
 brew "jq" if OS.mac? # JSON manipulator
-brew "just" # task runner
 brew "kind" # Kubernetes in Docker
 brew "kondo" # Disk cleanup tool for coding
 brew "lazygit" # Git terminal UI

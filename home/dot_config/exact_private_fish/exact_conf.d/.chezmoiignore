@@ -2,8 +2,3 @@
 *-darwin.fish
 *-iterm2.fish
 {{- end }}
-
-{{- if ne .chezmoi.os "linux" }}
-*-direnv.fish
-*-vscode.fish
-{{- end }}
