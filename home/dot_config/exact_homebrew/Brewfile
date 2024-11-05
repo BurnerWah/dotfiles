@@ -11,7 +11,7 @@ tap "egoist/tap"
 tap "powershell/tap" if OS.mac?
 
 # Packages
-brew "age" # encryption tool
+brew "age" if OS.mac? # encryption tool
 brew "age-plugin-yubikey" if OS.mac?
 brew "ansible" if OS.mac?
 brew "ansible-lint" if OS.mac?
@@ -44,8 +44,8 @@ brew "dotnet", link: true if OS.mac?
 brew "dua-cli" # disk usage
 brew "duf" # disk usage
 brew "dust" # du alternative
-brew "elvish"
-brew "exercism"
+brew "elvish" if OS.mac?
+brew "exercism" if OS.mac?
 brew "exiftool" if OS.mac?
 brew "eza" if OS.mac? # ls alternative
 brew "fastfetch" if OS.mac? # better neofetch
@@ -66,7 +66,7 @@ brew "git-open" if OS.mac? # Broken on linux
 brew "git-remote-hg" if OS.mac?
 brew "gitleaks"
 brew "gitlint" if OS.mac?
-brew "gitsign" if OS.linux?
+brew "gitsign"
 brew "glow" # markdown reader
 brew "gnupg" if OS.mac?
 brew "grc" if OS.mac? # CLI output colorizer
@@ -75,7 +75,6 @@ brew "helm"
 brew "hexyl" if OS.mac? # hex viewer
 brew "htop" if OS.mac?
 brew "httpie" if OS.mac?
-brew "hugo"
 brew "hyperfine" if OS.mac? # benchmarking tool
 brew "imagemagick" if OS.mac?
 brew "iproute2mac" if OS.mac?
@@ -123,7 +122,7 @@ brew "syncthing" if OS.mac?
 brew "taplo"
 brew "texinfo" if OS.mac?
 brew "tlrc" # fast tldr page viewer
-brew "tokei" # count lines of code
+brew "tokei" if OS.mac? # count lines of code
 brew "util-linux" if OS.mac? # subset of the util-linux commands for mac OS
 brew "uv" # Python package manager
 brew "vhs" if OS.mac? # terminal recorder
@@ -138,7 +137,7 @@ brew "yt-dlp" if OS.mac?
 brew "yubikey-agent", restart_service: true if OS.mac? # SSH Agent for YubiKeys
 brew "zellij" if OS.mac? # tmux alternative
 brew "zenith" # Another htop thing
-brew "zoxide" # directory jumping
+brew "zoxide" if OS.mac? # directory jumping
 brew "zstd" if OS.mac?
 
 brew "egoist/tap/dum" # fast npm script runner
