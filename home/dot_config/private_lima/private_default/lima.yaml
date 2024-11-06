@@ -21,7 +21,6 @@ disk: 100GiB
 networks:
   - vzNAT: true
 
-# TODO - add an ansible playbook to fully configure the VM
 provision:
   - mode: system
     script: |
@@ -29,6 +28,9 @@ provision:
       set -eux -o pipefail
       command -v ansible >/dev/null 2>&1 && exit 0
       dnf install -y ansible
+
+  - mode: ansible
+    playbook: /Users/burner/.config/lima/default/playbook.yaml
 
 probes:
   - description: ansible to be installed

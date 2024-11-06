@@ -1,0 +1,11 @@
+---
+- name: Provision VM
+  hosts: all
+  tasks:
+    - name: Install packages
+      become: yes
+      ansible.builtin.dnf5:
+        name:
+          - fish
+          - kitty-terminfo
+        state: present
