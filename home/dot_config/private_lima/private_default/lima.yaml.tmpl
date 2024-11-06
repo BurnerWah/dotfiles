@@ -1,3 +1,4 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
 images:
   - location: 'https://download.fedoraproject.org/pub/fedora/linux/releases/41/Cloud/x86_64/images/Fedora-Cloud-Base-Generic-41-1.4.x86_64.qcow2'
     arch: 'x86_64'
@@ -30,7 +31,7 @@ provision:
       dnf install -y ansible
 
   - mode: ansible
-    playbook: /Users/burner/.config/lima/default/playbook.yaml
+    playbook: '# {{ joinPath .chezmoi.targetFile ".." "playbook.yaml" }}'
 
 probes:
   - description: ansible to be installed
