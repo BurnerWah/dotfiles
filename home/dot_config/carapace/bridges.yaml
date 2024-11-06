@@ -31,6 +31,7 @@ carapace: carapaace
 cdebug: cobra
 cekit: click
 changie: cobra
+chcon: zsh
 chezmoi: cobra
 cjxl: fish
 clusterdb: zsh
