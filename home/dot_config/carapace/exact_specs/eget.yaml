@@ -1,0 +1,92 @@
+name: eget
+description: Easily install prebuilt binaries from GitHub
+
+flags:
+  -t, --tag=: tagged release to use instead of latest
+  --pre-release: include pre-releases when fetching the latest version
+  --source: download the source code for the target repo instead of a release
+  --to=: move to given location after extracting
+  -s, --system=: target system to download for (use "all" for all choices)
+  -f, --file=: glob to select files for extraction
+  --all: extract all candidate files
+  -q, --quiet: only print essential output
+  -d, --download-only: stop after downloading the asset (no extraction)
+  --upgrade-only: only download if release is more recent than current version
+  -a, --asset=*: download a specific asset containing the given string; can be specified multiple times for additional filtering; use ^ for anti-match
+  --sha256: show the SHA-256 hash of the downloaded asset
+  --verify-sha256=: verify the downloaded asset checksum against the one provided
+  --rate: show GitHub API rate limiting information
+  -r, --remove: remove the given file from $EGET_BIN or the current directory
+  -v, --version: show version information
+  -h, --help: show this help message
+  -D, --download-all: download all projects defined in the config file
+  -k, --disable-ssl&: disable SSL verification for download requests
+
+exclusiveflags:
+  - [rate, version, help, tag]
+  - [rate, version, help, pre-release]
+  - [rate, version, help, source]
+  - [rate, version, help, to]
+  - [rate, version, help, system]
+  - [rate, version, help, file]
+  - [rate, version, help, all]
+  - [rate, version, help, quiet]
+  - [rate, version, help, download-only]
+  - [rate, version, help, upgrade-only]
+  - [rate, version, help, asset]
+  - [rate, version, help, sha256]
+  - [rate, version, help, verify-sha256]
+  - [rate, version, help, remove]
+  - [rate, version, help, download-all]
+  - [rate, version, help, disable-ssl]
+
+completion:
+  flag:
+    to: [$directories]
+    system:
+      # Irrelevant OS/Platform combinations are omitted
+      - "all\tdefault"
+      - "darwin/amd64\tIntel macOS"
+      - "darwin/i386\t32-bit macOS"
+      - "darwin/arm64\tApple Silicon macOS" # I don't think Mac OS supports 32-bit ARM
+      - "windows/amd64\t64-bit Windows"
+      - "windows/i386\t32-bit Windows"
+      - "windows/arm64\tWindows on ARM" # I don't think Windows supports 32-bit ARM
+      - linux/amd64
+      - linux/i386
+      - linux/arm
+      - linux/arm64
+      - linux/riscv64
+      - netbsd/amd64
+      - netbsd/i386
+      - netbsd/arm
+      - netbsd/arm64
+      - netbsd/riscv64
+      - openbsd/amd64
+      - openbsd/i386
+      - openbsd/arm
+      - openbsd/arm64
+      - openbsd/riscv64
+      - freebsd/amd64
+      - freebsd/i386
+      - freebsd/arm
+      - freebsd/arm64
+      - freebsd/riscv64
+      - android/amd64
+      - android/arm
+      - android/arm64
+      - android/riscv64 # technically supported?
+      # illumos apparently lacks RISC-V support
+      - "illumos/amd64\tx86-64 illumos"
+      - "illumos/i386\tIA-32 illumos"
+      - "illumos/arm\tARM illumos"
+      - "illumos/arm64\tARM64 illumos"
+      # Solaris apparently lacks ARM & RISC-V support
+      - "solaris/amd64\t64-bit Solaris"
+      - "solaris/i386\t32-bit Solaris"
+      # Plan 9 apparently lacks RISC-V support
+      - plan9/amd64
+      - plan9/i386
+      - plan9/arm
+      - plan9/arm64
+      - $multiparts([/])

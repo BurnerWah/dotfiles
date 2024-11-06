@@ -11,6 +11,8 @@ mounts:
   - location: '/tmp/lima'
     writable: true
 
+mountTypesUnsupported: [9p]
+
 memory: 4GiB
 disk: 100GiB
 

@@ -111,6 +111,7 @@ brew "pigz" if OS.mac? # parallel gzip
 brew "podman" if OS.mac?
 brew "podman-tui"
 brew "podman-compose" if OS.mac?
+brew "qemu" if OS.mac?
 brew "rclone" if OS.mac? # cloud storage manager
 brew "rename" if OS.mac? # rename files
 brew "ripgrep" if OS.mac? # grep alternative

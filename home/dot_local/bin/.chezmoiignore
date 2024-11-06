@@ -6,7 +6,6 @@
 /pnpm
 /pnpx
 /postybirb-plus
-/sort-package-json
 
 {{- if ne .chezmoi.os "linux" }}
 /1password
