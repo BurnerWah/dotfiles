@@ -4,7 +4,7 @@ home = ${XDG_CONFIG_HOME}/ansible
 # {{ if eq .chezmoi.os "darwin" }}
 # {{   $ansibleTemp = "${TMPDIR}/ansible" }}
 # {{ end }}
-remote_tmp = {{ $ansibleTemp }}
+remote_tmp = /tmp/ansible
 local_tmp = {{ $ansibleTemp }}
 
 [galaxy]
