@@ -323,4 +323,4 @@ xcuserdata/
 # End of https://www.toptal.com/developers/gitignore/api/kate,node,ruby,linux,macos,xcode,windows,powershell,visualstudiocode
 
 /mise.local.toml
-/.lefthook-local.*
+/lefthook-local.*
