@@ -1,11 +1,22 @@
 [defaults]
+# (path) The default root path for Ansible config files on the controller.
 home = ${XDG_CONFIG_HOME}/ansible
-# {{ $ansibleTemp := "${XDG_RUNTIME_DIR}/ansible" }}
-# {{ if eq .chezmoi.os "darwin" }}
-# {{   $ansibleTemp = "${TMPDIR}/ansible" }}
-# {{ end }}
+
+# (tmppath) Temporary directory for Ansible to use on the controller.
+local_tmp = {{ eq .chezmoi.os "darwin" | ternary "${TMPDIR}/ansible" "${XDG_RUNTIME_DIR}/ansible" }}
+
+# (string) Temporary directory to use on targets when executing tasks.
 remote_tmp = /tmp/ansible
-local_tmp = {{ $ansibleTemp }}
 
 [galaxy]
+# (path) The directory that stores cached responses from a Galaxy server.
+# This is only used by the ``ansible-galaxy collection install`` and ``download`` commands.
+# Cache files inside this dir will be ignored if they are world writable.
 cache_dir = ${XDG_CACHE_HOME}/ansible/galaxy
+
+[ssh_connection]
+# (string) This sets the directory to use for ssh control path if the control path setting is null.
+# Also, provides the ``%(directory)s`` variable for the control path setting.
+# Defaults to ~/.ansible/cp regardless of what ansible home is set to
+control_path_dir={{ eq .chezmoi.os "darwin" | ternary "${TMPDIR}/ansible/cp" "${XDG_RUNTIME_DIR}/ansible/cp" }}
+
