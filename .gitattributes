@@ -30,3 +30,6 @@
 *.lua           text
 *.py            text diff=python
 *.vim           text eol=lf
+
+# Vendored files included in the repo
+schemas/vendor/* linguist-vendored

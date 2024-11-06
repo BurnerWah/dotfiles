@@ -1,0 +1,1047 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://github.com/lima-vm/lima/pkg/limayaml/lima-yaml",
+    "$ref": "#/$defs/LimaYAML",
+    "$defs": {
+        "Audio": {
+            "properties": {
+                "device": {
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                }
+            },
+            "additionalProperties": false,
+            "type": "object"
+        },
+        "CACertificates": {
+            "properties": {
+                "removeDefaults": {
+                    "oneOf": [
+                        {
+                            "type": "boolean"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "files": {
+                    "oneOf": [
+                        {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "certs": {
+                    "oneOf": [
+                        {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                }
+            },
+            "additionalProperties": false,
+            "type": "object"
+        },
+        "Containerd": {
+            "properties": {
+                "system": {
+                    "oneOf": [
+                        {
+                            "type": "boolean"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "user": {
+                    "oneOf": [
+                        {
+                            "type": "boolean"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "archives": {
+                    "items": {
+                        "$ref": "#/$defs/File"
+                    },
+                    "type": "array"
+                }
+            },
+            "additionalProperties": false,
+            "type": "object"
+        },
+        "CopyToHost": {
+            "properties": {
+                "guest": {
+                    "type": "string"
+                },
+                "host": {
+                    "type": "string"
+                },
+                "deleteOnStop": {
+                    "type": "boolean"
+                }
+            },
+            "additionalProperties": false,
+            "type": "object"
+        },
+        "Disk": {
+            "oneOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "object"
+                }
+            ],
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "format": {
+                    "type": "boolean"
+                },
+                "fsType": {
+                    "type": "string"
+                },
+                "fsArgs": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "name"
+            ]
+        },
+        "File": {
+            "properties": {
+                "location": {
+                    "type": "string"
+                },
+                "arch": {
+                    "type": "string"
+                },
+                "digest": {
+                    "type": "string"
+                }
+            },
+            "additionalProperties": false,
+            "type": "object",
+            "required": [
+                "location"
+            ]
+        },
+        "FileWithVMType": {
+            "properties": {
+                "location": {
+                    "type": "string"
+                },
+                "arch": {
+                    "type": "string"
+                },
+                "digest": {
+                    "type": "string"
+                },
+                "vmType": {
+                    "type": "string"
+                }
+            },
+            "additionalProperties": false,
+            "type": "object",
+            "required": [
+                "location"
+            ]
+        },
+        "Firmware": {
+            "properties": {
+                "legacyBIOS": {
+                    "oneOf": [
+                        {
+                            "type": "boolean"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "images": {
+                    "items": {
+                        "$ref": "#/$defs/FileWithVMType"
+                    },
+                    "type": "array"
+                }
+            },
+            "additionalProperties": false,
+            "type": "object"
+        },
+        "HostResolver": {
+            "properties": {
+                "enabled": {
+                    "oneOf": [
+                        {
+                            "type": "boolean"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "ipv6": {
+                    "oneOf": [
+                        {
+                            "type": "boolean"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "hosts": {
+                    "oneOf": [
+                        {
+                            "additionalProperties": {
+                                "type": "string"
+                            },
+                            "type": "object"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                }
+            },
+            "additionalProperties": false,
+            "type": "object"
+        },
+        "Image": {
+            "properties": {
+                "location": {
+                    "type": "string"
+                },
+                "arch": {
+                    "type": "string"
+                },
+                "digest": {
+                    "type": "string"
+                },
+                "kernel": {
+                    "$ref": "#/$defs/Kernel"
+                },
+                "initrd": {
+                    "$ref": "#/$defs/File"
+                }
+            },
+            "additionalProperties": false,
+            "type": "object",
+            "required": [
+                "location"
+            ]
+        },
+        "Kernel": {
+            "properties": {
+                "location": {
+                    "type": "string"
+                },
+                "arch": {
+                    "type": "string"
+                },
+                "digest": {
+                    "type": "string"
+                },
+                "cmdline": {
+                    "type": "string"
+                }
+            },
+            "additionalProperties": false,
+            "type": "object",
+            "required": [
+                "location"
+            ]
+        },
+        "LimaYAML": {
+            "properties": {
+                "minimumLimaVersion": {
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "vmType": {
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "enum": [
+                        null,
+                        "qemu",
+                        "vz",
+                        "wsl2"
+                    ]
+                },
+                "vmOpts": {
+                    "$ref": "#/$defs/VMOpts"
+                },
+                "os": {
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "enum": [
+                        null,
+                        "Linux"
+                    ]
+                },
+                "arch": {
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "enum": [
+                        null,
+                        "x86_64",
+                        "aarch64",
+                        "armv7l",
+                        "riscv64"
+                    ]
+                },
+                "images": {
+                    "items": {
+                        "$ref": "#/$defs/Image"
+                    },
+                    "type": "array"
+                },
+                "cpuType": {
+                    "oneOf": [
+                        {
+                            "additionalProperties": {
+                                "type": "string"
+                            },
+                            "type": "object"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "cpus": {
+                    "oneOf": [
+                        {
+                            "type": "integer"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "memory": {
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "disk": {
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "additionalDisks": {
+                    "oneOf": [
+                        {
+                            "items": {
+                                "$ref": "#/$defs/Disk"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "mounts": {
+                    "items": {
+                        "$ref": "#/$defs/Mount"
+                    },
+                    "type": "array"
+                },
+                "mountTypesUnsupported": {
+                    "oneOf": [
+                        {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "mountType": {
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "enum": [
+                        null,
+                        "reverse-sshfs",
+                        "9p",
+                        "virtiofs",
+                        "wsl2"
+                    ]
+                },
+                "mountInotify": {
+                    "oneOf": [
+                        {
+                            "type": "boolean"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "ssh": {
+                    "$ref": "#/$defs/SSH"
+                },
+                "firmware": {
+                    "$ref": "#/$defs/Firmware"
+                },
+                "audio": {
+                    "$ref": "#/$defs/Audio"
+                },
+                "video": {
+                    "$ref": "#/$defs/Video"
+                },
+                "provision": {
+                    "items": {
+                        "$ref": "#/$defs/Provision"
+                    },
+                    "type": "array"
+                },
+                "upgradePackages": {
+                    "oneOf": [
+                        {
+                            "type": "boolean"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "containerd": {
+                    "$ref": "#/$defs/Containerd"
+                },
+                "guestInstallPrefix": {
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "probes": {
+                    "items": {
+                        "$ref": "#/$defs/Probe"
+                    },
+                    "type": "array"
+                },
+                "portForwards": {
+                    "items": {
+                        "$ref": "#/$defs/PortForward"
+                    },
+                    "type": "array"
+                },
+                "copyToHost": {
+                    "items": {
+                        "$ref": "#/$defs/CopyToHost"
+                    },
+                    "type": "array"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "networks": {
+                    "oneOf": [
+                        {
+                            "items": {
+                                "$ref": "#/$defs/Network"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "env": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "param": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                },
+                "dns": {
+                    "items": {
+                        "type": "string",
+                        "format": "ipv4"
+                    },
+                    "type": "array"
+                },
+                "hostResolver": {
+                    "$ref": "#/$defs/HostResolver"
+                },
+                "propagateProxyEnv": {
+                    "oneOf": [
+                        {
+                            "type": "boolean"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "caCerts": {
+                    "$ref": "#/$defs/CACertificates"
+                },
+                "rosetta": {
+                    "$ref": "#/$defs/Rosetta"
+                },
+                "plain": {
+                    "oneOf": [
+                        {
+                            "type": "boolean"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "timezone": {
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "nestedVirtualization": {
+                    "oneOf": [
+                        {
+                            "type": "boolean"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "user": {
+                    "$ref": "#/$defs/User"
+                }
+            },
+            "additionalProperties": false,
+            "type": "object",
+            "required": [
+                "images"
+            ]
+        },
+        "Mount": {
+            "properties": {
+                "location": {
+                    "type": "string"
+                },
+                "mountPoint": {
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "writable": {
+                    "oneOf": [
+                        {
+                            "type": "boolean"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "sshfs": {
+                    "$ref": "#/$defs/SSHFS"
+                },
+                "9p": {
+                    "$ref": "#/$defs/NineP"
+                },
+                "virtiofs": {
+                    "$ref": "#/$defs/Virtiofs"
+                }
+            },
+            "additionalProperties": false,
+            "type": "object",
+            "required": [
+                "location"
+            ]
+        },
+        "Network": {
+            "properties": {
+                "lima": {
+                    "type": "string"
+                },
+                "socket": {
+                    "type": "string"
+                },
+                "vzNAT": {
+                    "type": "boolean"
+                },
+                "macAddress": {
+                    "type": "string"
+                },
+                "interface": {
+                    "type": "string"
+                }
+            },
+            "additionalProperties": false,
+            "type": "object"
+        },
+        "NineP": {
+            "properties": {
+                "securityModel": {
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "protocolVersion": {
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "msize": {
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "cache": {
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                }
+            },
+            "additionalProperties": false,
+            "type": "object"
+        },
+        "PortForward": {
+            "properties": {
+                "guestIPMustBeZero": {
+                    "type": "boolean"
+                },
+                "guestIP": {
+                    "type": "string",
+                    "format": "ipv4"
+                },
+                "guestPort": {
+                    "type": "integer"
+                },
+                "guestPortRange": {
+                    "items": {
+                        "type": "integer"
+                    },
+                    "type": "array",
+                    "maxItems": 2,
+                    "minItems": 2
+                },
+                "guestSocket": {
+                    "type": "string"
+                },
+                "hostIP": {
+                    "type": "string",
+                    "format": "ipv4"
+                },
+                "hostPort": {
+                    "type": "integer"
+                },
+                "hostPortRange": {
+                    "items": {
+                        "type": "integer"
+                    },
+                    "type": "array",
+                    "maxItems": 2,
+                    "minItems": 2
+                },
+                "hostSocket": {
+                    "type": "string"
+                },
+                "proto": {
+                    "type": "string"
+                },
+                "reverse": {
+                    "type": "boolean"
+                },
+                "ignore": {
+                    "type": "boolean"
+                }
+            },
+            "additionalProperties": false,
+            "type": "object"
+        },
+        "Probe": {
+            "properties": {
+                "mode": {
+                    "type": "string",
+                    "default": "readiness"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "script": {
+                    "type": "string"
+                },
+                "hint": {
+                    "type": "string"
+                }
+            },
+            "additionalProperties": false,
+            "type": "object"
+        },
+        "Provision": {
+            "properties": {
+                "mode": {
+                    "type": "string",
+                    "default": "system"
+                },
+                "skipDefaultDependencyResolution": {
+                    "type": "boolean"
+                },
+                "script": {
+                    "type": "string"
+                },
+                "playbook": {
+                    "type": "string"
+                }
+            },
+            "additionalProperties": false,
+            "type": "object",
+            "required": [
+                "script"
+            ]
+        },
+        "QEMUOpts": {
+            "properties": {
+                "minimumVersion": {
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                }
+            },
+            "additionalProperties": false,
+            "type": "object"
+        },
+        "Rosetta": {
+            "properties": {
+                "enabled": {
+                    "oneOf": [
+                        {
+                            "type": "boolean"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "binfmt": {
+                    "oneOf": [
+                        {
+                            "type": "boolean"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                }
+            },
+            "additionalProperties": false,
+            "type": "object"
+        },
+        "SSH": {
+            "properties": {
+                "localPort": {
+                    "oneOf": [
+                        {
+                            "type": "integer"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "loadDotSSHPubKeys": {
+                    "oneOf": [
+                        {
+                            "type": "boolean"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "forwardAgent": {
+                    "oneOf": [
+                        {
+                            "type": "boolean"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "forwardX11": {
+                    "oneOf": [
+                        {
+                            "type": "boolean"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "forwardX11Trusted": {
+                    "oneOf": [
+                        {
+                            "type": "boolean"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                }
+            },
+            "additionalProperties": false,
+            "type": "object"
+        },
+        "SSHFS": {
+            "properties": {
+                "cache": {
+                    "oneOf": [
+                        {
+                            "type": "boolean"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "followSymlinks": {
+                    "oneOf": [
+                        {
+                            "type": "boolean"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "sftpDriver": {
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                }
+            },
+            "additionalProperties": false,
+            "type": "object"
+        },
+        "User": {
+            "properties": {
+                "name": {
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "comment": {
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "home": {
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "uid": {
+                    "oneOf": [
+                        {
+                            "type": "integer"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                }
+            },
+            "additionalProperties": false,
+            "type": "object"
+        },
+        "VMOpts": {
+            "properties": {
+                "qemu": {
+                    "$ref": "#/$defs/QEMUOpts"
+                }
+            },
+            "additionalProperties": false,
+            "type": "object"
+        },
+        "VNCOptions": {
+            "properties": {
+                "display": {
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                }
+            },
+            "additionalProperties": false,
+            "type": "object"
+        },
+        "Video": {
+            "properties": {
+                "display": {
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "vnc": {
+                    "$ref": "#/$defs/VNCOptions"
+                }
+            },
+            "additionalProperties": false,
+            "type": "object"
+        },
+        "Virtiofs": {
+            "properties": {
+                "queueSize": {
+                    "type": "integer"
+                }
+            },
+            "additionalProperties": false,
+            "type": "object"
+        }
+    }
+}

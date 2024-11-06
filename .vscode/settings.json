@@ -58,6 +58,7 @@
     ],
     "./schemas/chezmoi/externals.yaml": ["home/.chezmoiexternals/**/*"],
     "./schemas/chezmoi/config.yaml": ["home/.chezmoi.yaml.tmpl"],
+    "./schemas/vendor/lima.json": ["home/dot_config/private_lima/*/lima.yaml"],
   },
   "python.autoComplete.extraPaths": [
     "/opt/homebrew/opt/xonsh/libexec/lib/python3.13/site-packages",

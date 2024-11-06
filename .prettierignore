@@ -2,3 +2,4 @@
 **/symlink_*
 /.ruby-lsp
 /pnpm-lock.yaml
+/schemas/vendor/*

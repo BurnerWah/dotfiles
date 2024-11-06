@@ -4,3 +4,8 @@ lefthook = "latest"
 ruff = "latest"
 ruby = "latest"
 "ubi:VorpalBlade/chezmoi_modify_manager" = "latest"
+
+# This task could be removed once there's a URL I can feasibly use for Lima's Schema
+[tasks."generate:lima-schema"]
+run = "limactl generate-jsonschema > schemas/vendor/lima.json"
+description = "Generate JSON schema for lima.yaml files"
