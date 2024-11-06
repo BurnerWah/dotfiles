@@ -7,7 +7,7 @@ include = ["home/.chezmoidata/packages/**"]
 schema.path = "./schemas/packages.json"
 
 [[rule]]
-include = ["home/dot_config/exact_mise/config.*"]
+include = ["home/dot_config/exact_mise/config.*", "mise.toml", "mise.*.toml"]
 schema.path = "https://mise.jdx.dev/schema/mise.json"
 
 [[rule]]
