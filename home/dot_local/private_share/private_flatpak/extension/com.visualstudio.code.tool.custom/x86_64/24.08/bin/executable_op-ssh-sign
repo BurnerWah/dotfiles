@@ -1,3 +1,0 @@
-#!/bin/sh
-export HOME="$XDG_DATA_HOME/fakehome"
-exec "/opt/1Password/op-ssh-sign" "$@"
