@@ -49,11 +49,6 @@ provision:
       apk add build-base
   - mode: user
     script: |
-      #!/bin/bash
-      set -eux -o pipefail
-      sudo chsh -s /usr/bin/fish $USER
-  - mode: user
-    script: |
       #!/usr/bin/fish
       if not set -q fish_user_paths
           set -U fish_user_paths ~/.local/bin

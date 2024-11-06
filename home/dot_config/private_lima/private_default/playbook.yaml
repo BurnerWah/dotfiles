@@ -9,3 +9,11 @@
           - fish
           - kitty-terminfo
         state: present
+
+    # This breaks the lima boot process, so it's better to just set the
+    # LIMA_SHELL environment variable on the host.
+    # - name: Set user's shell to fish
+    #   become: yes
+    #   ansible.builtin.user:
+    #     name: '{{ ansible_user_id }}'
+    #     shell: /usr/bin/fish
