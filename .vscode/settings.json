@@ -28,6 +28,7 @@
     "**/*_dot_ssh/*_config.d/*.conf": "ssh_config",
     "**/*_dot_ssh/*_config.d/*.conf.tmpl": "ssh_config",
     "*.desktop": "ini",
+    "ansible.cfg.tmpl": "ini",
   },
   "go-template.patterns": [
     "**/*.tmpl",
