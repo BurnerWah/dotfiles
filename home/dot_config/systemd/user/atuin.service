@@ -1,7 +1,7 @@
 [Unit]
-Description=atuin daemon service
-Requires=atuin-daemon.socket
-After=atuin-daemon.socket
+Description=atuin daemon
+Requires=atuin.socket
+After=atuin.socket
 
 [Service]
 ExecStart=%h/.local/bin/atuin daemon
@@ -55,4 +55,4 @@ CapabilityBoundingSet=~CAP_BLOCK_SUSPEND
 CapabilityBoundingSet=~CAP_SYS_PTRACE
 
 [Install]
-Also=atuin-daemon.socket
+Also=atuin.socket
