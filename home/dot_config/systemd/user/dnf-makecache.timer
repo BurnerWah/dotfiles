@@ -1,0 +1,11 @@
+[Unit]
+Description=dnf makecache
+
+[Timer]
+OnBootSec=10min
+OnUnitInactiveSec=6h
+RandomizedDelaySec=60m
+Unit=dnf-makecache.service
+
+[Install]
+WantedBy=timers.target

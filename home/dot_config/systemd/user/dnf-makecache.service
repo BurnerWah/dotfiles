@@ -1,20 +1,14 @@
 [Unit]
-Description=atuin daemon service
-Requires=atuin-daemon.socket
-After=atuin-daemon.socket
+Description=dnf makecache
 
 [Service]
-ExecStart=%h/.local/bin/atuin daemon
+Type=oneshot
+Nice=19
+IOSchedulingClass=2
+IOSchedulingPriority=7
+ExecStart=/usr/bin/dnf makecache
 
-RuntimeDirectory=atuin
-RuntimeDirectoryMode=0700
-ConfigurationDirectory=atuin
-ConfigurationDirectoryMode=700
-
-# Preliminary work on setting ProtectHome
-ReadWritePaths=%D/atuin
-# This needs to change if my homebrew setup changes
-ReadOnlyPaths=%h/.var/lib/homebrew
+CacheDirectory=libdnf5
 
 # Common sandboxing
 NoNewPrivileges=on
@@ -35,8 +29,6 @@ SystemCallFilter=~@reboot
 SystemCallFilter=~@resources
 SystemCallFilter=~@swap
 
-PrivateUsers=on
-
 # Requires unpriviliged user namespaces
 ProtectClock=on
 ProtectKernelLogs=on
@@ -55,4 +47,4 @@ CapabilityBoundingSet=~CAP_BLOCK_SUSPEND
 CapabilityBoundingSet=~CAP_SYS_PTRACE
 
 [Install]
-Also=atuin-daemon.socket
+Also=dnf-makecache.timer
