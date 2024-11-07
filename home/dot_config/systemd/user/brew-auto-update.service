@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 Type=oneshot
-ExecStart=%h/.var/lib/homebrew/bin/brew
+ExecStart=%h/.var/lib/homebrew/bin/brew update --auto-update
 
 Environment=HOMEBREW_PREFIX=%h/.var/lib/homebrew
 Environment=HOMEBREW_CELLAR=%h/.var/lib/homebrew/Cellar
