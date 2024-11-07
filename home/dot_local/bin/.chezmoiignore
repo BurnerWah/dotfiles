@@ -13,24 +13,37 @@
 /clion
 /code
 /datagrip
+/dig
+/ffplay
+/ffprobe
 /firefox
 /fly
 /gimp
 /gnome-maps
 /goland
+/host
 /idea
 /inkscape
+/ipcalc
+/man
+/nslookup
 /obs
 /op-ssh-sign
+/patch
 /phpstorm
 /picard
+/ping
 /pycharm
 /rider
 /rubymine
+/strings
+/tesseract
 /trash
 /vlc
 /waterfox
 /webstorm
+/whois
+/yt-dlp
 {{- end }}
 
 {{- if ne .chezmoi.os "darwin" }}

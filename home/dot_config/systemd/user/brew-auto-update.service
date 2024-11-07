@@ -11,3 +11,21 @@ Environment=HOMEBREW_CELLAR=%h/.var/lib/homebrew/Cellar
 Environment=HOMEBREW_REPOSITORY=%h/.var/lib/homebrew
 
 Environment=HOMEBREW_NO_INSECURE_REDIRECT=1
+
+NoNewPrivileges=on
+RestrictNamespaces=on
+LockPersonality=on
+RestrictRealtime=on
+
+SystemCallArchitectures=native
+SystemCallFilter=~@clock
+SystemCallFilter=~@cpu-emulation
+SystemCallFilter=~@debug
+SystemCallFilter=~@module
+SystemCallFilter=~@mount
+SystemCallFilter=~@obsolete
+SystemCallFilter=~@privileged
+SystemCallFilter=~@raw-io
+SystemCallFilter=~@reboot
+SystemCallFilter=~@resources
+SystemCallFilter=~@swap
