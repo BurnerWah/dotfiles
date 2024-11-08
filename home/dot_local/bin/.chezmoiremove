@@ -1,7 +1,28 @@
 /orb
 /orbctl
 
-# Firejail tries to make wrappers for these, but they don't work
+# Firejail tries to make wrappers for these, but they don't work or are unwanted
+/1password
+/baobab
+/cheese
 /com.github.johnfactotum.Foliate
 /com.github.tchx84.Flatseal
+/evince
+/evince-previewer
+/evince-thumbnailer
+/ffmpegthumbnailer
+/gapplication
+/gnome-characters
+/gnome-contacts
+/gnome-font-viewer
+/gnome-logs
 /man
+/secret-tool
+/shellcheck
+/simple-scan
+/ssh
+/sushi
+/totem
+/wget
+/wget2
+/yelp
