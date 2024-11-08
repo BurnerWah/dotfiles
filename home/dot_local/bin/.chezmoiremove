@@ -1,4 +1,7 @@
-/com.github.johnfactotum.Foliate
-/com.github.tchx84.Flatseal
 /orb
 /orbctl
+
+# Firejail tries to make wrappers for these, but they don't work
+/com.github.johnfactotum.Foliate
+/com.github.tchx84.Flatseal
+/man
