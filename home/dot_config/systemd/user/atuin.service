@@ -6,12 +6,14 @@ After=atuin.socket
 [Service]
 ExecStart=%h/.local/bin/atuin daemon
 
+# Resource limits
+TasksMax=32
+
 RuntimeDirectory=atuin
 RuntimeDirectoryMode=0700
 ConfigurationDirectory=atuin
-ConfigurationDirectoryMode=700
+ConfigurationDirectoryMode=0700
 
-# Preliminary work on setting ProtectHome
 ReadWritePaths=%D/atuin
 # This needs to change if my homebrew setup changes
 ReadOnlyPaths=%h/.var/lib/homebrew
@@ -45,14 +47,12 @@ ProtectHostname=on
 ProtectKernelTunables=on
 PrivateDevices=on
 PrivateTmp=on
-CapabilityBoundingSet=~CAP_SYS_PACCT
-CapabilityBoundingSet=~CAP_LINUX_IMMUTABLE
-CapabilityBoundingSet=~CAP_BPF
-CapabilityBoundingSet=~CAP_SYS_TTY_CONFIG
-CapabilityBoundingSet=~CAP_SYS_BOOT
-CapabilityBoundingSet=~CAP_SYS_CHROOT
-CapabilityBoundingSet=~CAP_BLOCK_SUSPEND
-CapabilityBoundingSet=~CAP_SYS_PTRACE
+CapabilityBoundingSet=
+
+ProtectSystem=strict
+# Setting this to true causes crashes
+ProtectHome=read-only
+UMask=0077
 
 [Install]
 Also=atuin.socket

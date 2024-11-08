@@ -18,14 +18,14 @@ LockPersonality=on
 RestrictRealtime=on
 
 SystemCallArchitectures=native
-SystemCallFilter=~@clock
-SystemCallFilter=~@cpu-emulation
-SystemCallFilter=~@debug
-SystemCallFilter=~@module
-SystemCallFilter=~@mount
-SystemCallFilter=~@obsolete
-SystemCallFilter=~@privileged
-SystemCallFilter=~@raw-io
-SystemCallFilter=~@reboot
+SystemCallFilter=@system-service
 SystemCallFilter=~@resources
-SystemCallFilter=~@swap
+
+# SystemCallFilter=~@privileged
+
+ProtectClock=on
+ProtectKernelLogs=on
+ProtectKernelModules=on
+ProtectKernelTunables=on
+ProtectHostname=on
+PrivateTmp=on
