@@ -8,7 +8,6 @@
 
         command-not-found
         atuin
-        direnv
         zoxide
         mise
         iterm2

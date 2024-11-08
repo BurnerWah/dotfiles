@@ -1,0 +1,68 @@
+name: shh
+description: Systemd Hardening Helper
+
+persistentflags:
+  -h, --help: Print help
+
+commands:
+  - name: run
+    description: Run a program to profile its behavior
+    parsing: non-interspersed
+    flags:
+      -m, --mode=: How hard we should harden
+      -p, --profile-data-path=: Generate profile data file to be merged with others instead of generating systemd options directly
+      -l, --strace-log-path=: Log strace output to this file. Only use for debugging.
+    completion:
+      flag:
+        mode: &hardening_modes
+          - "safe\tOnly generate hardening options if they have a very low risk of breaking things"
+          - "aggressive\tWill harden further and prevent circumventing restrictions of some options, but may increase the risk of breaking services"
+        profile-data-path: [$files] # maybe should be directories, need to check
+        strace-log-path: [$files]
+      positionalany: [$carapace.bridge.CarapaceBin]
+
+  - name: merge-profile-data
+    description: Merge profile data from previous runs to generate systemd options
+    flags:
+      -m, --mode=: How hard we should harden
+    completion:
+      flag:
+        mode: *hardening_modes
+      positionalany: [$files] # same as profile-data-path
+
+  - name: service
+    description: Act on a systemd service unit
+    commands:
+      - name: start-profile
+        description: Add fragment config to service to profile its behavior
+        flags:
+          -m, --mode=: How hard we should harden
+          -n, --no-restart: Disable immediate service restart
+        completion:
+          flag:
+            mode: *hardening_modes
+          positional:
+            # This gets systemd services in the correct format for shh
+            - - &systemd_services $(systemctl list-units --type service --output json | jq -r '.[] | [(.unit | rtrimstr(".service")), .description] | join("\t")')
+
+      - name: finish-profile
+        description: Get profiling result and remove fragment config from service
+        flags:
+          -a, --apply: Automatically apply hardening config
+          -n, --no-restart: Disable immediate service restart
+        completion:
+          # This could filter down to stuff with a shh profile but I don't wanna do that
+          positional: [[*systemd_services]]
+
+      - name: reset
+        description: Remove profiling and/or hardening config fragments, and restart service to restore its initial state
+        completion: { positional: [[*systemd_services]] }
+
+      - name: help
+        description: Print this message or the help of the given subcommand(s)
+        completion:
+          positional: [['$carapace.bridge.CarapaceBin([shh, service])']]
+
+  - name: help
+    description: Print this message or the help of the given subcommand(s)
+    completion: { positional: [['$carapace.bridge.CarapaceBin([shh])']] }

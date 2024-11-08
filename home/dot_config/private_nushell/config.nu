@@ -137,9 +137,6 @@ $env.config = {
         env_change: {
             PWD: [
                 {|before, after| null }
-                {|| if not (which direnv | is-empty) {
-                    direnv export json | from json | default {} | load-env
-                }}
             ]
         }
         display_output: "if (term size).columns >= 100 { table -e } else { table }" # run to display the output of a pipeline
