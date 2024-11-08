@@ -10,6 +10,8 @@ ExecStart=/usr/bin/dnf makecache
 
 CacheDirectory=libdnf5
 
+# Exposure level: 4.6 (systemd 256)
+
 # Common sandboxing
 NoNewPrivileges=on
 RestrictNamespaces=on

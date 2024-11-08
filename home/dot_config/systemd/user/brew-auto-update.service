@@ -12,6 +12,8 @@ Environment=HOMEBREW_REPOSITORY=%h/.var/lib/homebrew
 
 Environment=HOMEBREW_NO_INSECURE_REDIRECT=1
 
+# Exposure level: 5.6 (systemd 256)
+
 NoNewPrivileges=on
 RestrictNamespaces=on
 LockPersonality=on
