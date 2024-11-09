@@ -1,0 +1,89 @@
+name: scalar
+description: A tool for managing large Git repositories
+
+flags:
+  -C=: run as if git was started in given path
+  -c=*: pass configuration parameter to command
+
+completion:
+  flag:
+    C: [$directories]
+    # -c is probably impossible to implement in a spec
+
+commands:
+  - name: register
+    description: Register a repo with Scalar
+    flags: &help_flag
+      -h, --help&: print help
+    completion: { positional: [[$directories]] }
+
+  - name: unregister
+    description: Remove a repo from the list of repos registered with Scalar
+    flags: *help_flag
+    completion:
+      positional:
+        - - &enlistment $(scalar list)
+
+  - name: clone
+    description: Clones the specified repository
+    flags:
+      <<: *help_flag
+      -b, --branch=: checkout <branch> instead of the remote's HEAD
+      --single-branch: clone only one branch, HEAD or --branch
+      --no-single-branch: clone history leading up to each branch
+      --src&: clone into src subdirectory of provided path
+      --no-src: clone directly into provided path
+      --tags: clone with tags
+      --no-tags: don't clone any tags, and make later fetches not to follow them
+      --full-clone: clone full repo instead of a sparse checkout
+      --no-full-clone&: clone sparse repo
+    exclusiveflags:
+      - [single-branch, no-single-branch]
+      - [src, no-src]
+      - [tags, no-tags]
+      - [full-clone, no-full-clone]
+    completion:
+      positional:
+        - [$carapace.tools.git.RepositorySearch]
+        - [$directories]
+
+  - name: run
+    description: Run a maintenance task
+    flags: *help_flag
+    completion:
+      positional:
+        - - "all\tRun all tasks"
+          - "config\tConfigures repo settings to optimize large repos"
+          - "fetch\tUpdates the object directory with the latest objects from all registered remotes"
+          - "pack-files\tRepack the object directory using the multi-pack-index feature"
+          - $carapace.tools.git.MaintenanceTasks ||| $retain([commit-graph, loose-objects])
+        - [*enlistment]
+
+  - name: reconfigure
+    description: Reconfigure Scalar for registered repos
+    flags:
+      <<: *help_flag
+      -a, --all: reconfigure all registered enlistments
+      --no-all&: don't reconfigure all registered enlistments
+    exclusiveflags:
+      - [all, no-all]
+    completion: { positional: [[*enlistment]] }
+
+  - name: delete
+    description: Delete a repo registered with scalar from your filesystem
+    flags: *help_flag
+    completion: { positional: [[*enlistment]] }
+
+  - name: list
+    description: List enlistments that are currently registered by Scalar
+
+  - name: help
+    description: Open scalar documentation
+
+  - name: version
+    description: Print Scalar version
+
+  - name: diagnose
+    description: Dump diagnostic data for a repo
+    flags: *help_flag
+    completion: { positional: [[*enlistment]] }
