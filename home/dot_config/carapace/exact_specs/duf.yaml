@@ -24,8 +24,8 @@ completion:
   flag:
     hide: &devices [local, network, fuse, special, loops, binds]
     only: *devices
-    hide-fs: ['$carapace.fs.FilesystemTypes']
-    only-fs: ['$carapace.fs.FilesystemTypes']
+    hide-fs: [$carapace.fs.FilesystemTypes]
+    only-fs: [$carapace.fs.FilesystemTypes]
     # hide-mp and only-mp need to be tested on Linux
     output: &columns
       - mountpoint

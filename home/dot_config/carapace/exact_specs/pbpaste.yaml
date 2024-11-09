@@ -6,8 +6,8 @@ flags:
   -Prefer=: specify type of data to prefer when pasting
 completion:
   flag:
-    pboard: ['pasteboard', 'general', 'ruler', 'find', 'font']
+    pboard: [pasteboard, general, ruler, find, font]
     Prefer:
-      - 'txt\tplain text'
-      - 'rtf\trich text'
-      - 'ps\tencapsulated PostScript'
+      - "txt\tplain text"
+      - "rtf\trich text"
+      - "ps\tencapsulated PostScript"

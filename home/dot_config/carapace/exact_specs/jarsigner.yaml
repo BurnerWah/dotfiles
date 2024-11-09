@@ -19,6 +19,6 @@ completion:
     - ['$files([.jar, .zip])']
     - ['$usage(alias)'] # I don't know what this is
   flag:
-    keystore: ['$files']
-    sigfile: ['$files']
+    keystore: [$files]
+    sigfile: [$files]
     signedjar: ['$files([.jar, .zip])']

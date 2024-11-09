@@ -17,8 +17,8 @@ flags:
   -J: java runtime option
 completion:
   flag:
-    o: ['$files']
-    d: ['$directories']
+    o: [$files]
+    d: [$directories]
     classpath: ['$carapace.bridge.Zsh([javah])'] # This is a sequence
     bootclasspath: ['$carapace.bridge.Zsh([javah])'] # This is a sequence
   positionalany: ['$carapace.bridge.Zsh([javah])']

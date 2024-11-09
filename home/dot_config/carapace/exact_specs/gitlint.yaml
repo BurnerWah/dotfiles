@@ -32,10 +32,10 @@ commands:
     description: Uninstall gitlint commit-msg hook
 completion:
   flag:
-    target: ['$directories']
-    config: ['$files']
-    extra-path: ['$directories']
-    msg-filename: ['$files']
+    target: [$directories]
+    config: [$files]
+    extra-path: [$directories]
+    msg-filename: [$files]
     commit: ['$carapace.tools.git.RecentCommits(20)']
     commits:
       - $carapace.tools.git.HeadCommits(5)

@@ -17,6 +17,8 @@ commands:
       - name: default
         description: Print the default '.taplo.toml' configuration file
       - name: help
+        completion:
+          positional: [['$carapace.bridge.CarapaceBin([taplo, config])']]
       - name: schema
         description: Print the JSON schema of the '.taplo.toml' configuration file
 
@@ -24,6 +26,8 @@ commands:
     description: Language server operations
     commands:
       - name: help
+        completion:
+          positional: [['$carapace.bridge.CarapaceBin([taplo, lsp])']]
       - name: stdio
         description: Run the language server over the standard input and output
       - name: tcp
@@ -88,3 +92,4 @@ commands:
 
   - name: help
     description: Print this message or the help of the given subcommand(s)
+    completion: { positional: [['$carapace.bridge.CarapaceBin([taplo])']] }

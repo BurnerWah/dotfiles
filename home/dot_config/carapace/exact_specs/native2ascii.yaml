@@ -6,8 +6,8 @@ flags:
   -encoding=: Specifies the name of the character encoding
 completion:
   positional:
-    - ['$files']
-    - ['$files']
+    - [$files]
+    - [$files]
   flag:
     encoding:
       - $carapace.text.Encodings

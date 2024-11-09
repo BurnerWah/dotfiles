@@ -10,4 +10,4 @@ flags:
   -v, --version: display version information
 completion:
   flag:
-    switch: ['$directories']
+    switch: [$directories]

@@ -6,4 +6,4 @@ flags:
   -file=: policy file
 completion:
   flag:
-    file: ['$files']
+    file: [$files]
