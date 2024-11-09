@@ -1,0 +1,15 @@
+# This file cannot contain any absolute paths. Everything has to be relative.
+
+# gvfs is exceedingly slow and indexing into it should be avoided at all costs
+**/gvfs/dav:*
+
+# GNOME Trash, everything in here is deleted-enough that it should be excluded
+**/Trash/files/*
+**/Trash/info/*
+
+# Podman storage, fills search results with nonsense
+**/containers/storage/overlay/*
+**/containers/storage/volumes/*
+**/containers/storage/overlay-images/*
+**/containers/storage/overlay-containers/*
+**/containers/storage/overlay-layers/*
