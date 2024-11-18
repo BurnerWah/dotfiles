@@ -160,6 +160,7 @@ settings:
         - iamb # matrix (security)
         - ignite # cryptocurrency
         - k8sgpt
+        - kuzco # ai
         - libbitcoin-consensus # cryptocurrency, leaf dependency
         - libbitcoin-system # cryptocurrency, leaf dependency
         - libstrophe # xmpp (security), leaf dependency
