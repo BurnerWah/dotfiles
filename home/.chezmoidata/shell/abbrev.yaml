@@ -53,6 +53,7 @@ settings:
 
         ydl: yt-dlp
         ydlmp3: yt-dlp -x --audio-format mp3
+        ydlopus: yt-dlp -x --audio-format opus
         youtube-dl: yt-dlp
     fish:
       abbrev:
