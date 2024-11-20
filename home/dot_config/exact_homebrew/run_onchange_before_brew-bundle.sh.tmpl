@@ -27,6 +27,18 @@ export HOMEBREW_BUNDLE_FILE={{ $Brewfile | quote }}
 export HOMEBREW_BUNDLE_NO_LOCK=1
 export HOMEBREW_CHEZMOI=1 # Lets the brewfile know it's being run by chezmoi
 export HOMEBREW_BUNDLE_MAS_SKIP=1 # Prone to causing errors
+export HOMEBREW_BUNDLE_CASK_SKIP={{ list
+  "aqua"
+  "dataspell"
+  "datagrip"
+  "goland"
+  "intellij-idea"
+  "phpstorm"
+  "pycharm"
+  "rubymine"
+  "webstorm"
+  | sortAlpha | compact | join " " | quote
+}}
 
 # Bundle dependencies
 brew tap homebrew/bundle
