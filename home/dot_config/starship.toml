@@ -24,6 +24,11 @@ empty_symbol = "󰂎 "
 # nf-oct-bold
 symbol = " "
 
+[bun]
+symbol = " "
+version_format = "${raw}"
+format = "[$symbol($version )]($style)"
+
 [c]
 # nf-custom-c
 symbol = " "
@@ -35,11 +40,20 @@ symbol = " "
 [crystal]
 # nf-custom-crystal
 symbol = " "
+version_format = "${raw}"
 detect_files = ["shard.yml", ".crystal-version"]
+format = "[$symbol($version )]($style)"
 
 [dart]
 # nf-dev-dart - not very clear at term size
 symbol = " "
+version_format = "${raw}"
+format = "[$symbol($version )]($style)"
+
+[deno]
+symbol = " "
+version_format = "${raw}"
+format = "[$symbol($version )]($style)"
 
 [directory]
 read_only = " 󰌾"
@@ -53,6 +67,8 @@ symbol = " "
 [dotnet]
 # nf-md-dot_net
 symbol = "󰪮 "
+version_format = "${raw}"
+format = "[$symbol($version )(󰓾 $tfm )]($style)"
 
 [elixir]
 # nf-fae-drop
@@ -63,6 +79,8 @@ detect_files = ["mix.exs", ".exenv-version"]
 [elm]
 # nf-seti-elm (same as nf-custom-elm)
 symbol = " "
+version_format = "${raw}"
+format = "[$symbol($version )]($style)"
 
 [env_var.FLATPAK_ID]
 symbol = " "
@@ -72,6 +90,8 @@ description = "The flatpak indicator, if inside a flatpak"
 [fennel]
 # nf-custom-fennel
 symbol = " "
+version_format = "${raw}"
+format = "[$symbol($version )]($style)"
 
 [fossil_branch]
 symbol = " "
@@ -89,6 +109,8 @@ disabled = false
 [golang]
 # nf-seti-go - not very clear at term size
 symbol = " "
+version_format = "${raw}"
+format = "[$symbol($version )]($style)"
 
 [gradle]
 # nf-seti-gradle
@@ -144,6 +166,8 @@ symbol = "󱃾 "
 [lua]
 # nf-seti-lua - looks slightly better than nf-md-language_lua
 symbol = " "
+version_format = "${major}.${minor}"
+format = "[$symbol($version )]($style)"
 
 [memory_usage]
 # nf-md-memory
@@ -162,6 +186,9 @@ disabled = true
 [nodejs]
 # nf-md-nodejs
 symbol = "󰎙 "
+style = "bold bright-green"
+version_format = "${raw}"
+format = "[$symbol($version )]($style)"
 
 [ocaml]
 # nf-seti-ocaml - the only ocaml icon
@@ -213,10 +240,23 @@ Windows = "󰍲 "
 # nf-oct-package - big and readable
 # was suggested nf-md-package_variant_closed but it's too complex
 symbol = " "
+version_format = "${raw}"
 
 [perl]
 # nf-seti-perl - the only perl icon
 symbol = " "
+version_format = "${raw}"
+detect_files = [
+  "Makefile.PL",
+  "Build.PL",
+  "cpanfile",
+  "cpanfile.snapshot",
+  "META.json",
+  "META.yml",
+  ".perl-version",
+  "!brew",             # Don't show in brew prefix
+]
+format = "[$symbol($version )]($style)"
 
 [pijul_channel]
 symbol = " "
@@ -224,6 +264,7 @@ symbol = " "
 [python]
 # nf-fae-python - biggest python icon
 symbol = " "
+version_format = "${major}.${minor}"
 detect_files = [
   "requirements.txt",
   ".python-version",
@@ -234,7 +275,9 @@ detect_files = [
   "__init__.py",
   "pixi.toml",
   ".poetry-version",  # from mise plugin
+  "!brew",            # Don't show in brew prefix
 ]
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
 
 [rlang]
 # nf-seti-r - slightly bigger than nf-md-language_r
@@ -243,12 +286,20 @@ symbol = " "
 [ruby]
 # nf-md-language_ruby - biggest ruby icon
 symbol = "󰴭 "
+version_format = "${raw}"
+detect_variables = ["RUBY_VERSION", "RBENV_VERSION", "MISE_RUBY_VERSION"]
+format = "[$symbol($version )]($style)"
+
+[rust]
+symbol = " "
+version_format = "${raw}"
+format = "[$symbol($version )]($style)"
 
 [scala]
 disabled = true
 
 [shell]
-disabled = false
+disabled = true
 
 [solidity]
 disabled = true
@@ -256,6 +307,8 @@ disabled = true
 [swift]
 # nf-seti-swift - bigger than nf-dev-swift, looks the same as nf-md-language_swift
 symbol = " "
+version_format = "${raw}"
+format = "[$symbol($version )]($style)"
 
 [terraform]
 # nf-md-terraform
@@ -268,3 +321,5 @@ show_always = true
 [zig]
 # nf-seti-zig - the only zig icon
 symbol = " "
+version_format = "${raw}"
+format = "[$symbol($version )]($style)"
