@@ -210,6 +210,7 @@ symbol = "󱃾 "
 symbol = " "
 version_format = "${major}.${minor}"
 format = "[$symbol($version )]($style)"
+detect_files = [".lua-version", "!systemctl"]
 
 [memory_usage]
 # nf-md-memory
@@ -229,8 +230,8 @@ disabled = true
 # nf-md-nodejs
 symbol = "󰎙 "
 style = "bold bright-green"
-version_format = "${raw}"
-format = "[$symbol($version )]($style)"
+version_format = "${major}"
+format = "[$symbol($version )($engines_version )]($style)"
 
 [ocaml]
 # nf-seti-ocaml - the only ocaml icon
@@ -328,6 +329,7 @@ detect_files = [
   "pixi.toml",
   ".poetry-version",  # from mise plugin
   "!brew",            # Don't show in brew prefix
+  "!systemctl",       # Don't show in /usr/bin
 ]
 format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
 
