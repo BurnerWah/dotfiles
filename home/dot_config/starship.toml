@@ -300,6 +300,7 @@ detect_files = [
   "META.yml",
   ".perl-version",
   "!brew",             # Don't show in brew prefix
+  "!xdg-open",         # Shows up in /usr/bin in freedesktop runtime
 ]
 format = "[$symbol($version )]($style)"
 
