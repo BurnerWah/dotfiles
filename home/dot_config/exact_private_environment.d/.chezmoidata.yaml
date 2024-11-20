@@ -128,7 +128,8 @@ settings:
       # VSCODE_CLI_DATA_DIR: $XDG_CACHE_HOME/vscode-cli
 
       # wget
-      WGETRC: $XDG_CONFIG_HOME/wgetrc
+      # wget2 is xdg compliant
+      # WGETRC: $XDG_CONFIG_HOME/wgetrc
 
       # ykman
       YKMAN_XDG_EXPERIMENTAL: 1
