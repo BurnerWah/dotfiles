@@ -31,7 +31,11 @@ binstall = true
 [settings.python]
 default_packages_file = "~/.config/mise/default-python-packages"
 
+[settings.npm]
+bun = true
+
 [tools]
 cargo-binstall = "latest"
 ubi = "latest"
 "ubi:VorpalBlade/chezmoi_modify_manager" = "latest"
+bun = "latest"
