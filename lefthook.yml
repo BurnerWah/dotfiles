@@ -32,7 +32,7 @@ pre-commit:
       stage_fixed: true
 
     ruff:
-      run: ruff format {staged_files}
+      run: mise x -- ruff format {staged_files}
       glob: '*.py'
       exclude: symlink_*
       stage_fixed: true
