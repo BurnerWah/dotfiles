@@ -26,6 +26,7 @@ export HOMEBREW_VERIFY_ATTESTATIONS=1 # Security
 export HOMEBREW_BUNDLE_FILE={{ $Brewfile | quote }}
 export HOMEBREW_BUNDLE_NO_LOCK=1
 export HOMEBREW_CHEZMOI=1 # Lets the brewfile know it's being run by chezmoi
+export HOMEBREW_BUNDLE_MAS_SKIP=1 # Prone to causing errors
 
 # Bundle dependencies
 brew tap homebrew/bundle
