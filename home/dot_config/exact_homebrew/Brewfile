@@ -64,7 +64,6 @@ brew "git-delta" if OS.mac?
 brew "git-lfs" if OS.mac?
 brew "git-open" if OS.mac? # Broken on linux
 brew "git-remote-hg" if OS.mac?
-brew "gitleaks" if OS.mac?
 brew "gitlint" if OS.mac?
 brew "gitsign"
 brew "glow" # markdown reader
