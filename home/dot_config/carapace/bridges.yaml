@@ -101,6 +101,7 @@ limactl: cobra
 litecli: click
 localstack: click
 mcap: cobra
+minikube: cobra
 mocha: yargs # Probably will only be run with npm or something
 neon: yargs # built in completion is broken but it's based on yargs
 neonctl: yargs

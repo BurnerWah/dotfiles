@@ -1,0 +1,134 @@
+name: findmnt
+description: Find a (mounted) filesystem
+
+flags:
+  -s, --fstab: search in static table of filesystems
+  -m, --mtab: search in table of mounted filesystems (includes user space mount options)
+  -k, --kernel: search in kernel table of mounted filesystems (default)
+  -p, --poll?: monitor changes in table of mounted filesystems
+  -w, --timeout=: upper limit in milliseconds that --poll will block
+  -A, --all: disable all built-in filters, print all filesystems
+  -a, --ascii: use ASCII chars for tree formatting
+  -b, --bytes: print sizes in bytes rather than in human readable format
+  -C, --nocanonicalize: don't canonicalize when comparing paths
+  -c, --canonicalize: canonicalize printed paths
+  -D, --df: imitate the output of df(1)
+  -d, --direction=: direction of search, 'forward' or 'backward'
+  -e, --evaluate: convert tags (LABEL,UUID,PARTUUID,PARTLABEL) to device names
+  -F, --tab-file=*: alternative file for -s, -m or -k options # zsh says it's repeatable
+  -f, --first-only: print the first found filesystem only
+  -I, --dfi: imitate the output of df(1) with -i option
+  -i, --invert: invert the sense of matching
+  -J, --json: use JSON output format
+  -l, --list: use list format output
+  -N, --task=: use alternative namespace (/proc/<tid>/mountinfo file)
+  -n, --noheadings: don't print column headings
+  -O, --options=: limit the set of filesystems by mount options
+  -o, --output=: output columns (see --list-columns)
+  --output-all: output all available columns
+  -P, --pairs: use key="value" output format
+  --pseudo: print only pseudo-filesystems
+  --shadowed: print only filesystems over-mounted by another filesystem
+  -R, --submounts: print all submounts for the matching filesystems
+  -r, --raw: use raw output format
+  --real: print only real filesystems
+  -S, --source=: the device to mount (by name, maj:min, LABEL=, UUID=, PARTUUID=, PARTLABEL=)
+  -T, --target=: the path to the filesystem to use
+  --tree: enable tree format output if possible
+  -M, --mountpoint=: the mountpoint directory
+  -t, --types=: limit the set of filesystems by FS types
+  -U, --uniq: ignore filesystems with duplicate target
+  -u, --notruncate: don't truncate text in columns
+  -v, --nofsroot: don't print [/dir] for bind or btrfs mounts
+  -y, --shell: use column names to be usable as shell variable identifiers
+
+  -x, --verify: verify mount table content (default is fstab)
+  --verbose: print more details
+  --vfs-all: print all VFS options
+
+  -H, --list-columns: list the available columns
+  -h, --help: display this help
+  -V, --version: display version
+
+exclusiveflags:
+  - [task, kernel, mtab, fstab]
+  - [output, output-all]
+  - [df, dfi, json, list, pairs, raw]
+  - [json, noheadings]
+  - [json, notruncate]
+  - [pairs, noheadings]
+  - [pairs, notruncate]
+  - [task, tab-file]
+  - [real, pseudo]
+  - [uniq, shadowed] # Can never have an output
+  - [mtab, submounts]
+  - [fstab, submounts]
+
+completion:
+  positional:
+    - - &devices $carapace.fs.BlockDevices
+      - &source_types $(findmnt --pseudo -n -oFSTYPE) ||| $filter([autofs, fuse.gvfsd-fuse, rpc_pipefs])
+      # not everything works as an arg for this
+      - &maj_min $(findmnt -n -J -oMAJ:MIN | jq -r '.filesystems[]."maj:min"') ||| $multiparts([":"])
+      # too many results to not have multiparts
+      - &labels $carapace.fs.Labels ||| $prefix(LABEL=) ||| $multiparts([=])
+      # More results than zsh
+      - &uuids $carapace.fs.Uuids ||| $prefix(UUID=) ||| $multiparts([=])
+      # More results than zsh
+      - &partlabels $(findmnt -n -oPARTLABEL) ||| $prefix(PARTLABEL=) ||| $multiparts([=])
+      # fs.PartitionLabels didn't return anything for me while this did
+      - &partuuids $carapace.fs.PartitionUuids ||| $prefix(PARTUUID=) ||| $multiparts([=])
+      - &mounts $carapace.fs.Mounts
+    - [*mounts]
+  flag:
+    poll: [mount, umount, remount, move, '$uniquelist(,)']
+    direction: [forward, backward]
+    tab-file: [$files]
+    task: [$carapace.ps.ProcessIds]
+    target: [$files]
+    mountpoint: [*mounts]
+    types:
+      - $carapace.fs.FilesystemTypes ||| $filter([brtfs]) # brtfs is a typo
+      - $(findmnt -n -oFSTYPE)
+      - $uniquelist(,)
+    source:
+      - *devices
+      - *source_types
+      - *maj_min
+      - *labels
+      - *uuids
+      - *partlabels
+      - *partuuids
+    output:
+      - "ACTION\taction detected by --poll"
+      - "AVAIL\tfilesystem size available"
+      - "FREQ\tdump(8) period in days [fstab only]"
+      - "FSROOT\tfilesystem root"
+      - "FSTYPE\tfilesystem type"
+      - "FS-OPTIONS\tFS specific mount options"
+      - "ID\tmount ID"
+      - "INO.AVAIL\tnumber of available inodes"
+      - "INO.TOTAL\ttotal number of inodes"
+      - "INO.USED\tnumber of used inodes"
+      - "INO.USE%\tpercentage of INO.USED divided by INO.TOTAL"
+      - "LABEL\tfilesystem label"
+      - "MAJ:MIN\tmajor:minor device number"
+      - "OLD-OPTIONS\told mount options saved by --poll"
+      - "OLD-TARGET\told mountpoint saved by --poll"
+      - "OPTIONS\tall mount options"
+      - "OPT-FIELDS\toptional mount fields"
+      - "PARENT\tmount parent ID"
+      - "PARTLABEL\tpartition label"
+      - "PARTUUID\tpartition UUID"
+      - "PASSNO\tpass number on parallel fsck(8) [fstab only]"
+      - "PROPAGATION\tVFS propagation flags"
+      - "SIZE\tfilesystem size"
+      - "SOURCE\tsource device"
+      - "SOURCES\tall possible source devices"
+      - "TARGET\tmountpoint"
+      - "TID\ttask ID"
+      - "USED\tfilesystem size used"
+      - "USE%\tfilesystem use percentage"
+      - "UUID\tfilesystem UUID"
+      - "VFS-OPTIONS\tVFS specific mount options"
+      - $list(,)

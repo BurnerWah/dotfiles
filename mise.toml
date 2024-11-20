@@ -4,6 +4,7 @@ lefthook = "latest"
 ruff = "latest"
 ruby = "latest"
 "ubi:VorpalBlade/chezmoi_modify_manager" = "latest"
+taplo = "latest"
 
 # This task could be removed once there's a URL I can feasibly use for Lima's Schema
 [tasks."generate:lima-schema"]

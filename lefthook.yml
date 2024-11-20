@@ -38,7 +38,7 @@ pre-commit:
       stage_fixed: true
 
     taplo:
-      run: taplo format {staged_files}
+      run: mise x -- taplo format {staged_files}
       glob: '*.toml'
       exclude: symlink_*
       stage_fixed: true

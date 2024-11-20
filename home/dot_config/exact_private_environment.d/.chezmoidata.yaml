@@ -46,7 +46,8 @@ settings:
       # MACHINE_STORAGE_PATH: $XDG_DATA_HOME/docker-machine
 
       # Flyctl
-      FLY_CONFIG_DIR: $XDG_CONFIG_HOME/fly
+      # Most of the "config" folder is logs
+      FLY_CONFIG_DIR: $XDG_DATA_HOME/fly
 
       # GnuPG
       GNUPGHOME: $XDG_DATA_HOME/gnupg

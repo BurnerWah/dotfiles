@@ -52,7 +52,7 @@ brew "fastfetch" if OS.mac? # better neofetch
 brew "fd" if OS.mac? # find alternative
 brew "ffmpeg" if OS.mac?
 brew "fish" if OS.mac?
-brew "flyctl"
+brew "flyctl" if OS.mac?
 brew "fossil" if OS.mac? # version control
 brew "fx" if OS.mac? # JSON viewer
 brew "fzf" if OS.mac?
@@ -81,7 +81,7 @@ brew "iproute2mac" if OS.mac?
 brew "jc" if OS.mac? # JSON parser for various CLIs
 brew "jdupes" if OS.mac? # duplicate file finder
 brew "jq" if OS.mac? # JSON manipulator
-brew "kind" # Kubernetes in Docker
+brew "kind" if OS.mac? # Kubernetes in Docker
 brew "kondo" # Disk cleanup tool for coding
 brew "lazygit" # Git terminal UI
 brew "lefthook" if OS.mac? # Git hooks manager
@@ -96,7 +96,7 @@ brew "macos-trash" if OS.mac? # trash CLI
 brew "mas" if OS.mac? # Mac App Store CLI
 brew "mercurial" if OS.mac? # version control
 brew "microsocks" if OS.linux? # SOCKS5 proxy
-brew "minikube"
+brew "minikube" if OS.mac?
 brew "miniserve" # file server
 brew "mise" if OS.mac? # really good version manager
 brew "most" if OS.mac? # another pager, handles manpages well
@@ -120,12 +120,11 @@ brew "shadowenv" # directory-specific env vars
 brew "starship" if OS.mac? # prompt for fish & zsh
 brew "svgo" if OS.mac? # SVG optimizer
 brew "syncthing" if OS.mac?
-brew "taplo"
 brew "texinfo" if OS.mac?
 brew "tlrc" # fast tldr page viewer
 brew "tokei" if OS.mac? # count lines of code
 brew "util-linux" if OS.mac? # subset of the util-linux commands for mac OS
-brew "uv" # Python package manager
+brew "uv" if OS.mac? # Python package manager
 brew "vhs" if OS.mac? # terminal recorder
 brew "viu" # terminal image viewer
 brew "vivid" # LS_COLORS generator
