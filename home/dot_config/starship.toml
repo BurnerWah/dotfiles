@@ -47,6 +47,11 @@ format = "[$symbol($version )]($style)"
 # nf-custom-c
 symbol = " "
 
+[cmake]
+symbol = " "
+version_format = "${raw}"
+format = "[$symbol($version )]($style)"
+
 [conda]
 # nf-fa-circle_o
 symbol = " "
@@ -57,6 +62,9 @@ symbol = " "
 version_format = "${raw}"
 detect_files = ["shard.yml", ".crystal-version"]
 format = "[$symbol($version )]($style)"
+
+[daml]
+disabled = true
 
 [dart]
 # nf-dev-dart - not very clear at term size
@@ -120,15 +128,22 @@ symbol = " "
 [git_metrics]
 disabled = false
 
+[gleam]
+symbol = " "
+version_format = "${raw}"
+format = "[$symbol($version )]($style)"
+
 [golang]
 # nf-seti-go - not very clear at term size
 symbol = " "
 version_format = "${raw}"
-format = "[$symbol($version )]($style)"
+format = "[$symbol($version )($mod_version )]($style)"
 
 [gradle]
 # nf-seti-gradle
 symbol = " "
+version_format = "${raw}"
+format = "[$symbol($version )]($style)"
 
 [guix_shell]
 # nf-linux-gnu_guix
@@ -141,6 +156,13 @@ symbol = " "
 [haxe]
 # nf-seti-haxe
 symbol = " "
+version_format = "${raw}"
+format = "[$symbol($version )]($style)"
+
+[helm]
+symbol = " "
+version_format = "${raw}"
+format = "[$symbol($version )]($style)"
 
 [hostname]
 ssh_symbol = " "
@@ -164,14 +186,20 @@ detect_files = [
   ".sdkmanrc",
   "mvnvm.properties", # From mise plugin
 ]
+version_format = "${raw}"
+format = "[$symbol($version )]($style)"
 
 [julia]
 # nf-seti-julia
 symbol = " "
+version_format = "${raw}"
+format = "[$symbol($version )]($style)"
 
 [kotlin]
 # nf-seti-kotlin - all the kotlin icons look the same
 symbol = " "
+version_format = "${raw}"
+format = "[$symbol($version )]($style)"
 
 [kubernetes]
 # nf-md-kubernetes - the only kubernetes icon
@@ -272,8 +300,18 @@ detect_files = [
 ]
 format = "[$symbol($version )]($style)"
 
+[php]
+symbol = " "
+version_format = "${raw}"
+format = "[$symbol($version )]($style)"
+
 [pijul_channel]
 symbol = " "
+
+[purescript]
+symbol = " "
+version_format = "${raw}"
+format = "[$symbol($version )]($style)"
 
 [python]
 # nf-fae-python - biggest python icon
@@ -293,9 +331,21 @@ detect_files = [
 ]
 format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
 
+[raku]
+symbol = " "
+version_format = "${raw}"
+format = "[$symbol($version-$vm_version )]($style)"
+
+[red]
+symbol = "󰔶 "
+version_format = "${raw}"
+format = "[$symbol($version )]($style)"
+
 [rlang]
 # nf-seti-r - slightly bigger than nf-md-language_r
 symbol = " "
+version_format = "${raw}"
+format = "[$symbol($version )]($style)"
 
 [ruby]
 # nf-md-language_ruby - biggest ruby icon
@@ -329,8 +379,21 @@ format = "[$symbol($version )]($style)"
 symbol = "󱁢 "
 detect_files = [".terraform-version", ".packer-version"]
 
+[typst]
+symbol = " "
+version_format = "${raw}"
+format = "[$symbol($version )]($style)"
+
 [username]
 show_always = true
+
+[vagrant]
+symbol = " "
+
+[vlang]
+symbol = " "
+version_format = "${raw}"
+format = "[$symbol($version )]($style)"
 
 [zig]
 # nf-seti-zig - the only zig icon
