@@ -154,7 +154,7 @@ cask_args require_sha: true
 cask "1password", greedy: true if OS.mac?
 cask "1password-cli" if OS.mac?
 cask "apparency" if OS.mac? # inspects app bundles + quicklook extension
-cask "aqua", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
+cask "aqua", args: { no_binaries: true } if OS.mac?
 cask "blender" if OS.mac?
 cask "bluebubbles" if OS.mac? # iMessage server
 cask "bootstrap-studio" if OS.mac?
