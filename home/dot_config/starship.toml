@@ -124,6 +124,8 @@ symbol = "󱇶 "
 
 [git_branch]
 symbol = " "
+style = "fg:#c5a4f2 bg:#212121"
+format = "[[](#212121)$symbol$branch(:$remote_branch)]($style)[](#212121) "
 
 [git_metrics]
 disabled = false
