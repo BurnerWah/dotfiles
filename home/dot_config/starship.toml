@@ -84,8 +84,9 @@ fish_style_pwd_dir_length = 1
 truncation_symbol = '…/'
 
 [docker_context]
-# nf-linux-docker
-symbol = " "
+symbol = "󰡨 "
+style = "bold fg:#2496ed bg:#1a3955"
+format = "[[](#1a3955)$symbol$context]($style)[](#1a3955) "
 
 [dotnet]
 symbol = " "
