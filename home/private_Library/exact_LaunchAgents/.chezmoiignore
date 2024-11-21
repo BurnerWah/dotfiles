@@ -1,5 +1,6 @@
 com.github.domt4.homebrew-autoupdate.plist
 com.lwouis.alt-tab-macos.plist
+homebrew.mxcl.atuin.plist
 homebrew.mxcl.dura.plist
 homebrew.mxcl.postgresql@*.plist
 homebrew.mxcl.pueue.plist
