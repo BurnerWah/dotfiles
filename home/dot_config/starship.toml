@@ -41,7 +41,8 @@ symbol = " "
 [bun]
 symbol = " "
 version_format = "${raw}"
-format = "[$symbol($version )]($style)"
+style = "bold fg:#f452ac bg:#2d1120"
+format = "[[](#2d1120)$symbol($version)]($style)[](#2d1120) "
 
 [c]
 # nf-custom-c
@@ -87,10 +88,10 @@ truncation_symbol = '…/'
 symbol = " "
 
 [dotnet]
-# nf-md-dot_net
-symbol = "󰪮 "
+symbol = " "
 version_format = "${raw}"
-format = "[$symbol($version )(󰓾 $tfm )]($style)"
+style = "bold fg:#3287c4 bg:#0e0e0e"
+format = "[[](#0e0e0e)$symbol($version)( 󰓾 $tfm)]($style)[](#0e0e0e) "
 
 [elixir]
 # nf-fae-drop
@@ -139,7 +140,8 @@ format = "[$symbol($version )]($style)"
 # nf-seti-go - not very clear at term size
 symbol = " "
 version_format = "${raw}"
-format = "[$symbol($version )($mod_version )]($style)"
+style = "bold fg:#72d5f9 bg:#144454"
+format = "[[](#144454)$symbol($version)( $mod_version)]($style)[](#144454) "
 
 [gradle]
 # nf-seti-gradle
@@ -208,10 +210,10 @@ format = "[$symbol($version )]($style)"
 symbol = "󱃾 "
 
 [lua]
-# nf-seti-lua - looks slightly better than nf-md-language_lua
 symbol = " "
 version_format = "${major}.${minor}"
-format = "[$symbol($version )]($style)"
+style = "bold fg:#bbc2ff bg:#211a65"
+format = "[[](#211a65)$symbol($version)]($style)[](#211a65) "
 detect_files = [".lua-version", "!systemctl"]
 
 [memory_usage]
@@ -229,11 +231,10 @@ disabled = true
 disabled = true
 
 [nodejs]
-# nf-md-nodejs
 symbol = "󰎙 "
-style = "bold bright-green"
+style = "bold fg:#42e66c bg:#00430d"
 version_format = "${major}"
-format = "[$symbol($version )($engines_version )]($style)"
+format = "[[](#00430d)$symbol($version( $engines_version))]($style)[](#00430d) "
 
 [ocaml]
 # nf-seti-ocaml - the only ocaml icon
@@ -318,7 +319,6 @@ version_format = "${raw}"
 format = "[$symbol($version )]($style)"
 
 [python]
-# nf-fae-python - biggest python icon
 symbol = " "
 version_format = "${major}.${minor}"
 detect_files = [
@@ -334,7 +334,8 @@ detect_files = [
   "!brew",            # Don't show in brew prefix
   "!systemctl",       # Don't show in /usr/bin
 ]
-format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+style = "bold fg:#e4f34a bg:#3d420d"
+format = '[[](#3d420d)${symbol}${pyenv_prefix}(${version})( \($virtualenv\))]($style)[](#3d420d) '
 
 [raku]
 symbol = " "
@@ -353,16 +354,17 @@ version_format = "${raw}"
 format = "[$symbol($version )]($style)"
 
 [ruby]
-# nf-md-language_ruby - biggest ruby icon
 symbol = "󰴭 "
 version_format = "${raw}"
 detect_variables = ["RUBY_VERSION", "RBENV_VERSION", "MISE_RUBY_VERSION"]
-format = "[$symbol($version )]($style)"
+style = "bold fg:#e64747 bg:#2f0c0b"
+format = "[[](#2f0c0b)$symbol($version)]($style)[](#2f0c0b) "
 
 [rust]
 symbol = " "
 version_format = "${raw}"
-format = "[$symbol($version )]($style)"
+style = "bold fg:#f19e2e bg:#2e1b10"
+format = "[[](#2e1b10)$symbol($version)]($style)[](#2e1b10) "
 
 [scala]
 disabled = true
@@ -374,10 +376,10 @@ disabled = true
 disabled = true
 
 [swift]
-# nf-seti-swift - bigger than nf-dev-swift, looks the same as nf-md-language_swift
 symbol = " "
 version_format = "${raw}"
-format = "[$symbol($version )]($style)"
+style = "bold fg:#f05237 bg:#190806"
+format = "[[](#190806)$symbol($version)]($style)[](#190806) "
 
 [terraform]
 # nf-md-terraform
