@@ -3,7 +3,6 @@ tap "homebrew/autoupdate" if OS.mac?
 tap "homebrew/aliases"
 tap "homebrew/bundle"
 tap "homebrew/command-not-found" if OS.mac?
-tap "homebrew/linux-fonts" if OS.linux?
 tap "homebrew/services"
 tap "buo/cask-upgrade" if OS.mac?
 tap "rsteube/tap"
