@@ -9,6 +9,7 @@ set -eufo pipefail
   "/usr/local/bin"
   "/home/linuxbrew/.linuxbrew/bin"
   (joinPath .chezmoi.homeDir ".linuxbrew/bin")
+  (joinPath .chezmoi.homeDir ".local/share/homebrew")
   (joinPath .chezmoi.homeDir ".var/lib/homebrew/bin") -}}
 {{ $Brew := findExecutable "brew" $Prefixes -}}
 {{ if $Brew -}}
