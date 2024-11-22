@@ -2,8 +2,10 @@
 /.semgrep
 /1Password
 /background
+/BraveSoftware
 /btop
 /chezmoi
+/chromium
 /configstore
 /Cypress
 /dconf
@@ -15,6 +17,9 @@
 /gnome-initial-setup-done
 /gnome-session
 /goa-1.0
+/google-chrome
+/google-chrome-beta
+/google-chrome-unstable
 /gsconnect
 /ibus
 /iterm2
@@ -22,6 +27,7 @@
 /jgit
 /libvirt
 /menus
+/microsoft-edge-dev
 /monitors.xml*
 /MusicBrainz
 /ookla
@@ -33,6 +39,8 @@
 /systemd/user/*.wants
 /toolbox
 /user-share
+/vivaldi
+/vivaldi-snapshot
 /zap
 
 {{- if ne .chezmoi.os "linux" }}
