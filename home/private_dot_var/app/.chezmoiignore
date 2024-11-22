@@ -1,7 +1,20 @@
 /*
 
 !/com.visualstudio.code
-!/com.visualstudio.code-oss
 
-*/cache
 */.ld.so
+*/.local
+*/cache
+*/config/atuin
+*/config/carapace
+*/config/containers
+*/config/docker
+*/config/fish
+*/config/git
+*/config/gtk-3.0
+*/config/npm
+*/config/TabNine
+*/config/user-dirs.dirs
+*/config/vivid
+*/config/vscode-sqltools
+*/data
