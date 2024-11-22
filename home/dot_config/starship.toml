@@ -214,7 +214,8 @@ symbol = " "
 version_format = "${major}.${minor}"
 style = "bold fg:#bbc2ff bg:#211a65"
 format = "[[](#211a65)$symbol($version)]($style)[](#211a65) "
-detect_files = [".lua-version", "!systemctl"]
+detect_files = [".lua-version", ".luarc.json", "!systemctl"]
+detect_extensions = ["lua", "rockspec"]
 
 [memory_usage]
 # nf-md-memory
