@@ -1,0 +1,235 @@
+# Initially based on https://github.com/eza-community/eza-themes/blob/main/themes/default.yml
+colourful: true
+
+filekinds:
+  normal: { foreground: Default }
+  directory: { foreground: Blue, is_bold: true }
+  symlink: { foreground: Cyan }
+  pipe: { foreground: Yellow }
+  block_device: { foreground: Yellow, is_bold: true }
+  char_device: { foreground: Yellow, is_bold: true }
+  socket: { foreground: Red, is_bold: true }
+  special: { foreground: Yellow }
+  executable: { foreground: Green, is_bold: true }
+  mount_point: { foreground: Blue, is_bold: true, is_underlined: true }
+
+perms:
+  user_read: { foreground: Yellow, is_bold: true }
+  user_write: { foreground: Red, is_bold: true }
+  user_execute_file: { foreground: Green, is_bold: true, is_underlined: true }
+  user_execute_other: { foreground: Green, is_bold: true }
+  group_read: { foreground: Yellow }
+  group_write: { foreground: Red }
+  group_execute: { foreground: Green }
+  other_read: { foreground: Yellow }
+  other_write: { foreground: Red }
+  other_execute: { foreground: Green }
+  special_user_file: { foreground: Purple }
+  special_other: { foreground: Purple }
+  attribute: { foreground: Default }
+
+size:
+  major: { foreground: Green, is_bold: true }
+  minor: { foreground: Green }
+  number_byte: { foreground: Green, is_bold: true }
+  number_kilo: { foreground: Green, is_bold: true }
+  number_mega: { foreground: Green, is_bold: true }
+  number_giga: { foreground: Green, is_bold: true }
+  number_huge: { foreground: Green, is_bold: true }
+  unit_byte: { foreground: Green }
+  unit_kilo: { foreground: Green }
+  unit_mega: { foreground: Green }
+  unit_giga: { foreground: Green }
+  unit_huge: { foreground: Green }
+
+users:
+  user_you: { foreground: Yellow, is_bold: true }
+  user_root: { foreground: Default }
+  user_other: { foreground: Default }
+  group_yours: { foreground: Yellow, is_bold: true }
+  group_other: { foreground: Default }
+  group_root: { foreground: Default }
+
+links:
+  normal: { foreground: Red, is_bold: true }
+  multi_link_file: { foreground: Red, background: Yellow }
+
+git:
+  new: { foreground: Green }
+  modified: { foreground: Blue }
+  deleted: { foreground: Red }
+  renamed: { foreground: Yellow }
+  typechange: { foreground: Purple }
+  ignored: { foreground: Default, is_dimmed: true }
+  conflicted: { foreground: Red }
+
+git_repo:
+  branch_main: { foreground: Green }
+  branch_other: { foreground: Yellow }
+  git_clean: { foreground: Green }
+  git_dirty: { foreground: Yellow }
+
+security_context:
+  colon: { foreground: Default, is_dimmed: true }
+  user: { foreground: Blue }
+  role: { foreground: Green }
+  typ: { foreground: Yellow }
+  range: { foreground: Cyan }
+
+file_type:
+  image: { foreground: Purple }
+  video: { foreground: Purple, is_bold: true }
+  music: { foreground: Cyan }
+  lossless: { foreground: Cyan, is_bold: true }
+  crypto: { foreground: Green, is_bold: true }
+  document: { foreground: Green }
+  compressed: { foreground: Red }
+  temp: { foreground: White }
+  compiled: { foreground: Yellow }
+  build: { foreground: Yellow, is_bold: true, is_underlined: true }
+  source: { foreground: Yellow, is_bold: true }
+
+punctuation: { foreground: DarkGray, is_bold: true }
+date: { foreground: Blue }
+inode: { foreground: Purple }
+blocks: { foreground: Cyan }
+header: { foreground: Default, is_underlined: true }
+octal: { foreground: Purple }
+flags: { foreground: Default }
+
+symlink_path: { foreground: Cyan }
+control_char: { foreground: Red }
+broken_symlink: { foreground: Red }
+broken_path_overlay: { foreground: Default, is_underlined: true }
+
+extensions: # Custom extension-based overrides
+  astro: &astro { icon: { glyph:  } }
+  babelrc: &babelrc { icon: { glyph:  } }
+  dds: { icon: { glyph: 󰔌 } }
+  elv: { icon: { glyph: 󱆃 } }
+  prettierrc: &prettierrc { icon: { glyph:  } }
+  rbi: { icon: { glyph:  } }
+  rockspec: { icon: { glyph:  } }
+  sqlite: { icon: { glyph: 󰆼 } }
+  stylelintrc: &stylelintrc { icon: { glyph:  } }
+  sublime-syntax: { icon: { glyph:  } }
+  timer: { icon: { glyph: 󱎫 } }
+
+filenames: # Custom filename-based overrides
+  .1password: { icon: { glyph: 󰢁 } }
+  .babelrc.js: *babelrc
+  .babelrc.json: *babelrc
+  .circleci: { icon: { glyph:  } }
+  .codeclimate.yml: { icon: { glyph:  } }
+  .codecov.yml: { icon: { glyph:  } }
+  .editorconfig: { icon: { glyph:  } }
+  .flatpak-helper: { icon: { glyph:  } }
+  .flatpak: { icon: { glyph:  } }
+  .lua-format: { icon: { glyph:  } }
+  .luacheckrc: { icon: { glyph:  } }
+  .luarc.json: { icon: { glyph:  } }
+  .prettierignore: *prettierrc
+  .prettierrc.cjs: *prettierrc
+  .prettierrc.js: *prettierrc
+  .prettierrc.json5: *prettierrc
+  .prettierrc.json: *prettierrc
+  .prettierrc.mjs: *prettierrc
+  .prettierrc.toml: *prettierrc
+  .prettierrc.yaml: *prettierrc
+  .prettierrc.yml: *prettierrc
+  .python-version: { icon: { glyph:  } }
+  .ruby-version: { icon: { glyph:  } }
+  .snapshots: { icon: { glyph: 󰁯 } }
+  .stylelintrc.cjs: *stylelintrc
+  .stylelintrc.js: *stylelintrc
+  .stylelintrc.json: *stylelintrc
+  .stylelintrc.mjs: *stylelintrc
+  .stylelintrc.yaml: *stylelintrc
+  .stylelintrc.yml: *stylelintrc
+  .stylua.toml: { icon: { glyph:  } }
+  .styluaignore: { icon: { glyph:  } }
+  .vscode: { icon: { glyph:  } }
+  Brewfile: { icon: { glyph:  } }
+  Documents: { icon: { glyph: 󰲂 } }
+  Gemfile: { icon: { glyph:  } }
+  OneDrive: { icon: { glyph: 󰏊 } }
+  Public: { icon: { glyph: 󰉙 } }
+  Vaults: { icon: { glyph: 󰉐 } }
+  astro.config.cjs: *astro
+  astro.config.js: *astro
+  astro.config.mjs: *astro
+  astro.config.ts: *astro
+  azure-pipelines.yml: { icon: { glyph:  } }
+  babel.config.js: *babelrc
+  babel.config.json: *babelrc
+  bun.lockb: { icon: { glyph:  } }
+  cypress.config.cjs: { icon: { glyph:  } }
+  cypress.config.js: { icon: { glyph:  } }
+  cypress.config.mjs: { icon: { glyph:  } }
+  cypress.config.ts: { icon: { glyph:  } }
+  cypress.json: { icon: { glyph:  } }
+  deno.json: { icon: { glyph:  } }
+  deno.lock: { icon: { glyph:  } }
+  dependabot.yml: { icon: { glyph:  } }
+  docker.sock: { icon: { glyph: 󰡨 } }
+  eslint.config.cjs: { icon: { glyph:  } }
+  eslint.config.cts: { icon: { glyph:  } }
+  eslint.config.js: { icon: { glyph:  } }
+  eslint.config.mjs: { icon: { glyph:  } }
+  eslint.config.mts: { icon: { glyph:  } }
+  eslint.config.ts: { icon: { glyph:  } }
+  fedora-release: { icon: { glyph:  } }
+  fish_history: { icon: { glyph:  } }
+  fly.toml: { icon: { glyph:  } }
+  gitconfig: { icon: { glyph:  } }
+  jest.config.cjs: { icon: { glyph:  } }
+  jest.config.js: { icon: { glyph:  } }
+  jest.config.json: { icon: { glyph:  } }
+  jest.config.mjs: { icon: { glyph:  } }
+  jest.config.ts: { icon: { glyph:  } }
+  netlify.toml: { icon: { glyph:  } }
+  next.config.js: { icon: { glyph:  } }
+  next.config.mjs: { icon: { glyph:  } }
+  next.config.ts: { icon: { glyph:  } }
+  nuxt.config.js: { icon: { glyph: 󱄆 } }
+  nuxt.config.ts: { icon: { glyph: 󱄆 } }
+  playwright.config.js: { icon: { glyph:  } }
+  playwright.config.ts: { icon: { glyph:  } }
+  pnpm-lock.yaml: { icon: { glyph:  } }
+  pnpm-workspace.yaml: { icon: { glyph:  } }
+  podman.sock: { icon: { glyph:  } }
+  poetry.lock: { icon: { glyph:  } }
+  prettier.config.cjs: *prettierrc
+  prettier.config.js: *prettierrc
+  prettier.config.mjs: *prettierrc
+  proc: { icon: { glyph:  } }
+  rollup.config.js: { icon: { glyph:  } }
+  rollup.config.mjs: { icon: { glyph:  } }
+  rollup.config.ts: { icon: { glyph:  } }
+  selene.toml: { icon: { glyph:  } }
+  stylelint.config.cjs: *stylelintrc
+  stylelint.config.js: *stylelintrc
+  stylelint.config.mjs: *stylelintrc
+  stylua.toml: { icon: { glyph:  } }
+  svelte.config.js: { icon: { glyph:  } }
+  tailwind.config.cjs: { icon: { glyph: 󱏿 } }
+  tailwind.config.js: { icon: { glyph: 󱏿 } }
+  tailwind.config.mjs: { icon: { glyph: 󱏿 } }
+  tailwind.config.ts: { icon: { glyph: 󱏿 } }
+  torrc: { icon: { glyph:  } }
+  torsocks.conf: { icon: { glyph:  } }
+  tsconfig.json: { icon: { glyph:  } }
+  vimrc: { icon: { glyph:  } }
+  virc: { icon: { glyph:  } }
+  vite.config.js: { icon: { glyph:  } }
+  vite.config.mjs: { icon: { glyph:  } }
+  vite.config.ts: { icon: { glyph:  } }
+  vitest.config.js: { icon: { glyph:  } }
+  vitest.config.mjs: { icon: { glyph:  } }
+  vitest.config.ts: { icon: { glyph:  } }
+  wayland-0: { icon: { glyph:  } }
+  webpack.config.babel.js: { icon: { glyph: 󰜫 } }
+  webpack.config.cjs: { icon: { glyph: 󰜫 } }
+  webpack.config.coffee: { icon: { glyph: 󰜫 } }
+  webpack.config.ts: { icon: { glyph: 󰜫 } }
+  wrangler.toml: { icon: { glyph:  } }
