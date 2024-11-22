@@ -9,7 +9,7 @@ pre-commit:
 
     gitleaks:
       # Based on the pre-commit hook
-      run: mise run pre-commit:gitleaks
+      run: mise x -- gitleaks git --no-banner --pre-commit --redact --staged --verbose
 
     prettier:
       run: npx prettier --write {staged_files}

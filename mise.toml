@@ -15,7 +15,3 @@ description = "Apply dotfiles"
 [tasks."generate:lima-schema"]
 run = "limactl generate-jsonschema > schemas/vendor/lima.json"
 description = "Generate JSON schema for lima.yaml files"
-
-[tasks."pre-commit:gitleaks"]
-run = "gitleaks git --no-banner --pre-commit --redact --staged --verbose"
-description = "Scan a commit for secrets"
