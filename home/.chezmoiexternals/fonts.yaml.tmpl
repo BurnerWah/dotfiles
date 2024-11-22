@@ -1,14 +1,13 @@
 # {{ if eq .chezmoi.os "linux" }}
-# {{ $nerdFontsVersion := "3.3.0" }}
 
 # Refresh periods are very long in this. This is both because some things are
 # manually updated, and because fonts just don't require frequent updates.
 
 .local/share/fonts/nerd-font-symbols:
   type: archive
-  url: 'https://github.com/ryanoasis/nerd-fonts/releases/download/v{{ $nerdFontsVersion }}/NerdFontsSymbolsOnly.zip'
+  url: 'https://github.com/ryanoasis/nerd-fonts/releases/latest/download/NerdFontsSymbolsOnly.zip'
   exact: true
-  refreshPeriod: 8766h
+  refreshPeriod: 336h
   include: ['*.ttf', '*.otf']
 
 # This one *could* be done with automatic updates, but the monaspace repo is really big
