@@ -234,6 +234,7 @@ programming:
         - .prettierignore
         - .rgignore
         - .tfignore
+        - .styluaignore
 
     build:
       cmake:
@@ -265,7 +266,7 @@ programming:
       python: [.flake8]
       cxx: [.clang-format, .uncrustify.cfg]
       javascript: [.prettierrc]
-      lua: [.stylua.toml, .lua-format]
+      lua: [.stylua.toml, .lua-format, .luacheckrc, .busted]
       rust: [rustfmt.toml]
 
     editors:
