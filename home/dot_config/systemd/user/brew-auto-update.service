@@ -4,11 +4,11 @@ After=network.target
 
 [Service]
 Type=oneshot
-ExecStart=%h/.var/lib/homebrew/bin/brew update --auto-update
+ExecStart=%D/homebrew/bin/brew update --auto-update
 
-Environment=HOMEBREW_PREFIX=%h/.var/lib/homebrew
-Environment=HOMEBREW_CELLAR=%h/.var/lib/homebrew/Cellar
-Environment=HOMEBREW_REPOSITORY=%h/.var/lib/homebrew
+Environment=HOMEBREW_PREFIX=%D/homebrew
+Environment=HOMEBREW_CELLAR=%D/homebrew/Cellar
+Environment=HOMEBREW_REPOSITORY=%D/homebrew
 
 Environment=HOMEBREW_NO_INSECURE_REDIRECT=1
 

@@ -4,7 +4,7 @@ Requires=atuin.socket
 After=atuin.socket
 
 [Service]
-ExecStart=%h/.local/bin/atuin daemon
+ExecStart=%D/homebrew/bin/atuin daemon
 
 # Resource limits
 TasksMax=32
@@ -16,7 +16,7 @@ ConfigurationDirectoryMode=0700
 
 ReadWritePaths=%D/atuin
 # This needs to change if my homebrew setup changes
-ReadOnlyPaths=%h/.var/lib/homebrew
+ReadOnlyPaths=%D/homebrew
 
 # Exposure level: 2.7 (systemd 256)
 
