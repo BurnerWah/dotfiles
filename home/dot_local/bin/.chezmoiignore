@@ -8,39 +8,19 @@
 /postybirb-plus
 
 {{- if ne .chezmoi.os "linux" }}
-/1password
-/blender
-/clion
 /code
-/datagrip
 /dig
 /ffplay
 /ffprobe
-/firefox
-/fly
-/gimp
-/gnome-maps
-/goland
 /host
-/idea
-/inkscape
 /ipcalc
 /nslookup
-/obs
 /op-ssh-sign
 /patch
-/phpstorm
-/picard
 /ping
-/pycharm
-/rider
-/rubymine
 /strings
 /tesseract
 /trash
-/vlc
-/waterfox
-/webstorm
 /whois
 /yt-dlp
 {{- end }}
