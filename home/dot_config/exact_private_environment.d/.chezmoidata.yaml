@@ -140,6 +140,7 @@ settings:
       # Path
       PATH:
         - $XDG_DATA_HOME/mise/shims
+        - ${AQUA_ROOT_DIR:-$XDG_DATA_HOME/aquaproj-aqua}/bin
         # Usually stuff that needs to shadow ~/.local/bin or something else,
         # but starting to be less needed
         # - $XDG_DATA_HOME/wrappers/bin
