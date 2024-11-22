@@ -8,7 +8,7 @@ settings:
       # Ansible
       ANSIBLE_HOME: $XDG_CONFIG_HOME/ansible
       ANSIBLE_CONFIG: $XDG_CONFIG_HOME/ansible.cfg
-      ANSIBLE_GALAXY_CACHE_DIR: $XDG_CACHE_HOME/ansible/galaxy_cache
+      # ANSIBLE_GALAXY_CACHE_DIR: $XDG_CACHE_HOME/ansible/galaxy_cache
 
       # Bundler
       BUNDLE_USER_CACHE: $XDG_CACHE_HOME/bundle
@@ -36,7 +36,7 @@ settings:
       # Arch wiki suggests setting this directly to $XDG_CONFIG_HOME, while I
       # was previously using $XDG_DATA_HOME/conan. I'll use this until I
       # remember what files conan even generates.
-      CONAN_USER_HOME: $XDG_CONFIG_HOME/conan
+      # CONAN_USER_HOME: $XDG_CONFIG_HOME/conan
 
       # CMake
       CMAKE_GENERATOR: Ninja
@@ -70,8 +70,8 @@ settings:
       MYPY_CACHE_DIR: $XDG_CACHE_HOME/mypy
 
       # Node.js
-      NODE_REPL_HISTORY: ${XDG_STATE_HOME:-$XDG_CACHE_HOME}/node_repl_history
-      TS_NODE_HISTORY: ${XDG_STATE_HOME:-$XDG_CACHE_HOME}/ts_node_repl_history
+      # NODE_REPL_HISTORY: $XDG_CACHE_HOME/node_repl_history
+      # TS_NODE_HISTORY: $XDG_CACHE_HOME/ts_node_repl_history
       COREPACK_HOME: $XDG_CACHE_HOME/corepack # dunno what this is anymore
       # npm edits the config file for auth, so this lets me separate auth from the config
       # NPM_CONFIG_GLOBALCONFIG: $XDG_CONFIG_HOME/npm/npmrc
@@ -101,20 +101,20 @@ settings:
       RUSTUP_HOME: $XDG_DATA_HOME/rustup
 
       # sccache
-      SCCACHE_CACHE_SIZE: 5G
+      # SCCACHE_CACHE_SIZE: 5G
 
       # sigstore (gitsign, cosign)
       TUF_DIR: $XDG_DATA_HOME/sigstore/root
 
       # SQLite
-      SQLITE_HISTORY: ${XDG_STATE_HOME:-$XDG_CACHE_HOME}/sqlite_history
+      # SQLITE_HISTORY: $XDG_CACHE_HOME/sqlite_history
 
       # ncurses
-      TERMINFO: $XDG_DATA_HOME/terminfo
-      TERMINFO_DIRS:
-        - $XDG_DATA_HOME/terminfo
-        - /usr/local/share/terminfo
-        - /usr/share/terminfo
+      # TERMINFO: $XDG_DATA_HOME/terminfo
+      # TERMINFO_DIRS:
+      #   - $XDG_DATA_HOME/terminfo
+      #   - /usr/local/share/terminfo
+      #   - /usr/share/terminfo
 
       # TeX Live
       # TEXMFHOME: $XDG_DATA_HOME/texmf
@@ -139,7 +139,7 @@ settings:
 
       # Path
       PATH:
-        - $XDG_DATA_HOME/mise/shims
+        - ${MISE_DATA_DIR:-$XDG_DATA_HOME/mise}/shims
         - ${AQUA_ROOT_DIR:-$XDG_DATA_HOME/aquaproj-aqua}/bin
         # Usually stuff that needs to shadow ~/.local/bin or something else,
         # but starting to be less needed
