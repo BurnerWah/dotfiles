@@ -6,9 +6,9 @@ GEM
       thor
       tilt
     logger (1.6.1)
-    ostruct (0.6.0)
+    ostruct (0.6.1)
     prettier_print (1.2.1)
-    rbs (3.5.3)
+    rbs (3.6.1)
       logger
     syntax_tree (6.2.0)
       prettier_print (>= 1.2.0)
