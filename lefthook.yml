@@ -12,26 +12,8 @@ pre-commit:
       run: mise x -- gitleaks git --no-banner --pre-commit --redact --staged --verbose
 
     prettier:
-      run: npx prettier --write {staged_files}
-      glob: '*.{css,md,html,json,jsonc,code-snippets}'
-      exclude: symlink_*
-      stage_fixed: true
-
-    prettier-ruby:
-      run: npx prettier --write {staged_files}
-      glob: '{*.rb,Gemfile,Rakefile,Brewfile}'
-      exclude: symlink_*
-      stage_fixed: true
-
-    prettier-xml:
-      run: npx prettier --write {staged_files}
-      glob: '*.{xml,plist}{,.tmpl}'
-      exclude: symlink_*
-      stage_fixed: true
-
-    prettier-yaml:
-      run: npx prettier --write {staged_files}
-      glob: '*.{yml,yaml}{,.tmpl}'
+      run: npx prettier --write --cache --ignore-unknown {staged_files}
+      glob: '{*.{css,md,html,json,jsonc,code-snippets,rb,{xml,plist,yml,yaml}{,.tmpl}},Gemfile,Rakefile,Brewfile}'
       exclude: symlink_*
       stage_fixed: true
 
@@ -42,7 +24,7 @@ pre-commit:
       stage_fixed: true
 
     stylua:
-      run: mise x -- stylua {staged_files}
+      run: mise x -- stylua --respect-ignores {staged_files}
       glob: '*.lua'
       exclude: symlink_*
       stage_fixed: true
