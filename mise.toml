@@ -11,7 +11,54 @@ gitleaks = "latest"
 run = "chezmoi apply"
 description = "Apply dotfiles"
 
+[tasks.format]
+depends = ["format:*"]
+description = "Format code"
+
+# Need to figure out how to add fish_indent to this, preferably in a way where
+# fish doesn't need to be installed.
+
+[tasks."format:prettier"]
+run = "npx prettier --write --cache --ignore-unknown ."
+description = "Format code with Prettier"
+
+[tasks."format:ruff"]
+run = "ruff format"
+description = "Format Python code with Ruff"
+
+[tasks."format:stylua"]
+run = "stylua --respect-ignores ."
+description = "Format Lua code with StyLua"
+
+[tasks."format:taplo"]
+run = "taplo format"
+description = "Format TOML files with Taplo"
+
 # This task could be removed once there's a URL I can feasibly use for Lima's Schema
 [tasks."generate:lima-schema"]
 run = "limactl generate-jsonschema > schemas/vendor/lima.json"
 description = "Generate JSON schema for lima.yaml files"
+
+[tasks.lint]
+depends = ["lint:*"]
+description = "Lint code"
+
+[tasks."lint:gitleaks"]
+run = "gitleaks git --no-banner"
+description = "Check git repo for secrets"
+
+[tasks."lint:prettier"]
+run = "npx prettier --check --cache --ignore-unknown ."
+description = "Lint code formatting with Prettier"
+
+[tasks."lint:ruff"]
+run = "ruff check"
+description = "Lint Python code with Ruff"
+
+[tasks."lint:taplo"]
+run = "taplo lint"
+description = "Format TOML files with Taplo"
+
+[tasks."update:nvim-plugins"]
+run = 'nvim --headless "+Lazy! sync" +qa'
+description = "Update neovim plugins"
