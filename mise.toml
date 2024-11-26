@@ -59,6 +59,10 @@ description = "Lint Python code with Ruff"
 run = "taplo lint"
 description = "Format TOML files with Taplo"
 
+[tasks."update:corepack"]
+run = "corepack up"
+description = "Update NPM project's packageManager"
+
 [tasks."update:nvim-plugins"]
 run = 'nvim --headless "+Lazy! sync" +qa'
 description = "Update neovim plugins"
