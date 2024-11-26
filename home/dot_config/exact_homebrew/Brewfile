@@ -22,7 +22,6 @@ brew "bash-completion" if OS.mac?
 brew "bat" if OS.mac? # cat alternative
 brew "bingrep"
 brew "binwalk" if OS.mac?
-brew "biome"
 brew "bkt" # CLI output caching tool
 brew "blueutil" if OS.mac? # bluetooth util, used by a raycast extension
 brew "bottom" # system monitor
