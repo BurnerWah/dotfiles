@@ -16,6 +16,8 @@ pre-commit:
       glob: '{*.{css,md,html,json,jsonc,code-snippets,rb,{xml,plist,yml,yaml}{,.tmpl}},Gemfile,Rakefile,Brewfile}'
       exclude: symlink_*
       stage_fixed: true
+      env:
+        NODE_NO_WARNINGS: '1' # Suppress warnings from npx
 
     ruff:
       run: mise x -- ruff format {staged_files}

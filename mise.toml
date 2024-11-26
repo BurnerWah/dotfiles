@@ -21,6 +21,8 @@ description = "Format code"
 [tasks."format:prettier"]
 run = "npx prettier --write --cache --ignore-unknown ."
 description = "Format code with Prettier"
+# Suppress warnings from npx
+env = { NODE_NO_WARNINGS = "1" }
 
 [tasks."format:ruff"]
 run = "ruff format"
@@ -50,6 +52,8 @@ description = "Check git repo for secrets"
 [tasks."lint:prettier"]
 run = "npx prettier --check --cache --ignore-unknown ."
 description = "Lint code formatting with Prettier"
+# Suppress warnings from npx
+env = { NODE_NO_WARNINGS = "1" }
 
 [tasks."lint:ruff"]
 run = "ruff check"
