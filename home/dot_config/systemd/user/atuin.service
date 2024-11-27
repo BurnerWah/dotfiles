@@ -4,7 +4,7 @@ Requires=atuin.socket
 After=atuin.socket
 
 [Service]
-ExecStart=%D/homebrew/bin/atuin daemon
+ExecStart=%D/homebrew/opt/atuin/bin/atuin daemon
 
 # Resource limits
 TasksMax=32
@@ -16,7 +16,34 @@ ConfigurationDirectoryMode=0700
 
 ReadWritePaths=%D/atuin
 # This needs to change if my homebrew setup changes
-ReadOnlyPaths=%D/homebrew
+ReadOnlyPaths=%D/homebrew/opt/atuin
+ReadOnlyPaths=%D/homebrew/Cellar/atuin
+
+TemporaryFileSystem=%E
+TemporaryFileSystem=%C
+
+InaccessiblePaths=%D/Trash
+InaccessiblePaths=%D/evolution
+InaccessiblePaths=%D/gnome-remote-desktop
+InaccessiblePaths=%D/gnupg
+InaccessiblePaths=%D/gvfs-metadata
+InaccessiblePaths=%D/keyrings
+InaccessiblePaths=%D/minikube
+InaccessiblePaths=%h/.1password
+InaccessiblePaths=%h/.ssh
+InaccessiblePaths=%h/.var
+InaccessiblePaths=%h/Applications
+InaccessiblePaths=%h/Documents
+InaccessiblePaths=%h/Downloads
+InaccessiblePaths=%h/Pictures
+InaccessiblePaths=%h/Projects
+InaccessiblePaths=%h/Vaults
+InaccessiblePaths=%h/Videos
+InaccessiblePaths=%t/doc
+InaccessiblePaths=%t/fakehome
+InaccessiblePaths=%t/gvfs
+InaccessiblePaths=/boot
+
 
 # Exposure level: 2.7 (systemd 256)
 
