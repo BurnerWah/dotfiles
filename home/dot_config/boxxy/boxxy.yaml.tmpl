@@ -1,12 +1,13 @@
 rules:
+  # {{ $fakehome := joinPath (env "XDG_RUNTIME_DIR") "fakehome" }}
   - name: Fake home directory
     target: '~'
-    rewrite: /run/user/1000/fakehome
+    rewrite: '{{ $fakehome }}'
 
   - name: Redirect ~/.degit to ~/.cache/degit
-    target: /run/user/1000/fakehome/.degit
+    target: '{{ joinPath $fakehome ".degit" }}'
     rewrite: ~/.cache/degit
 
   - name: Redirect ~/.giget to ~/.cache/giget
-    target: /run/user/1000/fakehome/.giget
+    target: '{{ joinPath $fakehome ".giget" }}'
     rewrite: ~/.cache/giget
