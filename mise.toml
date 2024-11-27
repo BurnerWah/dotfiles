@@ -59,6 +59,10 @@ env = { NODE_NO_WARNINGS = "1" }
 run = "ruff check"
 description = "Lint Python code with Ruff"
 
+[tasks."lint:stylua"]
+run = "stylua --respect-ignores --check ."
+description = "Lint Lua code formatting with StyLua"
+
 [tasks."lint:taplo"]
 run = "taplo lint"
 description = "Format TOML files with Taplo"
