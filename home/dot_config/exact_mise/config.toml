@@ -3,20 +3,7 @@ experimental = true
 paranoid = false
 not_found_auto_install = false
 go_default_packages_file = "~/.config/mise/default-go-packages"
-disable_tools = [
-  "alias",
-  "asdf-plugin-manager",
-  "batect",
-  "bin",
-  "container-diff",
-  "nim",
-  "ollama",
-  "rome",
-  "solidity",
-  "tool-versions-to-env",
-  "wasmer",
-  "youtube-dl",
-]
+disable_tools = ["nim", "ollama", "solidity", "wasmer"]
 disable_hints = ["python_precompiled", "registry"]
 
 [settings.ruby]
@@ -37,5 +24,5 @@ bun = true
 [tools]
 cargo-binstall = "latest"
 ubi = "latest"
-"ubi:VorpalBlade/chezmoi_modify_manager" = "latest"
 bun = "latest"
+"ubi:VorpalBlade/chezmoi_modify_manager" = "latest"
