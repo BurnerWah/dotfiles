@@ -1,0 +1,33 @@
+# These are incomplete
+name: run0
+description: Elevate privileges interactively
+
+parsing: non-interspersed
+
+flags:
+  -h, --help: Show this help
+  -V, --version: Show package version
+  --no-ask-password: Do not prompt for password
+  --machine=: Operate on local container
+  --unit=: Run under the specified unit name
+  --property=: Set service or scope unit property
+  --description=: Description for unit
+  --slice=: Run in the specified slice
+  --slice-inherit: Inherit the slice
+  -u, --user=: Run as system user
+  -g, --group=: Run as system group
+  --nice=: Nice level
+  -D, --chdir=: Set working directory
+  --setenv=: Set environment variable
+  --background=: Set ANSI color for background
+
+completion:
+  positionalany: [$carapace.bridge.CarapaceBin]
+  flag:
+    # unit: [$carapace.tools.systemctl.Units]
+    property: [$carapace.tools.systemctl.Properties]
+    slice:
+      - $(systemctl list-units --type slice --output json | jq -r '.[] | [(.unit | rtrimstr(".slice")), .description] | join("\t")')
+    user: [$carapace.os.Users]
+    group: [$carapace.os.Groups]
+    chdir: [$directories]
