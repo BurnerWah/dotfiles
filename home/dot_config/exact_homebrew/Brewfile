@@ -31,6 +31,7 @@ brew "bzip3" if OS.mac? # compression tool, also in Fedora repos
 brew "chezmoi"
 brew "cloudflared" if OS.mac?
 brew "colima" if OS.mac? # Container runtime
+brew "cosign"
 brew "dark-mode" if OS.mac? # macOS dark mode toggle
 brew "dasel" if OS.linux? # JQ for more stuff
 brew "ddgr" if OS.mac? # DuckDuckGo search
@@ -114,6 +115,7 @@ brew "rename" if OS.mac? # rename files
 brew "ripgrep" if OS.mac? # grep alternative
 brew "rustup" if OS.mac?
 brew "shadowenv" # directory-specific env vars
+brew "slsa-verifier"
 brew "starship" if OS.mac? # prompt for fish & zsh
 brew "svgo" if OS.mac? # SVG optimizer
 brew "syncthing" if OS.mac?
