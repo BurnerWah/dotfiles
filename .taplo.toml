@@ -1,6 +1,6 @@
 # If this file isn't named .taplo.toml, VSCode will get confused
 
-exclude = ["**/symlink_*"]
+exclude = ["**/symlink_*", "tmp/**"]
 
 [[rule]]
 include = [
