@@ -12,6 +12,7 @@ tap "powershell/tap" if OS.mac?
 # Packages
 brew "age" if OS.mac? # encryption tool
 brew "age-plugin-yubikey" if OS.mac?
+brew "aliae"
 brew "ansible" if OS.mac?
 brew "ansible-lint" if OS.mac?
 brew "as-tree"
