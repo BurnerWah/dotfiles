@@ -16,6 +16,3 @@
 
     - name: Print package manager
       ansible.builtin.debug: { var: ansible_pkg_mgr }
-
-    - name: Print all variables
-      ansible.builtin.debug: { var: vars }
