@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# lazy-lock hash: {{ include "dot_config/exact_nvim/lazy-lock.json" | sha256sum }}
+if command -v nvim >/dev/null 2>&1; then
+  nvim --headless "+Lazy! restore" +qa
+fi
