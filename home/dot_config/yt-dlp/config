@@ -5,4 +5,6 @@
 --no-mtime
 --embed-metadata
 --xattrs
-# vim:ft=argfile
+
+# Mullvad Proxy
+--proxy socks5://10.64.0.1:1080/
