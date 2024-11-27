@@ -1,3 +1,3 @@
-if (( $+commands[zoxide] )); then
-    eval "$(zoxide init zsh)"
+if (( $+commands[shadowenv] )); then
+    eval "$(shadowenv init zsh)"
 fi
