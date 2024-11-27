@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# user tempfiles hashes: {{ range (glob (joinPath .xdg.config "user-tmpfiles.d/*.conf")) }}
+# user tempfiles hashes: {{ range (glob (joinPath .chezmoi.sourceDir "dot_config/exact_user-tmpfiles.d/*.conf")) }}
 #   {{ . }}: {{ include . | sha256sum }} {{ end }}
 
 systemd-tmpfiles --user --create
