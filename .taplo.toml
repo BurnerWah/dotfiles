@@ -3,7 +3,12 @@
 exclude = ["**/symlink_*"]
 
 [[rule]]
-include = ["home/dot_config/exact_mise/config.*", "mise.toml", "mise.*.toml"]
+include = [
+  "home/dot_config/exact_mise/config.*",
+  "home/private_dot_var/app/*/config/exact_mise/config.*",
+  "mise.toml",
+  "mise.*.toml",
+]
 schema.path = "https://mise.jdx.dev/schema/mise.json"
 
 [[rule]]
