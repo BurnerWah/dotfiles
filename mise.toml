@@ -10,6 +10,7 @@ gitleaks = "latest"
 [tasks.apply]
 run = "chezmoi apply"
 description = "Apply dotfiles"
+wait_for = ["format:*"]
 
 [tasks.format]
 depends = ["format:*"]
@@ -74,3 +75,4 @@ description = "Update NPM project's packageManager"
 [tasks."update:nvim-plugins"]
 run = 'nvim --headless "+Lazy! sync" +qa'
 description = "Update neovim plugins"
+wait_for = ["apply"]
