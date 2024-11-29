@@ -1,0 +1,2 @@
+#compdef tailscale
+source <(tailscale completion zsh)

@@ -1,0 +1,2 @@
+#compdef uvx
+source <(uvx --generate-shell-completion zsh)

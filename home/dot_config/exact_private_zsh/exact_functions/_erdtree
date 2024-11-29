@@ -1,0 +1,2 @@
+#compdef erd
+source <(erd --completions zsh)

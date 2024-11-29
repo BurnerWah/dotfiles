@@ -1,0 +1,2 @@
+#compdef uv
+source <(uv generate-shell-completion zsh)

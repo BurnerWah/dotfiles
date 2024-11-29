@@ -1,0 +1,2 @@
+#compdef ruff
+source <(ruff generate-shell-completion zsh)
