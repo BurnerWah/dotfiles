@@ -7,6 +7,7 @@ settings:
         erd: erd --completions elvish
         kondo: kondo --completions elvish
         miniserve: miniserve --print-completions elvish
+        pixi: pixi completion --shell elvish
         ruff: ruff generate-shell-completion elvish
         uv: uv generate-shell-completion elvish
         uvx: uvx --generate-shell-completion elvish
@@ -17,6 +18,7 @@ settings:
         erd: erd --completions powershell
         kondo: kondo --completions powershell
         miniserve: miniserve --print-completions powershell
+        pixi: pixi completion --shell powershell
         ruff: ruff generate-shell-completion powershell
         tailscale: tailscale completion powershell
         uv: uv generate-shell-completion powershell
