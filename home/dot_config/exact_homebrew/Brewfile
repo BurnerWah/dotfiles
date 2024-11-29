@@ -8,6 +8,7 @@ tap "buo/cask-upgrade" if OS.mac?
 tap "rsteube/tap"
 tap "egoist/tap"
 tap "powershell/tap" if OS.mac?
+tap "aquaproj/aqua"
 
 # Packages
 brew "age" if OS.mac? # encryption tool
@@ -140,6 +141,7 @@ brew "zenith" # Another htop thing
 brew "zoxide" if OS.mac? # directory jumping
 brew "zstd" if OS.mac?
 
+brew "aquaproj/aqua/aqua"
 brew "egoist/tap/dum" # fast npm script runner
 brew "rsteube/tap/carapace" # completions
 brew "rsteube/tap/carapace-bridge" # useful for testing stuff in carapace
@@ -217,7 +219,6 @@ mas "Amphetamine", id: 937_984_704 if OS.mac? # Keep mac awake
 mas "BrightIntosh", id: 6_452_471_855 if OS.mac? # Higher brightness
 mas "DaVinci Resolve", id: 571_213_070 if OS.mac?
 mas "Dropover", id: 1_355_679_052 if OS.mac? # Drag and drop manager
-mas "iBar", id: 6_443_843_900 if OS.mac? # Menu bar manager
 mas "Ivory", id: 6_444_602_274 if OS.mac? # Mastodon client
 mas "Keynote", id: 409_183_694 if OS.mac?
 mas "Numbers", id: 409_203_825 if OS.mac?
