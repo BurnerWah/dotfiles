@@ -29,6 +29,7 @@ fpath=(
     $fpath
     "$ZDOTDIR/functions"
     "/opt/homebrew/share/zsh/site-functions"
+    "$ZDOTDIR/functions/fallback" # Fallbacks, mostly for completion
 )
 
 autoload -Uz compinit
