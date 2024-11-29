@@ -6,6 +6,8 @@ settings:
         chezmoi_modify_manager: chezmoi_modify_manager --bpaf-complete-style-elvish
         erd: erd --completions elvish
         kondo: kondo --completions elvish
+        miniserve: miniserve --print-completions elvish
         ruff: ruff generate-shell-completion elvish
         uv: uv generate-shell-completion elvish
         uvx: uvx --generate-shell-completion elvish
+        vrc-get: vrc-get completion elvish
