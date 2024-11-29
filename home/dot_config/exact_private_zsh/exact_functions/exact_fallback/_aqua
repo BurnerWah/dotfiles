@@ -1,0 +1,2 @@
+#compdef aqua
+source <(aqua completion zsh)
