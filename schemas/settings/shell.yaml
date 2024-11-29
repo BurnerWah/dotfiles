@@ -35,6 +35,13 @@ $defs:
     properties:
       abbrev: { $ref: '#/$defs/Abbrev' }
 
+  ShellPwsh:
+    description: PowerShell settings
+    type: object
+    additionalProperties: false
+    properties:
+      completers: { $ref: '#/$defs/Completers' }
+
   ShellZsh:
     description: Zsh settings
     type: object
@@ -49,4 +56,5 @@ properties:
   common: { $ref: '#/$defs/ShellCommon' }
   elvish: { $ref: '#/$defs/ShellElvish' }
   fish: { $ref: '#/$defs/ShellFish' }
+  pwsh: { $ref: '#/$defs/ShellPwsh' }
   zsh: { $ref: '#/$defs/ShellZsh' }
