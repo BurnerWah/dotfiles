@@ -29,8 +29,18 @@ $defs:
     properties:
       abbrev: { $ref: '#/$defs/Abbrev' }
 
+  ShellZsh:
+    description: Zsh settings
+    type: object
+    additionalProperties: false
+    properties:
+      carapace:
+        type: array
+        description: Commands to complete with Carapace
+
 additionalProperties: false
 properties:
   common: { $ref: '#/$defs/ShellCommon' }
   elvish: { $ref: '#/$defs/ShellElvish' }
   fish: { $ref: '#/$defs/ShellFish' }
+  zsh: { $ref: '#/$defs/ShellZsh' }

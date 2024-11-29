@@ -12,7 +12,6 @@
         mise
         iterm2
         shadowenv
-        carapace
         starship
         thefuck
     )
