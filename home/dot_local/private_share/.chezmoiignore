@@ -1,3 +1,4 @@
+/aquaproj-aqua
 /atuin
 /bun
 /charm
@@ -32,7 +33,6 @@
 /org.gnome.NautilusPreviewer
 /pki
 /pnpm
-/powershell
 /recently-used.xbel
 /systemd
 /Trash
@@ -54,4 +54,5 @@
 
 {{- if eq .chezmoi.os "windows" }}
 /gnupg
+/powershell
 {{- end }}
