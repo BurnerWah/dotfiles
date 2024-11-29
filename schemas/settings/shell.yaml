@@ -8,6 +8,11 @@ $defs:
     type: object
     additionalProperties: { type: string }
 
+  Completers:
+    description: Commands used to generate completions
+    type: object
+    additionalProperties: { type: string }
+
   ShellCommon:
     description: Common shell settings
     type: object
@@ -21,6 +26,7 @@ $defs:
     additionalProperties: false
     properties:
       abbrev: { $ref: '#/$defs/Abbrev' }
+      completers: { $ref: '#/$defs/Completers' }
 
   ShellFish:
     description: Fish settings
