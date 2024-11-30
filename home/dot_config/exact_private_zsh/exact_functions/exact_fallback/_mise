@@ -1,0 +1,2 @@
+#compdef mise
+source <(mise completion zsh)

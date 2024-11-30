@@ -1,0 +1,2 @@
+#compdef chezmoi_modify_manager
+source <(chezmoi_modify_manager --bpaf-complete-style-zsh)
