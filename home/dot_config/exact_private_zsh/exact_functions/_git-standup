@@ -1,0 +1,3 @@
+#compdef git-standup
+#description Recall the commit history
+source <(carapace git-standup zsh)

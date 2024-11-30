@@ -1,0 +1,2 @@
+#compdef cargo-clippy
+source <(carapace cargo-clippy zsh)

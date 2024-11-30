@@ -1,0 +1,2 @@
+#compdef cargo-upgrade
+source <(carapace cargo-upgrade zsh)

@@ -1,0 +1,3 @@
+#compdef git-browse
+#description Opens the current git repository website in your default web browser
+source <(carapace git-browse zsh)

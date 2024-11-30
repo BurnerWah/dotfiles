@@ -1,0 +1,2 @@
+#compdef cargo-rm
+source <(carapace cargo-rm zsh)

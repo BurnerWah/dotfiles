@@ -1,0 +1,3 @@
+#compdef git-browse-ci
+#description Opens the current git repository CI page in your default web browser
+source <(carapace git-browse-ci zsh)

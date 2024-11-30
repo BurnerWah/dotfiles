@@ -1,0 +1,2 @@
+#compdef cargo-set-version
+source <(carapace cargo-set-version zsh)

@@ -1,0 +1,3 @@
+#compdef git-clang-format
+#description run clang-format on lines that differ
+source <(carapace git-clang-format zsh)

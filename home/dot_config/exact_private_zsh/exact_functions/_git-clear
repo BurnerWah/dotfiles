@@ -1,0 +1,3 @@
+#compdef git-clear
+#description Rigorously clean up a repository
+source <(carapace git-clear zsh)

@@ -1,0 +1,3 @@
+#compdef git-extras
+#description Awesome GIT utilities
+source <(carapace git-extras zsh)

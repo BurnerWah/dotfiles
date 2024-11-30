@@ -1,0 +1,3 @@
+#compdef git-abort
+#description Abort current rebase, merge or cherry-pick, without the need to find exact command in history
+source <(carapace git-abort zsh)

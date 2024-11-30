@@ -1,0 +1,3 @@
+#compdef git-authors
+#description Generate authors report
+source <(carapace git-authors zsh)

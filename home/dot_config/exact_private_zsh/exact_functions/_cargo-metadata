@@ -1,0 +1,2 @@
+#compdef cargo-metadata
+source <(carapace cargo-metadata zsh)

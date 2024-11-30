@@ -1,0 +1,3 @@
+#compdef git-info
+#description Returns information on current repository
+source <(carapace git-info zsh)

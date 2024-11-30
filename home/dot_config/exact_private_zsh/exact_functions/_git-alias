@@ -1,0 +1,3 @@
+#compdef git-alias
+#description Define, search and show aliases
+source <(carapace git-alias zsh)

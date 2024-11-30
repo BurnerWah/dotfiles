@@ -1,0 +1,3 @@
+#compdef git-coauthor
+#description Add a co-author to the last commit
+source <(carapace git-coauthor zsh)
