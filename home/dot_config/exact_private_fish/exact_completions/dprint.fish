@@ -1,0 +1,1 @@
+dprint completions fish | source

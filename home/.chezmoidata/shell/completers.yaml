@@ -2,25 +2,33 @@ settings:
   shell:
     elvish:
       completers:
+        ast-grep: ast-grep completions elvish
         atuin: atuin gen-completions --shell elvish
         chezmoi_modify_manager: chezmoi_modify_manager --bpaf-complete-style-elvish
+        dprint: dprint completions elvish
         erd: erd --completions elvish
         kondo: kondo --completions elvish
         miniserve: miniserve --print-completions elvish
+        onefetch: onefetch --generate elvish
         pixi: pixi completion --shell elvish
         ruff: ruff generate-shell-completion elvish
+        sg: sg completions elvish
         uv: uv generate-shell-completion elvish
         uvx: uvx --generate-shell-completion elvish
         vrc-get: vrc-get completion elvish
         zellij: zellij setup --generate-completion elvish
     pwsh:
       completers:
+        ast-grep: ast-grep completions powershell
         atuin: atuin gen-completions --shell powershell
+        dprint: dprint completions powershell
         erd: erd --completions powershell
         kondo: kondo --completions powershell
         miniserve: miniserve --print-completions powershell
+        onefetch: onefetch --generate powershell
         pixi: pixi completion --shell powershell
         ruff: ruff generate-shell-completion powershell
+        sg: sg completions powershell
         tailscale: tailscale completion powershell
         uv: uv generate-shell-completion powershell
         uvx: uvx --generate-shell-completion powershell

@@ -1,0 +1,2 @@
+#compdef ast-grep
+source <(ast-grep completions zsh)

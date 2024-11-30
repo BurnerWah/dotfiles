@@ -1,0 +1,2 @@
+#compdef sg
+source <(sg completions zsh)

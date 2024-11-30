@@ -1,0 +1,1 @@
+sg completions fish | source

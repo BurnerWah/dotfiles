@@ -1,0 +1,2 @@
+#compdef dprint
+source <(dprint completions zsh)
