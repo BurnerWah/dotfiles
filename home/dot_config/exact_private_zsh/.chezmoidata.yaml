@@ -12,6 +12,7 @@ settings:
         - act
         - age
         - agg
+        - aliae
         - alsamixer
         - ansible-test
         - ant
@@ -57,6 +58,7 @@ settings:
         - carapace-spec-man
         - cargo # subcommands need to be installed differently to be able to integrate with vendor completions - cargo-clippy cargo-fmt cargo-metadata cargo-rm cargo-set-version cargo-upgrade cargo-watch
         - cdebug
+        - cekit
         - cfdisk
         - changie
         - charm
@@ -100,6 +102,7 @@ settings:
         - darktable
         - darktable-cli
         - dart
+        - dasel
         - dbt
         - dc
         - dd
@@ -140,11 +143,14 @@ settings:
         - elvish
         - envsubst
         - exa
+        - exercism
         - expr
         - eza
-        - faas faas-cli
+        - faas
+        - faas-cli
         - factor
         - fakechroot
+        - fastfetch
         - fc-cache
         - fc-cat
         - fc-conflist
@@ -441,6 +447,7 @@ settings:
         - vt
         - watchgnupg
         - waypoint
+        - whalebrew
         - wine
         - wineboot
         - winepath
@@ -454,11 +461,13 @@ settings:
         - wrangler
         - xbacklight
         - xdotool
+        - xeol
         - xonsh
         - xsv
         - yay
         - yj
         - ykman
+        - yq
         - zathura
         - zig
         - zopfli

@@ -12,6 +12,7 @@ settings:
         uv: uv generate-shell-completion elvish
         uvx: uvx --generate-shell-completion elvish
         vrc-get: vrc-get completion elvish
+        zellij: zellij setup --generate-completion elvish
     pwsh:
       completers:
         atuin: atuin gen-completions --shell powershell
@@ -24,3 +25,4 @@ settings:
         uv: uv generate-shell-completion powershell
         uvx: uvx --generate-shell-completion powershell
         vrc-get: vrc-get completion powershell
+        zellij: zellij setup --generate-completion powershell

@@ -3,6 +3,7 @@
 7za: fish
 7zr: fish
 act: cobra # Probably will need a custom spec at some point
+aliae: cobra
 ansible-config: argcomplete
 ansible-console: argcomplete
 ansible-doc: argcomplete

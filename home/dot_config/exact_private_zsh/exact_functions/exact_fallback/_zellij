@@ -1,0 +1,2 @@
+#compdef zellij
+source <(zellij setup --generate-completion zsh)

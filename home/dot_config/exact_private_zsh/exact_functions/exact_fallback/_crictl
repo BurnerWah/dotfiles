@@ -1,0 +1,2 @@
+#compdef crictl
+source <(crictl completion zsh)
