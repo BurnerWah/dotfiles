@@ -14,3 +14,9 @@ schema.path = "https://mise.jdx.dev/schema/mise.json"
 [[rule]]
 include = ["home/dot_config/bottom/*"]
 schema.path = "https://github.com/ClementTsang/bottom/raw/refs/heads/main/schema/v0.10/bottom.json"
+
+[[rule]]
+include = ["**/.chezmoidata.toml", "**/.chezmoidata/**/*.toml"]
+keys = ["settings.shell.zsh"]
+# reorder arrays won't work unless you specify the parent keys, which is annoying
+formatting.reorder_arrays = true
