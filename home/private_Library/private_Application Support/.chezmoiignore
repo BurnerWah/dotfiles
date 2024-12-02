@@ -1,3 +1,4 @@
+/@bluebubbles
 /*.data
 /*.padl
 /*.spadl
@@ -12,6 +13,7 @@
 /BetterTouchTool
 /Binary Ninja
 /Blender
+/bluebubbles-server
 /Bootstrap Studio
 /bstudio
 /CallHistoryDB
@@ -40,9 +42,12 @@
 /com.raycast.macos
 /Compressor
 /ConfigurationProfiles
+/contactsd
+/ControlCenter
 /CrashReporter
 /cups
 /Cypress
+/DifferentialPrivacy
 /DiskImages
 /Dock
 /dura
@@ -59,6 +64,7 @@
 /HTTPie
 /icdd
 /iCloud
+/identityservicesd
 /iLifeMediaBrowser
 /Instruments
 /io.sentry
@@ -99,6 +105,7 @@
 /pnpm
 /Podman Desktop
 /powershell
+/privatecloudcomputed
 /ProApps
 /Signal
 /spacedrive
@@ -109,6 +116,7 @@
 /summary-events
 /Syncthing
 /TabNine
+/tipsd
 /TorBrowser-Data
 /Transmission
 /UninstallPKG

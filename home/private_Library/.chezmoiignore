@@ -1,3 +1,4 @@
+/Accessibility
 /Accounts
 /AppleMediaServices
 /Application Scripts
@@ -57,6 +58,7 @@
 /PersonalizationPortrait
 /Photos
 /Printers
+/PrivateCloudCompute
 /Python
 /Reminders
 /Safari
@@ -70,6 +72,7 @@
 /Sounds
 /Speech
 /Spelling
+/Spotlight
 /Staging
 /StatusKit
 /Stickers
