@@ -105,8 +105,10 @@ broken_path_overlay: { foreground: Default, is_underlined: true }
 extensions: # Custom extension-based overrides
   astro: &astro { icon: { glyph:  } }
   babelrc: &babelrc { icon: { glyph:  } }
+  bashrc: { icon: { glyph: 󱆃 } }
   dds: { icon: { glyph: 󰔌 } }
   elv: { icon: { glyph: 󱆃 } }
+  eslintrc: &eslintrc { icon: { glyph:  } }
   prettierrc: &prettierrc { icon: { glyph:  } }
   rbi: { icon: { glyph:  } }
   rockspec: { icon: { glyph:  } }
@@ -117,12 +119,14 @@ extensions: # Custom extension-based overrides
 
 filenames: # Custom filename-based overrides
   .1password: { icon: { glyph: 󰢁 } }
+  .android: { icon: { glyph:  } }
   .babelrc.js: *babelrc
   .babelrc.json: *babelrc
   .circleci: { icon: { glyph:  } }
   .codeclimate.yml: { icon: { glyph:  } }
   .codecov.yml: { icon: { glyph:  } }
   .editorconfig: { icon: { glyph:  } }
+  .eslintignore: *eslintrc
   .flatpak-helper: { icon: { glyph:  } }
   .flatpak: { icon: { glyph:  } }
   .lua-format: { icon: { glyph:  } }
@@ -131,8 +135,8 @@ filenames: # Custom filename-based overrides
   .prettierignore: *prettierrc
   .prettierrc.cjs: *prettierrc
   .prettierrc.js: *prettierrc
-  .prettierrc.json5: *prettierrc
   .prettierrc.json: *prettierrc
+  .prettierrc.json5: *prettierrc
   .prettierrc.mjs: *prettierrc
   .prettierrc.toml: *prettierrc
   .prettierrc.yaml: *prettierrc
@@ -149,12 +153,7 @@ filenames: # Custom filename-based overrides
   .stylua.toml: { icon: { glyph:  } }
   .styluaignore: { icon: { glyph:  } }
   .vscode: { icon: { glyph:  } }
-  Brewfile: { icon: { glyph:  } }
-  Documents: { icon: { glyph: 󰲂 } }
-  Gemfile: { icon: { glyph:  } }
-  OneDrive: { icon: { glyph: 󰏊 } }
-  Public: { icon: { glyph: 󰉙 } }
-  Vaults: { icon: { glyph: 󰉐 } }
+  ansible.cfg: { icon: { glyph:  } }
   astro.config.cjs: *astro
   astro.config.js: *astro
   astro.config.mjs: *astro
@@ -162,6 +161,7 @@ filenames: # Custom filename-based overrides
   azure-pipelines.yml: { icon: { glyph:  } }
   babel.config.js: *babelrc
   babel.config.json: *babelrc
+  Brewfile: { icon: { glyph:  } }
   bun.lockb: { icon: { glyph:  } }
   cypress.config.cjs: { icon: { glyph:  } }
   cypress.config.js: { icon: { glyph:  } }
@@ -172,27 +172,32 @@ filenames: # Custom filename-based overrides
   deno.lock: { icon: { glyph:  } }
   dependabot.yml: { icon: { glyph:  } }
   docker.sock: { icon: { glyph: 󰡨 } }
-  eslint.config.cjs: { icon: { glyph:  } }
-  eslint.config.cts: { icon: { glyph:  } }
-  eslint.config.js: { icon: { glyph:  } }
-  eslint.config.mjs: { icon: { glyph:  } }
-  eslint.config.mts: { icon: { glyph:  } }
-  eslint.config.ts: { icon: { glyph:  } }
+  Documents: { icon: { glyph: 󰲂 } }
+  eslint.config.cjs: *eslintrc
+  eslint.config.cts: *eslintrc
+  eslint.config.js: *eslintrc
+  eslint.config.mjs: *eslintrc
+  eslint.config.mts: *eslintrc
+  eslint.config.ts: *eslintrc
   fedora-release: { icon: { glyph:  } }
   fish_history: { icon: { glyph:  } }
   fly.toml: { icon: { glyph:  } }
+  Gemfile: { icon: { glyph:  } }
   gitconfig: { icon: { glyph:  } }
   jest.config.cjs: { icon: { glyph:  } }
   jest.config.js: { icon: { glyph:  } }
   jest.config.json: { icon: { glyph:  } }
   jest.config.mjs: { icon: { glyph:  } }
   jest.config.ts: { icon: { glyph:  } }
+  kritadisplayrc: { icon: { glyph:  } }
+  kritarc: { icon: { glyph:  } }
   netlify.toml: { icon: { glyph:  } }
   next.config.js: { icon: { glyph:  } }
   next.config.mjs: { icon: { glyph:  } }
   next.config.ts: { icon: { glyph:  } }
   nuxt.config.js: { icon: { glyph: 󱄆 } }
   nuxt.config.ts: { icon: { glyph: 󱄆 } }
+  OneDrive: { icon: { glyph: 󰏊 } }
   playwright.config.js: { icon: { glyph:  } }
   playwright.config.ts: { icon: { glyph:  } }
   pnpm-lock.yaml: { icon: { glyph:  } }
@@ -203,9 +208,11 @@ filenames: # Custom filename-based overrides
   prettier.config.js: *prettierrc
   prettier.config.mjs: *prettierrc
   proc: { icon: { glyph:  } }
+  Public: { icon: { glyph: 󰉙 } }
   rollup.config.js: { icon: { glyph:  } }
   rollup.config.mjs: { icon: { glyph:  } }
   rollup.config.ts: { icon: { glyph:  } }
+  rust-toolchain.toml: { icon: { glyph:  } }
   selene.toml: { icon: { glyph:  } }
   stylelint.config.cjs: *stylelintrc
   stylelint.config.js: *stylelintrc
@@ -219,6 +226,7 @@ filenames: # Custom filename-based overrides
   torrc: { icon: { glyph:  } }
   torsocks.conf: { icon: { glyph:  } }
   tsconfig.json: { icon: { glyph:  } }
+  Vaults: { icon: { glyph: 󰉐 } }
   vimrc: { icon: { glyph:  } }
   virc: { icon: { glyph:  } }
   vite.config.js: { icon: { glyph:  } }
@@ -227,6 +235,7 @@ filenames: # Custom filename-based overrides
   vitest.config.js: { icon: { glyph:  } }
   vitest.config.mjs: { icon: { glyph:  } }
   vitest.config.ts: { icon: { glyph:  } }
+  vlcrc: { icon: { glyph: 󰕼 } }
   wayland-0: { icon: { glyph:  } }
   webpack.config.babel.js: { icon: { glyph: 󰜫 } }
   webpack.config.cjs: { icon: { glyph: 󰜫 } }
