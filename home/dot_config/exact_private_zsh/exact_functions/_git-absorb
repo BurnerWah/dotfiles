@@ -1,0 +1,3 @@
+#compdef git-absorb
+#description Automatic git commit --fixup
+source <(git-absorb --gen-completions zsh)
