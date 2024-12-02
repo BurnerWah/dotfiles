@@ -331,13 +331,17 @@ version_format = "${major}.${minor}"
 detect_files = [
   "requirements.txt",
   ".python-version",
+  ".python-versions", # from mise
   "pyproject.toml",
   "Pipfile",
   "tox.ini",
   "setup.py",
   "__init__.py",
   "pixi.toml",
+  "uv.toml",
+  "uv.lock",
   ".poetry-version",  # from mise plugin
+  "poetry.lock",
   "!brew",            # Don't show in brew prefix
   "!systemctl",       # Don't show in /usr/bin
 ]
