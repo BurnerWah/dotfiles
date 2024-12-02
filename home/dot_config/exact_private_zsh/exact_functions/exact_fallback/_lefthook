@@ -1,0 +1,2 @@
+#compdef lefthook
+source <(lefthook completion zsh)

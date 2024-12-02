@@ -1,0 +1,2 @@
+#compdef folderify
+source <(folderify --completions zsh)

@@ -7,10 +7,12 @@ settings:
         chezmoi_modify_manager: chezmoi_modify_manager --bpaf-complete-style-elvish
         dprint: dprint completions elvish
         erd: erd --completions elvish
+        folderify: folderify --completions elvish
         kondo: kondo --completions elvish
         miniserve: miniserve --print-completions elvish
         onefetch: onefetch --generate elvish
         pixi: pixi completion --shell elvish
+        pueue: pueue completions elvish
         ruff: ruff generate-shell-completion elvish
         sg: sg completions elvish
         topiary: topiary completion elvish
@@ -24,10 +26,12 @@ settings:
         atuin: atuin gen-completions --shell powershell
         dprint: dprint completions powershell
         erd: erd --completions powershell
+        folderify: folderify --completions powershell
         kondo: kondo --completions powershell
         miniserve: miniserve --print-completions powershell
         onefetch: onefetch --generate powershell
         pixi: pixi completion --shell powershell
+        pueue: pueue completions power-shell
         ruff: ruff generate-shell-completion powershell
         sg: sg completions powershell
         tailscale: tailscale completion powershell

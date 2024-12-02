@@ -1,0 +1,2 @@
+#compdef incus
+source <(incus completion zsh)

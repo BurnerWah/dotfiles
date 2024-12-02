@@ -66,10 +66,12 @@ fish_key_reader: fish
 fly: cobra
 flyctl: cobra
 fs_usage: zsh
+gator: cobra
 gcloud: argcomplete
 gdbus: fish
 gh: cobra
 gio: fish
+git-lfs: cobra
 gitleaks: cobra
 gitsign: cobra
 gk: cobra
@@ -96,6 +98,8 @@ kind: cobra
 kompose: cobra
 kubectl: cobra
 kubectl.lima: cobra
+kubetail: cobra
+kustomize: cobra
 launchctl: fish
 lefthook: cobra
 legit: click
@@ -165,7 +169,9 @@ vacuumdb: zsh
 vault: complete
 vincent: carapace
 vt: cobra
+vunnel: click
 whalebrew: cobra # I don't really expect this to be getting data from docker/podman correctly. If it's not, that's a project for later
+wormhole: click
 wrangler: yargs
 xeol: cobra
 xmllint: zsh

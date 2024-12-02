@@ -1,0 +1,2 @@
+#compdef kubetail
+source <(kubetail completion zsh)

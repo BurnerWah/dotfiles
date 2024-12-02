@@ -1,0 +1,2 @@
+#compdef gum
+source <(gum completion zsh)

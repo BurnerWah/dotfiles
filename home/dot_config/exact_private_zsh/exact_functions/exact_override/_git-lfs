@@ -1,0 +1,3 @@
+#compdef git-lfs
+#description Work with large files in Git repositories
+source <(carapace git-lfs zsh)

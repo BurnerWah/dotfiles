@@ -1,0 +1,2 @@
+#compdef pueue
+source <(pueue completions zsh)
