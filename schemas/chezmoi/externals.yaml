@@ -114,7 +114,6 @@ $defs:
 
   Common:
     type: object
-    required: [url]
     properties:
       encrypted:
         type: boolean
@@ -132,6 +131,11 @@ $defs:
         type: string
         format: uri
         description: URL of external
+      urls:
+        type: array
+        items:
+          type: string
+          format: uri
       checksum:
         type: object
         properties:
