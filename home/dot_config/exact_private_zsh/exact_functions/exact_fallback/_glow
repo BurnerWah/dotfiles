@@ -1,0 +1,2 @@
+#compdef glow
+source <(glow completion zsh)

@@ -13,6 +13,7 @@ settings:
         pixi: pixi completion --shell elvish
         ruff: ruff generate-shell-completion elvish
         sg: sg completions elvish
+        topiary: topiary completion elvish
         uv: uv generate-shell-completion elvish
         uvx: uvx --generate-shell-completion elvish
         vrc-get: vrc-get completion elvish
@@ -30,6 +31,7 @@ settings:
         ruff: ruff generate-shell-completion powershell
         sg: sg completions powershell
         tailscale: tailscale completion powershell
+        topiary: topiary completion powershell
         uv: uv generate-shell-completion powershell
         uvx: uvx --generate-shell-completion powershell
         vrc-get: vrc-get completion powershell

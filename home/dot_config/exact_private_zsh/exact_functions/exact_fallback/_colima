@@ -1,0 +1,2 @@
+#compdef colima
+source <(colima completion zsh)

@@ -90,6 +90,7 @@ javadoc: zsh
 javap: zsh
 jdb: zsh
 jest: yargs # Probably will only be run with npm or something
+k9s: cobra
 keytool: zsh
 kind: cobra
 kompose: cobra
@@ -148,6 +149,7 @@ sget: cobra
 singularity: cobra
 skate: cobra # Skate doesn't say that it has any completions but it uses cobra so that's not a problem
 skopeo: cobra
+slsa-verifier: cobra
 softwareupdate: zsh
 sqlite3: zsh
 ssh-add: zsh # I'll switch this to a custom spec later

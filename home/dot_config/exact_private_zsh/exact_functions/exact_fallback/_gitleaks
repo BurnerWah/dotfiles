@@ -1,0 +1,2 @@
+#compdef gitleaks
+source <(gitleaks completion zsh)

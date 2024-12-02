@@ -1,0 +1,2 @@
+#compdef k9s
+source <(k9s completion zsh)

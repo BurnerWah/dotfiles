@@ -1,0 +1,2 @@
+#compdef topiary
+source <(topiary completion zsh)

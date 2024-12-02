@@ -1,0 +1,2 @@
+#compdef wezterm
+source <(wezterm shell-completion --shell zsh)
