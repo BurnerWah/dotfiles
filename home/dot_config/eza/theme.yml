@@ -106,9 +106,11 @@ extensions: # Custom extension-based overrides
   astro: &astro { icon: { glyph:  } }
   babelrc: &babelrc { icon: { glyph:  } }
   bashrc: { icon: { glyph: 󱆃 } }
+  cr: &crystal { icon: { glyph:  } }
   dds: { icon: { glyph: 󰔌 } }
   elv: { icon: { glyph: 󱆃 } }
   eslintrc: &eslintrc { icon: { glyph:  } }
+  icns: { icon: { glyph:  } }
   prettierrc: &prettierrc { icon: { glyph:  } }
   rbi: { icon: { glyph:  } }
   rockspec: { icon: { glyph:  } }
@@ -125,13 +127,23 @@ filenames: # Custom filename-based overrides
   .circleci: { icon: { glyph:  } }
   .codeclimate.yml: { icon: { glyph:  } }
   .codecov.yml: { icon: { glyph:  } }
+  .crystal-version: *crystal
+  .dart_tool: &dart { icon: { glyph:  } }
   .editorconfig: { icon: { glyph:  } }
   .eslintignore: *eslintrc
+  .exenv-version: { icon: { glyph:  } }
   .flatpak-helper: { icon: { glyph:  } }
   .flatpak: { icon: { glyph:  } }
+  .go-version: &golang { icon: { glyph:  } }
+  .java-version: { icon: { glyph:  } }
   .lua-format: { icon: { glyph:  } }
+  .lua-version: { icon: { glyph:  } }
   .luacheckrc: { icon: { glyph:  } }
   .luarc.json: { icon: { glyph:  } }
+  .node-version: { icon: { glyph:  } }
+  .nvmrc: { icon: { glyph:  } }
+  .packer-version: { icon: { glyph:  } }
+  .poetry-version: { icon: { glyph:  } }
   .prettierignore: *prettierrc
   .prettierrc.cjs: *prettierrc
   .prettierrc.js: *prettierrc
@@ -141,8 +153,11 @@ filenames: # Custom filename-based overrides
   .prettierrc.toml: *prettierrc
   .prettierrc.yaml: *prettierrc
   .prettierrc.yml: *prettierrc
-  .python-version: { icon: { glyph:  } }
+  .python-version: &python { icon: { glyph:  } }
+  .python-versions: *python
   .ruby-version: { icon: { glyph:  } }
+  .ruff.toml: *python
+  .sdkmanrc: { icon: { glyph:  } }
   .snapshots: { icon: { glyph: 󰁯 } }
   .stylelintrc.cjs: *stylelintrc
   .stylelintrc.js: *stylelintrc
@@ -152,6 +167,7 @@ filenames: # Custom filename-based overrides
   .stylelintrc.yml: *stylelintrc
   .stylua.toml: { icon: { glyph:  } }
   .styluaignore: { icon: { glyph:  } }
+  .terraform-version: { icon: { glyph: 󱁢 } }
   .vscode: { icon: { glyph:  } }
   ansible.cfg: { icon: { glyph:  } }
   astro.config.cjs: *astro
@@ -169,6 +185,7 @@ filenames: # Custom filename-based overrides
   cypress.config.ts: { icon: { glyph:  } }
   cypress.json: { icon: { glyph:  } }
   deno.json: { icon: { glyph:  } }
+  deno.jsonc: { icon: { glyph:  } }
   deno.lock: { icon: { glyph:  } }
   dependabot.yml: { icon: { glyph:  } }
   docker.sock: { icon: { glyph: 󰡨 } }
@@ -184,6 +201,8 @@ filenames: # Custom filename-based overrides
   fly.toml: { icon: { glyph:  } }
   Gemfile: { icon: { glyph:  } }
   gitconfig: { icon: { glyph:  } }
+  Gopkg.lock: *golang
+  Gopkg.yml: *golang
   jest.config.cjs: { icon: { glyph:  } }
   jest.config.js: { icon: { glyph:  } }
   jest.config.json: { icon: { glyph:  } }
@@ -198,6 +217,9 @@ filenames: # Custom filename-based overrides
   nuxt.config.js: { icon: { glyph: 󱄆 } }
   nuxt.config.ts: { icon: { glyph: 󱄆 } }
   OneDrive: { icon: { glyph: 󰏊 } }
+  Pipfile: *python
+  pixi.toml: *python
+  PkgInfo: { icon: { glyph:  } }
   playwright.config.js: { icon: { glyph:  } }
   playwright.config.ts: { icon: { glyph:  } }
   pnpm-lock.yaml: { icon: { glyph:  } }
@@ -209,11 +231,16 @@ filenames: # Custom filename-based overrides
   prettier.config.mjs: *prettierrc
   proc: { icon: { glyph:  } }
   Public: { icon: { glyph: 󰉙 } }
+  pubspec.lock: *dart
+  pubspec.yaml: *dart
+  pubspec.yml: *dart
   rollup.config.js: { icon: { glyph:  } }
   rollup.config.mjs: { icon: { glyph:  } }
   rollup.config.ts: { icon: { glyph:  } }
+  ruff.toml: *python
   rust-toolchain.toml: { icon: { glyph:  } }
   selene.toml: { icon: { glyph:  } }
+  shard.yml: *crystal
   stylelint.config.cjs: *stylelintrc
   stylelint.config.js: *stylelintrc
   stylelint.config.mjs: *stylelintrc
@@ -225,7 +252,10 @@ filenames: # Custom filename-based overrides
   tailwind.config.ts: { icon: { glyph: 󱏿 } }
   torrc: { icon: { glyph:  } }
   torsocks.conf: { icon: { glyph:  } }
+  tox.ini: *python
   tsconfig.json: { icon: { glyph:  } }
+  uv.lock: *python
+  uv.toml: *python
   Vaults: { icon: { glyph: 󰉐 } }
   vimrc: { icon: { glyph:  } }
   virc: { icon: { glyph:  } }
