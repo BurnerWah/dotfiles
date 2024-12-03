@@ -4,6 +4,7 @@
 7zr: fish
 act: cobra # Probably will need a custom spec at some point
 aliae: cobra
+animdl: click
 ansible-config: argcomplete
 ansible-console: argcomplete
 ansible-doc: argcomplete
@@ -31,6 +32,7 @@ carapace-spec: carapace
 carapace: carapaace
 cdebug: cobra
 cekit: click
+cf2tf: click
 changie: cobra
 chcon: zsh
 chezmoi: cobra
@@ -45,7 +47,9 @@ createdb: zsh # Fish provides built-in completions too
 crontab: zsh
 cue: cobra
 cwebp: fish
+cycode: click
 dasel: cobra
+datasette: click
 devcontainer: yargs
 devpod: cobra
 diskutil: fish
@@ -58,6 +62,7 @@ dropdb: zsh # Fish provides built-in completions too
 dscacheutil: fish
 dua: fish
 exercism: cobra
+fava: click
 fc-match: zsh # Probably will be replaced by some built-in carapace completion in the future
 ffplay: fish
 ffprobe: fish
@@ -84,6 +89,7 @@ gping: fish
 gresource: fish
 grype: cobra
 gup: cobra
+hatch: click
 hugo: cobra
 incus: cobra
 initdb: zsh
@@ -109,6 +115,8 @@ localstack: click
 mcap: cobra
 minikube: cobra
 mocha: yargs # Probably will only be run with npm or something
+molecule: click
+mycli: click
 neon: yargs # built in completion is broken but it's based on yargs
 neonctl: yargs
 nerdctl: cobra
@@ -134,7 +142,9 @@ pg_isready: zsh
 pg_restore: zsh # Fish provides built-in completions too
 pg_upgrade: zsh
 pgcli: click
+pio: click
 pipenv: click
+pipgrip: click
 podman: cobra
 podman.lima: cobra
 postgres: zsh
@@ -145,17 +155,21 @@ rakudo: fish
 rclone: cobra # the built-in fish completions for rclone are broken, and while they can be fixed, we may as well get them into carapace so they work in other shells
 reindexdb: zsh
 rekor-cli: cobra
+rich: click
 rmic: zsh
 rmid: zsh
 rmiregistry: zsh
+sail: click
 sam: click # This runs very slooooow but it's the best thing I've got so far
 serialver: zsh
 sget: cobra
+shub: click
 singularity: cobra
 skate: cobra # Skate doesn't say that it has any completions but it uses cobra so that's not a problem
 skopeo: cobra
 slsa-verifier: cobra
 softwareupdate: zsh
+sqlfluff: click
 sqlite3: zsh
 ssh-add: zsh # I'll switch this to a custom spec later
 ssh-keyscan: zsh # I'll maybe switch this to a custom spec later
@@ -165,7 +179,9 @@ system_profiler: zsh
 tmutil: fish
 tokei: fish
 toolbox: cobra
+trailscraper: click
 trivy: cobra
+uvicorn: click
 vacuumdb: zsh
 vault: complete
 vincent: carapace
