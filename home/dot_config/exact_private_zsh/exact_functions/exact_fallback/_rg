@@ -1,0 +1,2 @@
+#compdef rg
+source <(rg --generate=complete-zsh)
