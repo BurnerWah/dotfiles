@@ -1,0 +1,2 @@
+#compdef gitsign
+source <(gitsign completion zsh)

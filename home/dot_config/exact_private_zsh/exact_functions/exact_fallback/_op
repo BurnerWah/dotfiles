@@ -1,0 +1,2 @@
+#compdef op
+source <(op completion zsh)

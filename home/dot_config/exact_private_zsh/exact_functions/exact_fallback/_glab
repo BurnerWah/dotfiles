@@ -1,0 +1,2 @@
+#compdef glab
+source <(glab completion --shell zsh)

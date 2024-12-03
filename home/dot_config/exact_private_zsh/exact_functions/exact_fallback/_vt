@@ -1,0 +1,2 @@
+#compdef vt
+source <(vt completion zsh)

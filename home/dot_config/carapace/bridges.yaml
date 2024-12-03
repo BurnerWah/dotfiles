@@ -133,6 +133,7 @@ pg_dumpall: zsh # Fish provides built-in completions too
 pg_isready: zsh
 pg_restore: zsh # Fish provides built-in completions too
 pg_upgrade: zsh
+pgcli: click
 pipenv: click
 podman: cobra
 podman.lima: cobra

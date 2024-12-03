@@ -1,0 +1,2 @@
+#compdef docker-buildx
+source <(docker-buildx completion zsh)

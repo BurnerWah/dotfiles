@@ -1,0 +1,2 @@
+#compdef vhs
+source <(vhs completion zsh)

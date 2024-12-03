@@ -1,0 +1,2 @@
+#compdef watchexec
+source <(watchexec --completions zsh)

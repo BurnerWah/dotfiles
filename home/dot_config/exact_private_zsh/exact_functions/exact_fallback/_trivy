@@ -1,0 +1,2 @@
+#compdef trivy
+source <(trivy completion zsh)

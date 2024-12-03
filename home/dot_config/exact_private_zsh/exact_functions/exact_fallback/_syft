@@ -1,0 +1,2 @@
+#compdef syft
+source <(syft completion zsh)

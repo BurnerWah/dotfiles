@@ -1,0 +1,2 @@
+#compdef xeol
+source <(xeol completion zsh)

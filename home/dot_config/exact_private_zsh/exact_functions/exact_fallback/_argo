@@ -1,0 +1,2 @@
+#compdef argo
+source <(argo completion zsh)

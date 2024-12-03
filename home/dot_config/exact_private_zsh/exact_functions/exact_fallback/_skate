@@ -1,0 +1,2 @@
+#compdef skate
+source <(skate completion zsh)

@@ -473,6 +473,7 @@ carapace = [
   "pbcopy",
   "pbpaste",
   "pcmanfm",
+  "pgcli",
   "pgrep",
   "php",
   "picard",

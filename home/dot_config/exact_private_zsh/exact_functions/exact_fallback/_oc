@@ -1,0 +1,2 @@
+#compdef oc
+source <(oc completion zsh)

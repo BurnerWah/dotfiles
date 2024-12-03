@@ -1,0 +1,2 @@
+#compdef cue
+source <(cue completion zsh)

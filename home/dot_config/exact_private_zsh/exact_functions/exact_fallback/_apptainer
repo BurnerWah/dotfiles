@@ -1,0 +1,2 @@
+#compdef apptainer
+source <(apptainer completion zsh)

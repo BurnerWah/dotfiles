@@ -1,0 +1,2 @@
+#compdef starship
+source <(starship completions zsh)

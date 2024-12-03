@@ -1,0 +1,2 @@
+#compdef exercism
+source <(exercism completion zsh)
