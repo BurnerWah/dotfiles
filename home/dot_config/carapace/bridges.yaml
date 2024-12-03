@@ -4,6 +4,8 @@
 7zr: fish
 act: cobra # Probably will need a custom spec at some point
 aliae: cobra
+alsactl: fish
+amixer: fish
 animdl: click
 ansible-config: argcomplete
 ansible-console: argcomplete
@@ -20,12 +22,28 @@ apko: cobra
 appletviewer: zsh
 apptainer: cobra
 apptainer.lima: cobra
+apt-build: fish
+apt-extracttemplates: fish
+apt-ftparchive: fish
+apt-key: fish
+apt-listbugs: fish
+apt-listchanges: fish
+apt-proxy-import: fish
+apt-rdepends: fish
+apt-setup: fish
+apt-show-source: fish
+apt-sortpkgs: fish
+apt-spy: fish
+apt-src: fish
+apt-zip-inst: fish
+apt-zip-list: fish
 argo: cobra
 argocd: cobra
 az: argcomplete
 boundary: complete
 buf: cobra
 bundle: fish
+bwrap: zsh
 carapace-bridge: carapace
 carapace-spec-man: carapace
 carapace-spec: carapace
@@ -66,6 +84,8 @@ fava: click
 fc-match: zsh # Probably will be replaced by some built-in carapace completion in the future
 ffplay: fish
 ffprobe: fish
+firejail: zsh
+firewall-offline-cmd: zsh
 fish_indent: fish # could make a custom spec
 fish_key_reader: fish
 fly: cobra
@@ -90,6 +110,7 @@ gresource: fish
 grype: cobra
 gup: cobra
 hatch: click
+homectl: fish
 hugo: cobra
 incus: cobra
 initdb: zsh
@@ -99,6 +120,7 @@ javap: zsh
 jdb: zsh
 jest: yargs # Probably will only be run with npm or something
 k9s: cobra
+kernel-install: zsh
 keytool: zsh
 kind: cobra
 kompose: cobra
@@ -129,6 +151,7 @@ npq-hero: yargs # Eventually this should have a custom spec
 npq: yargs # Eventually this should have a custom spec
 oc: cobra
 oh-my-posh: cobra
+oomctl: zsh
 op: cobra
 ops: cobra # veeery slow
 orb: cobra
@@ -159,6 +182,7 @@ rich: click
 rmic: zsh
 rmid: zsh
 rmiregistry: zsh
+run0: zsh # no fish completions, but has a custom spec
 sail: click
 sam: click # This runs very slooooow but it's the best thing I've got so far
 serialver: zsh
@@ -168,6 +192,7 @@ singularity: cobra
 skate: cobra # Skate doesn't say that it has any completions but it uses cobra so that's not a problem
 skopeo: cobra
 slsa-verifier: cobra
+snapper: zsh
 softwareupdate: zsh
 sqlfluff: click
 sqlite3: zsh
@@ -176,14 +201,33 @@ ssh-keyscan: zsh # I'll maybe switch this to a custom spec later
 swiftc: zsh
 syft: cobra
 system_profiler: zsh
+systemd-ask-password: zsh
+systemd-cat: zsh
+systemd-cgls: zsh
+systemd-cgtop: zsh
+systemd-cryptenroll: fish
+systemd-delta: zsh
+systemd-detect-virt: zsh
+systemd-inhibit: zsh
+systemd-machine-id-setup: zsh
+systemd-notify: zsh
+systemd-path: zsh
+systemd-resolve: zsh
+systemd-run: zsh
+systemd-tmpfiles: zsh
+systemd-tty-ask-password-agent: zsh
 tmutil: fish
 tokei: fish
 toolbox: cobra
 trailscraper: click
 trivy: cobra
+userdbctl: fish
 uvicorn: click
 vacuumdb: zsh
+varlinkctl: zsh
 vault: complete
+VBoxHeadless: fish
+VBoxSDL: fish
 vincent: carapace
 vt: cobra
 vunnel: click
