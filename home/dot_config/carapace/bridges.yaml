@@ -1,4 +1,4 @@
-# Some of these are only here for templates to use
+# yaml-language-server: $schema=../../../schemas/carapace-bridges.yaml
 7z: fish
 7za: fish
 7zr: fish
@@ -47,7 +47,7 @@ bwrap: zsh
 carapace-bridge: carapace
 carapace-spec-man: carapace
 carapace-spec: carapace
-carapace: carapaace
+carapace: carapace
 cdebug: cobra
 cekit: click
 cf2tf: click
