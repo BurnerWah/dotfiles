@@ -35,7 +35,7 @@ provision:
     playbook: '{{ joinPath .chezmoi.targetFile ".." "playbook.yaml" }}'
 
 probes:
-  - description: ansible to be installed
+  - description: ansible
     script: |
       #!/bin/bash
       set -eux -o pipefail

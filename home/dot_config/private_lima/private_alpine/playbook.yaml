@@ -1,0 +1,24 @@
+---
+- name: Provision VM
+  hosts: all
+
+  tasks:
+    - name: Install packages
+      become: yes
+      community.general.apk:
+        name:
+          - build-base
+          - curl
+          - fish
+          - kitty-terminfo
+        state: present
+
+    # This doesn't seem to be working
+    - name: Set user's shell to fish
+      become: yes
+      ansible.builtin.user:
+        name: '{{ ansible_user_id }}'
+        shell: /usr/bin/fish
+
+    # TODO: set fish_user_paths
+    # TODO: install mise

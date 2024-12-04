@@ -1,3 +1,5 @@
+minimumLimaVersion: '1.0.2'
+
 images:
   - location: 'https://dl-cdn.alpinelinux.org/alpine/v3.20/releases/cloud/nocloud_alpine-3.20.3-x86_64-uefi-cloudinit-r0.qcow2'
     arch: 'x86_64'
@@ -27,34 +29,18 @@ provision:
     script: |
       #!/bin/bash
       set -eux -o pipefail
-      command -v curl >/dev/null 2>&1 && exit 0
-      apk add curl
-  - mode: system
+      command -v ansible >/dev/null 2>&1 && exit 0
+      apk add ansible
+
+  - mode: ansible
+    playbook: '{{ joinPath .chezmoi.targetFile ".." "playbook.yaml" }}'
+
+probes:
+  - description: ansible
     script: |
       #!/bin/bash
       set -eux -o pipefail
-      command -v fish >/dev/null 2>&1 && exit 0
-      apk add fish
-  - mode: system
-    script: |
-      #!/bin/bash
-      set -eux -o pipefail
-      apk info --installed kitty-terminfo >/dev/null 2>&1 && exit 0
-      apk add kitty-terminfo
-  - mode: system
-    script: |
-      #!/bin/bash
-      set -eux -o pipefail
-      apk info --installed build-base >/dev/null 2>&1 && exit 0
-      apk add build-base
-  - mode: user
-    script: |
-      #!/usr/bin/fish
-      if not set -q fish_user_paths
-          set -U fish_user_paths ~/.local/bin
-      end
-  - mode: user
-    script: |
-      #!/usr/bin/fish
-      test -x ~/.local/bin/mise && exit 0
-      curl -fsSL https://mise.run | sh
+      if ! timeout 30s bash -c "until command -v ansible >/dev/null 2>&1; do sleep 3; done"; then
+        echo >&2 "ansible is not installed yet"
+        exit 1
+      fi
