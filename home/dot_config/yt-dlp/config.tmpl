@@ -6,5 +6,7 @@
 --embed-metadata
 --xattrs
 
+{{- if .mullvad }}
 # Mullvad Proxy
 --proxy socks5://10.64.0.1:1080/
+{{ end }}
