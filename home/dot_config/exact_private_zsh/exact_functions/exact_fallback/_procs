@@ -1,0 +1,2 @@
+#compdef procs
+source <(procs --gen-completion-out zsh)

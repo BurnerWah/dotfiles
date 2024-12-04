@@ -1,1 +1,0 @@
-clank completions fish | source

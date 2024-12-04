@@ -4,6 +4,7 @@ settings:
       completers:
         ast-grep: ast-grep completions elvish
         atuin: atuin gen-completions --shell elvish
+        bws: bws completions elvish
         chezmoi_modify_manager: chezmoi_modify_manager --bpaf-complete-style-elvish
         dprint: dprint completions elvish
         ein: ein completions --shell elvish
@@ -17,6 +18,7 @@ settings:
         nickel: nickel gen-completions elvish
         onefetch: onefetch --generate elvish
         pixi: pixi completion --shell elvish
+        procs: procs --gen-completion-out elvish
         proto: proto completions --shell elvish
         pueue: pueue completions elvish
         py-spy: py-spy completions elvish
@@ -34,6 +36,7 @@ settings:
       completers:
         ast-grep: ast-grep completions powershell
         atuin: atuin gen-completions --shell powershell
+        bws: bws completions powershell
         dprint: dprint completions powershell
         ein: ein completions --shell powershell
         erd: erd --completions powershell
@@ -46,6 +49,7 @@ settings:
         nickel: nickel gen-completions powershell
         onefetch: onefetch --generate powershell
         pixi: pixi completion --shell powershell
+        procs: procs --gen-completion-out powershell
         proto: proto completions --shell powershell
         pueue: pueue completions power-shell
         py-spy: py-spy completions powershell

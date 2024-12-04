@@ -1,1 +1,1 @@
-distrobox.fish
+carapace.fish

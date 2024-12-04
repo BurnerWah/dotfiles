@@ -1,0 +1,2 @@
+#compdef bws
+source <(bws completions zsh)

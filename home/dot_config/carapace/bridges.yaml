@@ -55,6 +55,8 @@ argocd-vault-plugin: cobra
 argocd: cobra
 ark: fish
 arping: zsh
+as: fish
+asd: fish
 ash: zsh
 atd: fish
 atool: fish
@@ -74,6 +76,7 @@ az: argcomplete
 badblocks: fish
 barbican: zsh
 berglas: cobra
+bin: cobra
 blender: fish
 boundary: complete
 btdownloadgui: zsh
@@ -110,19 +113,26 @@ chronyc: fish
 cifsiostat: zsh
 cinder: zsh
 cjxl: fish
+clj: fish
+clojure: fish
 cloudkitty: zsh
 clusterctl: cobra
 clusterdb: zsh
 cmp: zsh
+cobra-cli: cobra
 colima: cobra
 concurrently: yargs
 cookiecutter: click
 copa: cobra # very slow
 cosign: cobra
 cpio: zsh
+crc: cobra
 createdb: zsh # Fish provides built-in completions too
 crontab: zsh
 crsh: zsh
+csc: fish
+csharp: fish
+csi: fish
 cssh: zsh
 ctags-exuberant: zsh
 ctags-universal: zsh
@@ -162,6 +172,19 @@ devcontainer: yargs
 devpod: cobra
 dhcpinfo: zsh
 diskutil: fish
+distrobox-assemble: zsh
+distrobox-create: zsh
+distrobox-enter: zsh
+distrobox-ephemeral: zsh
+distrobox-export: zsh
+distrobox-generate-entry: zsh
+distrobox-host-exec: zsh
+distrobox-init: zsh
+distrobox-list: zsh
+distrobox-rm: zsh
+distrobox-stop: zsh
+distrobox-upgrade: zsh
+distrobox: zsh
 djxl: fish
 dkms: zsh
 dm-tool: fish
@@ -257,6 +280,7 @@ grub-install: fish
 grub-mkrescue: fish
 grunt: fish
 grype: cobra
+guilt: zsh
 gup: cobra
 gx: urfavecli
 hashcat: fish
@@ -300,6 +324,7 @@ kind: cobra
 kk: cobra
 ko: cobra
 kompose: cobra
+konqueror: zsh
 konsole: fish
 kopia: kingpin
 krita: fish
@@ -318,6 +343,7 @@ litmusctl: cobra
 localstack: click
 lsattr: zsh
 lscfg: zsh
+lxc: fish
 m-a: zsh
 magnum: zsh
 manila: zsh
@@ -334,6 +360,9 @@ module-assistant: zsh
 molecule: click
 monasca: zsh
 mongocli: cobra
+mono: fish
+monodis: fish
+monop: fish
 mpstat: zsh
 murano: zsh
 mycli: click
@@ -544,4 +573,3 @@ zig: fish
 zpool: fish
 zsh: zsh # This'll probably either get replaced by a built-in carapace completer, or a custom spec
 zun: zsh
-bin: cobra

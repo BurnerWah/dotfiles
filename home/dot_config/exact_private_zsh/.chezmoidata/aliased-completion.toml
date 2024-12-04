@@ -62,8 +62,6 @@
 "org.wireshark.Wireshark" = "wireshark"
 "org.xfce.mousepad" = "mousepad"
 "pacman-color" = "pacman"
-"pacmatic" = "pacman"
 "pdfelatex" = "tex"
 "pdfetex" = "tex"
-"powerpill" = "pacman"
 "speedtest" = "speedtest-cli"
