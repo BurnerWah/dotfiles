@@ -1,0 +1,53 @@
+---
+# I would much rather just specify what paths to include than specify all these
+# paths to exclude
+exclude_paths:
+  - .*ignore
+  - .cache/
+  - .chezmoi*
+  - .gitattributes
+  - .prettierrc*
+  - .ruby-lsp/
+  - .vscode/
+  - .yamllint*
+  - '*.cfg'
+  - '*.desktop'
+  - '*.json'
+  - '*.jsonc'
+  - '*.lua'
+  - '*.md'
+  - '*.nu'
+  - '*.py'
+  - '*.tmpl'
+  - '*.toml'
+  - '*.xsh'
+  - assets/
+  - Gemfile*
+  - home/AppData/
+  - home/dot_config/bat/
+  - home/dot_config/carapace/
+  - home/dot_config/exact_*/
+  - home/dot_config/eza/
+  - home/dot_config/fd/
+  - home/dot_config/private_gh/
+  - home/dot_config/private_glab-cli/
+  - home/dot_config/private_glow/
+  - home/dot_config/private_go/
+  - home/dot_config/private_lima/_config/
+  - home/dot_config/readline/
+  - home/dot_config/silicon/
+  - home/dot_config/systemd/
+  - home/dot_config/vivid/
+  - home/dot_config/yt-dlp/
+  - home/dot_local/
+  - home/private_dot_ssh/
+  - home/private_dot_var/
+  - home/private_Library/
+  - home/readonly_Documents/
+  - lefthook.yml
+  - lima.yaml
+  - node_modules/
+  - pnpm-lock.yaml
+  - run_*
+  - schemas/
+  - symlink_*
