@@ -1,6 +1,6 @@
 ---
-# yamllint is rather... agressive with it's linting.
 extends: relaxed
+
 rules:
   document-start:
     level: warning
@@ -9,4 +9,10 @@ rules:
     level: warning
   trailing-spaces:
     level: warning
-# vim:ft=yaml
+  comments:
+    level: warning
+    min-spaces-from-content: 1 # for ansible-lint
+  octal-values:
+    level: warning
+    forbid-explicit-octal: true # for ansible-lint
+    forbid-implicit-octal: true # for ansible-lint
