@@ -1,2 +1,2 @@
-#compdef apptainer
+#compdef apptainer singularity=apptainer
 source <(apptainer completion zsh)

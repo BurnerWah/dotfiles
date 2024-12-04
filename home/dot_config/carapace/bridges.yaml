@@ -264,6 +264,7 @@ hatch: click
 hcloud: cobra
 heat: zsh
 helm_ls: cobra
+helm: cobra
 helmfile: cobra
 homectl: fish
 hotbuild: cobra
@@ -495,6 +496,7 @@ vault: complete
 VBoxHeadless: fish
 VBoxSDL: fish
 velero: cobra
+vhs: cobra
 vincent: carapace
 virtctl: cobra
 vitrage: zsh
