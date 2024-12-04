@@ -1,2 +1,0 @@
-#compdef mcap
-source <(mcap completion zsh)

@@ -1,2 +1,0 @@
-#compdef limactl
-source <(limactl completion zsh)

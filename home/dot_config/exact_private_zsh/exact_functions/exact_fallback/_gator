@@ -1,2 +1,0 @@
-#compdef gator
-source <(gator completion zsh)

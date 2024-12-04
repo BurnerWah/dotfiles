@@ -1,2 +1,0 @@
-#compdef copa
-source <(copa completion zsh)

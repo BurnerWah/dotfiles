@@ -1,2 +1,0 @@
-#compdef hugo
-source <(hugo completion zsh)

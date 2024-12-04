@@ -1,2 +1,0 @@
-#compdef istioctl
-source <(istioctl completion zsh)

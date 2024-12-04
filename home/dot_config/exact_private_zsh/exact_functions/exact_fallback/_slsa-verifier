@@ -1,2 +1,0 @@
-#compdef slsa-verifier
-source <(slsa-verifier completion zsh)

@@ -1,2 +1,0 @@
-#compdef aliae
-source <(aliae completion zsh)

@@ -1,2 +1,0 @@
-#compdef grype
-source <(grype completion zsh)

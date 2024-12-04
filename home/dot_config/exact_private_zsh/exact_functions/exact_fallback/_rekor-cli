@@ -1,2 +1,0 @@
-#compdef rekor-cli
-source <(rekor-cli completion zsh)

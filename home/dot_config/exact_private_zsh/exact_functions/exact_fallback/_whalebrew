@@ -1,2 +1,0 @@
-#compdef whalebrew
-source <(whalebrew completion zsh)

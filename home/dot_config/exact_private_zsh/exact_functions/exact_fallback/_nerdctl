@@ -1,2 +1,0 @@
-#compdef nerdctl
-source <(nerdctl completion zsh)

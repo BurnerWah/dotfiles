@@ -1,2 +1,0 @@
-#compdef kustomize
-source <(kustomize completion zsh)

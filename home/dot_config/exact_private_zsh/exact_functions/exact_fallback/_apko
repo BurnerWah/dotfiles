@@ -1,2 +1,0 @@
-#compdef apko
-source <(apko completion zsh)
