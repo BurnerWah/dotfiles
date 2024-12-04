@@ -1,0 +1,2 @@
+#compdef k3d
+source <(k3d completion zsh)
