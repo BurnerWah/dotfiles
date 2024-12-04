@@ -29,6 +29,33 @@ textconv:
     command: plutil
     args: [-convert, xml1, -o, '-', '-']
 
+# {{- /* based on twpayne/dotfiles */ -}}
+# {{- /* boolean feature tags */ -}}
+# {{- /* true if this machine is ephemeral, e.g. a cloud or VM instance */ -}}
+# {{- $ephemeral := false -}}
+# {{- /* true if this machine does not have a screen and keyboard */ -}}
+# {{- $headless := false -}}
+
+# {{- /* detect GitHub codespaces, VSCode remote containers, Docker containers, Multipass VMs, and Vagrant boxes */ -}}
+# {{- if or (env "CODESPACES") (env "REMOTE_CONTAINERS_IPC") (eq .chezmoi.username "root" "ubuntu" "vagrant" "vscode") -}}
+# {{-   $ephemeral = true -}}
+# {{-   $headless = true -}}
+# {{- end }}
+
+# TODO: prompt user to see if device is ephemeral or headless, when possible
+
+# {{- $mullvad := false -}}
+# {{- $tailscale := lookPath "tailscale" -}}
+# {{- if and (eq .chezmoi.os "darwin") (empty $tailscale) -}}
+# {{-   $tailscale = "/Applications/Tailscale.app/Contents/MacOS/Tailscale" -}}
+# {{- end -}}
+# {{- if ne .chezmoi.os "windows" -}}
+# {{-   with $CapMap := dig "Self" "CapMap" (dict) (output "sh" "-c" (printf "%s status --json || echo {}" $tailscale) | mustFromJson) -}}
+# {{-     $mullvad = hasKey $CapMap "mullvad" -}}
+# {{-   end -}}
+# {{- end }}
+# TODO: Add windows support for the mullvad flag
+
 # {{- $chassisType := "desktop" }}
 # {{- if eq .chezmoi.os "darwin" }}
 # {{-   if contains "MacBook" (output "sysctl" "-n" "hw.model") }}
@@ -52,6 +79,9 @@ textconv:
 # {{- end }}
 
 data:
+  ephemeral: # {{ $ephemeral }}
+  headless: # {{ $headless }}
+  mullvad: # {{ $mullvad }}
   xdg:
     config: '# {{ $xdgConfig }}'
     cache: '# {{ $xdgCache }}'
