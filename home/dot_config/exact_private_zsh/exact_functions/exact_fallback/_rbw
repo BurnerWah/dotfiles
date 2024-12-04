@@ -1,0 +1,2 @@
+#compdef rbw
+source <(rbw gen-completions zsh)

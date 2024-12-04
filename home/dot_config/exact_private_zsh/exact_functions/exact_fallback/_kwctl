@@ -1,0 +1,2 @@
+#compdef kwctl
+source <(kwctl completions --shell zsh)

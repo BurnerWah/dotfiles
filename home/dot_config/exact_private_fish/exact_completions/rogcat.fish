@@ -1,0 +1,1 @@
+rogcat completions fish | source

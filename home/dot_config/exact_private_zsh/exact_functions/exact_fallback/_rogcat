@@ -1,0 +1,2 @@
+#compdef rogcat
+source <(rogcat completions zsh)

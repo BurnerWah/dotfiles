@@ -1,0 +1,3 @@
+#compdef git-xargs
+#description CLI for making updates across multiple Github repositories with a single command
+source <(carapace git-xargs zsh)

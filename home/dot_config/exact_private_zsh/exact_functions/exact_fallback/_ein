@@ -1,0 +1,2 @@
+#compdef ein
+source <(ein completions --shell zsh)

@@ -1,0 +1,2 @@
+#compdef gix
+source <(gix completions --shell zsh)

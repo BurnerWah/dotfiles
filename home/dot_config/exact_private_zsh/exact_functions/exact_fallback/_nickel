@@ -1,0 +1,2 @@
+#compdef nickel
+source <(nickel gen-completions zsh)

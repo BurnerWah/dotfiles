@@ -1,0 +1,2 @@
+#compdef jc
+source <(jc --zsh-comp)

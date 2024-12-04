@@ -51,6 +51,7 @@ archlinux-java: fish
 arduino-ctags: zsh
 arepack: fish
 argo: cobra
+argocd-vault-plugin: cobra
 argocd: cobra
 ark: fish
 arping: zsh
@@ -67,10 +68,12 @@ avahi-resolve-host-name: zsh
 avahi-resolve: zsh
 avifdec: fish
 avifenc: fish
+aws-nuke: urfavecli
 axi-cache: zsh
 az: argcomplete
 badblocks: fish
 barbican: zsh
+berglas: cobra
 blender: fish
 boundary: complete
 btdownloadgui: zsh
@@ -84,15 +87,19 @@ bttrack: zsh
 buf: cobra
 bundle: fish
 bwrap: zsh
+caddy: cobra
 carapace-bridge: carapace
 carapace-spec-man: carapace
 carapace-spec: carapace
 carapace: carapace
+cartridge: cobra
 castnow: fish
 cdebug: cobra
 ceilometer: zsh
 cekit: click
 cf2tf: click
+chainloop: cobra
+chamber: cobra
 changie: cobra
 chcon: zsh
 chezmoi: cobra
@@ -104,6 +111,7 @@ cifsiostat: zsh
 cinder: zsh
 cjxl: fish
 cloudkitty: zsh
+clusterctl: cobra
 clusterdb: zsh
 cmp: zsh
 colima: cobra
@@ -119,6 +127,7 @@ cssh: zsh
 ctags-exuberant: zsh
 ctags-universal: zsh
 ctags: zsh
+ctlptl: cobra
 cue: cobra
 cupsaccept: fish
 cupsdisable: fish
@@ -132,6 +141,7 @@ cygrunsrv: zsh
 cygserver: zsh
 dasel: cobra
 dash: zsh
+dashing: urfavecli
 datasette: click
 dbus-launch: zsh
 dbus-monitor: zsh
@@ -155,6 +165,7 @@ diskutil: fish
 djxl: fish
 dkms: zsh
 dm-tool: fish
+dnscontrol: urfavecli
 docker-buildx: cobra
 docker: cobra
 docker.lima: cobra
@@ -166,12 +177,15 @@ dpkg-deb: zsh
 dpkg-query: zsh
 dpkg-repack: zsh
 dpkg-source: zsh
+draft: cobra
+driftctl: cobra
 dropdb: zsh # Fish provides built-in completions too
 dscacheutil: fish
 dua: fish
 dumper: zsh
 efibootmgr: fish
 efivar: fish
+ehco: kingpin
 eix-sync: fish
 eix: fish
 encfs: fish
@@ -183,9 +197,11 @@ erb: zsh
 eselect: fish
 exercism: cobra
 ezjail-admin: fish
+f2: urfavecli
 fastboot: fish
 fava: click
 fc-match: zsh # Probably will be replaced by some built-in carapace completion in the future
+feishu2md: urfavecli
 ffplay: fish
 ffprobe: fish
 firejail: zsh
@@ -194,6 +210,7 @@ fish_indent: fish # could make a custom spec
 fish_key_reader: fish
 flex: zsh
 flex++: zsh
+flowpipe: cobra
 fly: cobra
 flyctl: cobra
 freezer: zsh
@@ -212,6 +229,8 @@ ggv: zsh
 gh: cobra
 gio: fish
 git-lfs: cobra
+git-xargs: urfavecli
+gitlab-runner: urfavecli
 gitleaks: cobra
 gitsign: cobra
 gk: cobra
@@ -227,6 +246,8 @@ gnutls-serv: zsh
 godoc: fish
 gojq: fish
 golint: fish
+gomplate: cobra
+gopass: urfavecli
 gorename: fish
 gping: fish
 gresource: fish
@@ -237,13 +258,20 @@ grub-mkrescue: fish
 grunt: fish
 grype: cobra
 gup: cobra
+gx: urfavecli
 hashcat: fish
 hatch: click
+hcloud: cobra
 heat: zsh
+helm_ls: cobra
+helmfile: cobra
 homectl: fish
+hotbuild: cobra
 hugo: cobra
 i3-msg: fish
 incus: cobra
+influx: urfavecli
+infracost: cobra
 initdb: zsh
 iostat: zsh
 ironic: zsh
@@ -257,24 +285,35 @@ jest: yargs # Probably will only be run with npm or something
 john: fish
 k3d: cobra
 k9s: cobra
+karmadactl: cobra
+kconf: cobra
+kcptun_client: urfavecli
+kcptun_server: urfavecli
 keepassxc-cli: fish
+keploy: cobra
 kernel-install: zsh
 keybase: fish
 keystone: zsh
 keytool: zsh
 kind: cobra
+kk: cobra
+ko: cobra
 kompose: cobra
 konsole: fish
+kopia: kingpin
 krita: fish
 kubectl: cobra
 kubectl.lima: cobra
 kubetail: cobra
+kumactl: cobra
 kustomize: cobra
+kyverno: cobra
 launchctl: fish
 lefthook: cobra
 legit: click
 limactl: cobra
 litecli: click
+litmusctl: cobra
 localstack: click
 lsattr: zsh
 lscfg: zsh
@@ -293,6 +332,7 @@ mocha: yargs # Probably will only be run with npm or something
 module-assistant: zsh
 molecule: click
 monasca: zsh
+mongocli: cobra
 mpstat: zsh
 murano: zsh
 mycli: click
@@ -306,6 +346,7 @@ netctl-auto: fish
 netctl: fish
 networksetup: zsh
 neutron: zsh
+nfpm: cobra
 nodeenv: fish
 nomad: complete
 notation: cobra
@@ -319,6 +360,7 @@ ogginfo: zsh
 oh-my-posh: cobra
 oomctl: zsh
 op: cobra
+opa: cobra
 openstack: zsh
 ops: cobra # veeery slow
 optipng: fish
@@ -344,6 +386,7 @@ pidstat: zsh
 pio: click
 pipenv: click
 pipgrip: click
+pocketbase: cobra
 podman: cobra
 podman.lima: cobra
 postgres: zsh
@@ -353,6 +396,8 @@ psql: zsh
 qemu: zsh
 rakudo: fish
 rclone: cobra # the built-in fish completions for rclone are broken, and while they can be fixed, we may as well get them into carapace so they work in other shells
+regal: cobra
+regctl: cobra
 reindexdb: zsh
 rekor-cli: cobra
 rich: click
@@ -394,6 +439,7 @@ serialver: zsh
 sget: cobra
 shub: click
 singularity: cobra
+skaffold: cobra
 skate: cobra # Skate doesn't say that it has any completions but it uses cobra so that's not a problem
 skopeo: cobra
 slsa-verifier: cobra
@@ -428,6 +474,7 @@ systemd-run: zsh
 systemd-tmpfiles: zsh
 systemd-tty-ask-password-agent: zsh
 tacker: zsh
+temporal: cobra
 tmutil: fish
 tokei: fish
 toolbox: cobra
@@ -447,14 +494,18 @@ varlinkctl: zsh
 vault: complete
 VBoxHeadless: fish
 VBoxSDL: fish
+velero: cobra
 vincent: carapace
+virtctl: cobra
 vitrage: zsh
 vt: cobra
+vultr: cobra
 vunnel: click
 watcher: zsh
 wg-quick: fish
 whalebrew: cobra # I don't really expect this to be getting data from docker/podman correctly. If it's not, that's a project for later
 winemaker: fish
+witness: cobra
 wormhole: click
 wrangler: yargs
 xbps-alternatives: fish

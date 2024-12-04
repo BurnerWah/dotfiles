@@ -1,0 +1,2 @@
+#compdef railway
+source <(railway completion zsh)

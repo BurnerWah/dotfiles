@@ -6,34 +6,51 @@ settings:
         atuin: atuin gen-completions --shell elvish
         chezmoi_modify_manager: chezmoi_modify_manager --bpaf-complete-style-elvish
         dprint: dprint completions elvish
+        ein: ein completions --shell elvish
         erd: erd --completions elvish
         folderify: folderify --completions elvish
         git-absorb: git-absorb --gen-completions elvish
+        gix: gix completions --shell elvish
         kondo: kondo --completions elvish
+        kwctl: kwctl completions --shell elvish
         miniserve: miniserve --print-completions elvish
+        nickel: nickel gen-completions elvish
         onefetch: onefetch --generate elvish
         pixi: pixi completion --shell elvish
+        proto: proto completions --shell elvish
         pueue: pueue completions elvish
+        py-spy: py-spy completions elvish
+        railway: railway completion elvish
+        rbw: rbw gen-completions elvish
         ruff: ruff generate-shell-completion elvish
         sg: sg completions elvish
         topiary: topiary completion elvish
         uv: uv generate-shell-completion elvish
         uvx: uvx --generate-shell-completion elvish
         vrc-get: vrc-get completion elvish
+        yr: yr completion elvish
         zellij: zellij setup --generate-completion elvish
     pwsh:
       completers:
         ast-grep: ast-grep completions powershell
         atuin: atuin gen-completions --shell powershell
         dprint: dprint completions powershell
+        ein: ein completions --shell powershell
         erd: erd --completions powershell
         folderify: folderify --completions powershell
         git-absorb: git-absorb --gen-completions powershell
+        gix: gix completions --shell powershell
         kondo: kondo --completions powershell
+        kwctl: kwctl completions --shell powershell
         miniserve: miniserve --print-completions powershell
+        nickel: nickel gen-completions powershell
         onefetch: onefetch --generate powershell
         pixi: pixi completion --shell powershell
+        proto: proto completions --shell powershell
         pueue: pueue completions power-shell
+        py-spy: py-spy completions powershell
+        railway: railway completion powershell
+        rbw: rbw gen-completions powershell
         ruff: ruff generate-shell-completion powershell
         sg: sg completions powershell
         tailscale: tailscale completion powershell
@@ -41,4 +58,5 @@ settings:
         uv: uv generate-shell-completion powershell
         uvx: uvx --generate-shell-completion powershell
         vrc-get: vrc-get completion powershell
+        yr: yr completion powershell
         zellij: zellij setup --generate-completion powershell

@@ -1,0 +1,2 @@
+#compdef py-spy
+source <(py-spy completions zsh)

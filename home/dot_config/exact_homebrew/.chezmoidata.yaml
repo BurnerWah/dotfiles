@@ -128,7 +128,9 @@ settings:
         - caracal # cryptocurrency
         - chainhook
         - chatblade # ai
+        - circumflex # orange site
         - clarinet # cryptocurrency
+        - cog # ai
         - cointop
         - cortexso # ai
         - crytic-compile # cryptocurrency, leaf dependency
@@ -170,6 +172,7 @@ settings:
         - tdlib # telegram
         - teku # cryptocurrency
         - telegram-downloader # telegram
+        - tendermint # cryptocurrency
         - trezor-agent # cryptocurrency
         - trezor-bridge # cryptocurrency
         - truffle # cryptocurrency

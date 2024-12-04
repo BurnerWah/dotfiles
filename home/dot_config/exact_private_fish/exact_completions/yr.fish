@@ -1,0 +1,1 @@
+yr completion fish | source

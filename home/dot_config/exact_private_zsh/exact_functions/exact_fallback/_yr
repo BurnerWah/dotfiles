@@ -1,0 +1,2 @@
+#compdef yr
+source <(yr completion zsh)

@@ -1,0 +1,2 @@
+#compdef proto
+source <(proto completions --shell zsh)
