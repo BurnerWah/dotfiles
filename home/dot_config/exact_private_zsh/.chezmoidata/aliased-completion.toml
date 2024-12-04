@@ -1,4 +1,4 @@
-[settings.shell.zsh.completion_aliases]
+[settings.shell.zsh.compsys.aliases]
 "bb-wrapper" = "pacman"
 "brew.linuxbrew" = "brew"
 "brz" = "bzr"

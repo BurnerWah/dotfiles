@@ -1,4 +1,4 @@
-[settings.shell.zsh]
+[settings.shell.zsh.compsys]
 # This *should* be a list, but it works fine if there are spaces in it,
 # so multiple commands can be defined on each line.
 # I'm not doing that though, since the code gets messier
