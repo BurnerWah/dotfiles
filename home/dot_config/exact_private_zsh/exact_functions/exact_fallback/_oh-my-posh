@@ -1,2 +1,0 @@
-#compdef oh-my-posh
-source <(oh-my-posh completion zsh)

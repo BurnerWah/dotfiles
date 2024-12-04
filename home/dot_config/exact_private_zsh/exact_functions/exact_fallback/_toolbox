@@ -1,2 +1,0 @@
-#compdef toolbox
-source <(toolbox completion zsh)

@@ -1,2 +1,0 @@
-#compdef doctl
-source <(doctl completion zsh)

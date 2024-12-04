@@ -1,2 +1,0 @@
-#compdef buf
-source <(buf completion zsh)
