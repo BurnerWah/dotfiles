@@ -1,0 +1,4 @@
+#compdef {{ keys .settings.shell.zsh.completion_aliases | sortAlpha | join " " }}
+{{- range $key, $val := .settings.shell.zsh.completion_aliases }}
+compdef {{$key}}={{$val}}
+{{- end }}
