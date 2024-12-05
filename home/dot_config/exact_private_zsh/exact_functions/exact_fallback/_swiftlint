@@ -1,0 +1,2 @@
+#compdef swiftlint
+source <(swiftlint --generate-completion-script=zsh)
