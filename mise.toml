@@ -5,6 +5,7 @@ ruff = "latest"
 ruby = "latest"
 taplo = "latest"
 gitleaks = "latest"
+ripsecret = "latest"
 "ubi:VorpalBlade/chezmoi_modify_manager" = "latest"
 
 [tasks.apply]
@@ -55,6 +56,10 @@ run = "npx prettier --check --cache --ignore-unknown ."
 description = "Lint code formatting with Prettier"
 # Suppress warnings from npx
 env = { NODE_NO_WARNINGS = "1" }
+
+[tasks."lint:ripsecrets"]
+run = "ripsecrets --strict-ignore"
+description = "Check git repo for secrets"
 
 [tasks."lint:ruff"]
 run = "ruff check"

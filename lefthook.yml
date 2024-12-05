@@ -19,6 +19,9 @@ pre-commit:
       env:
         NODE_NO_WARNINGS: '1' # Suppress warnings from npx
 
+    ripsecrets:
+      run: mise x -- ripsecrets --strict-ignore {staged_files}
+
     ruff:
       run: mise x -- ruff format {staged_files}
       glob: '*.py'

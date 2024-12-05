@@ -3,7 +3,16 @@ experimental = true
 paranoid = false
 not_found_auto_install = false
 go_default_packages_file = "~/.config/mise/default-go-packages"
-disable_tools = ["nim", "ollama", "solidity", "wasmer"]
+disable_tools = [
+  "nim",
+  "ollama",
+  "rome",
+  "solidity",
+  "starknet-foundry",
+  "starport",
+  "wasmer",
+  "youtube-dl",
+]
 disable_hints = ["python_precompiled", "registry"]
 
 [settings.ruby]
