@@ -48,6 +48,7 @@ settings:
         miniserve: miniserve --print-completions powershell
         nickel: nickel gen-completions powershell
         onefetch: onefetch --generate powershell
+        pdm: pdm completion powershell
         pixi: pixi completion --shell powershell
         procs: procs --gen-completion-out powershell
         proto: proto completions --shell powershell

@@ -1,0 +1,1 @@
+pdm completion fish | source

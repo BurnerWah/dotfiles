@@ -3,7 +3,10 @@ settings:
     common:
       abbrev:
         asdf: mise
+        brwe: brew
         bvm: mise
+        bwre: brew
+        chruby: mise use ruby
         diff: delta
         dog: doggo
         exa: eza
@@ -11,13 +14,32 @@ settings:
         fades: uv run
         find: fd
         fly: flyctl
+        fnm: mise use node
+        frum: mise use ruby
         gdl: gallery-dl
+        gobrew: mise use go
+        goenv: mise use go
+        gti: git
+        gvm: mise use go
+        jabba: mise use java
         ligma: lima
+        nave: mise use node
         nc: ncat
+        ndenv: mise use node
+        neofetch: fastfetch
+        nodebrew: mise use node
+        nodenv: mise use node
+        nvm: mise use node
+        nvs: mise use node
         pipx: uv tool
+        pyenv: uv
         rb: ruby
+        rbenv: mise use ruby
         rpmq: rpm -q
         rtx: mise
+        rye: uv
+        tox: uv
+        vf: uv
         vfox: mise
         yum: dnf
 

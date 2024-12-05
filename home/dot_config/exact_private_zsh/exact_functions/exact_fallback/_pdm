@@ -1,0 +1,2 @@
+#compdef pdm
+source <(pdm completion zsh)
