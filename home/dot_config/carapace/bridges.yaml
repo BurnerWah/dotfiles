@@ -2,7 +2,10 @@
 7z: fish
 7za: fish
 7zr: fish
+a2disconf: fish
+a2enconf: fish
 acat: fish
+accept: fish
 act: cobra # Probably will need a custom spec at some point
 adduser: fish
 adiff: fish
@@ -47,6 +50,7 @@ apt-spy: fish
 apt-src: fish
 apt-zip-inst: fish
 apt-zip-list: fish
+arc: fish
 archlinux-java: fish
 arduino-ctags: zsh
 arepack: fish
@@ -59,6 +63,7 @@ as: fish
 asd: fish
 ash: zsh
 atd: fish
+atom: fish
 atool: fish
 augtool: zsh
 aunpack: fish
@@ -78,7 +83,9 @@ barbican: zsh
 berglas: cobra
 bin: cobra
 blender: fish
+bosh: fish
 boundary: complete
+brightnessctl: fish
 btdownloadgui: zsh
 btlaunchmany: zsh
 btlaunchmanycurses: zsh
@@ -91,6 +98,8 @@ buf: cobra
 bundle: fish
 bwrap: zsh
 caddy: cobra
+cancel: fish
+canto: fish
 carapace-bridge: carapace
 carapace-spec-man: carapace
 carapace-spec: carapace
@@ -122,6 +131,7 @@ cmp: zsh
 cobra-cli: cobra
 colima: cobra
 concurrently: yargs
+conjure: fish
 cookiecutter: click
 copa: cobra # very slow
 cosign: cobra
@@ -170,6 +180,7 @@ debuild: zsh
 designate: zsh
 devcontainer: yargs
 devpod: cobra
+dhcpcd: fish
 dhcpinfo: zsh
 diskutil: fish
 distrobox-assemble: zsh
@@ -185,6 +196,8 @@ distrobox-rm: zsh
 distrobox-stop: zsh
 distrobox-upgrade: zsh
 distrobox: zsh
+djview: fish
+djview4: fish
 djxl: fish
 dkms: zsh
 dm-tool: fish
@@ -193,6 +206,7 @@ docker-buildx: cobra
 docker: cobra
 docker.lima: cobra
 doctl: cobra
+dolphin: fish
 dpatch-edit-patch: zsh
 dpkg-buildpackage: zsh
 dpkg-cross: zsh
@@ -206,11 +220,14 @@ dropdb: zsh # Fish provides built-in completions too
 dscacheutil: fish
 dua: fish
 dumper: zsh
+ebuild: fish
 efibootmgr: fish
 efivar: fish
 ehco: kingpin
 eix-sync: fish
 eix: fish
+elixir: fish
+emerge: fish
 encfs: fish
 eog: zsh
 eopkg: fish
@@ -227,6 +244,7 @@ fc-match: zsh # Probably will be replaced by some built-in carapace completion i
 feishu2md: urfavecli
 ffplay: fish
 ffprobe: fish
+findstr: fish
 firejail: zsh
 firewall-offline-cmd: zsh
 fish_indent: fish # could make a custom spec
@@ -252,6 +270,7 @@ ggv: zsh
 gh: cobra
 gio: fish
 git-lfs: cobra
+git-sizer: fish
 git-xargs: urfavecli
 gitlab-runner: urfavecli
 gitleaks: cobra
@@ -280,6 +299,30 @@ grub-install: fish
 grub-mkrescue: fish
 grunt: fish
 grype: cobra
+guilt-add: zsh
+guilt-applied: zsh
+guilt-delete: zsh
+guilt-files: zsh
+guilt-fold: zsh
+guilt-fork: zsh
+guilt-header: zsh
+guilt-help: zsh
+guilt-import-commit: zsh
+guilt-import: zsh
+guilt-init: zsh
+guilt-new: zsh
+guilt-next: zsh
+guilt-patchbomb: zsh
+guilt-pop: zsh
+guilt-prev: zsh
+guilt-push: zsh
+guilt-rebase: zsh
+guilt-refresh: zsh
+guilt-rm: zsh
+guilt-series: zsh
+guilt-status: zsh
+guilt-top: zsh
+guilt-unapplied: zsh
 guilt: zsh
 gup: cobra
 gx: urfavecli
@@ -290,6 +333,8 @@ heat: zsh
 helm_ls: cobra
 helm: cobra
 helmfile: cobra
+help2man: fish
+heroku: fish
 homectl: fish
 hotbuild: cobra
 hugo: cobra
@@ -341,6 +386,8 @@ limactl: cobra
 litecli: click
 litmusctl: cobra
 localstack: click
+lpmove: fish
+lppasswd: fish
 lsattr: zsh
 lscfg: zsh
 lxc: fish
@@ -354,6 +401,7 @@ mkdosfs: fish
 mkfs.fat: fish
 mkfs.vfat: fish
 mkisofs: zsh
+mkpasswd: fish
 mlocate: zsh
 mocha: yargs # Probably will only be run with npm or something
 module-assistant: zsh
@@ -374,9 +422,11 @@ nerdctl.colima: cobra
 nerdctl.lima: cobra
 netctl-auto: fish
 netctl: fish
+nethack: fish
 networksetup: zsh
 neutron: zsh
 nfpm: cobra
+ngrok: fish
 nodeenv: fish
 nomad: complete
 notation: cobra
@@ -421,19 +471,28 @@ podman: cobra
 podman.lima: cobra
 postgres: zsh
 pre-commit: fish # pre-commit uses argparse but the argcomplete bridge doesn't work for it. fish has pre-made completions though.
+proxychains: fish
+prt-get: fish
 pscale: cobra
 psql: zsh
+pstree: fish
+pydf: fish
+pzstd: fish
 qemu: zsh
 rakudo: fish
 rclone: cobra # the built-in fish completions for rclone are broken, and while they can be fixed, we may as well get them into carapace so they work in other shells
+realpath: fish
 regal: cobra
 regctl: cobra
 reindexdb: zsh
+reject: fish
+rejmerge: fish
 rekor-cli: cobra
 rich: click
 rmic: zsh
 rmid: zsh
 rmiregistry: zsh
+roswell: fish
 rpm-ostree: fish
 rpmbuild: zsh
 rpmkeys: zsh
@@ -463,6 +522,7 @@ sar: zsh
 sass-convert: fish
 sass: fish
 sc_usage: zsh
+scrypt: fish
 scss: fish
 senlin: zsh
 serialver: zsh
@@ -480,7 +540,9 @@ sphinx-autogen: fish
 sphinx-build: fish
 sphinx-quickstart: fish
 sqlfluff: click
+sqlite: zsh
 sqlite3: zsh
+sqlsharp: fish
 ssh-add: zsh # I'll switch this to a custom spec later
 ssh-keyscan: zsh # I'll maybe switch this to a custom spec later
 svn-buildpackage: zsh
@@ -510,12 +572,18 @@ tokei: fish
 toolbox: cobra
 totem: fish
 trailscraper: click
+trash-empty: fish
+trash-list: fish
+trash-put: fish
+trash-restore: fish
 trivy: cobra
 trove: zsh
 tune2fs: zsh
 tuned-adm: fish
+unzstd: fish
 update-eix-remote: fish
 update-eix: fish
+update-rc.d: zsh
 usbguard: bash
 userdbctl: fish
 uvicorn: click
@@ -527,6 +595,7 @@ VBoxSDL: fish
 velero: cobra
 vhs: cobra
 vincent: carapace
+vips: fish
 virtctl: cobra
 vitrage: zsh
 vt: cobra
@@ -535,10 +604,15 @@ vunnel: click
 watcher: zsh
 wg-quick: fish
 whalebrew: cobra # I don't really expect this to be getting data from docker/podman correctly. If it's not, that's a project for later
+wicd-cli: fish
+wicd-client: fish
+wicd-gtk: fish
+windscribe: fish
 winemaker: fish
 witness: cobra
 wormhole: click
 wrangler: yargs
+wslpath: fish
 xbps-alternatives: fish
 xbps-checkvers: fish
 xbps-create: fish
@@ -558,6 +632,11 @@ xdg-mime: fish
 xeol: cobra
 xmllint: zsh
 xsv: fish
+xxh128sum: fish
+xxh32sum: fish
+xxh64sum: fish
+xxhsum: fish
+yadm: fish
 ykman: click
 yq: cobra
 zabbix_agent2: fish
@@ -570,6 +649,12 @@ zabbix_server: fish
 zabbix_web_service: fish
 zfs: fish
 zig: fish
+zpaq: fish
 zpool: fish
 zsh: zsh # This'll probably either get replaced by a built-in carapace completer, or a custom spec
+zstd: fish
+zstdcat: fish
+zstdgrep: fish
+zstdless: fish
+zstdmt: fish
 zun: zsh

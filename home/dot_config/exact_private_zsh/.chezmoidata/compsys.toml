@@ -8,7 +8,10 @@ carapace = [
   "7zr",
   "VBoxHeadless",
   "VBoxSDL",
+  "a2disconf",
+  "a2enconf",
   "acat",
+  "accept",
   "acpi",
   "acpid",
   "act",
@@ -61,6 +64,7 @@ carapace = [
   "apt-zip-inst",
   "apt-zip-list",
   "ar",
+  "arc",
   "arecord",
   "arepack",
   "argo",
@@ -73,6 +77,7 @@ carapace = [
   "asd",
   "asdf",
   "atd",
+  "atom",
   "atool",
   "aunpack",
   "autoconf",
@@ -101,8 +106,10 @@ carapace = [
   "black",
   "blender",
   "bluetoothctl",
+  "bosh",
   "boundary",
   "bpython",
+  "brightnessctl",
   "brotli",
   "bru",
   "buf",
@@ -112,6 +119,8 @@ carapace = [
   "bunx",
   "caddy",
   "calibre",
+  "cancel",
+  "canto",
   "capslock",
   "carapace",
   "carapace-bridge",
@@ -166,6 +175,7 @@ carapace = [
   "conda",
   "conda-content-trust",
   "conda-env",
+  "conjure",
   "conky",
   "consul",
   "cookiecutter",
@@ -211,6 +221,7 @@ carapace = [
   "devpod",
   "df",
   "dfc",
+  "dhcpcd",
   "dict",
   "diff",
   "diff3",
@@ -221,6 +232,8 @@ carapace = [
   "dirname",
   "diskutil",
   "dive",
+  "djview",
+  "djview4",
   "djxl",
   "dlv",
   "dm-tool",
@@ -239,6 +252,7 @@ carapace = [
   "dockerd",
   "doctl",
   "doing",
+  "dolphin",
   "dos2unix",
   "downgrade",
   "dpkg",
@@ -251,6 +265,7 @@ carapace = [
   "dum",
   "dura",
   "ebook-convert",
+  "ebuild",
   "efibootmgr",
   "efivar",
   "eget",
@@ -259,7 +274,9 @@ carapace = [
   "eix",
   "eix-sync",
   "electron",
+  "elixir",
   "elvish",
+  "emerge",
   "encfs",
   "env",
   "envsubst",
@@ -296,6 +313,7 @@ carapace = [
   "file",
   "find",
   "findmnt",
+  "findstr",
   "firefox",
   "fish",
   "fish_indent",
@@ -396,6 +414,8 @@ carapace = [
   "helm_ls",
   "helmfile",
   "helmsman",
+  "help2man",
+  "heroku",
   "hexchat",
   "hexdump",
   "homectl",
@@ -492,6 +512,8 @@ carapace = [
   "localectl",
   "localstack",
   "logname",
+  "lpmove",
+  "lppasswd",
   "ls",
   "lsb_release",
   "lsblk",
@@ -527,6 +549,7 @@ carapace = [
   "mkfs.fat",
   "mkfs.vfat",
   "mknod",
+  "mkpasswd",
   "mkswap",
   "mktemp",
   "mocha",
@@ -558,10 +581,12 @@ carapace = [
   "netcat",
   "netctl",
   "netctl-auto",
+  "nethack",
   "newman",
   "newrelic",
   "nfpm",
   "ng",
+  "ngrok",
   "nice",
   "nilaway",
   "nix",
@@ -648,13 +673,18 @@ carapace = [
   "prettybat",
   "prettyping",
   "printenv",
+  "proxychains",
+  "prt-get",
   "ps",
   "pscale",
+  "pstree",
   "ptx",
   "pulumi",
   "pwait",
   "pwd",
+  "pydf",
   "python",
+  "pzstd",
   "qmk",
   "qrencode",
   "qutebrowser",
@@ -662,10 +692,13 @@ carapace = [
   "ranger",
   "rclone",
   "readlink",
+  "realpath",
   "reboot",
   "redis-cli",
   "regal",
   "regctl",
+  "reject",
+  "rejmerge",
   "rekor-cli",
   "restic",
   "resume-cli",
@@ -675,6 +708,7 @@ carapace = [
   "rm",
   "rmdir",
   "rmmod",
+  "roswell",
   "rpm-ostree",
   "rst2html",
   "rst2html4",
@@ -701,6 +735,7 @@ carapace = [
   "scalar",
   "scp",
   "scrot",
+  "scrypt",
   "scss",
   "sdkmanager",
   "sed",
@@ -733,6 +768,7 @@ carapace = [
   "sphinx-quickstart",
   "split",
   "sqlfluff",
+  "sqlsharp",
   "ssh",
   "ssh-agent",
   "ssh-copy-id",
@@ -811,6 +847,10 @@ carapace = [
   "transmission-edit",
   "transmission-remote",
   "transmission-show",
+  "trash-empty",
+  "trash-list",
+  "trash-put",
+  "trash-restore",
   "tree",
   "trivy",
   "truncate",
@@ -834,6 +874,7 @@ carapace = [
   "unset-env",
   "unxz",
   "unzip",
+  "unzstd",
   "update-eix",
   "update-eix-remote",
   "upower",
@@ -855,6 +896,7 @@ carapace = [
   "vi",
   "viewnior",
   "vincent",
+  "vips",
   "virtctl",
   "visudo",
   "viu",
@@ -878,6 +920,10 @@ carapace = [
   "which",
   "who",
   "whoami",
+  "wicd-cli",
+  "wicd-client",
+  "wicd-gtk",
+  "windscribe",
   "wine",
   "wineboot",
   "winemaker",
@@ -892,6 +938,7 @@ carapace = [
   "woeusb",
   "wormhole",
   "wrangler",
+  "wslpath",
   "xargs",
   "xbacklight",
   "xbps-alternatives",
@@ -916,8 +963,13 @@ carapace = [
   "xeol",
   "xonsh",
   "xsv",
+  "xxh128sum",
+  "xxh32sum",
+  "xxh64sum",
+  "xxhsum",
   "xz",
   "xzcat",
+  "yadm",
   "yarn",
   "yarnpkg",
   "yay",
@@ -942,6 +994,12 @@ carapace = [
   "zopfli",
   "zopflipng",
   "zoxide",
+  "zpaq",
+  "zstd",
+  "zstdcat",
+  "zstdgrep",
+  "zstdless",
+  "zstdmt",
 ]
 
 # These are here to simplify analisys of zsh completions & fish completions
@@ -950,9 +1008,11 @@ carapace = [
 unreachable = [
   "_carapace_or_builtin",           # custom fish completion
   "_swift_argparse",                # custom fish completion
+  "abbr",
   "and",                            # fish builtin
   "apk",                            # installed w/ apk
   "argparse",                       # fish builtin
+  "asp",
   "aura",                           # installed w/ aura, could be made external
   "begin",                          # fish builtin
   "block",                          # fish builtin
@@ -987,6 +1047,7 @@ unreachable = [
   "funced",                         # fish standard
   "funcsave",                       # fish standard
   "hostnamectl",                    # installed w/ systemd
+  "isatty",
   "kernel-install",                 # installed w/ systemd
   "loginctl",                       # installed w/ systemd
   "machinectl",                     # installed w/ systemd
@@ -994,19 +1055,25 @@ unreachable = [
   "networkctl",                     # installed w/ systemd
   "nextd",                          # fish standard
   "not",                            # fish builtin
+  "nvme",
   "oomctl",                         # installed w/ systemd
   "or",                             # fish builtin
   "pacmatic",                       # installed w/ pacmatic
+  "pactree",
   "path",                           # fish builtin
+  "pkgfile",
   "powerpill",                      # installed w/ powerpill
   "prevd",                          # fish standard
   "psub",                           # fish standard
+  "rbenv",
   "rc-service",                     # installed w/ openrc
   "rc-status",                      # installed w/ openrc
   "rc-update",                      # installed w/ openrc
   "resolvectl",                     # installed w/ systemd
   "run0",                           # installed w/ systemd
   "set_color",                      # fish builtin
+  "snap",
+  "snapper",
   "string",                         # fish builtin
   "systemd-analyze",                # installed w/ systemd
   "systemd-ask-password",           # installed w/ systemd
@@ -1024,6 +1091,8 @@ unreachable = [
   "systemd-run",                    # installed w/ systemd
   "systemd-tmpfiles",               # installed w/ systemd
   "systemd-tty-ask-password-agent", # installed w/ systemd
+  "timedatectl",
+  "tmuxinator",
   "udevadm",                        # installed w/ systemd
   "udisksctl",                      # installed w/ udisks2
   "varlinkctl",                     # installed w/ systemd
