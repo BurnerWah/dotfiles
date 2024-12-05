@@ -30,6 +30,10 @@
 **/.COSY_Lock
 
 # OS-Specific exclusions
+{{- if or .ephemeral .headless }}
+/.var
+{{- end }}
+
 {{- if ne .chezmoi.os "linux" }}
 .chezmoiscripts/linux/**
 /.var
@@ -40,15 +44,19 @@
 /.Trash
 {{- else }}
 .chezmoiscripts/darwin/**
+/.cache
 /Library
 {{- end }}
 
 {{- if eq .chezmoi.os "windows" }}
+/.affinity
 /.chocolatey
+/.dbus-keyrings
 /.docker
 /.dotnet
 /.gitconfig
 /.insomniac
+/.matplotlib
 /.nvidia-omniverse
 /.templateengine
 /3D Objects

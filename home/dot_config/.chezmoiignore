@@ -43,6 +43,23 @@
 /vivaldi-snapshot
 /zap
 
+{{- if or .ephemeral .headless }}
+/autostart
+/karabiner
+/kitty
+{{- end }}
+
+{{- if .ephemeral }}
+/boxxy
+/environment.d
+/firejail
+/homebrew
+/lima
+/systemd
+/user-tmpfiles.d
+/whalebrew
+{{- end }}
+
 {{- if ne .chezmoi.os "linux" }}
 /autostart
 /boxxy

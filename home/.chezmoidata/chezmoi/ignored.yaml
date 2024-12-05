@@ -3,14 +3,7 @@ settings:
     ignored: # Describes a lot of stuff to ignore in a more structured form
       dotfiles:
         - 1password
-        - affinity
-        - android
-        - cache # Standard linux cache dir, but shows up on Mac OS and Windows too
-        - dbus-keyrings # Appeared on windows for some reason
-        - fleet # JetBrains
         - gk # GitLens VSCode extension
-        - matplotlib
-        - netrc
         - thumbnails # Blender mostly
         - vscode
 
@@ -35,4 +28,3 @@ settings:
         - Vaults
         - Videos
         - Virtual Machines.localized # VMWare on Mac OS
-
