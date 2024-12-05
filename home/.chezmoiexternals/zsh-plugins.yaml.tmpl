@@ -1,6 +1,18 @@
 # {{ if ne .chezmoi.os "windows" }}
 
-.config/zsh/functions/async:
+.config/zsh/functions/site/_meson:
+  type: file
+  url: https://github.com/mesonbuild/meson/raw/refs/heads/master/data/shell-completions/zsh/_meson
+  refreshPeriod: 744h
+  readonly: true
+
+.config/zsh/functions/site/_ninja:
+  type: file
+  url: https://github.com/ninja-build/ninja/raw/refs/heads/master/misc/zsh-completion
+  refreshPeriod: 744h
+  readonly: true
+
+.config/zsh/functions/site/async:
   type: file
   url: https://github.com/mafredri/zsh-async/raw/refs/heads/main/async.zsh
   refreshPeriod: 744h

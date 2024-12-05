@@ -990,11 +990,9 @@ unreachable = [
   "kernel-install",                 # installed w/ systemd
   "loginctl",                       # installed w/ systemd
   "machinectl",                     # installed w/ systemd
-  "meson",                          # installed w/ meson, could be made external
   "mkinitcpio",                     # installed w/ mkinitcpio
   "networkctl",                     # installed w/ systemd
   "nextd",                          # fish standard
-  "ninja",                          # installed w/ ninja, could be made external
   "not",                            # fish builtin
   "oomctl",                         # installed w/ systemd
   "or",                             # fish builtin

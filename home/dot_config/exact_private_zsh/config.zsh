@@ -29,6 +29,7 @@ fpath=(
     $fpath
     "$ZDOTDIR/functions"
     "/opt/homebrew/share/zsh/site-functions"
+    "$ZDOTDIR/functions/site" # Similar to fallbacks, but everything in here should be a chezmoi external
     "$ZDOTDIR/functions/fallback" # Fallbacks, mostly for completion
 )
 
