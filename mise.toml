@@ -6,6 +6,7 @@ ruby = "latest"
 taplo = "latest"
 gitleaks = "latest"
 ripsecret = "latest"
+bun = "latest"
 "ubi:VorpalBlade/chezmoi_modify_manager" = "latest"
 
 [tasks.apply]
@@ -21,10 +22,8 @@ description = "Format code"
 # fish doesn't need to be installed.
 
 [tasks."format:prettier"]
-run = "npx prettier --write --cache --ignore-unknown ."
+run = "bunx prettier --write --cache --ignore-unknown ."
 description = "Format code with Prettier"
-# Suppress warnings from npx
-env = { NODE_NO_WARNINGS = "1" }
 
 [tasks."format:ruff"]
 run = "ruff format"
@@ -52,10 +51,8 @@ run = "gitleaks git --no-banner"
 description = "Check git repo for secrets"
 
 [tasks."lint:prettier"]
-run = "npx prettier --check --cache --ignore-unknown ."
+run = "bunx prettier --check --cache --ignore-unknown ."
 description = "Lint code formatting with Prettier"
-# Suppress warnings from npx
-env = { NODE_NO_WARNINGS = "1" }
 
 [tasks."lint:ripsecrets"]
 run = "ripsecrets --strict-ignore"
