@@ -125,6 +125,7 @@ filenames: # Custom filename-based overrides
   .babelrc.js: *babelrc
   .babelrc.json: *babelrc
   .circleci: { icon: { glyph:  } }
+  .clippy.toml: { icon: { glyph:  } }
   .codeclimate.yml: { icon: { glyph:  } }
   .codecov.yml: { icon: { glyph:  } }
   .crystal-version: *crystal
