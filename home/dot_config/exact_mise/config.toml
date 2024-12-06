@@ -13,7 +13,12 @@ disable_tools = [
   "wasmer",
   "youtube-dl",
 ]
-disable_hints = ["python_precompiled", "registry"]
+disable_hints = [
+  "python_precompiled",
+  "registry",
+  "outdated_bump",
+  "python_multi",
+]
 
 [settings.ruby]
 default_packages_file = "~/.config/mise/default-gems"
