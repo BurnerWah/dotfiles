@@ -1,8 +1,25 @@
 # {{ if eq .chezmoi.os "linux" }}
+# {{  $rustArch := "" }}
+# {{  with .chezmoi.arch }}
+# {{    if eq . "amd64" }}
+# {{      $rustArch = "x86_64" }}
+# {{    else if eq . "arm64" }}
+# {{      $rustArch = "aarch64" }}
+# {{    end }}
+# {{  end }}
+
 .local/share/flatpak/extension/org.freedesktop.Sdk.Extension.mise/x86_64/current/bin/mise:
   type: file
   url: https://mise.jdx.dev/mise-latest-linux-x64
   refreshPeriod: 48h
+  executable: true
+  readonly: true
+
+.local/bin/eza:
+  type: archive-file
+  url: 'https://github.com/eza-community/eza/releases/latest/download/eza_{{$rustArch}}-unknown-linux-gnu.tar.gz'
+  path: ./eza
+  refreshPeriod: 168h
   executable: true
   readonly: true
 # {{ end }}
