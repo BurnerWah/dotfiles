@@ -17,7 +17,7 @@ overrides:
   - files: ['*.plist.tmpl']
     options: { parser: xml }
 
-  - files: ['*.yaml.tmpl', '*.yml.tmpl']
+  - files: ['*.yaml.tmpl', '*.yml.tmpl', .ansible-lint]
     options: { parser: yaml }
 
   - files: ['*.plist', '*.plist.tmpl']

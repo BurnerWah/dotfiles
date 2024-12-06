@@ -13,8 +13,18 @@ pre-commit:
 
     prettier:
       run: mise x -- bunx prettier --write --cache --ignore-unknown {staged_files}
-      glob: '{*.{css,md,html,json,jsonc,code-snippets,rb,{xml,plist,yml,yaml}{,.tmpl}},Gemfile,Rakefile,Brewfile}'
-      exclude: symlink_*
+      glob: '{*.{css,md,html,json,jsonc,code-snippets,rb,xml,plist,yml,yaml,ansible-lint}{,.tmpl},{Gem,Rake,Brew}file}'
+      exclude:
+        - '*.code-snippets.tmpl'
+        - '*.css.tmpl'
+        - '*.html.tmpl'
+        - '*.json.tmpl'
+        - '*.jsonc.tmpl'
+        - '*.md.tmpl'
+        - '*.rb.tmpl'
+        - pnpm-lock.yaml
+        - schemas/vendor/**
+        - symlink_*
       stage_fixed: true
 
     ripsecrets:
