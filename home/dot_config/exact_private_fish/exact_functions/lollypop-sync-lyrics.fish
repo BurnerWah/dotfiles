@@ -8,11 +8,14 @@ function lollypop-sync-lyrics --description 'Sync .lrc files to a MTP device man
     for album in $albums
         set -l path_guess (string replace _ / $album)
         echo $path_guess
-        if test (fd -elrc -p "$path_guess" | count) -gt 0
-            set -l path_actual (fd -td -p "$path_guess")
-            test -n "$path_actual" || continue
-            pushd $path_actual
-            gio copy -p *.lrc "$music_folder/$album"
+        # fzf is much more likely to get the right path than fd
+        set -l fuzzy_path (fzf --walker=dir --filter="$path_guess")
+        if test -n "$fuzzy_path"
+            and test -d "$fuzzy_path"
+            pushd $fuzzy_path
+            if test (count *.lrc) -gt 0
+                gio copy -p *.lrc "$music_folder/$album"
+            end
             popd
         end
     end
