@@ -1,10 +1,10 @@
 () {
     local plugin
     local plugins=(
-        fast-syntax-highlighting
         zsh-autosuggestions
         zsh-autopair
         zsh-history-substring-search
+        f-sy-h
 
         command-not-found
         atuin

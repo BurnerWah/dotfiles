@@ -18,20 +18,22 @@
   refreshPeriod: 744h
   readonly: true
 
-.config/zsh/plugins/fast-syntax-highlighting:
+.config/zsh/plugins/f-sy-h:
   type: archive
-  url: https://github.com/zdharma-continuum/fast-syntax-highlighting/archive/master.tar.gz
+  url: https://github.com/z-shell/F-Sy-H/archive/main.tar.gz
   exact: true
   stripComponents: 1
   refreshPeriod: 744h
   exclude:
+    - '*/.editorconfig'
+    - '*/.gitattributes'
     - '*/.github'
     - '*/.gitignore'
+    - '*/.trunk'
+    - '*/.vscode'
     - '*/.zunit.yml'
-    - '*/images'
-    - '*/test'
+    - '*/docs'
     - '*/tests'
-    - '**/*.adoc'
 
 .config/zsh/plugins/zsh-autopair:
   type: archive
