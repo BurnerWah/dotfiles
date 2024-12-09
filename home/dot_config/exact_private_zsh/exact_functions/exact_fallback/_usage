@@ -1,0 +1,2 @@
+#compdef usage
+source <(usage generate completion --usage-cmd 'usage --usage-spec' zsh usage)
