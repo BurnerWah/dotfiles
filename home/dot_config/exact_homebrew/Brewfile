@@ -30,6 +30,7 @@ brew "bottom" # system monitor
 brew "breezy" if OS.mac?
 brew "btop" if OS.mac? # htop alternative
 brew "bzip3" if OS.mac? # compression tool, also in Fedora repos
+brew "carapace" # completions
 brew "chezmoi"
 brew "cloudflared" if OS.mac?
 brew "colima" if OS.mac? # Container runtime
@@ -143,7 +144,6 @@ brew "zstd" if OS.mac?
 
 brew "aquaproj/aqua/aqua"
 brew "egoist/tap/dum" # fast npm script runner
-brew "rsteube/tap/carapace" # completions
 brew "rsteube/tap/carapace-bridge" # useful for testing stuff in carapace
 brew "rsteube/tap/carapace-spec-man" if OS.linux? # carapace spec generator
 brew "rsteube/tap/vincent" # term color scheme generator
