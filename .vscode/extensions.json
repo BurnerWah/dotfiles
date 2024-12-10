@@ -1,7 +1,6 @@
 {
   "recommendations": [
     "bmalehorn.vscode-fish",
-    "denoland.vscode-deno",
     "jinliming2.vscode-go-template",
     "jnoortheen.xonsh",
     "ms-python.black-formatter",
