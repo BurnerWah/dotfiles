@@ -322,11 +322,11 @@ xcuserdata/
 
 # End of https://www.toptal.com/developers/gitignore/api/kate,node,ruby,linux,macos,xcode,windows,powershell,visualstudiocode
 
-# More reasonable ignore than what ruby template includes
+# Allow tool configs to be in .config
 !/.config
-/.config/*
 
-!/.config/ansible-lint.yml
+/.config/mise.local.toml
+/.config/mise/config.local.toml
 
 /mise.local.toml
 /lefthook-local.*
