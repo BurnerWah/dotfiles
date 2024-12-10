@@ -26,6 +26,7 @@ settings:
         rbw: rbw gen-completions elvish
         ruff: ruff generate-shell-completion elvish
         sg: sg completions elvish
+        spytrap-adb: spytrap-adb completions elvish
         topiary: topiary completion elvish
         uv: uv generate-shell-completion elvish
         uvx: uvx --generate-shell-completion elvish
@@ -58,6 +59,7 @@ settings:
         rbw: rbw gen-completions powershell
         ruff: ruff generate-shell-completion powershell
         sg: sg completions powershell
+        spytrap-adb: spytrap-adb completions powershell
         tailscale: tailscale completion powershell
         topiary: topiary completion powershell
         uv: uv generate-shell-completion powershell
