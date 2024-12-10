@@ -4,7 +4,7 @@
 
 autoload -Uz zrecompile
 
-{{- $scripts := glob (joinPath .xdg.config "zsh/{plugins,vendor}/**/*.zsh") }}
+{{- $scripts := glob (joinPath .xdg.config "zsh/{*.zsh,{plugins,vendor}/**/*.zsh}") }}
 
 # script hashes:
 {{ range $scripts -}}
