@@ -1,0 +1,18 @@
+root = true
+
+[*.{fish,fish.tmpl}]
+charset = utf-8
+indent_style = space
+indent_size = 4
+
+[*.lua]
+indent_style = space
+indent_size = 2
+
+[*.md]
+indent_style = space
+indent_size = 2
+
+[*.{toml,toml.tmpl}]
+indent_style = space
+indent_size = 2

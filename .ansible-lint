@@ -5,6 +5,7 @@ exclude_paths:
   - .*ignore
   - .cache/
   - .chezmoi*
+  - .editorconfig
   - .gitattributes
   - .prettierrc*
   - .ruby-lsp/
