@@ -1,4 +1,22 @@
 {
+  "[fish]": {
+    "editor.tabSize": 4,
+  },
+  "[json]": {
+    "editor.tabSize": 2,
+  },
+  "[jsonc]": {
+    "editor.tabSize": 2,
+  },
+  "[lua]": {
+    "editor.tabSize": 2,
+  },
+  "[markdown]": {
+    "editor.tabSize": 2,
+  },
+  "[toml]": {
+    "editor.tabSize": 2,
+  },
   "[xml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
@@ -73,6 +91,12 @@
     ],
     "https://github.com/sharkdp/vivid/raw/refs/heads/master/schemas/theme.json": [
       "home/dot_config/vivid/themes/*",
+    ],
+    "https://json.schemastore.org/lefthook.json": [
+      "lefthook.yml",
+      "lefthook.yaml",
+      "lefthook-local.yml",
+      "lefthook-local.yaml",
     ],
   },
 }
