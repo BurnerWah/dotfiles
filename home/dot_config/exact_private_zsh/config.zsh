@@ -38,9 +38,10 @@ compinit
 
 zrecompile -p -M "$ZDOTDIR/.zcompdump"
 
+zstyle '*' use-cache on
+zstyle '*' cache-path "$XDG_CACHE_HOME/zsh"
+
 zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
-zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh"
 
 zstyle :omz:plugins:iterm2 shell-integration yes
 
