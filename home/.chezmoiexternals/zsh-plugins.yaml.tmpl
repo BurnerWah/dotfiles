@@ -1,5 +1,11 @@
 # {{ if ne .chezmoi.os "windows" }}
 
+.config/zsh/functions/site/_bwrap:
+  type: file
+  url: https://github.com/containers/bubblewrap/raw/refs/heads/main/completions/zsh/_bwrap
+  refreshPeriod: 744h
+  readonly: true
+
 .config/zsh/functions/site/_meson:
   type: file
   url: https://github.com/mesonbuild/meson/raw/refs/heads/master/data/shell-completions/zsh/_meson
