@@ -14,5 +14,6 @@
     "tamasfe.even-better-toml",
     "charliermarsh.ruff",
     "redhat.ansible",
+    "oven.bun-vscode",
   ],
 }
