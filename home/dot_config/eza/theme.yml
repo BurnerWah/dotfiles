@@ -122,6 +122,7 @@ extensions: # Custom extension-based overrides
 filenames: # Custom filename-based overrides
   .1password: { icon: { glyph: 󰢁 } }
   .android: { icon: { glyph:  } }
+  .ansible-lint: { icon: { glyph:  } }
   .babelrc.js: *babelrc
   .babelrc.json: *babelrc
   .circleci: { icon: { glyph:  } }
