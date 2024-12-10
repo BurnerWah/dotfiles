@@ -8,6 +8,11 @@ include = [
   "home/private_dot_var/app/*/config/exact_mise/config.*",
   "mise.toml",
   "mise.*.toml",
+  ".config/mise.toml",
+  ".config/mise.*.toml",
+  ".config/mise/config.toml",
+  ".config/mise/config.*.toml",
+  ".config/mise/conf.d/*.toml",
 ]
 schema.path = "https://mise.jdx.dev/schema/mise.json"
 
