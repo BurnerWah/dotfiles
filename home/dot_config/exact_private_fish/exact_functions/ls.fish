@@ -1,20 +1,10 @@
 if command -qs eza
-    function ls --wraps='eza -F' --description 'List contents of directory'
+    function ls --wraps=eza --description 'List contents of directory'
         set -l cmd ls
         set -l param --color=auto
         if isatty stdout
             set cmd eza
             set -a param --classify --color-scale size
-        end
-        command $cmd $param $argv
-    end
-else if command -qs exa
-    function ls -w "exa -F" -d "List contents of directory"
-        set -l cmd ls
-        set -l param --color=auto
-        if isatty stdout
-            set cmd exa
-            set -a param --classify --color-scale
         end
         command $cmd $param $argv
     end
