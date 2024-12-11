@@ -173,6 +173,7 @@ settings:
         - teku # cryptocurrency
         - telegram-downloader # telegram
         - tendermint # cryptocurrency
+        - tenere # ai
         - trezor-agent # cryptocurrency
         - trezor-bridge # cryptocurrency
         - truffle # cryptocurrency
