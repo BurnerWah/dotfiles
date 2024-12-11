@@ -5,7 +5,9 @@ exclude = ["**/symlink_*", "tmp/**"]
 [[rule]]
 include = [
   "home/dot_config/exact_mise/config.*",
+  "home/dot_config/exact_mise/conf.d/*.toml",
   "home/private_dot_var/app/*/config/exact_mise/config.*",
+  "home/private_dot_var/app/*/config/exact_mise/conf.d/*.toml",
   "mise.toml",
   "mise.*.toml",
   ".config/mise.toml",
