@@ -1,3 +1,5 @@
+min_version = "2024.12.5"
+
 [settings]
 experimental = true
 paranoid = false
