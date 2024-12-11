@@ -1,0 +1,2 @@
+os-*.toml
+!os-{{.chezmoi.os}}.toml
