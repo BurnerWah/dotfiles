@@ -1,8 +1,5 @@
 {{- if ne .chezmoi.os "linux" }}
 btrfs.fish
-clang.fish
-clang++.fish
-dnf.fish
 duperemove.fish
 spec_needs_buildrequires.fish
 wrap-systemd.scope.fish
