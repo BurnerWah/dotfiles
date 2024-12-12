@@ -23,6 +23,7 @@ exclude_paths:
   - '*.toml'
   - '*.xsh'
   - assets/
+  - bun.lockb
   - Gemfile*
   - home/AppData/
   - home/dot_config/bat/
