@@ -1,3 +1,5 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{- if all (lookPath "getsebool") (lookPath "grc") -}}
 function getsebool
     set -l cmd getsebool
     if isatty stdout
@@ -5,3 +7,4 @@ function getsebool
     end
     command $cmd $argv
 end
+# {{- end -}}

@@ -1,3 +1,5 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{- if all (lookPath "getfacl") (lookPath "grc") -}}
 function getfacl
     set -l cmd getfacl
     if isatty stdout
@@ -5,3 +7,4 @@ function getfacl
     end
     command $cmd $argv
 end
+# {{- end -}}

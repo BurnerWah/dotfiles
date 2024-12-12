@@ -1,3 +1,5 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{- if lookPath "findmnt" -}}
 function findmnt
     set -l cmd findmnt
     if isatty stdout
@@ -8,3 +10,4 @@ function findmnt
     end
     command $cmd $argv
 end
+# {{- end -}}
