@@ -1,3 +1,5 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{- if all (lookPath "iptables") (lookPath "grc") -}}
 function iptables
     set -l cmd iptables
     if isatty stdout
@@ -5,3 +7,4 @@ function iptables
     end
     command $cmd $argv
 end
+# {{- end -}}

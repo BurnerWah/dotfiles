@@ -1,3 +1,5 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{- if all (lookPath "lsblk") (lookPath "grc") -}}
 function lsblk
     set -l cmd lsblk
     if isatty stdout
@@ -5,3 +7,4 @@ function lsblk
     end
     command $cmd $argv
 end
+# {{- end -}}

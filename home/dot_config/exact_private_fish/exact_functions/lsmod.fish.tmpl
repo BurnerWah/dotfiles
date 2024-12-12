@@ -1,3 +1,5 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{- if all (lookPath "lsmod") (lookPath "grc") -}}
 function lsmod
     set -l cmd lsmod
     if isatty stdout
@@ -5,3 +7,4 @@ function lsmod
     end
     command $cmd $argv
 end
+# {{- end -}}

@@ -1,3 +1,5 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{- if all (lookPath "lastlog") (lookPath "grc") -}}
 function lastlog -d "Show the most recent login of all users or of a given user"
     set -l cmd lastlog
     if isatty stdout
@@ -5,3 +7,4 @@ function lastlog -d "Show the most recent login of all users or of a given user"
     end
     command $cmd $argv
 end
+# {{- end -}}
