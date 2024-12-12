@@ -1,3 +1,5 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{- if all (lookPath "blkid") (lookPath "grc") -}}
 function blkid
     set -l cmd blkid
     if isatty stdout
@@ -5,3 +7,4 @@ function blkid
     end
     command $cmd $argv
 end
+# {{- end -}}

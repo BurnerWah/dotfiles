@@ -1,10 +1,7 @@
 {{- if ne .chezmoi.os "linux" }}
-blkid.fish
 btrfs.fish
-bussybox.fish
 clang.fish
 clang++.fish
-create_icons.fish
 dnf.fish
 duperemove.fish
 findmnt.fish
@@ -20,7 +17,6 @@ lsattr.fish
 lsblk.fish
 lsmod.fish
 lspci.fish
-lutris_create_icon.fish
 pidstat.fish
 procenv.fish
 sar.fish

@@ -4,6 +4,7 @@ settings:
       abbrev:
         asdf: mise
         brwe: brew
+        bussybox: busybox
         bvm: mise
         bwre: brew
         chruby: mise use ruby
