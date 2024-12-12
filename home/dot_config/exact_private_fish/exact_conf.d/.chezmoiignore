@@ -1,4 +1,6 @@
+??-os-*.fish
+!??-os-{{.chezmoi.os}}.fish
+
 {{- if ne .chezmoi.os "darwin" }}
-*-darwin.fish
 *-iterm2.fish
 {{- end }}
