@@ -1,7 +1,0 @@
-{{- if ne .chezmoi.os "linux" }}
-btrfs.fish
-duperemove.fish
-spec_needs_buildrequires.fish
-wrap-systemd.scope.fish
-xdg-open.fish
-{{- end }}

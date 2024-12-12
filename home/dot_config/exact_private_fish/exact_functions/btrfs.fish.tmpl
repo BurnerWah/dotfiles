@@ -1,3 +1,5 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{- if eq .chezmoi.os "linux" -}}
 function btrfs
     # Apply some defaults to btrfs commands in a kinda awkward way
     set -l no_wrap_systemd
@@ -26,3 +28,4 @@ function btrfs
         command btrfs $argv
     end
 end
+# {{- end -}}
