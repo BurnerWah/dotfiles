@@ -34,8 +34,6 @@ exclude_paths:
   - home/dot_config/private_glow/
   - home/dot_config/private_go/
   - home/dot_config/private_lima/_config/
-  - home/dot_config/readline/
-  - home/dot_config/silicon/
   - home/dot_config/systemd/
   - home/dot_config/vivid/
   - home/dot_config/yt-dlp/
