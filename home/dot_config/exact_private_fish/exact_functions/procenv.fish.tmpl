@@ -1,6 +1,6 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter=}}
-# {{- if eq .chezmoi.os "linux" -}}
+# {{ if eq .chezmoi.os "linux" -}}
 function procenv
     cat /proc/$argv[1]/environ | tr '\0' '\n'
 end
-# {{- end -}}
+# {{ end -}}

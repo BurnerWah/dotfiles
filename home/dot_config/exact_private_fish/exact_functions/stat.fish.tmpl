@@ -1,5 +1,5 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter=}}
-# {{- if all (eq .chezmoi.os "linux") (lookPath "grc") }}
+# {{ if and (eq .chezmoi.os "linux") (lookPath "grc") -}}
 function stat
     set -l cmd stat
     if isatty stdout
@@ -7,7 +7,7 @@ function stat
     end
     command $cmd $argv
 end
-# {{- else if all (eq .chezmoi.os "darwin") (lookPath "ustat") (lookPath "grc") }}
+# {{ else if and (eq .chezmoi.os "darwin") (lookPath "ustat") (lookPath "grc") -}}
 function stat
     if isatty stdout
         command grc -c conf.stat ustat $argv
@@ -15,8 +15,8 @@ function stat
         command stat $argv
     end
 end
-# {{- else }}
+# {{ else -}}
 function stat
     command stat $argv
 end
-# {{- end }}
+# {{ end -}}

@@ -1,5 +1,5 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter=}}
-# {{- if lookPath "free" -}}
+# {{ if lookPath "free" -}}
 # Makes free(1) easier to read
 function free -d "Display amount of free & used memory in the system"
     set -l cmd free
@@ -9,4 +9,4 @@ function free -d "Display amount of free & used memory in the system"
     end
     command $cmd $argv
 end
-# {{- end -}}
+# {{ end -}}

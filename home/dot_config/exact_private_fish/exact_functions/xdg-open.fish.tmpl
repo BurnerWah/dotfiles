@@ -1,6 +1,6 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter=}}
-# {{- if eq .chezmoi.os "linux" -}}
+# {{ if eq .chezmoi.os "linux" -}}
 function xdg-open
     command xdg-open $argv 2>/dev/null
 end
-# {{- end -}}
+# {{ end -}}

@@ -1,5 +1,5 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter=}}
-# {{- if all (lookPath "ss") (lookPath "grc") -}}
+# {{ if and (lookPath "ss") (lookPath "grc") -}}
 function ss -d "Utility to investigate sockets"
     set -l cmd ss
     if isatty stdout
@@ -7,4 +7,4 @@ function ss -d "Utility to investigate sockets"
     end
     command $cmd $argv
 end
-# {{- end -}}
+# {{ end -}}

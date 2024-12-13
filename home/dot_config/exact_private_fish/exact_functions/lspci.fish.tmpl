@@ -1,5 +1,5 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter=}}
-# {{- if all (lookPath "lspci") (lookPath "grc") -}}
+# {{ if and (lookPath "lspci") (lookPath "grc") -}}
 function lspci
     set -l cmd lspci
     if isatty stdout
@@ -7,4 +7,4 @@ function lspci
     end
     command $cmd $argv
 end
-# {{- end -}}
+# {{ end -}}

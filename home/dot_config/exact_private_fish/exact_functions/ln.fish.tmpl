@@ -1,5 +1,5 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter=}}
-# {{- if eq .chezmoi.os "darwin" -}}
+# {{ if eq .chezmoi.os "darwin" -}}
 # Prefer uutils or coreutils ln if available, as they have more functionality
 if command -qs uln
     function ln --wraps=uln
@@ -14,4 +14,4 @@ else
         command ln $argv
     end
 end
-# {{- end -}}
+# {{ end -}}

@@ -1,5 +1,5 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter=}}
-# {{- if lookPath "vmstat" -}}
+# {{ if lookPath "vmstat" -}}
 # Makes vmstat(8) use KB instead of KiB
 function vmstat
     set -l cmd vmstat
@@ -9,4 +9,4 @@ function vmstat
     end
     command $cmd $argv
 end
-# {{- end -}}
+# {{ end -}}
