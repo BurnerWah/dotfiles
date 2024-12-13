@@ -65,6 +65,8 @@ ash: zsh
 atd: fish
 atom: fish
 atool: fish
+attrib: fish
+attributes: fish
 augtool: zsh
 aunpack: fish
 auto-apt: zsh
@@ -82,6 +84,7 @@ badblocks: fish
 barbican: zsh
 berglas: cobra
 bin: cobra
+bind: fish
 blender: fish
 bosh: fish
 boundary: complete
@@ -98,6 +101,7 @@ buf: cobra
 bundle: fish
 bwrap: zsh
 caddy: cobra
+camcontrol: fish
 cancel: fish
 canto: fish
 carapace-bridge: carapace
@@ -114,29 +118,37 @@ chainloop: cobra
 chamber: cobra
 changie: cobra
 chcon: zsh
+checkinstall: fish
 chezmoi: cobra
 chflags: zsh
+choice: fish
 choom: zsh
 chpass: zsh
 chronyc: fish
 cifsiostat: zsh
 cinder: zsh
 cjxl: fish
+clasp: fish
+cleanmgr: fish
+climate: fish
 clj: fish
 clojure: fish
 cloudkitty: zsh
 clusterctl: cobra
 clusterdb: zsh
+cmark: fish
 cmp: zsh
 cobra-cli: cobra
 colima: cobra
 concurrently: yargs
 conjure: fish
+connmanctl: fish
 cookiecutter: click
 copa: cobra # very slow
 cosign: cobra
 cpio: zsh
 crc: cobra
+create_ap: fish
 createdb: zsh # Fish provides built-in completions too
 crontab: zsh
 crsh: zsh
@@ -219,7 +231,9 @@ driftctl: cobra
 dropdb: zsh # Fish provides built-in completions too
 dscacheutil: fish
 dua: fish
+dumpcap: fish
 dumper: zsh
+duply: fish
 ebuild: fish
 efibootmgr: fish
 efivar: fish
@@ -236,6 +250,8 @@ equery: fish
 erb: zsh
 eselect: fish
 exercism: cobra
+exif: fish
+expect: fish
 ezjail-admin: fish
 f2: urfavecli
 fastboot: fish
