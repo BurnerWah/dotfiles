@@ -1,7 +1,7 @@
 set -l description "List contents of directory using long format"
-if command -qs exa
-    function ll -w "exa -lF" -d "$description"
-        exa --long $argv
+if command -qs eza
+    function ll -w "eza -lF" -d "$description"
+        eza --long $argv
     end
 else
     function ll -w ls -d "$description"

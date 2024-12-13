@@ -1,0 +1,12 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{ if lookPath "swig" -}}
+if command -qs ccache-swig
+    function swig -d "Simplified Wrapper and Interface Generator"
+        command ccache-swig swig $argv
+    end
+else
+    function swig
+        command swig $argv
+    end
+end
+# {{ end -}}

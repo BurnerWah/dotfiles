@@ -1,3 +1,5 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{ if lookPath "dotnet-tools-outdated" -}}
 function dotnet-tools-outdated
     if set -q DOTNET_CLI_HOME
         command dotnet-tools-outdated --globalToolsPath $DOTNET_CLI_HOME/.dotnet/tools/.store $argv
@@ -5,3 +7,4 @@ function dotnet-tools-outdated
         command dotnet-tools-outdated $argv
     end
 end
+# {{ end -}}

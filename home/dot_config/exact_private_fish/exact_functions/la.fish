@@ -11,12 +11,8 @@ if command -qs eza
             --mounts \
             $argv
     end
-else if command -qs exa
-    function la -w "exa -la" -d "$description"
-        exa --long --all $argv
-    end
 else
     function la -w ls -d "$description"
-        ls -lah $argv
+        ls -lAh $argv
     end
 end

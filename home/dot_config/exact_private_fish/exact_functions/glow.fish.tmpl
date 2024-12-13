@@ -1,3 +1,6 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{ if lookPath "glow" -}}
 function glow -w "glow -w 80" -d "Render markdown on the CLI, with pizzazz!"
     command glow -w $COLUMNS $argv
 end
+# {{ end -}}
