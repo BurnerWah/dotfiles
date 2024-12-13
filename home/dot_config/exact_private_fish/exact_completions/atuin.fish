@@ -1,6 +1,5 @@
-if set -q HOMEBREW_PREFIX
-    and [ -r "$HOMEBREW_PREFIX/share/fish/vendor_completions.d/atuin.fish" ]
-    source "$HOMEBREW_PREFIX/share/fish/vendor_completions.d/atuin.fish"
+if set -l paths (path filter -fr $__fish_vendor_completionsdirs/atuin.fish)
+    source $paths[1]
 else
     atuin gen-completions --shell fish | source
 end
