@@ -13,7 +13,6 @@ tap "aquaproj/aqua"
 # Packages
 brew "age" if OS.mac? # encryption tool
 brew "age-plugin-yubikey" if OS.mac?
-brew "aliae"
 brew "ansible" if OS.mac?
 brew "ansible-lint" if OS.mac?
 brew "as-tree"
@@ -31,7 +30,7 @@ brew "breezy" if OS.mac?
 brew "btop" if OS.mac? # htop alternative
 brew "bzip3" if OS.mac? # compression tool, also in Fedora repos
 brew "carapace" # completions
-brew "chezmoi"
+brew "chezmoi" if OS.mac?
 brew "cloudflared" if OS.mac?
 brew "colima" if OS.mac? # Container runtime
 brew "cosign"
@@ -117,10 +116,8 @@ brew "rclone" if OS.mac? # cloud storage manager
 brew "rename" if OS.mac? # rename files
 brew "ripgrep" if OS.mac? # grep alternative
 brew "rustup" if OS.mac?
-brew "shadowenv" # directory-specific env vars
 brew "slsa-verifier"
 brew "starship" if OS.mac? # prompt for fish & zsh
-brew "svgo" if OS.mac? # SVG optimizer
 brew "syncthing" if OS.mac?
 brew "texinfo" if OS.mac?
 brew "tlrc" # fast tldr page viewer
@@ -206,9 +203,8 @@ cask "karabiner-elements", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac? # key
 cask "launchpad-manager" if OS.mac?
 cask "lulu", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac? # firewall
 cask "macfuse", greedy: true if OS.mac? # filesystem extender
+cask "magicquit" if OS.mac? # quit background apps
 cask "raycast", greedy: true if OS.mac? # spotlight replacement
-cask "rectangle" if OS.mac? # window management, probably can remove with macOS 15
-cask "swift-quit" if OS.mac? # quit apps with cmd+q
 cask "unnaturalscrollwheels" if OS.mac? # reverse scroll direction
 
 mas "Affinity Designer 2", id: 1_616_831_348 if OS.mac?
