@@ -4,17 +4,19 @@ exclude = ["**/symlink_*", "tmp/**"]
 
 [[rule]]
 include = [
+  ".config/mise.*.toml",
+  ".config/mise.toml",
+  ".config/mise/conf.d/*.toml",
+  ".config/mise/config.*.toml",
+  ".config/mise/config.toml",
+  ".mise.*.toml",
+  ".mise.toml",
   "home/dot_config/exact_mise/config.*",
   "home/dot_config/exact_mise/exact_conf.d/*.toml",
   "home/private_dot_var/app/*/config/exact_mise/config.*",
   "home/private_dot_var/app/*/config/exact_mise/exact_conf.d/*.toml",
-  "mise.toml",
   "mise.*.toml",
-  ".config/mise.toml",
-  ".config/mise.*.toml",
-  ".config/mise/config.toml",
-  ".config/mise/config.*.toml",
-  ".config/mise/conf.d/*.toml",
+  "mise.toml",
 ]
 schema.path = "https://mise.jdx.dev/schema/mise.json"
 
