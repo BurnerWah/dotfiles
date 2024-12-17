@@ -13,7 +13,7 @@ pre-commit:
 
     prettier:
       run: mise x -- bunx prettier --write --cache --ignore-unknown {staged_files}
-      glob: '{*.{css,md,html,json,jsonc,code-snippets,rb,xml,plist,yml,yaml}{,.tmpl},{Gem,Rake,Brew}file}'
+      glob: '{*.{css,md,html,json,jsonc,code-snippets,rb,xml,plist,yml,yaml,sublime-syntax}{,.tmpl},{Gem,Rake,Brew}file}'
       exclude:
         - '*.code-snippets.tmpl'
         - '*.css.tmpl'
