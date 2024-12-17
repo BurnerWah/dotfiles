@@ -5,6 +5,9 @@
   "[jsonc]": {
     "editor.tabSize": 2,
   },
+  "[nushell]": {
+    "files.trimTrailingWhitespace": true,
+  },
   "[xml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
