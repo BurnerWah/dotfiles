@@ -70,7 +70,16 @@ description = "Lint Lua code formatting with StyLua"
 run = "taplo lint"
 description = "Format TOML files with Taplo"
 
+[tasks."update:bundle"]
+run = "bundle update"
+description = "Update Gemfile.lock"
+
 [tasks."update:nvim-plugins"]
 run = 'nvim --headless "+Lazy! sync" +qa'
 description = "Update neovim plugins"
 wait_for = ["apply"]
+
+[tasks."update:package"]
+run = "npm-check-updates --interactive"
+description = "Update packages found in package.json"
+tools = { "npm:npm-check-updates" = "latest" }
