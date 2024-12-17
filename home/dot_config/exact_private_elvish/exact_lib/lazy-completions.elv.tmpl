@@ -14,12 +14,16 @@ keys $completers | peach {|name|
     }
 }
 
-for name [
+# A for loop won't work here for some reason
+var win-exes = [
     {{ .settings.shell.common.windows_executables | sortAlpha | compact | join " " }}
-] {
+]
+
+# peach won't work here for some reason
+each {|name|
     # The lambda here is to avoid issues with the earlier usage of `peach`
     set edit:completion:arg-completer[$name".exe"] = {|@arg|
         set edit:completion:arg-completer[$name".exe"] = $edit:completion:arg-completer[$name]
         $edit:completion:arg-completer[$name".exe"] $@arg
     }
-}
+} $win-exes
