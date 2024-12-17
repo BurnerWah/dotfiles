@@ -1,5 +1,9 @@
 root = true
 
+[*.{elv,elv.tmpl}]
+indent_style = space
+indent_size = 4
+
 [*.{fish,fish.tmpl}]
 charset = utf-8
 indent_style = space
