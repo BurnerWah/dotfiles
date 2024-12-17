@@ -42,6 +42,24 @@ description = "Format TOML files with Taplo"
 run = "limactl generate-jsonschema > schemas/vendor/lima.json"
 description = "Generate JSON schema for lima.yaml files"
 
+[tasks.install]
+depends = ["install:*"]
+description = "Install project dependencies"
+
+[tasks."install:gem"]
+run = "bundle install"
+description = "Install ruby packages with bundler"
+
+[tasks."install:lefthook"]
+run = "lefthook install"
+description = "Install git hooks for lefthook"
+sources = ["lefthook.*", "lefthook-local.*"]
+outputs = [".git/hooks/*"]
+
+[tasks."install:npm"]
+run = "bun install"
+description = "Install npm packages with bun"
+
 [tasks.lint]
 depends = ["lint:*"]
 description = "Lint code"
