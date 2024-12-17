@@ -1,5 +1,96 @@
 settings:
   shell:
+    common:
+      windows_executables:
+        - act
+        - age
+        - aliae
+        - argo
+        - argocd
+        - awk
+        - bat
+        - buf
+        - bun
+        - bunx
+        - caddy
+        - carapace
+        - changie
+        - chezmoi
+        - cosign
+        - crc
+        - cue
+        - dasel
+        - deno
+        - docker
+        - docker-buildx
+        - docker-compose
+        - draft
+        - elvish
+        - exa
+        - exercism
+        - eza
+        - fastfetch
+        - fd
+        - file
+        - flyctl
+        - fx
+        - fzf
+        - gh
+        - git
+        - git-lfs
+        - gitleaks
+        - gitsign
+        - gitui
+        - glab
+        - glow
+        - grype
+        - helm
+        - helm_ls
+        - helmfile
+        - hugo
+        - jq
+        - just
+        - k3d
+        - k9s
+        - kind
+        - kompose
+        - kondo
+        - kubectl
+        - kubetail
+        - kustomize
+        - lefthook
+        - limactl
+        - litecli
+        - lua
+        - micro
+        - minikube
+        - miniserve
+        - nerdctl
+        - nu
+        - nvim
+        - oh-my-posh
+        - op
+        - optipng
+        - pandoc
+        - podman
+        - pscale
+        - rclone
+        - rekor-cli
+        - rg
+        - ruff
+        - slsa-verifier
+        - starship
+        - taplo
+        - task
+        - trivy
+        - upx
+        - uv
+        - uvx
+        - vt
+        - yq
+        - yt-dlp
+        - zoxide
+
     elvish:
       completers:
         ast-grep: ast-grep completions elvish
@@ -30,7 +121,7 @@ settings:
         topiary: topiary completion elvish
         uv: uv generate-shell-completion elvish
         uvx: uvx --generate-shell-completion elvish
-        vrc-get: vrc-get completion elvish
+        vrc-get.exe: vrc-get.exe completion elvish
         yr: yr completion elvish
         zellij: zellij setup --generate-completion elvish
     pwsh:
@@ -64,6 +155,6 @@ settings:
         topiary: topiary completion powershell
         uv: uv generate-shell-completion powershell
         uvx: uvx --generate-shell-completion powershell
-        vrc-get: vrc-get completion powershell
+        vrc-get.exe: vrc-get completion powershell
         yr: yr completion powershell
         zellij: zellij setup --generate-completion powershell

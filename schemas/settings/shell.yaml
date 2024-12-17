@@ -13,12 +13,18 @@ $defs:
     type: object
     additionalProperties: { type: string }
 
+  WindowsExecutables:
+    description: Windows executables to include in completions
+    type: array
+    items: { type: string }
+
   ShellCommon:
     description: Common shell settings
     type: object
     additionalProperties: false
     properties:
       abbrev: { $ref: '#/$defs/Abbrev' }
+      windows_executables: { $ref: '#/$defs/WindowsExecutables' }
 
   ShellElvish:
     description: Elvish settings
