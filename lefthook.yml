@@ -47,3 +47,9 @@ pre-commit:
       glob: '*.toml'
       exclude: symlink_*
       stage_fixed: true
+
+pre-push:
+  parallel: true
+  commands:
+    ripsecrets:
+      run: mise x -- ripsecrets --strict-ignore {staged_files}
