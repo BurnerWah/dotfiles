@@ -28,7 +28,6 @@ exclude_paths:
   - home/AppData/
   - home/dot_config/carapace/
   - home/dot_config/exact_*/
-  - home/dot_config/fd/
   - home/dot_config/private_gh/
   - home/dot_config/private_glab-cli/
   - home/dot_config/private_glow/
@@ -36,7 +35,6 @@ exclude_paths:
   - home/dot_config/private_lima/_config/
   - home/dot_config/systemd/
   - home/dot_config/vivid/
-  - home/dot_config/yt-dlp/
   - home/dot_local/
   - home/private_dot_ssh/
   - home/private_dot_var/
