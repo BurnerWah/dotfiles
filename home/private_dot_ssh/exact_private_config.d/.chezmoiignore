@@ -1,6 +1,9 @@
 1password-*.conf
 !1password-{{ .chezmoi.os }}.conf
 
+os-*.conf
+!os-{{ .chezmoi.os }}.conf
+
 {{ if ne .chezmoi.os "darwin" }}
 lima-includes.conf
 {{ end }}
