@@ -23,7 +23,7 @@ include = [
 schema.path = "https://mise.jdx.dev/schema/mise.json"
 
 [[rule]]
-include = ["home/dot_config/bottom/*"]
+include = ["home/dot_config/*_bottom/*"]
 schema.path = "https://github.com/ClementTsang/bottom/raw/refs/heads/main/schema/v0.10/bottom.json"
 
 [[rule]]
