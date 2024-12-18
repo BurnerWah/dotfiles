@@ -159,6 +159,7 @@ settings:
         - llm # ai
         - localai
         - mallet # ai
+        - mdz # cryptocurrency
         - mentat # ai
         - mods # ai
         - monero
