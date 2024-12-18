@@ -199,6 +199,7 @@ shell_integration {{ $advanced.shell_integration | join " " }}
 # Avoids a massive memory leak in login on mac os
 exe_search_path /opt/homebrew/bin
 exe_search_path /usr/local/bin
+exe_search_path /opt/local/bin
 shell fish
 {{ end }}
 
