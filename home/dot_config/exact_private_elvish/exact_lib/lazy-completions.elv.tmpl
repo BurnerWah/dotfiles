@@ -10,14 +10,97 @@ keys $completers | peach {|name|
   }
 }
 
-# A for loop won't work here for some reason
-echo '{{ .settings.shell.common.windows_executables | sortAlpha | compact | toJson }}' | var win-exes = (from-json)
+var aliases = [
+  &act.exe=act
+  &age.exe=age
+  &aliae.exe=aliae
+  &argo.exe=argo
+  &argocd.exe=argocd
+  &awk.exe=awk
+  &bat.exe=bat
+  &buf.exe=buf
+  &bun.exe=bun
+  &bunx.exe=bunx
+  &caddy.exe=caddy
+  &carapace.exe=carapace
+  &changie.exe=changie
+  &chezmoi.exe=chezmoi
+  &cosign.exe=cosign
+  &crc.exe=crc
+  &cue.exe=cue
+  &deno.exe=deno
+  &docker-buildx.exe=docker-buildx
+  &docker-compose.exe=docker-compose
+  &docker.exe=docker
+  &draft.exe=draft
+  &elvish.exe=elvish
+  &exa.exe=exa
+  &exercism.exe=exercism
+  &eza.exe=eza
+  &fastfetch.exe=fastfetch
+  &fd.exe=fd
+  &file.exe=file
+  &flyctl.exe=flyctl
+  &fx.exe=fx
+  &fzf.exe=fzf
+  &gh.exe=gh
+  &git-lfs.exe=git-lfs
+  &git.exe=git
+  &gitleaks.exe=gitleaks
+  &gitsign.exe=gitsign
+  &gitui.exe=gitui
+  &glab.exe=glab
+  &glow.exe=glow
+  &grype.exe=grype
+  &helm.exe=helm
+  &helmfile.exe=helmfile
+  &hugo.exe=hugo
+  &jq.exe=jq
+  &just.exe=just
+  &k3d.exe=k3d
+  &k9s.exe=k9s
+  &kind.exe=kind
+  &kompose.exe=kompose
+  &kondo.exe=kondo
+  &kubectl.exe=kubectl
+  &kubetail.exe=kubetail
+  &kustomize.exe=kustomize
+  &lefthook.exe=lefthook
+  &limactl.exe=limactl
+  &litecli.exe=litecli
+  &lua.exe=lua
+  &micro.exe=micro
+  &minikube.exe=minikube
+  &miniserve.exe=miniserve
+  &nerdctl.exe=nerdctl
+  &nu.exe=nu
+  &nvim.exe=nvim
+  &oh-my-posh.exe=oh-my-posh
+  &op.exe=op
+  &optipng.exe=optipng
+  &pandoc.exe=pandoc
+  &podman.exe=podman
+  &rclone.exe=rclone
+  &rekor-cli.exe=rekor-cli
+  &rg.exe=rg
+  &ruff.exe=ruff
+  &slsa-verifier.exe=slsa-verifier
+  &starship.exe=starship
+  &taplo.exe=taplo
+  &task.exe=task
+  &trivy.exe=trivy
+  &upx.exe=upx
+  &uv.exe=uv
+  &uvx.exe=uvx
+  &vt.exe=vt
+  &yq.exe=yq
+  &yt-dlp.exe=yt-dlp
+  &zoxide.exe=zoxide
+]
 
-# peach won't work here for some reason
-each {|name|
-  # The lambda here is to avoid issues with the earlier usage of `peach`
-  set edit:completion:arg-completer[$name".exe"] = {|@arg|
-    set edit:completion:arg-completer[$name".exe"] = $edit:completion:arg-completer[$name]
-    $edit:completion:arg-completer[$name".exe"] $@arg
+keys $aliases | peach {|name|
+  set edit:completion:arg-completer[$name] = {|@arg|
+    set edit:completion:arg-completer[$name] = $edit:completion:arg-completer[$aliases[$name]]
+    $edit:completion:arg-completer[$name] $@arg
   }
-} $win-exes
+}
