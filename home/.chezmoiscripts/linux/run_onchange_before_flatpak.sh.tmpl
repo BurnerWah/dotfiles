@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-# {{ if lookPath "flatpak" }}
-
-# {{ range .packages.linux.flatpak }}
-flatpak install -y {{ .remote.name }} {{ range .apps }}{{ . | quote }} {{ end }}
-# {{ end }}
-
-# {{ end }}
