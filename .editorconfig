@@ -2,16 +2,23 @@ root = true
 
 [*.{elv,elv.tmpl}]
 indent_style = space
-indent_size = 4
+indent_size = 2
+trim_trailing_whitespace = true
 
 [*.{fish,fish.tmpl}]
 charset = utf-8
 indent_style = space
 indent_size = 4
+trim_trailing_whitespace = true
 
 [*.lua]
 indent_style = space
 indent_size = 2
+
+[*.{nu,nu.tmpl}]
+indent_style = space
+indent_size = 4
+trim_trailing_whitespace = true
 
 [*.md]
 indent_style = space

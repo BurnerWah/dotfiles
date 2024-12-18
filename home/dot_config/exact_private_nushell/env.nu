@@ -6,7 +6,7 @@ def create_left_prompt [] {
     # Perform tilde substitution on dir
     # To determine if the prefix of the path matches the home dir, we split the current path into
     # segments, and compare those with the segments of the home dir. In cases where the current dir
-    # is a parent of the home dir (e.g. `/home`, homedir is `/home/user`), this comparison will 
+    # is a parent of the home dir (e.g. `/home`, homedir is `/home/user`), this comparison will
     # also evaluate to true. Inside the condition, we attempt to str replace `$home` with `~`.
     # Inside the condition, either:
     # 1. The home prefix will be replaced
@@ -107,7 +107,7 @@ let convert_env = {
 }
 
 $env.ENV_CONVERSIONS = {
-    # A lot of these are based on 
+    # A lot of these are based on
     _ZO_ECHO: $convert_env.intbool
     _ZO_RESOLVE_SYMLINKS: $convert_env.intbool
     CARAPACE_ENV: $convert_env.intbool
