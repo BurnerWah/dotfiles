@@ -24,5 +24,6 @@
     "scope": "yaml",
     "prefix": "$carapace.number.Range",
     "body": "'\\$carapace.number.Range({start: ${1:0}, end: ${2:0}})'",
+    "description": "completes a number range formatted with given (optional) format specifier",
   },
 }
