@@ -1,0 +1,5 @@
+name: aunpack
+description: extracts files from an archive
+parsing: disabled
+completion:
+  positionalany: ['$carapace.bridge.CarapaceBin([atool, --extract])']

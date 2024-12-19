@@ -1,0 +1,5 @@
+name: acat
+description: extracts files in an archive to standard out
+parsing: disabled
+completion:
+  positionalany: ['$carapace.bridge.CarapaceBin([atool, --cat])']

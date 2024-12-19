@@ -1,0 +1,6 @@
+name: age-keygen
+description: generate age key pairs
+flags:
+  -o, --output=: Write the result to the file at path OUTPUT.
+  -y: Convert an identity file to a recipients file.
+  --version: print the version

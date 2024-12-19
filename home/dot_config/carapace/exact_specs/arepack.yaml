@@ -1,0 +1,5 @@
+name: arepack
+description: repacks archives to a different format
+parsing: disabled
+completion:
+  positionalany: ['$carapace.bridge.CarapaceBin([atool, --repack])']

@@ -129,6 +129,7 @@ carapace = [
   "capslock",
   "carapace",
   "carapace-bridge",
+  "carapace-parse",
   "carapace-spec",
   "carapace-spec-man",
   "cargo",

@@ -4,14 +4,10 @@
 7zr: fish
 a2disconf: fish
 a2enconf: fish
-acat: fish
 accept: fish
 act: cobra # Probably will need a custom spec at some point
 adduser: fish
-adiff: fish
-age-keygen: fish
 aliae: cobra
-als: fish
 alsactl: fish
 amixer: fish
 animdl: click
@@ -29,7 +25,6 @@ antidot: cobra
 aodh: zsh
 apache2ctl: zsh
 apachectl: zsh
-apack: fish
 apkanalyzer: fish
 apko: cobra
 appletviewer: zsh
@@ -53,7 +48,6 @@ apt-zip-list: fish
 arc: fish
 archlinux-java: fish
 arduino-ctags: zsh
-arepack: fish
 argo: cobra
 argocd-vault-plugin: cobra
 argocd: cobra
@@ -64,11 +58,9 @@ asd: fish
 ash: zsh
 atd: fish
 atom: fish
-atool: fish
 attrib: fish
 attributes: fish
 augtool: zsh
-aunpack: fish
 auto-apt: zsh
 avahi-browse-domains: zsh
 avahi-browse: zsh
@@ -105,6 +97,7 @@ camcontrol: fish
 cancel: fish
 canto: fish
 carapace-bridge: carapace
+carapace-parse: cobra
 carapace-spec-man: carapace
 carapace-spec: carapace
 carapace: carapace

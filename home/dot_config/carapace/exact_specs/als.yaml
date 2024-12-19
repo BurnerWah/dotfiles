@@ -1,0 +1,5 @@
+name: als
+description: lists files in an archive
+parsing: disabled
+completion:
+  positionalany: ['$carapace.bridge.CarapaceBin([atool, --list])']

@@ -1,0 +1,5 @@
+name: adiff
+description: generates a diff between two archives
+parsing: disabled
+completion:
+  positionalany: ['$carapace.bridge.CarapaceBin([atool, --diff])']

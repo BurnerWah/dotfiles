@@ -1,0 +1,5 @@
+name: apack
+description: creates archives (or compresses files)
+parsing: disabled
+completion:
+  positionalany: ['$carapace.bridge.CarapaceBin([atool, --add])']

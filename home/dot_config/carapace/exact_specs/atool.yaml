@@ -1,0 +1,38 @@
+# TODO add format & option completion
+name: atool
+description: manage archives of various formats
+flags:
+  --config=: load configuration defaults from file
+  --help: display this help and exit
+  --version: output version information and exit
+  -0, --null: filenames from standard in are null-byte separated
+  -D, --subdir: always create subdirectory when extracting
+  -E, --explain: explain what is being done by atool
+  -F, --format=: override archive format (see below)
+  -O, --format-option=: give specific options to the archiver
+  -S, --simulate: simulation mode - no filesystem changes are made
+  -V, --verbosity=: specify verbosity (0, 1 or 2)
+  -X, --extract-to=: extract archive to specified directory
+  -a, --add: create archive (apack)
+  -c, --cat: extract file to standard out (acat)
+  -d, --diff: generate a diff between two archives (adiff)
+  -e, --each: execute command above for each file specified
+  -f, --force: allow overwriting of local files
+  -l, --list: list files in archive (als)
+  -o, --option=: override a configuration option
+  -p, --page: send output through pager
+  -q, --quiet: decrease verbosity level by one
+  -r, --repack: repack archives to a different format (arepack)
+  -v, --verbose: increase verbosity level by one
+  -x, --extract: extract files from archive (aunpack)
+
+exclusiveflags:
+  - [add, cat, diff, list, repack, extract]
+
+completion:
+  flag:
+    config: [$files]
+    verbosity: ['0', '1', '2']
+    extract-to: [$directories]
+  positionalany:
+    - $files
