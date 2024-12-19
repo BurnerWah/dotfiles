@@ -218,7 +218,6 @@ docker-buildx: cobra
 docker: cobra
 docker.lima: cobra
 doctl: cobra
-dolphin: fish
 dpatch-edit-patch: zsh
 dpkg-buildpackage: zsh
 dpkg-cross: zsh
@@ -234,21 +233,14 @@ dua: fish
 dumpcap: fish
 dumper: zsh
 duply: fish
-ebuild: fish
 efibootmgr: fish
 efivar: fish
 ehco: kingpin
-eix-sync: fish
-eix: fish
 elixir: fish
-emerge: fish
 encfs: fish
 eog: zsh
 eopkg: fish
-epkginfo: fish
-equery: fish
 erb: zsh
-eselect: fish
 exercism: cobra
 exif: fish
 expect: fish
@@ -313,7 +305,6 @@ growisofs: zsh
 grub-file: fish
 grub-install: fish
 grub-mkrescue: fish
-grunt: fish
 grype: cobra
 guilt-add: zsh
 guilt-applied: zsh
@@ -350,7 +341,7 @@ helm_ls: cobra
 helm: cobra
 helmfile: cobra
 help2man: fish
-heroku: fish
+heroku: fish # zsh completion script is very weird
 homectl: fish
 hotbuild: cobra
 hugo: cobra
@@ -442,7 +433,7 @@ nethack: fish
 networksetup: zsh
 neutron: zsh
 nfpm: cobra
-ngrok: fish
+ngrok: cobra
 nodeenv: fish
 nomad: complete
 notation: cobra
@@ -459,7 +450,6 @@ op: cobra
 opa: cobra
 openstack: zsh
 ops: cobra # veeery slow
-optipng: fish
 opusdec: zsh
 opusenc: zsh
 opusinfo: zsh
@@ -529,7 +519,6 @@ rst2xml: fish
 rstpep2html: fish
 ruby-build: fish
 ruby-mri: zsh
-run0: zsh # no fish completions, but has a custom spec
 sadf: zsh
 sahara: zsh
 sail: click
@@ -629,21 +618,9 @@ witness: cobra
 wormhole: click
 wrangler: yargs
 wslpath: fish
-xbps-alternatives: fish
-xbps-checkvers: fish
-xbps-create: fish
-xbps-dgraph: fish
 xbps-digest: fish
 xbps-fbulk: fish
 xbps-fetch: fish
-xbps-install: fish
-xbps-pkgdb: fish
-xbps-query: fish
-xbps-reconfigure: fish
-xbps-remove: fish
-xbps-rindex: fish
-xbps-uchroot: fish
-xbps-uhelper: fish
 xdg-mime: fish
 xeol: cobra
 xmllint: zsh
@@ -652,7 +629,6 @@ xxh128sum: fish
 xxh32sum: fish
 xxh64sum: fish
 xxhsum: fish
-yadm: fish
 ykman: click
 yq: cobra
 zabbix_agent2: fish
