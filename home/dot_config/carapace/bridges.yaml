@@ -544,7 +544,6 @@ sqlsharp: fish
 ssh-add: zsh # I'll switch this to a custom spec later
 ssh-keyscan: zsh # I'll maybe switch this to a custom spec later
 svn-buildpackage: zsh
-sw_vers: zsh
 swiftc: zsh
 syft: cobra
 system_profiler: zsh
@@ -601,7 +600,7 @@ vultr: cobra
 vunnel: click
 watcher: zsh
 wg-quick: fish
-whalebrew: cobra # I don't really expect this to be getting data from docker/podman correctly. If it's not, that's a project for later
+whalebrew: cobra
 wicd-cli: fish
 wicd-client: fish
 wicd-gtk: fish

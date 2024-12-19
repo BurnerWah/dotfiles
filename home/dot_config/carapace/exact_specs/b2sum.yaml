@@ -1,0 +1,5 @@
+name: b2sum
+description: compute and check BLAKE2 message digest
+parsing: disabled
+completion:
+  positionalany: ['$carapace.bridge.CarapaceBin([md5sum])']

@@ -1,0 +1,8 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: nproc
+description: print the number of cores available to the current process
+flags:
+  --all: print the number of cores available to the system
+  --ignore=: ignore up to N cores
+  -V, --version: Print version
+  -h, --help: Print help

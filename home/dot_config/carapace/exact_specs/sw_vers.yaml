@@ -1,0 +1,10 @@
+name: sw_vers
+description: print macOS operating system version information
+flags:
+  -buildVersion, --buildVersion: display build version only
+  -help, --help: print help
+  -productName, --productName: display product name only
+  -productVersion, --productVersion: display product version only
+  -productVersionExtra, --productVersionExtra: display ProductVersionExtra only
+exclusiveflags:
+  - [buildVersion, productName, productVersion, productVersionExtra]

@@ -1,0 +1,16 @@
+name: bingrep
+description: grepping through binaries since 2017
+flags:
+  --color: Forces coloring, even in files and pipes
+  --extract=: Extract from an archive the object file which contains the given symbol
+  --hex: Print a colored and semantically tagged hex table
+  --ranges: Print a high level overview of the file offset ranges in this binary
+  -D, --demangle: Apply Rust/C++ demangling
+  -V, --version: Print version
+  -d, --debug: Print debug version of parse results
+  -h, --help: Print help
+  -s, --search=: Search for string
+  -t, --truncate=: 'Truncate string results to X characters [default: 2048]'
+completion:
+  positional:
+    - [$files]

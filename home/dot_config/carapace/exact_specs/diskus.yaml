@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: diskus
+description: Minimal, fast alternative to 'du -sh'
+flags:
+  --size-format=: Output format for file sizes
+  -V, --version: Prints version information
+  -b, --apparent-size: Compute apparent size instead of disk usage
+  -h, --help: Prints help information
+  -j, --threads=: 'Set the number of threads (default: 3 x num cores)'
+  -v, --verbose: Do not hide filesystem errors
+completion:
+  positionalany: [$directories]
+  flag:
+    size-format: ["decimal\tMB (default)", "binary\tMiB"]
