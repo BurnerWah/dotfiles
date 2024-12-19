@@ -1,0 +1,31 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: pngquant
+description: PNG converter and lossy image compressor
+flags:
+  --ext=: Ffile extension (suffix) to use for output files
+  --floyd=: Set dithering level using fractional number between 0 and 1
+  --nofs: Disable Floyd-Steinberg dithering
+  --ordered&: --nofs
+  --posterize=: Output lower-precision color (e.g. for ARGB4444 output)
+  --skip-if-larger: Only save converted files if they're smaller than original
+  --strip: Remove optional metadata
+  --transbug: Workaround for readers
+  -f, --force: Overwrite existing output files
+  -h, --help: Display help
+  -o, --output=: Writes converted file to the given path
+  -Q, --quality=: Don't save below min, use fewer colors below max (0-100)
+  -s, --speed=: Speed/quality trade-off
+  -v, --verbose: Enable verbose messages
+  -V, --version: Display version
+exclusiveflags:
+  - [ext, output, force]
+  - [nofs, ordered, floyd]
+completion:
+  flag:
+    speed:
+      - '$carapace.number.Range({start: 1, end: 11})'
+      - "1\tslow"
+      - "4\tdefault"
+      - "11\tfast & rough"
+  positionalany:
+    - $files([.png])

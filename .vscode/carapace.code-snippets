@@ -20,4 +20,9 @@
     "prefix": "$carapace.bridge.CarapaceBin",
     "body": "\\$carapace.bridge.CarapaceBin([$1])",
   },
+  "Carapace Number Range": {
+    "scope": "yaml",
+    "prefix": "$carapace.number.Range",
+    "body": "'\\$carapace.number.Range({start: ${1:0}, end: ${2:0}})'",
+  },
 }

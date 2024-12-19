@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: stdbuf
+description: run a command with modified buffering operations for its standard streams
+parsing: non-interspersed
+flags:
+  --help: Print help
+  --version: Print version
+  -e, --error=: adjust standard error stream buffering
+  -i, --input=: adjust standard input stream buffering
+  -o, --output=: adjust standard output stream buffering
+completion:
+  positionalany:
+    - $carapace.bridge.CarapaceBin

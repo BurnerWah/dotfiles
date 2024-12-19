@@ -222,7 +222,6 @@ draft: cobra
 driftctl: cobra
 dropdb: zsh # Fish provides built-in completions too
 dscacheutil: fish
-dua: fish
 dumpcap: fish
 dumper: zsh
 duply: fish
