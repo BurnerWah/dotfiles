@@ -1,0 +1,23 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: gping
+description: Ping, but with a graph
+flags:
+  --clear: Clear the graph from the terminal after closing the program
+  --cmd: Graph execution time for this command
+  --horizontal-margin=: Horizontal margin around the graph (left and right)
+  --ping-args=: Extra arguments to pass to `ping`
+  --vertical-margin=: Vertical margin around the graph (top and bottom)
+  -4: Resolve ping targets to IPv4 address
+  -6: Resolve ping targets to IPv6 address
+  -V, --version: Print version
+  -b, --buffer=: Number of seconds to display on graph
+  -c, --color=*: Assign color to a graph entry
+  -h, --help: Print help
+  -i, --interface=: Interface to use when pinging
+  -n, --watch-interval=: Watch interval in seconds
+  -s, --simple-graphics: Use dot character instead of braille
+exclusiveflags:
+  - ['4', '6']
+completion:
+  positionalany:
+    - $carapace.net.Hosts

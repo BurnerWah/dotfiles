@@ -291,7 +291,6 @@ golint: fish
 gomplate: cobra
 gopass: urfavecli
 gorename: fish
-gping: fish
 gresource: fish
 growisofs: zsh
 grub-file: fish
