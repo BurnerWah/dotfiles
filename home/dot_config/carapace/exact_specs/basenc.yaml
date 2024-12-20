@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: basenc
+description: encode/decode data and print to standard output
+flags:
+  --base2lsbf: bit string with least significant bit (lsb) first
+  --base2msbf: bit string with most significant bit (msb) first
+  --base16: hex encoding
+  --base32: same as 'base32' program
+  --base32hex: extended hex alphabet base32
+  --base64: same as 'base64' program
+  --base64url: file- and url-safe base64
+  --z85: ascii85-like encoding;
+  --version: Print version
+  -d, --decode: decode data
+  --help: Print help
+  -i, --ignore-garbage: when decoding, ignore non-alphabetic characters
+  -w, --wrap=: wrap encoded lines after COLS character (default 76, 0 to disable wrapping)
+
+exclusiveflags:
+  - [base16, base32, base32hex, base64, base64url, base2lsbf, base2msbf, z85]
+
+completion:
+  positional:
+    - [$files]

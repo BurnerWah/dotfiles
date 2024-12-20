@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: desktop-file-install
+description: Install desktop files
+flags:
+  --add-category=: Add CATEGORY to the list of categories
+  --add-mime-type=: Add MIME-TYPE to the list of MIME types
+  --add-not-show-in=: Add ENVIRONMENT to the list of desktop environment where the desktop files should not be displayed
+  --add-only-show-in=: Add ENVIRONMENT to the list of desktop environment where the desktop files should be displayed
+  --copy-generic-name-to-name: Copy the value of the "GenericName" key to the "Name" key
+  --copy-name-to-generic-name: Copy the value of the "Name" key to the "GenericName" key
+  --delete-original: Delete the source desktop files, leaving only the target files (effectively "renames" the desktop files)
+  --dir=: Install desktop files to the DIR directory
+  --help-all: Show all help options
+  --help-edit: Show desktop file edition options
+  --help-install: Show desktop file installation options
+  --rebuild-mime-info-cache: Rebuild the MIME types application database after processing desktop files
+  --remove-category=: Remove CATEGORY from the list of categories
+  --remove-key=: Remove the KEY key from the desktop files, if present
+  --remove-mime-type=: Remove MIME-TYPE from the list of MIME types
+  --remove-not-show-in=: Remove ENVIRONMENT from the list of desktop environment where the desktop files should not be displayed
+  --remove-only-show-in=: Remove ENVIRONMENT from the list of desktop environment where the desktop files should be displayed
+  --set-comment=: Set the "Comment" key to COMMENT
+  --set-generic-name=: Set the "GenericName" key to GENERIC-NAME
+  --set-icon=: Set the "Icon" key to ICON
+  --set-key=: Set the KEY key to VALUE passed to next --set-value option
+  --set-name=: Set the "Name" key to NAME
+  --set-value=: Set the KEY key from previous --set-key option to VALUE
+  --vendor=: Add a vendor prefix to the desktop files, if not already present
+  --version: Show the program version
+  -h, --help: Show help options
+  -m, --mode=: Set the permissions of the destination files to MODE
+
+exclusiveflags:
+  - [help-all, help-edit, help-install, help]
+  - [copy-generic-name-to-name, copy-name-to-generic-name]
+
+completion:
+  flag:
+    # TODO add more flag completions
+    add-mime-type:
+      &mimetypes # This should check in $XDG_DATA_HOME & $XDG_DATA_DIRS too
+      - $(cat /usr/share/mime/types)
+    dir: [$directories]
+    remove-mime-type: *mimetypes
+    mode: [$carapace.fs.FileModesNumeric]
+  positionalany:
+    - $files([.desktop])

@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: gtk-update-icon-cache
+description: icon theme caching utility
+flags:
+  --include-image-data: Include image data in the cache
+  -c, --source=: Output a C header file
+  -f, --force: Overwrite an existing cache, even if up to date
+  -h, --help: Show help options
+  -i, --index-only: Don't include image data in the cache
+  -q, --quiet: Turn off verbose output
+  -t, --ignore-theme-index: Don't check for the existence of index.theme
+  -v, --validate: Validate existing icon cache
+completion:
+  positional:
+    - [$directories]

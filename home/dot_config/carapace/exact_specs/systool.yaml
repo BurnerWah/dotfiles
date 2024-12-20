@@ -1,0 +1,17 @@
+name: systool
+description: view system device information by bus, class, and topology
+flags:
+  -a: Show attributes
+  -b=: Show a specific bus
+  -c=: Show a specific class
+  -d: Show only device
+  -h: Show usage
+  -m=: Show a specific module
+  -p: Show path to device/driver
+  -v: Show all attributes with values
+  -A: Show attribute value
+  -D: Show only drivers
+  -P: Show device's parent
+completion:
+  flag:
+    m: [$carapace.os.KernelModules]

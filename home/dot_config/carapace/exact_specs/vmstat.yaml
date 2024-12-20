@@ -1,0 +1,31 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: vmstat
+description: report virtual memory statistics
+flags:
+  -a, --active: active/inactive memory
+  -D, --disk-sum: summarize disk statistics
+  -d, --disk: disk statistics
+  -f, --forks: number of forks since boot
+  -h, --help: display this help and exit
+  -m, --slabs: slabinfo
+  -n, --one-header: do not redisplay header
+  -p, --partition=: partition specific statistics
+  -s, --stats: event counter statistics
+  -S, --unit=: define display unit
+  -t, --timestamp: show timestamp
+  -V, --version: output version information and exit
+  -w, --wide: wide output
+  -y, --no-first: skips first line of output
+completion:
+  flag:
+    partition:
+      - '$(lsblk -J -lno TYPE,NAME,MAJ:MIN,SIZE,MOUNTPOINT | jq -r ''
+        .blockdevices[]
+        | select(.type == "part")
+        | "\(.name)\t\([."maj:min", .size, .mountpoint] | join(" "))"
+        '')'
+    unit:
+      - "k\tKilobytes (1000)"
+      - "K\tKibibytes (1024)"
+      - "m\tMegabytes (1000000)"
+      - "M\tMebibytes (1048576)"

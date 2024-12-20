@@ -1,0 +1,10 @@
+name: update-mime-database
+description: a program to build the Shared MIME-Info database cache
+flags:
+  -h: Print out a command summary
+  -v: Print out the version information
+  -V: Be verbose
+  -n: Only update if there are files newer that DIR/version
+completion:
+  positionalany:
+    - $directories

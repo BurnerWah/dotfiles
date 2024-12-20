@@ -1,0 +1,7 @@
+name: getsebool
+description: get SELinux boolean value
+flags:
+  -a: Show all SELinux booleans
+completion:
+  positionalany:
+    - $(getsebool -a | sed 's| --> |\t|')

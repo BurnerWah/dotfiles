@@ -1,0 +1,11 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: update-desktop-database
+description: Build cache database of MIME types handled by desktop files
+flags:
+  --version: Show the program version
+  -h, --help: Show help options
+  -q, --quiet: Do not display any information about processing and updating progress
+  -v, --verbose: Display more information about processing and updating progress
+completion:
+  positionalany:
+    - $directories
