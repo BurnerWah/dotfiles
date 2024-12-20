@@ -2,8 +2,8 @@
 # (probably security), so adding additional completions here doesn't do
 # anything
 # We can enable caching and apply other settings like that, though
-zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh"
+zstyle '*' use-cache on
+zstyle '*' cache-path "$XDG_CACHE_HOME/zsh"
 
 # Also, carapace corrupts zsh's completions a little bit. As best as I can tell
 # this isn't within the zsh scripts themselves, but in carapace's processing of
