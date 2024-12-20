@@ -1,0 +1,78 @@
+# This is for dart-sass, while the fish completions are for ruby-sass
+name: sass
+description: Compile Sass to CSS
+flags:
+  # Input & Output
+  --stdin: Read the stylesheet from stdin
+  --no-stdin&: ''
+  --indented: Use the indented syntax for input from stdin
+  --no-indented&: ''
+  -I, --load-path=: A path to use when resolving imports
+  -p, --pkg-importer=: Built-in importer(s) to use for pkg
+  -s, --style=: Output style
+  --charset: Emit a @charset or BOM for CSS with non-ASCII characters
+  --no-charset&: ''
+  --error-css: When an error occurs, emit a stylesheet describing it
+  --no-error-css&: ''
+  --update: Only compile out-of-date stylesheets
+
+  # Source Maps
+  --source-map: Whether to generate source maps
+  --no-source-map&: ''
+  --source-map-urls=: How to link from source maps to source files
+  --embed-sources: Embed source file contents in source maps
+  --no-embed-sources&: ''
+  --embed-source-map: Embed source map contents in CSS
+  --no-embed-source-map&: ''
+
+  # Warnings
+  -q, --quiet: Don't print warnings
+  --no-quiet&: ''
+  --quiet-deps: Don't print compiler warnings from dependencies
+  --no-quiet-deps&: ''
+  --verbose: Print all deprecation warnings even when they're repetitive
+  --no-verbose&: ''
+  --fatal-deprecation=: Deprecations to treat as errors
+  --silence-deprecation=: Deprecations to ignore
+  --future-deprecation=: Opt in to a deprecation early
+
+  # Other
+  -w, --watch: Watch stylesheets and recompile when they change
+  --poll: Manually check for changes rather than using a native watcher
+  --no-poll&: ''
+  --stop-on-error: Don't compile more files once an error is encountered
+  --no-stop-on-error&: ''
+  -i, --interactive: Run an interactive SassScript shell
+  -c, --color: Whether to use terminal colors for messages
+  --no-color&: ''
+  --unicode: Whether to use Unicode characters for messages
+  --no-unicode&: ''
+  --trace: Print full Dart stack traces for exceptions
+  --no-trace&: ''
+  -h, --help: Print usage information
+  --version: Print the version of Dart Sass
+
+exclusiveflags:
+  - [stdin, no-stdin]
+  - [indented, no-indented]
+  - [charset, no-charset]
+  - [error-css, no-error-css]
+  - [source-map, no-source-map]
+  - [embed-sources, no-embed-sources]
+  - [embed-source-map, no-embed-source-map]
+  - [quiet, no-quiet]
+  - [quiet-deps, no-quiet-deps]
+  - [verbose, no-verbose]
+  - [poll, no-poll]
+  - [stop-on-error, no-stop-on-error]
+  - [color, no-color]
+  - [unicode, no-unicode]
+  - [trace, no-trace]
+
+completion:
+  positional:
+    - - $files([.scss, .sass])
+  flag:
+    load-path: [$files]
+    style: ["expanded\tdefault", compressed]
+    source-map-urls: ["relative\tdefault", absolute]

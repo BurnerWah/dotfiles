@@ -1,0 +1,7 @@
+name: fish_key_reader
+description: explore what characters keyboard keys send
+flags:
+  -c, --continuous: Start a continuous session
+  -h, --help: Display help and exit
+  -V, --verbose: Output timing and explain sequence
+  -v, --version: Display version and exit

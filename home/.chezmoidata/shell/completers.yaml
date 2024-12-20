@@ -13,6 +13,7 @@ settings:
         genact: genact --print-completions elvish
         git-absorb: git-absorb --gen-completions elvish
         gix: gix completions --shell elvish
+        hgrep: hgrep --generate-completion-script elvish
         kondo: kondo --completions elvish
         kwctl: kwctl completions --shell elvish
         miniserve: miniserve --print-completions elvish
@@ -46,6 +47,7 @@ settings:
         genact: genact --print-completions powershell
         git-absorb: git-absorb --gen-completions powershell
         gix: gix completions --shell powershell
+        hgrep: hgrep --generate-completion-script powershell
         kondo: kondo --completions powershell
         kwctl: kwctl completions --shell powershell
         miniserve: miniserve --print-completions powershell

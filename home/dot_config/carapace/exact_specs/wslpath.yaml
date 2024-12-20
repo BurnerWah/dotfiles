@@ -1,0 +1,14 @@
+name: wslpath
+description: translate Windows paths to & from WSL paths
+parsing: non-interspersed
+flags:
+  -a: force result to absolute path format
+  -u=: translate from a Windows path to a WSL path (default)
+  -w=: translate from a WSL path to a Windows path
+  -m=: translate from a WSL path to a Windows path, with '/' instead of '\'
+exclusiveflags:
+  - [u, w, m]
+completion:
+  flag:
+    w: [$files]
+    m: [$files]

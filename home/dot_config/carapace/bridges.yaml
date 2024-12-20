@@ -1,11 +1,11 @@
 # yaml-language-server: $schema=../../../schemas/carapace-bridges.yaml
-7z: fish
-7za: fish
-7zr: fish
+7z: fish # TODO create custom spec for windows
+7za: fish # TODO create custom spec for windows
+7zr: fish # TODO create custom spec for windows
 a2disconf: fish
 a2enconf: fish
 accept: fish
-act: cobra # Probably will need a custom spec at some point
+act: cobra
 adduser: fish
 aliae: cobra
 alsactl: fish
@@ -77,9 +77,10 @@ barbican: zsh
 berglas: cobra
 bin: cobra
 bind: fish
-blender: fish
+blender: fish # TODO create custom spec for windows
 bosh: fish
 boundary: complete
+bower: fish
 brightnessctl: fish
 btdownloadgui: zsh
 btlaunchmany: zsh
@@ -106,6 +107,7 @@ castnow: fish
 cdebug: cobra
 ceilometer: zsh
 cekit: click
+cf: fish
 cf2tf: click
 chainloop: cobra
 chamber: cobra
@@ -142,7 +144,7 @@ cosign: cobra
 cpio: zsh
 crc: cobra
 create_ap: fish
-createdb: zsh # Fish provides built-in completions too
+createdb: zsh
 crontab: zsh
 crsh: zsh
 csc: fish
@@ -187,7 +189,7 @@ devcontainer: yargs
 devpod: cobra
 dhcpcd: fish
 dhcpinfo: zsh
-diskutil: fish
+diskutil: fish # Mac OS
 distrobox-assemble: zsh
 distrobox-create: zsh
 distrobox-enter: zsh
@@ -220,8 +222,8 @@ dpkg-repack: zsh
 dpkg-source: zsh
 draft: cobra
 driftctl: cobra
-dropdb: zsh # Fish provides built-in completions too
-dscacheutil: fish
+dropdb: zsh
+dscacheutil: fish # Mac OS
 dumpcap: fish
 dumper: zsh
 duply: fish
@@ -229,6 +231,7 @@ efibootmgr: fish
 efivar: fish
 ehco: kingpin
 elixir: fish
+emacs: fish
 encfs: fish
 eog: zsh
 eopkg: fish
@@ -238,9 +241,11 @@ exif: fish
 expect: fish
 ezjail-admin: fish
 f2: urfavecli
+fab: fish
+fail2ban-client: fish
 fastboot: fish
 fava: click
-fc-match: zsh # Probably will be replaced by some built-in carapace completion in the future
+fc-match: zsh
 feishu2md: urfavecli
 ffplay: fish
 ffprobe: fish
@@ -248,7 +253,6 @@ findstr: fish
 firejail: zsh
 firewall-offline-cmd: zsh
 fish_indent: fish # could make a custom spec
-fish_key_reader: fish
 flex: zsh
 flex++: zsh
 flowpipe: cobra
@@ -345,11 +349,11 @@ iostat: zsh
 ironic: zsh
 isag: zsh
 istioctl: cobra
-java_home: fish
+java_home: fish # Mac OS
 javadoc: zsh
 javap: zsh
 jdb: zsh
-jest: yargs # Probably will only be run with npm or something
+jest: yargs
 john: fish
 k3d: cobra
 k9s: cobra
@@ -377,7 +381,7 @@ kubetail: cobra
 kumactl: cobra
 kustomize: cobra
 kyverno: cobra
-launchctl: fish
+launchctl: fish # Mac OS
 lefthook: cobra
 legit: click
 limactl: cobra
@@ -401,7 +405,7 @@ mkfs.vfat: fish
 mkisofs: zsh
 mkpasswd: fish
 mlocate: zsh
-mocha: yargs # Probably will only be run with npm or something
+mocha: yargs
 module-assistant: zsh
 molecule: click
 monasca: zsh
@@ -429,8 +433,8 @@ nodeenv: fish
 nomad: complete
 notation: cobra
 nova: zsh
-npq-hero: yargs # Eventually this should have a custom spec
-npq: yargs # Eventually this should have a custom spec
+npq-hero: yargs # TODO create custom spec
+npq: yargs # TODO create custom spec
 oc: cobra
 ogg123: zsh
 oggdec: zsh
@@ -440,7 +444,7 @@ oomctl: zsh
 op: cobra
 opa: cobra
 openstack: zsh
-ops: cobra # veeery slow
+ops: cobra # slow
 opusdec: zsh
 opusenc: zsh
 opusinfo: zsh
@@ -467,7 +471,7 @@ pocketbase: cobra
 podman: cobra
 podman.lima: cobra
 postgres: zsh
-pre-commit: fish # pre-commit uses argparse but the argcomplete bridge doesn't work for it. fish has pre-made completions though.
+pre-commit: fish # argcomplete bridge doesn't work
 proxychains: fish
 prt-get: fish
 pscale: cobra
@@ -477,7 +481,7 @@ pydf: fish
 pzstd: fish
 qemu: zsh
 rakudo: fish
-rclone: cobra # the built-in fish completions for rclone are broken, and while they can be fixed, we may as well get them into carapace so they work in other shells
+rclone: cobra # built-in fish completions are broken
 realpath: fish
 regal: cobra
 regctl: cobra
@@ -508,25 +512,24 @@ rst2s5: fish
 rst2xetex: fish
 rst2xml: fish
 rstpep2html: fish
-ruby-build: fish
+ruby-build: fish # TODO create custom spec
 ruby-mri: zsh
 sadf: zsh
 sahara: zsh
 sail: click
-sam: click # This runs very slooooow but it's the best thing I've got so far
+sam: click # slow
 sar: zsh
-sass-convert: fish
-sass: fish
-sc_usage: zsh
+sass-convert: fish # ruby-sass
+sc_usage: zsh # Mac OS
 scrypt: fish
-scss: fish
+scss: fish # ruby-sass
 senlin: zsh
 serialver: zsh
 sget: cobra
 shub: click
 singularity: cobra
 skaffold: cobra
-skate: cobra # Skate doesn't say that it has any completions but it uses cobra so that's not a problem
+skate: cobra
 skopeo: cobra
 slsa-verifier: cobra
 snapper: zsh
@@ -539,12 +542,12 @@ sqlfluff: click
 sqlite: zsh
 sqlite3: zsh
 sqlsharp: fish
-ssh-add: zsh # I'll switch this to a custom spec later
-ssh-keyscan: zsh # I'll maybe switch this to a custom spec later
+ssh-add: zsh # TODO create custom spec
+ssh-keyscan: zsh # TODO create custom spec
 svn-buildpackage: zsh
 swiftc: zsh
 syft: cobra
-system_profiler: zsh
+system_profiler: zsh # Mac OS
 systemd-ask-password: zsh
 systemd-cat: zsh
 systemd-cgls: zsh
@@ -563,7 +566,7 @@ systemd-tty-ask-password-agent: zsh
 tacker: zsh
 temporal: cobra
 tmutil: fish
-tokei: fish
+tokei: fish # TODO create custom spec
 toolbox: cobra
 totem: fish
 trailscraper: click
@@ -575,7 +578,7 @@ trivy: cobra
 trove: zsh
 tune2fs: zsh
 tuned-adm: fish
-unzstd: fish
+unzstd: fish # TODO create custom spec
 update-eix-remote: fish
 update-eix: fish
 update-rc.d: zsh
@@ -607,7 +610,6 @@ winemaker: fish
 witness: cobra
 wormhole: click
 wrangler: yargs
-wslpath: fish
 xbps-digest: fish
 xbps-fbulk: fish
 xbps-fetch: fish
@@ -633,10 +635,10 @@ zfs: fish
 zig: fish
 zpaq: fish
 zpool: fish
-zsh: zsh # This'll probably either get replaced by a built-in carapace completer, or a custom spec
-zstd: fish
-zstdcat: fish
-zstdgrep: fish
-zstdless: fish
-zstdmt: fish
+zsh: zsh
+zstd: fish # TODO create custom spec
+zstdcat: fish # TODO create custom spec
+zstdgrep: fish # TODO create custom spec
+zstdless: fish # TODO create custom spec
+zstdmt: fish # TODO create custom spec
 zun: zsh
