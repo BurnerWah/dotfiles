@@ -4,9 +4,12 @@
 7zr: fish # TODO create custom spec for windows
 a2disconf: fish
 a2enconf: fish
+abook: fish
 accept: fish
 act: cobra
+activate-global-python-argcomplete: argcomplete
 adduser: fish
+airmon-ng: fish
 aliae: cobra
 alsactl: fish
 amixer: fish
@@ -47,6 +50,7 @@ apt-zip-inst: fish
 apt-zip-list: fish
 arc: fish
 archlinux-java: fish
+arduino-cli: cobra
 arduino-ctags: zsh
 argo: cobra
 argocd-vault-plugin: cobra
@@ -135,37 +139,46 @@ cmark: fish
 cmp: zsh
 cobra-cli: cobra
 colima: cobra
+compare: fish # imagemagick
 concurrently: yargs
 conjure: fish
 connmanctl: fish
 cookiecutter: click
 copa: cobra # very slow
+coreadm: zsh
 cosign: cobra
 cpio: zsh
+cplay: zsh
 crc: cobra
 create_ap: fish
 createdb: zsh
+createuser: zsh
 crontab: zsh
 crsh: zsh
 csc: fish
+cscope: zsh
 csharp: fish
 csi: fish
 cssh: zsh
+csup: zsh
 ctags-exuberant: zsh
 ctags-universal: zsh
 ctags: zsh
 ctlptl: cobra
+cu: zsh
 cue: cobra
 cupsaccept: fish
 cupsdisable: fish
 cupsenable: fish
 cupsreject: fish
+cvsup: zsh
 cwebp: fish
 cycode: click
 cygcheck: zsh
 cygport: fish
 cygrunsrv: zsh
 cygserver: zsh
+dak: zsh
 dasel: cobra
 dash: zsh
 dashing: urfavecli
@@ -229,6 +242,7 @@ dumper: zsh
 duply: fish
 efibootmgr: fish
 efivar: fish
+eg: fish
 ehco: kingpin
 elixir: fish
 emacs: fish
@@ -236,6 +250,7 @@ encfs: fish
 eog: zsh
 eopkg: fish
 erb: zsh
+etags: zsh
 exercism: cobra
 exif: fish
 expect: fish
@@ -256,6 +271,7 @@ fish_indent: fish # could make a custom spec
 flex: zsh
 flex++: zsh
 flowpipe: cobra
+fluxbox-remote: fish
 fly: cobra
 flyctl: cobra
 freezer: zsh
@@ -263,11 +279,14 @@ fs_usage: zsh
 fsharpc: fish
 fsharpi: fish
 fw_update: zsh
+gacutil: fish # mono
 gapplication: fish
 gator: cobra
 gcloud: argcomplete
 gcmp: zsh
+gcore: zsh
 gdbus: fish
+gendarme: fish
 getclip: zsh
 getfacl: zsh
 ggv: zsh
@@ -283,6 +302,7 @@ gk: cobra
 glab: cobra
 glance: zsh
 glow: cobra
+gm: zsh
 gnocchi: zsh
 gnome-extensions: fish
 gnome-gv: zsh
@@ -300,6 +320,7 @@ growisofs: zsh
 grub-file: fish
 grub-install: fish
 grub-mkrescue: fish
+grunt: fish
 grype: cobra
 guilt-add: zsh
 guilt-applied: zsh
@@ -337,10 +358,17 @@ helm: cobra
 helmfile: cobra
 help2man: fish
 heroku: fish # zsh completion script is very weird
+hikari: fish
+hjson: fish
+hledger: fish
 homectl: fish
 hotbuild: cobra
 hugo: cobra
 i3-msg: fish
+icdiff: fish
+ifdata: fish
+ikdasm: fish # mono
+ilasm: fish # mono
 incus: cobra
 influx: urfavecli
 infracost: cobra
@@ -349,11 +377,15 @@ iostat: zsh
 ironic: zsh
 isag: zsh
 istioctl: cobra
+iw: fish
+iwctl: fish
 java_home: fish # Mac OS
 javadoc: zsh
 javap: zsh
+jbake: fish
 jdb: zsh
 jest: yargs
+jhipster: fish
 john: fish
 k3d: cobra
 k9s: cobra
@@ -382,30 +414,47 @@ kumactl: cobra
 kustomize: cobra
 kyverno: cobra
 launchctl: fish # Mac OS
+ldapsearch: fish
 lefthook: cobra
 legit: click
 limactl: cobra
 litecli: click
 litmusctl: cobra
 localstack: click
+logkeys: fish
 lpmove: fish
 lppasswd: fish
 lsattr: zsh
 lscfg: zsh
+lunchy: fish # Mac OS
 lxc: fish
+lxpanel: fish
+lzop: zsh
 m-a: zsh
+m4: fish
+mac2unix: zsh
+magento: fish
 magnum: zsh
+makedepend: fish
 manila: zsh
+mariner: fish
 mcap: cobra
+md-to-clip: fish
+mddiagnose: fish # Mac OS
+mdimport: fish # Mac OS
 minikube: cobra
 mistral: zsh
+mkbundle: fish # mono
+mkdocs: fish
 mkdosfs: fish
 mkfs.fat: fish
 mkfs.vfat: fish
 mkisofs: zsh
 mkpasswd: fish
+mkvextract: fish
 mlocate: zsh
 mocha: yargs
+mocp: fish
 module-assistant: zsh
 molecule: click
 monasca: zsh
@@ -413,10 +462,16 @@ mongocli: cobra
 mono: fish
 monodis: fish
 monop: fish
+mozilla-xremote-client: zsh
 mpstat: zsh
 murano: zsh
 mycli: click
+mysqladmin: zsh
+mysqldiff: zsh
+mysqlimport: zsh
+mysqlshow: zsh
 nautilus: zsh
+navi: fish
 neon: yargs # built in completion is broken but it's based on yargs
 neonctl: yargs
 nerdctl: cobra
@@ -436,6 +491,7 @@ nova: zsh
 npq-hero: yargs # TODO create custom spec
 npq: yargs # TODO create custom spec
 oc: cobra
+octave: fish
 ogg123: zsh
 oggdec: zsh
 ogginfo: zsh
@@ -443,6 +499,7 @@ oh-my-posh: cobra
 oomctl: zsh
 op: cobra
 opa: cobra
+openocd: fish
 openstack: zsh
 ops: cobra # slow
 opusdec: zsh
@@ -450,8 +507,10 @@ opusenc: zsh
 opusinfo: zsh
 orb: cobra
 orbctl: cobra
+pacmd: fish
 pactl: fish
 patool: fish
+pbget: fish
 pdf2ps: zsh
 perldoc: zsh
 pg_config: zsh
@@ -467,6 +526,8 @@ pidstat: zsh
 pio: click
 pipenv: click
 pipgrip: click
+pix: fish
+pkgmk: fish
 pocketbase: cobra
 podman: cobra
 podman.lima: cobra
@@ -480,11 +541,17 @@ pstree: fish
 pydf: fish
 pzstd: fish
 qemu: zsh
+qjs: fish
+qjsc: fish
+qshell: fish
+qubes-gpg-client: fish
+rake: zsh
 rakudo: fish
 rclone: cobra # built-in fish completions are broken
 realpath: fish
 regal: cobra
 regctl: cobra
+register-python-argcomplete: argcomplete
 reindexdb: zsh
 reject: fish
 rejmerge: fish
@@ -493,6 +560,7 @@ rich: click
 rmic: zsh
 rmid: zsh
 rmiregistry: zsh
+root: fish
 roswell: fish
 rpm-ostree: fish
 rpmbuild: zsh
@@ -514,17 +582,23 @@ rst2xml: fish
 rstpep2html: fish
 ruby-build: fish # TODO create custom spec
 ruby-mri: zsh
+s3cmd: fish
+sad: fish
 sadf: zsh
 sahara: zsh
 sail: click
 sam: click # slow
 sar: zsh
 sass-convert: fish # ruby-sass
+sbcl: fish
+sbt: fish
 sc_usage: zsh # Mac OS
+scanimage: fish
 scrypt: fish
 scss: fish # ruby-sass
 senlin: zsh
 serialver: zsh
+serve: fish
 sget: cobra
 shub: click
 singularity: cobra
@@ -532,8 +606,11 @@ skaffold: cobra
 skate: cobra
 skopeo: cobra
 slsa-verifier: cobra
+smartctl: zsh
+smerge: fish
 snapper: zsh
 softwareupdate: zsh
+sops: urfavecli
 sphinx-apidoc: fish
 sphinx-autogen: fish
 sphinx-build: fish
@@ -544,9 +621,12 @@ sqlite3: zsh
 sqlsharp: fish
 ssh-add: zsh # TODO create custom spec
 ssh-keyscan: zsh # TODO create custom spec
+stream: fish # imagemagick
 svn-buildpackage: zsh
 swiftc: zsh
 syft: cobra
+sylpheed: fish
+sysbench: fish
 system_profiler: zsh # Mac OS
 systemd-ask-password: zsh
 systemd-cat: zsh
@@ -565,6 +645,7 @@ systemd-tmpfiles: zsh
 systemd-tty-ask-password-agent: zsh
 tacker: zsh
 temporal: cobra
+termite: fish
 tmutil: fish
 tokei: fish # TODO create custom spec
 toolbox: cobra
@@ -574,10 +655,13 @@ trash-empty: fish
 trash-list: fish
 trash-put: fish
 trash-restore: fish
+travis: fish
 trivy: cobra
 trove: zsh
+ttx: fish
 tune2fs: zsh
 tuned-adm: fish
+unix2mac: zsh
 unzstd: fish # TODO create custom spec
 update-eix-remote: fish
 update-eix: fish
@@ -600,6 +684,7 @@ vt: cobra
 vultr: cobra
 vunnel: click
 watcher: zsh
+wesnoth: fish
 wg-quick: fish
 whalebrew: cobra
 wicd-cli: fish
@@ -607,16 +692,25 @@ wicd-client: fish
 wicd-gtk: fish
 windscribe: fish
 winemaker: fish
+wipefs: zsh
 witness: cobra
 wormhole: click
 wrangler: yargs
+wvdial: fish
 xbps-digest: fish
 xbps-fbulk: fish
 xbps-fetch: fish
 xdg-mime: fish
 xeol: cobra
+xgettext: fish
 xmllint: zsh
+xmms: fish
+xplayer: fish
+xreader: fish
+xsel: fish
+xsp: fish
 xsv: fish
+xviewer: fish
 xxh128sum: fish
 xxh32sum: fish
 xxh64sum: fish
@@ -631,6 +725,7 @@ zabbix_proxy: fish
 zabbix_sender: fish
 zabbix_server: fish
 zabbix_web_service: fish
+zef: fish # raku
 zfs: fish
 zig: fish
 zpaq: fish

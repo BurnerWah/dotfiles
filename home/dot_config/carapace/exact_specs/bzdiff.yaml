@@ -1,0 +1,9 @@
+name: bzdiff
+description: diff for bzip2
+parsing: disabled
+completion:
+  positionalany:
+    - $carapace.bridge.CarapaceBin([diff]) ||| $chdir(/var/empty)
+  positional:
+    - ['$files([.bz2])']
+    - ['$files([.bz2])', $files]

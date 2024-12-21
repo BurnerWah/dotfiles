@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: hexyl
+description: a command-line hex viewer
+flags:
+  --block-size=: Sets the size of the `block` unit to SIZE
+  --border=: Whether to draw a border
+  --character-table=: Defines how bytes are mapped to characters
+  --color=: When to use colors
+  --endianness=: Whether to print out groups in little-endian or big-endian format
+  --no-characters: Do not show the character panel on the right
+  --panels=: Sets the number of hex data panels to be displayed
+  --terminal-width=: Sets the number of terminal columns to be displayed
+  -C, --characters: Show the character panel on the right
+  -P, --no-position: Whether to display the position panel on the left
+  -V, --version: Print version
+  -b, --base=: Sets the base used for the bytes
+  -g, --group-size=: Number of bytes/octets that should be grouped together
+  -h, --help: Print help
+  -n, --length=: Only read N bytes from the input
+  -o, --display-offset=: Add N bytes to the displayed file position
+  -p, --plain: Display output without any styling
+  -s, --skip=: Skip the first N bytes of the input. The N argument can
+  -v, --no-squeezing: Displays all input data
+completion:
+  positional:
+    - [$files]
+  flag:
+    color:
+      - "always\t(default) Always use colorized output"
+      - "auto\tOnly displays colors if the output goes to an interactive terminal"
+      - "never\tDo not use colorized output"
+      - "force\tOverride the NO_COLOR environment variable"
+    border:
+      - "unicode\t(default) Draw a border with Unicode characters"
+      - "ascii\tDraw a border with ASCII characters"
+      - "none\tDo not draw a border at all"
+    character-table: [default, ascii, codepage-1047, codepage-437]
+    group-size:
+      - "1\t(default) Grouped together every byte/octet"
+      - "2\tGrouped together every 2 bytes/octets"
+      - "4\tGrouped together every 4 bytes/octets"
+      - "8\tGrouped together every 8 bytes/octets"
+    endianness: ["bit\tdefault", little]
+    base: [binary, octal, decimal, "hexadecimal\tdefault"]
