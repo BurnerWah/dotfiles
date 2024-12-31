@@ -1,0 +1,1 @@
+ltrs completions fish | source

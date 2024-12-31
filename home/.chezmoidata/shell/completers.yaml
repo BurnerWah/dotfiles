@@ -16,6 +16,7 @@ settings:
         hgrep: hgrep --generate-completion-script elvish
         kondo: kondo --completions elvish
         kwctl: kwctl completions --shell elvish
+        ltrs: ltrs completions elvish
         miniserve: miniserve --print-completions elvish
         nickel: nickel gen-completions elvish
         onefetch: onefetch --generate elvish
@@ -27,13 +28,17 @@ settings:
         railway: railway completion elvish
         rbw: rbw gen-completions elvish
         ruff: ruff generate-shell-completion elvish
+        sentry-cli: sentry-cli completions elvish
         sg: sg completions elvish
         spytrap-adb: spytrap-adb completions elvish
+        tex-fmt: tex-fmt --completion elvish
         topgrade: topgrade --gen-completion elvish
         topiary: topiary completion elvish
+        typeshare: typeshare completions elvish
         uv: uv generate-shell-completion elvish
         uvx: uvx --generate-shell-completion elvish
         vrc-get.exe: vrc-get.exe completion elvish
+        wasmtime: wasmtime completion elvish
         yr: yr completion elvish
         zellij: zellij setup --generate-completion elvish
     pwsh:
@@ -51,6 +56,7 @@ settings:
         hgrep: hgrep --generate-completion-script powershell
         kondo: kondo --completions powershell
         kwctl: kwctl completions --shell powershell
+        ltrs: ltrs completions powershell
         miniserve: miniserve --print-completions powershell
         nickel: nickel gen-completions powershell
         onefetch: onefetch --generate powershell
@@ -63,13 +69,17 @@ settings:
         railway: railway completion powershell
         rbw: rbw gen-completions powershell
         ruff: ruff generate-shell-completion powershell
+        sentry-cli: sentry-cli completions powershell
         sg: sg completions powershell
         spytrap-adb: spytrap-adb completions powershell
         tailscale: tailscale completion powershell
+        tex-fmt: tex-fmt --completion powershell
         topgrade: topgrade --gen-completion powershell
         topiary: topiary completion powershell
+        typeshare: typeshare completions powershell
         uv: uv generate-shell-completion powershell
         uvx: uvx --generate-shell-completion powershell
         vrc-get.exe: vrc-get completion powershell
+        wasmtime: wasmtime completion powershell
         yr: yr completion powershell
         zellij: zellij setup --generate-completion powershell

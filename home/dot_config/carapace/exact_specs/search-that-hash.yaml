@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: search-that-hash
+description: The fastest way to crack any hash
+flags:
+  --accessible: Makes the output accessible
+  --hashcat_binary=: Location of hashcat folder (if using windows)
+  --help: Show this message and exit
+  --no-banner: Doesn't print banner
+  --timeout=: Choose timeout in seconds
+  -f, --file=: The file of hashes, seperated by newlines
+  -g, --greppable: Prints as JSON
+  -o, --offline: Use offline mode
+  -t, --text=: Crack a single hash
+  -v, --verbose: Turn on debugging logs. -vv for max.
+  -w, --wordlist=: The wordlist you want to use for Hashcat
+completion:
+  flag:
+    file: [$files]
+    hashcat_binary: [$files]

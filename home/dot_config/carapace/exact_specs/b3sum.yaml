@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: b3sum
+description: Calculate BLAKE3 cryptographic checksums
+flags:
+  --derive-key=: Use the key derivation mode, with the given context string
+  --keyed: Use the keyed mode, reading the 32-byte key from stdin
+  --no-mmap: Disable memory mapping
+  --no-names: Omit filenames in the output
+  --num-threads=: The maximum number of threads to use
+  --quiet: Skip printing OK for each checked file
+  --raw: Write raw output bytes to stdout, rather than hex
+  --seek=: The starting output byte offset, before hex encoding
+  -V, --version: Print version
+  -c, --check: Read BLAKE3 sums from the [FILE]s and check them
+  -h, --help: Print help
+  -l, --length=: The number of output bytes, before hex encoding
+completion:
+  positionalany:
+    - $files

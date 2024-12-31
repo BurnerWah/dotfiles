@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: scooter
+description: Interactive find and replace TUI
+flags:
+  --log-level=: Log level
+  -., --hidden: Include hidden files and directories, such as those whose name starts with a dot (.)
+  -V, --version: Print version
+  -h, --help: Print help
+completion:
+  flag:
+    log-level: [trace, debug, info, warn, error]
+  positionalany:
+    - $directories

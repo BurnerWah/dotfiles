@@ -1,0 +1,28 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: grex
+description: Command-line tool for generating regular expressions
+flags:
+  --min-repetitions=: Specifies the minimum quantity of substring repetitions to be converted if --repetitions is set
+  --min-substring-length=: Specifies the minimum length a repeated substring must have in order to be converted if --repetitions is set
+  --no-anchors: Removes the caret and dollar sign anchors from the resulting regular expression
+  --no-end-anchor: Removes the dollar sign anchor `$` from the resulting regular expression
+  --no-start-anchor: Removes the caret anchor `^` from the resulting regular expression
+  --with-surrogates: Converts astral code points to surrogate pairs if --escape is set
+  -c, --colorize: Provides syntax highlighting for the resulting regular expression
+  -d, --digits: Converts any Unicode decimal digit to \d
+  -D, --non-digits: Converts any character which is not a Unicode decimal digit to \D
+  -e, --escape: Replaces all non-ASCII characters with unicode escape sequences
+  -f, --file=: Reads test cases on separate lines from a file
+  -g, --capture-groups: Replaces non-capturing groups with capturing ones
+  -h, --help: Prints help information
+  -i, --ignore-case: Performs case-insensitive matching, letters match both upper and lower case
+  -r, --repetitions: Detects repeated non-overlapping substrings and converts them to {min,max} quantifier notation
+  -S, --non-spaces: Converts any character which is not a Unicode whitespace character to \S
+  -s, --spaces: Converts any Unicode whitespace character to \s
+  -v, --version: Prints version information
+  -W, --non-words: Converts any character which is not a Unicode word character to \W
+  -w, --words: Converts any Unicode word character to \w
+  -x, --verbose: Produces a nicer-looking regular expression in verbose mode
+completion:
+  flag:
+    file: [$files]

@@ -1,0 +1,3 @@
+#compdef wasmtime
+# shellcheck disable=SC1090
+source <(wasmtime completion zsh)

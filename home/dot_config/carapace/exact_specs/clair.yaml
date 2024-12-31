@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: clair
+description: Vulnerability Static Analysis for Containers
+flags:
+  -conf=: The file system path to Clair's config file.
+  -mode=: The operation mode for this server, will default to combo.
+completion:
+  flag:
+    conf: [$files]
+    mode: [combo, indexer, matcher, notifier]

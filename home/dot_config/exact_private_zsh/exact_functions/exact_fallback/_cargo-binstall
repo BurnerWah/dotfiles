@@ -1,0 +1,2 @@
+#compdef cargo-binstall
+source <(carapace cargo-binstall zsh)

@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: sleek
+description: CLI tool for formatting SQL
+flags:
+  -U, --uppercase: Change reserved keywords to ALL CAPS
+  -V, --version: Print version
+  -c, --check: Check if the code is already formatted
+  -h, --help: Print help
+  -i, --indent-spaces=: Set the number of spaces to use for indentation
+  -l, --lines-between-queries=: Set the number of line breaks after a query
+  -n, --trailing-newline: Enforce a tailing newline at the end of the file
+completion:
+  positionalany: [$files]

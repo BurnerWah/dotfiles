@@ -407,6 +407,7 @@ konqueror: zsh
 konsole: fish
 kopia: kingpin
 krita: fish
+kubectl-krew: cobra
 kubectl: cobra
 kubectl.lima: cobra
 kubetail: cobra
@@ -427,6 +428,7 @@ lppasswd: fish
 lsattr: zsh
 lscfg: zsh
 lunchy: fish # Mac OS
+lux: urfavecli
 lxc: fish
 lxpanel: fish
 lzop: zsh
@@ -529,6 +531,7 @@ pipgrip: click
 pix: fish
 pkgmk: fish
 pocketbase: cobra
+podman-remote: cobra
 podman: cobra
 podman.lima: cobra
 postgres: zsh
@@ -547,6 +550,7 @@ qshell: fish
 qubes-gpg-client: fish
 rake: zsh
 rakudo: fish
+ratify: cobra
 rclone: cobra # built-in fish completions are broken
 realpath: fish
 regal: cobra
@@ -674,6 +678,7 @@ varlinkctl: zsh
 vault: complete
 VBoxHeadless: fish
 VBoxSDL: fish
+vctl: cobra # vmware
 velero: cobra
 vhs: cobra
 vincent: carapace

@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: treefmt
+description: One CLI to format your repo
+flags:
+  --allow-missing-formatter: Do not exit with error if a configured formatter is missing
+  --ci: Runs treefmt in a CI mode, enabling --no-cache, --fail-on-change and adjusting some other settings best suited to a CI use case
+  --config-file=: Load the config file from the given path
+  --cpu-profile=: The file into which a cpu profile will be written
+  --excludes=: Exclude files or directories matching the specified globs
+  --fail-on-change: Exit with error if any changes were made
+  --no-cache: Ignore the evaluation cache entirely
+  --stdin: Format the context passed in via stdin
+  --tree-root-file=: File to search for to find the tree root (if --tree-root is not passed)
+  --tree-root=: The root directory from which treefmt will start walking the filesystem
+  --version: version for treefmt
+  --walk=: The method used to traverse the files within the tree root
+  -c, --clear-cache: Reset the evaluation cache
+  -C, --working-dir=: Run as if treefmt was started in the specified working directory instead of the current working directory
+  -f, --formatters=: Specify formatters to apply
+  -h, --help: help for treefmt
+  -i, --init: Create a treefmt.toml file in the current directory.
+  -u, --on-unmatched=: Log paths that did not match any formatters at the specified log level
+  -v, --verbose=: Set the verbosity of logs
+completion:
+  positionalany:
+    - $files
+  flag:
+    config-file: ['$files([.toml])']
+    cpu-profile: [$files]
+    tree-root-file: [$files]
+    tree-root: [$directories]
+    walk: [auto, git, filesystem]
+    working-dir: [$directories]
+    on-unmatched: [debug, info, warn, error, fatal]

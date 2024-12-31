@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: gron
+description: Transform JSON into discrete assignments to make it greppable
+flags:
+  --no-sort: Don't sort output (faster)
+  --version: Print version information
+  -c, --colorize: Colorize output (default on tty)
+  -j, --json: Represent gron data as JSON stream
+  -k, --insecure: Disable certificate validation
+  -s, --stream: Treat each line of input as a separate JSON object
+  -u, --ungron: Reverse the operation (turn assignments back into JSON)
+  -v, --values: Print just the values of provided assignments
+completion:
+  positional:
+    - - $files
+      - https:// ||| $nospace(/)
+      - $carapace.net.Hosts ||| $prefix(https://)
+      - http:// ||| $nospace(/)
+      - $carapace.net.Hosts ||| $prefix(http://)

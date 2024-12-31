@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: stylua
+description: A utility to format Lua code
+flags:
+  --call-parentheses=: Specify whether to apply parentheses on function calls with single string or table arg
+  --collapse-simple-statement=: Specify whether to collapse simple statements
+  --color=: Use colored output
+  --column-width=: The column width to use to attempt to wrap lines
+  --indent-type=: The type of indents to use
+  --indent-width=: The width of a single indentation level
+  --line-endings=: The type of line endings to use
+  --no-editorconfig: Disables the EditorConfig feature
+  --num-threads=: The number of threads to use to format files in parallel
+  --output-format=: Configures the diff output when using 'check' mode
+  --quote-style=: The style of quotes to use in string literals
+  --range-end=: An ending range to format files, given as a byte offset from the beginning of the file
+  --range-start=: A starting range to format files, given as a byte offset from the beginning of the file
+  --respect-ignores: Respect .styluaignore and glob matching for file paths provided directly to the tool
+  --sort-requires: Enable requires sorting
+  --space-after-function-names=: ''
+  --stdin-filepath=: Specify the location of the file that is being passed into stdin
+  --syntax=: The type of Lua syntax to parse
+  --verify: Verifies the output correctness after formatting
+  -V, --version: Print version information
+  -a, --allow-hidden: Whether to traverse hidden files/directories
+  -c, --check: Runs in 'check' mode
+  -f, --config-path=: Specify path to stylua.toml configuration file
+  -g, --glob=: Glob patterns to test against which files to check
+  -h, --help: Print help information
+  -s, --search-parent-directories: Search parent directories for stylua.toml, if not found in current directory
+  -v, --verbose: Enables verbose output
+exclusiveflags:
+  - [search-parent-directories, config-path]
+completion:
+  positionalany: [$files]
+  flag:
+    color: [Always, Auto, Never]
+    config-path: ['$files([.toml])']
+    output-format: [Standard, Unified, Json, Summary]
+    stdin-filepath: [$files]
+    call-parentheses: [Always, NoSingleString, NoSingleTable, None, Input]
+    collapse-simple-statement: [Never, FunctionOnly, ConditionalOnly, Always]
+    indent-type: [Tabs, Spaces]
+    line-endings: [Unix, Windows]
+    quote-style: [AutoPreferDouble, AutoPreferSingle, ForceDouble, ForceSingle]
+    space-after-function-names: [Never, Definitions, Calls, Always]
+    syntax: [All, Lua51, Lua52, Lua53, Lua54, Luau, LuaJit]

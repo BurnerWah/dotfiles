@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: name-that-hash
+description: Instantly name the type of any hash
+flags:
+  --help: Show this message and exit.
+  --no-banner: Removes banner from startup
+  --no-hashcat: Don't print Hashcat Information
+  --no-john: Don't print John The Ripper Information
+  -a, --accessible: Turn on accessible mode, does not print ASCII art
+  -b64, --base64: Decodes hashes in Base64 before identification
+  -e, --extreme: Searches for hashes within a string
+  -f, --file=: Checks every hash in a newline separated file
+  -g, --greppable: Prints in JSON format
+  -t, --text=: Check one hash
+  -v, --verbose: Turn on debugging logs. -vvv for maximum logs.
+completion:
+  flag:
+    file: [$files]

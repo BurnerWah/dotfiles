@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: kubetui
+description: TUI tool for monitoring and exploration of Kubernetes resources
+flags:
+  -A, --all-namespaces=: Select all namespaces
+  -C, --kubeconfig=: kubeconfig path
+  -V, --version: Print version
+  -c, --context=: Context
+  -h, --help: Print help
+  -l, --logging: Logging
+  -n, --namespaces=: Namespaces (e.g. -n val1,val2,val3 | -n val1 -n val2 -n val3)
+  -s, --split-direction=: Window split direction
+completion:
+  flag:
+    all-namespaces: ['true', "false\tdefault"]
+    split-direction: ["v\tdefault", h]
+    kubeconfig: [$files]

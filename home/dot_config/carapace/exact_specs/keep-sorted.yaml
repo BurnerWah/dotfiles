@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: keep-sorted
+description: Language-agnostic formatter that sorts selected lines
+flags:
+  --color=: Whether to color debug output
+  --default-options=: The options keep-sorted will use to sort
+  --lines=: Line ranges of the form "start:end"
+  --mode=: Determines what mode to run this tool in
+  -v, --verbose=: Log more verbosely
+completion:
+  positionalany: [$files]
+  flag:
+    color: [always, never, "auto\tdefault"]
+    mode: [lint, "fix\tdefault"]

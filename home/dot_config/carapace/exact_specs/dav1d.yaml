@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: dav1d
+description: AV1 decoder targeted to be small and fast
+flags:
+  --alllayers=: output all spatial layers of a scalable AV1 bitstream
+  --cpumask=: restrict permitted CPU instruction sets
+  --demuxer=: force demuxer type
+  --filmgrain=: enable film grain application
+  --framedelay=: maximum frame delay, capped at $threads
+  --frametimes=: dump frame times to file
+  --muxer=: force muxer type
+  --negstride&: use negative picture strides
+  --oppoint=: select an operating point of a scalable AV1 bitstream
+  --realtime=: limit framerate, optional argument to override input framerate
+  --realtimecache=: set the size of the cache in realtime mode
+  --sizelimit=: stop decoding if the frame size exceeds the specified limit
+  --strict=: whether to abort decoding on standard compliance violations that don't affect bitstream decoding
+  --threads=: number of threads
+  --verify=: verify decoded md5. implies --muxer md5, no output
+  --outputinvisible=: whether to output invisible (alt-ref) frames
+  --inloopfilters=: which in-loop filters to enable
+  --decodeframetype=: which frame types to decode
+  -i, --input=: input file
+  -l, --limit=: stop decoding after $num frames
+  -o, --output=: output file (%n, %w or %h will be filled in for per-frame files)
+  -q, --quiet: disable status messages
+  -s, --skip=: skip decoding of the first $num frames
+  -v, --version: print version and exit
+completion:
+  flag:
+    cpumask: ['-1', '0', neon, dotprod, i8mm]
+    demuxer: [ivf, section5, annexb]
+    muxer: [md5, yuf, yuv4mpeg2, 'null']
+    oppoint: ['$carapace.number.Range({start: 0, end: 31})']
+    input: [$files]
+    output: [$files]
+    inloopfilters:
+      - none
+      - deblock
+      - nodeblock
+      - cdef
+      - nocdef
+      - restoration
+      - norestoration
+      - "all\tdefault"
+    decodeframetype:
+      - reference
+      - intra
+      - key
+      - "all\tdefault"

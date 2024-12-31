@@ -1,0 +1,12 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: as-tree
+description: Print a list of paths as a tree of paths
+flags:
+  --color=: Whether to colorize the output
+  -h, --help: Print this help message
+  -v, --version: Print the version and exit
+completion:
+  positional:
+    - [$files]
+  flag:
+    color: [always, "auto\tdefault", never]

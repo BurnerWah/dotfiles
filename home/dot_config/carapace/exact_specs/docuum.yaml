@@ -1,0 +1,10 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: docuum
+description: Docuum performs LRU cache eviction for Docker images
+flags:
+  -h, --help: Prints help information
+  -k, --keep=: Prevents deletion of images for which repository:tag matches
+  -m, --min-age=: Sets the minimum age of images to be considered for deletion
+  -t, --threshold=: Sets the maximum amount of space to be used for Docker images
+  -v, --version: Prints version information
+  -d, --deletion-chunk-size=: Removes specified quantity of images at a time

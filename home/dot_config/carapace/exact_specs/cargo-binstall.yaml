@@ -1,0 +1,55 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: cargo-binstall
+description: Install a Rust binary... from binaries!
+flags:
+  --bin-dir=: Override Cargo.toml package manifest bin-dir
+  --continue-on-failure: Continue installing other crates even if one of the crate failed to install
+  --disable-strategies=: Disable the strategies specified
+  --disable-telemetry: Disable statistics collection on popular crates
+  --dry-run: Dry run, fetch and show changes without installing binaries
+  --force: Force a crate to be installed even if it is already installed
+  --git=: Override how to fetch Cargo.toml package manifest
+  --github-token=: Provide the github token for accessing the restful API of api.github.com
+  --index=: The URL of the registry index to use
+  --install-path=: Install binaries in a custom location
+  --json-output: Print logs in json format to be parsable
+  --locked: This option will be passed through to all `cargo-install` invocations
+  --log-level=: Utility log level
+  --manifest-path=: Override Cargo.toml package manifest path
+  --maximum-resolution-timeout=: Maximum time each resolution
+  --min-tls-version=: Require a minimum TLS version from remote endpoints
+  --no-cleanup: Do not cleanup temporary files
+  --no-discover-github-token: Don't discover GitHub credentials from the github CLI
+  --no-symlinks&: This flag is now enabled by default thus a no-op
+  --no-track: By default, binstall keeps track of the installed packages with metadata files stored in the installation root directory
+  --only-signed: Only install packages that are signed
+  --pkg-fmt=: Override Cargo.toml package manifest pkg-fmt
+  --pkg-url=: Override Cargo.toml package manifest pkg-url
+  --rate-limit=: Override the rate limit duration
+  --registry=: Name of the registry to use
+  --root-certificates=: Specify the root certificates to use for https connnections, in addition to default system-wide ones
+  --root=: Install binaries with a custom cargo root
+  --skip-signatures: Don't check any signatures
+  --strategies=: Specify the strategies to be used, binstall will run the strategies specified in order
+  --targets=: Override binary target set
+  --version=: Package version to install
+  -V: Print version information
+  -h, --help: Print help
+  -q, --quiet: Equivalent to setting `log_level` to `off`
+  -v, --verbose: Implies `--log-level debug` and it can also be used with `--version` to print out verbose information,
+  -y, --no-confirm: Disable interactive mode / confirmation prompts
+completion:
+  flag:
+    bin-dir: [$directories]
+    strategies: &strategies
+      - crate-meta-data
+      - quick-install
+      - compile
+      - $uniquelist(,)
+    disable-strategies: *strategies
+    install-path: [$directories]
+    root: [$directories]
+    min-tls-version: ['1.2', '1.3']
+    manifest-path: ['$files([.toml])']
+  positional:
+    - ['$carapace.bridge.CarapaceBin([cargo, install])']

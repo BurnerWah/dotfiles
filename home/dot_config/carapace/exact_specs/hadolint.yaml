@@ -1,0 +1,36 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: hadolint
+description: Lint Dockerfile for errors and best practices
+flags:
+  --disable-ignore-pragma: Disable inline ignore pragmas `# hadolint ignore=DLxxxx`
+  --error=: Make the rule `RULECODE` have the level `error`
+  --file-path-in-report=: The file path referenced in the generated report.
+  --ignore=: A rule to ignore
+  --info=: Make the rule `RULECODE` have the level `info`
+  --no-color: Don't colorize output
+  --no-fail: Don't exit with a failure status code when any rule is violated
+  --require-label=: makes Hadolint check that the label `label` conforms to format requirement `format`
+  --strict-labels: Do not permit labels other than specified in `label-schema`
+  --style=: Make the rule `RULECODE` have the level `style`
+  --trusted-registry=: A docker registry to allow to appear in FROM instructions
+  --warning=: Make the rule `RULECODE` have the level `warning`
+  -c, --config=: Path to the configuration file
+  -f, --format=: The output format for the results
+  -h, --help: Show help
+  -t, --failure-threshold=: Exit with failure code only when rules with a severity equal to or above THRESHOLD are violated.
+  -V, --verbose: Enables verbose logging of hadolint's output to stderr
+  -v, --version: Show version
+completion:
+  positionalany: [$files]
+  flag:
+    failure-threshold: [error, warning, info, style, ignore, none]
+    format:
+      - tty
+      - json
+      - checkstyle
+      - codeclimate
+      - gitlab_codeclimate
+      - gnu
+      - codacy
+      - sonarqube
+      - sarif

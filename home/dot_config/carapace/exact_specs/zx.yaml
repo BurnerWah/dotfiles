@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: zx
+description: Tool for writing better scripts
+flags:
+  --cwd=: set current directory
+  --env=: path to env file
+  --experimental: enables experimental features (deprecated)
+  --ext=: default extension
+  --postfix=: postfix all commands
+  --prefix=: prefix all commands
+  --quiet: suppress any outputs
+  --registry=: npm registry
+  --repl: start repl
+  --shell=: custom shell binary
+  --verbose: enable verbose mode
+  -e, --eval=: evaluate script
+  -h, --help: print help
+  -i, --install: install dependencies
+  -l, --prefer-local: prefer locally installed packages bins
+  -v, --version: print current zx version
+completion:
+  positional:
+    - [$files]
+  flag:
+    cwd: [$directories]
+    env: [$files]

@@ -1,0 +1,21 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: karabiner_cli
+description: A command line utility of Karabiner-Elements
+flags:
+  --copy-current-profile-to-system-default-profile: Copy the current profile to system default profile
+  --eval-js=: Run javascript files using Duktape
+  --format-json=: Format json files
+  --help: Print help
+  --lint-complex-modifications=: Check complex_modifications.json
+  --list-profile-names: Show all profile names
+  --remove-system-default-profile: Remove the system default profile
+  --select-profile=: Select a profile by name
+  --set-variables=: Json string
+  --show-current-profile-name: Show current profile name
+  --silent: Suppress messages
+  --version: Displays version
+  --version-number: Displays version_number
+completion:
+  flag:
+    select-profile: [$(karabiner_cli --list-profile-names)]
+    lint-complex-modifications: ['$files([.json])']

@@ -1,0 +1,46 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: dotenv-linter
+description: Lightning-fast linter for .env files
+parsing: non-interspersed
+
+flags:
+  --not-check-updates: Doesn't check for updates
+  -e, --exclude=: Excludes files from check
+  -r, --recursive: Recursively searches and checks .env files
+  -s, --skip=: Skips checks
+
+persistentflags:
+  --no-color: Turns off the colored output
+  -v, --version: Print version information
+  -h, --help: Print help information
+  -q, --quiet: Doesn't display additional information
+
+completion:
+  positionalany: [$files]
+  flag:
+    skip: [$(dotenv-linter list)]
+    exclude: [$files]
+commands:
+  - name: compare
+    aliases: [c]
+    description: Compares if files have the same keys
+    completion: { positionalany: [$files] }
+
+  - name: fix
+    aliases: [f]
+    description: Automatically fixes warnings
+    flags:
+      --no-backup: Prevents backing up .env files
+      -e, --exclude=: Excludes files from check
+      -h, --help: Print help information
+      -r, --recursive: Recursively searches and checks .env files
+      -s, --skip=: Skips checks
+    completion:
+      positionalany: [$files]
+      flag:
+        skip: [$(dotenv-linter list)]
+        exclude: [$files]
+
+  - name: list
+    aliases: [l]
+    description: Shows list of available checks

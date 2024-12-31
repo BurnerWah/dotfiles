@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: vmrest
+description: VMware Fusion REST API
+flags:
+  -C, --config: Configure credential
+  -D, --Daemon&: Internal usage
+  -L, --netd: launchd/systemd service
+  -T, --cnx-ttl=: TTL for cached VM channels
+  -U, --unix: Listen on Unix Socket
+  -c, --cert-path=: REST API Server certificate path
+  -d, --debug: Enable debug logging
+  -h, --help: Print usage
+  -k, --key-path=: REST API Server private key path
+  -p, --port=: REST API Server port, specify -1 to disable TCP
+  -v, --version: Print version information
+completion:
+  flag:
+    cert-path: [$files]
+    key-path: [$files]
