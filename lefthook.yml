@@ -52,4 +52,4 @@ pre-push:
   parallel: true
   commands:
     ripsecrets:
-      run: mise x -- ripsecrets --strict-ignore {staged_files}
+      run: mise x -- ripsecrets --strict-ignore {push_files}
