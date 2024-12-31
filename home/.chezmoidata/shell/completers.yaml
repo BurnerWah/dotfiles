@@ -26,6 +26,7 @@ settings:
         pueue: pueue completions elvish
         py-spy: py-spy completions elvish
         railway: railway completion elvish
+        rav1e: rav1e - -o - advanced --completion elvish
         rbw: rbw gen-completions elvish
         ruff: ruff generate-shell-completion elvish
         sentry-cli: sentry-cli completions elvish
@@ -67,6 +68,7 @@ settings:
         pueue: pueue completions power-shell
         py-spy: py-spy completions powershell
         railway: railway completion powershell
+        rav1e: rav1e - -o - advanced --completion powershell
         rbw: rbw gen-completions powershell
         ruff: ruff generate-shell-completion powershell
         sentry-cli: sentry-cli completions powershell
