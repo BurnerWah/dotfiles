@@ -70,6 +70,7 @@ settings:
         - limitless # ai
         - litecoin
         - llamachat
+        - macai
         - meta-quest-developer-hub # facebook
         - microsoft-edge
         - microsoft-edge@beta

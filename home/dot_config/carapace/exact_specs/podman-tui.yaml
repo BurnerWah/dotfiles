@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: podman-tui
+description: Podman terminal user interface
+flags:
+  -d, --debug: Run application in debug mode
+  -l, --log-file=: Application runtime log file (default "podman-tui.log")
+persistentflags:
+  -h, --help: help for podman-tui
+completion:
+  flag:
+    log-file: [$files]
+commands:
+  - name: help
+    description: Help about any command
+    completion:
+      positional:
+        - ['$carapace.bridge.CarapaceBin([podman-tui])']
+  - name: version
+    description: Display podman-tui version and exit.

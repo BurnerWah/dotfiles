@@ -1,0 +1,115 @@
+name: ntfy
+description: Simple pub-sub notification service
+persistentflags:
+  -h, --help: show help
+  -d, --debug: enable debug logging
+  --trace: enable tracing
+  --no-log-dates: disable the date/time prefix
+  --no_log_dates: disable the date/time prefix
+  --log-level=: set log level
+  --log_level=: set log level
+  --log-level-overrides=: set log level overrides
+  --log_level_overrides=: set log level overrides
+  --log-format=: set log format
+  --log_format=: set log format
+  --log-file=: set log file
+  --log_file=: set log file
+exclusiveflags:
+  - [no-log-dates, no_log_dates]
+  - [log-level, log_level]
+  - [log-level-overrides, log_level_overrides]
+  - [log-format, log_format]
+  - [log-file, log_file]
+completion:
+  flag:
+    log-file: [$files]
+    log_file: [$files]
+    log-level: &log-levels [TRACE, DEBUG, INFO, WARN, WARNING, ERROR, FATAL]
+    log_level: *log-levels
+    log-format: &log-formats [text, json]
+    log_format: *log-formats
+commands:
+  - name: help
+    aliases: [h]
+    description: Shows a list of commands or help for one command
+    completion:
+      positional:
+        - ['$carapace.bridge.CarapaceBin([ntfy])']
+
+  - name: publish
+    aliases: [pub, send, trigger]
+    group: client
+    description: Send message via a ntfy server
+    flags:
+      -c, --config=: client config file
+      -t, --title=: message title
+      -m, --message=: message body
+      -p, --priority=: priority of the message
+      -T, --tags=: comma separated list of tags and emojis
+      --tag=: comma separated list of tags and emojis
+      -D, --delay=: delay/schedule message
+      --at=: delay/schedule message
+      --in=: delay/schedule message
+      -U, --click=: URL to open when notification is clicked
+      -i, --icon=: URL to use as notification icon
+      -A, --actions=: actions JSON array or simple definition
+      -a, --attach=: URL to send as an external attachment
+      --markdown: Message is formatted as Markdown
+      --md: Message is formatted as Markdown
+      -n, --name=: filename for the attachment
+      --filename=: filename for the attachment
+      -f, --file=: file to upload as an attachment
+      -e, --email=: also send to e-mail address
+      --mail=: also send to e-mail address
+      -u, --user=: username[:password] used to auth against the server
+      -k, --token=: access token used to auth against the server
+      --wait-pid=: wait until PID exits before publishing
+      --wait_pid=: wait until PID exits before publishing
+      --pid=: wait until PID exits before publishing
+      --wait-cmd: run command and wait until it finishes before publishing
+      --wait_cmd: run command and wait until it finishes before publishing
+      --cmd: run command and wait until it finishes before publishing
+      --done: run command and wait until it finishes before publishing
+      -C, --no-cache: do not cache message server-side
+      --no_cache: do not cache message server-side
+      -F, --no-firebase: do not forward message to Firebase
+      --no_firebase: do not forward message to Firebase
+      -q, --quiet: do not print message
+    exclusiveflags:
+      - [tags, tag]
+      - [delay, at, in]
+      - [markdown, md]
+      - [name, filename]
+      - [email, mail]
+      - [wait-pid, wait_pid, pid]
+      - [wait-cmd, wait_cmd, cmd, done]
+      - [no-cache, no_cache]
+      - [no-firebase, no_firebase]
+    completion:
+      flag:
+        config: [$files]
+        priority: ['$carapace.number.Range({start: 1, end: 5})']
+        wait-pid: [$carapace.ps.ProcessIds]
+        wait_pid: [$carapace.ps.ProcessIds]
+        pid: [$carapace.ps.ProcessIds]
+
+  - name: subscribe
+    aliases: [sub]
+    group: client
+    description: Subscribe to one or more topics on a ntfy server
+    flags:
+      -c, --config=: client config file
+      -s, --since=: return events since SINCE
+      -u, --user=: username[:password] used to auth against the server
+      -k, --token=: access token used to auth against the server
+      -C, --from-config: read subscriptions from config file (service mode)
+      --from_config: read subscriptions from config file (service mode)
+      -p, --poll: return events and exit, do not listen for new events
+      -S, --sched: also return scheduled/delayed events
+      --scheduled: also return scheduled/delayed events
+    exclusiveflags:
+      - [from-config, from_config]
+      - [sched, scheduled]
+    completion:
+      flag:
+        config: [$files]
