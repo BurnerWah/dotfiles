@@ -49,16 +49,6 @@
   url: https://github.com/nk9/just_sublime/raw/main/Syntax/Just.sublime-syntax
   refreshPeriod: 744h
 
-.config/bat/syntaxes/Nunjucks.sublime-syntax:
-  type: file
-  url: https://github.com/alsolovyev/Nunjucks/raw/master/Syntaxes/Nunjucks.sublime-syntax
-  refreshPeriod: 744h
-
-.config/bat/syntaxes/Nunjucks PHP.sublime-syntax:
-  type: file
-  url: https://github.com/alsolovyev/Nunjucks/raw/master/Syntaxes/Nunjucks%20PHP.sublime-syntax
-  refreshPeriod: 744h
-
 .config/bat/syntaxes/nushell.sublime-syntax:
   type: file
   url: https://github.com/stevenxxiu/sublime_text_nushell/raw/master/nushell.sublime-syntax
