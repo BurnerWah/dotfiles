@@ -30,12 +30,21 @@
       community.general.flatpak:
         name:
           - app.bluebubbles.BlueBubbles
+          - com.github.rafostar.Clapper
           - com.github.tchx84.Flatseal
           - com.github.wwmm.easyeffects
+          - com.mattjakeman.ExtensionManager
+          - com.obsproject.Studio
           - com.slack.Slack
           - com.ticktick.TickTick
           - com.visualstudio.code
+          - com.yubico.yubioath
+          - fr.handbrake.ghb
+          - io.github.flattool.Warehouse
+          - io.github.mpobaschnig.Vaults
+          - io.itch.itch
           - md.obsidian.Obsidian
+          - org.blender.Blender
           - org.gnome.Geary
           - org.gnome.Lollypop
           - org.mozilla.firefox
