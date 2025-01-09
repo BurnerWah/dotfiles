@@ -39,3 +39,10 @@
       community.general.flatpak:
         name: https://downloads.1password.com/linux/flatpak/1Password.flatpakref
         state: present
+
+    - name: Enable sshd socket activation
+      become: yes
+      ansible.builtin.systemd_service:
+        name: sshd.socket
+        enabled: yes
+        state: started
