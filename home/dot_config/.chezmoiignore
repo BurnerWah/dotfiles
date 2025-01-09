@@ -60,6 +60,13 @@
 /whalebrew
 {{- end }}
 
+{{- if .wsl }}
+/boxxy
+/firejail
+/lima
+/whalebrew
+{{- end }}
+
 {{- if ne .chezmoi.os "linux" }}
 /autostart
 /boxxy

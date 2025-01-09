@@ -46,6 +46,11 @@
 /zap
 /zoxide
 
+{{- if or .ephemeral .headless }}
+/applications
+/flatpak
+{{- end }}
+
 {{- if ne .chezmoi.os "linux" }}
 /applications
 /flatpak
