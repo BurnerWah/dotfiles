@@ -4,6 +4,7 @@ set -eux -o pipefail
 
 # {{ $playbook := joinPath .chezmoi.sourceDir "../playbooks" (printf "device-%s.yml" .chezmoi.hostname) }}
 # {{ if and (lookPath "ansible-playbook") (stat $playbook) }}
+# playbook hash: {{ include $playbook | sha256sum }}
 
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 export XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
