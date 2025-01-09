@@ -42,6 +42,9 @@ textconv:
 # {{- /* true if this machine does not have a screen and keyboard */ -}}
 # {{- $headless := false -}}
 
+# {{- /* Detect WSL */ -}}
+# {{- $wsl := and (eq .chezmoi.os "linux") (.chezmoi.kernel.osrelease | lower | contains "microsoft") -}}
+
 # {{- /* detect GitHub codespaces, VSCode remote containers, Docker containers, Multipass VMs, and Vagrant boxes */ -}}
 # {{- if or (env "CODESPACES") (env "REMOTE_CONTAINERS_IPC") (eq .chezmoi.username "root" "ubuntu" "vagrant" "vscode") -}}
 # {{-   $ephemeral = true -}}
@@ -89,6 +92,7 @@ data:
   headless: # {{ $headless }}
   mullvad: # {{ $mullvad }}
   osid: # {{ $osID }}
+  wsl: # {{ $wsl }}
   xdg:
     config: '# {{ $xdgConfig }}'
     cache: '# {{ $xdgCache }}'
