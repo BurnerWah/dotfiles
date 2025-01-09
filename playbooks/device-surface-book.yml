@@ -9,4 +9,30 @@
         name:
           - fish
           - git
+          - zsh
         state: present
+
+    - name: Remove unwanted RPMs
+      become: yes
+      ansible.builtin.dnf5:
+        name:
+          - firefox # prefer flatpak
+        state: removed
+
+    - name: Set user's shell to fish
+      become: yes
+      ansible.builtin.user:
+        name: '{{ ansible_user_id }}'
+        shell: /usr/bin/fish
+
+    - name: Install flatpaks from flathub
+      community.general.flatpak:
+        name:
+          - com.github.flxzt.rnote
+          - org.fkoehler.KTailctl
+          - org.inkscape.Inkscape
+          - org.kde.krita
+          - org.mozilla.firefox
+          - org.videolan.VLC
+        remote: flathub
+        statee: present
