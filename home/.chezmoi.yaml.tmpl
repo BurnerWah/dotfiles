@@ -49,7 +49,7 @@ textconv:
 # {{- if and (eq .chezmoi.os "darwin") (empty $tailscale) -}}
 # {{-   $tailscale = "/Applications/Tailscale.app/Contents/MacOS/Tailscale" -}}
 # {{- end -}}
-# {{- if ne .chezmoi.os "windows" -}}
+# {{- if and (ne .chezmoi.os "windows") $tailscale -}}
 # {{-   with $CapMap := dig "Self" "CapMap" (dict) (output "sh" "-c" (printf "%s status --json || echo {}" $tailscale) | mustFromJson) -}}
 # {{-     $mullvad = hasKey $CapMap "mullvad" -}}
 # {{-   end -}}
