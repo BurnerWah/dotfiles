@@ -18,7 +18,7 @@
       ansible.builtin.dnf5:
         name:
           - firefox # prefer flatpak
-        state: removed
+        state: absent
 
     - name: Set user's shell to fish
       become: yes
