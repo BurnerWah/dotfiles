@@ -2,7 +2,7 @@
 status is-interactive || exit 0
 
 {{- range $name, $expansion := .settings.shell.fish.abbrev }}
-abbr -a {{ $name }} {{ $expansion | quote }}
+abbr -a {{ $name | quote }} {{ $expansion | quote }}
 {{- end }}
 
 {{- range $name, $expansion := .settings.shell.common.abbrev }}
