@@ -7,3 +7,7 @@ os-*.conf
 {{ if ne .chezmoi.os "darwin" }}
 lima-includes.conf
 {{ end }}
+
+{{ if eq .chezmoi.hostname "surface-book" }}
+1password-*.conf
+{{ end }}

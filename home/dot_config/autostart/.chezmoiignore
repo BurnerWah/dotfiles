@@ -1,7 +1,3 @@
-*.cache
-*.list
-postybirb-plus.desktop
-
 {{ if eq .chezmoi.hostname "surface-book" }}
 1password.desktop
 {{ end }}
