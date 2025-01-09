@@ -11,6 +11,6 @@ export XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
 export ANSIBLE_CONFIG="${ANSIBLE_CONFIG:-$XDG_CONFIG_HOME/ansible.cfg}"
 
 # shellcheck disable=SC2154
-ansible-playbook "{{ $playbook }}"
+ansible-playbook --ask-become-pass "{{ $playbook }}"
 
 # {{ end }}
