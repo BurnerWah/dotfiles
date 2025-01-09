@@ -1,4 +1,10 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+
+# {{- $osID := .chezmoi.os -}}
+# {{- if (and (eq .chezmoi.os "linux") (hasKey .chezmoi.osRelease "id")) -}}
+# {{-   $osID = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
+# {{- end -}}
+
 diff:
   command: delta
 
@@ -82,6 +88,7 @@ data:
   ephemeral: # {{ $ephemeral }}
   headless: # {{ $headless }}
   mullvad: # {{ $mullvad }}
+  osid: # {{ $osID }}
   xdg:
     config: '# {{ $xdgConfig }}'
     cache: '# {{ $xdgCache }}'
