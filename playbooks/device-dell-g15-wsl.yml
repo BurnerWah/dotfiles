@@ -1,0 +1,19 @@
+---
+- name: Dell G15 WSL playbook
+  hosts: localhost
+
+  tasks:
+    - name: Install main dnf packages
+      become: yes
+      ansible.builtin.dnf5:
+        name:
+          - fish
+          - git
+          - zsh
+        state: present
+
+    - name: Set user's shell to fish
+      become: yes
+      ansible.builtin.user:
+        name: '{{ ansible_user_id }}'
+        shell: /usr/bin/fish
