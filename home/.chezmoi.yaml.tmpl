@@ -54,6 +54,11 @@ textconv:
 # {{-   $headless = true -}}
 # {{- end }}
 
+# {{- $hostname := .chezmoi.hostname -}}
+# {{- if and .wsl (eq .chezmoi.os "linux") -}}
+# {{-   $hostname = printf "%s-wsl" (lower $hostname) -}}
+# {{- end -}}
+
 # TODO: prompt user to see if device is ephemeral or headless, when possible
 
 # {{- $mullvad := false -}}
@@ -93,6 +98,7 @@ textconv:
 data:
   ephemeral: # {{ $ephemeral }}
   headless: # {{ $headless }}
+  hostname: # {{ $hostname }}
   mullvad: # {{ $mullvad }}
   osid: # {{ $osID }}
   wsl: # {{ $wsl }}

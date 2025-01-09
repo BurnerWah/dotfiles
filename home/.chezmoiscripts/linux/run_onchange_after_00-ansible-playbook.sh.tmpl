@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-set -eux -o pipefail
+set -eu -o pipefail
 
-# {{ $playbook := joinPath .chezmoi.sourceDir "../playbooks" (printf "device-%s.yml" .chezmoi.hostname) }}
+# {{ $playbook := joinPath .chezmoi.sourceDir "../playbooks" (printf "device-%s.yml" .hostname) }}
 # {{ if and (lookPath "ansible-playbook") (stat $playbook) }}
 # playbook hash: {{ include $playbook | sha256sum }}
 
