@@ -56,7 +56,7 @@ textconv:
 
 # {{- /* figure out internal name for the device */ -}}
 # {{- $devicename := .chezmoi.hostname -}}
-# {{- if and .wsl (eq .chezmoi.os "linux") -}}
+# {{- if and $wsl (eq .chezmoi.os "linux") -}}
 # {{-   $devicename = printf "%s-wsl" (lower $devicename) -}}
 # {{- end -}}
 # {{- if eq $devicename "wah" -}}
