@@ -1,0 +1,12 @@
+---
+- name: Surface Book playbook
+  hosts: localhost
+
+  tasks:
+    - name: Install main dnf packages
+      become: yes
+      ansible.builtin.dnf5:
+        name:
+          - fish
+          - git
+        state: present
