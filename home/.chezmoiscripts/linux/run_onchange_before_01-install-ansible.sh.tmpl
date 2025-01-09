@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -eux -o pipefail
+
+# Installs ansible
+
+command -v ansible >/dev/null 2>&1 && exit 0
+
+# shellcheck disable=SC2194
+case '{{ .osid }}' in
+    linux-fedora)
+        sudo dnf install -y ansible
+        ;;
+    *)
+        echo "ansible install method not defined"
+        ;;
+esac
