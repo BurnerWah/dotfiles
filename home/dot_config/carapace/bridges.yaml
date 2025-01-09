@@ -82,6 +82,7 @@ berglas: cobra
 bin: cobra
 bind: fish
 blender: fish # TODO create custom spec for windows
+bmake: zsh
 bosh: fish
 boundary: complete
 bower: fish
@@ -124,6 +125,8 @@ choice: fish
 choom: zsh
 chpass: zsh
 chronyc: fish
+chrt: zsh
+ci: zsh
 cifsiostat: zsh
 cinder: zsh
 cjxl: fish
@@ -137,6 +140,7 @@ clusterctl: cobra
 clusterdb: zsh
 cmark: fish
 cmp: zsh
+co: zsh
 cobra-cli: cobra
 colima: cobra
 compare: fish # imagemagick
@@ -189,6 +193,12 @@ dbus-send: zsh
 dch: zsh
 dchroot-dsa: zsh
 dchroot: zsh
+dcop: zsh
+dcopclient: zsh
+dcopfind: zsh
+dcopobject: zsh
+dcopref: zsh
+dcopstart: zsh
 debchange: zsh
 debcheckout: zsh
 debdiff: zsh
@@ -221,6 +231,7 @@ djview4: fish
 djxl: fish
 dkms: zsh
 dm-tool: fish
+dmake: zsh
 dnscontrol: urfavecli
 docker-buildx: cobra
 docker: cobra
@@ -233,13 +244,25 @@ dpkg-deb: zsh
 dpkg-query: zsh
 dpkg-repack: zsh
 dpkg-source: zsh
+dput: zsh
 draft: cobra
 driftctl: cobra
 dropdb: zsh
+dropuser: zsh # postgres
 dscacheutil: fish # Mac OS
+dscverify: zsh # debian
 dumpcap: fish
 dumper: zsh
+dupload: zsh
 duply: fish
+dvibook: zsh
+dviconcat: zsh
+dvicopy: zsh
+dvidvi: zsh
+dvips: zsh
+dviselect: zsh
+dvitodvi: zsh
+dvitype: zsh
 efibootmgr: fish
 efivar: fish
 eg: fish
@@ -286,11 +309,15 @@ gcloud: argcomplete
 gcmp: zsh
 gcore: zsh
 gdbus: fish
+geany: zsh
 gendarme: fish
+genisoimage: zsh
 getclip: zsh
 getfacl: zsh
 ggv: zsh
 gh: cobra
+ghostscript: zsh
+ghostview: zsh
 gio: fish
 git-lfs: cobra
 git-sizer: fish
