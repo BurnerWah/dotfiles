@@ -1,0 +1,51 @@
+---
+- name: Dell G15 Linux playbook
+  hosts: localhost
+
+  tasks:
+    - name: Install main dnf packages
+      become: yes
+      ansible.builtin.dnf5:
+        name:
+          - fish
+          - git
+          - kitty
+          - zsh
+        state: present
+
+    - name: Remove unwanted RPMs
+      become: yes
+      ansible.builtin.dnf5:
+        name:
+          - firefox # prefer flatpak
+        state: absent
+
+    - name: Set user's shell to fish
+      become: yes
+      ansible.builtin.user:
+        name: '{{ ansible_user_id }}'
+        shell: /usr/bin/fish
+
+    - name: Install flatpaks from flathub
+      community.general.flatpak:
+        name:
+          - app.bluebubbles.BlueBubbles
+          - com.github.tchx84.Flatseal
+          - com.github.wwmm.easyeffects
+          - com.slack.Slack
+          - com.ticktick.TickTick
+          - com.visualstudio.code
+          - md.obsidian.Obsidian
+          - org.gnome.Geary
+          - org.gnome.Lollypop
+          - org.mozilla.firefox
+          - org.musicbrainz.Picard
+          - org.signal.Signal
+          - xyz.armcord.ArmCord
+
+    - name: Enable sshd socket activation
+      become: yes
+      ansible.builtin.systemd_service:
+        name: sshd.socket
+        enabled: yes
+        state: started
