@@ -7,9 +7,12 @@
       become: yes
       ansible.builtin.dnf5:
         name:
+          - bat
+          - fd-find
           - fish
           - git
           - kitty-terminfo
+          - ripgrep
           - zsh
         state: present
 
@@ -18,6 +21,10 @@
       ansible.builtin.dnf5:
         name:
           - firefox # prefer flatpak
+          - kmahjongg
+          - kmines
+          - kolourpaint
+          - kpat
         state: absent
 
     - name: Set user's shell to fish
@@ -32,6 +39,12 @@
           - com.github.flxzt.rnote
           - org.fkoehler.KTailctl
           - org.inkscape.Inkscape
+          - org.kde.kalk
+          - org.kde.kclock
+          - org.kde.kmahjongg
+          - org.kde.kmines
+          - org.kde.kolourpaint
+          - org.kde.kpat
           - org.kde.krita
           - org.mozilla.firefox
           - org.videolan.VLC
