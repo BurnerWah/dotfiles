@@ -9,6 +9,7 @@
         name:
           - fish
           - git
+          - kitty-terminfo
           - zsh
         state: present
 
