@@ -1,0 +1,21 @@
+name: retry
+description: Repeat command until a criteria is met, usually success
+parsing: non-interspersed
+flags:
+  -d, --delay=: The number of seconds to back off after each attempt
+  -m, --message=: A message to include in the notification when repeat has backed off
+  -t, --times=: The number of times to retry the command
+  -u, --until=: Keep repeating the command until any one of the comma separated criteria is met
+  -w, --while=: Keep repeating the command while any one of the comma separated criteria is met
+  -h, --help: print help
+  -v, --version: print version
+completion:
+  positionalany: [$carapace.bridge.CarapaceBin]
+  flag:
+    until: &criteria
+      - "success\tdefault"
+      - "true\tdefault"
+      - "fail\tnon-zero exit code"
+      - "false\tnon-zero exit code"
+      - $uniquelist(,)
+    while: *criteria

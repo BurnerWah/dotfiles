@@ -1,0 +1,3 @@
+name: gamemoderun
+description: invoke gamemode into any program
+completion: { positionalany: [$carapace.bridge.CarapaceBin] }
