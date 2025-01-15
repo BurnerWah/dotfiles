@@ -28,6 +28,39 @@
           - --from-repofile=https://pkg.surfacelinux.com/fedora/linux-surface.repo
         creates: /etc/yum.repos.d/linux-surface.repo
 
+    - name: Install surface-linux packages
+      become: yes
+      ansible.builtin.dnf5:
+        name:
+          - kernel-surface
+          - iptsd
+          - libwacom-surface
+        state: present
+        allowerasing: yes
+
+    # I don't think this would work correctly on a brand new system
+    - name: Install surface-linux secure boot key
+      become: yes
+      ansible.builtin.dnf5:
+        name: [surface-secureboot]
+        state: present
+
+    - name: Add mise dnf repo
+      become: yes
+      ansible.builtin.command:
+        argv:
+          - /usr/bin/dnf
+          - config-manager
+          - addrepo
+          - --from-repofile=https://mise.jdx.dev/rpm/mise.repo
+        creates: /etc/yum.repos.d/mise.repo
+
+    - name: Install mise
+      become: yes
+      ansible.builtin.dnf5:
+        name: [mise]
+        state: present
+
     - name: Remove unwanted RPMs
       become: yes
       ansible.builtin.dnf5:
