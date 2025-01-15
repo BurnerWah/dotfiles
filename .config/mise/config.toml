@@ -5,7 +5,7 @@ ruff = "latest"
 ruby = "latest"
 taplo = "latest"
 gitleaks = "latest"
-ripsecret = "latest"
+ripsecret = { version = "latest", os = ["linux", "macos"] }
 bun = "latest"
 "ubi:VorpalBlade/chezmoi_modify_manager" = "latest"
 
