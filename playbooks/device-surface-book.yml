@@ -41,19 +41,31 @@
     - name: Install flatpaks from flathub
       community.general.flatpak:
         name:
+          - app.drey.Warp
           - com.github.flxzt.rnote
+          - com.ticktick.TickTick
+          - com.usebottles.bottles
+          - com.yubico.yubioath
+          - io.ente.auth
+          - io.github.mpobaschnig.Vaults
           - org.fkoehler.KTailctl
           - org.inkscape.Inkscape
           - org.kde.elisa
+          - org.kde.filelight
+          - org.kde.index
           - org.kde.kalk
           - org.kde.kcalc
           - org.kde.kclock
           - org.kde.kmahjongg
           - org.kde.kmines
+          - org.kde.koko
           - org.kde.kolourpaint
           - org.kde.kpat
           - org.kde.krita
+          - org.kde.kweather
+          - org.kde.pix
           - org.kde.skanpage
+          - org.kde.tokodon
           - org.mozilla.firefox
           - org.videolan.VLC
 
