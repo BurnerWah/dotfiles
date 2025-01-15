@@ -1,0 +1,11 @@
+??-os-*.xsh
+!??-os-{{.chezmoi.os}}.xsh
+
+??-os-*.py
+!??-os-{{.chezmoi.os}}.py
+
+??-device-*.xsh
+!??-device-{{.devicename}}.xsh
+
+??-device-*.py
+!??-device-{{.devicename}}.py

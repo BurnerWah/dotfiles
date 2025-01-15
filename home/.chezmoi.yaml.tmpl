@@ -62,6 +62,11 @@ textconv:
 # {{- if eq $devicename "wah" -}}
 # {{-   $devicename = "dell-g15-linux" -}}
 # {{- end -}}
+# {{- if eq .chezmoi.os "windows" -}}
+# {{-   if eq $devicename "Dell-G15" -}}
+# {{-     $devicename = "dell-g15-windows" -}}
+# {{-   end -}}
+# {{- end -}}
 
 # TODO: prompt user to see if device is ephemeral or headless, when possible
 

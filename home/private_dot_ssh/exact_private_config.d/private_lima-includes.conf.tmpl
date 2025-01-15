@@ -1,0 +1,4 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{- if eq .chezmoi.os "darwin" -}}
+Include ~/.config/lima/*/ssh.config
+# {{- end }}

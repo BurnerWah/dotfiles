@@ -1,13 +1,8 @@
 1password-*.conf
-!1password-{{ .chezmoi.os }}.conf
+!1password-{{.chezmoi.os}}.conf
 
 os-*.conf
-!os-{{ .chezmoi.os }}.conf
+!os-{{.chezmoi.os}}.conf
 
-{{ if ne .chezmoi.os "darwin" }}
-lima-includes.conf
-{{ end }}
-
-{{ if eq .chezmoi.hostname "surface-book" }}
-1password-*.conf
-{{ end }}
+device-*.conf
+!device-{{.devicename}}.conf

@@ -1,5 +1,6 @@
 #!/usr/bin/env zsh
 
+# {{ if lookPath "zsh" }}
 # {{ lookPath "zsh" }}: {{ include (lookPath "zsh") | sha256sum }}
 
 autoload -Uz zrecompile
@@ -13,3 +14,5 @@ autoload -Uz zrecompile
 
 zrecompile -p \
     {{ range $scripts }}-M {{ . }} -- {{ end }}
+
+# {{ end }}

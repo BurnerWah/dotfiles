@@ -1,0 +1,2 @@
+*.d/device-*.conf
+!*.d/device-{{.devicename}}.conf

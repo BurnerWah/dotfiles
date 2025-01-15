@@ -1,1 +1,2 @@
-# TODO
+[tools]
+node = "latest"
