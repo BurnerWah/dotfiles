@@ -800,6 +800,7 @@ carapace = [
   "rg",
   "rich",
   "rifle",
+  "ripsecrets",
   "rm",
   "rmdir",
   "rmmod",
