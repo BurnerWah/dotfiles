@@ -50,6 +50,7 @@
           - org.mozilla.firefox
           - org.musicbrainz.Picard
           - org.signal.Signal
+          - page.tesk.Refine
           - xyz.armcord.ArmCord
 
     - name: Enable sshd socket activation

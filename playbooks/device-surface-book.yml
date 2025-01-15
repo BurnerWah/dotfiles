@@ -10,6 +10,7 @@
           - bat
           - fd-find
           - fish
+          - gcc
           - git
           - kitty-terminfo
           - ripgrep
@@ -20,11 +21,15 @@
       become: yes
       ansible.builtin.dnf5:
         name:
+          - elisa-player
           - firefox # prefer flatpak
+          - kcalc
           - kmahjongg
           - kmines
           - kolourpaint
           - kpat
+          - neochat
+          - skanpage
         state: absent
 
     - name: Set user's shell to fish
@@ -39,13 +44,16 @@
           - com.github.flxzt.rnote
           - org.fkoehler.KTailctl
           - org.inkscape.Inkscape
+          - org.kde.elisa
           - org.kde.kalk
+          - org.kde.kcalc
           - org.kde.kclock
           - org.kde.kmahjongg
           - org.kde.kmines
           - org.kde.kolourpaint
           - org.kde.kpat
           - org.kde.krita
+          - org.kde.skanpage
           - org.mozilla.firefox
           - org.videolan.VLC
 
