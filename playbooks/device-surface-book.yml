@@ -17,6 +17,17 @@
           - zsh
         state: present
 
+    # community.general.dnf_config_manager isn't ready for dnf 5 yet
+    - name: Add surface-linux dnf repo
+      become: yes
+      ansible.builtin.command:
+        argv:
+          - /usr/bin/dnf
+          - config-manager
+          - addrepo
+          - --from-repofile=https://pkg.surfacelinux.com/fedora/linux-surface.repo
+        creates: /etc/yum.repos.d/linux-surface.repo
+
     - name: Remove unwanted RPMs
       become: yes
       ansible.builtin.dnf5:
@@ -29,6 +40,7 @@
           - kolourpaint
           - kpat
           - neochat
+          - okular
           - skanpage
         state: absent
 
@@ -42,14 +54,18 @@
       community.general.flatpak:
         name:
           - app.drey.Warp
+          - com.boxy_svg.BoxySVG
           - com.github.flxzt.rnote
+          - com.github.xournalpp.xournalpp
           - com.ticktick.TickTick
           - com.usebottles.bottles
           - com.yubico.yubioath
           - io.ente.auth
+          - io.github.mhogomchungu.sirikali
           - io.github.mpobaschnig.Vaults
           - org.fkoehler.KTailctl
           - org.inkscape.Inkscape
+          - org.kde.arianna
           - org.kde.elisa
           - org.kde.filelight
           - org.kde.index
@@ -63,6 +79,7 @@
           - org.kde.kpat
           - org.kde.krita
           - org.kde.kweather
+          - org.kde.okular
           - org.kde.optiimage
           - org.kde.pix
           - org.kde.skanpage
