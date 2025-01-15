@@ -63,11 +63,13 @@
           - org.kde.kpat
           - org.kde.krita
           - org.kde.kweather
+          - org.kde.optiimage
           - org.kde.pix
           - org.kde.skanpage
           - org.kde.tokodon
           - org.mozilla.firefox
           - org.videolan.VLC
+          - xyz.armcord.ArmCord
 
     - name: Enable sshd socket activation
       become: yes
