@@ -1,0 +1,11 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: sshx
+description: A secure web-based, collaborative terminal
+flags:
+  --enable-readers: Enable read-only access mode - generates separate URLs for viewers and editors
+  --name=: Session name displayed in the title (defaults to user@hostname)
+  --server=: 'Address of the remote sshx server [default: https://sshx.io]'
+  --shell=: Local shell command to run in the terminal
+  -V, --version: Print version
+  -h, --help: Print help
+  -q, --quiet: Quiet mode, only prints the URL to stdout
