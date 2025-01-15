@@ -43,7 +43,6 @@
     { "Name": "Monaspace", "Source": "nerd-fonts" },
     { "Name": "msys2", "Source": "main" },
     { "Name": "neovim", "Source": "main" },
-    { "Name": "nodejs", "Source": "main" },
     { "Name": "oh-my-posh", "Source": "main" },
     { "Name": "processhacker", "Source": "extras" },
     { "Name": "rclone", "Source": "main" },
