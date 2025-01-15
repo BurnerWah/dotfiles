@@ -1,6 +1,3 @@
 [tools]
 usage = "latest"
-"npm:npm-check-updates" = "latest"
-"npm:npq" = "latest"
-"pipx:litecli" = "latest"
 "pipx:rainbow" = "latest"
