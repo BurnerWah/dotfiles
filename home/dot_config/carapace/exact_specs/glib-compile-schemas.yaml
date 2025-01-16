@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: glib-compile-schemas
+description: Compile all GSettings schema files into a schema cache
+flags:
+  --allow-any-name: Do not enforce key name restrictions
+  --dry-run: Do not write the gschema.compiled file
+  --strict: Abort on any errors in schemas
+  --targetdir=: Where to store the gschemas.compiled file
+  --version: Show program version and exit
+  -h, --help: Show help options
+completion:
+  flag:
+    targetdir: [$directories]
+  positional:
+    - [$directories]
