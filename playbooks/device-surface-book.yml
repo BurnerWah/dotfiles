@@ -47,6 +47,22 @@
         name: [surface-secureboot]
         state: present
 
+    - name: Add tailscale dnf repo
+      become: yes
+      ansible.builtin.command:
+        argv:
+          - /usr/bin/dnf
+          - config-manager
+          - addrepo
+          - --from-repofile=https://pkgs.tailscale.com/stable/fedora/tailscale.repo
+        creates: /etc/yum.repos.d/tailscale.repo
+
+    - name: Install tailscale
+      become: yes
+      ansible.builtin.dnf5:
+        name: [tailscale]
+        state: present
+
     - name: Add mise dnf repo
       become: yes
       ansible.builtin.command:
@@ -91,6 +107,7 @@
           - app.drey.Warp
           - com.boxy_svg.BoxySVG
           - com.github.flxzt.rnote
+          - com.github.marhkb.Pods
           - com.github.xournalpp.xournalpp
           - com.ticktick.TickTick
           - com.usebottles.bottles
@@ -129,3 +146,22 @@
         name: sshd.socket
         enabled: yes
         state: started
+
+    - name: Enable tailscale daemon
+      become: yes
+      ansible.builtin.systemd_service:
+        name: tailscaled
+        enabled: yes
+        state: started
+
+    - name: Enable snapper timeline
+      become: yes
+      ansible.builtin.systemd_service:
+        name: snapper-timeline.timer
+        enabled: yes
+
+    - name: Enable snapper cleanup
+      become: yes
+      ansible.builtin.systemd_service:
+        name: snapper-cleanup.timer
+        enabled: yes
