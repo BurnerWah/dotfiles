@@ -8,12 +8,14 @@
       ansible.builtin.dnf5:
         name:
           - bat
+          - btrfs-assistant
           - fd-find
           - fish
           - gcc
           - git
           - kitty-terminfo
           - ripgrep
+          - snapper
           - zsh
         state: present
 
