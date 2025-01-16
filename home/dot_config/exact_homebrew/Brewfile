@@ -5,8 +5,6 @@ tap "homebrew/bundle"
 tap "homebrew/command-not-found" if OS.mac?
 tap "homebrew/services"
 tap "buo/cask-upgrade" if OS.mac?
-tap "rsteube/tap"
-tap "egoist/tap"
 tap "powershell/tap" if OS.mac?
 tap "aquaproj/aqua"
 
@@ -35,7 +33,6 @@ brew "cloudflared" if OS.mac?
 brew "colima" if OS.mac? # Container runtime
 brew "cosign"
 brew "dark-mode" if OS.mac? # macOS dark mode toggle
-brew "dasel" if OS.linux? # JQ for more stuff
 brew "ddgr" if OS.mac? # DuckDuckGo search
 brew "detect-secrets" if OS.mac?
 brew "devcontainer" if OS.mac? # VSCode devcontainers
@@ -53,7 +50,6 @@ brew "fastfetch" if OS.mac? # better neofetch
 brew "fd" if OS.mac? # find alternative
 brew "ffmpeg" if OS.mac?
 brew "fish" if OS.mac?
-brew "flyctl" if OS.mac?
 brew "fossil" if OS.mac? # version control
 brew "fx" if OS.mac? # JSON viewer
 brew "fzf" if OS.mac?
@@ -70,7 +66,7 @@ brew "gitsign"
 brew "glow" # markdown reader
 brew "gnupg" if OS.mac?
 brew "grc" if OS.mac? # CLI output colorizer
-brew "grex" # regex generator
+brew "grex" if OS.mac? # regex generator
 brew "helm" if OS.mac?
 brew "hexyl" if OS.mac? # hex viewer
 brew "htop" if OS.mac?
@@ -83,14 +79,12 @@ brew "jdupes" if OS.mac? # duplicate file finder
 brew "jq" if OS.mac? # JSON manipulator
 brew "kind" if OS.mac? # Kubernetes in Docker
 brew "kondo" # Disk cleanup tool for coding
-brew "lazygit" # Git terminal UI
-brew "lefthook" if OS.mac? # Git hooks manager
+brew "lazygit" if OS.mac? # Git terminal UI
 brew "less" if OS.mac? # Mac OS has an ancient version of Less
 brew "lima" if OS.mac? # Linux VM manager
 brew "litecli" if OS.mac? # SQLite client
 brew "lnav" if OS.mac? # log file viewer
 brew "luarocks" if OS.mac?
-brew "lux" # Video downloader
 brew "m-cli" if OS.mac? # macOS utils
 brew "macos-trash" if OS.mac? # trash CLI
 brew "mas" if OS.mac? # Mac App Store CLI
@@ -140,10 +134,6 @@ brew "zoxide" if OS.mac? # directory jumping
 brew "zstd" if OS.mac?
 
 brew "aquaproj/aqua/aqua"
-brew "egoist/tap/dum" # fast npm script runner
-brew "rsteube/tap/carapace-bridge" # useful for testing stuff in carapace
-brew "rsteube/tap/carapace-spec-man" if OS.linux? # carapace spec generator
-brew "rsteube/tap/vincent" # term color scheme generator
 brew "powershell/tap/powershell", link: true if OS.mac? # PowerShell
 
 cask_args require_sha: true
