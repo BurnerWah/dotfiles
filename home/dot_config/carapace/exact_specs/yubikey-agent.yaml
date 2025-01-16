@@ -1,0 +1,8 @@
+name: yubikey-agent
+description: Seamless ssh-agent for YubiKeys and other PIV tokens
+flags:
+  -setup: Generate a new SSH key on the attached YubiKey.
+  -l=: Run the agent, listening on the UNIX socket at PATH
+completion:
+  flag:
+    l: [$files]

@@ -1,0 +1,7 @@
+name: appy
+description: Apparency command-line tool
+flags:
+  -d, --defacto: Look for components in de-facto code places.
+completion:
+  positionalany:
+    - $files

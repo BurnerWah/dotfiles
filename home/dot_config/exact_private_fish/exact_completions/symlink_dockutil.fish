@@ -1,0 +1,1 @@
+_swift_argparse.fish

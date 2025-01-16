@@ -492,6 +492,7 @@ mono: fish
 monodis: fish
 monop: fish
 mozilla-xremote-client: zsh
+mpm: click
 mpstat: zsh
 murano: zsh
 mycli: click

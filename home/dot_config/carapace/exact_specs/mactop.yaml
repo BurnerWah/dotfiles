@@ -1,0 +1,13 @@
+name: mactop
+description: Apple Silicon Monitor Top written in Golang
+flags:
+  -h, --help: Show help
+  -v, --version: Show the version of mactop
+  -i, --interval=: Set the powermetrics update interval in milliseconds
+  -c, --color=: Set the UI color
+  -p, --prometheus=&: ''
+  -t, --test=&: ''
+completion:
+  flag:
+    color: [none, green, red, blue, cyan, magenta, yellow, white]
+    prometheus: [$carapace.net.Ports]

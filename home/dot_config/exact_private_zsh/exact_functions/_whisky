@@ -1,0 +1,3 @@
+#compdef whisky
+# shellcheck disable=SC1090
+source <(whisky --generate-completion-script=zsh)
