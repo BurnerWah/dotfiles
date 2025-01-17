@@ -95,6 +95,12 @@ settings:
         - pdf-pals # ai
         - planet # cryptocurrency
         - poe # ai
+        - proton-drive # fascism
+        - proton-mail # fascism
+        - proton-mail-bridge # fascism
+        - proton-pass # fascism
+        - protonmail-import-export # fascism
+        - protonvpn # fascism
         - roblox # roblox
         - robloxstudio # roblox
         - sanctum # ai
@@ -164,6 +170,7 @@ settings:
         - mods # ai
         - monero
         - nim # homophobia
+        - nixpacks # nix
         - openssl@1.1 # security, deprecated
         - ord # cryptocurrency
         - slither-analyzer # cryptocurrency, leaf dependency

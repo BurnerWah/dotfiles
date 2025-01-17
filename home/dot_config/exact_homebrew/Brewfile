@@ -176,7 +176,6 @@ cask "postico" if OS.mac? # postgres client
 cask "pycharm", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
 cask "rubymine", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
 cask "signal", greedy: true if OS.mac?
-cask "soduto" if OS.mac? # KDE connect for macOS
 cask "tor-browser", greedy: true if OS.mac?
 cask "tower" if OS.mac? # git client
 cask "visual-studio-code" if OS.mac?
