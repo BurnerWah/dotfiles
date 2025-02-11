@@ -55,6 +55,7 @@ settings:
         - google-chrome@beta
         - google-chrome@canary
         - google-chrome@dev
+        - gpt4all
         - greenery # cryptocurrency
         - groestlcoin-core # cryptocurrency
         - grs-bluewallet
@@ -117,6 +118,7 @@ settings:
         - threema@beta # threema
         - trezor-bridge # cryptocurrency
         - trezor-suite # cryptocurrency
+        - turbotax-2024
         - typefully # twitter
         - upm # deprecated
         - vertcoin-core
@@ -173,6 +175,7 @@ settings:
         - nixpacks # nix
         - openssl@1.1 # security, deprecated
         - ord # cryptocurrency
+        - ramalama # ai
         - slither-analyzer # cryptocurrency, leaf dependency
         - solc-select # cryptocurrency
         - solidity # cryptocurrency
