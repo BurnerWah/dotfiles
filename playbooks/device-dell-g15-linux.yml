@@ -7,9 +7,15 @@
       become: yes
       ansible.builtin.dnf5:
         name:
+          - bat
+          - btrfs-assistant
+          - fd-find
           - fish
+          - gcc
           - git
           - kitty
+          - ripgrep
+          - snapper
           - zsh
         state: present
 
@@ -17,8 +23,49 @@
       become: yes
       ansible.builtin.dnf5:
         name:
-          - firefox # prefer flatpak
+          - firefox
+          - gnome-calculator
+          - gnome-calendar
+          - gnome-clocks
+          - gnome-maps
+          - gnome-weather
+          - loupe
+          - ptyxis
+          - simple-scan
+          - snapshot
         state: absent
+
+    - name: Add tailscale dnf repo
+      become: yes
+      ansible.builtin.command:
+        argv:
+          - /usr/bin/dnf
+          - config-manager
+          - addrepo
+          - --from-repofile=https://pkgs.tailscale.com/stable/fedora/tailscale.repo
+        creates: /etc/yum.repos.d/tailscale.repo
+
+    - name: Install tailscale
+      become: yes
+      ansible.builtin.dnf5:
+        name: [tailscale]
+        state: present
+
+    - name: Add mise dnf repo
+      become: yes
+      ansible.builtin.command:
+        argv:
+          - /usr/bin/dnf
+          - config-manager
+          - addrepo
+          - --from-repofile=https://mise.jdx.dev/rpm/mise.repo
+        creates: /etc/yum.repos.d/mise.repo
+
+    - name: Install mise
+      become: yes
+      ansible.builtin.dnf5:
+        name: [mise]
+        state: present
 
     - name: Set user's shell to fish
       become: yes
@@ -30,6 +77,10 @@
       community.general.flatpak:
         name:
           - app.bluebubbles.BlueBubbles
+          - app.devsuite.Ptyxis
+          - app.drey.KeyRack
+          - ca.desrt.dconf-editor
+          - com.github.marhkb.Pods
           - com.github.rafostar.Clapper
           - com.github.tchx84.Flatseal
           - com.github.wwmm.easyeffects
@@ -37,20 +88,37 @@
           - com.obsproject.Studio
           - com.slack.Slack
           - com.ticktick.TickTick
+          - com.usebottles.bottles
           - com.visualstudio.code
           - com.yubico.yubioath
+          - com.yubico.yubioath
           - fr.handbrake.ghb
+          - io.ente.auth
+          - io.github.f3d_app.f3d
           - io.github.flattool.Warehouse
           - io.github.mpobaschnig.Vaults
+          - io.github.pwr_solaar.solaar
           - io.itch.itch
+          - it.mijorus.gearlever
           - md.obsidian.Obsidian
           - org.blender.Blender
+          - org.gnome.Calculator
+          - org.gnome.Calendar
+          - org.gnome.clocks
+          - org.gnome.FileRoller
           - org.gnome.Geary
           - org.gnome.Lollypop
+          - org.gnome.Loupe
+          - org.gnome.Maps
+          - org.gnome.SimpleScan
+          - org.gnome.Snapshot
+          - org.gnome.Weather
           - org.mozilla.firefox
           - org.musicbrainz.Picard
+          - org.qbittorrent.qBittorrent
           - org.signal.Signal
           - page.tesk.Refine
+          - rs.ruffle.Ruffle
           - xyz.armcord.ArmCord
 
     - name: Enable sshd socket activation
@@ -59,3 +127,22 @@
         name: sshd.socket
         enabled: yes
         state: started
+
+    - name: Enable tailscale daemon
+      become: yes
+      ansible.builtin.systemd_service:
+        name: tailscaled
+        enabled: yes
+        state: started
+
+    - name: Enable snapper timeline
+      become: yes
+      ansible.builtin.systemd_service:
+        name: snapper-timeline.timer
+        enabled: yes
+
+    - name: Enable snapper cleanup
+      become: yes
+      ansible.builtin.systemd_service:
+        name: snapper-cleanup.timer
+        enabled: yes
