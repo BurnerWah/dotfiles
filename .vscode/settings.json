@@ -34,6 +34,7 @@
     "**/dot_config/*_litecli/config.tmpl": "ini",
     "**/dot_config/*_rainbow/*.cfg": "plaintext",
     "**/dot_config/*_zsh/*_functions/**": "shellscript",
+    "**/dot_local/*_share/*_flatpak/overrides/**": "ini",
     "*.desktop": "ini",
     "*.elv.tmpl": "elvish",
     "*.env.tmpl": "dotenv",
