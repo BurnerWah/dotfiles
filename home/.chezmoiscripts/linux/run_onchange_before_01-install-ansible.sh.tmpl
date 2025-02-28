@@ -10,6 +10,9 @@ case '{{ .osid }}' in
     linux-fedora)
         sudo dnf install -y ansible
         ;;
+    linux-ubuntu)
+        sudo apt install -y ansible
+        ;;
     *)
         echo "ansible install method not defined"
         ;;
