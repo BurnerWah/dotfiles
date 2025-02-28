@@ -57,7 +57,11 @@ textconv:
 # {{- /* figure out internal name for the device */ -}}
 # {{- $devicename := .chezmoi.hostname -}}
 # {{- if and $wsl (eq .chezmoi.os "linux") -}}
-# {{-   $devicename = printf "%s-wsl" (lower $devicename) -}}
+# {{-   if hasKey .chezmoi.osRelease "id" -}}
+# {{-     $devicename = printf "%s-wsl-%s" (lower $devicename) .chezmoi.osRelease.id -}}
+# {{-   else -}}
+# {{-     $devicename = printf "%s-wsl-unknown" (lower $devicename) -}}
+# {{-   end -}}
 # {{- end -}}
 # {{- if eq $devicename "wah" -}}
 # {{-   $devicename = "dell-g15-linux" -}}
