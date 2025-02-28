@@ -13,6 +13,7 @@
       become: yes
       ansible.builtin.apt:
         name:
+          - fish
           - flatpak # preferred package manager
           - gedit # pulls in GUI libraries
 
@@ -29,3 +30,9 @@
       ansible.builtin.flatpak:
         name:
           - com.github.tchx84.Flatseal
+
+    - name: Set user's shell to fish
+      become: yes
+      ansible.builtin.user:
+        name: '{{ ansible_user_id }}'
+        shell: /usr/bin/fish
