@@ -88,12 +88,14 @@ settings:
         - onekey # cryptocurrency
         - opencat # ai
         - opera # loan-shark
+        - opera-air # loan-shark
         - opera-gx # loan-shark
         - opera@beta # loan-shark
         - opera@developer # loan-shark
         - operadriver # loan-shark
         - orion # i don't like kagi
         - pdf-pals # ai
+        - pdl # ai
         - planet # cryptocurrency
         - poe # ai
         - proton-drive # fascism
@@ -116,6 +118,7 @@ settings:
         - threema # threema
         - threema-work # threema
         - threema@beta # threema
+        - trae # ai
         - trezor-bridge # cryptocurrency
         - trezor-suite # cryptocurrency
         - turbotax-2024

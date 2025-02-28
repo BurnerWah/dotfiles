@@ -142,12 +142,16 @@ cask_args require_sha: true
 # Check against `ENV["HOMEBREW_CHEZMOI"].nil?` to skip something on chezmoi apply
 cask "1password", greedy: true if OS.mac?
 cask "1password-cli" if OS.mac?
+cask "alt-tab" if OS.mac?
+cask "android-platform-tools" if OS.mac?
 cask "apparency" if OS.mac? # inspects app bundles + quicklook extension
+cask "background-music", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac? # volume mixer
+cask "bettertouchtool", greedy: true if OS.mac? # trackpad settings
 cask "blender" if OS.mac?
 cask "bluebubbles" if OS.mac? # iMessage server
 cask "bootstrap-studio" if OS.mac?
-cask "dataspell", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
 cask "datagrip", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
+cask "dataspell", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
 cask "eloston-chromium" if OS.mac? # ungoogled chromium
 cask "eul" if OS.mac? # system monitor
 cask "figma" if OS.mac? # figma balls
@@ -156,6 +160,7 @@ cask "font-fira-code" if OS.mac?
 cask "font-jetbrains-mono" if OS.mac?
 cask "font-monaspace" if OS.mac?
 cask "font-symbols-only-nerd-font" if OS.mac?
+cask "fuse-t", greedy: true if OS.mac? # FUSE over NFS
 cask "goland", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
 cask "handbrake" if OS.mac? # encoder
 cask "hazeover" if OS.mac? # dims windows that aren't focused
@@ -164,16 +169,25 @@ cask "iina" if OS.mac? # video player
 cask "intellij-idea", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
 cask "iterm2" if OS.mac? # terminal emulator
 cask "jetbrains-toolbox", greedy: true if OS.mac?
+cask "karabiner-elements", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac? # keyboard remapper
 cask "kitty" if OS.mac? # terminal emulator
 cask "krita" if OS.mac?
+cask "launchcontrol" if OS.mac?
+cask "launchpad-manager" if OS.mac?
+cask "legcord" if OS.mac?
+cask "lulu", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac? # firewall
+cask "macs-fan-control" if OS.mac?
+cask "magicquit" if OS.mac? # quit background apps
 cask "menuwhere" if OS.mac? # access menubar via cmd+right click
 cask "moonlight" if OS.mac? # local game streaming
+cask "notunes" if OS.mac?
 cask "obs" if OS.mac? # streaming & recording
 cask "obsidian" if OS.mac? # note taking
 cask "phpstorm", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
 cask "podman-desktop", greedy: false if OS.mac?
 cask "postico" if OS.mac? # postgres client
 cask "pycharm", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
+cask "raycast", greedy: true if OS.mac? # spotlight replacement
 cask "rubymine", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
 cask "signal", greedy: true if OS.mac?
 cask "tor-browser", greedy: true if OS.mac?
@@ -183,18 +197,6 @@ cask "vmware-fusion" if OS.mac?
 cask "webstorm", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
 cask "whisky" if OS.mac?
 cask "zoom", greedy: true if OS.mac?
-
-# as the years go by, i will never die (mac os mitigations)
-cask "alt-tab" if OS.mac?
-cask "background-music", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac? # volume mixer
-cask "bettertouchtool", greedy: true if OS.mac? # trackpad settings
-cask "karabiner-elements", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac? # keyboard remapper
-cask "launchpad-manager" if OS.mac?
-cask "lulu", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac? # firewall
-cask "macfuse", greedy: true if OS.mac? # filesystem extender
-cask "magicquit" if OS.mac? # quit background apps
-cask "raycast", greedy: true if OS.mac? # spotlight replacement
-cask "unnaturalscrollwheels" if OS.mac? # reverse scroll direction
 
 mas "Affinity Designer 2", id: 1_616_831_348 if OS.mac?
 mas "Affinity Photo 2", id: 1_616_822_987 if OS.mac?

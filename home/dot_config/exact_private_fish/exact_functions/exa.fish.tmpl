@@ -1,3 +1,5 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{- if lookPath "eza" -}}
 # Exa is outdated, use eza
 if command -qs eza
     function exa --wraps=eza --description 'alias exa eza'
@@ -10,3 +12,4 @@ else if command -qs exa
         command exa $param $argv
     end
 end
+# {{ end -}}

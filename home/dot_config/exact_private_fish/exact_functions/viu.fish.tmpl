@@ -1,3 +1,5 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{- if lookPath "viu" -}}
 if command -qs viu
     function viu
         if [ "$TERM_PROGRAM" = vscode ]
@@ -8,3 +10,4 @@ if command -qs viu
         end
     end
 end
+# {{ end -}}

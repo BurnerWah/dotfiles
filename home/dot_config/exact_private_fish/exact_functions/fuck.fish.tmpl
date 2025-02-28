@@ -1,3 +1,5 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{- if lookPath "thefuck" -}}
 # Modified output of `thefuck --alias`
 function fuck -d "Correct your previous console command"
     set -l fucked_up_command $history[1]
@@ -11,3 +13,4 @@ function fuck -d "Correct your previous console command"
         builtin history merge 2>/dev/null
     end
 end
+# {{ end -}}
