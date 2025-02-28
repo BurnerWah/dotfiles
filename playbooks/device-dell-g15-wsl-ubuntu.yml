@@ -1,0 +1,31 @@
+---
+- name: Dell G15 Ubutnu WSL playbook
+  hosts: localhost
+
+  tasks:
+    - name: Uninstall snapd
+      become: yes
+      ansible.builtin.apt:
+        name: snapd
+        state: absent
+
+    - name: Install main packages
+      become: yes
+      ansible.builtin.apt:
+        name:
+          - flatpak # preferred package manager
+          - gedit # pulls in GUI libraries
+
+    - name: Add flathub flatpak repo
+      become: yes
+      community.general.flatpak_remote:
+        name: flathub
+        state: present
+        flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+        method: system
+
+    - name: Install flathub packages
+      become: yes
+      ansible.builtin.flatpak:
+        name:
+          - com.github.tchx84.Flatseal
