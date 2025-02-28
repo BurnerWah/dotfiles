@@ -1,13 +1,27 @@
 ---
-- name: Dell G15 WSL playbook
+- name: Dell G15 Fedora WSL playbook
   hosts: localhost
 
   tasks:
+    - name: Download WSL2 XWayland Socket
+      become: yes
+      ansible.builtin.get_url:
+        url: https://github.com/WhitewaterFoundry/fedora-remix-rootfs-build/raw/refs/heads/master/linux_files/wsl2-xwayland.socket
+        dest: /etc/systemd/system/wsl2-xwayland.socket
+        mode: '0644'
+
+    - name: Download WSL2 XWayland Service
+      become: yes
+      ansible.builtin.get_url:
+        url: https://github.com/WhitewaterFoundry/fedora-remix-rootfs-build/raw/refs/heads/master/linux_files/wsl2-xwayland.service
+        dest: /etc/systemd/system/wsl2-xwayland.service
+        mode: '0644'
+
     - name: Install main dnf packages
       become: yes
       ansible.builtin.dnf5:
         name:
-          - '@standard'
+          # - '@standard'
           - fish
           - git
           - zsh
