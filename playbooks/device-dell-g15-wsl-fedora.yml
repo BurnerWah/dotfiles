@@ -48,6 +48,8 @@
           - bat
           - fd-find
           - fish
+          - flatpak
+          - gedit # installs GUI libraries
           - git
           - glibc-langpack-en # Needed for ansible to work
           - PackageKit-command-not-found
