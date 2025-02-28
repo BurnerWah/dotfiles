@@ -49,6 +49,8 @@
           - fd-find
           - fish
           - git
+          - glibc-langpack-en # Needed for ansible to work
+          - PackageKit-command-not-found
           - ripgrep
           - wslu # wslutilities/wslu
           - zsh
