@@ -7,6 +7,9 @@ command -v ansible >/dev/null 2>&1 && exit 0
 
 # shellcheck disable=SC2194
 case '{{ .osid }}' in
+    linux-arch)
+        sudo pacman -S --noconfirm ansible
+        ;;
     linux-fedora)
         sudo dnf install -y ansible
         ;;

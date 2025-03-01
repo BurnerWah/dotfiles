@@ -63,3 +63,17 @@
       ansible.builtin.user:
         name: '{{ ansible_user_id }}'
         shell: /usr/bin/fish
+
+    - name: Add flathub flatpak repo
+      become: yes
+      community.general.flatpak_remote:
+        name: flathub
+        state: present
+        flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+        method: system
+
+    - name: Install flathub packages
+      become: yes
+      ansible.builtin.flatpak:
+        name:
+          - com.github.tchx84.Flatseal
