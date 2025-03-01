@@ -77,3 +77,5 @@
       ansible.builtin.flatpak:
         name:
           - com.github.tchx84.Flatseal
+          - io.github.flattool.Warehouse
+          - org.gnome.Lollypop
