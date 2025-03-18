@@ -42,6 +42,7 @@ carapace = [
   "ansible-vault",
   "ant",
   "antidot",
+  "anyquery",
   "apack",
   "apkanalyzer",
   "apko",

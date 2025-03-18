@@ -25,6 +25,7 @@ ansible-test: argcomplete
 ansible-vault: argcomplete
 ansible: argcomplete
 antidot: cobra
+anyquery: cobra
 aodh: zsh
 apache2ctl: zsh
 apachectl: zsh
