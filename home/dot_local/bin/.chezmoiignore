@@ -8,20 +8,8 @@
 /postybirb-plus
 
 {{- if ne .chezmoi.os "linux" }}
-/dig
-/ffplay
-/ffprobe
-/host
-/ipcalc
-/nslookup
 /op-ssh-sign
-/patch
-/ping
-/strings
-/tesseract
 /trash
-/whois
-/yt-dlp
 {{- end }}
 
 {{- if ne .chezmoi.os "darwin" }}

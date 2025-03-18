@@ -1,0 +1,3 @@
+{{ if and (eq .chezmoi.os "linux") (lookPath "firejail") }}
+/usr/bin/firejail
+{{ end }}
