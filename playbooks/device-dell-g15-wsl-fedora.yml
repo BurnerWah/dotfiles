@@ -52,7 +52,9 @@
           - gedit # installs GUI libraries
           - git
           - glibc-langpack-en # Needed for ansible to work
+          - neovim
           - PackageKit-command-not-found
+          - python3-neovim
           - ripgrep
           - wslu # wslutilities/wslu
           - zsh

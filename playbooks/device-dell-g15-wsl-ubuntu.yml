@@ -3,19 +3,19 @@
   hosts: localhost
 
   tasks:
-    - name: Uninstall snapd
-      become: yes
-      ansible.builtin.apt:
-        name: snapd
-        state: absent
-
     - name: Install main packages
       become: yes
       ansible.builtin.apt:
         name:
+          - bat
+          - clang # needed for neovim
+          - fd-find
           - fish
           - flatpak # preferred package manager
           - gedit # pulls in GUI libraries
+          - ripgrep
+          - snapd
+          - zsh
 
     - name: Add flathub flatpak repo
       become: yes
@@ -36,3 +36,9 @@
       ansible.builtin.user:
         name: '{{ ansible_user_id }}'
         shell: /usr/bin/fish
+
+    - name: Install neovim (classic snap)
+      become: yes
+      community.general.snap:
+        name: nvim
+        classic: true
