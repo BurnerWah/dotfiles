@@ -88,17 +88,21 @@
       "home/dot_config/carapace/exact_specs/*.yaml",
       "home/dot_config/carapace/exact_overlays/*.yaml",
     ],
+    "https://github.com/evilmartians/lefthook/raw/refs/heads/master/schema.json": [
+      ".lefthook-local.yaml",
+      ".lefthook-local.yml",
+      ".lefthook.yaml",
+      ".lefthook.yml",
+      "lefthook-local.yaml",
+      "lefthook-local.yml",
+      "lefthook.yaml",
+      "lefthook.yml",
+    ],
     "https://github.com/sharkdp/vivid/raw/refs/heads/master/schemas/filetypes.json": [
       "home/dot_config/vivid/filetypes.yml",
     ],
     "https://github.com/sharkdp/vivid/raw/refs/heads/master/schemas/theme.json": [
       "home/dot_config/vivid/themes/*",
-    ],
-    "https://json.schemastore.org/lefthook.json": [
-      "lefthook.yml",
-      "lefthook.yaml",
-      "lefthook-local.yml",
-      "lefthook-local.yaml",
     ],
   },
 }
