@@ -8,7 +8,6 @@
 /postybirb-plus
 
 {{- if ne .chezmoi.os "linux" }}
-/code
 /dig
 /ffplay
 /ffprobe

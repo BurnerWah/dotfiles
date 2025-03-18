@@ -1,1 +1,3 @@
+{{ if and (not .wsl) (eq .chezmoi.os "linux") }}
 {{ joinPath .pkg.flatpak.system "exports" "bin" "com.visualstudio.code" }}
+{{ end }}
