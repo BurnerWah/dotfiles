@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
+# {{ if lookPath "update-mime-database" }}
 # mime package hashes: {{ range (glob (joinPath .xdg.data "mime/packages/*.xml")) }}
 #   {{ . }}: {{ include . | sha256sum }} {{ end }}
 
 update-mime-database "{{ .xdg.data }}/mime"
+# {{ end }}
