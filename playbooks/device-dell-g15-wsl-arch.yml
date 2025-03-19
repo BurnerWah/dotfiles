@@ -10,10 +10,17 @@
           - bat
           - fd
           - fish
+          - fzf
           - glibc-locales # Needed for ansible to run
+          - inetutils
+          - jq
+          - less
           - mirro-rs
+          - mise
           - pkgfile # fish command-not-found
           - ripgrep
+          - starship
+          - zoxide
           - zsh
         state: present
 
@@ -33,4 +40,15 @@
       become: yes
       ansible.builtin.systemd:
         name: mirro-rs.timer
+        enabled: yes
+
+    - name: Enable user systemd-tmpfiles setup
+      ansible.builtin.systemd:
+        name: systemd-tmpfiles-setup
+        enabled: yes
+        state: started
+
+    - name: Enable user systemd-tmpfiles cleanup
+      ansible.builtin.systemd:
+        name: systemd-tmpfiles-clean.timer
         enabled: yes

@@ -40,6 +40,16 @@
           - wslutilities/wslu
         creates: '/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:wslutilities:wslu.repo'
 
+    - name: Add mise dnf repo
+      become: yes
+      ansible.builtin.command:
+        argv:
+          - /usr/bin/dnf
+          - config-manager
+          - addrepo
+          - --from-repofile=https://mise.jdx.dev/rpm/mise.repo
+        creates: /etc/yum.repos.d/mise.repo
+
     - name: Install general dnf packages
       become: yes
       ansible.builtin.dnf5:
@@ -49,14 +59,18 @@
           - fd-find
           - fish
           - flatpak
+          - fzf
           - gedit # installs GUI libraries
           - git
           - glibc-langpack-en # Needed for ansible to work
+          - mise
           - neovim
           - PackageKit-command-not-found
           - python3-neovim
           - ripgrep
+          - uv
           - wslu # wslutilities/wslu
+          - zoxide
           - zsh
         state: present
 

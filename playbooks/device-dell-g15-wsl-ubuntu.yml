@@ -12,10 +12,12 @@
           - fd-find
           - fish
           - flatpak # preferred package manager
+          - fzf
           - gedit # pulls in GUI libraries
           - jq
           - ripgrep
           - snapd
+          - zoxide
           - zsh
 
     - name: Add flathub flatpak repo
@@ -43,3 +45,14 @@
       community.general.snap:
         name: nvim
         classic: true
+
+    - name: Enable user systemd-tmpfiles setup
+      ansible.builtin.systemd:
+        name: systemd-tmpfiles-setup
+        enabled: yes
+        state: started
+
+    - name: Enable user systemd-tmpfiles cleanup
+      ansible.builtin.systemd:
+        name: systemd-tmpfiles-clean.timer
+        enabled: yes
