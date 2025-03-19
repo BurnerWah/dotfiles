@@ -28,24 +28,31 @@ pre-commit:
           - name: prettier
             run: mise x -- bunx prettier --write --cache --ignore-unknown {staged_files}
             glob:
+              - '*.{gql,graphql,graphqls}'
+              - '*.{hbs,handlebars}'
+              - '*.{js,cjs,mjs,jsx}'
+              - '*.{json,jsonc,json5}'
+              - '*.{md,mdx}'
+              - '*.{pcss,postcss}'
+              - '*.{ts,cts,mts,tsx}'
+              - '*.{yaml,yml}{,.tmpl}'
               - '*.code-snippets'
               - '*.css'
               - '*.html'
-              - '*.json'
-              - '*.jsonc'
-              - '*.md'
+              - '*.less'
               - '*.plist{,.tmpl}'
               - '*.rb'
+              - '*.scss'
               - '*.sublime-syntax'
+              - '*.vue'
               - '*.xml{,.tmpl}'
-              - '*.yaml{,.tmpl}'
-              - '*.yml{,.tmpl}'
               - Brewfile{,.tmpl}
               - Gemfile
               - Rakefile
             exclude:
+              - lazy-lock.json
               - pnpm-lock.yaml
-              - schemas/vendor/**
+              - schemas/vendor/*
               - symlink_*
             stage_fixed: true
 
