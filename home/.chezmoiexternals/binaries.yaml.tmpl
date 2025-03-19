@@ -17,6 +17,17 @@
   readonly: true
 # {{ end }}
 
+# {{ if and (ne .distro "arch") (ne .devicename "dell-g15-linux") (has .chezmoi.arch (list "amd64" "arm64")) }}
+.local/bin/atuin:
+  type: archive-file
+  url: 'https://github.com/atuinsh/atuin/releases/latest/download/atuin-{{$rustArch}}-unknown-linux-gnu.tar.gz'
+  stripComponents: 1
+  path: ./atuin
+  refreshPeriod: 168h
+  executable: true
+  readonly: true
+# {{ end }}
+
 .local/bin/eza:
   type: archive-file
   url: 'https://github.com/eza-community/eza/releases/latest/download/eza_{{$rustArch}}-unknown-linux-gnu.tar.gz'
