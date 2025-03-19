@@ -51,8 +51,10 @@
         name: systemd-tmpfiles-setup
         enabled: yes
         state: started
+        scope: user
 
     - name: Enable user systemd-tmpfiles cleanup
       ansible.builtin.systemd:
         name: systemd-tmpfiles-clean.timer
         enabled: yes
+        scope: user

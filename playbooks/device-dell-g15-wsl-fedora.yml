@@ -100,3 +100,4 @@
       ansible.builtin.systemd:
         name: dnf-makecache.timer
         enabled: yes
+        scope: user
