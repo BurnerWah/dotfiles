@@ -1,8 +1,10 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter=}}
 
 # {{- $osID := .chezmoi.os -}}
+# {{- $distro := "unknown" -}}
 # {{- if (and (eq .chezmoi.os "linux") (hasKey .chezmoi.osRelease "id")) -}}
 # {{-   $osID = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
+# {{-   $distro = .chezmoi.osRelease.id -}}
 # {{- end -}}
 
 diff:
@@ -110,6 +112,7 @@ textconv:
 
 data:
   devicename: # {{ $devicename }}
+  distro: # {{ $distro }}
   ephemeral: # {{ $ephemeral }}
   headless: # {{ $headless }}
   mullvad: # {{ $mullvad }}
