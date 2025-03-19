@@ -1,0 +1,6 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{ if .wsl -}}
+function ssh-add --wraps=ssh-add.exe
+    ssh-add.exe $argv
+end
+# {{ end -}}
