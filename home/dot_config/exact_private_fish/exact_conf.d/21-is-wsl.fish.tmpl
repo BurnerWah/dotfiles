@@ -1,4 +1,12 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter=}}
 # {{ if .wsl -}}
 fish_add_path --path --prepend "$HOME/.local/bin"
+
+# Remove unwanted PATH entries
+begin
+    string match -i "/mnt/c/Users/*/scoop/apps/mise/current/shims" $PATH
+end | while read -l match
+    set -l index (contains -i -- $match $PATH)
+    set -e PATH[$index]
+end
 # {{ end -}}
