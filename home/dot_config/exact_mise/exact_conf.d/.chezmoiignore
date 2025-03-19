@@ -3,3 +3,6 @@ os-*.toml
 
 device-*.toml
 !device-{{.devicename}}.toml
+
+distro-*.toml
+!distro-{{.distro}}.toml
