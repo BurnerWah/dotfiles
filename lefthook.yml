@@ -11,6 +11,16 @@ pre-commit:
           - name: ripsecrets
             run: mise x -- ripsecrets --strict-ignore {staged_files}
 
+    - name: Linting
+      group:
+        parallel: true
+        jobs:
+          - name: ruff
+            run: mise x -- ruff check --fix {staged_files}
+            glob: ['*.py']
+            exclude: symlink_*
+            stage_fixed: true
+
     - name: Formatting
       group:
         parallel: true
@@ -42,25 +52,25 @@ pre-commit:
           - name: fish_indent
             run: fish_indent -w {staged_files}
             glob: ['*.fish', '*.fish.tmpl']
-            exclude: [symlink_*]
+            exclude: symlink_*
             stage_fixed: true
 
           - name: ruff
             run: mise x -- ruff format {staged_files}
             glob: ['*.py']
-            exclude: [symlink_*]
+            exclude: symlink_*
             stage_fixed: true
 
           - name: stylua
             run: mise x -- stylua --respect-ignores {staged_files}
             glob: ['*.lua']
-            exclude: [symlink_*]
+            exclude: symlink_*
             stage_fixed: true
 
           - name: taplo
             run: mise x -- taplo format {staged_files}
             glob: ['*.toml']
-            exclude: [symlink_*]
+            exclude: symlink_*
             stage_fixed: true
 
 pre-push:
