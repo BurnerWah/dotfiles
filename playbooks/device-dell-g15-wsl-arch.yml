@@ -7,6 +7,7 @@
       become: yes
       community.general.pacman:
         name:
+          - atuin
           - bat
           - fd
           - fish
@@ -52,3 +53,9 @@
       ansible.builtin.systemd:
         name: systemd-tmpfiles-clean.timer
         enabled: yes
+
+    - name: Enable atuin socket activation
+      ansible.builtin.systemd:
+        name: atuin.socket
+        enabled: yes
+        state: started
