@@ -95,3 +95,8 @@
           - com.github.tchx84.Flatseal
           - io.github.flattool.Warehouse
           - org.gnome.Lollypop
+
+    - name: Enable user dnf-makecache timer
+      ansible.builtin.systemd:
+        name: dnf-makecache.timer
+        enabled: yes
