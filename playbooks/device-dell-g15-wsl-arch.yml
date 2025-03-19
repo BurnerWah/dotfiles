@@ -28,3 +28,9 @@
       ansible.builtin.systemd:
         name: pkgfile-update.timer
         enabled: yes
+
+    - name: Enable mirro-rs timer
+      become: yes
+      ansible.builtin.systemd:
+        name: mirro-rs.timer
+        enabled: yes
