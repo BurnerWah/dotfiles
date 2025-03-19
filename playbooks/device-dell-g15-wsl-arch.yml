@@ -1,0 +1,18 @@
+---
+- name: Dell G15 Arch WSL playbook
+  hosts: localhost
+
+  tasks:
+    - name: Install packages
+      become: yes
+      community.general.pacman:
+        name:
+          - mirro-rs
+          - fish
+        state: present
+
+    - name: Set user's shell to fish
+      become: yes
+      ansible.builtin.user:
+        name: '{{ ansible_user_id }}'
+        shell: /usr/bin/fish
