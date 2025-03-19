@@ -1,0 +1,4 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{ if .wsl -}}
+fish_add_path --path --prepend "$HOME/.local/bin"
+# {{ end -}}
