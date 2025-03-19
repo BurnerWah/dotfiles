@@ -7,9 +7,14 @@
       become: yes
       community.general.pacman:
         name:
+          - bat
+          - fd
           - fish
           - glibc-locales # Needed for ansible to run
           - mirro-rs
+          - pkgfile # fish command-not-found
+          - ripgrep
+          - zsh
         state: present
 
     - name: Set user's shell to fish
@@ -17,3 +22,9 @@
       ansible.builtin.user:
         name: '{{ ansible_user_id }}'
         shell: /usr/bin/fish
+
+    - name: Enable pkgfile-update timer
+      become: yes
+      ansible.builtin.systemd:
+        name: pkgfile-update.timer
+        enabled: yes
