@@ -1,11 +1,14 @@
 /asciinema
-/atuin
 /boxxy
 /gallery-dl
 /pdu
 /pnpm
 /pnpx
 /postybirb-plus
+
+{{- if eq .devicename "dell-g15-linux" }}
+/atuin
+{{- end }}
 
 {{- if ne .chezmoi.os "linux" }}
 /op-ssh-sign
