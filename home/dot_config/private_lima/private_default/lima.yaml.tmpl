@@ -10,7 +10,7 @@ images:
 
 mounts:
   - location: '~'
-  - location: '/tmp/lima'
+  - location: /tmp/lima
     writable: true
 
 mountTypesUnsupported: [9p]
@@ -23,6 +23,9 @@ disk: 100GiB
 networks:
   - vzNAT: true
 
+# Don't configure the user's shell in here, it stops lima from ever initializing
+
+upgradePackages: true
 provision:
   - mode: system
     script: |

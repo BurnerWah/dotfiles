@@ -8,6 +8,7 @@ settings:
       cask:
         # keep-sorted start
         - ace-studio # ai
+        - agent-tars # ai
         - aide-app # ai
         - aifun
         - amazon-q # ai AND absurdly questionably behavior

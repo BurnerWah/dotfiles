@@ -664,6 +664,9 @@
                 },
                 "interface": {
                     "type": "string"
+                },
+                "metric": {
+                    "type": "integer"
                 }
             },
             "additionalProperties": false,
@@ -967,6 +970,16 @@
                     ]
                 },
                 "home": {
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "shell": {
                     "oneOf": [
                         {
                             "type": "string"
