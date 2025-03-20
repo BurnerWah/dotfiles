@@ -6,11 +6,11 @@
     - name: Add mise reoo
       become: yes
       block:
-        - name: Download key
+        - name: Download mise key
           ansible.builtin.get_url:
             url: https://mise.jdx.dev/gpg-key.pub
             dest: /etc/apt/keyrings/mise-archive-keyring.asc
-        - name: Add repo
+        - name: Add mise repo
           ansible.builtin.apt_repository:
             repo: deb [signed-by=/etc/apt/keyrings/mise-archive-keyring.asc arch=amd64] https://mise.jdx.dev/deb stable main
             state: present
