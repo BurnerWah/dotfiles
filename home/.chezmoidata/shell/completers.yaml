@@ -35,6 +35,7 @@ settings:
         tex-fmt: tex-fmt --completion elvish
         topgrade: topgrade --gen-completion elvish
         topiary: topiary completion elvish
+        tree-sitter: tree-sitter complete --shell elvish
         typeshare: typeshare completions elvish
         uv: uv generate-shell-completion elvish
         uvx: uvx --generate-shell-completion elvish
@@ -78,6 +79,7 @@ settings:
         tex-fmt: tex-fmt --completion powershell
         topgrade: topgrade --gen-completion powershell
         topiary: topiary completion powershell
+        tree-sitter: tree-sitter complete --shell power-shell
         typeshare: typeshare completions powershell
         uv: uv generate-shell-completion powershell
         uvx: uvx --generate-shell-completion powershell

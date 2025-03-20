@@ -1,0 +1,3 @@
+#compdef tree-sitter
+# shellcheck disable=SC1090
+source <(tree-sitter complete --shell zsh)
