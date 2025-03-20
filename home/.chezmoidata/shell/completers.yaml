@@ -2,6 +2,7 @@ settings:
   shell:
     elvish:
       completers:
+        # keep-sorted start
         ast-grep: ast-grep completions elvish
         atuin: atuin gen-completions --shell elvish
         bws: bws completions elvish
@@ -43,8 +44,10 @@ settings:
         wasmtime: wasmtime completion elvish
         yr: yr completion elvish
         zellij: zellij setup --generate-completion elvish
+        # keep-sorted end
     pwsh:
       completers:
+        # keep-sorted start
         ast-grep: ast-grep completions powershell
         atuin: atuin gen-completions --shell powershell
         bws: bws completions powershell
@@ -87,3 +90,4 @@ settings:
         wasmtime: wasmtime completion powershell
         yr: yr completion powershell
         zellij: zellij setup --generate-completion powershell
+        # keep-sorted end

@@ -6,6 +6,7 @@ settings:
   homebrew:
     forbiddden:
       cask:
+        # keep-sorted start
         - ace-studio # ai
         - aide-app # ai
         - aifun
@@ -145,8 +146,10 @@ settings:
         - wasabi-wallet
         - windsurf # ai
         - windsurf@next # ai
+        # keep-sorted end
 
       formula:
+        # keep-sorted start
         - aichat
         - aicommit
         - aicommits
@@ -225,11 +228,13 @@ settings:
         - wasmer # preference
         - wownero # cryptocurrency
         - xlearn # ai
+        # keep-sorted end
 
       # These are only forbidden to prevent unexpected from-source builds
       # If it needs to be built from source, do that another way.
       # If it's python, use `uv tool`
       linux:
+        # keep-sorted start
         - cmake
         - dbus
         - dotnet
@@ -244,6 +249,7 @@ settings:
         - pkg-config # Bottle not relocatable
         - ruby
         - systemd
+        # keep-sorted end
 
       tap:
         - gromgit/fuse # Very outdated
