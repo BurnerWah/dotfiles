@@ -1,6 +1,12 @@
 ---
 extends: relaxed
 
+ignore:
+  - /node_modules/*
+  - /pnpm-lock.yaml
+  - /schemas/vendor/*
+  - symlink_*
+
 rules:
   comments:
     level: warning
@@ -10,6 +16,8 @@ rules:
   line-length:
     max: 160
     level: warning
+    ignore:
+      - /home/dot_config/carapace/exact_specs/*
   braces:
     min-spaces-inside: 0
     max-spaces-inside: 1
@@ -19,3 +27,6 @@ rules:
     forbid-implicit-octal: true # for ansible-lint
   trailing-spaces:
     level: warning
+  indentation:
+    ignore:
+      - /home/dot_config/carapace/exact_specs/*

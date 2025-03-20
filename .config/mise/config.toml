@@ -8,6 +8,7 @@ gitleaks = "latest"
 ripsecret = { version = "latest", os = ["linux", "macos"] }
 bun = "latest"
 node = "latest"
+yamllint = "latest"
 "ubi:VorpalBlade/chezmoi_modify_manager" = "latest"
 
 [tasks.apply]
