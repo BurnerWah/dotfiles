@@ -3,3 +3,6 @@
 
 ??-device-*.fish
 !??-device-{{.devicename}}.fish
+
+??-distro-*.fish
+!??-distro-{{.distro}}.fish

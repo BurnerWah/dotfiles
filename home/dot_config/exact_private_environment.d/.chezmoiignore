@@ -1,2 +1,5 @@
 ??-device-*.conf
 !??-device-{{.devicename}}.conf
+
+??-distro-*.conf
+!??-distro-{{.distro}}.conf

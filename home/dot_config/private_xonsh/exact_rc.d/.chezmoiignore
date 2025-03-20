@@ -9,3 +9,9 @@
 
 ??-device-*.py
 !??-device-{{.devicename}}.py
+
+??-distro-*.xsh
+!??-distro-{{.distro}}.xsh
+
+??-distro-*.py
+!??-distro-{{.distro}}.py
