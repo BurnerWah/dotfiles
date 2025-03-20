@@ -39,6 +39,17 @@
           - --from-repofile=https://mise.jdx.dev/rpm/mise.repo
         creates: /etc/yum.repos.d/mise.repo
 
+    - name: Add atim/starship copr repo
+      become: yes
+      ansible.builtin.command:
+        argv:
+          - /usr/bin/dnf
+          - -y
+          - copr
+          - enable
+          - atim/starship
+        creates: '/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:atim:starship.repo'
+
     - name: Install general dnf packages
       become: yes
       ansible.builtin.dnf5:
@@ -57,6 +68,7 @@
           - PackageKit-command-not-found
           - python3-neovim
           - ripgrep
+          - starship # atim/starship
           - uv
           - zoxide
           - zsh
