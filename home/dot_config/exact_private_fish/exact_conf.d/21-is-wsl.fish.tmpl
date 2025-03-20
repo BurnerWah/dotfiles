@@ -9,4 +9,8 @@ end | while read -l match
     set -l index (contains -i -- $match $PATH)
     set -e PATH[$index]
 end
+
+# Set environment variables
+# Will eventually be redone to utilize universal variables
+set -gx ZDOTDIR $XDG_CONFIG_HOME/zsh
 # {{ end -}}
