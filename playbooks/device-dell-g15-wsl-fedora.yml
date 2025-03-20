@@ -90,7 +90,7 @@
 
     - name: Install flathub packages
       become: yes
-      ansible.builtin.flatpak:
+      community.general.flatpak:
         name:
           - com.github.tchx84.Flatseal
           - io.github.flattool.Warehouse

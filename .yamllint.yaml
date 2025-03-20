@@ -5,7 +5,7 @@ rules:
   document-start:
     level: warning
   line-length:
-    max: 80
+    max: 160
     level: warning
   trailing-spaces:
     level: warning

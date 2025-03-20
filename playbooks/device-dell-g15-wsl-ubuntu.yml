@@ -10,6 +10,7 @@
           ansible.builtin.get_url:
             url: https://mise.jdx.dev/gpg-key.pub
             dest: /etc/apt/keyrings/mise-archive-keyring.asc
+            mode: '0644'
         - name: Add mise repo
           ansible.builtin.apt_repository:
             repo: deb [signed-by=/etc/apt/keyrings/mise-archive-keyring.asc arch=amd64] https://mise.jdx.dev/deb stable main
@@ -45,7 +46,7 @@
 
     - name: Install flathub packages
       become: yes
-      ansible.builtin.flatpak:
+      community.general.flatpak:
         name:
           - com.github.tchx84.Flatseal
 
