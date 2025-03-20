@@ -2,17 +2,20 @@
 extends: relaxed
 
 rules:
-  document-start:
-    level: warning
-  line-length:
-    max: 160
-    level: warning
-  trailing-spaces:
-    level: warning
   comments:
     level: warning
     min-spaces-from-content: 1 # for ansible-lint
+  comments-indentation: false
+  document-start: disable
+  line-length:
+    max: 160
+    level: warning
+  braces:
+    min-spaces-inside: 0
+    max-spaces-inside: 1
   octal-values:
     level: warning
     forbid-explicit-octal: true # for ansible-lint
     forbid-implicit-octal: true # for ansible-lint
+  trailing-spaces:
+    level: warning
