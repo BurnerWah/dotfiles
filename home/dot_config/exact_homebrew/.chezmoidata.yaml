@@ -6,6 +6,8 @@ settings:
   homebrew:
     forbiddden:
       cask:
+        - ace-studio # ai
+        - aide-app # ai
         - aifun
         - amazon-q # ai AND absurdly questionably behavior
         - anchor-wallet # cryptocurrency
@@ -18,6 +20,7 @@ settings:
         - bisq # cryptocurrency
         - bitbox # cryptocurrency
         - bitcoin-core
+        - block-goose # ai
         - blockstream-green
         - bluewallet
         - boltai
@@ -29,6 +32,8 @@ settings:
         - chatall
         - chatbox
         - chatgpt
+        - chatwise # ai
+        - cherry-studio # ai
         - chia # cryptocurrency
         - cityofzion-neon # cryptocurrency
         - claude # ai
@@ -38,8 +43,10 @@ settings:
         - daedalus-mainnet
         - dash-dash # cryptocurrency
         - decentr # cryptocurrency
+        - deepl # ai
         - dogecoin
         - electron-cash # cryptocurrency
+        - electronmail # protonmail
         - electrum # cryptocurrency
         - electrum-grs
         - electrum-ltc
@@ -51,11 +58,13 @@ settings:
         - firefly-shimmer # cryptocurrency
         - fixkey # ai
         - forkgram-telegram # telegram
+        - geekbench-ai
         - google-chrome
         - google-chrome@beta
         - google-chrome@canary
         - google-chrome@dev
         - gpt4all
+        - granola # ai
         - greenery # cryptocurrency
         - groestlcoin-core # cryptocurrency
         - grs-bluewallet
@@ -66,11 +75,13 @@ settings:
         - itermai # ai
         - jamie # ai
         - jan # ai
+        - katrain # ai
         - league-of-legends # your honor, league of legends
         - ledger-live # cryptocurrency
         - limitless # ai
         - litecoin
         - llamachat
+        - lm-studio # ai
         - macai
         - meta-quest-developer-hub # facebook
         - microsoft-edge
@@ -80,11 +91,13 @@ settings:
         - mindmac # ai
         - mixin # cryptocurrency
         - monero-wallet
+        - msty # ai
         - mumu-x # ai
         - mycrypto
         - mymonero
         - nano # cryptocurrency
         - nault # cryptocurrency
+        - notesollama
         - onekey # cryptocurrency
         - opencat # ai
         - opera # loan-shark
@@ -104,6 +117,7 @@ settings:
         - proton-pass # fascism
         - protonmail-import-export # fascism
         - protonvpn # fascism
+        - rivet # ai
         - roblox # roblox
         - robloxstudio # roblox
         - sanctum # ai
@@ -119,14 +133,18 @@ settings:
         - threema-work # threema
         - threema@beta # threema
         - trae # ai
+        - trae-cn # ai
         - trezor-bridge # cryptocurrency
         - trezor-suite # cryptocurrency
         - turbotax-2024
         - typefully # twitter
+        - ui-tars # ai
         - upm # deprecated
         - vertcoin-core
         - vincelwt-chatgpt
         - wasabi-wallet
+        - windsurf # ai
+        - windsurf@next # ai
 
       formula:
         - aichat
@@ -143,9 +161,11 @@ settings:
         - chatblade # ai
         - circumflex # orange site
         - clarinet # cryptocurrency
+        - code2prompt
         - cog # ai
         - cointop
         - cortexso # ai
+        - cql # cryptocurrency
         - crytic-compile # cryptocurrency, leaf dependency
         - daemontools # cryptocurrency
         - envd # ai
@@ -155,6 +175,7 @@ settings:
         - firefly # cryptocurrency
         - flow-cli # cryptocurrency
         - gollama # ai
+        - gorilla-cli # ai
         - gptline
         - gptme
         - gptscript
@@ -168,6 +189,7 @@ settings:
         - libbitcoin-consensus # cryptocurrency, leaf dependency
         - libbitcoin-system # cryptocurrency, leaf dependency
         - lighthouse # cryptocurrency
+        - llama.cpp
         - llm # ai
         - localai
         - mallet # ai
@@ -176,9 +198,14 @@ settings:
         - monero
         - nim # homophobia
         - nixpacks # nix
+        - ollama
         - openssl@1.1 # security, deprecated
+        - openvino # ai
         - ord # cryptocurrency
+        - promptfoo # ai
         - ramalama # ai
+        - rawdog # ai
+        - screenpipe # ai
         - slither-analyzer # cryptocurrency, leaf dependency
         - solc-select # cryptocurrency
         - solidity # cryptocurrency
