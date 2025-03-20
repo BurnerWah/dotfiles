@@ -11,6 +11,7 @@
             url: https://mise.jdx.dev/gpg-key.pub
             dest: /etc/apt/keyrings/mise-archive-keyring.asc
             mode: '0644'
+            checksum: sha256:91c72340c5cc84ae2ba98c1070083feacf789b0a4a3d34b2416147769e475d96
         - name: Add mise repo
           ansible.builtin.apt_repository:
             repo: deb [signed-by=/etc/apt/keyrings/mise-archive-keyring.asc arch=amd64] https://mise.jdx.dev/deb stable main
@@ -35,6 +36,7 @@
           - snapd
           - zoxide
           - zsh
+        state: present
 
     - name: Add flathub flatpak repo
       become: yes
@@ -49,18 +51,21 @@
       community.general.flatpak:
         name:
           - com.github.tchx84.Flatseal
+        state: present
 
     - name: Set user's shell to fish
       become: yes
       ansible.builtin.user:
         name: '{{ ansible_user_id }}'
         shell: /usr/bin/fish
+        state: present
 
     - name: Install neovim (classic snap)
       become: yes
       community.general.snap:
         name: nvim
         classic: true
+        state: present
 
     - name: Enable user systemd-tmpfiles setup
       ansible.builtin.systemd:

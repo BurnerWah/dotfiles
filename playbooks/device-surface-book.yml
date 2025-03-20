@@ -19,16 +19,13 @@
           - zsh
         state: present
 
-    # community.general.dnf_config_manager isn't ready for dnf 5 yet
     - name: Add surface-linux dnf repo
       become: yes
-      ansible.builtin.command:
-        argv:
-          - /usr/bin/dnf
-          - config-manager
-          - addrepo
-          - --from-repofile=https://pkg.surfacelinux.com/fedora/linux-surface.repo
-        creates: /etc/yum.repos.d/linux-surface.repo
+      ansible.builtin.get_url:
+        url: https://pkg.surfacelinux.com/fedora/linux-surface.repo
+        dest: /etc/yum.repos.d/linux-surface.repo
+        mode: '0644'
+        checksum: sha256:c0b6c3ba98726d9937c97cb0ef3a8572b40b0f60d79dabb1d5a55b6caeb4a2e3
 
     - name: Install surface-linux packages
       become: yes
@@ -49,13 +46,11 @@
 
     - name: Add tailscale dnf repo
       become: yes
-      ansible.builtin.command:
-        argv:
-          - /usr/bin/dnf
-          - config-manager
-          - addrepo
-          - --from-repofile=https://pkgs.tailscale.com/stable/fedora/tailscale.repo
-        creates: /etc/yum.repos.d/tailscale.repo
+      ansible.builtin.get_url:
+        url: https://pkgs.tailscale.com/stable/fedora/tailscale.repo
+        dest: /etc/yum.repos.d/tailscale.repo
+        mode: '0644'
+        checksum: sha256:87206259fb7032fb4147eabccf4ffdb0b4d850d0519ef4c6991cf8c4d100ac13
 
     - name: Install tailscale
       become: yes
@@ -65,13 +60,11 @@
 
     - name: Add mise dnf repo
       become: yes
-      ansible.builtin.command:
-        argv:
-          - /usr/bin/dnf
-          - config-manager
-          - addrepo
-          - --from-repofile=https://mise.jdx.dev/rpm/mise.repo
-        creates: /etc/yum.repos.d/mise.repo
+      ansible.builtin.get_url:
+        url: https://mise.jdx.dev/rpm/mise.repo
+        dest: /etc/yum.repos.d/mise.repo
+        mode: '0644'
+        checksum: sha256:0feedc30bb4f5faa705bae31b0c3ade63bc42260ee3aca576156cb84a0c26c00
 
     - name: Install mise
       become: yes
@@ -100,6 +93,7 @@
       ansible.builtin.user:
         name: '{{ ansible_user_id }}'
         shell: /usr/bin/fish
+        state: present
 
     - name: Install flatpaks from flathub
       community.general.flatpak:
@@ -139,6 +133,7 @@
           - org.mozilla.firefox
           - org.videolan.VLC
           - xyz.armcord.ArmCord
+        state: present
 
     - name: Enable sshd socket activation
       become: yes

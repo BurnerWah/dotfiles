@@ -31,6 +31,7 @@
       ansible.builtin.user:
         name: '{{ ansible_user_id }}'
         shell: /usr/bin/fish
+        state: present
 
     - name: Enable pkgfile-update timer
       become: yes
