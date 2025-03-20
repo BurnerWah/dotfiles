@@ -21,6 +21,7 @@
           - pkgfile # fish command-not-found
           - ripgrep
           - starship
+          - uv
           - zoxide
           - zsh
         state: present
