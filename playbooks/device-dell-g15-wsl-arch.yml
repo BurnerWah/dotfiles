@@ -37,11 +37,12 @@
         name: pkgfile-update.timer
         enabled: yes
 
-    - name: Enable mirro-rs timer
-      become: yes
-      ansible.builtin.systemd:
-        name: mirro-rs.timer
-        enabled: yes
+    # Turned off due to a bad default config
+    # - name: Enable mirro-rs timer
+    #   become: yes
+    #   ansible.builtin.systemd:
+    #     name: mirro-rs.timer
+    #     enabled: yes
 
     - name: Enable user systemd-tmpfiles setup
       ansible.builtin.systemd:

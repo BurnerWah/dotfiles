@@ -29,17 +29,6 @@
         name: [dnf-plugins-core]
         state: present
 
-    - name: Add wslutilities/wslu copr repo
-      become: yes
-      ansible.builtin.command:
-        argv:
-          - /usr/bin/dnf
-          - -y
-          - copr
-          - enable
-          - wslutilities/wslu
-        creates: '/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:wslutilities:wslu.repo'
-
     - name: Add mise dnf repo
       become: yes
       ansible.builtin.command:
@@ -69,7 +58,6 @@
           - python3-neovim
           - ripgrep
           - uv
-          - wslu # wslutilities/wslu
           - zoxide
           - zsh
         state: present
