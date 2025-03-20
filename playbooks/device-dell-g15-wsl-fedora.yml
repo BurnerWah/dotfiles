@@ -31,24 +31,15 @@
 
     - name: Add mise dnf repo
       become: yes
-      ansible.builtin.command:
-        argv:
-          - /usr/bin/dnf
-          - config-manager
-          - addrepo
-          - --from-repofile=https://mise.jdx.dev/rpm/mise.repo
-        creates: /etc/yum.repos.d/mise.repo
+      ansible.builtin.get_url:
+        url: https://mise.jdx.dev/rpm/mise.repo
+        dest: /etc/yum.repos.d/mise.repo
+        mode: '0644'
 
     - name: Add atim/starship copr repo
       become: yes
-      ansible.builtin.command:
-        argv:
-          - /usr/bin/dnf
-          - -y
-          - copr
-          - enable
-          - atim/starship
-        creates: '/etc/yum.repos.d/_copr:copr.fedorainfracloud.org:atim:starship.repo'
+      community.general.copr:
+        name: atim/starship
 
     - name: Install general dnf packages
       become: yes
