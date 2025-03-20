@@ -1,7 +1,6 @@
 # Taps
 tap "homebrew/autoupdate" if OS.mac?
 tap "homebrew/aliases"
-tap "homebrew/bundle"
 tap "homebrew/command-not-found" if OS.mac?
 tap "homebrew/services"
 tap "buo/cask-upgrade" if OS.mac?

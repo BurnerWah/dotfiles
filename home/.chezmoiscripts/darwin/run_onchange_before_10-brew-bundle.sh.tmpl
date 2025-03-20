@@ -17,7 +17,7 @@ set -eu -o pipefail
 eval "$({{ $Brew }} shellenv bash)"
 
 # Use the brewfile directly from the source directory, since there's no templating
-{{ $Brewfile := (joinPath (dir .chezmoi.sourceDir) "home/dot_config/exact_homebrew/Brewfile") -}}
+{{ $Brewfile := (joinPath (dir .chezmoi.sourceDir) "home/dot_config/exact_private_homebrew/Brewfile") -}}
 # Brewfile: {{ $Brewfile }}
 # Brewfile hash: {{ include $Brewfile | sha256sum }}
 
@@ -68,14 +68,13 @@ export HOMEBREW_BUNDLE_BREW_SKIP={{ list
 }}
 
 # Bundle dependencies
-brew tap homebrew/bundle
 if ! command -v gh  >/dev/null 2>&1; then
   brew install --formula --force-bottle gh
 fi
 
-brew bundle --no-lock
+brew bundle
 
 echo 'Some packages may have been skipped during brew bundle to speed things up.
-To install them, run `brew bundle --global --no-lock`'
+To install them, run `brew bundle --global`'
 
 {{ end -}}
