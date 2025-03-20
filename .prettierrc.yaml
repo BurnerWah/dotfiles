@@ -5,6 +5,7 @@ tabWidth: 2
 plugins:
   - '@prettier/plugin-ruby'
   - '@prettier/plugin-xml'
+  - prettier-plugin-packagejson
 
 overrides:
   - files:
