@@ -12,6 +12,7 @@
         value: true
         mode: '0644'
         backup: true
+        state: present
 
     - name: Download WSL2 XWayland Socket
       become: yes
