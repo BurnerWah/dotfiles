@@ -4,6 +4,7 @@
 
   tasks:
     - name: Configure wsl.conf
+      become: yes
       community.general.ini_file:
         path: /etc/wsl.conf
         section: boot
