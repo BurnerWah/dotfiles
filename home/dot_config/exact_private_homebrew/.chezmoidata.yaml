@@ -264,9 +264,13 @@ settings:
 
       tap:
         # keep-sorted start
+        - homebrew/aliases # Deprecated
+        - homebrew/bundle # Deprecated
         - homebrew/cask-drivers # Deprecated
         - homebrew/cask-fonts # Deprecated
         - homebrew/cask-versions # Deprecated
+        - homebrew/formula-analytics # Deprecated
+        - homebrew/services # Deprecated
         - nanovms/ops # Builds from source with a weird script
         - pkgxdev/made # Cryptocurrency adjacent
         - render-oss/render # Mac OS only

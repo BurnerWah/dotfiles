@@ -3,6 +3,15 @@
   hosts: localhost
 
   tasks:
+    - name: Configure wsl.conf
+      community.general.ini_file:
+        path: /etc/wsl.conf
+        section: boot
+        option: systemd
+        value: true
+        mode: '0600'
+        backup: true
+
     - name: Download WSL2 XWayland Socket
       become: yes
       ansible.builtin.get_url:
