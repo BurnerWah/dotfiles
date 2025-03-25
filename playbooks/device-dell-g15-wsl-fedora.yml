@@ -10,7 +10,7 @@
         section: boot
         option: systemd
         value: true
-        mode: '0600'
+        mode: '0644'
         backup: true
 
     - name: Download WSL2 XWayland Socket
