@@ -17,7 +17,6 @@
   - [ ] Figure out how to handle scalar & maintenance config options
 - [ ] Add Powershell configs for linux & mac os
   - [ ] Unify Windows, Linux, and Mac OS Powershell configs
-- [ ] Add ansible playbooks to set up Linux
 - [ ] Add npm config
   - [ ] Fully update npm config to account for mise usage
 - [ ] Add glab config
@@ -25,3 +24,7 @@
 - [ ] Add scripts to configure Mac OS preferences
 - [ ] Add docker-cli config files
   - [ ] Setup scripts to generate docker contexts
+
+## Playbooks
+
+- [ ] Automate atuin login
