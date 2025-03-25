@@ -46,6 +46,7 @@
     "**/*_dot_ssh/*config.tmpl": "ssh_config",
     "**/dot_config/*_bat/config": "plaintext",
     "**/dot_config/*_fd/ignore": "ignore",
+    "**/dot_config/*_git/ignore": "ignore",
     "**/dot_config/*_go/*env.tmpl": "dotenv",
     "**/dot_config/*_litecli/config.tmpl": "ini",
     "**/dot_config/*_rainbow/*.cfg": "plaintext",
