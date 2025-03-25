@@ -1,0 +1,7 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{ if eq .chezmoi.os "darwin" -}}
+function mount_bitlocker --argument-names disk --argument-names volname
+    sudo dislocker -v -r -V $disk -u -- -o allow_other /Volumes/{$volname}-blk
+    sudo mount_ntfs /Volumes/{$volname}-blk/dislocker-file /Volumes/{$volname}
+end
+# {{ end -}}

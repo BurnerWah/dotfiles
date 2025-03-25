@@ -159,7 +159,6 @@ cask "font-fira-code" if OS.mac?
 cask "font-jetbrains-mono" if OS.mac?
 cask "font-monaspace" if OS.mac?
 cask "font-symbols-only-nerd-font" if OS.mac?
-cask "fuse-t", greedy: true if OS.mac? # FUSE over NFS
 cask "goland", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
 cask "handbrake" if OS.mac? # encoder
 cask "hazeover" if OS.mac? # dims windows that aren't focused
@@ -175,6 +174,7 @@ cask "launchcontrol" if OS.mac?
 cask "launchpad-manager" if OS.mac?
 cask "legcord" if OS.mac?
 cask "lulu", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac? # firewall
+cask "macfuse@dev", greedy: true if OS.mac? # FUSE on Mac OS
 cask "macs-fan-control" if OS.mac?
 cask "magicquit" if OS.mac? # quit background apps
 cask "menuwhere" if OS.mac? # access menubar via cmd+right click

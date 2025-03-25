@@ -58,6 +58,7 @@
           - gedit # installs GUI libraries
           - git
           - glibc-langpack-en # Needed for ansible to work
+          - grc
           - mise
           - neovim
           - PackageKit-command-not-found

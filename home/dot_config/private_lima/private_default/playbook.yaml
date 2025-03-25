@@ -7,7 +7,9 @@
       ansible.builtin.dnf5:
         name:
           - fish
+          - grc
           - kitty-terminfo
+          - PackageKit-command-not-found
         state: present
 
     # Changing the user's shell to fish requires Lima 1.0.2 and a VM restart

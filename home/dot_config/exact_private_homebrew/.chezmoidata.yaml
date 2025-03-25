@@ -23,6 +23,7 @@ settings:
         - bitbox # cryptocurrency
         - bitcoin-core
         - block-goose # ai
+        - blockstack # cryptocurrency
         - blockstream-green
         - bluewallet
         - boltai
@@ -60,6 +61,7 @@ settings:
         - firefly-shimmer # cryptocurrency
         - fixkey # ai
         - forkgram-telegram # telegram
+        - ganache # cryptocurrency
         - geekbench-ai
         - google-chrome
         - google-chrome@beta
@@ -119,6 +121,7 @@ settings:
         - proton-pass # fascism
         - protonmail-import-export # fascism
         - protonvpn # fascism
+        - remix-ide # cryptocurrency
         - rivet # ai
         - roblox # roblox
         - robloxstudio # roblox
@@ -126,6 +129,7 @@ settings:
         - sparkplate # cryptocurrency
         - sparrow # cryptocurrency
         - specter # cryptocurrency
+        - spotify
         - superwhisper # ai
         - telegram # telegram
         - telegram-a # telegram
@@ -159,6 +163,7 @@ settings:
         - ata # ai
         - bcoin
         - bitcoin
+        - block-goose-cli # ai
         - cadence # cryptocurrency
         - caracal # cryptocurrency
         - chainhook
@@ -172,12 +177,15 @@ settings:
         - cql # cryptocurrency
         - crytic-compile # cryptocurrency, leaf dependency
         - daemontools # cryptocurrency
+        - echidna # cryptocurrency
         - envd # ai
         - erigon # cryptocurrency
         - ethereum
+        - fabric-ai
         - fades # use `uv run`
         - firefly # cryptocurrency
         - flow-cli # cryptocurrency
+        - foundry # cryptocurrency
         - gollama # ai
         - gorilla-cli # ai
         - gptline
@@ -188,6 +196,7 @@ settings:
         - groestlcoin
         - huggingface-cli # ai
         - ignite # cryptocurrency
+        - ipget # cryptocurrency
         - k8sgpt
         - kuzco # ai
         - libbitcoin-consensus # cryptocurrency, leaf dependency
@@ -197,6 +206,7 @@ settings:
         - llm # ai
         - localai
         - mallet # ai
+        - medusa # cryptocurrency
         - mentat # ai
         - mods # ai
         - monero
@@ -253,11 +263,12 @@ settings:
         # keep-sorted end
 
       tap:
-        - gromgit/fuse # Very outdated
+        # keep-sorted start
+        - homebrew/cask-drivers # Deprecated
         - homebrew/cask-fonts # Deprecated
         - homebrew/cask-versions # Deprecated
-        - homebrew/cask-drivers # Deprecated
-        - teamookla/speedtest # Mac OS only
-        - render-oss/render # Mac OS only
         - nanovms/ops # Builds from source with a weird script
         - pkgxdev/made # Cryptocurrency adjacent
+        - render-oss/render # Mac OS only
+        - teamookla/speedtest # Mac OS only
+        # keep-sorted end
