@@ -5,6 +5,10 @@ fish_add_path --path --prepend "$HOME/.local/bin"
 # Remove unwanted PATH entries
 begin
     string match -i "/mnt/c/Users/*/scoop/apps/mise/current/mise/shims" $PATH
+    begin
+        string match /bin $PATH
+        string match /sbin $PATH
+    end | path filter --type=link
 end | while read -l match
     set -l index (contains -i -- $match $PATH)
     set -e PATH[$index]
