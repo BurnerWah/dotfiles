@@ -8,14 +8,17 @@
       community.general.pacman:
         name:
           - atuin
+          - base-devel
           - bat
           - fd
           - fish
           - fzf
+          - git
           - glibc-locales # Needed for ansible to run
           - inetutils
           - jq
           - less
+          - man-db
           - mirro-rs
           - mise
           - pkgfile # fish command-not-found
@@ -25,6 +28,29 @@
           - zoxide
           - zsh
         state: present
+
+    - name: Install yay
+      when: "'/usr/bin/yay' is not file"
+      vars:
+        build_dir: /tmp/yay-checkout
+        pkg_glob: "{{ (build_dir, 'yay-bin-*.pkg.*') | path_join }}"
+      block:
+        - name: Clone yay-bin # noqa: latest
+          ansible.builtin.git:
+            repo: https://aur.archlinux.org/yay-bin.git
+            dest: '{{ build_dir }}'
+
+        - name: Build yay-bin
+          ansible.builtin.command:
+            argv: [/usr/bin/makepkg, -s]
+            chdir: '{{ build_dir }}'
+            creates: "{{ q('fileglob', pkg_glob) }}"
+
+        - name: Install yay-bin
+          become: yes
+          community.general.pacman:
+            name: "{{ q('fileglob', pkg_glob) | select('regex', 'yay-bin-\\d') }}"
+            state: present
 
     - name: Set user's shell to fish
       become: yes
