@@ -5,7 +5,7 @@ ruff = "latest"
 ruby = "latest"
 taplo = "latest"
 gitleaks = "latest"
-ripsecrets = { version = "latest", os = ["linux", "macos"] }
+ripsecrets = { version = "0.1.8", os = ["linux", "macos"] }
 bun = "latest"
 node = "latest"
 yamllint = "latest"
@@ -15,6 +15,14 @@ yamllint = "latest"
 run = "chezmoi apply"
 description = "Apply dotfiles"
 wait_for = ["format:*"]
+
+[tasks.keep-sorted]
+run = "keep-sorted $(git grep -lE 'keep-sorted (start|end)')"
+# I think this run_windows should work?
+run_windows = '''
+#!/usr/bin/env pwsh
+keep-sorted $(git grep -lE 'keep-sorted (start|end)')
+'''
 
 [tasks.format]
 depends = ["format:*"]
