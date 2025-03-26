@@ -5,14 +5,18 @@
   tasks:
     - name: Configure wsl.conf
       become: yes
-      community.general.ini_file:
-        path: /etc/wsl.conf
-        section: boot
-        option: systemd
-        value: true
+      ansible.builtin.copy:
+        dest: /etc/wsl.conf
+        content: '{{ wsl_config | community.general.to_ini }}'
         mode: '0644'
         backup: true
-        state: present
+      vars:
+        wsl_config:
+          automount:
+            enabled: true
+            options: metadata,uid=1000,gid=1000,umask=22,fmask=11,case=off
+          boot:
+            systemd: true
 
     - name: Download WSL2 XWayland Socket
       become: yes
