@@ -9,13 +9,19 @@
         name:
           - bat
           - btrfs-assistant
+          - f3
           - fd-find
           - fish
+          - fzf
           - gcc
           - git
+          - git-delta
+          - grc
           - kitty
+          - neovim
           - ripgrep
           - snapper
+          - zoxide
           - zsh
         state: present
 
