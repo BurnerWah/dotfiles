@@ -46,7 +46,6 @@
 /.ServiceHub
 /.shiv
 /.sonarlint
-/.swiftpm
 /.tabnine
 /.tcshrc
 /.templateengine

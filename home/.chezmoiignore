@@ -45,6 +45,7 @@
 {{- else }}
 .chezmoiscripts/darwin/**
 /.cache
+/.swiftpm
 /Library
 {{- end }}
 

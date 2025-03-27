@@ -1,8 +1,6 @@
 # Taps
 tap "homebrew/autoupdate" if OS.mac?
-tap "homebrew/aliases"
 tap "homebrew/command-not-found" if OS.mac?
-tap "homebrew/services"
 tap "buo/cask-upgrade" if OS.mac?
 tap "powershell/tap" if OS.mac?
 tap "aquaproj/aqua"
@@ -153,7 +151,6 @@ cask "datagrip", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
 cask "dataspell", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
 cask "eloston-chromium" if OS.mac? # ungoogled chromium
 cask "eul" if OS.mac? # system monitor
-cask "figma" if OS.mac? # figma balls
 cask "firefox", greedy: true if OS.mac?
 cask "font-fira-code" if OS.mac?
 cask "font-jetbrains-mono" if OS.mac?
@@ -162,7 +159,6 @@ cask "font-symbols-only-nerd-font" if OS.mac?
 cask "goland", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
 cask "handbrake" if OS.mac? # encoder
 cask "hazeover" if OS.mac? # dims windows that aren't focused
-cask "httpie" if OS.mac?
 cask "iina" if OS.mac? # video player
 cask "intellij-idea", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
 cask "iterm2" if OS.mac? # terminal emulator
