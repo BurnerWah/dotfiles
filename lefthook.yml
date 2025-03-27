@@ -10,6 +10,8 @@ pre-commit:
 
           - name: ripsecrets
             run: mise x -- ripsecrets --strict-ignore {staged_files}
+            tags:
+              - windows-incompatible
 
     - name: Linting
       group:
@@ -70,6 +72,8 @@ pre-commit:
             glob: ['*.fish', '*.fish.tmpl']
             exclude: symlink_*
             stage_fixed: true
+            tags:
+              - windows-incompatible
 
           - name: ruff
             run: mise x -- ruff format {staged_files}
@@ -94,3 +98,5 @@ pre-push:
   commands:
     ripsecrets:
       run: mise x -- ripsecrets --strict-ignore {push_files}
+      tags:
+        - windows-incompatible
