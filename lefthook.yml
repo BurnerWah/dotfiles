@@ -38,7 +38,7 @@ pre-commit:
         parallel: true
         jobs:
           - name: prettier
-            run: mise x -- bunx prettier --write --cache --ignore-unknown {staged_files}
+            run: mise x -- bun x prettier --write --cache --ignore-unknown {staged_files}
             glob:
               - '*.{gql,graphql,graphqls}'
               - '*.{hbs,handlebars}'
