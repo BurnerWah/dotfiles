@@ -1,0 +1,8 @@
+*_environment.d/* eol=lf
+*_fish/*        eol=lf
+*_homebrew/*    eol=lf
+*_kitty/*       eol=lf
+*_user-tmpfiles.d/* eol=lf
+autostart/*     eol=lf
+boxxy/*         eol=lf
+systemd/*       eol=lf

@@ -5,13 +5,16 @@
 *.zsh.tmpl      text eol=lf linguist-language=Shell
 *.elv.tmpl      text eol=lf linguist-language=Elvish
 *.ps1.tmpl      text linguist-language=PowerShell
-*.json.tmpl     text linguist-language=JSON
-*.toml.tmpl     text linguist-language=TOML
+*.json.tmpl     text eol=lf linguist-language=JSON
+*.toml.tmpl     text eol=lf linguist-language=TOML
 *.xml.tmpl      text linguist-language=XML
-*.yaml.tmpl     text linguist-language=YAML
-*.yml.tmpl      text linguist-language=YAML
+*.yaml.tmpl     text eol=lf linguist-language=YAML
+*.yml.tmpl      text eol=lf linguist-language=YAML
+*.desktop.tmpl  text eol=lf linguist-language=desktop
+*.xsh.tmpl      text eol=lf linguist-language=Xonsh
+*.plist.tmpl    text eol=lf linguist-language=XML-Property-List
 
 # Chezmoi files
-*.chezmoiignore text linguist-language=Ignore-List
-*.chezmoiremove text linguist-language=Ignore-List
+*.chezmoiignore text eol=lf linguist-language=Ignore-List
+*.chezmoiremove text eol=lf linguist-language=Ignore-List
 */symlink_*     text

@@ -7,6 +7,7 @@
 *.sh            text eol=lf
 *.zsh           text eol=lf
 *.elv           text eol=lf
+*.xsh           text eol=lf
 # These are explicitly windows files and should use crlf
 *.bat           text eol=crlf
 *.cmd           text eol=crlf
@@ -19,17 +20,21 @@
 *.xml           text
 *.yaml          text eol=lf
 *.yml           text eol=lf
+*.plist         text eol=lf
 
 # Project files
 .vscode/*.json  linguist-language=JSON-with-Comments
 
 # Markup
-*.md            linguist-detectable
+*.md            linguist-detectable eol=lf
 
 # Source files
 *.lua           text eol=lf
 *.py            text diff=python
 *.vim           text eol=lf
+
+# Other
+*.desktop       text eol=lf
 
 # Vendored files included in the repo
 schemas/vendor/* linguist-vendored
