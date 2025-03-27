@@ -1,3 +1,4 @@
+# keep-sorted start case=no
 /.ansible
 /.asdf*
 /.bash*
@@ -64,3 +65,4 @@
 /RiderProjects
 /RubymineProjects
 /WebstormProjects
+# keep-sorted end

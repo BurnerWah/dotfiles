@@ -1,3 +1,4 @@
+# keep-sorted start case=no
 /aquaproj-aqua
 /atuin
 /bun
@@ -45,19 +46,26 @@
 /xonsh
 /zap
 /zoxide
+# keep-sorted end
 
 {{- if or .ephemeral .headless }}
+# keep-sorted start case=no
 /applications
 /flatpak
+# keep-sorted end
 {{- end }}
 
 {{- if ne .chezmoi.os "linux" }}
+# keep-sorted start case=no
 /applications
 /flatpak
 /mime
+# keep-sorted end
 {{- end }}
 
 {{- if eq .chezmoi.os "windows" }}
+# keep-sorted start case=no
 /gnupg
 /powershell
+# keep-sorted end
 {{- end }}

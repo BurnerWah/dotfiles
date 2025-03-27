@@ -1,3 +1,4 @@
+# keep-sorted start case=no
 /ArmCord
 /com.kairos.duet
 /com.turborepo.turborepo
@@ -9,3 +10,4 @@
 /SymbolSourceSymbols
 /Telegram Desktop
 /turborepo
+# keep-sorted end

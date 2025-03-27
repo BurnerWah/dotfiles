@@ -1,2 +1,4 @@
+# keep-sorted start case=no
 homebrew.mxcl.colima.plist
 io.podman_desktop.PodmanDesktop.plist
+# keep-sorted end

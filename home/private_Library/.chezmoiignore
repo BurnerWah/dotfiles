@@ -1,9 +1,11 @@
+# keep-sorted start case=no
 /Accessibility
 /Accounts
 /AppleMediaServices
 /Application Scripts
 /Assistant
 /Assistants
+/Audio
 /Autosave Information
 /Biome
 /Calendars
@@ -88,9 +90,7 @@
 /Weather
 /WebKit
 /Workflows
-
-# No idea how to include this in dotfiles
-/Audio
+# keep-sorted end
 
 # Probaly managed by homebrew
 /ColorPickers

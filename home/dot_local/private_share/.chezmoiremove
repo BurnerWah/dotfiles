@@ -1,3 +1,4 @@
+# keep-sorted start case=no
 /.vivaldi_reporting_data
 /asdf
 /fnm
@@ -5,3 +6,4 @@
 /pipx
 /turborepo
 /wasmer
+# keep-sorted end

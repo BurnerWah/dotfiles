@@ -1,3 +1,4 @@
+# keep-sorted start case=no
 com.github.domt4.homebrew-autoupdate.plist
 com.huion.HuionTablet.plist
 com.lwouis.alt-tab-macos.plist
@@ -9,3 +10,4 @@ homebrew.mxcl.runit.plist
 homebrew.mxcl.syncthing.plist
 homebrew.mxcl.yubikey-agent.plist
 org.git-scm.git.*.plist
+# keep-sorted end

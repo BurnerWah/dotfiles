@@ -1,3 +1,4 @@
+# keep-sorted start case=no
 /.gsd-keyboard.settings-ported
 /.semgrep
 /1Password
@@ -42,14 +43,18 @@
 /vivaldi
 /vivaldi-snapshot
 /zap
+# keep-sorted end
 
 {{- if or .ephemeral .headless }}
+# keep-sorted start case=no
 /autostart
 /karabiner
 /kitty
+# keep-sorted end
 {{- end }}
 
 {{- if .ephemeral }}
+# keep-sorted start case=no
 /boxxy
 /environment.d
 /firejail
@@ -58,30 +63,38 @@
 /systemd
 /user-tmpfiles.d
 /whalebrew
+# keep-sorted end
 {{- end }}
 
 {{- if .wsl }}
+# keep-sorted start case=no
 /boxxy
 /firejail
 /lima
 /whalebrew
+# keep-sorted end
 {{- end }}
 
 {{- if ne .chezmoi.os "linux" }}
+# keep-sorted start case=no
 /autostart
 /boxxy
 /environment.d
 /firejail
 /systemd
 /user-tmpfiles.d
+# keep-sorted end
 {{- end }}
 
 {{- if ne .chezmoi.os "darwin" }}
+# keep-sorted start case=no
 /karabiner
 /lima
+# keep-sorted end
 {{- end }}
 
 {{- if eq .chezmoi.os "windows" }}
+# keep-sorted start case=no
 /ansible.cfg
 /fish
 /homebrew
@@ -93,4 +106,5 @@
 /whalebrew
 /yt-dlp
 /zsh
+# keep-sorted end
 {{- end }}

@@ -35,21 +35,28 @@
 {{- end }}
 
 {{- if ne .chezmoi.os "linux" }}
+# keep-sorted start case=no
 .chezmoiscripts/linux/**
 /.var
+# keep-sorted end
 {{- end }}
 
 {{- if eq .chezmoi.os "darwin" }}
+# keep-sorted start case=no
 /.CFUserTextEncoding
 /.Trash
+# keep-sorted end
 {{- else }}
+# keep-sorted start case=no
 .chezmoiscripts/darwin/**
 /.cache
 /.swiftpm
 /Library
+# keep-sorted end
 {{- end }}
 
 {{- if eq .chezmoi.os "windows" }}
+# keep-sorted start case=no
 /.affinity
 /.chocolatey
 /.dbus-keyrings
@@ -69,8 +76,8 @@
 /Local Settings
 /My Documents
 /NetHood
-/ntuser.*
 /NTUSER.*
+/ntuser.*
 /PrintHood
 /Recent
 /Recorded Calls
@@ -78,8 +85,11 @@
 /Searches
 /SendTo
 /Start Menu
+# keep-sorted end
 {{- else }}
+# keep-sorted start case=no
 .chezmoiscripts/windows/**
 /AppData
 /Documents
+# keep-sorted end
 {{- end }}

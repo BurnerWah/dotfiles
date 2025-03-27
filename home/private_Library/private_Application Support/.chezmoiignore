@@ -1,8 +1,9 @@
-/@bluebubbles
+# keep-sorted start case=no
 /*.data
 /*.padl
 /*.spadl
 /1Password
+/@bluebubbles
 /AddressBook
 /Adobe
 /Animoji
@@ -136,3 +137,4 @@
 /yarn
 /zoom.us
 /ZoomUpdater
+# keep-sorted end
