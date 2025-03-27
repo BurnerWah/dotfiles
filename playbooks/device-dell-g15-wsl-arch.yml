@@ -3,6 +3,10 @@
   hosts: localhost
 
   tasks:
+    - name: Gather package facts
+      ansible.builtin.package_facts:
+        manager: auto
+
     - name: Install packages
       become: yes
       community.general.pacman:
@@ -30,7 +34,7 @@
         state: present
 
     - name: Install yay
-      when: "'/usr/bin/yay' is not file"
+      when: "'yay-bin' not in ansible_facts.packages"
       vars:
         build_dir: /tmp/yay-checkout
         pkg_glob: "{{ (build_dir, 'yay-bin-*.pkg.*') | path_join }}"
