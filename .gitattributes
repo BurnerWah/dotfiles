@@ -14,11 +14,11 @@
 # *.ps1									text eol=crlf
 
 # Serialisation
-*.json          text
-*.toml          text
+*.json          text eol=lf
+*.toml          text eol=lf
 *.xml           text
-*.yaml          text
-*.yml           text
+*.yaml          text eol=lf
+*.yml           text eol=lf
 
 # Project files
 .vscode/*.json  linguist-language=JSON-with-Comments
@@ -27,7 +27,7 @@
 *.md            linguist-detectable
 
 # Source files
-*.lua           text
+*.lua           text eol=lf
 *.py            text diff=python
 *.vim           text eol=lf
 
