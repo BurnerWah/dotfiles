@@ -17,7 +17,8 @@ description = "Apply dotfiles"
 wait_for = ["format:*"]
 
 [tasks.keep-sorted]
-run = "keep-sorted $(git grep -lE 'keep-sorted (start|end)')"
+# xargs is needed to handle spaces in paths
+run = "git grep -zlE 'keep-sorted (start|end)' | xargs -0 keep-sorted"
 # I think this run_windows should work?
 run_windows = '''
 #!/usr/bin/env pwsh
