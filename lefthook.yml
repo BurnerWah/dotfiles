@@ -27,6 +27,7 @@ pre-commit:
             run: mise x -- yamllint --strict {staged_files}
             glob: ['*.yml', '*.yaml']
             exclude:
+              - home/dot_config/private_lima/private_*/playbook.yaml
               - playbooks/* # Redundant with ansible-lint
               - pnpm-lock.yaml
               - schemas/vendor/*
