@@ -6,11 +6,33 @@
       become: yes
       ansible.builtin.dnf5:
         name:
+          - '@standard' # nbd mounting?
+          - bat
+          - fd-find
           - fish
+          - git
           - grc
           - kitty-terminfo
+          - nbd
           - PackageKit-command-not-found
+          - ripgrep
         state: present
+
+    - name: Disable unwanted services
+      become: yes
+      ansible.builtin.systemd_service:
+        name: '{{ item }}'
+        enabled: false
+        state: stopped
+      loop:
+        - abrtd
+        - abrt-oops
+        - abrt-journal-core
+        - abrt-vmcore
+        - abrt-xorg
+        - atd
+        - crond
+        - rsyslog
 
     # Changing the user's shell to fish requires Lima 1.0.2 and a VM restart
     - name: Set user's shell to fish
@@ -19,3 +41,9 @@
         name: '{{ ansible_user_id }}'
         shell: /usr/bin/fish
         state: present
+
+    - name: Link chezmoi config to VM
+      ansible.builtin.file:
+        src: "{{ ('/Users', ansible_user_id, '.local/share/chezmoi') | path_join }}"
+        dest: ~/.local/share/chezmoi
+        state: link

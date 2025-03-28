@@ -18,7 +18,9 @@ mountTypesUnsupported: [9p]
 memory: 4GiB
 disk: 100GiB
 
-# Rosetta causes the binfmt service to fail, so it's not turned on
+rosetta:
+  enabled: true
+  binfmt: true
 
 networks:
   - vzNAT: true
