@@ -21,6 +21,10 @@ overrides:
   - files: ['*.yaml.tmpl', '*.yml.tmpl']
     options: { parser: yaml }
 
+  - files: ['assets/winget.json']
+    options:
+      printWidth: 120
+
   - files: ['*.plist', '*.plist.tmpl']
     options:
       printWidth: 120
