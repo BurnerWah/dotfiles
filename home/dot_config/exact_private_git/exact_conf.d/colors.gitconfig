@@ -1,0 +1,38 @@
+[blame]
+    coloring = highlightRecent
+[color]
+    ui = true
+[color "branch"]
+# $ git branch
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+# $ git diff
+    meta = 11
+    frag = magenta bold
+    old = red bold
+    new = green bold
+    commit = yellow bold
+    whitespace = red reverse
+[color "status"]
+# $ git status
+    added = yellow
+    changed = green
+    untracked = cyan
+[advice]
+# provide help to new git users
+    pushUpdateRejected = true
+    pushUnqualifiedRefname = true
+    statusHints = true
+    statusUoption = true
+    resetQuiet = true
+    resolveConflict = true
+    implicitIdentity = true
+    detachedHead = true
+    checkoutAmbiguousRemoteBranceName = true
+    amWorkDir = true
+    rmHints = true
+    addEmbeddedRepo = true
+    ignoredHook = true
+    waitingForEditor = true

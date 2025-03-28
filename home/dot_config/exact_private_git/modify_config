@@ -1,0 +1,35 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{- /* chezmoi:modify-template */ -}}
+[core]
+	pager = delta
+[user]
+	name = Burner
+	email = 10004812+BurnerWah@users.noreply.github.com
+[commit]
+	gpgsign = true
+[init]
+	defaultBranch = main
+[interactive]
+	diffFilter = delta --color-only
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[credential "https://github.com"]
+	helper =
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[delta]
+	navigate = true
+[mergetool "code"]
+	cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
+[include]
+# {{- range joinPath .chezmoi.homeDir "/.config/git/conf.d/*" | glob }}
+	path = # {{.}}
+# {{- end }}
+# {{- /* scalar & git-maintenance produce updates to the git config themselves */ -}}
+# {{ .chezmoi.stdin | regexFind "\\[scalar\\](\\s*repo\\s=.+)+" }}
+# {{ .chezmoi.stdin | regexFind "\\[maintenance\\](\\s*repo\\s=.+)+" }}
