@@ -6,10 +6,15 @@ $defs:
   Environment:
     type: object
     additionalProperties: { type: [string, integer] }
+  ServicePath:
+    type: array
+    items: string
 
 additionalProperties: false
 
 required:
   - environment
+  - servicePath
 properties:
   environment: { $ref: '#/$defs/Environment' }
+  servicePath: { $ref: '#/$defs/ServicePath' }
