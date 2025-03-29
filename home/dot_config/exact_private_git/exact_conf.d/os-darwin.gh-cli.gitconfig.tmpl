@@ -1,0 +1,10 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{ if lookPath "gh" -}}
+# {{ $helper := printf "!%s auth git-credential" (lookPath "gh") -}}
+[credential "https://github.com"]
+    helper = 
+    helper = # {{ $helper }}
+[credential "https://gist.github.com"]
+    helper = 
+    helper = # {{ $helper }}
+# {{ end -}}
