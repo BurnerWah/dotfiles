@@ -67,7 +67,7 @@
 # keep-sorted end
 {{- end }}
 
-{{- if .wsl }}
+{{- if .device.wsl }}
 # keep-sorted start case=no
 /boxxy
 /firejail
@@ -76,7 +76,7 @@
 # keep-sorted end
 {{- end }}
 
-{{- if hasPrefix "lima-" .devicename }}
+{{- if .device.lima }}
 # keep-sorted start case=no
 /bat
 /bat/**/*
@@ -146,5 +146,6 @@
 /whalebrew
 /yt-dlp
 /zsh
+/zsh/**/*
 # keep-sorted end
 {{- end }}

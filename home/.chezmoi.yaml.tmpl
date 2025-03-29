@@ -57,21 +57,24 @@ textconv:
 # {{- end }}
 
 # {{- /* Detect lima */ -}}
-# {{- if and (eq .chezmoi.os "linux") (hasPrefix "lima-" .chezmoi.hostname) -}}
+# {{- $lima := and (eq .chezmoi.os "linux") (hasPrefix "lima-" .chezmoi.hostname) -}}
+# {{- if $lima -}}
 # {{-   $headless = true -}}
 # {{- end -}}
 
 # {{- /* figure out internal name for the device */ -}}
 # {{- $devicename := .chezmoi.hostname -}}
-# {{- if and $wsl (eq .chezmoi.os "linux") -}}
-# {{-   if hasKey .chezmoi.osRelease "id" -}}
-# {{-     $devicename = printf "%s-wsl-%s" (lower $devicename) .chezmoi.osRelease.id -}}
-# {{-   else -}}
-# {{-     $devicename = printf "%s-wsl-unknown" (lower $devicename) -}}
+# {{- if eq .chezmoi.os "linux" -}}
+# {{-   if $wsl -}}
+# {{-     if hasKey .chezmoi.osRelease "id" -}}
+# {{-       $devicename = printf "%s-wsl-%s" (lower $devicename) .chezmoi.osRelease.id -}}
+# {{-     else -}}
+# {{-       $devicename = printf "%s-wsl-unknown" (lower $devicename) -}}
+# {{-     end -}}
 # {{-   end -}}
-# {{- end -}}
-# {{- if eq $devicename "wah" -}}
-# {{-   $devicename = "dell-g15-linux" -}}
+# {{-   if eq $devicename "wah" -}}
+# {{-     $devicename = "dell-g15-linux" -}}
+# {{-   end -}}
 # {{- end -}}
 # {{- if eq .chezmoi.os "windows" -}}
 # {{-   if eq $devicename "Dell-G15" -}}
@@ -138,3 +141,5 @@ data:
   device:
     # can be "laptop", "desktop", "convertible", "server", "tablet", "handset", "watch", "embedded", "vm", or "container"
     chassis: '# {{ $chassisType }}'
+    wsl: # {{ $wsl }}
+    lima: # {{ $lima }}

@@ -1,3 +1,4 @@
+# keep-sorted start
 /asciinema
 /boxxy
 /gallery-dl
@@ -5,21 +6,24 @@
 /pnpm
 /pnpx
 /postybirb-plus
+# keep-sorted end
 
 {{- if eq .devicename "dell-g15-linux" }}
 /atuin
 {{- end }}
 
-{{- if hasPrefix "lima-" .devicename }}
+{{- if .device.lima }}
+# keep-sorted start
 /atuin
-/eza
 /ex
+/eza
 /op-ssh-sign
+/trash
 /vi
 /view
 /vim
 /vimdiff
-/trash
+# keep-sorted end
 {{- end }}
 
 {{- if ne .chezmoi.os "linux" }}

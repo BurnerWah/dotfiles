@@ -1,5 +1,5 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter=}}
-# {{- if and (not .ephemeral) (not (hasPrefix "lima-" .devicename)) -}}
+# {{- if not (or .ephemeral .device.lima) -}}
 #!/usr/bin/env bash
 set -eu -o pipefail
 

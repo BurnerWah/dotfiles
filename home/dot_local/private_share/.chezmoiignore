@@ -52,6 +52,7 @@
 # keep-sorted start case=no
 /applications
 /flatpak
+/flatpak/**/*
 # keep-sorted end
 {{- end }}
 
@@ -59,6 +60,7 @@
 # keep-sorted start case=no
 /applications
 /flatpak
+/flatpak/**/*
 /mime
 # keep-sorted end
 {{- end }}
@@ -70,6 +72,6 @@
 # keep-sorted end
 {{- end }}
 
-{{- if hasPrefix "lima-" .devicename }}
+{{- if .device.lima }}
 /gnupg
 {{- end }}

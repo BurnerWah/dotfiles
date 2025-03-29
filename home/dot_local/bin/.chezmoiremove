@@ -2,6 +2,7 @@
 /orbctl
 
 # Firejail tries to make wrappers for these, but they don't work or are unwanted
+# keep-sorted start
 /1password
 /baobab
 /cheese
@@ -26,3 +27,4 @@
 /wget
 /wget2
 /yelp
+# keep-sorted end
