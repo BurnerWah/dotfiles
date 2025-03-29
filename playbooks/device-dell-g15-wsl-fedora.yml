@@ -36,7 +36,7 @@
 
     - name: Enable WSL2 XWayland Socket
       become: yes
-      ansible.builtin.systemd:
+      ansible.builtin.systemd_service:
         name: wsl2-xwayland.socket
         enabled: yes
 
@@ -110,13 +110,13 @@
         state: present
 
     - name: Enable user dnf-makecache timer
-      ansible.builtin.systemd:
+      ansible.builtin.systemd_service:
         name: dnf-makecache.timer
         enabled: yes
         scope: user
 
     - name: Enable atuin socket activation
-      ansible.builtin.systemd:
+      ansible.builtin.systemd_service:
         name: atuin.socket
         enabled: yes
         state: started

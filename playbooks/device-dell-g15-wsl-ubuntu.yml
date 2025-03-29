@@ -68,20 +68,20 @@
         state: present
 
     - name: Enable user systemd-tmpfiles setup
-      ansible.builtin.systemd:
+      ansible.builtin.systemd_service:
         name: systemd-tmpfiles-setup
         enabled: yes
         state: started
         scope: user
 
     - name: Enable user systemd-tmpfiles cleanup
-      ansible.builtin.systemd:
+      ansible.builtin.systemd_service:
         name: systemd-tmpfiles-clean.timer
         enabled: yes
         scope: user
 
     - name: Enable atuin socket activation
-      ansible.builtin.systemd:
+      ansible.builtin.systemd_service:
         name: atuin.socket
         enabled: yes
         state: started
