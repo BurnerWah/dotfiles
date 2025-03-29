@@ -79,6 +79,7 @@
         - .config/glow
         - .config/rainbow
         - .config/readline
+        - .config/starship.toml
         - .config/vivid
         - .local/share/chezmoi
         # keep-sorted end
