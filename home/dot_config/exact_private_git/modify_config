@@ -24,6 +24,6 @@
 # {{- range joinPath .chezmoi.homeDir "/.config/git/conf.d/*" | glob }}
 	path = # {{.}}
 # {{- end }}
-# {{- /* scalar & git-maintenance produce updates to the git config themselves */ -}}
+# scalar & git-maintenance produce updates to the git config themselves
 # {{ .chezmoi.stdin | regexFind "\\[scalar\\](\\s*repo\\s=.+)+" }}
 # {{ .chezmoi.stdin | regexFind "\\[maintenance\\](\\s*repo\\s=.+)+" }}
