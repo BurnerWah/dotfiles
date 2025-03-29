@@ -1,6 +1,9 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{- if lookPath "systemd-tmpfiles" -}}
 #!/usr/bin/env bash
 
-# user tempfiles hashes: {{ range (glob (joinPath .chezmoi.sourceDir "dot_config/exact_user-tmpfiles.d/*.conf")) }}
-#   {{ . }}: {{ include . | sha256sum }} {{ end }}
+# user tempfiles hashes: # {{ range (glob (joinPath .chezmoi.sourceDir "dot_config/exact_user-tmpfiles.d/*.conf")) }}
+#   # {{ . }}: # {{ include . | sha256sum }} # {{ end }}
 
 systemd-tmpfiles --user --create
+# {{ end -}}

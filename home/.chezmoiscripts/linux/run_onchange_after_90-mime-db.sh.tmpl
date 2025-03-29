@@ -1,8 +1,9 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{- if lookPath "update-mime-database" -}}
 #!/usr/bin/env bash
 
-# {{ if lookPath "update-mime-database" }}
-# mime package hashes: {{ range (glob (joinPath .xdg.data "mime/packages/*.xml")) }}
-#   {{ . }}: {{ include . | sha256sum }} {{ end }}
+# mime package hashes: # {{ range (glob (joinPath .xdg.data "mime/packages/*.xml")) }}
+#   # {{ . }}: # {{ include . | sha256sum }} # {{ end }}
 
-update-mime-database "{{ .xdg.data }}/mime"
-# {{ end }}
+update-mime-database "# {{ .xdg.data }}/mime"
+# {{ end -}}
