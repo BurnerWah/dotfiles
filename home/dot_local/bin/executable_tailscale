@@ -1,2 +1,0 @@
-#!/bin/sh
-exec "/Applications/Tailscale.app/Contents/MacOS/Tailscale" "$@"

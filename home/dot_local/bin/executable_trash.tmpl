@@ -1,0 +1,5 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{- if and (eq .chezmoi.os "linux") (lookPath "gio") -}}
+#!/bin/sh
+exec gio trash "$@"
+# {{ end -}}

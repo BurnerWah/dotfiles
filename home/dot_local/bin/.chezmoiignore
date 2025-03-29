@@ -15,24 +15,14 @@
 {{- if .device.lima }}
 # keep-sorted start
 /atuin
-/ex
 /eza
 /op-ssh-sign
 /trash
-/vi
-/view
-/vim
-/vimdiff
 # keep-sorted end
 {{- end }}
 
 {{- if ne .chezmoi.os "linux" }}
 /op-ssh-sign
-/trash
-{{- end }}
-
-{{- if ne .chezmoi.os "darwin" }}
-/tailscale
 {{- end }}
 
 {{- if eq .chezmoi.os "windows" }}

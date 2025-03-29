@@ -1,0 +1,5 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{- if eq .chezmoi.os "darwin" -}}
+#!/bin/sh
+exec "/Applications/Tailscale.app/Contents/MacOS/Tailscale" "$@"
+# {{ end -}}

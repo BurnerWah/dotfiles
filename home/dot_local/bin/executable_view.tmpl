@@ -1,0 +1,5 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{- if lookPath "nvim" -}}
+#!/bin/sh
+exec nvim -R "$@"
+# {{ end -}}
