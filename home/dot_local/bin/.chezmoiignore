@@ -10,6 +10,18 @@
 /atuin
 {{- end }}
 
+{{- if hasPrefix "lima-" .devicename }}
+/atuin
+/eza
+/ex
+/op-ssh-sign
+/vi
+/view
+/vim
+/vimdiff
+/trash
+{{- end }}
+
 {{- if ne .chezmoi.os "linux" }}
 /op-ssh-sign
 /trash

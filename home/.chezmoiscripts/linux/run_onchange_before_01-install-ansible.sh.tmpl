@@ -1,3 +1,5 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{- if and (not .ephemeral) (not (hasPrefix "lima-" .devicename)) -}}
 #!/usr/bin/env bash
 set -eu -o pipefail
 
@@ -20,3 +22,4 @@ case '{{ .osid }}' in
         echo "ansible install method not defined"
         ;;
 esac
+# {{ end -}}

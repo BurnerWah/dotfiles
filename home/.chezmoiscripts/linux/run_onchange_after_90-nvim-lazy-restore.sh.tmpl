@@ -1,6 +1,7 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{- if lookPath "nvim" -}}
 #!/usr/bin/env bash
 
-# {{ if lookPath "nvim" }}
 # lazy-lock hash: {{ include "dot_config/exact_private_nvim/lazy-lock.json" | sha256sum }}
 nvim --headless "+Lazy! restore" +qa
-# {{ end }}
+# {{ end -}}

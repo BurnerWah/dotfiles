@@ -1,9 +1,10 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{- $playbook := joinPath .chezmoi.sourceDir "../playbooks" (printf "device-%s.yml" .devicename) -}}
+# {{- if and (lookPath "ansible-playbook") (stat $playbook) -}}
 #!/usr/bin/env bash
 
 set -eu -o pipefail
 
-# {{ $playbook := joinPath .chezmoi.sourceDir "../playbooks" (printf "device-%s.yml" .devicename) }}
-# {{ if and (lookPath "ansible-playbook") (stat $playbook) }}
 # playbook hash: {{ include $playbook | sha256sum }}
 
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
@@ -13,4 +14,4 @@ export ANSIBLE_CONFIG="${ANSIBLE_CONFIG:-$XDG_CONFIG_HOME/ansible.cfg}"
 # shellcheck disable=SC2154
 ansible-playbook --ask-become-pass "{{ $playbook }}"
 
-# {{ end }}
+# {{ end -}}

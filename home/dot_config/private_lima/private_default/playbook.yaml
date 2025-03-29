@@ -6,16 +6,20 @@
       become: yes
       ansible.builtin.dnf5:
         name:
+          # keep-sorted start case=no
           - '@standard' # nbd mounting?
           - bat
+          - dnf-plugins-core
           - fd-find
           - fish
           - git
+          - git-delta
           - grc
           - kitty-terminfo
           - nbd
           - PackageKit-command-not-found
           - ripgrep
+          # keep-sorted end
         state: present
 
     - name: Disable unwanted services
@@ -25,14 +29,30 @@
         enabled: false
         state: stopped
       loop:
-        - abrtd
-        - abrt-oops
+        # keep-sorted start
         - abrt-journal-core
+        - abrt-oops
         - abrt-vmcore
         - abrt-xorg
+        - abrtd
         - atd
         - crond
+        - plocate-updatedb.timer
         - rsyslog
+        # keep-sorted end
+
+    - name: Install chezmoi from copr
+      block:
+        - name: Add lihaohong/chezmoi copr repo
+          become: yes
+          community.general.copr:
+            name: lihaohong/chezmoi
+            state: enabled
+        - name: Install chezmoi
+          become: yes
+          ansible.builtin.dnf5:
+            name: [chezmoi]
+            state: present
 
     # Changing the user's shell to fish requires Lima 1.0.2 and a VM restart
     - name: Set user's shell to fish
@@ -42,8 +62,23 @@
         shell: /usr/bin/fish
         state: present
 
-    - name: Link chezmoi config to VM
+    - name: Link host configs to VM
       ansible.builtin.file:
-        src: "{{ ('/Users', ansible_user_id, '.local/share/chezmoi') | path_join }}"
-        dest: ~/.local/share/chezmoi
+        src: "{{ ('/Users', ansible_user_id, item) | path_join }}"
+        dest: '{{ (ansible_user_dir, item) | path_join }}'
         state: link
+      loop:
+        # keep-sorted start
+        - .config/bat
+        - .config/bottom
+        - .config/carapace
+        - .config/eza
+        - .config/fastfetch
+        - .config/fd
+        - .config/fish/completions
+        - .config/glow
+        - .config/rainbow
+        - .config/readline
+        - .config/vivid
+        - .local/share/chezmoi
+        # keep-sorted end

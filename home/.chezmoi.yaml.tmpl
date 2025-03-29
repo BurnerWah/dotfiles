@@ -56,6 +56,11 @@ textconv:
 # {{-   $headless = true -}}
 # {{- end }}
 
+# {{- /* Detect lima */ -}}
+# {{- if and (eq .chezmoi.os "linux") (hasPrefix "lima-" .chezmoi.hostname) -}}
+# {{-   $headless = true -}}
+# {{- end -}}
+
 # {{- /* figure out internal name for the device */ -}}
 # {{- $devicename := .chezmoi.hostname -}}
 # {{- if and $wsl (eq .chezmoi.os "linux") -}}

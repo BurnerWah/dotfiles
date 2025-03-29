@@ -1,9 +1,10 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{- if lookPath "bat" -}}
 #!/usr/bin/env bash
 
-# {{ if lookPath "bat" }}
 # bat hash: {{ lookPath "bat" | include | sha256sum }}
 # syntax hashes: {{ range (glob (joinPath .xdg.config "bat/syntaxes/**/*.sublime-syntax")) }}
 #   {{ . }}: {{ include . | sha256sum }} {{ end }}
 
 bat cache --build
-# {{ end }}
+# {{ end -}}

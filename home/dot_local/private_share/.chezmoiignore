@@ -69,3 +69,7 @@
 /powershell
 # keep-sorted end
 {{- end }}
+
+{{- if hasPrefix "lima-" .devicename }}
+/gnupg
+{{- end }}

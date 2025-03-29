@@ -50,6 +50,7 @@
 /autostart
 /karabiner
 /kitty
+/wezterm
 # keep-sorted end
 {{- end }}
 
@@ -72,6 +73,45 @@
 /firejail
 /lima
 /whalebrew
+# keep-sorted end
+{{- end }}
+
+{{- if hasPrefix "lima-" .devicename }}
+# keep-sorted start case=no
+/bat
+/bat/**/*
+/bottom
+/boxxy
+/carapace
+/direnv
+/elvish
+/environment.d
+/erdtree
+/exercism
+/eza
+/fastfetch
+/fd
+/firejail
+/fish/completions
+/gh
+/glab-cli
+/glow
+/go
+/homebrew
+/lima
+/litecli
+/nushell
+/nvim
+/rainbow
+/readline
+/silicon
+/tealdeer
+/user-tmpfiles.d
+/vivid
+/whalebrew
+/xonsh
+/zsh
+/zsh/**/*
 # keep-sorted end
 {{- end }}
 
