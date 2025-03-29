@@ -2,6 +2,6 @@
 # {{- if lookPath "nvim" -}}
 #!/usr/bin/env bash
 
-# lazy-lock hash: {{ include "dot_config/exact_private_nvim/lazy-lock.json" | sha256sum }}
+# lazy-lock hash: # {{ include "dot_config/exact_private_nvim/lazy-lock.json" | sha256sum }}
 nvim --headless "+Lazy! restore" +qa
 # {{ end -}}

@@ -5,13 +5,13 @@
 
 set -eu -o pipefail
 
-# playbook hash: {{ include $playbook | sha256sum }}
+# playbook hash: # {{ include $playbook | sha256sum }}
 
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 export XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
 export ANSIBLE_CONFIG="${ANSIBLE_CONFIG:-$XDG_CONFIG_HOME/ansible.cfg}"
 
 # shellcheck disable=SC2154
-ansible-playbook --ask-become-pass "{{ $playbook }}"
+ansible-playbook --ask-become-pass "# {{ $playbook }}"
 
 # {{ end -}}

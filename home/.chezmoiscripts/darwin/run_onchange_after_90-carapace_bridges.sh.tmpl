@@ -2,6 +2,6 @@
 # {{- if lookPath "carapace" -}}
 #!/usr/bin/env bash
 
-# Carapace-bridges hash: {{ include "dot_config/carapace/bridges.yaml" | sha256sum }}
+# Carapace-bridges hash: # {{ include "dot_config/carapace/bridges.yaml" | sha256sum }}
 carapace --clear-cache
 # {{ end -}}

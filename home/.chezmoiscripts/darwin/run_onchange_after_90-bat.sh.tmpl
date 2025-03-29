@@ -2,9 +2,9 @@
 # {{- if lookPath "bat" -}}
 #!/usr/bin/env bash
 
-# bat hash: {{ lookPath "bat" | include | sha256sum }}
-# syntax hashes: {{ range (glob (joinPath .xdg.config "bat/syntaxes/**/*.sublime-syntax")) }}
-#   {{ . }}: {{ include . | sha256sum }} {{ end }}
+# bat hash: # {{ lookPath "bat" | include | sha256sum }}
+# syntax hashes: # {{ range (glob (joinPath .xdg.config "bat/syntaxes/**/*.sublime-syntax")) }}
+#   # {{ . }}: # {{ include . | sha256sum }} # {{ end }}
 
 bat cache --build
 # {{ end -}}
