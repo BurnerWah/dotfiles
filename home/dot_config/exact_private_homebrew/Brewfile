@@ -27,7 +27,6 @@ brew "bzip3" if OS.mac? # compression tool, also in Fedora repos
 brew "carapace" # completions
 brew "chezmoi" if OS.mac?
 brew "cloudflared" if OS.mac?
-brew "colima" if OS.mac? # Container runtime
 brew "cosign"
 brew "dark-mode" if OS.mac? # macOS dark mode toggle
 brew "ddgr" if OS.mac? # DuckDuckGo search
