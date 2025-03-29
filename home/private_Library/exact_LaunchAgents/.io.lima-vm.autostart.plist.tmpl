@@ -4,8 +4,6 @@
 <dict>
 	<!--
 	Generic template for lima autostart services
-	Comments will get stripped from this file during application, and keys will
-	be reordered as needed, so formatting on this file is mostly irrelevant.
 	Symlink this to `io.lima-vm.autostart.VM_NAME.plist.tmpl` to utilize it.
 	{{ $label := .chezmoi.targetFile | base | trimSuffix ".plist" }}
 	{{ $vm := $label | trimPrefix "io.lima-vm.autostart." }}
