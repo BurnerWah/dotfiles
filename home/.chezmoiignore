@@ -97,6 +97,7 @@
 {{- else }}
 # keep-sorted start case=no
 .chezmoiscripts/windows/**
+/.wslconfig
 /AppData
 /Documents
 # keep-sorted end
