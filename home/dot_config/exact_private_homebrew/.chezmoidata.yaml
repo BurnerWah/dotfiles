@@ -11,12 +11,16 @@ settings:
         - agent-tars # ai
         - aide-app # ai
         - aifun
+        - ajour # activision-blizzard
         - amazon-q # ai AND absurdly questionably behavior
         - anchor-wallet # cryptocurrency
         - anythingllm
+        - ark-desktop-wallet
         - armory # cryptocurrency
         - atomic-wallet
+        - ayugram # telegram
         - backyard-ai
+        - baritone # spotify
         - battle-net # activison-blizzard
         - binance
         - bisq # cryptocurrency
@@ -32,6 +36,7 @@ settings:
         - brave-browser@dev # homophobia
         - brave-browser@nightly # homophobia
         - btcpayserver-vault
+        - caprine # facebook
         - chatall
         - chatbox
         - chatgpt
@@ -42,12 +47,16 @@ settings:
         - claude # ai
         - coin-wallet
         - coinomi-wallet
+        - copilot-for-xcode
         - cursor # ai
         - daedalus-mainnet
         - dash-dash # cryptocurrency
         - decentr # cryptocurrency
+        - decrediton # cryptocurrency
         - deepl # ai
+        - diffusionbee # ai
         - dogecoin
+        - draw-things # ai
         - electron-cash # cryptocurrency
         - electronmail # protonmail
         - electrum # cryptocurrency
@@ -56,6 +65,7 @@ settings:
         - electrumsv
         - elephas # ai
         - elephas@beta # ai
+        - ethereum-wallet
         - fig # see amazon-q
         - firefly # cryptocurrency
         - firefly-shimmer # cryptocurrency
@@ -63,6 +73,9 @@ settings:
         - forkgram-telegram # telegram
         - ganache # cryptocurrency
         - geekbench-ai
+        - github-copilot-for-xcode
+        - goofy # facebook
+        - google-assistant
         - google-chrome
         - google-chrome@beta
         - google-chrome@canary
@@ -70,16 +83,21 @@ settings:
         - gpt4all
         - granola # ai
         - greenery # cryptocurrency
+        - grids # facebook
         - groestlcoin-core # cryptocurrency
         - grs-bluewallet
         - guilded # roblox
+        - hacker-menu # orange site
+        - hstracker # activision-blizzard
         - huggingchat # ai
+        - igdm # facebook
         - impel # ai
         - infoflow # ai
         - itermai # ai
         - jamie # ai
         - jan # ai
         - katrain # ai
+        - kyokan-bob # cryptocurrency
         - league-of-legends # your honor, league of legends
         - ledger-live # cryptocurrency
         - limitless # ai
@@ -87,6 +105,8 @@ settings:
         - llamachat
         - lm-studio # ai
         - macai
+        - messenger # facebook
+        - messenger-native # facebook
         - meta-quest-developer-hub # facebook
         - microsoft-edge
         - microsoft-edge@beta
@@ -94,19 +114,27 @@ settings:
         - microsoft-edge@dev
         - mindmac # ai
         - mixin # cryptocurrency
+        - mochi-diffusion # ai
         - monero-wallet
         - msty # ai
         - mumu-x # ai
         - mycrypto
         - mymonero
         - nano # cryptocurrency
+        - nasas-eyes # US
         - nault # cryptocurrency
+        - nocturn # twitter
         - notesollama
+        - ollama # ai
+        - ollamac # ai
         - onekey # cryptocurrency
         - opencat # ai
         - opera # loan-shark
         - opera-air # loan-shark
+        - opera-crypto@developer
         - opera-gx # loan-shark
+        - opera-mobile-emulator
+        - opera-neon
         - opera@beta # loan-shark
         - opera@developer # loan-shark
         - operadriver # loan-shark
@@ -121,15 +149,24 @@ settings:
         - proton-pass # fascism
         - protonmail-import-export # fascism
         - protonvpn # fascism
+        - psst # spotify
+        - ramme # facebook
         - remix-ide # cryptocurrency
         - rivet # ai
         - roblox # roblox
         - robloxstudio # roblox
+        - runway # ai
         - sanctum # ai
+        - scatter # cryptocurrency
+        - spark-ar-studio # facebook
         - sparkplate # cryptocurrency
         - sparrow # cryptocurrency
         - specter # cryptocurrency
         - spotify
+        - spotify4bigsur # spotify
+        - spotspot # spotify
+        - starcraft # activision-blizzard
+        - statusfy # spotify
         - superwhisper # ai
         - telegram # telegram
         - telegram-a # telegram
@@ -142,15 +179,24 @@ settings:
         - trae-cn # ai
         - trezor-bridge # cryptocurrency
         - trezor-suite # cryptocurrency
+        - trinity # cryptocurrency
         - turbotax-2024
         - typefully # twitter
         - ui-tars # ai
         - upm # deprecated
         - vertcoin-core
         - vincelwt-chatgpt
+        - vpn-by-google-one
+        - vu # facebook
+        - warcraft-logs-uploader # activision-blizzard
         - wasabi-wallet
         - windsurf # ai
         - windsurf@next # ai
+        - workplace-chat # facebook
+        - wowmatrix # activision-blizzard
+        - wowup # activision-blizzard
+        - zecwallet-lite
+        - zeronet # cryptocurrency
         # keep-sorted end
 
       formula:
@@ -159,7 +205,9 @@ settings:
         - aicommit
         - aicommits
         - aider
+        - aiven-client # ai
         - aptos # cryptocurrency
+        - arcade-learning-environment # ai
         - ata # ai
         - bcoin
         - bitcoin
@@ -199,8 +247,18 @@ settings:
         - ipget # cryptocurrency
         - k8sgpt
         - kuzco # ai
+        - lexido # ai
+        - libbitcoin-blockchain
+        - libbitcoin-client
         - libbitcoin-consensus # cryptocurrency, leaf dependency
+        - libbitcoin-database
+        - libbitcoin-explorer
+        - libbitcoin-network
+        - libbitcoin-node
+        - libbitcoin-protocol
+        - libbitcoin-server
         - libbitcoin-system # cryptocurrency, leaf dependency
+        - librespot # spotify
         - lighthouse # cryptocurrency
         - llama.cpp
         - llm # ai
@@ -208,37 +266,54 @@ settings:
         - mallet # ai
         - medusa # cryptocurrency
         - mentat # ai
+        - mikutter # twitter
         - mods # ai
         - monero
+        - ncspot # spotofy
         - nim # homophobia
         - nixpacks # nix
         - ollama
         - openssl@1.1 # security, deprecated
         - openvino # ai
         - ord # cryptocurrency
+        - plz-cli # ai
         - promptfoo # ai
         - ramalama # ai
         - rawdog # ai
+        - repomix # ai
+        - roblox-ts # roblox
+        - rojo # roblox
         - screenpipe # ai
+        - shpotify # spotify
         - slither-analyzer # cryptocurrency, leaf dependency
+        - solana
         - solc-select # cryptocurrency
+        - solhint # cryptocurrency
         - solidity # cryptocurrency
+        - spicetify-cli # spotify
+        - spotify_player # spotify
+        - spotifyd # spotify
+        - statix # nix
         - sui # cryptocurrency
         - sysaidmin # ai
+        - t-completion # twitter
         - tdlib # telegram
         - teku # cryptocurrency
         - telegram-downloader # telegram
         - tendermint # cryptocurrency
         - tenere # ai
+        - tgpt # ai
         - trezor-agent # cryptocurrency
         - trezor-bridge # cryptocurrency
         - truffle # cryptocurrency
+        - twty # twitter
         - vespa-cli # ai
         - wagyu # cryptocurrency
         - wally # roblox
         - wasmer # preference
         - wownero # cryptocurrency
         - xlearn # ai
+        - xmrig # cryptocurrency
         # keep-sorted end
 
       # These are only forbidden to prevent unexpected from-source builds

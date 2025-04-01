@@ -52,6 +52,7 @@
     "**/dot_config/*_git/*_config": "gitconfig",
     "**/dot_config/*_git/ignore": "ignore",
     "**/dot_config/*_go/*env.tmpl": "dotenv",
+    "**/dot_config/*_homebrew/*_config/*_op_sudo_askpass.tmpl": "shellscript",
     "**/dot_config/*_litecli/config.tmpl": "ini",
     "**/dot_config/*_rainbow/*.cfg": "plaintext",
     "**/dot_config/*_zsh/*_functions/**": "shellscript",

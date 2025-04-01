@@ -1,0 +1,6 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{- /* Allows using fingerprint auth via 1Password CLI */ -}}
+# {{- if and (eq .devicename "macbook") (lookPath "op") -}}
+#!/usr/bin/env bash
+exec '# {{ lookPath "op" }}' read "op://Personal/MacBook Pro/password"
+# {{ end -}}

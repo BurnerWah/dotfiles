@@ -1,0 +1,26 @@
+#! /usr/bin/env fish
+# alias: brew search-filtered
+#
+# This is just a basic script that filters out forbidden formula & casks from
+# brew search. It gets the list from `chezmoi data` because I didn't feel like
+# making proper templates for this.
+
+argparse formula cask desc -- $argv
+or return
+if not set -q _flag_cask
+    if set -q _flag_desc
+        brew search --formula --desc $argv | rg -vFf (chezmoi data | jq -r '"\(.settings.homebrew.forbiddden.formula[]):"' | psub)
+    else
+        brew search --formula $argv | rg -vFf (chezmoi data | jq -r .settings.homebrew.forbiddden.formula[] | psub)
+    end
+    if not set -q _flag_formula
+        echo
+    end
+end
+if not set -q _flag_formula
+    if set -q _flag_desc
+        brew search --cask --desc $argv | rg -vFf (chezmoi data | jq -r '"\(.settings.homebrew.forbiddden.cask[]):"' | psub)
+    else
+        brew search --cask $argv | rg -vFf (chezmoi data | jq -r .settings.homebrew.forbiddden.cask[] | psub)
+    end
+end
