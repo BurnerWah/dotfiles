@@ -1,7 +1,5 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter=}}
 # {{- /* chezmoi:modify-template */ -}}
-[core]
-	pager = delta
 [user]
 	name = Burner
 	email = 10004812+BurnerWah@users.noreply.github.com
@@ -9,8 +7,6 @@
 	gpgsign = true
 [init]
 	defaultBranch = main
-[interactive]
-	diffFilter = delta --color-only
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
