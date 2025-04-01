@@ -13,8 +13,6 @@
 
 ## Adding files
 
-- [ ] Add Git config files
-  - [ ] Figure out how to handle scalar & maintenance config options
 - [ ] Add Powershell configs for linux & mac os
   - [ ] Unify Windows, Linux, and Mac OS Powershell configs
 - [ ] Add npm config
