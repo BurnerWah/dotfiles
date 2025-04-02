@@ -1,4 +1,5 @@
 # yaml-language-server: $schema=../../../schemas/carapace-bridges.yaml
+# keep-sorted start case=no
 7z: fish # TODO create custom spec for windows
 7za: fish # TODO create custom spec for windows
 7zr: fish # TODO create custom spec for windows
@@ -32,8 +33,8 @@ apachectl: zsh
 apkanalyzer: fish
 apko: cobra
 appletviewer: zsh
-apptainer: cobra
 apptainer.lima: cobra
+apptainer: cobra
 apt-build: fish
 apt-extracttemplates: fish
 apt-ftparchive: fish
@@ -113,8 +114,8 @@ castnow: fish
 cdebug: cobra
 ceilometer: zsh
 cekit: click
-cf: fish
 cf2tf: click
+cf: fish
 chainloop: cobra
 chamber: cobra
 changie: cobra
@@ -227,16 +228,16 @@ distrobox-rm: zsh
 distrobox-stop: zsh
 distrobox-upgrade: zsh
 distrobox: zsh
-djview: fish
 djview4: fish
+djview: fish
 djxl: fish
 dkms: zsh
 dm-tool: fish
 dmake: zsh
 dnscontrol: urfavecli
 docker-buildx: cobra
-docker: cobra
 docker.lima: cobra
+docker: cobra
 doctl: cobra
 dpatch-edit-patch: zsh
 dpkg-buildpackage: zsh
@@ -292,8 +293,8 @@ findstr: fish
 firejail: zsh
 firewall-offline-cmd: zsh
 fish_indent: fish # could make a custom spec
-flex: zsh
 flex++: zsh
+flex: zsh
 flowpipe: cobra
 fluxbox-remote: fish
 fly: cobra
@@ -381,8 +382,8 @@ hashcat: fish
 hatch: click
 hcloud: cobra
 heat: zsh
-helm_ls: cobra
 helm: cobra
+helm_ls: cobra
 helmfile: cobra
 help2man: fish
 heroku: fish # zsh completion script is very weird
@@ -436,8 +437,8 @@ konsole: fish
 kopia: kingpin
 krita: fish
 kubectl-krew: cobra
-kubectl: cobra
 kubectl.lima: cobra
+kubectl: cobra
 kubetail: cobra
 kumactl: cobra
 kustomize: cobra
@@ -506,9 +507,9 @@ nautilus: zsh
 navi: fish
 neon: yargs # built in completion is broken but it's based on yargs
 neonctl: yargs
-nerdctl: cobra
 nerdctl.colima: cobra
 nerdctl.lima: cobra
+nerdctl: cobra
 netctl-auto: fish
 netctl: fish
 nethack: fish
@@ -562,8 +563,8 @@ pix: fish
 pkgmk: fish
 pocketbase: cobra
 podman-remote: cobra
-podman: cobra
 podman.lima: cobra
+podman: cobra
 postgres: zsh
 pre-commit: fish # argcomplete bridge doesn't work
 proxychains: fish
@@ -603,9 +604,9 @@ rpmquery: zsh
 rpmsign: zsh
 rpmspec: zsh
 rpmverify: zsh
-rst2html: fish
 rst2html4: fish
 rst2html5: fish
+rst2html: fish
 rst2latex: fish
 rst2man: fish
 rst2odt: fish
@@ -650,8 +651,8 @@ sphinx-autogen: fish
 sphinx-build: fish
 sphinx-quickstart: fish
 sqlfluff: click
-sqlite: zsh
 sqlite3: zsh
+sqlite: zsh
 sqlsharp: fish
 ssh-add: zsh # TODO create custom spec
 ssh-keyscan: zsh # TODO create custom spec
@@ -772,3 +773,4 @@ zstdgrep: fish # TODO create custom spec
 zstdless: fish # TODO create custom spec
 zstdmt: fish # TODO create custom spec
 zun: zsh
+# keep-sorted end
