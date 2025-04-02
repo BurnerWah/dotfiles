@@ -86,7 +86,15 @@
         name: '{{ ansible_user_id }}'
         shell: /usr/bin/fish
         state: present
-        group: wheel
+        groups:
+          - wheel
+        append: true
+
+    - name: Create necessary directories
+      ansible.builtin.file:
+        path: ~/.config/fish
+        state: directory
+        mode: '0700'
 
     - name: Link host configs to VM
       ansible.builtin.file:
@@ -109,3 +117,8 @@
         - .config/vivid
         - .local/share/chezmoi
         # keep-sorted end
+
+    - name: Initialize chezmoi config
+      ansible.builtin.command:
+        argv: [/usr/bin/chezmoi, init]
+        creates: ~/.config/chezmoi
