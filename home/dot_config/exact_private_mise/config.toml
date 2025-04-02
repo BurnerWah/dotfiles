@@ -40,6 +40,5 @@ bun = true
 
 [tools]
 cargo-binstall = "latest"
-ubi = "latest"
 bun = "latest"
 "ubi:VorpalBlade/chezmoi_modify_manager" = "latest"
