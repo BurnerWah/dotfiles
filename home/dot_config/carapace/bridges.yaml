@@ -446,6 +446,7 @@ launchctl: fish # Mac OS
 ldapsearch: fish
 lefthook: cobra
 legit: click
+lima-guestagent: cobra
 limactl: cobra
 litecli: click
 litmusctl: cobra

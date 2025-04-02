@@ -567,6 +567,7 @@ carapace = [
   "lf",
   "light",
   "lightdm",
+  "lima-guestagent",
   "limactl",
   "link",
   "litecli",
