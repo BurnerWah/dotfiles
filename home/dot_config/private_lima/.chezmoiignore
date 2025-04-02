@@ -31,6 +31,3 @@ _networks
 
 # Really wish I could include cloud-config files in here, but lima resets them during VM startup
 */cloud-config.yaml
-
-# This maybe could be included?
-_config/networks.yaml
