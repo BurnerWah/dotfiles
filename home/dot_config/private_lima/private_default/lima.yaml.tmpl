@@ -1,3 +1,4 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
 minimumLimaVersion: '1.0.2'
 
 images:
@@ -25,6 +26,14 @@ rosetta:
 networks:
   - vzNAT: true
 
+portForwards:
+  # from template://podman
+  - guestSocket: '/run/user/{{.UID}}/podman/podman.sock'
+    hostSocket: '{{.Dir}}/sock/podman.sock'
+  # from template://buildkit
+  - guestSocket: '/run/user/{{.UID}}/buildkit-default/buildkitd.sock'
+    hostSocket: '{{.Dir}}/sock/buildkitd.sock'
+
 # Don't configure the user's shell in here, it stops lima from ever initializing
 
 upgradePackages: true
@@ -37,7 +46,7 @@ provision:
       dnf install -y ansible
 
   - mode: ansible
-    playbook: '{{ joinPath .chezmoi.targetFile ".." "playbook.yaml" }}'
+    playbook: '# {{ joinPath .chezmoi.targetFile ".." "playbook.yaml" }}'
 
 probes:
   - description: ansible

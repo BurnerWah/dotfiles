@@ -36,14 +36,19 @@
           - '@standard' # nbd mounting?
           - avahi # Gives the host a hostname to connect to this with
           - bat
+          - btop
           - chezmoi # copr:lihaohong/chezmoi
           - fd-find
           - fish
+          - fzf
           - git
           - git-delta
+          - git-lfs
           - grc
+          - hyperfine
           - kitty-terminfo
-          - mise
+          - mise # mise.repo
+          - most
           - nbd
           - PackageKit-command-not-found
           - ripgrep
