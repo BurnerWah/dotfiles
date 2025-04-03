@@ -15,7 +15,6 @@
 {{- if .device.lima }}
 # keep-sorted start
 /atuin
-/eza
 /op-ssh-sign
 /trash
 # keep-sorted end
