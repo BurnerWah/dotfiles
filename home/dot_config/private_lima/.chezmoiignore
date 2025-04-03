@@ -1,6 +1,7 @@
 _config/user
 _config/user.pub
 _networks
+_disks
 */ansible-inventory.yaml
 */basedisk
 */cidata

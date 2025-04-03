@@ -3,4 +3,12 @@
 function ip -d "Show/manipulate routing, network devices, interfaces & tunnels"
     command ip -color=auto $argv
 end
+# {{ else if and (eq .chezmoi.os "darwin") (lookPath "ip") (lookPath "grc") -}}
+function ip -d "Show/manipulate routing, network devices, interfaces & tunnels"
+    set -l cmd ip
+    if isatty stdout
+        command -qs grc && set -p cmd grc
+    end
+    command $cmd $argv
+end
 # {{ end -}}

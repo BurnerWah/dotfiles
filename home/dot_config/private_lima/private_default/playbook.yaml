@@ -118,6 +118,13 @@
         - .local/share/chezmoi
         # keep-sorted end
 
+    - name: Enable user podman socket
+      ansible.builtin.systemd_service:
+        name: podman.socket
+        enabled: true
+        state: started
+        scope: user
+
     - name: Initialize chezmoi config
       ansible.builtin.command:
         argv: [/usr/bin/chezmoi, init]
