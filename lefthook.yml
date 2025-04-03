@@ -33,6 +33,14 @@ pre-commit:
               - schemas/vendor/*
               - symlink_*
 
+          - name: desktop-file-validate
+            run: desktop-file-validate {staged_files}
+            glob: ['*.desktop']
+            exclude: symlink_*
+            tags:
+              - windows-incompatible
+              - macos-incompatible
+
     - name: Formatting
       group:
         parallel: true

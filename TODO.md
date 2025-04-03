@@ -7,7 +7,6 @@
 - [ ] Lint other shell scripts (use `shellcheck`)
 - [ ] Lint lua code (use `selene` once a stdlib is available, or luacheck)
 - [ ] Validate JSON & YAML files against schemas in git hooks
-- [ ] Verify `.desktop` files (use `desktop-file-validate`)
 - [ ] Lint Powershell scripts
 - [ ] Lint templates
 
