@@ -14,6 +14,7 @@ disable_tools = [
   "starport",
   "wasmer",
   "youtube-dl",
+  "aichat",
 ]
 disable_hints = [
   "python_precompiled",
