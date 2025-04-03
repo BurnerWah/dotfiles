@@ -103,7 +103,7 @@ textconv:
 # {{-   else }}
 # {{-     $chassisType = "desktop" }}
 # {{-   end }}
-# {{- else if eq .chezmoi.os "linux" }}
+# {{- else if and (eq .chezmoi.os "linux") (lookPath "hostnamectl") }}
 # {{-   $chassisType = (output "hostnamectl" "--json=short" | mustFromJson).Chassis }}
 # {{- else if eq .chezmoi.os "windows" }}
 # {{-   $chassisType = (output "powershell.exe" "-NoProfile" "-NonInteractive" "-Command" "if ((Get-CimInstance -Class Win32_Battery | Measure-Object).Count -gt 0) { Write-Output 'laptop' } else { Write-Output 'desktop' }") | trim }}
