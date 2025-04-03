@@ -1,0 +1,9 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{ if .device.lima -}}
+fish_add_path --path --prepend "$HOME/.local/bin"
+
+# Set environment variables
+# Will eventually be redone to utilize universal variables
+set -gx ANSIBLE_CONFIG $XDG_CONFIG_HOME/ansible.cfg
+set -gx ANSIBLE_HOME $XDG_CONFIG_HOME/ansible
+# {{ end -}}

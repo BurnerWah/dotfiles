@@ -2,6 +2,31 @@
 - name: Provision VM
   hosts: all
   tasks:
+    - name: Install dnf-plugins-core
+      become: yes
+      ansible.builtin.dnf5:
+        name: [dnf-plugins-core]
+        state: present
+
+    - name: Add copr repos
+      become: yes
+      community.general.copr:
+        name: '{{ item }}'
+        state: enabled
+      loop:
+        # keep-sorted start case=no
+        - atim/starship
+        - lihaohong/chezmoi
+        # keep-sorted end
+
+    - name: Add mise dnf repo
+      become: yes
+      ansible.builtin.get_url:
+        url: https://mise.jdx.dev/rpm/mise.repo
+        dest: /etc/yum.repos.d/mise.repo
+        mode: '0644'
+        checksum: sha256:0feedc30bb4f5faa705bae31b0c3ade63bc42260ee3aca576156cb84a0c26c00
+
     - name: Install packages
       become: yes
       ansible.builtin.dnf5:
@@ -11,16 +36,18 @@
           - '@standard' # nbd mounting?
           - avahi # Gives the host a hostname to connect to this with
           - bat
-          - dnf-plugins-core
+          - chezmoi # copr:lihaohong/chezmoi
           - fd-find
           - fish
           - git
           - git-delta
           - grc
           - kitty-terminfo
+          - mise
           - nbd
           - PackageKit-command-not-found
           - ripgrep
+          - starship # copr:atim/starship
           - udisks2 # nbd mounting?
           # keep-sorted end
         state: present
@@ -50,34 +77,6 @@
         name: avahi-daemon.socket
         enabled: true
         state: started
-
-    - name: Install chezmoi from copr
-      block:
-        - name: Add lihaohong/chezmoi copr repo
-          become: yes
-          community.general.copr:
-            name: lihaohong/chezmoi
-            state: enabled
-        - name: Install chezmoi
-          become: yes
-          ansible.builtin.dnf5:
-            name: [chezmoi]
-            state: present
-
-    - name: Install mise frmm mise repo
-      block:
-        - name: Add mise dnf repo
-          become: yes
-          ansible.builtin.get_url:
-            url: https://mise.jdx.dev/rpm/mise.repo
-            dest: /etc/yum.repos.d/mise.repo
-            mode: '0644'
-            checksum: sha256:0feedc30bb4f5faa705bae31b0c3ade63bc42260ee3aca576156cb84a0c26c00
-        - name: Install mise
-          become: yes
-          ansible.builtin.dnf5:
-            name: [mise]
-            state: present
 
     # Changing the user's shell to fish requires Lima 1.0.2 and a VM restart
     - name: Configure user
