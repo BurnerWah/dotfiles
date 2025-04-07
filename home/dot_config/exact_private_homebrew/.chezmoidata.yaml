@@ -152,6 +152,7 @@ settings:
         - psst # spotify
         - ramme # facebook
         - remix-ide # cryptocurrency
+        - repo-prompt # ai
         - rivet # ai
         - roblox # roblox
         - robloxstudio # roblox
@@ -186,6 +187,8 @@ settings:
         - upm # deprecated
         - vertcoin-core
         - vincelwt-chatgpt
+        - vmware-fusion # unusable
+        - vmware-fusion@preview # unusable
         - vpn-by-google-one
         - vu # facebook
         - warcraft-logs-uploader # activision-blizzard
@@ -234,6 +237,7 @@ settings:
         - firefly # cryptocurrency
         - flow-cli # cryptocurrency
         - foundry # cryptocurrency
+        - github-mcp-server # ai
         - gollama # ai
         - gorilla-cli # ai
         - gptline
@@ -264,6 +268,7 @@ settings:
         - llm # ai
         - localai
         - mallet # ai
+        - mcpm # ai
         - medusa # cryptocurrency
         - mentat # ai
         - mikutter # twitter
@@ -338,7 +343,10 @@ settings:
         # keep-sorted end
 
       tap:
-        # keep-sorted start
+        # keep-sorted start case=no
+        - AdoptOpenJDK/openjdk # deprecated
+        - aquaproj/aqua # aqua is in homebrew/core
+        - ethereum/ethereum
         - homebrew/aliases # Deprecated
         - homebrew/bundle # Deprecated
         - homebrew/cask-drivers # Deprecated
@@ -347,7 +355,9 @@ settings:
         - homebrew/formula-analytics # Deprecated
         - homebrew/services # Deprecated
         - nanovms/ops # Builds from source with a weird script
+        - neovim/neovim # deprecated
         - pkgxdev/made # Cryptocurrency adjacent
         - render-oss/render # Mac OS only
         - teamookla/speedtest # Mac OS only
+        - v2ray/v2ray # deprecated
         # keep-sorted end
