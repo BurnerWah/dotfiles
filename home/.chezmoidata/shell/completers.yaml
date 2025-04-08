@@ -41,6 +41,7 @@ settings:
         uv: uv generate-shell-completion elvish
         uvx: uvx --generate-shell-completion elvish
         vrc-get.exe: vrc-get.exe completion elvish
+        warp-cli: warp-cli generate-completions elvish
         wasmtime: wasmtime completion elvish
         yr: yr completion elvish
         zellij: zellij setup --generate-completion elvish
@@ -87,6 +88,7 @@ settings:
         uv: uv generate-shell-completion powershell
         uvx: uvx --generate-shell-completion powershell
         vrc-get.exe: vrc-get completion powershell
+        warp-cli: warp-cli generate-completions powershell
         wasmtime: wasmtime completion powershell
         yr: yr completion powershell
         zellij: zellij setup --generate-completion powershell
