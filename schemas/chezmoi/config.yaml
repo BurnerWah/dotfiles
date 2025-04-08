@@ -240,7 +240,8 @@ $defs:
     properties:
       key:
         type: string
-        description: The private key to use for decryption, will supersede using the keyDir if set
+        description: The private key to use for decryption,
+          will supersede using the keyDir if set
       keyDir:
         type: string
         description: Path to directory containing private keys

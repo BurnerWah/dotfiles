@@ -4,7 +4,11 @@ description: kitty terminal emulator settings
 $defs:
   FontAdjust:
     type: object
-    description: Change the size of each character cell kitty renders. You can use either numbers, which are interpreted as pixels or percentages (number followed by %), which are interpreted as percentages of the unmodified values. You can use negative pixels or percentages less than 100% to reduce sizes
+    description: Change the size of each character cell kitty renders.
+      You can use either numbers, which are interpreted as pixels or
+      percentages (number followed by %), which are interpreted as percentages
+      of the unmodified values. You can use negative pixels or percentages less
+      than 100% to reduce sizes
     required: [column_width, line_height]
     properties:
       column_width:
@@ -27,7 +31,9 @@ $defs:
     type: array
     uniqueItems: true
     minItems: 0
-    description: Map the specified unicode codepoints to a particular font. Useful if you need special rendering for some symbols, such as for Powerline.
+    description: Map the specified unicode codepoints to a particular font.
+      Useful if you need special rendering for some symbols, such as for
+      Powerline.
     items:
       required: [font, codepoints]
       properties:
@@ -57,7 +63,8 @@ $defs:
             type: integer
             minimum: 0
             maximum: 4000
-            description: Separate scrollback history size, used only for browsing the scrollback buffer (in MB)
+            description: Separate scrollback history size, used only for
+              browsing the scrollback buffer (in MB)
       multiplier:
         type: object
         required: [wheel, touch]
