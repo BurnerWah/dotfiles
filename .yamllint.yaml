@@ -30,3 +30,10 @@ rules:
   indentation:
     ignore:
       - /home/dot_config/carapace/exact_specs/*
+  quoted-strings:
+    level: warning
+    required: only-when-needed
+    quote-type: single
+    allow-quoted-quotes: true
+    ignore:
+      - /home/dot_config/carapace/*

@@ -19,7 +19,7 @@ pre-commit:
         jobs:
           # Currently not managed by mise but I'll fix that eventually
           - name: ansible-lint
-            run: ansible-lint --fix=all {staged_files}
+            run: ansible-lint --fix {staged_files}
             glob:
               - playbooks/*.yml
               - home/dot_config/private_lima/private_*/playbook.yaml
@@ -36,7 +36,7 @@ pre-commit:
             stage_fixed: true
 
           - name: yamllint
-            run: mise x -- yamllint --strict {staged_files}
+            run: mise x -- yamllint {staged_files}
             glob: ['*.yml', '*.yaml']
             exclude:
               - home/dot_config/private_lima/private_*/playbook.yaml

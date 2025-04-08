@@ -515,7 +515,7 @@ properties:
   color:
     $ref: '#/$defs/AutoBool'
     description: Colorize output
-  data: { $ref: './data.yaml' }
+  data: { $ref: ./data.yaml }
   destDir: { type: string, description: Destination directory }
   encryption:
     type: string
