@@ -49,6 +49,7 @@
 /CrashReporter
 /cups
 /Cypress
+/default.store*
 /DifferentialPrivacy
 /DiskImages
 /Dock
@@ -67,6 +68,7 @@
 /HuionTablet
 /icdd
 /iCloud
+/icloudmailagent
 /identityservicesd
 /iLifeMediaBrowser
 /Instruments
@@ -82,6 +84,7 @@
 /Launchpad Manager
 /legcord
 /LibreOffice
+/locationaccessstored
 /Logitech
 /Lunar
 /maven
