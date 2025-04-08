@@ -8,5 +8,22 @@
       "type": "shell",
       "command": "chezmoi apply -v",
     },
+    {
+      "label": "yamllint",
+      "type": "shell",
+      "command": "mise x -- yamllint -f parsable .",
+      "problemMatcher": {
+        "source": "yamllint",
+        "pattern": {
+          "regexp": "^(.*?):(\\d+):(\\d+): \\[(.*?)\\] (.+) \\((.*?)\\)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "severity": 4,
+          "message": 5,
+          "code": 6,
+        },
+      },
+    },
   ],
 }
