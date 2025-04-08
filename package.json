@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "lint:prettier": "prettier --check --cache --ignore-unknown ."
+  },
   "devDependencies": {
     "@prettier/plugin-ruby": "^4.0.4",
     "@prettier/plugin-xml": "^3.4.1",
