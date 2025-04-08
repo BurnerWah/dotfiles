@@ -1,1 +1,1 @@
-wasmtime completion fish | source
+__fish_cache_sourced_completions wasmtime completion fish

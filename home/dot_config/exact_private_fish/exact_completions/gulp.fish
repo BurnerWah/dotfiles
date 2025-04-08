@@ -1,5 +1,5 @@
 if command -qs carapace
     carapace gulp fish | source
 else
-    gulp --completion=fish | source
+    __fish_cache_sourced_completions gulp --completion=fish
 end

@@ -1,1 +1,1 @@
-yr completion fish | source
+__fish_cache_sourced_completions yr completion fish

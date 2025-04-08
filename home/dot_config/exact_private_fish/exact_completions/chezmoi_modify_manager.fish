@@ -1,1 +1,1 @@
-chezmoi_modify_manager --bpaf-complete-style-fish | source
+__fish_cache_sourced_completions chezmoi_modify_manager --bpaf-complete-style-fish

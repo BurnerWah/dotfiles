@@ -2,5 +2,5 @@
 # https://swiftpackageindex.com/apple/swift-argument-parser/1.2.3/documentation/argumentparser/installingcompletionscripts
 set -l cmd (status basename | string replace .fish '')
 if command -qs $cmd
-    command $cmd --generate-completion-script=fish | source
+    __fish_cache_sourced_completions $cmd --generate-completion-script=fish
 end

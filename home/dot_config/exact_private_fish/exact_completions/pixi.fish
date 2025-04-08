@@ -1,1 +1,1 @@
-pixi completion --shell fish | source
+__fish_cache_sourced_completions pixi completion --shell fish

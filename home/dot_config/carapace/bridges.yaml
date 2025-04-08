@@ -8,6 +8,7 @@ a2enconf: fish
 abook: fish
 accept: fish
 act: cobra
+actionlint: fish
 activate-global-python-argcomplete: argcomplete
 adduser: fish
 airmon-ng: fish
@@ -85,10 +86,14 @@ bin: cobra
 bind: fish
 blender: fish # TODO create custom spec for windows
 bmake: zsh
+bogofilter: zsh
+bogotune: zsh
+bogoutil: zsh
 bosh: fish
 boundary: complete
 bower: fish
 brightnessctl: fish
+bsdconfig: zsh
 btdownloadgui: zsh
 btlaunchmany: zsh
 btlaunchmanycurses: zsh
@@ -110,6 +115,7 @@ carapace-spec-man: carapace
 carapace-spec: carapace
 carapace: carapace
 cartridge: cobra
+cascadia: fish
 castnow: fish
 cdebug: cobra
 ceilometer: zsh
@@ -167,6 +173,7 @@ csharp: fish
 csi: fish
 cssh: zsh
 csup: zsh
+csvlens: fish
 ctags-exuberant: zsh
 ctags-universal: zsh
 ctags: zsh
@@ -201,6 +208,7 @@ dcopfind: zsh
 dcopobject: zsh
 dcopref: zsh
 dcopstart: zsh
+dcut: zsh
 debchange: zsh
 debcheckout: zsh
 debdiff: zsh
@@ -212,6 +220,7 @@ debuild: zsh
 designate: zsh
 devcontainer: yargs
 devpod: cobra
+devspace: cobra
 dhcpcd: fish
 dhcpinfo: zsh
 diskutil: fish # Mac OS
@@ -270,6 +279,7 @@ efivar: fish
 eg: fish
 ehco: kingpin
 elixir: fish
+elm: fish
 emacs: fish
 encfs: fish
 eog: zsh
@@ -279,6 +289,7 @@ etags: zsh
 exercism: cobra
 exif: fish
 expect: fish
+explodepkg: zsh
 ezjail-admin: fish
 f2: urfavecli
 fab: fish
@@ -289,12 +300,25 @@ fc-match: zsh
 feishu2md: urfavecli
 ffplay: fish
 ffprobe: fish
+filterdiff: zsh
 findstr: fish
 firejail: zsh
 firewall-offline-cmd: zsh
+fish-lsp: fish
 fish_indent: fish # could make a custom spec
+fixdlsrps: zsh
+fixfmps: zsh
+fixmacps: zsh
+fixpsditps: zsh
+fixpspps: zsh
+fixscribeps: zsh
+fixtpps: zsh
+fixwfwps: zsh
+fixwpps: zsh
+fixwwps: zsh
 flex++: zsh
 flex: zsh
+flipdiff: zsh
 flowpipe: cobra
 fluxbox-remote: fish
 fly: cobra
@@ -310,6 +334,7 @@ gator: cobra
 gcloud: argcomplete
 gcmp: zsh
 gcore: zsh
+gdbserver: fish
 gdbus: fish
 geany: zsh
 gendarme: fish
@@ -351,6 +376,9 @@ grub-install: fish
 grub-mkrescue: fish
 grunt: fish
 grype: cobra
+gsutil: argcomplete
+guild: fish
+guile: fish
 guilt-add: zsh
 guilt-applied: zsh
 guilt-delete: zsh
@@ -391,9 +419,11 @@ hikari: fish
 hjson: fish
 hledger: fish
 homectl: fish
+horcrux: fish
 hotbuild: cobra
 hugo: cobra
 i3-msg: fish
+ibus: fish
 icdiff: fish
 ifdata: fish
 ikdasm: fish # mono
@@ -415,13 +445,18 @@ jbake: fish
 jdb: zsh
 jest: yargs
 jhipster: fish
+jnv: fish
 john: fish
+jv: fish
 k3d: cobra
 k9s: cobra
 karmadactl: cobra
+kb: fish
+kcmshell5: fish
 kconf: cobra
 kcptun_client: urfavecli
 kcptun_server: urfavecli
+kdump: zsh
 keepassxc-cli: fish
 keploy: cobra
 kernel-install: zsh
@@ -429,12 +464,14 @@ keybase: fish
 keystone: zsh
 keytool: zsh
 kind: cobra
+kitchen: fish
 kk: cobra
 ko: cobra
 kompose: cobra
 konqueror: zsh
 konsole: fish
 kopia: kingpin
+kops: cobra
 krita: fish
 kubectl-krew: cobra
 kubectl.lima: cobra
@@ -442,6 +479,7 @@ kubectl: cobra
 kubetail: cobra
 kumactl: cobra
 kustomize: cobra
+kvno: zsh
 kyverno: cobra
 launchctl: fish # Mac OS
 ldapsearch: fish
@@ -468,6 +506,7 @@ mac2unix: zsh
 magento: fish
 magnum: zsh
 makedepend: fish
+makensis: fish
 manila: zsh
 mariner: fish
 mcap: cobra
@@ -483,6 +522,7 @@ mkfs.fat: fish
 mkfs.vfat: fish
 mkisofs: zsh
 mkpasswd: fish
+mksquashfs: fish
 mkvextract: fish
 mlocate: zsh
 mocha: yargs
@@ -497,6 +537,8 @@ monop: fish
 mozilla-xremote-client: zsh
 mpm: click
 mpstat: zsh
+msfconsole: fish
+msfdb: fish
 murano: zsh
 mycli: click
 mysqladmin: zsh
@@ -517,12 +559,16 @@ networksetup: zsh
 neutron: zsh
 nfpm: cobra
 ngrok: cobra
+nkf: zsh
+nmblookup: zsh
 nodeenv: fish
 nomad: complete
 notation: cobra
+notify-send: fish
 nova: zsh
 npq-hero: yargs # TODO create custom spec
 npq: yargs # TODO create custom spec
+obnam: fish
 oc: cobra
 octave: fish
 ogg123: zsh
@@ -535,13 +581,16 @@ opa: cobra
 openocd: fish
 openstack: zsh
 ops: cobra # slow
+optimus-manager: fish
 opusdec: zsh
 opusenc: zsh
 opusinfo: zsh
 orb: cobra
 orbctl: cobra
+pabcnetcclear: fish
 pacmd: fish
 pactl: fish
+parsehdlist: zsh
 patool: fish
 pbget: fish
 pdf2ps: zsh
@@ -560,6 +609,8 @@ pio: click
 pipenv: click
 pipgrip: click
 pix: fish
+pkg_create: zsh
+pkgin: zsh
 pkgmk: fish
 pocketbase: cobra
 podman-remote: cobra
@@ -584,6 +635,7 @@ rakudo: fish
 ratify: cobra
 rclone: cobra # built-in fish completions are broken
 realpath: fish
+reflector: fish
 regal: cobra
 regctl: cobra
 register-python-argcomplete: argcomplete
@@ -591,6 +643,7 @@ reindexdb: zsh
 reject: fish
 rejmerge: fish
 rekor-cli: cobra
+reuse: click
 rich: click
 rmic: zsh
 rmid: zsh
@@ -654,6 +707,7 @@ sqlfluff: click
 sqlite3: zsh
 sqlite: zsh
 sqlsharp: fish
+src: fish
 ssh-add: zsh # TODO create custom spec
 ssh-keyscan: zsh # TODO create custom spec
 stream: fish # imagemagick
@@ -661,7 +715,13 @@ svn-buildpackage: zsh
 swiftc: zsh
 syft: cobra
 sylpheed: fish
+synclient: fish
 sysbench: fish
+sysclean: zsh
+sysmerge: zsh
+syspatch: zsh
+sysrc: zsh
+systat: zsh
 system_profiler: zsh # Mac OS
 systemd-ask-password: zsh
 systemd-cat: zsh
@@ -678,13 +738,24 @@ systemd-resolve: zsh
 systemd-run: zsh
 systemd-tmpfiles: zsh
 systemd-tty-ask-password-agent: zsh
+sysupgrade: zsh
 tacker: zsh
 temporal: cobra
 termite: fish
+test-spice: fish
+texi2any: zsh
+texi2dvi: zsh
+texi2pdf: zsh
+texindex: zsh
 tmutil: fish
 tokei: fish # TODO create custom spec
 toolbox: cobra
 totem: fish
+tpkg-debarch: zsh
+tpkg-install-libc: zsh
+tpkg-install: zsh
+tpkg-make: zsh
+tpkg-update: zsh
 trailscraper: click
 trash-empty: fish
 trash-list: fish
@@ -696,6 +767,9 @@ trove: zsh
 ttx: fish
 tune2fs: zsh
 tuned-adm: fish
+uml_mconsole: zsh
+uml_moo: zsh
+uml_switch: zsh
 unix2mac: zsh
 unzstd: fish # TODO create custom spec
 update-eix-remote: fish
@@ -714,12 +788,18 @@ velero: cobra
 vhs: cobra
 vincent: carapace
 vips: fish
+virt-admin: zsh
+virt-host-validate: zsh
+virt-pki-validate: zsh
+virt-xml-validate: zsh
 virtctl: cobra
 vitrage: zsh
+vorbiscomment: zsh
 vt: cobra
 vultr: cobra
 vunnel: click
 watcher: zsh
+web-ext: fish
 wesnoth: fish
 wg-quick: fish
 whalebrew: cobra
@@ -737,6 +817,7 @@ xbps-digest: fish
 xbps-fbulk: fish
 xbps-fetch: fish
 xdg-mime: fish
+xed: fish
 xeol: cobra
 xgettext: fish
 xmllint: zsh
@@ -751,7 +832,9 @@ xxh128sum: fish
 xxh32sum: fish
 xxh64sum: fish
 xxhsum: fish
+yajsv: fish
 ykman: click
+yo: fish
 yq: cobra
 zabbix_agent2: fish
 zabbix_agentd: fish

@@ -1,1 +1,1 @@
-swift package completion-tool generate-fish-script | source
+__fish_cache_sourced_completions swift package completion-tool generate-fish-script

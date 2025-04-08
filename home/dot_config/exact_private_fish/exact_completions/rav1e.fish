@@ -1,3 +1,3 @@
 # what the fuck?
 # also zsh panics from this lmao
-rav1e - -o - advanced --completion fish | source
+__fish_cache_sourced_completions rav1e - -o - advanced --completion fish

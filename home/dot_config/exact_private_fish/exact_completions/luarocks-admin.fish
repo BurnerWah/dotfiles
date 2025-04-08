@@ -1,1 +1,1 @@
-luarocks-admin completion fish | source
+__fish_cache_sourced_completions luarocks-admin completion fish

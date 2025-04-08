@@ -1,0 +1,3 @@
+#compdef warp-cli
+# shellcheck disable=SC1090
+source <(warp-cli generate-completions zsh)

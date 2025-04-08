@@ -1,0 +1,22 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{ if not (has .osid (list "darwin" "linux-arch")) -}}
+# Backwards compatibility for fish 3.x
+if [ -r $__fish_data_dir/functions/__fish_cache_sourced_completions.fish ]
+    source $__fish_data_dir/functions/__fish_cache_sourced_completions.fish
+else
+    # Minimal version of __fish_cache_sourced_completions without caching
+    function __fish_cache_sourced_completions
+        # strip --name
+        argparse -s name= -- $argv
+        or return
+
+        set -q argv[1]
+        or return 1
+
+        command -qs $argv[1]
+        or return 127
+
+        $argv | source
+    end
+end
+# {{ end -}}

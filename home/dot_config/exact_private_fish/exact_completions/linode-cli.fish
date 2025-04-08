@@ -1,1 +1,1 @@
-linode-cli completion fish | source
+__fish_cache_sourced_completions linode-cli completion fish

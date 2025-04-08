@@ -1,1 +1,1 @@
-rbw gen-completions fish | source
+__fish_cache_sourced_completions rbw gen-completions fish

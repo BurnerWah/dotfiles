@@ -5,6 +5,7 @@
 "btdownloadcurses.py" = "btdownloadcurses"
 "btdownloadheadless.py" = "btdownloadheadless"
 "cabal-dev" = "cabal"
+"code-exploration" = "code"
 "colordiff" = "diff"
 "colorsvn" = "svn"
 "com.calibre_ebook.calibre" = "calibre"
