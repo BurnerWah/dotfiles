@@ -4,7 +4,7 @@
 
   tasks:
     - name: Configure wsl.conf
-      become: yes
+      become: true
       ansible.builtin.copy:
         dest: /etc/wsl.conf
         content: '{{ wsl_config | community.general.to_ini }}'
@@ -19,7 +19,7 @@
             systemd: true
 
     - name: Download WSL2 XWayland Socket
-      become: yes
+      become: true
       ansible.builtin.get_url:
         url: https://github.com/WhitewaterFoundry/fedora-remix-rootfs-build/raw/refs/heads/master/linux_files/wsl2-xwayland.socket
         dest: /etc/systemd/system/wsl2-xwayland.socket
@@ -27,7 +27,7 @@
         checksum: sha256:d38308848488eaebdbbc201eef518b718064510f491ffed2c10135cc5e6ce058
 
     - name: Download WSL2 XWayland Service
-      become: yes
+      become: true
       ansible.builtin.get_url:
         url: https://github.com/WhitewaterFoundry/fedora-remix-rootfs-build/raw/refs/heads/master/linux_files/wsl2-xwayland.service
         dest: /etc/systemd/system/wsl2-xwayland.service
@@ -35,19 +35,19 @@
         checksum: sha256:209a70b471c61982950dcc583a2f7e80af648c562bbd0dd83504231f511e63b2
 
     - name: Enable WSL2 XWayland Socket
-      become: yes
+      become: true
       ansible.builtin.systemd_service:
         name: wsl2-xwayland.socket
-        enabled: yes
+        enabled: true
 
     - name: Install dnf-plugins-core
-      become: yes
+      become: true
       ansible.builtin.dnf5:
         name: [dnf-plugins-core]
         state: present
 
     - name: Add mise dnf repo
-      become: yes
+      become: true
       ansible.builtin.get_url:
         url: https://mise.jdx.dev/rpm/mise.repo
         dest: /etc/yum.repos.d/mise.repo
@@ -55,13 +55,13 @@
         checksum: sha256:0feedc30bb4f5faa705bae31b0c3ade63bc42260ee3aca576156cb84a0c26c00
 
     - name: Add atim/starship copr repo
-      become: yes
+      become: true
       community.general.copr:
         name: atim/starship
         state: enabled
 
     - name: Install general dnf packages
-      become: yes
+      become: true
       ansible.builtin.dnf5:
         name:
           - '@standard'
@@ -86,14 +86,14 @@
         state: present
 
     - name: Set user's shell to fish
-      become: yes
+      become: true
       ansible.builtin.user:
         name: '{{ ansible_user_id }}'
         shell: /usr/bin/fish
         state: present
 
     - name: Add flathub flatpak repo
-      become: yes
+      become: true
       community.general.flatpak_remote:
         name: flathub
         state: present
@@ -101,7 +101,7 @@
         method: system
 
     - name: Install flathub packages
-      become: yes
+      become: true
       community.general.flatpak:
         name:
           - com.github.tchx84.Flatseal
@@ -112,12 +112,12 @@
     - name: Enable user dnf-makecache timer
       ansible.builtin.systemd_service:
         name: dnf-makecache.timer
-        enabled: yes
+        enabled: true
         scope: user
 
     - name: Enable atuin socket activation
       ansible.builtin.systemd_service:
         name: atuin.socket
-        enabled: yes
+        enabled: true
         state: started
         scope: user

@@ -3,13 +3,13 @@
   hosts: all
   tasks:
     - name: Install dnf-plugins-core
-      become: yes
+      become: true
       ansible.builtin.dnf5:
         name: [dnf-plugins-core]
         state: present
 
     - name: Add copr repos
-      become: yes
+      become: true
       community.general.copr:
         name: '{{ item }}'
         state: enabled
@@ -20,7 +20,7 @@
         # keep-sorted end
 
     - name: Add mise dnf repo
-      become: yes
+      become: true
       ansible.builtin.get_url:
         url: https://mise.jdx.dev/rpm/mise.repo
         dest: /etc/yum.repos.d/mise.repo
@@ -28,7 +28,7 @@
         checksum: sha256:0feedc30bb4f5faa705bae31b0c3ade63bc42260ee3aca576156cb84a0c26c00
 
     - name: Install packages
-      become: yes
+      become: true
       ansible.builtin.dnf5:
         name:
           # keep-sorted start case=no
@@ -58,7 +58,7 @@
         state: present
 
     - name: Disable unwanted services
-      become: yes
+      become: true
       ansible.builtin.systemd_service:
         name: '{{ item }}'
         enabled: false
@@ -77,7 +77,7 @@
         # keep-sorted end
 
     - name: Enable avahi
-      become: yes
+      become: true
       ansible.builtin.systemd_service:
         name: avahi-daemon.socket
         enabled: true
@@ -85,7 +85,7 @@
 
     # Changing the user's shell to fish requires Lima 1.0.2 and a VM restart
     - name: Configure user
-      become: yes
+      become: true
       ansible.builtin.user:
         name: '{{ ansible_user_id }}'
         shell: /usr/bin/fish

@@ -4,7 +4,7 @@
 
   tasks:
     - name: Add mise reoo
-      become: yes
+      become: true
       block:
         - name: Download mise key
           ansible.builtin.get_url:
@@ -19,7 +19,7 @@
             filename: mise
 
     - name: Install main packages
-      become: yes
+      become: true
       ansible.builtin.apt:
         name:
           - apt-file
@@ -39,7 +39,7 @@
         state: present
 
     - name: Add flathub flatpak repo
-      become: yes
+      become: true
       community.general.flatpak_remote:
         name: flathub
         state: present
@@ -47,21 +47,21 @@
         method: system
 
     - name: Install flathub packages
-      become: yes
+      become: true
       community.general.flatpak:
         name:
           - com.github.tchx84.Flatseal
         state: present
 
     - name: Set user's shell to fish
-      become: yes
+      become: true
       ansible.builtin.user:
         name: '{{ ansible_user_id }}'
         shell: /usr/bin/fish
         state: present
 
     - name: Install neovim (classic snap)
-      become: yes
+      become: true
       community.general.snap:
         name: nvim
         classic: true
@@ -70,19 +70,19 @@
     - name: Enable user systemd-tmpfiles setup
       ansible.builtin.systemd_service:
         name: systemd-tmpfiles-setup
-        enabled: yes
+        enabled: true
         state: started
         scope: user
 
     - name: Enable user systemd-tmpfiles cleanup
       ansible.builtin.systemd_service:
         name: systemd-tmpfiles-clean.timer
-        enabled: yes
+        enabled: true
         scope: user
 
     - name: Enable atuin socket activation
       ansible.builtin.systemd_service:
         name: atuin.socket
-        enabled: yes
+        enabled: true
         state: started
         scope: user

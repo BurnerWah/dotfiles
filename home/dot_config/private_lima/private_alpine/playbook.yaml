@@ -4,7 +4,7 @@
 
   tasks:
     - name: Install packages
-      become: yes
+      become: true
       community.general.apk:
         name:
           - build-base
@@ -15,7 +15,7 @@
 
     # This doesn't seem to be working
     - name: Set user's shell to fish
-      become: yes
+      become: true
       ansible.builtin.user:
         name: '{{ ansible_user_id }}'
         shell: /usr/bin/fish

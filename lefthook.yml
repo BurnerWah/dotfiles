@@ -17,6 +17,18 @@ pre-commit:
       group:
         parallel: true
         jobs:
+          # Currently not managed by mise but I'll fix that eventually
+          - name: ansible-lint
+            run: ansible-lint --fix=all {staged_files}
+            glob:
+              - playbooks/*.yml
+              - home/dot_config/private_lima/private_*/playbook.yaml
+            exclude: symlink_*
+            stage_fixed: true
+            tags:
+              - windows-incompatible
+              - linux-incompatible
+
           - name: ruff
             run: mise x -- ruff check --fix {staged_files}
             glob: ['*.py']

@@ -4,7 +4,7 @@
 
   tasks:
     - name: Install main dnf packages
-      become: yes
+      become: true
       ansible.builtin.dnf5:
         name:
           - bat
@@ -20,7 +20,7 @@
         state: present
 
     - name: Add surface-linux dnf repo
-      become: yes
+      become: true
       ansible.builtin.get_url:
         url: https://pkg.surfacelinux.com/fedora/linux-surface.repo
         dest: /etc/yum.repos.d/linux-surface.repo
@@ -28,24 +28,24 @@
         checksum: sha256:c0b6c3ba98726d9937c97cb0ef3a8572b40b0f60d79dabb1d5a55b6caeb4a2e3
 
     - name: Install surface-linux packages
-      become: yes
+      become: true
       ansible.builtin.dnf5:
         name:
           - kernel-surface
           - iptsd
           - libwacom-surface
         state: present
-        allowerasing: yes
+        allowerasing: true
 
     # I don't think this would work correctly on a brand new system
     - name: Install surface-linux secure boot key
-      become: yes
+      become: true
       ansible.builtin.dnf5:
         name: [surface-secureboot]
         state: present
 
     - name: Add tailscale dnf repo
-      become: yes
+      become: true
       ansible.builtin.get_url:
         url: https://pkgs.tailscale.com/stable/fedora/tailscale.repo
         dest: /etc/yum.repos.d/tailscale.repo
@@ -53,13 +53,13 @@
         checksum: sha256:87206259fb7032fb4147eabccf4ffdb0b4d850d0519ef4c6991cf8c4d100ac13
 
     - name: Install tailscale
-      become: yes
+      become: true
       ansible.builtin.dnf5:
         name: [tailscale]
         state: present
 
     - name: Add mise dnf repo
-      become: yes
+      become: true
       ansible.builtin.get_url:
         url: https://mise.jdx.dev/rpm/mise.repo
         dest: /etc/yum.repos.d/mise.repo
@@ -67,13 +67,13 @@
         checksum: sha256:0feedc30bb4f5faa705bae31b0c3ade63bc42260ee3aca576156cb84a0c26c00
 
     - name: Install mise
-      become: yes
+      become: true
       ansible.builtin.dnf5:
         name: [mise]
         state: present
 
     - name: Remove unwanted RPMs
-      become: yes
+      become: true
       ansible.builtin.dnf5:
         name:
           - elisa-player
@@ -89,7 +89,7 @@
         state: absent
 
     - name: Set user's shell to fish
-      become: yes
+      become: true
       ansible.builtin.user:
         name: '{{ ansible_user_id }}'
         shell: /usr/bin/fish
@@ -136,27 +136,27 @@
         state: present
 
     - name: Enable sshd socket activation
-      become: yes
+      become: true
       ansible.builtin.systemd_service:
         name: sshd.socket
-        enabled: yes
+        enabled: true
         state: started
 
     - name: Enable tailscale daemon
-      become: yes
+      become: true
       ansible.builtin.systemd_service:
         name: tailscaled
-        enabled: yes
+        enabled: true
         state: started
 
     - name: Enable snapper timeline
-      become: yes
+      become: true
       ansible.builtin.systemd_service:
         name: snapper-timeline.timer
-        enabled: yes
+        enabled: true
 
     - name: Enable snapper cleanup
-      become: yes
+      become: true
       ansible.builtin.systemd_service:
         name: snapper-cleanup.timer
-        enabled: yes
+        enabled: true
