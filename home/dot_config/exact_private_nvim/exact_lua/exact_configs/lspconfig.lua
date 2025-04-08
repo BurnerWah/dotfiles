@@ -13,6 +13,7 @@ local servers = {
   "docker_compose_language_service",
   "dockerls",
   "eslint",
+  "fish_lsp",
   "html",
   "jsonls",
   "nushell",
