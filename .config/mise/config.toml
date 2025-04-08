@@ -33,7 +33,7 @@ description = "Format code"
 # fish doesn't need to be installed.
 
 [tasks."format:prettier"]
-run = "bun x prettier --write --cache --ignore-unknown ."
+run = "bun run --silent format:prettier"
 description = "Format code with Prettier"
 
 [tasks."format:ruff"]
@@ -80,7 +80,7 @@ run = "gitleaks git --no-banner"
 description = "Check git repo for secrets"
 
 [tasks."lint:prettier"]
-run = "bun x prettier --check --cache --ignore-unknown ."
+run = "bun run --silent lint:prettier"
 description = "Lint code formatting with Prettier"
 
 [tasks."lint:ripsecrets"]

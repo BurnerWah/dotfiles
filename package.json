@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "format:prettier": "prettier --write --cache --ignore-unknown .",
     "lint:prettier": "prettier --check --cache --ignore-unknown ."
   },
   "devDependencies": {
