@@ -8,12 +8,14 @@
       community.general.apk:
         name:
           # keep-sorted start case=no
+          - bat
           - build-base
           - chezmoi
           - curl
           - delta
           - eza
           - fish
+          - git
           - kitty-terminfo
           - less # non-multicall version
           - pam-rundir # for XDG_RUNTIME_DIR
