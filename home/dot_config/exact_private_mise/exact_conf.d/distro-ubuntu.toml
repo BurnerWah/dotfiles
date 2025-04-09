@@ -1,3 +1,4 @@
 [tools]
 uv = "latest"
 starship = "latest"
+"ubi:carapace-sh/carapace-bin" = { version = "latest", exe = "carapace" }
