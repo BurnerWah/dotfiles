@@ -3,6 +3,16 @@
   hosts: localhost
 
   tasks:
+    - name: Add PPAs
+      become: true
+      ansible.builtin.apt_repository:
+        repo: '{{ item }}'
+        state: present
+      loop:
+        # keep-sorted start case=no
+        - ppa:fish-shell/release-4
+        # keep-sorted end
+
     - name: Add mise reoo
       become: true
       block:
@@ -22,6 +32,7 @@
       become: true
       ansible.builtin.apt:
         name:
+          # keep-sorted start case=no
           - apt-file
           - bat
           - clang # needed for neovim
@@ -36,6 +47,7 @@
           - snapd
           - zoxide
           - zsh
+          # keep-sorted end
         state: present
 
     - name: Add flathub flatpak repo
