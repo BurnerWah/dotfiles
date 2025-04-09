@@ -34,6 +34,7 @@
           # keep-sorted start case=no
           - '@smb-server' # Mac OS likes this more than NFS
           - '@standard' # nbd mounting?
+          - apptainer
           - avahi # Gives the host a hostname to connect to this with
           - bat
           - btop
