@@ -10,6 +10,13 @@ pre-commit:
 
           - name: ripsecrets
             run: mise x -- ripsecrets --strict-ignore {staged_files}
+            skip:
+              # With skip run checks, make sure that the first one is the "skip windows" check,
+              # as windows takes 10x longer to run things than mac os or linux, and the first
+              # command that returns 0 triggers the command to be skipped outright.
+              # Also, avoid `uname` until windows has been filtered out, as it slows things down
+              # on windows even more.
+              - run: test "$OS" == "Windows_NT"
             tags:
               - windows-incompatible
 
@@ -25,6 +32,10 @@ pre-commit:
               - home/dot_config/private_lima/private_*/playbook.yaml
             exclude: symlink_*
             stage_fixed: true
+            skip:
+              - run: test "$OS" == "Windows_NT"
+              - run: test "$(uname)" != "Darwin"
+              - run: '! command -v ansible-lint'
             tags:
               - windows-incompatible
               - linux-incompatible
@@ -49,6 +60,10 @@ pre-commit:
             run: desktop-file-validate {staged_files}
             glob: ['*.desktop']
             exclude: symlink_*
+            skip:
+              - run: test "$OS" == "Windows_NT"
+              - run: test "$(uname)" != "Linux"
+              - run: '! command -v desktop-file-validate'
             tags:
               - windows-incompatible
               - macos-incompatible
@@ -93,6 +108,9 @@ pre-commit:
             glob: ['*.fish', '*.fish.tmpl']
             exclude: symlink_*
             stage_fixed: true
+            skip:
+              - run: test "$OS" == "Windows_NT"
+              - run: '! command -v fish_indent'
             tags:
               - windows-incompatible
 
@@ -119,5 +137,7 @@ pre-push:
   commands:
     ripsecrets:
       run: mise x -- ripsecrets --strict-ignore {push_files}
+      skip:
+        - run: test "$OS" == "Windows_NT"
       tags:
         - windows-incompatible
