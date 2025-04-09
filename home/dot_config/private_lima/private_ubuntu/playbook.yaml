@@ -12,13 +12,34 @@
         - ppa:fish-shell/release-4
         # keep-sorted end
 
+    - name: Add mise reoo
+      become: true
+      block:
+        - name: Download mise key
+          ansible.builtin.get_url:
+            url: https://mise.jdx.dev/gpg-key.pub
+            dest: /etc/apt/keyrings/mise-archive-keyring.asc
+            mode: '0644'
+            checksum: sha256:91c72340c5cc84ae2ba98c1070083feacf789b0a4a3d34b2416147769e475d96
+        - name: Add mise repo
+          ansible.builtin.apt_repository:
+            repo: deb [signed-by=/etc/apt/keyrings/mise-archive-keyring.asc arch=arm64] https://mise.jdx.dev/deb stable main
+            state: present
+            filename: mise
+
     - name: Install main packages
       become: true
       ansible.builtin.apt:
         name:
           # keep-sorted start case=no
+          - bat
+          - fd-find
           - fish
+          - git-delta
           - kitty-terminfo
+          - mise
+          - ripgrep
+          - zoxide
           # keep-sorted end
         state: present
 
