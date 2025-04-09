@@ -2,10 +2,14 @@
 - name: Provision VM
   hosts: all
   tasks:
+    - name: Gather package facts
+      ansible.builtin.package_facts: { manager: auto }
+
     - name: Install dnf-plugins-core
       become: true
+      when: "'dnf-plugins-core' not in ansible_facts.packages"
       ansible.builtin.dnf5:
-        name: [dnf-plugins-core]
+        name: dnf-plugins-core
         state: present
 
     - name: Add copr repos
@@ -26,6 +30,15 @@
         dest: /etc/yum.repos.d/mise.repo
         mode: '0644'
         checksum: sha256:0feedc30bb4f5faa705bae31b0c3ade63bc42260ee3aca576156cb84a0c26c00
+
+    - name: Install RPM Fusion
+      become: true
+      when: "'rpmfusion-' ~ item ~ '-release' not in ansible_facts.packages"
+      ansible.builtin.dnf5:
+        name: https://mirrors.rpmfusion.org/{{ item }}/fedora/rpmfusion-{{ item }}-release-{{ ansible_distribution_version }}.noarch.rpm
+        disable_gpg_check: true
+        state: present
+      loop: [free, nonfree]
 
     - name: Install packages
       become: true
