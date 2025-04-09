@@ -112,8 +112,6 @@
 /vivid
 /whalebrew
 /xonsh
-/zsh
-/zsh/**/*
 # keep-sorted end
 {{- end }}
 

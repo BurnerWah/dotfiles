@@ -37,6 +37,7 @@
       loop:
         # keep-sorted start
         - ~/.config/fish
+        - ~/.config/zsh
         - ~/.local/share
         # keep-sorted end
 
@@ -59,6 +60,9 @@
         - .config/readline
         - .config/starship.toml
         - .config/vivid
+        - .config/zsh/functions
+        - .config/zsh/plugins
+        - .config/zsh/vendor
         - .local/share/chezmoi
         # keep-sorted end
 

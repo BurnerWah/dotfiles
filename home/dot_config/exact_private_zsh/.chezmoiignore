@@ -1,3 +1,11 @@
 **/.zcompdump
 **/*.zwc
 **/*.zwc.old
+
+{{- if .device.lima }}
+# keep-sorted start
+/functions/**
+/plugins/**
+/vendor/**
+# keep-sorted end
+{{- end }}
