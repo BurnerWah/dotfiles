@@ -288,6 +288,7 @@ carapace = [
   "docker-scan",
   "docker.lima",
   "dockerd",
+  "dockerfmt",
   "doctl",
   "docuum",
   "doing",

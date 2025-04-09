@@ -247,6 +247,7 @@ dnscontrol: urfavecli
 docker-buildx: cobra
 docker.lima: cobra
 docker: cobra
+dockerfmt: cobra
 doctl: cobra
 dpatch-edit-patch: zsh
 dpkg-buildpackage: zsh
