@@ -1,0 +1,42 @@
+---
+- name: Provision VM
+  hosts: all
+  tasks:
+    - name: Add PPAs
+      become: true
+      ansible.builtin.apt_repository:
+        repo: '{{ item }}'
+        state: present
+      loop:
+        # keep-sorted start case=no
+        - ppa:fish-shell/release-4
+        # keep-sorted end
+
+    - name: Install main packages
+      become: true
+      ansible.builtin.apt:
+        name:
+          # keep-sorted start case=no
+          - fish
+          - kitty-terminfo
+          # keep-sorted end
+        state: present
+
+    - name: Disable unwanted services
+      become: true
+      ansible.builtin.systemd_service:
+        name: '{{ item }}'
+        enabled: false
+        state: stopped
+      loop:
+        # keep-sorted start
+        - cron
+        - rsyslog
+        # keep-sorted end
+
+    - name: Configure user
+      become: true
+      ansible.builtin.user:
+        name: '{{ ansible_user_id }}'
+        shell: /usr/bin/fish
+        state: present
