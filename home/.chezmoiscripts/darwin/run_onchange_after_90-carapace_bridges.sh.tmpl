@@ -1,5 +1,5 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter=}}
-# {{- if lookPath "carapace" -}}
+# {{- if and (lookPath "carapace") (not .device.lima) -}}
 #!/usr/bin/env bash
 
 # Carapace-bridges hash: # {{ include "dot_config/carapace/bridges.yaml" | sha256sum }}
