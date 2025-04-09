@@ -20,6 +20,13 @@
 # keep-sorted end
 {{- end }}
 
+{{- if eq .osid "linux-alpine" }}
+# keep-sorted start case=no
+/atuin
+/eza
+# keep-sorted end
+{{- end }}
+
 {{- if ne .chezmoi.os "linux" }}
 /op-ssh-sign
 {{- end }}

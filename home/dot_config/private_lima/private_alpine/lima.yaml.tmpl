@@ -1,3 +1,4 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
 minimumLimaVersion: '1.0.2'
 
 images:
@@ -10,7 +11,7 @@ images:
 
 mounts:
   - location: '~'
-  - location: '/tmp/lima'
+  - location: /tmp/lima
     writable: true
 
 # The built-in containerd installer does not support Alpine currently.
@@ -33,7 +34,7 @@ provision:
       apk add ansible
 
   - mode: ansible
-    playbook: '{{ joinPath .chezmoi.targetFile ".." "playbook.yaml" }}'
+    playbook: '# {{ joinPath .chezmoi.targetFile ".." "playbook.yaml" }}'
 
 probes:
   - description: ansible
