@@ -1,0 +1,5 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{ if .device.lima -}}
+d   %t/host-services    0700  -     -     -   -
+
+# {{ end -}}
