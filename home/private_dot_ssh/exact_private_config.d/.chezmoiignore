@@ -1,11 +1,11 @@
-1password-*.conf
-!1password-{{.chezmoi.os}}.conf
-
 os-*.conf
 !os-{{.chezmoi.os}}.conf
+!os-{{.chezmoi.os}}.*.conf
 
 device-*.conf
 !device-{{.devicename}}.conf
+!device-{{.devicename}}.*.conf
 
 distro-*.conf
 !distro-{{.distro}}.conf
+!distro-{{.distro}}.*.conf
