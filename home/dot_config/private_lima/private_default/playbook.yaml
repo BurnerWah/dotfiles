@@ -61,6 +61,8 @@
           - git-lfs
           - grc
           - hyperfine
+          - kernel-modules
+          - kernel-modules-extra
           - kitty-terminfo
           - mise # mise.repo
           - most

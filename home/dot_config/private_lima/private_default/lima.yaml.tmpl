@@ -26,6 +26,11 @@ rosetta:
 networks:
   - vzNAT: true
 
+audio:
+  device: vz
+
+# Enabling video causes a GUI window to show up
+
 portForwards:
   # from template://podman
   - guestSocket: '/run/user/{{.UID}}/podman/podman.sock'
