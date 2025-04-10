@@ -112,24 +112,6 @@
           - wheel
         append: true
 
-    - name: Create necessary directories
-      ansible.builtin.file:
-        path: '{{ item }}'
-        state: directory
-        mode: '0700'
-      loop:
-        # keep-sorted start
-        - ~/.config/fish
-        - ~/.config/zsh
-        - ~/.local/share
-        # keep-sorted end
-
-    - name: Link host chezmoi home to VM
-      ansible.builtin.file:
-        src: "{{ ('/Users', ansible_user_id, '.local/share/chezmoi') | path_join }}"
-        dest: ~/.local/share/chezmoi
-        state: link
-
     - name: Enable user podman socket
       ansible.builtin.systemd_service:
         name: podman.socket
@@ -139,5 +121,9 @@
 
     - name: Initialize chezmoi config
       ansible.builtin.command:
-        argv: [/usr/bin/chezmoi, init]
+        argv:
+          - chezmoi
+          - --source
+          - /Users/{{ ansible_user_id }}/.local/share/chezmoi
+          - init
         creates: ~/.config/chezmoi

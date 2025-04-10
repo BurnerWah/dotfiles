@@ -78,44 +78,11 @@
         shell: /usr/bin/fish
         state: present
 
-    - name: Create necessary directories
-      ansible.builtin.file:
-        path: '{{ item }}'
-        state: directory
-        mode: '0700'
-      loop:
-        # keep-sorted start
-        - ~/.config/fish
-        - ~/.config/zsh
-        - ~/.local/share
-        # keep-sorted end
-
-    - name: Link host configs to VM
-      ansible.builtin.file:
-        src: "{{ ('/Users', ansible_user_id, item) | path_join }}"
-        dest: '{{ (ansible_user_dir, item) | path_join }}'
-        state: link
-      loop:
-        # keep-sorted start
-        - .config/bat
-        - .config/bottom
-        - .config/carapace
-        - .config/eza
-        - .config/fastfetch
-        - .config/fd
-        - .config/fish/completions
-        - .config/glow
-        - .config/rainbow
-        - .config/readline
-        - .config/starship.toml
-        - .config/vivid
-        - .config/zsh/functions
-        - .config/zsh/plugins
-        - .config/zsh/vendor
-        - .local/share/chezmoi
-        # keep-sorted end
-
     - name: Initialize chezmoi config
       ansible.builtin.command:
-        argv: [/snap/bin/chezmoi, init]
+        argv:
+          - chezmoi
+          - --source
+          - /Users/{{ ansible_user_id }}/.local/share/chezmoi
+          - init
         creates: ~/.config/chezmoi

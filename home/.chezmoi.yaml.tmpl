@@ -118,6 +118,8 @@ textconv:
 # {{-   $xdgData = joinPath .chezmoi.homeDir "Library/Application Support" }}
 # {{- end }}
 
+sourceDir: '# {{ .chezmoi.sourceDir }}'
+
 data:
   devicename: # {{ $devicename }}
   distro: # {{ $distro }}
