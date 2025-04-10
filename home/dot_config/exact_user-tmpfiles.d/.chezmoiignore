@@ -3,3 +3,8 @@ device-*.conf
 
 distro-*.conf
 !distro-{{.distro}}.conf
+
+is-lima.conf
+{{ if .device.lima }}
+!is-lima.conf
+{{ end }}
