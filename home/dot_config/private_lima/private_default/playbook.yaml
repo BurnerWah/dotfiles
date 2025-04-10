@@ -124,30 +124,11 @@
         - ~/.local/share
         # keep-sorted end
 
-    - name: Link host configs to VM
+    - name: Link host chezmoi home to VM
       ansible.builtin.file:
-        src: "{{ ('/Users', ansible_user_id, item) | path_join }}"
-        dest: '{{ (ansible_user_dir, item) | path_join }}'
+        src: "{{ ('/Users', ansible_user_id, '.local/share/chezmoi') | path_join }}"
+        dest: ~/.local/share/chezmoi
         state: link
-      loop:
-        # keep-sorted start
-        - .config/bat
-        - .config/bottom
-        - .config/carapace
-        - .config/eza
-        - .config/fastfetch
-        - .config/fd
-        - .config/fish/completions
-        - .config/glow
-        - .config/rainbow
-        - .config/readline
-        - .config/starship.toml
-        - .config/vivid
-        - .config/zsh/functions
-        - .config/zsh/plugins
-        - .config/zsh/vendor
-        - .local/share/chezmoi
-        # keep-sorted end
 
     - name: Enable user podman socket
       ansible.builtin.systemd_service:
