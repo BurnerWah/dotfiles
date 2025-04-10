@@ -15,6 +15,7 @@
           - delta
           - eza
           - fish
+          - gcompat
           - git
           - kitty-terminfo
           - less # non-multicall version
