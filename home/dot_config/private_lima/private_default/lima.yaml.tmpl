@@ -39,6 +39,12 @@ portForwards:
   - guestSocket: '/run/user/{{.UID}}/buildkit-default/buildkitd.sock'
     hostSocket: '{{.Dir}}/sock/buildkitd.sock'
 
+  # Host's 1Password SSH agent
+  # Turning on `ssh.forwardAgent` generally doesn't forward this
+  - guestSocket: '/run/user/{{.UID}}/host-services/op-ssh.sock'
+    hostSocket: '{{.Home}}/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock'
+    reverse: true
+
 # Don't configure the user's shell in here, it stops lima from ever initializing
 
 upgradePackages: true

@@ -7,4 +7,10 @@ fish_add_path --path --prepend "$HOME/.local/bin"
 set -gx ANSIBLE_CONFIG $XDG_CONFIG_HOME/ansible.cfg
 set -gx ANSIBLE_HOME $XDG_CONFIG_HOME/ansible
 set -gx ZDOTDIR $XDG_CONFIG_HOME/zsh
+
+# Use host's 1Password SSH socket if it's been forwarded
+if not set -q SSH_AUTH_SOCK
+    and [ -S "$XDG_RUNTIME_DIR/host-services/op-ssh.sock" ]
+    set -gx SSH_AUTH_SOCK "$XDG_RUNTIME_DIR/host-services/op-ssh.sock"
+end
 # {{ end -}}

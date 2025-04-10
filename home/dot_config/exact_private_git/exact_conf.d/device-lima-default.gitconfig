@@ -1,0 +1,6 @@
+[user]
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC2pNuOStlSIa0mcKBUg0nkrLCMSTscboEnM7Vvoq4XG
+[commit]
+    gpgsign = true
+[gpg]
+    format = ssh
