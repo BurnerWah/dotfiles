@@ -118,7 +118,6 @@
 {{- if eq .osid "linux-alpine" }}
 # keep-sorted start case=no
 /systemd
-/user-tmpfiles.d
 # keep-sorted end
 {{- end }}
 
