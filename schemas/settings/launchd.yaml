@@ -12,9 +12,6 @@ $defs:
 
 additionalProperties: false
 
-required:
-  - environment
-  - servicePath
 properties:
   environment: { $ref: '#/$defs/Environment' }
   servicePath: { $ref: '#/$defs/ServicePath' }
