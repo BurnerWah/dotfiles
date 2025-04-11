@@ -1,0 +1,18 @@
+[settings.lima.tmpfiles]
+shared = [
+  ".config/bat",
+  ".config/bottom",
+  ".config/carapace",
+  ".config/eza",
+  ".config/fastfetch",
+  ".config/fd",
+  ".config/fish/completions",
+  ".config/glow",
+  ".config/rainbow",
+  ".config/readline",
+  ".config/starship.toml",
+  ".config/vivid",
+  ".config/zsh/functions",
+  ".config/zsh/plugins",
+  ".config/zsh/vendor",
+]

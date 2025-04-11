@@ -30,7 +30,11 @@ schema.path = "https://github.com/ClementTsang/bottom/raw/refs/heads/main/schema
 
 [[rule]]
 include = ["**/.chezmoidata.toml", "**/.chezmoidata/**/*.toml"]
-keys = ["settings.shell.zsh.compsys", "settings.shell.zsh.compsys.aliases"]
+keys = [
+  "settings.shell.zsh.compsys",
+  "settings.shell.zsh.compsys.aliases",
+  "settings.lima.tmpfiles",
+]
 # reorder arrays won't work unless you specify the parent keys, which is annoying
 formatting.reorder_arrays = true
 formatting.reorder_keys = true
