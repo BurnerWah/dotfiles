@@ -26,7 +26,6 @@ exclude_paths:
   - bun.lockb
   - Gemfile*
   - home/AppData/
-  - home/dot_config/carapace/
   - home/dot_config/exact_*/
   - home/dot_config/private_gh/
   - home/dot_config/private_glab-cli/

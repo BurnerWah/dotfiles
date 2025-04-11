@@ -17,7 +17,7 @@ rules:
     max: 160
     level: warning
     ignore:
-      - /home/dot_config/carapace/exact_specs/*
+      - /home/dot_config/exact_private_carapace/exact_specs/*
   braces:
     min-spaces-inside: 0
     max-spaces-inside: 1
@@ -29,11 +29,11 @@ rules:
     level: warning
   indentation:
     ignore:
-      - /home/dot_config/carapace/exact_specs/*
+      - /home/dot_config/exact_private_carapace/exact_specs/*
   quoted-strings:
     level: warning
     required: only-when-needed
     quote-type: single
     allow-quoted-quotes: true
     ignore:
-      - /home/dot_config/carapace/*
+      - /home/dot_config/exact_private_carapace/*
