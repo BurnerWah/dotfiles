@@ -1,5 +1,5 @@
 rules:
-  # {{ $fakehome := joinPath (env "XDG_RUNTIME_DIR") "fakehome" }}
+  # {{ $fakehome := "/run/user" .chezmoi.uid "fakehome" }}
   - name: Fake home directory
     target: '~'
     rewrite: '{{ $fakehome }}'

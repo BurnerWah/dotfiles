@@ -227,7 +227,7 @@ sync_frequency = 300
 socket_path = '''
 {{- $socketPath := joinPath .chezmoi.homeDir "/.local/share/atuin/atuin.sock" -}}
 {{- if eq .chezmoi.os "linux" -}}
-{{-   $socketPath = joinPath (env "XDG_RUNTIME_DIR") "atuin" "atuin.sock" -}}
+{{-   $socketPath = joinPath "/run/user" .chezmoi.uid "atuin/atuin.sock" -}}
 {{- else if eq .chezmoi.os "darwin" -}}
 {{-   $socketPath = joinPath (env "TMPDIR") "atuin.sock" -}}
 {{- end -}}
