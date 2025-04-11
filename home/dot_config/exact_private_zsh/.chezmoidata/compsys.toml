@@ -244,6 +244,7 @@ carapace = [
   "datasette",
   "date",
   "dav1d",
+  "dblab",
   "dbt",
   "dc",
   "dd",

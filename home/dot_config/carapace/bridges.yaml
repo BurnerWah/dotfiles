@@ -196,6 +196,7 @@ dasel: cobra
 dash: zsh
 dashing: urfavecli
 datasette: click
+dblab: cobra
 dbus-launch: zsh
 dbus-monitor: zsh
 dbus-send: zsh

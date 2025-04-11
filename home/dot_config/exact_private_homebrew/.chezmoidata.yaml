@@ -312,6 +312,7 @@ settings:
         - trezor-agent # cryptocurrency
         - trezor-bridge # cryptocurrency
         - truffle # cryptocurrency
+        - tsui # fascism
         - twty # twitter
         - vespa-cli # ai
         - wagyu # cryptocurrency
