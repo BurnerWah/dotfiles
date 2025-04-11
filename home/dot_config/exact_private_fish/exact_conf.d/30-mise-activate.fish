@@ -2,7 +2,7 @@
 # being at the end of $PATH, instead of at the start. `fish_add_path -g` can
 # work around that issue, but I don't currently include any code for that in my
 # dotfiles.
-if command -qs mise
+if command -q mise
     if not status is-interactive
         or status is-login
         or [ "$TERM_PROGRAM" = vscode ] # Don't activate in IDEs

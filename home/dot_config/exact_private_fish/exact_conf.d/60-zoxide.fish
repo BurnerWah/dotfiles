@@ -1,4 +1,4 @@
 if status is-interactive
-    and command -qs zoxide
+    and command -q zoxide
     zoxide init fish | source
 end

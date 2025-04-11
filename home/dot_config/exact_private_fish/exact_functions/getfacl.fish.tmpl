@@ -1,10 +1,10 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter=}}
 # {{ if and (lookPath "getfacl") (lookPath "grc") -}}
-function getfacl
-    set -l cmd getfacl
-    if isatty stdout
-        command -qs grc && set -p cmd grc
+function getfacl --wraps=getfacl
+    if isatty stdout; and command -q grc
+        command grc getfacl $argv
+    else
+        command getfacl $argv
     end
-    command $cmd $argv
 end
 # {{ end -}}

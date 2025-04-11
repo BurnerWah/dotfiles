@@ -1,5 +1,5 @@
 # Use pigz over gzip
-if command -qs pigz
+if command -q pigz
     function gzip -w pigz
         command pigz $argv
     end

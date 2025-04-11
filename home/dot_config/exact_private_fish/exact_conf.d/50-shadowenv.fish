@@ -1,4 +1,4 @@
 if status is-interactive
-    and command -qs shadowenv
+    and command -q shadowenv
     shadowenv init fish | source
 end

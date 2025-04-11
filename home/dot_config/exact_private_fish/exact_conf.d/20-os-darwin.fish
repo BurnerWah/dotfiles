@@ -7,7 +7,7 @@ set -gx XDG_RUNTIME_DIR $TMPDIR
 set -gx SONARLINT_USER_HOME "$TMPDIR/sonarlint"
 
 if status is-interactive
-    and command -qs brew
+    and command -q brew
     # Skip running `brew --repository` if we already know what it should output
     [ -n "$HOMEBREW_REPOSITORY" ] || set -l HOMEBREW_REPOSITORY (brew --repository)
 

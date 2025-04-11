@@ -1,5 +1,5 @@
 # prefer pbzcat to bzcat
-if command -qs pbzcat
+if command -q pbzcat
     function bzcat
         command pbzcat $argv
     end
