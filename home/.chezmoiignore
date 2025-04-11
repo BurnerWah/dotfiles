@@ -44,7 +44,6 @@
 {{- if .device.lima }}
 # keep-sorted start case=no
 /.bashrc
-/.ssh
 /.zshrc
 # keep-sorted end
 {{- end }}

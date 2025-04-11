@@ -1,0 +1,5 @@
+# Simplifies connecting from one lima VM to another
+Host lima-*.internal
+    IdentityFile "/Users/{{.chezmoi.username}}/.config/lima/_config/user"
+    IdentitiesOnly yes
+    Compression no
