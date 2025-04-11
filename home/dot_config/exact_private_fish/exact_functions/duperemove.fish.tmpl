@@ -1,6 +1,6 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter=}}
 # {{ if eq .chezmoi.os "linux" -}}
-function duperemove --description 'alias duperemove wrap-systemd.scope cmd-duperemove- duperemove'
+function duperemove -d 'alias duperemove wrap-systemd.scope cmd-duperemove- duperemove'
     wrap-systemd.scope cmd-duperemove- duperemove $argv
 end
 # {{ end -}}

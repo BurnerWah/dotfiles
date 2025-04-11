@@ -1,8 +1,8 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter=}}
 # {{ if and (lookPath "ss") (lookPath "grc") -}}
-function ss -d "Utility to investigate sockets" --wraps=ss
+function ss -d "Utility to investigate sockets"
     if isatty stdout; and command -q grc
-        command grc ss $argv
+        grc ss $argv
     else
         command ss $argv
     end

@@ -1,11 +1,11 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter=}}
 # {{ if lookPath "findmnt" -}}
-function findmnt --wraps=findmnt
+function findmnt
     if set -q DISTROBOX_ENTER_PATH
         set -p argv --uniq
     end
     if isatty stdout; and command -q grc
-        command grc findmnt $argv
+        grc findmnt $argv
     else
         command findmnt $argv
     end

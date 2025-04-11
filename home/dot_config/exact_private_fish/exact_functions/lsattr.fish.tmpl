@@ -2,7 +2,7 @@
 # {{ if and (lookPath "lsattr") (lookPath "grc") -}}
 function lsattr -d "List file attributes on a Linux file system"
     if isatty stdout; and command -q grc
-        command grc lsattr $argv
+        grc lsattr $argv
     else
         command lsattr $argv
     end

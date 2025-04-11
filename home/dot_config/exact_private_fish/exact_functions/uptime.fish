@@ -1,6 +1,6 @@
-function uptime --wraps=uptime
+function uptime
     if isatty stdout; and command -q grc
-        command grc uptime $argv
+        grc uptime $argv
     else
         command uptime $argv
     end

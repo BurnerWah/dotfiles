@@ -1,6 +1,6 @@
-function ping --wraps=ping
+function ping
     if isatty stdout; and command -q grc
-        command grc ping $argv
+        grc ping $argv
     else
         command ping $argv
     end

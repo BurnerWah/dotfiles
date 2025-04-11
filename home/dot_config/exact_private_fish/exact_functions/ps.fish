@@ -1,6 +1,6 @@
 function ps -d "Information about running processes" --wraps=ps
     if isatty stdout; and command -q grc
-        command grc ps $argv
+        grc ps $argv
     else
         command ps $argv
     end

@@ -1,6 +1,6 @@
-function netstat -d "Displays network-related information" --wraps=netstat
+function netstat -d "Displays network-related information"
     if isatty stdout; and command -q grc
-        command grc netstat $argv
+        grc netstat $argv
     else
         command netstat $argv
     end

@@ -2,7 +2,7 @@
 # {{ if and (lookPath "lastlog") (lookPath "grc") -}}
 function lastlog -d "Show the most recent login of all users or of a given user"
     if isatty stdout; and command -q grc
-        command grc lastlog $argv
+        grc lastlog $argv
     else
         command lastlog $argv
     end

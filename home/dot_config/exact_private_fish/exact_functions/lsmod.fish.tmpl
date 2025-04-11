@@ -2,7 +2,7 @@
 # {{ if and (lookPath "lsmod") (lookPath "grc") -}}
 function lsmod
     if isatty stdout; and command -q grc
-        command grc lsmod $argv
+        grc lsmod $argv
     else
         command lsmod $argv
     end

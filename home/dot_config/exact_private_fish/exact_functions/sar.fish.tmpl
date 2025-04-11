@@ -1,7 +1,7 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter=}}
 # {{- if lookPath "sar" -}}
 # Makes sar(1) easier to read
-function sar --wraps=sar
+function sar
     isatty stdout && set -p argv -h
     command sar $argv
 end

@@ -1,6 +1,6 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter=}}
 # {{ if and (lookPath "sad") (lookPath "delta") -}}
-function sad -w "sad --pager=delta"
+function sad -d 'alias sad sad --pager=delta'
     command sad --pager=delta $argv
 end
 # {{ end -}}

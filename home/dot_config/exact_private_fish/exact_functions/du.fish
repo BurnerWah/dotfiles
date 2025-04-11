@@ -1,4 +1,4 @@
-function du --wraps=du
+function du
     set -l cmd du
     if isatty stdout
         set -p argv --si

@@ -1,11 +1,10 @@
-if command -qs rg
-    and command -qs gzip
-    function rg
-        command rg -z $argv
+if command -q rg; and command -q gzip
+    function zegrep -w 'rg -z' -d 'alias zegrep rg -z'
+        rg -z $argv
     end
-else if command -qs ugrep
-    function zegrep
-        command ugrep -zE $argv
+else if command -q ugrep
+    function zegrep -w 'ugrep -zE' -d 'alias zegrep ugrep -zE'
+        ugrep -zE $argv
         # ugrep --sort -E -U -Y -z -. -Dread -dread is more compatible
     end
 end

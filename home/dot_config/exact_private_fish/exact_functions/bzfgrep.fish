@@ -1,11 +1,10 @@
-if command -qs rg
-    and command -qs bzip2
-    function bzfgrep
-        command rg -zF $argv
+if command -q rg; and command -q bzip2
+    function bzfgrep -w 'rg -zF' -d 'alias bzfgrep rg -zF'
+        rg -zF $argv
     end
-else if command -qs ugrep
-    function bzfgrep
-        command ugrep -zF $argv
+else if command -q ugrep
+    function bzfgrep -w 'ugrep -zF' -d 'alias bzfgrep ugrep -zF'
+        ugrep -zF $argv
         # ugrep --sort -F -U -Y -z -. -Dread -dread is more compatible
     end
 end

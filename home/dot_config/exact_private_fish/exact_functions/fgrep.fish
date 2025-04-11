@@ -1,17 +1,17 @@
-if command -qs rg
-    function fgrep
-        command rg -F $argv
+if command -q rg
+    function fgrep -w 'rg -F' -d 'alias fgrep rg -F'
+        rg -F $argv
     end
-else if command -qs ugrep
-    function fgrep
-        command ugrep -F $argv
+else if command -q ugrep
+    function fgrep -w 'ugrep -F' -d 'alias fgrep ugrep -F'
+        ugrep -F $argv
     end
-else if command -qs fgrep
-    function fgrep
+else if command -q fgrep
+    function fgrep -d 'alias fgrep fgrep --color=auto'
         command fgrep --color=auto $argv
     end
 else
-    function fgrep -w grep
+    function fgrep -w 'grep -F --color=auto' -d 'alias fgrep grep -F --color=auto'
         command grep -F --color=auto $argv
     end
 end

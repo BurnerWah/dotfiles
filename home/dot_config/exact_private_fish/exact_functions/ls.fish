@@ -1,4 +1,4 @@
-if command -qs eza
+if command -q eza
     function ls --wraps=eza --description 'List contents of directory'
         set -l cmd ls
         set -l param --color=auto

@@ -1,6 +1,6 @@
-function mount --wraps=mount
+function mount
     if isatty stdout; and command -q grc
-        command grc mount $argv
+        grc mount $argv
     else
         command mount $argv
     end

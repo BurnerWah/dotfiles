@@ -2,7 +2,7 @@
 # {{ if and (lookPath "lsblk") (lookPath "grc") -}}
 function lsblk
     if isatty stdout; and command -q grc
-        command grc lsblk $argv
+        grc lsblk $argv
     else
         command lsblk $argv
     end

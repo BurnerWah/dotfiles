@@ -1,8 +1,8 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter=}}
 # {{ if and (lookPath "iptables") (lookPath "grc") -}}
-function iptables --wraps=iptables
+function iptables
     if isatty stdout; and command -q grc
-        command grc iptables $argv
+        grc iptables $argv
     else
         command iptables $argv
     end

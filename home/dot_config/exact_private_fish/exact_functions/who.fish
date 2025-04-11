@@ -1,6 +1,6 @@
-function who --wraps=who
+function who
     if isatty stdout; and command -q grc
-        command grc who $argv
+        grc who $argv
     else
         command who $argv
     end

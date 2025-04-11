@@ -1,4 +1,4 @@
-function df --wraps=df
+function df
     set -l cmd df
     if isatty stdout
         set -p argv --si
