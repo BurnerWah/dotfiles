@@ -84,7 +84,11 @@
 /bottom
 /boxxy
 /brew-aliases
-/carapace
+/carapace/bridges.yaml
+/carapace/overlays
+/carapace/specs
+/carapace/styles.json
+/carapace/variables
 /direnv
 /elvish
 /environment.d

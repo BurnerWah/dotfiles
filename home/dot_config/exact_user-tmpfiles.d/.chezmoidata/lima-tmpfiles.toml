@@ -2,7 +2,11 @@
 shared = [
   ".config/bat",
   ".config/bottom",
-  ".config/carapace",
+  ".config/carapace/bridges.yaml",
+  ".config/carapace/overlays",
+  ".config/carapace/specs",
+  ".config/carapace/styles.json",
+  ".config/carapace/variables",
   ".config/eza",
   ".config/fastfetch",
   ".config/fd",
