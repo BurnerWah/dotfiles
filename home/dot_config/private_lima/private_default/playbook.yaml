@@ -63,6 +63,7 @@
           - hyperfine
           - kernel-modules
           - kernel-modules-extra
+          - kitty-shell-integration
           - kitty-terminfo
           - mise # mise.repo
           - most

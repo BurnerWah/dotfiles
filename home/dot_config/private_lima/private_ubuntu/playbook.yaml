@@ -36,6 +36,7 @@
           - fd-find
           - fish
           - git-delta
+          - kitty-shell-integration
           - kitty-terminfo
           - mise
           - ripgrep
