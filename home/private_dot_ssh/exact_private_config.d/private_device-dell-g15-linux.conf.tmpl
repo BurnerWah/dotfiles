@@ -1,0 +1,7 @@
+# 1Password SSH Agent (Linux with my tweaked setup)
+# Host *
+#     IdentityAgent {{ joinPath "/run/user" .chezmoi.uid "1password/agent.sock" }}
+# Normal 1Password SSH agent setup
+Host *
+    IdentityAgent ~/.1password/agent.sock
+# vim: ft=sshconfig
