@@ -1,8 +1,7 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter=}}
 # {{ if lookPath "pidstat" -}}
-function pidstat
-    set -l cmd pidstat
+function pidstat --wraps=pidstat
     isatty stdout && set -p argv --human
-    command $cmd $argv
+    command pidstat $argv
 end
 # {{ end -}}

@@ -1,4 +1,7 @@
 {
+  "[fish]": {
+    "editor.defaultFormatter": "ndonfris.fish-lsp",
+  },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.tabSize": 2,

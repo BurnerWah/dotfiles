@@ -1,7 +1,7 @@
-function ps -d "Information about running processes"
-    set -l cmd ps
-    if isatty stdout
-        command -qs grc && set -p cmd grc
+function ps -d "Information about running processes" --wraps=ps
+    if isatty stdout; and command -q grc
+        command grc ps $argv
+    else
+        command ps $argv
     end
-    command $cmd $argv
 end

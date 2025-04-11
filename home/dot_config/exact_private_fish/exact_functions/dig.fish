@@ -1,7 +1,7 @@
-function dig --description "DNS lookup utility"
-    set -l cmd dig
-    if isatty stdout
-        command -qs grc && set -p cmd grc
+function dig --wraps=dig --description "DNS lookup utility"
+    if isatty stdout; and command -q grc
+        command grc dig $argv
+    else
+        command dig $argv
     end
-    command $cmd $argv
 end

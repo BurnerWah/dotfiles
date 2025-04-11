@@ -1,6 +1,6 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter=}}
 # {{- if lookPath "eza" -}}
-if command -qs eza
+if command -q eza
     function eza
         set -l param --color=auto
         if isatty stdout

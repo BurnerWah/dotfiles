@@ -1,7 +1,7 @@
-function w
-    set -l cmd w
-    if isatty stdout
-        command -qs grc && set -p cmd grc
+function w --wraps=w
+    if isatty stdout; and command -q grc
+        command grc w $argv
+    else
+        command w $argv
     end
-    command $cmd $argv
 end

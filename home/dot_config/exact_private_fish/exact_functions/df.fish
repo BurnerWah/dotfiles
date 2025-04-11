@@ -1,8 +1,10 @@
-function df
+function df --wraps=df
     set -l cmd df
     if isatty stdout
         set -p argv --si
-        command -qs grc && set -p cmd grc
+        if command -q grc
+            set -p cmd grc
+        end
     end
     command $cmd $argv
 end

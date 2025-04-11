@@ -1,7 +1,7 @@
-function ping
-    set -l cmd ping
-    if isatty stdout
-        command -qs grc && set -p cmd grc
+function ping --wraps=ping
+    if isatty stdout; and command -q grc
+        command grc ping $argv
+    else
+        command ping $argv
     end
-    command $cmd $argv
 end

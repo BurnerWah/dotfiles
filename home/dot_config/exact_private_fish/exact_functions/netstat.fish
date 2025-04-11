@@ -1,7 +1,7 @@
-function netstat -d "Displays network-related information"
-    set -l cmd netstat
-    if isatty stdout
-        command -qs grc && set -p cmd grc
+function netstat -d "Displays network-related information" --wraps=netstat
+    if isatty stdout; and command -q grc
+        command grc netstat $argv
+    else
+        command netstat $argv
     end
-    command $cmd $argv
 end

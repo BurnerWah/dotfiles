@@ -1,8 +1,8 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter=}}
 # {{- if lookPath "ncdu" -}}
 # makes ncdu(1) use colors and SI units
-if command -qs ncdu
-    function ncdu
+if command -q ncdu
+    function ncdu --wraps='ncdu --si --color dark'
         command ncdu --si --color dark $argv
     end
 end
