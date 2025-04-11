@@ -2,6 +2,9 @@
 shared = [
   ".config/bat",
   ".config/bottom",
+  ".config/carapace/bridge/bash",
+  ".config/carapace/bridge/fish",
+  ".config/carapace/bridge/powershell",
   ".config/carapace/bridges.yaml",
   ".config/carapace/overlays",
   ".config/carapace/specs",

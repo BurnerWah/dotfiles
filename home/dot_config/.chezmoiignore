@@ -84,6 +84,9 @@
 /bottom
 /boxxy
 /brew-aliases
+/carapace/bridge/bash
+/carapace/bridge/fish
+/carapace/bridge/powershell
 /carapace/bridges.yaml
 /carapace/overlays
 /carapace/specs
