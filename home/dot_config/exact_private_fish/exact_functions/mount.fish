@@ -1,5 +1,5 @@
 function mount
-    if isatty stdout; and command -q grc
+    if isatty stdout && command -q grc
         grc mount $argv
     else
         command mount $argv

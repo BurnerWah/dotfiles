@@ -1,7 +1,7 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter=}}
 # {{ if and (lookPath "lastlog") (lookPath "grc") -}}
 function lastlog -d "Show the most recent login of all users or of a given user"
-    if isatty stdout; and command -q grc
+    if isatty stdout && command -q grc
         grc lastlog $argv
     else
         command lastlog $argv

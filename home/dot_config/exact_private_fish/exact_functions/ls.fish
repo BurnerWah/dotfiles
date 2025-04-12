@@ -1,13 +1,12 @@
 if command -q eza
     function ls --wraps=eza --description 'List contents of directory'
-        set -l cmd ls
-        set -l param --color=auto
         if isatty stdout
-            set cmd eza
-            set -a param --classify --color-scale size
+            eza $argv
+        else
+            command ls --color=auto $argv
         end
-        command $cmd $param $argv
     end
-else if [ -e $__fish_data_dir/functions/ls.fish ]
+else if [ -r $__fish_data_dir/functions/ls.fish ]
+    # @fish-lsp-disable-next-line 1004
     source $__fish_data_dir/functions/ls.fish
 end

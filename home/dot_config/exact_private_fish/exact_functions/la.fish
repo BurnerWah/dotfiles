@@ -1,12 +1,10 @@
 set -l description "List contents of directory, including hidden files in directory using long format"
-if command -qs eza
+if command -q eza
     function la -w "eza -laFhM" -d "$description"
-        eza --classify \
-            --long \
+        eza --long \
             --all \
             --icons=auto \
             --no-quotes \
-            --time-style=relative \
             --header \
             --mounts \
             $argv

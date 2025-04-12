@@ -1,4 +1,4 @@
-if command -q rg; and command -q bzip2
+if command -q rg && command -q bzip2
     function bzgrep -w 'rg -z' -d 'alias bzgrep rg -z'
         rg -z $argv
     end

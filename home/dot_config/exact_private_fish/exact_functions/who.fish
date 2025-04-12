@@ -1,5 +1,5 @@
 function who
-    if isatty stdout; and command -q grc
+    if isatty stdout && command -q grc
         grc who $argv
     else
         command who $argv

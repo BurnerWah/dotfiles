@@ -2,6 +2,7 @@
 # {{ if not (has .osid (list "darwin" "linux-arch")) -}}
 # Backwards compatibility for fish 3.x
 if [ -r $__fish_data_dir/functions/__fish_cache_sourced_completions.fish ]
+    # @fish-lsp-disable-next-line 1004
     source $__fish_data_dir/functions/__fish_cache_sourced_completions.fish
 else
     # Minimal version of __fish_cache_sourced_completions without caching

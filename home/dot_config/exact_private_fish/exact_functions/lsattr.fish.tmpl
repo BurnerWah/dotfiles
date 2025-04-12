@@ -1,7 +1,7 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter=}}
 # {{ if and (lookPath "lsattr") (lookPath "grc") -}}
 function lsattr -d "List file attributes on a Linux file system"
-    if isatty stdout; and command -q grc
+    if isatty stdout && command -q grc
         grc lsattr $argv
     else
         command lsattr $argv

@@ -1,7 +1,7 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter=}}
 # {{ if and (lookPath "blkid") (lookPath "grc") -}}
 function blkid
-    if isatty stdout; and command -q grc
+    if isatty stdout && command -q grc
         grc blkid $argv
     else
         command blkid $argv

@@ -1,7 +1,7 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter=}}
 # {{ if and (lookPath "getsebool") (lookPath "grc") -}}
 function getsebool
-    if isatty stdout; and command -q grc
+    if isatty stdout && command -q grc
         grc getsebool $argv
     else
         command getsebool $argv

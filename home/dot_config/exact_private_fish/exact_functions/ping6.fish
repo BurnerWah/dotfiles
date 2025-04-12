@@ -1,6 +1,6 @@
 if command -q ping6
     function ping6
-        if isatty stdout; and command -q grc
+        if isatty stdout && command -q grc
             grc ping6 $argv
         else
             command ping6 $argv
