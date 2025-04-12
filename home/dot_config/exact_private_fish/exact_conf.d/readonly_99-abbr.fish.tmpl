@@ -33,3 +33,9 @@ abbr -a wlp pbpaste
 # Complex abbreviations
 abbr -a !! --position anywhere --function _last_history_item
 abbr -a dotdot --regex '^\.\.+$' --function _multicd
+
+if string match -vqr '^[0123]\.*' $version
+    # These regex expressions were generated with grex
+    abbr -a brew::subcommands -c brew -r '^(post_install|remove|home|abv|dr|l[cns]|rm|tc|up)$' -f _abbrev_brew_subcommands
+    abbr -a mise::subcommands -c mise -r '^(r(emove|m)|l(ist|n)|cfg|gen|up|dr|sh|[ru]|[abeiptv-x])$' -f _abbrev_mise_subcommands
+end
