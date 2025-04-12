@@ -10,8 +10,6 @@ $defs:
     type: array
     items: string
 
-additionalProperties: false
-
 properties:
   environment: { $ref: '#/$defs/Environment' }
   servicePath: { $ref: '#/$defs/ServicePath' }
