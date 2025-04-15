@@ -1,4 +1,3 @@
-# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
 function _abbrev_brew_subcommands
     # Check to ensure that this is the active subcommand
     if string match -qvr "^ ?brew $argv " (commandline -pc)
