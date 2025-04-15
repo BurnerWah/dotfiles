@@ -5,12 +5,15 @@ function _abbrev_brew_subcommands
         return
     end
     switch "$argv"
+        # keep-sorted start
+        case abv
+            echo info
         case dr
             echo doctor
         case home
             echo homepage
-        case abv
-            echo info
+        case lc
+            echo livecheck
         case ln
             echo link
         case ls
@@ -19,12 +22,11 @@ function _abbrev_brew_subcommands
             echo postinstall
         case rm remove
             echo uninstall
-        case up
-            echo update
-        case lc
-            echo livecheck
         case tc
             echo typecheck
+        case up
+            echo update
+            # keep-sorted end
         case '*'
             echo $argv
     end
