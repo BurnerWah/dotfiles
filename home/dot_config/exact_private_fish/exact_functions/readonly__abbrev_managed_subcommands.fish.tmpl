@@ -7,14 +7,14 @@ function _abbrev_managed_subcommands -d "Generated function for subcommand abbre
         return
     end
 
-    switch "$tokens[1]"
+    switch $tokens[1]
         # {{- range $cmd, $subcmds := .settings.shell.fish.subcommand_abbrevs }}
         case "# {{$cmd}}"
             switch "$argv"
+                # {{- /* Using printf here reduces file sizes */ -}}
                 # {{- range $subcmd, $expansion := $subcmds }}
-                case "# {{$subcmd}}"
-                    echo "# {{$expansion}}"
-                    # {{- end }}
+                # {{ printf "case '%s'; echo '%s'" $subcmd $expansion }}
+                # {{- end }}
                 case '*'
                     echo $argv
             end
