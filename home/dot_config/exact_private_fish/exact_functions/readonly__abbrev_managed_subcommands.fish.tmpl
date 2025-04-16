@@ -1,5 +1,5 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter=}}
-function _abbrev_managed_subcommands
+function _abbrev_managed_subcommands -d "Generated function for subcommand abbreviations"
     set -l tokens (commandline -xpc)
     if [ (count $tokens) != 2 ]
         echo $argv
