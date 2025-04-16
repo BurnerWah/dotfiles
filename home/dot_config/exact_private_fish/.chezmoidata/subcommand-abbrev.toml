@@ -1,17 +1,4 @@
 [[settings.shell.fish.subcommand_abbrev]]
-command = "dnf"
-function = "_abbrev_dnf_subcommands"
-regex = """
-^(up(grade\\-minimal|dateinfo)|check\\-update|r(e(polist|i)|[mq])|\
-repoinfo|up(date)?|(dsyn|m)c|grp|dg|i[fn]|ls|se)$\
-"""
-
-[[settings.shell.fish.subcommand_abbrev]]
-command = "git"
-function = "_abbrev_git_subcommands"
-regex = "^(co|st|c|[abd])$"
-
-[[settings.shell.fish.subcommand_abbrev]]
 command = "podman"
 function = "_abbrev_podman_subcommands"
 regex = "^(context|h(ealth|c)|ctx|gen|net|sys|vol)$"
