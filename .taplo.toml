@@ -34,6 +34,7 @@ keys = [
   "settings.shell.zsh.compsys",
   "settings.shell.zsh.compsys.aliases",
   "settings.lima.tmpfiles",
+  "settings.shell.fish.subcommand_abbrevs",
 ]
 # reorder arrays won't work unless you specify the parent keys, which is annoying
 formatting.reorder_arrays = true

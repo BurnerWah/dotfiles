@@ -1,19 +1,4 @@
 [[settings.shell.fish.subcommand_abbrev]]
-command = "brew"
-function = "_abbrev_brew_subcommands"
-regex = "^(post_install|remove|home|abv|dr|l[cns]|rm|tc|up)$"
-
-[[settings.shell.fish.subcommand_abbrev]]
-command = "bun"
-function = "_abbrev_bun_subcommands"
-regex = "^(rm|up|[aci])$"
-
-[[settings.shell.fish.subcommand_abbrev]]
-command = "chezmoi"
-function = "_abbrev_chezmoi_subcommands"
-regex = "^(dr|up|[as])$"
-
-[[settings.shell.fish.subcommand_abbrev]]
 command = "dnf"
 function = "_abbrev_dnf_subcommands"
 regex = """
@@ -27,31 +12,6 @@ function = "_abbrev_git_subcommands"
 regex = "^(co|st|c|[abd])$"
 
 [[settings.shell.fish.subcommand_abbrev]]
-command = "mise"
-function = "_abbrev_mise_subcommands"
-regex = "^(r(emove|m)|l(ist|n)|cfg|gen|up|dr|sh|[ru]|[abeiptv-x])$"
-
-[[settings.shell.fish.subcommand_abbrev]]
-command = "npm"
-function = "_abbrev_npm_subcommands"
-regex = """
-^(clean\\-install\\-test|c(lean\\-install)?|(i(ns|sn)tall\\-clea|veriso)n|\
-(run\\-scrip|(inn|c)i|si|ts)t|dist\\-tags|a(dd\\-use|utho)r|i(snt(a(ll?)?)?|\
-n(s(t(al?)?)?)?)?|(u(pgrad|dpat)|remov|creat)e|u(nlink|rn)|issues|i(nfo|[ct])|\
-s(how|e)|l(ist|[an])|find|h(lep|ome)|add|r(um|[bm])|ogr|why|ddp|u[np]|r|s|t|v|x)$\
-"""
-
-[[settings.shell.fish.subcommand_abbrev]]
-command = "pnpm"
-function = "_abbrev_pnpm_subcommands"
-regex = "^(i?t|l[ns]|r[bm]|up|i)$"
-
-[[settings.shell.fish.subcommand_abbrev]]
 command = "podman"
 function = "_abbrev_podman_subcommands"
 regex = "^(context|h(ealth|c)|ctx|gen|net|sys|vol)$"
-
-[[settings.shell.fish.subcommand_abbrev]]
-command = "string"
-function = "_abbrev_string_subcommands"
-regex = "^(s(hort|0)|repl|l(en|o)|u(ne|p)|sh?|le|j0|tr|j|t|[cemp])$"

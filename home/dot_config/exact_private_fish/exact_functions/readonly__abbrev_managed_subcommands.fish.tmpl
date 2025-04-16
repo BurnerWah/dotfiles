@@ -1,0 +1,24 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+function _abbrev_managed_subcommands
+    set -l tokens (commandline -xpc)
+    if [ (count $tokens) != 2 ]
+        echo $argv
+        return
+    end
+
+    switch "$tokens[1]"
+        # {{- range $cmd, $subcmds := .settings.shell.fish.subcommand_abbrevs }}
+        case "# {{$cmd}}"
+            switch "$argv"
+                # {{- range $subcmd, $expansion := $subcmds }}
+                case "# {{$subcmd}}"
+                    echo "# {{$expansion}}"
+                    # {{- end }}
+                case '*'
+                    echo $argv
+            end
+            # {{- end }}
+        case '*'
+            echo $argv
+    end
+end
