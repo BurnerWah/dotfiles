@@ -14,6 +14,14 @@ function = "_abbrev_chezmoi_subcommands"
 regex = "^(dr|up|[as])$"
 
 [[settings.shell.fish.subcommand_abbrev]]
+command = "dnf"
+function = "_abbrev_dnf_subcommands"
+regex = """
+^(up(grade\\-minimal|dateinfo)|check\\-update|r(e(polist|i)|[mq])|\
+repoinfo|up(date)?|(dsyn|m)c|grp|dg|i[fn]|ls|se)$\
+"""
+
+[[settings.shell.fish.subcommand_abbrev]]
 command = "git"
 function = "_abbrev_git_subcommands"
 regex = "^(co|st|c|[abd])$"
@@ -34,6 +42,16 @@ s(how|e)|l(ist|[an])|find|h(lep|ome)|add|r(um|[bm])|ogr|why|ddp|u[np]|r|s|t|v|x)
 """
 
 [[settings.shell.fish.subcommand_abbrev]]
+command = "pnpm"
+function = "_abbrev_pnpm_subcommands"
+regex = "^(i?t|l[ns]|r[bm]|up|i)$"
+
+[[settings.shell.fish.subcommand_abbrev]]
 command = "podman"
 function = "_abbrev_podman_subcommands"
 regex = "^(context|h(ealth|c)|ctx|gen|net|sys|vol)$"
+
+[[settings.shell.fish.subcommand_abbrev]]
+command = "string"
+function = "_abbrev_string_subcommands"
+regex = "^(s(hort|0)|repl|l(en|o)|u(ne|p)|sh?|le|j0|tr|j|t|[cemp])$"
