@@ -1,9 +1,22 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter=}}
 function _abbrev_managed_subcommands -d "Generated function for subcommand abbreviations"
     set -l tokens (commandline -xpc)
-    if [ (count $tokens) != 2 ]
-        echo $argv
-        return
+    switch (count $tokens)
+        case 1
+            # Only run after enter key was pressed
+            if string match -vqr "^ ?\\S+ $argv\$" (commandline -pc)
+                echo $argv
+                return
+            end
+        case 2
+            # Only run after spacebar was pressed
+            if string match -vqr "^ ?\\S+ $argv \$" (commandline -pc)
+                echo $argv
+                return
+            end
+        case '*'
+            echo $argv
+            return
     end
 
     switch "$tokens[1]"
