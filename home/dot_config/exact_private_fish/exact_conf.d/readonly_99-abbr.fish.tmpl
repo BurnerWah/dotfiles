@@ -35,10 +35,6 @@ abbr -a !! --position anywhere --function _last_history_item
 abbr -a dotdot --regex '^\.\.+$' --function _multicd
 
 if string match -vqr '^[0123]\.*' $version
-    # These regex expressions were generated with grex
-    {{- range .settings.shell.fish.subcommand_abbrev }}
-    abbr -a '{{.command}}::subcommands' -c '{{.command}}' -r '{{.regex}}' -f '{{.function}}'
-    {{- end }}
     {{- range $cmd, $subcmds := .settings.shell.fish.subcommand_abbrevs }}
     for k in {{ keys $subcmds | sortAlpha | join " " }}
         abbr -a "{{$cmd}}::$k" -c "{{$cmd}}" -r "$k" -f _abbrev_managed_subcommands

@@ -1,4 +1,0 @@
-[[settings.shell.fish.subcommand_abbrev]]
-command = "podman"
-function = "_abbrev_podman_subcommands"
-regex = "^(context|h(ealth|c)|ctx|gen|net|sys|vol)$"
