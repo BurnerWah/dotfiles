@@ -1,5 +1,13 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter=}}
-# {{ if not (has .osid (list "darwin" "linux-arch")) -}}
+# {{- $fishAtLeast4 := false -}}
+# {{- if has .osid (list "darwin" "linux-arch") -}}
+# {{-   $fishAtLeast4 = true -}}
+# {{- else if eq .osid "linux-fedora" -}}
+# {{-   $fishAtLeast4 = gt (atoi .chezmoi.osRelease.versionID) 41 -}}
+# {{- else if eq .osid "linux-ubuntu" -}}
+# {{-   $fishAtLeast4 = stat "/usr/share/fish/functions/__fish_cache_sourced_completions.fish" -}}
+# {{- end -}}
+# {{- if not $fishAtLeast4 -}}
 # Backwards compatibility for fish 3.x
 if [ -r $__fish_data_dir/functions/__fish_cache_sourced_completions.fish ]
     # @fish-lsp-disable-next-line 1004
