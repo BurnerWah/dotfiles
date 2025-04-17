@@ -1,0 +1,8 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{- $instance := printf "lima-%s" (.chezmoi.targetFile | dir | base) -}}
+# {{- $meta := joinPath .xdg.config "docker/contexts/meta" (sha256sum $instance) "meta.json" -}}
+# {{- if and (lookPath "docker") (stat $meta | not) -}}
+#!/bin/sh
+docker context create '# {{$instance}}' --docker 'host=unix://# {{joinPath .chezmoi.targetFile "../sock/podman.sock"}}' --description 'Lima VM for general use (podman user)'
+# {{ end -}}
+
