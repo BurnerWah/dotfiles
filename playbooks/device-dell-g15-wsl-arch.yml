@@ -23,7 +23,7 @@
           - jq
           - less
           - man-db
-          - mirro-rs
+          # - mirro-rs
           - mise
           - pkgfile # fish command-not-found
           - ripgrep
@@ -33,28 +33,28 @@
           - zsh
         state: present
 
-    - name: Install yay
-      when: "'yay-bin' not in ansible_facts.packages"
-      vars:
-        build_dir: /tmp/yay-checkout
-        pkg_glob: "{{ (build_dir, 'yay-bin-*.pkg.*') | path_join }}"
-      block:
-        - name: Clone yay-bin # noqa: latest
-          ansible.builtin.git:
-            repo: https://aur.archlinux.org/yay-bin.git
-            dest: '{{ build_dir }}'
+    # - name: Install yay
+    #   when: "'yay-bin' not in ansible_facts.packages"
+    #   vars:
+    #     build_dir: /tmp/yay-checkout
+    #     pkg_glob: "{{ (build_dir, 'yay-bin-*.pkg.*') | path_join }}"
+    #   block:
+    #     - name: Clone yay-bin # noqa: latest
+    #       ansible.builtin.git:
+    #         repo: https://aur.archlinux.org/yay-bin.git
+    #         dest: '{{ build_dir }}'
 
-        - name: Build yay-bin
-          ansible.builtin.command:
-            argv: [/usr/bin/makepkg, -s]
-            chdir: '{{ build_dir }}'
-            creates: "{{ q('fileglob', pkg_glob) }}"
+    #     - name: Build yay-bin
+    #       ansible.builtin.command:
+    #         argv: [/usr/bin/makepkg, -s]
+    #         chdir: '{{ build_dir }}'
+    #         creates: "{{ q('fileglob', pkg_glob) }}"
 
-        - name: Install yay-bin
-          become: true
-          community.general.pacman:
-            name: "{{ q('fileglob', pkg_glob) | select('regex', 'yay-bin-\\d') }}"
-            state: present
+    #     - name: Install yay-bin
+    #       become: true
+    #       community.general.pacman:
+    #         name: "{{ q('fileglob', pkg_glob) | select('regex', 'yay-bin-\\d') }}"
+    #         state: present
 
     - name: Set user's shell to fish
       become: true
