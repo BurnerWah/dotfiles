@@ -1,0 +1,10 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{- if and .device.wsl (lookPath "code") -}}
+# Temporary workaround for https://github.com/fish-shell/fish-shell/issues/11354
+function code
+    if command -q code
+        command code $argv
+    else
+        "# {{ lookPath "code" }}" $argv
+    end
+end
