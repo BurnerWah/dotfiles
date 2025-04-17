@@ -58,7 +58,7 @@
         name:
           - '@core'
           - '@container-management'
-          # - '@standard'
+          - '@standard'
           - bat
           - fd-find
           - fish
@@ -84,6 +84,19 @@
         name: '{{ ansible_user_id }}'
         shell: /usr/bin/fish
         state: present
+
+    - name: Disable unwanted system services
+      become: true
+      ansible.builtin.systemd_service:
+        name: '{{ item }}'
+        enabled: false
+        state: stopped
+      loop:
+        # keep-sorted start
+        - atd
+        - crond
+        - rsyslog
+        # keep-sorted end
 
     # - name: Add flathub flatpak repo
     #   become: true
