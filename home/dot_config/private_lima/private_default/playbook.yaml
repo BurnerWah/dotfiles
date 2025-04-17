@@ -5,13 +5,6 @@
     - name: Gather package facts
       ansible.builtin.package_facts: { manager: auto }
 
-    - name: Install dnf-plugins-core
-      become: true
-      when: "'dnf-plugins-core' not in ansible_facts.packages"
-      ansible.builtin.dnf5:
-        name: dnf-plugins-core
-        state: present
-
     - name: Add copr repos
       become: true
       community.general.copr:
