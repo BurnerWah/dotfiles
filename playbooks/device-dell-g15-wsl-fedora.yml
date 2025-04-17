@@ -54,6 +54,7 @@
       become: true
       ansible.builtin.dnf5:
         name:
+          - '@core'
           # - '@standard'
           - bat
           - fd-find
