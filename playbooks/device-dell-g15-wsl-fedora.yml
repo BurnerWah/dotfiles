@@ -35,11 +35,13 @@
         mode: '0644'
         checksum: sha256:0feedc30bb4f5faa705bae31b0c3ade63bc42260ee3aca576156cb84a0c26c00
 
-    - name: Add atim/starship copr repo
+    - name: Add copr repos
       become: true
       community.general.copr:
-        name: atim/starship
+        name: '{{ item }}'
         state: enabled
+      loop:
+        - atim/starship
 
     - name: Install RPM Fusion
       become: true
