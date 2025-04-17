@@ -56,10 +56,13 @@
       become: true
       ansible.builtin.dnf5:
         name:
-          - '@core'
+          # keep-sorted start
           - '@container-management'
+          - '@core'
           - '@standard'
+          - PackageKit-command-not-found
           - bat
+          - ccache
           - fd-find
           - fish
           # - flatpak
@@ -67,15 +70,20 @@
           # - gedit # installs GUI libraries
           - git
           - grc
+          - libffi-devel
+          - libyaml-devel
           - mise
           - neovim
-          - PackageKit-command-not-found
+          - openssl-devel
           - python3-neovim
+          - readline-devel
           - ripgrep
           - starship # atim/starship
           - uv
+          - zlib-ng-compat-devel
           - zoxide
           - zsh
+          # keep-sorted end
         state: present
 
     - name: Set user's shell to fish
