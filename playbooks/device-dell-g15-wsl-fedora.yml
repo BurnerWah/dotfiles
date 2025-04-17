@@ -20,6 +20,13 @@
           user:
             default: '{{ ansible_user_id }}'
 
+    # python3-dnf is still needed for copr stuff to work
+    - name: Install python3-dnf
+      become: true
+      ansible.builtin.dnf5:
+        name: python3-dnf
+        state: present
+
     - name: Add mise dnf repo
       become: true
       ansible.builtin.get_url:
