@@ -8,6 +8,7 @@ begin
     begin
         string match /bin $PATH
         string match /sbin $PATH
+        string match /usr/sbin $PATH
     end | path filter --type=link
 end | while read -l match
     set -l index (contains -i -- $match $PATH)
