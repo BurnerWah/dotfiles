@@ -55,6 +55,7 @@
       ansible.builtin.dnf5:
         name:
           - '@core'
+          - '@container-management'
           # - '@standard'
           - bat
           - fd-find
