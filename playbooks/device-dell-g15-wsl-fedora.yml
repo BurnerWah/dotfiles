@@ -94,6 +94,7 @@
       loop:
         # keep-sorted start
         - atd
+        - avahi-daemon
         - crond
         - rsyslog
         # keep-sorted end
