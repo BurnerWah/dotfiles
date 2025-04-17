@@ -43,7 +43,7 @@
 
     - name: Install RPM Fusion
       become: true
-      when: "'/etc/yum.repos.d/rpmfusion-' ~ item ~ '.repo' is not file"
+      when: ('/etc/yum.repos.d/rpmfusion-' ~ item ~ '.repo') is not file
       ansible.builtin.dnf5:
         name: https://mirrors.rpmfusion.org/{{ item }}/fedora/rpmfusion-{{ item }}-release-{{ ansible_distribution_version }}.noarch.rpm
         disable_gpg_check: true
