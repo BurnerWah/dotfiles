@@ -1,11 +1,11 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter=}}
 # {{- if lookPath "docker" -}}
-# {{- $lima_home := joinPath .xdg.config "lima" -}}
-# {{- $docker_ctx_meta := joinPath .xdg.config "docker/contexts/meta" -}}
+# {{-   $lima_home := joinPath .xdg.config "lima" -}}
+# {{-   $docker_ctx_meta := joinPath .xdg.config "docker/contexts/meta" -}}
 # {{-   range .settings.lima.docker_context -}}
 # {{-     if joinPath $docker_ctx_meta (printf "lima-%s" .instance | sha256sum) "meta.json" | stat | not -}}
 #!/bin/sh
 docker context create 'lima-# {{.instance}}' --docker 'host=unix://# {{joinPath $lima_home .instance .socket }}' --description '# {{ .description }}'
-# {{     end -}}
+# {{      end -}}
 # {{-   end -}}
 # {{- end -}}

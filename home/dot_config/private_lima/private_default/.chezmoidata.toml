@@ -2,3 +2,7 @@
 instance = "default"
 socket = "sock/podman.sock"
 description = "Lima VM for general use (podman user)"
+
+[[settings.lima.podman_connection]]
+instance = "default"
+socket = "sock/podman.sock"

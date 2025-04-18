@@ -1,0 +1,16 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{- if lookPath "podman" -}}
+# {{-   $lima_home := joinPath .xdg.config "lima" -}}
+# {{-   $connections_file := joinPath .xdg.config "containers/podman-connections.json" -}}
+# {{-   if stat $connections_file -}}
+# {{-     $connections := include $connections_file | fromJson -}}
+# {{-     range .settings.lima.podman_connection -}}
+# {{-       $name := printf "lima-%s" .instance -}}
+# {{-       $socket := joinPath $lima_home .instance .socket -}}
+# {{-       if and (hasKey $connections.Connection.Connections $name | not) (stat $socket) -}}
+#!/bin/sh
+podman system connection add '# {{$name}}' 'unix://# {{$socket}}'
+# {{        end -}}
+# {{-     end -}}
+# {{-   end -}}
+# {{- end -}}
