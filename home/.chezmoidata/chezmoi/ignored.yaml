@@ -1,12 +1,6 @@
 settings:
   chezmoi:
     ignored: # Describes a lot of stuff to ignore in a more structured form
-      dotfiles:
-        - 1password
-        - gk # GitLens VSCode extension
-        - thumbnails # Blender mostly
-        - vscode
-
       home:
         - ansel # NVIDIA
         - Applications # Mac OS standard dir, but I have one on Windows too
@@ -27,4 +21,3 @@ settings:
         - Templates # Linux
         - Vaults
         - Videos
-        - Virtual Machines.localized # VMWare on Mac OS

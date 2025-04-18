@@ -17,9 +17,6 @@
 {{ range (compact .settings.chezmoi.ignored.home) }}
 /{{ . }}
 {{- end }}
-{{ range (compact .settings.chezmoi.ignored.dotfiles) }}
-/.{{ . }}
-{{- end }}
 
 # Other stuff
 **/.DS_Store
@@ -34,7 +31,9 @@
 /.var
 {{- end }}
 
-{{- if ne .chezmoi.os "linux" }}
+{{- if eq .chezmoi.os "linux" }}
+/.1password
+{{- else }}
 # keep-sorted start case=no
 .chezmoiscripts/linux/**
 /.var
@@ -51,7 +50,9 @@
 {{- if eq .chezmoi.os "darwin" }}
 # keep-sorted start case=no
 /.CFUserTextEncoding
+/.gk
 /.Trash
+/.vscode
 # keep-sorted end
 {{- else }}
 # keep-sorted start case=no
@@ -64,16 +65,20 @@
 
 {{- if eq .chezmoi.os "windows" }}
 # keep-sorted start case=no
+/.1password
 /.affinity
 /.chocolatey
 /.dbus-keyrings
 /.docker
 /.dotnet
 /.gitconfig
+/.gk
 /.insomniac
 /.matplotlib
 /.nvidia-omniverse
 /.templateengine
+/.thumbnails
+/.vscode
 /3D Objects
 /Application Data
 /Contacts
