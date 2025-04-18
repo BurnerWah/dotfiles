@@ -2,16 +2,15 @@ name: dnf
 description: Package management utility for RHEL, Fedora, and CentOS
 
 # These are mostly finished completions for DNF 5
-# Sometimes bkt is used for caching out of necessity
 
 persistentflags:
   -h, --help: Print help
-  -C, --cacheonly: Run entirely from system cache, don't update the cache and use it even in case it is expired
+  -C, --cacheonly: Run entirely from system cache
   --refresh: Force refreshing metadata before running the command
 
 flags:
   -c, --config=: Configuration file location
-  -q, --quiet: Suppresses messages notifying about the current state or actions of dnf5
+  -q, --quiet: Quiet mode
   --repofrompath=: create additional repository using id and path
   --setopt=: set arbitrary config and repo options
   --setvar=: set arbitrary variable
@@ -20,7 +19,7 @@ flags:
   --best: try the best available package versions in transactions
   --no-best: do not limit the transaction to the best candidate
   --nobest&: Alias for '--no-best'
-  --no-docs: Don't install files that are marked as documentation (which includes man pages and texinfo documents)
+  --no-docs: Don't install files that are marked as documentation
   --nodocs&: Alias for '--no-docs'
   -x, --exclude=: exclude packages by name or glob
   --enable-repo=*: Enable additional repositories
@@ -39,14 +38,14 @@ flags:
   --disableplugin=*&: Alias for '--disable-plugin'
   --comment=: add a comment to transaction
   --installroot=: set install root
-  --use-host-config: use configuration, reposdir, and vars from the host system rather than the installroot
+  --use-host-config: use config, repos, and vars from the host system rather than the installroot
   --releasever=: override the value of $releasever in config and repo files
   --show-new-leaves: Show newly installed leaf packages and packages that became leaves after a transaction
   --debugsolver: Dump detailed solving results into files
-  --dump-main-config: Print main configuration values to stdout
-  --dump-repo-config=: Print repository configuration values to stdout
-  --dump-variables: Print variable values to stdout
-  --version: Show DNF5 version and exit
+  --dump-main-config: Print main config values
+  --dump-repo-config=: Print repo config values
+  --dump-variables: Print variable values
+  --version: Show DNF version and exit
   --forcearch=: Force the use of a different architecture
 
 exclusiveflags:
@@ -61,10 +60,10 @@ exclusiveflags:
   - [no-plugins, noplugins, disableplugin]
 
 completion:
-  flag: &common_completion_flags
+  flag:
     config: [$files]
     enable-repo: &dnf_repo_list
-      - &dnf_repo $(dnf -C repo list --all --json | jq -r '.[] | "\(.id)\t\(.name)"') # 150ms
+      - &dnf_repo $(dnf -C repo list --all --json | jq -r '.[] | "\(.id)\t\(.name)"')
       - $uniquelist(,)
     enablerepo: *dnf_repo_list
     disable-repo: *dnf_repo_list
@@ -73,24 +72,7 @@ completion:
     repoid: *dnf_repo_list
     dump-repo-config: *dnf_repo_list
     exclude:
-      # - &dnf_available $(sqlite3 /var/cache/dnf/packages.db "SELECT pkg FROM available WHERE pkg LIKE '${C_VALUE}%'" | sed 's/-[^-]*-[^-]*$//') # Fast but wrong
-      - &dnf_available $(dnf repoquery --cacheonly "${C_VALUE}*" --qf "%{name}\n" --available) # 415ms - slow but accurate
-      - $uniquelist(,)
-    # Stuff for other things to reference
-    store: [$directories]
-    advisories: &dnf_advisory_list
-      - &dnf_advisory $(bkt --scope carapace --ttl 6h -- dnf -C advisory list --all --json | jq -r .[].name) # 650ms w/o caching
-      - $uniquelist(,)
-    advisory: *dnf_advisory_list
-    advisory-severities:
-      - critical
-      - important
-      - moderate
-      - low
-      - none
-      - $uniquelist(,)
-    contains-pkgs:
-      - *dnf_available
+      - &dnf_available $(dnf -C repoquery "${C_VALUE}*" --qf "%{name}\n" --available)
       - $uniquelist(,)
 
 commands:
@@ -99,25 +81,36 @@ commands:
     group: core
     aliases: [in]
     flags:
-      --allowerasing: Allow erasing of installed packages to resolve problems
-      --skip-broken: Allow resolving of depsolve problems by skipping packages
-      --skip-unavailable: Allow skipping unavailable packages
-      --allow-downgrade: Allow downgrade of dependencies for resolve of requested operation
-      --no-allow-downgrade: Disable downgrade of dependencies for resolve of requested operation
-      --downloadonly: Only download packages for a transaction
-      --offline: Store the transaction to be performed offline
-      --advisories=: Limit to packages in advisories with specified name. List option.
-      --advisory=&: Alias for '--advisories'
-      --advisory-severities=: Limit to packages in advisories with specified severity
-      --bzs=: Limit to packages in advisories that fix a Bugzilla ID, Eg. 123123. List option.
-      --bz=&: Alias for '--bzs'
-      --cves=: Limit to packages in advisories that fix a CVE (Common Vulnerabilities and Exposures) ID, Eg. CVE-2201-0123. List option.
-      --cve=&: Alias for '--cves'
-      --security: Limit to packages in security advisories.
-      --bugfix: Limit to packages in bugfix advisories.
-      --enhancement: Limit to packages in enhancement advisories.
-      --newpackage: Limit to packages in newpackage advisories.
-      --store=: Store the current transaction in a directory at the specified path instead of running it.
+      <<:
+        - &flag_allowerasing
+          --allowerasing: Allow erasing of installed packages to resolve problems
+        - &flag_skip_broken
+          --skip-broken: Allow resolving of depsolve problems by skipping packages
+        - &flag_downloadonly
+          --downloadonly: Only download packages for a transaction
+        - &flag_skip_unavailable
+          --skip-unavailable: Allow skipping unavailable packages
+        - &flag_offline
+          --offline: Store the transaction to be performed offline
+        - &flag_store
+          --store=: Store the current transaction in a directory instead of running it
+        - &flag_allow_downgrade
+          --allow-downgrade: Allow downgrade of dependencies for resolve of requested operation
+          --no-allow-downgrade: Disable downgrade of dependencies for resolve of requested operation
+        - &flag_pkg_fixes_desc
+          --bzs=: Limit to packages in advisories that fix a Bugzilla ID
+          --bz=&: Alias for '--bzs'
+          --cves=: Limit to packages in advisories that fix a CVE
+          --cve=&: Alias for '--cves'
+          --security: Limit to packages in security advisories
+          --bugfix: Limit to packages in bugfix advisories
+          --enhancement: Limit to packages in enhancement advisories
+          --newpackage: Limit to packages in newpackage advisories
+        - &flags_pkg_advisories
+          --advisories=: Limit to packages in advisories with specified name
+          --advisory=&: Alias for '--advisories'
+        - &flag_advisory_severities
+          --advisory-severities=: Limit to packages in advisories with specified severity
     exclusiveflags:
       - [allow-downgrade, no-allow-downgrade]
       - - advisories
@@ -133,38 +126,50 @@ commands:
         - newpackage
     completion:
       positionalany: ['$files([.rpm])', *dnf_available]
-      flag: *common_completion_flags
+      flag:
+        <<:
+          - &comps_pkg_advisories
+            advisories: &dnf_advisory_list
+              - &dnf_advisory $(dnf -C advisory list --all --json | jq -r .[].name)
+              - $uniquelist(,)
+            advisory: *dnf_advisory_list
+          - &comp_advisory_severities
+            advisory-severities:
+              - critical
+              - important
+              - moderate
+              - low
+              - none
+              - $uniquelist(,)
+          - &comp_store
+            store: [$directories]
 
   - name: upgrade
     description: Upgrade software
     group: core
     aliases: [up, update]
     flags:
+      <<:
+        - *flag_allowerasing
+        - *flag_pkg_fixes_desc
+        - *flags_pkg_advisories
+        - *flag_advisory_severities
+        - *flag_skip_unavailable
+        - *flag_allow_downgrade
+        - *flag_downloadonly
+        - *flag_offline
+        - *flag_store
+        - &flag_destdir
+          --destdir=: Set directory used for downloading packages to
       --minimal: Upgrade packages only to the lowest versions that fix advisories of type bugfix, enhancement, security, or newpackage
-      --allowerasing: Allow erasing of installed packages to resolve problems
-      --skip-unavailable: Allow skipping unavailable packages
-      --allow-downgrade: Allow downgrade of dependencies for resolve of requested operation
-      --no-allow-downgrade: Disable downgrade of dependencies for resolve of requested operation
-      --destdir=: Set directory used for downloading packages to
-      --downloadonly: Only download packages for a transaction
-      --offline: Store the transaction to be performed offline
-      --advisories=: Limit to packages in advisories with specified name. List option.
-      --advisory=&: Alias for '--advisories'
-      --advisory-severities=: Limit to packages in advisories with specified severity
-      --bzs=: Limit to packages in advisories that fix a Bugzilla ID, Eg. 123123. List option.
-      --bz=&: Alias for '--bzs'
-      --cves=: Limit to packages in advisories that fix a CVE (Common Vulnerabilities and Exposures) ID, Eg. CVE-2201-0123. List option.
-      --cve=&: Alias for '--cves'
-      --security: Limit to packages in security advisories.
-      --bugfix: Limit to packages in bugfix advisories.
-      --enhancement: Limit to packages in enhancement advisories.
-      --newpackage: Limit to packages in newpackage advisories.
-      --store=: Store the current transaction in a directory at the specified path instead of running it.
     completion:
-      positionalany:
-        - &dnf_installed $(dnf repoquery --cacheonly "${C_VALUE}*" --qf "%{name}\n" --installed) # 480ms - slow but accurate
-        # - &dnf_installed $(sqlite3 /var/cache/dnf/packages.db "SELECT pkg FROM installed WHERE pkg LIKE '${C_VALUE}%'") # Strings need to run
-      flag: *common_completion_flags
+      positionalany: # 480ms - slow but accurate
+        - &dnf_installed $(dnf -C repoquery "${C_VALUE}*" --qf "%{name}\n" --installed)
+      flag:
+        <<:
+          - *comps_pkg_advisories
+          - *comp_advisory_severities
+          - *comp_store
 
   - name: upgrade-minimal
     hidden: true
@@ -176,42 +181,40 @@ commands:
     group: core
     aliases: [rm]
     flags:
+      <<: [*flag_offline, *flag_store]
       --no-autoremove: Disable removal of dependencies that are no longer used
-      --offline: Store the transaction to be performed offline
-      --store=: Store the current transaction in a directory at the specified path instead of running it
       --noautoremove&: Alias for '--no-autoremove'
     exclusiveflags: [[no-autoremove, noautoremove]]
     completion:
       positionalany: [*dnf_installed]
-      flag: *common_completion_flags
+      flag: *comp_store
 
   - name: distro-sync
     description: Upgrade or downgrade installed software to the latest available versions
     group: core
     aliases: [dsync]
     flags: &distrosync_flags
-      --allowerasing: Allow erasing of installed packages to resolve problems
-      --skip-broken: Allow resolving of depsolve problems by skipping packages
-      --skip-unavailable: Allow skipping unavailable packages
-      --downloadonly: Only download packages for a transaction
-      --offline: Store the transaction to be performed offline
-      --store=: Store the current transaction in a directory at the specified path instead of running it.
+      <<:
+        - *flag_allowerasing
+        - *flag_skip_broken
+        - *flag_skip_unavailable
+        - *flag_downloadonly
+        - *flag_offline
+        - *flag_store
     completion:
       positionalany: [$usage(Patterns)]
-      flag: *common_completion_flags
+      flag: *comp_store
 
   - name: downgrade
     description: Downgrade software
     group: core
     aliases: [dg]
     flags: &downgrade_flags
-      <<: *distrosync_flags
-      --allow-downgrade: Allow downgrade of dependencies for resolve of requested operation
-      --no-allow-downgrade: Disable downgrade of dependencies for resolve of requested operation
+      <<: [*distrosync_flags, *flag_allow_downgrade]
     exclusiveflags: [[allow-downgrade, no-allow-downgrade]]
     completion:
       positionalany: [*dnf_installed]
-      flag: *common_completion_flags
+      flag: *comp_store
 
   - name: reinstall
     description: Reinstall software
@@ -221,45 +224,48 @@ commands:
     exclusiveflags: [[allow-downgrade, no-allow-downgrade]]
     completion:
       positionalany: [*dnf_installed]
-      flag: *common_completion_flags
+      flag: *comp_store
 
   - name: debuginfo-install
     description: Install debuginfo packages
     group: core
     flags:
-      --allowerasing: Allow erasing of installed packages to resolve problems
-      --skip-broken: Allow resolving of depsolve problems by skipping packages
-      --skip-unavailable: Allow skipping unavailable packages
-    completion: { positionalany: [*dnf_installed] }
+      <<: [*flag_allowerasing, *flag_skip_broken, *flag_skip_unavailable]
+    completion:
+      positionalany: [*dnf_installed]
 
   - name: swap
     description: Remove software and install another in one transaction
     group: core
     flags:
-      --allowerasing: Allow erasing of installed packages to resolve problems
-      --offline: Store the transaction to be performed offline
-      --store=: Store the current transaction in a directory at the specified path instead of running it.
+      <<: [*flag_allowerasing, *flag_offline, *flag_store]
     completion:
       positional: [[*dnf_installed], [*dnf_available]]
-      flag: *common_completion_flags
+      flag: *comp_store
 
   - name: mark
     description: Change the reason of an installed package
     group: core
     flags:
-      --skip-unavailable: Allow skipping unavailable packages
-      --store=: Store the current transaction in a directory at the specified path instead of running it.
-    completion: { flag: *common_completion_flags }
+      <<: [*flag_skip_unavailable, *flag_store]
+    completion:
+      flag: *comp_store
     commands:
       - name: user
         description: Mark package as user-installed
-        completion: { positionalany: [*dnf_installed] }
+        completion:
+          positionalany: [*dnf_installed]
+
       - name: dependency
         description: Mark package as a dependency
-        completion: { positionalany: [*dnf_installed] }
+        completion:
+          positionalany: [*dnf_installed]
+
       - name: weak
         description: Mark package as a weak dependency
-        completion: { positionalany: [*dnf_installed] }
+        completion:
+          positionalany: [*dnf_installed]
+
       - name: group
         description: Mark package as installed by a group
         completion:
@@ -271,10 +277,9 @@ commands:
     description: Remove all unneeded packages originally installed as dependencies
     group: core
     flags:
-      --offline: Store the transaction to be performed offline
-      --store=: Store the current transaction in a directory at the specified path instead of running it
+      <<: [*flag_offline, *flag_store]
     completion:
-      flag: *common_completion_flags
+      flag: *comp_store
 
   - name: provides
     description: Find what package provides the given value
@@ -287,10 +292,12 @@ commands:
     description: Replay a transaction that was previously stored to a directory
     group: core
     flags:
-      --skip-broken: Allow resolving of depsolve problems by skipping packages
-      --skip-unavailable: Allow skipping unavailable packages
-      --ignore-extras: Don't consider extra packages pulled into the transaction as errors
-      --ignore-installed: Don't consider mismatches between installed and stored transaction packages as errors
+      <<:
+        - *flag_skip_broken
+        - *flag_skip_unavailable
+        - &flag_ignores_desc
+          --ignore-extras: Don't consider extra packages pulled into the transaction as errors
+          --ignore-installed: Don't consider mismatches between installed and stored transaction packages as errors
     completion:
       positional:
         - [$directories, $usage(Path to a directory with stored transaction)]
@@ -300,19 +307,16 @@ commands:
     group: core
     aliases: [check-update]
     flags:
+      <<:
+        - *flag_pkg_fixes_desc
+        - *flags_pkg_advisories
+        - *flag_advisory_severities
       --minimal: Reports the lowest versions of packages that fix advisories of type bugfix, enhancement, security, or newpackage
       --changelogs: Show changelogs before update.
-      --advisories=: Limit to packages in advisories with specified name. List option.
-      --advisory-severities=: Limit to packages in advisories with specified severity
-      --bzs=: Limit to packages in advisories that fix a Bugzilla ID, Eg. 123123. List option.
-      --cves=: Limit to packages in advisories that fix a CVE (Common Vulnerabilities and Exposures) ID, Eg. CVE-2201-0123. List option.
-      --security: Limit to packages in security advisories.
-      --bugfix: Limit to packages in bugfix advisories.
-      --enhancement: Limit to packages in enhancement advisories.
-      --newpackage: Limit to packages in newpackage advisories.
     completion:
       positionalany: [*dnf_installed]
-      flag: *common_completion_flags
+      flag:
+        <<: [*comps_pkg_advisories, *comp_advisory_severities]
 
   - name: check
     description: Check for problems in the packagedb
@@ -331,68 +335,63 @@ commands:
     group: query
     aliases: [rq]
     flags:
+      <<:
+        - *flag_pkg_fixes_desc
+        - *flags_pkg_advisories
+        - *flag_advisory_severities
       # formatting
-      --info: Show detailed information about the packages.
-      --querytags: Display available tags for --queryformat.
-      --queryformat=: Display format for packages. Default is "%{full_nevra}".
-      --changelogs: Display package changelogs.
-      --files: Like --queryformat="%{files}" but deduplicated and sorted.
-      --sourcerpm: Like --queryformat="%{sourcerpm}" but deduplicated and sorted.
-      --location: Like --queryformat="%{location}" but deduplicated and sorted.
-      --conflicts: Like --queryformat="%{conflicts}" but deduplicated and sorted.
-      --depends: Like --queryformat="%{depends}" but deduplicated and sorted.
-      --enhances: Like --queryformat="%{enhances}" but deduplicated and sorted.
-      --obsoletes: Like --queryformat="%{obsoletes}" but deduplicated and sorted.
-      --provides: Like --queryformat="%{provides}" but deduplicated and sorted.
-      --recommends: Like --queryformat="%{recommends}" but deduplicated and sorted.
-      --requires: Like --queryformat="%{requires}" but deduplicated and sorted.
-      --requires-pre: Like --queryformat="%{requires_pre}" but deduplicated and sorted.
-      --suggests: Like --queryformat="%{suggests}" but deduplicated and sorted.
-      --supplements: Like --queryformat="%{supplements}" but deduplicated and sorted.
+      --info: Show detailed information about the packages
+      --querytags: Display available tags for --queryformat
+      --queryformat=: Display format for packages. Default is "%{full_nevra}"
+      --changelogs: Display package changelogs
+      --files: Like --queryformat="%{files}" but deduplicated and sorted
+      --sourcerpm: Like --queryformat="%{sourcerpm}" but deduplicated and sorted
+      --location: Like --queryformat="%{location}" but deduplicated and sorted
+      --conflicts: Like --queryformat="%{conflicts}" but deduplicated and sorted
+      --depends: Like --queryformat="%{depends}" but deduplicated and sorted
+      --enhances: Like --queryformat="%{enhances}" but deduplicated and sorted
+      --obsoletes: Like --queryformat="%{obsoletes}" but deduplicated and sorted
+      --provides: Like --queryformat="%{provides}" but deduplicated and sorted
+      --recommends: Like --queryformat="%{recommends}" but deduplicated and sorted
+      --requires: Like --queryformat="%{requires}" but deduplicated and sorted
+      --requires-pre: Like --queryformat="%{requires_pre}" but deduplicated and sorted
+      --suggests: Like --queryformat="%{suggests}" but deduplicated and sorted
+      --supplements: Like --queryformat="%{supplements}" but deduplicated and sorted
       --qf=&: Alias for '--queryformat'
       -l, --list&: Alias for '--files'
       # options
-      --available: Query available packages (default).
-      --installed: Query installed packages.
-      --leaves: Limit to groups of installed packages not required by other installed packages.
-      --userinstalled: Limit to packages that are not installed as dependencies or weak dependencies.
-      --duplicates: Limit to installed duplicate packages (i.e. more package versions for  the  same  name and architecture). Installonly packages are excluded from this set.
-      --unneeded: Limit to unneeded installed packages (i.e. packages that were installed as dependencies but are no longer needed).
-      --installonly: Limit to installed installonly packages.
-      --extras: Limit to installed packages that are not present in any available repository.
-      --upgrades: Limit to available packages that provide an upgrade for some already installed package.
-      --advisories=: Limit to packages in advisories with specified name. List option.
-      --advisory=&: Alias for '--advisories'
-      --advisory-severities=: Limit to packages in advisories with specified severity
-      --bzs=: Limit to packages in advisories that fix a Bugzilla ID, Eg. 123123. List option.
-      --bz=&: Alias for '--bzs'
-      --cves=: Limit to packages in advisories that fix a CVE (Common Vulnerabilities and Exposures) ID, Eg. CVE-2201-0123. List option.
-      --cve=&: Alias for '--cves'
-      --security: Limit to packages in security advisories.
-      --bugfix: Limit to packages in bugfix advisories.
-      --enhancement: Limit to packages in enhancement advisories.
-      --newpackage: Limit to packages in newpackage advisories.
+      --available: Query available packages (default)
+      --installed: Query installed packages
+      --leaves: Limit to groups of installed packages not required by other installed packages
+      --userinstalled: Limit to packages that are not installed as dependencies or weak dependencies
+      --duplicates: Limit to installed duplicate packages
+      --unneeded: Limit to unneeded installed packages
+      --installonly: Limit to installed installonly packages
+      --extras: Limit to installed packages that are not present in any available repository
+      --upgrades: Limit to available packages that provide an upgrade for some already installed package
       --latest-limit=: Limit to N latest packages for a given name.arch (or all except N latest if N is negative).
-      --whatdepends=: Limit to packages that require, enhance, recommend, suggest or supplement any of <capabilities>.
-      --whatconflicts=: Limit to packages that conflict with any of <capabilities>.
-      --whatenhances=: Limit to packages that enhance any of <capabilities>. Use --whatdepends if you want to list all depending packages.
-      --whatobsoletes=: Limit to packages that obsolete any of <capabilities>.
-      --whatprovides=: Limit to packages that provide any of <capabilities>.
-      --whatrecommends=: Limit to packages that recommend any of <capabilities>. Use --whatdepends if you want to list all depending packages.
-      --whatrequires=: Limit to packages that require any of <capabilities>. Use --whatdepends if you want to list all depending packages.
-      --whatsupplements=: Limit to packages that supplement any of <capabilities>. Use --whatdepends if you want to list all depending packages.
-      --whatsuggests=: Limit to packages that suggest any of <capabilities>. Use --whatdepends if you want to list all depending packages.
-      --arch=: Limit to packages of these architectures.
-      --file=: Limit to packages that own these files.
-      --exactdeps: Limit to packages that require <capability> specified by --whatrequires. This option is stackable with --whatrequires or --whatdepends only.
+      --whatdepends=: Limit to packages that require, enhance, recommend, suggest or supplement any of <capabilities>
+      --whatconflicts=: Limit to packages that conflict with any of <capabilities>
+      --whatenhances=: Limit to packages that enhance any of <capabilities>
+      --whatobsoletes=: Limit to packages that obsolete any of <capabilities>
+      --whatprovides=: Limit to packages that provide any of <capabilities>
+      --whatrecommends=: Limit to packages that recommend any of <capabilities>
+      --whatrequires=: Limit to packages that require any of <capabilities>
+      --whatsupplements=: Limit to packages that supplement any of <capabilities>
+      --whatsuggests=: Limit to packages that suggest any of <capabilities>
+      --arch=: Limit to packages of these architectures
+      --file=: Limit to packages that own these files
+      --exactdeps: Limit to packages that require <capability> specified by --whatrequires
       --recent: Limit to only recently changed packages.
-      --srpm: After filtering is finished use packages' corresponding source RPMs for output (enables source repositories).
-      --disable-modular-filtering: Include packages of inactive module streams.
+      --srpm: After filtering is finished use packages' corresponding source RPMs for output
+      --disable-modular-filtering: Include packages of inactive module streams
       --providers-of=: After filtering is finished get selected attribute of packages and output packages that provide it
       --recursive: Used with --whatrequires or --providers-of=requires options to query the packages recursively.
     completion:
       flag:
-        <<: *common_completion_flags
+        <<:
+          - *comps_pkg_advisories
+          - *comp_advisory_severities
         providers-of:
           - conflicts
           - depends
@@ -410,22 +409,24 @@ commands:
     group: query
     aliases: [se]
     flags:
-      --all: Search also package description and URL.
-      --showduplicates: Show all versions of the packages, not only the latest ones.
+      <<:
+        - &flag_showduplicates
+          --showduplicates: Show all versions of the packages, not only the latest ones
+      --all: Search also package description and URL
 
   - name: list
     description: Lists packages depending on the packages' relation to the system
     group: query
     aliases: [ls]
     flags: &list_flags
-      --showduplicates: Show all versions of the packages, not only the latest ones.
-      --installed: List installed packages.
-      --available: List available packages.
-      --extras: List extras, that is packages installed on the system that are not available in any known repository.
-      --obsoletes: List packages installed on the system that are obsoleted by packages in any known repository.
-      --recent: List packages recently added into the repositories.
-      --upgrades: List upgrades available for the installed packages.
-      --autoremove: List packages which will be removed by the 'dnf autoremove' command.
+      <<: [*flag_showduplicates]
+      --installed: List installed packages
+      --available: List available packages
+      --extras: List installed packages that are not available in any repository
+      --obsoletes: List installed packages that are obsoleted by packages in any repository
+      --recent: List packages recently added into the repositories
+      --upgrades: List upgrades available for the installed packages
+      --autoremove: List packages which will be removed by the 'dnf autoremove' command
       --updates&: Alias for '--upgrades'
     completion:
       positionalany: [*dnf_available]
@@ -439,21 +440,26 @@ commands:
       positionalany: [*dnf_available]
 
   - name: group
-    description: Manage comps groups
+    description: Manage groups
     group: subcommands
     aliases: [grp]
     commands:
       - name: list
-        description: List comps groups
+        description: List groups
         flags: &group_list_flags
-          --available: Show only available groups.
-          --installed: Show only installed groups.
-          --hidden: Show also hidden groups.
-          --contains-pkgs=: Show only groups containing packages with specified names. List option, supports globs.
+          --available: Show only available groups
+          --installed: Show only installed groups
+          --hidden: Show also hidden groups
+          --contains-pkgs=*: Show only groups containing packages with specified names
         completion: &group_list_completion
           positionalany:
-            - &dnf_groups $(bkt --scope carapace --ttl 1d -- dnf -C group list --hidden | awk '/-/ {print $1 "\t" $2}') # 630ms w/o caching
-          flag: *common_completion_flags
+            - &dnf_groups $(dnf -C group list --hidden | awk '/-/ {print $1 "\t" $2}')
+          flag:
+            <<:
+              - &comp_contains_pkgs
+                contains-pkgs:
+                  - *dnf_available
+                  - $uniquelist(,)
 
       - name: info
         description: Display package list of a group
@@ -461,66 +467,64 @@ commands:
         completion: *group_list_completion # completions are probably identical?
 
       - name: install
-        description: Install comp groups, including their packages
+        description: Install groups, including their packages
         flags:
-          --with-optional: Include optional packages from group.
-          --no-packages: Operate on groups only, no packages are changed.
-          --allowerasing: Allow erasing of installed packages to resolve problems
-          --skip-broken: Allow resolving of depsolve problems by skipping packages
-          --skip-unavailable: Allow skipping unavailable packages
-          --allow-downgrade: Allow downgrade of dependencies for resolve of requested operation
-          --no-allow-downgrade: Disable downgrade of dependencies for resolve of requested operation
-          --downloadonly: Only download packages for a transaction
-          --offline: Store the transaction to be performed offline
-          --store=: Store the current transaction in a directory at the specified path instead of running it.
+          <<:
+            - *flag_allowerasing
+            - *flag_skip_broken
+            - *flag_skip_unavailable
+            - *flag_allow_downgrade
+            - *flag_downloadonly
+            - *flag_offline
+            - *flag_store
+            - &flag_grp_no_packages
+              --no-packages: Operate on groups only, no packages are changed
+          --with-optional: Include optional packages from group
         completion:
           positionalany: [*dnf_groups]
-          flag: *common_completion_flags
+          flag: *comp_store
 
       - name: remove
-        description: Remove comp groups, including their packages
+        description: Remove groups, including their packages
         flags:
-          --no-packages: Operate on groups only, no packages are changed.
-          --offline: Store the transaction to be performed offline
-          --store=: Store the current transaction in a directory at the specified path instead of running it.
+          <<: [*flag_offline, *flag_store, *flag_grp_no_packages]
         completion:
           positionalany:
-            - &dnf_groups_installed $(bkt --scope carapace --ttl 1d -- dnf -C group list --hidden --installed | awk '/-/ {print $1 "\t" $2}') # 625ms w/o caching
-          flag: *common_completion_flags
+            - &dnf_groups_installed $(dnf -C group list --hidden --installed | awk '/-/ {print $1 "\t" $2}')
+          flag: *comp_store
 
       - name: upgrade
         description: Upgrade comp groups, including their packages
         flags:
-          --allowerasing: Allow erasing of installed packages to resolve problems
-          --skip-unavailable: Allow skipping unavailable packages
-          --allow-downgrade: Allow downgrade of dependencies for resolve of requested operation
-          --no-allow-downgrade: Disable downgrade of dependencies for resolve of requested operation
-          --downloadonly: Only download packages for a transaction
-          --offline: Store the transaction to be performed offline
-          --store=: Store the current transaction in a directory at the specified path instead of running it.
+          <<:
+            - *flag_allowerasing
+            - *flag_skip_unavailable
+            - *flag_allow_downgrade
+            - *flag_downloadonly
+            - *flag_offline
+            - *flag_store
         completion:
           positionalany: [*dnf_groups_installed]
-          flag: *common_completion_flags
+          flag: *comp_store
 
   - name: environment
-    description: Manage comps environments
+    description: Manage environments
     group: subcommands
     commands:
       - &dnf_environment_list
         name: list
-        description: List comps environments
+        description: List environments
         group: query
         flags:
           --available: Show only available environments
           --installed: Show only installed environments
         completion:
           positionalany:
-            # Needs caching
-            - $(bkt --scope carapace --ttl 1d -- dnf -C environment list | awk '/-/ {print $1 "\t" $2}') # 605ms w/o caching
+            - $(dnf -C environment list | awk '/-/ {print $1 "\t" $2}')
 
       - <<: *dnf_environment_list
         name: info
-        description: Print details about comps environments
+        description: Print details about environments
 
   - name: module
     description: Manage modules
@@ -530,8 +534,8 @@ commands:
         description: List module streams
         group: query
         flags: &module_query_flags
-          --enabled: Show enabled modules.
-          --disabled: Show disabled modules.
+          --enabled: Show enabled modules
+          --disabled: Show disabled modules
         # TODO add completions
 
       - name: info
@@ -544,22 +548,19 @@ commands:
         description: Enable module streams and make their packages available
         group: management
         flags:
-          --skip-broken: Allow resolving of depsolve problems by skipping packages
-          --skip-unavailable: Allow skipping unavailable packages
+          <<: [*flag_skip_broken, *flag_skip_unavailable]
         # TODO add completions
 
       - name: reset
         description: Reset module state so it's no longer enabled or disabled
         group: management
-        flags:
-          --skip-unavailable: Allow skipping unavailable packages
+        flags: *flag_skip_unavailable
         # TODO add completions
 
       - name: disable
         description: Disable modules including all their streams
         group: management
-        flags:
-          --skip-unavailable: Allow skipping unavailable packages
+        flags: *flag_skip_unavailable
         # TODO add completions
 
   - name: history
@@ -569,33 +570,29 @@ commands:
       - name: list
         description: List transactions
         group: query
-        flags:
-          --reverse: Reverse the order of transactions.
+        flags: &history_list_flags
+          --reverse: Reverse the order of transactions
         completion: &history_list_completion
           positional: &history_list_positional
-            - - "$(sqlite3 /var/lib/dnf/history.sqlite 'SELECT id, cmdline FROM trans' | sed 's/|/\t/')" # 2ms
+            - - "$(sqlite3 /var/lib/dnf/history.sqlite 'SELECT id, cmdline FROM trans' | sed 's/|/\t/')"
 
       - name: info
         description: Print details about transactions
         group: query
-        flags:
-          --reverse: Reverse the order of transactions.
+        flags: *history_list_flags
         completion: *history_list_completion
 
       - name: undo
         description: Revert all actions from the specified transaction
         group: management
         flags: &history_undo_flags
-          --skip-unavailable: Allow skipping unavailable packages
-          --ignore-extras: Don't consider extra packages pulled into the transaction as errors.
-          --ignore-installed: Don't consider mismatches between installed and stored transaction packages as errors.
+          <<: [*flag_skip_unavailable, *flag_ignores_desc]
         completion: *history_list_completion
 
       - name: redo
         description: Repeat all actions from the specified transaction
         group: management
-        flags:
-          --skip-unavailable: Allow skipping unavailable packages
+        flags: *flag_skip_unavailable
         completion: *history_list_completion
 
       - name: rollback
@@ -608,10 +605,11 @@ commands:
         description: Store transaction to a file [experimental]
         group: management
         flags:
-          -o, --output=: Path to a directory for storing the transaction, default is "./transaction"
+          -o, --output=: Path to a directory for storing the transaction
         completion:
           positional: *history_list_positional
-          flag: { output: [$directories] }
+          flag:
+            output: [$directories]
 
   - name: repo
     description: Manage repositories
@@ -621,10 +619,12 @@ commands:
         description: List repositories
         group: query
         flags: &repo_list_flags
-          --all: Show all repositories.
-          --enabled: Show enabled repositories (default).
-          --disabled: Show disabled repositories.
-          --json: Request json output format
+          <<:
+            - &flag_json
+              --json: Request json output format
+          --all: Show all repositories
+          --enabled: Show enabled repositories (default)
+          --disabled: Show disabled repositories
         completion: &repo_list_completion
           positionalany: [*dnf_repo]
 
@@ -643,32 +643,24 @@ commands:
         description: Print details about advisories
         group: query
         flags: &advisory_info_flags
-          --all: Show advisories containing any version of installed packages.
-          --available: Show advisories containing newer versions of installed packages. This is the default behavior.
-          --installed: Show advisories containing equal and older versions of installed packages.
-          --updates: Show advisories containing newer versions of installed packages for which a newer version is available.
-          --contains-pkgs=: Show only advisories containing packages with specified names. List option, supports globs.
-          --security: Limit to packages in security advisories.
-          --bugfix: Limit to packages in bugfix advisories.
-          --enhancement: Limit to packages in enhancement advisories.
-          --newpackage: Limit to packages in newpackage advisories.
-          --advisory-severities=: Limit to packages in advisories with specified severity
-          --bzs=: Limit to packages in advisories that fix a Bugzilla ID, Eg. 123123. List option.
-          --cves=: Limit to packages in advisories that fix a CVE (Common Vulnerabilities and Exposures) ID, Eg. CVE-2201-0123. List option.
-          --with-bz: Show only advisories referencing a bugzilla.
-          --with-cve: Show only advisories referencing a CVE.
-          --bz=&: Alias for '--bzs'
-          --cve=&: Alias for '--cves'
+          <<: [*flag_pkg_fixes_desc, *flag_advisory_severities]
+          --all: Show advisories containing any version of installed packages
+          --available: Show advisories containing newer versions of installed packages
+          --installed: Show advisories containing equal and older versions of installed packages
+          --updates: Show advisories containing newer versions of installed packages for which a newer version is available
+          --contains-pkgs=: Show only advisories containing packages with specified names
+          --with-bz: Show only advisories referencing a bugzilla
+          --with-cve: Show only advisories referencing a CVE
         completion: &advisory_info_completion
           positionalany: [*dnf_advisory]
-          flag: *common_completion_flags
+          flag:
+            <<: [*comp_advisory_severities, *comp_contains_pkgs]
 
       - name: list
         description: List advisories
         group: query
         flags:
-          <<: *advisory_info_flags
-          --json: Request json output format
+          <<: [*advisory_info_flags, *flag_json]
         completion: *advisory_info_completion
 
       - name: summary
@@ -678,26 +670,29 @@ commands:
         completion: *advisory_info_completion
 
   - name: versionlock
-    description: Manage versionlock configuration
+    description: Manage versionlock config
     group: subcommands
     commands:
       - name: add
-        description: Add new entry to versionlock configuration
-        completion: { positionalany: [*dnf_available] }
+        description: Add new entry to versionlock config
+        completion:
+          positionalany: [*dnf_available]
 
       - name: exclude
-        description: Add new exclude entry to versionlock configuration
-        completion: { positionalany: [*dnf_available] }
+        description: Add new exclude entry to versionlock config
+        completion:
+          positionalany: [*dnf_available]
 
       - name: clear
-        description: Remove all entries from versionlock configuration
+        description: Remove all entries from versionlock config
 
       - name: delete
-        description: Remove any matching versionlock configuration entries
-        completion: { positionalany: [*dnf_available] }
+        description: Remove any matching versionlock config entries
+        completion:
+          positionalany: [*dnf_available]
 
       - name: list
-        description: List the current versionlock configuration
+        description: List the current versionlock config
 
   - name: system-upgrade
     description: Prepare system for upgrade to a new release
@@ -708,12 +703,12 @@ commands:
 
       - name: log
         description: Show logs from past offline transactions
-        flags:
-          --number=: Which log to show. Run without any arguments to get a list of available logs.
+        flags: &offline_log_flags
+          --number=: Which log to show
 
       - name: reboot
         description: Prepare the system to perform the offline transaction and reboot to start the transaction
-        flags:
+        flags: &offline_reboot_flags
           --poweroff: Power off the system after the operation is complete
 
       - name: status
@@ -733,13 +728,11 @@ commands:
 
       - name: reboot
         description: Prepare the system to perform the offline transaction and reboot to start the transaction.
-        flags:
-          --poweroff: Power off the system after the operation is complete
+        flags: *offline_reboot_flags
 
       - name: log
         description: Show logs from past offline transactions
-        flags:
-          --number=: Which log to show. Run without any arguments to get a list of available logs.
+        flags: *offline_log_flags
 
       - name: status
         description: Show status of the current offline transaction
@@ -758,13 +751,11 @@ commands:
 
       - name: reboot
         description: Prepare the system to perform the offline transaction and reboot to start the transaction.
-        flags:
-          --poweroff: Power off the system after the operation is complete
+        flags: *offline_reboot_flags
 
       - name: log
         description: Show logs from past offline transactions
-        flags:
-          --number=: Which log to show. Run without any arguments to get a list of available logs.
+        flags: *offline_log_flags
 
       - name: status
         description: Show status of the current offline transaction
@@ -783,13 +774,11 @@ commands:
 
       - name: log
         description: Show logs from past offline transactions
-        flags:
-          --number=: Which log to show. Run without any arguments to get a list of available logs.
+        flags: *offline_log_flags
 
       - name: reboot
         description: Prepare the system to perform the offline transaction and reboot to start the transaction.
-        flags:
-          --poweroff: Power off the system after the operation is complete
+        flags: *offline_reboot_flags
 
       - name: status
         description: Show status of the current offline transaction
@@ -805,21 +794,22 @@ commands:
       - name: addrepo
         description: Add repositories from the specified configuration file or define a new repository using user options
         flags:
+          <<:
+            - &flag_create_missing_dir
+              --create-missing-dir: Allow creation of missing directories
           --from-repofile=: Download repository configuration file, test it and put it in reposdir
           --id=: Set id for newly created repository
           --set=: Set option in newly created repository
           --add-or-replace: Allow adding or replacing a repository in the existing configuration file
-          --create-missing-dir: Allow creation of missing directories
           --overwrite: Allow overwriting of existing repository configuration file
-          --save-filename=: Set the name of the configuration file of the added repository. The ".repo" extension is added if it is missing.
+          --save-filename=: Set the name of the configuration file of the added repository
         completion:
           flag:
             from-repofile: ['$files([.repo])']
 
       - name: setopt
         description: Set configuration and repositories options
-        flags:
-          --create-missing-dir: Allow to create missing directories
+        flags: *flag_create_missing_dir
         # TODO add completions
 
       - name: unsetopt
@@ -828,8 +818,7 @@ commands:
 
       - name: setvar
         description: Set variables
-        flags:
-          --create-missing-dir: Allow to create missing directories
+        flags: *flag_create_missing_dir
         # TODO add completions
 
       - name: unsetvar
@@ -852,10 +841,10 @@ commands:
     description: Download software to the current directory
     group: commands
     flags:
+      <<: [*flag_destdir]
       --arch=*: Limit to packages of given architectures.
       --resolve: Resolve and download needed dependencies
       --alldeps: When running with --resolve, download all dependencies (do not exclude already installed ones)
-      --destdir=: Set directory used for downloading packages to. Default location is to the current working directory.
       --srpm: Download the src.rpm instead
       --url: Print a URL where the rpms can be downloaded instead of downloading
       --urlprotocol=*: When running with --url, limit to specific protocols
@@ -876,17 +865,17 @@ commands:
     group: commands
     aliases: [build-dep]
     flags:
-      -D, --define=: Define the RPM macro named "macro" to the value "expr" when parsing spec files. Does not apply for source rpm files.
-      --with=: Enable conditional build OPTION when parsing spec files. Does not apply for source rpm files.
-      --without=: Disable conditional build OPTION when parsing spec files. Does not apply for source rpm files.
-      --allowerasing: Allow erasing of installed packages to resolve problems
-      --skip-unavailable: Allow skipping unavailable packages
-      --allow-downgrade: Allow downgrade of dependencies for resolve of requested operation
-      --no-allow-downgrade: Disable downgrade of dependencies for resolve of requested operation
-      --store=: Store the current transaction in a directory at the specified path instead of running it.
+      <<:
+        - *flag_allowerasing
+        - *flag_skip_unavailable
+        - *flag_allow_downgrade
+        - *flag_store
+      -D, --define=: Define the RPM macro named "macro" to the value "expr" when parsing spec files
+      --with=: Enable conditional build OPTION when parsing spec files
+      --without=: Disable conditional build OPTION when parsing spec files
     completion:
       positionalany: ['$files([.spec, .src.rpm])', *dnf_available]
-      flag: *common_completion_flags
+      flag: *comp_store
 
   - name: changelog
     description: Show package changelogs
@@ -904,18 +893,23 @@ commands:
     flags:
       --hub=: Copr hub (the web-UI/API server) hostname
     commands:
-      # TODO add flags and completions for subcommands
       - name: list
         description: list Copr repositories
 
       - name: enable
-        description: download the repository info from a Copr server and install it as a /etc/yum.repos.d/*.repo file
+        description: download & install a repository info from a Copr server
 
       - name: disable
-        description: disable specified Copr repository (if exists), keep /etc/yum.repos.d/*.repo file - just mark enabled=0
+        description: disable specified Copr repository
+        completion:
+          positionalany:
+            - $(dnf -C copr list)
 
       - name: remove
-        description: remove specified Copr repository from the system (removes the /etc/yum.repos.d/*.repo file)
+        description: remove specified Copr repository from the system
+        completion:
+          positionalany:
+            - $(dnf -C copr list)
 
       - name: debug
         description: print useful info about the system, useful for debugging
@@ -932,8 +926,8 @@ commands:
     group: commands
     flags:
       --check=: Specify repo ids to check
-      --arch=: Only check packages of specified architectures.
-      --newest: Only consider the latest version of a package from each repo.
+      --arch=: Only check packages of specified architectures
+      --newest: Only consider the latest version of a package from each repo
     completion:
       positionalany: [*dnf_available]
       flag:
