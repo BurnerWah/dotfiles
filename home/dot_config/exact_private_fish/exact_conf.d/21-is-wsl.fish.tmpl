@@ -16,9 +16,16 @@ end | while read -l match
     set -e PATH[$index]
 end
 
+# Get systemd environment variables (excluding $PATH)
+if [ -x /usr/lib/systemd/user-environment-generators/30-systemd-environment-d-generator ]
+    /usr/lib/systemd/user-environment-generators/30-systemd-environment-d-generator | string match -v 'PATH=*' | while read -l var
+        export $var
+    end
+end
+
 # Set environment variables
 # Will eventually be redone to utilize universal variables
-set -gx ANSIBLE_CONFIG $XDG_CONFIG_HOME/ansible.cfg
-set -gx ANSIBLE_HOME $XDG_CONFIG_HOME/ansible
-set -gx ZDOTDIR $XDG_CONFIG_HOME/zsh
+# set -gx ANSIBLE_CONFIG $XDG_CONFIG_HOME/ansible.cfg
+# set -gx ANSIBLE_HOME $XDG_CONFIG_HOME/ansible
+# set -gx ZDOTDIR $XDG_CONFIG_HOME/zsh
 # {{ end -}}
