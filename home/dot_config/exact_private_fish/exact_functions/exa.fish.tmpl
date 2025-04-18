@@ -1,15 +1,17 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter=}}
 # {{- if or (lookPath "eza") (lookPath "exa") -}}
 # Exa is outdated, use eza
-if command -q eza
-    function exa --wraps=eza --description 'alias exa eza'
+function exa -w eza -d 'alias exa eza'
+    if command -q eza
         eza $argv
-    end
-else if command -q exa
-    function exa
+    else if command -q exa
         set -l param --color=auto --color-scale
-        isatty stdout && set -a param --classify
+        if isatty stdout
+            set -a param --classify
+        end
         command exa $param $argv
+    else
+        fish_command_not_found eza
     end
 end
 # {{ end -}}

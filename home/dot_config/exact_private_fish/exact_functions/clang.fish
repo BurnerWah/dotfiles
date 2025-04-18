@@ -1,18 +1,16 @@
-set -l desc "The Clang C, C++, and Objective-C compiler"
-if command -qs clang
-    if string match -vq '*/ccache' (path resolve (command -s clang))
-        if command -qs sccache
-            function clang -d $desc
-                command sccache clang $argv
-            end
-        else if command -qs ccache
-            function clang -d $desc
-                command ccache clang $argv
-            end
-        end
-    else
-        function clang -d $desc
+function clang -d 'The Clang C, C++, and Objective-C compiler'
+    if set -l clang (command -s clang | path resolve | path basename)
+        if [ $clang = ccache ]
+            command clang $argv
+        else if command -q sccache
+            sccache clang $argv
+        else if command -q ccache
+            ccache clang $argv
+        else
             command clang $argv
         end
+    else
+        # clang isn't installed
+        fish_command_not_found clang
     end
 end

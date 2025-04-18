@@ -1,3 +1,4 @@
-function get-env --description 'get environment variable'
-    echo $$argv[1]
+# Modified function from carapace
+function get-env -d 'get environment variable' -a name
+    echo $$name
 end

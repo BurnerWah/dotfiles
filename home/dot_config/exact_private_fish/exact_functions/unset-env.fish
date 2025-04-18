@@ -1,4 +1,4 @@
-function unset-env --description 'unset environment variable'
-    # @fish-lsp-disable-next-line 3003
-    set -e $argv[1]
+# Modified function from carapace
+function unset-env -d 'unset environment variable' -a name
+    set -e "$name"
 end

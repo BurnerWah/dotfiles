@@ -1,3 +1,4 @@
-function set-env --description 'set environment variable'
-    set -g -x $argv[1] $argv[2]
+# Modified function from carapace
+function set-env -d 'set environment variable' -a name -a value
+    set -g -x "$name" $value
 end
