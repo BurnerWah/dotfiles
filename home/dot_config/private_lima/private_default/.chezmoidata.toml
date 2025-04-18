@@ -1,0 +1,4 @@
+[[settings.lima.docker_context]]
+instance = "default"
+socket = "sock/podman.sock"
+description = "Lima VM for general use (podman user)"
