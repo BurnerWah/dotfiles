@@ -46,8 +46,13 @@ textconv:
 
 # {{- /* Detect WSL */ -}}
 # {{- $wsl := and (eq .chezmoi.os "linux") (.chezmoi.kernel.osrelease | lower | contains "microsoft") -}}
+# {{- $wslHostHome := false -}}
 # {{- if $wsl -}}
 # {{-   $headless = true -}}
+# {{-   if and (lookPath "powershell.exe") (lookPath "wslpath") -}}
+# {{-     $UserProfile := output "powershell.exe" "-NoProfile" "-NonInteractive" "-Command" "Write-Output $env:USERPROFILE" | trim -}}
+# {{-     $wslHostHome = output "wslpath" $UserProfile | trim -}}
+# {{-   end -}}
 # {{- end -}}
 
 # {{- /* detect GitHub codespaces, VSCode remote containers, Docker containers, Multipass VMs, and Vagrant boxes */ -}}
@@ -145,3 +150,5 @@ data:
     chassis: '# {{ $chassisType }}'
     wsl: # {{ $wsl }}
     lima: # {{ $lima }}
+  paths:
+    wslHostHome: # {{ $wslHostHome }}
