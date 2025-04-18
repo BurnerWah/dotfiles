@@ -1,5 +1,7 @@
 ??-device-*.conf
 !??-device-{{.devicename}}.conf
+!??-device-{{.devicename}}.*.conf
 
 ??-distro-*.conf
 !??-distro-{{.distro}}.conf
+!??-distro-{{.distro}}.*.conf
