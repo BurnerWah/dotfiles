@@ -1,11 +1,11 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter=}}
-# {{- if and .device.wsl (lookPath "code" | hasPrefix "/mnt/c/") -}}
+# {{- if and .device.wsl (lookPath "idea" | hasPrefix "/mnt/c/") -}}
 # Temporary workaround for https://github.com/fish-shell/fish-shell/issues/11354
-function code
-    if command -q code
-        command code $argv
+function idea
+    if command -q idea
+        command idea $argv
     else
-        "# {{ lookPath "code" }}" $argv
+        "# {{ lookPath "idea" }}" $argv
     end
 end
 # {{ end -}}

@@ -8,6 +8,8 @@ begin
     string match -i "/mnt/c/Program Files (x86)/Paragon Software/APFS for Windows/" $PATH
     string match -i "/mnt/c/Program Files/Eclipse Adoptium/jdk-*/bin" $PATH
     string match -i "/mnt/c/Users/*/scoop/apps/openjdk/current/bin" $PATH
+    string match -i "/mnt/c/Program Files/FirefoxPWA/" $PATH
+    string match -i "/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common" $PATH
     begin
         string match /bin $PATH
         string match /sbin $PATH
@@ -25,9 +27,4 @@ if [ -x /usr/lib/systemd/user-environment-generators/30-systemd-environment-d-ge
     end
 end
 
-# Set environment variables
-# Will eventually be redone to utilize universal variables
-# set -gx ANSIBLE_CONFIG $XDG_CONFIG_HOME/ansible.cfg
-# set -gx ANSIBLE_HOME $XDG_CONFIG_HOME/ansible
-# set -gx ZDOTDIR $XDG_CONFIG_HOME/zsh
 # {{ end -}}

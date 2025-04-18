@@ -1,0 +1,11 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{- if and .device.wsl (lookPath "rider" | hasPrefix "/mnt/c/") -}}
+# Temporary workaround for https://github.com/fish-shell/fish-shell/issues/11354
+function rider
+    if command -q rider
+        command rider $argv
+    else
+        "# {{ lookPath "rider" }}" $argv
+    end
+end
+# {{ end -}}

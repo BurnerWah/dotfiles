@@ -1,0 +1,11 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{- if and .device.wsl (lookPath "scoop" | hasPrefix "/mnt/c/") -}}
+# Temporary workaround for https://github.com/fish-shell/fish-shell/issues/11354
+function scoop
+    if command -q scoop
+        command scoop $argv
+    else
+        "# {{ lookPath "scoop" }}" $argv
+    end
+end
+# {{ end -}}
