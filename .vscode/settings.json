@@ -62,6 +62,7 @@
     "**/dot_local/*_share/*_flatpak/overrides/**": "ini",
     "ansible.cfg.tmpl": "ini",
     "dot_bashrc": "shellscript",
+    "dot_wslconfig": "ini",
     "dot_zshrc": "shellscript",
   },
   "gitconfig-lsp.format.gitattributes.tabSize": 16,
