@@ -6,6 +6,8 @@ fish_add_path --path --prepend "$HOME/.local/bin"
 begin
     string match -i "/mnt/c/Users/*/scoop/apps/mise/current/mise/shims" $PATH
     string match -i "/mnt/c/Program Files (x86)/Paragon Software/APFS for Windows/" $PATH
+    string match -i "/mnt/c/Program Files/Eclipse Adoptium/jdk-*/bin" $PATH
+    string match -i "/mnt/c/Users/*/scoop/apps/openjdk/current/bin" $PATH
     begin
         string match /bin $PATH
         string match /sbin $PATH
