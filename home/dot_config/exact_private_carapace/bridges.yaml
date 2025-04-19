@@ -64,6 +64,7 @@ as: fish
 asd: fish
 ash: zsh
 atd: fish
+atmos: cobra
 atom: fish
 attrib: fish
 attributes: fish
@@ -79,9 +80,11 @@ avifenc: fish
 aws-nuke: urfavecli
 axi-cache: zsh
 az: argcomplete
+azion: cobra
 badblocks: fish
 barbican: zsh
 berglas: cobra
+bilix: click
 bin: cobra
 bind: fish
 blender: fish # TODO create custom spec for windows
@@ -118,8 +121,10 @@ cartridge: cobra
 cascadia: fish
 castnow: fish
 cdebug: cobra
+cdktf: yargs
 ceilometer: zsh
 cekit: click
+certigo: kingpin
 cf2tf: click
 cf: fish
 chainloop: cobra
@@ -161,6 +166,7 @@ coreadm: zsh
 cosign: cobra
 cpio: zsh
 cplay: zsh
+crane: cobra
 crc: cobra
 create_ap: fish
 createdb: zsh
@@ -224,6 +230,7 @@ devpod: cobra
 devspace: cobra
 dhcpcd: fish
 dhcpinfo: zsh
+diffoci: cobra
 diskutil: fish # Mac OS
 distrobox-assemble: zsh
 distrobox-create: zsh
@@ -333,6 +340,8 @@ fw_update: zsh
 gacutil: fish # mono
 gapplication: fish
 gator: cobra
+gcalcli: argcomplete
+gci: cobra
 gcloud: argcomplete
 gcmp: zsh
 gcore: zsh
@@ -343,10 +352,14 @@ gendarme: fish
 genisoimage: zsh
 getclip: zsh
 getfacl: zsh
+ggshield: click
 ggv: zsh
 gh: cobra
+ghorg: cobra
 ghostscript: zsh
+ghostunnel: kingpin
 ghostview: zsh
+gibo: cobra
 gio: fish
 git-lfs: cobra
 git-sizer: fish
@@ -367,10 +380,12 @@ gnutls-cli: zsh
 gnutls-serv: zsh
 godoc: fish
 gojq: fish
+golangci-lint: cobra
 golint: fish
 gomplate: cobra
 gopass: urfavecli
 gorename: fish
+greenmask: cobra
 gresource: fish
 growisofs: zsh
 grub-file: fish
@@ -407,7 +422,9 @@ guilt-top: zsh
 guilt-unapplied: zsh
 guilt: zsh
 gup: cobra
+gut: cobra
 gx: urfavecli
+harlequin: click
 hashcat: fish
 hatch: click
 hcloud: cobra
@@ -429,12 +446,16 @@ ibus: fish
 icdiff: fish
 ifdata: fish
 ikdasm: fish # mono
+ikhal: click
 ilasm: fish # mono
 incus: cobra
 influx: urfavecli
 infracost: cobra
 initdb: zsh
 iostat: zsh
+ipinfo: complete
+ipsw: cobra
+iredis: click
 ironic: zsh
 isag: zsh
 istioctl: cobra
@@ -451,7 +472,12 @@ jnv: fish
 john: fish
 jv: fish
 k3d: cobra
+k3sup: cobra
+k6: cobra
 k9s: cobra
+kafkactl: cobra
+kamel: cobra
+kapp: cobra
 karmadactl: cobra
 kb: fish
 kcmshell5: fish
@@ -465,28 +491,54 @@ kernel-install: zsh
 keybase: fish
 keystone: zsh
 keytool: zsh
+khal: click
 kind: cobra
 kitchen: fish
 kk: cobra
+kn: cobra
 ko: cobra
 kompose: cobra
 konqueror: zsh
 konsole: fish
+kool: cobra
 kopia: kingpin
 kops: cobra
+kor: cobra
+kosli: cobra
+kraft: cobra
 krita: fish
+kube-bench: cobra
+kube-linter: cobra
+kubeaudit: cobra
+kubebuilder: cobra
+kubecfg: cobra
+kubecm: cobra
+kubectl-cnpg: cobra
 kubectl-krew: cobra
+kubectl-kuttl: cobra
+kubectl-oidc_login: cobra
 kubectl.lima: cobra
 kubectl: cobra
+kubefirst: cobra
+kubehound: cobra
+kubeone: cobra
+kubescape: cobra
+kubeshark: cobra
+kubespy: cobra
 kubetail: cobra
+kubevpn: cobra
 kumactl: cobra
 kustomize: cobra
+kustomizer: cobra
 kvno: zsh
+kwokctl: cobra
+kyma: cobra
 kyverno: cobra
 launchctl: fish # Mac OS
 ldapsearch: fish
 lefthook: cobra
 legit: click
+license-eye: cobra
 lima-guestagent: cobra
 limactl: cobra
 litecli: click
@@ -509,6 +561,7 @@ magento: fish
 magnum: zsh
 makedepend: fish
 makensis: fish
+mani: cobra
 manila: zsh
 mariner: fish
 mcap: cobra
@@ -547,6 +600,8 @@ mysqladmin: zsh
 mysqldiff: zsh
 mysqlimport: zsh
 mysqlshow: zsh
+nali: cobra
+name-that-hash: click
 nautilus: zsh
 navi: fish
 neon: yargs # built in completion is broken but it's based on yargs
@@ -559,6 +614,7 @@ netctl: fish
 nethack: fish
 networksetup: zsh
 neutron: zsh
+newrelic: cobra
 nfpm: cobra
 ngrok: cobra
 nkf: zsh
@@ -566,17 +622,21 @@ nmblookup: zsh
 nodeenv: fish
 nomad: complete
 notation: cobra
+notifiers: click
 notify-send: fish
 nova: zsh
 npq-hero: yargs # TODO create custom spec
 npq: yargs # TODO create custom spec
+nth: click
 obnam: fish
 oc: cobra
+ocm: cobra
 octave: fish
 ogg123: zsh
 oggdec: zsh
 ogginfo: zsh
 oh-my-posh: cobra
+okta-awscli: click
 oomctl: zsh
 op: cobra
 opa: cobra
@@ -606,10 +666,12 @@ pg_restore: zsh # Fish provides built-in completions too
 pg_upgrade: zsh
 pgcli: click
 phpunit: fish
+phrase: cobra
 pidstat: zsh
 pio: click
 pipenv: click
 pipgrip: click
+pipx: argcomplete
 pix: fish
 pkg_create: zsh
 pkgin: zsh
@@ -619,6 +681,7 @@ podman-remote: cobra
 podman.lima: cobra
 podman: cobra
 postgres: zsh
+posting: click
 pre-commit: fish # argcomplete bridge doesn't work
 proxychains: fish
 prt-get: fish
@@ -627,6 +690,7 @@ psql: zsh
 pstree: fish
 pydf: fish
 pzstd: fish
+qbt: cobra
 qemu: zsh
 qjs: fish
 qjsc: fish
@@ -641,6 +705,7 @@ reflector: fish
 regal: cobra
 regctl: cobra
 register-python-argcomplete: argcomplete
+regula: cobra
 reindexdb: zsh
 reject: fish
 rejmerge: fish
@@ -652,6 +717,7 @@ rmid: zsh
 rmiregistry: zsh
 root: fish
 roswell: fish
+roxctl: cobra
 rpm-ostree: fish
 rpmbuild: zsh
 rpmkeys: zsh
@@ -659,6 +725,7 @@ rpmquery: zsh
 rpmsign: zsh
 rpmspec: zsh
 rpmverify: zsh
+rr: cobra
 rst2html4: fish
 rst2html5: fish
 rst2html: fish
@@ -672,7 +739,9 @@ rst2xml: fish
 rstpep2html: fish
 ruby-build: fish # TODO create custom spec
 ruby-mri: zsh
+runme: cobra
 s3cmd: fish
+s5cmd: urfavecli
 sad: fish
 sadf: zsh
 sahara: zsh
@@ -705,6 +774,7 @@ sphinx-apidoc: fish
 sphinx-autogen: fish
 sphinx-build: fish
 sphinx-quickstart: fish
+sqlc: cobra
 sqlfluff: click
 sqlite3: zsh
 sqlite: zsh
@@ -712,8 +782,11 @@ sqlsharp: fish
 src: fish
 ssh-add: zsh # TODO create custom spec
 ssh-keyscan: zsh # TODO create custom spec
+ssh-mitm: argcomplete
+stern: cobra
 stream: fish # imagemagick
 svn-buildpackage: zsh
+swctl: urfavecli
 swiftc: zsh
 syft: cobra
 sylpheed: fish
@@ -749,6 +822,7 @@ texi2any: zsh
 texi2dvi: zsh
 texi2pdf: zsh
 texindex: zsh
+tf-profile: cobra
 tmutil: fish
 tokei: fish # TODO create custom spec
 toolbox: cobra
@@ -766,6 +840,7 @@ trash-restore: fish
 travis: fish
 trivy: cobra
 trove: zsh
+tt: cobra
 ttx: fish
 tune2fs: zsh
 tuned-adm: fish
@@ -786,6 +861,7 @@ vault: complete
 VBoxHeadless: fish
 VBoxSDL: fish
 vctl: cobra # vmware
+vdirsyncer: click
 velero: cobra
 vhs: cobra
 vincent: carapace
@@ -801,6 +877,7 @@ vt: cobra
 vultr: cobra
 vunnel: click
 watcher: zsh
+waybackpy: click
 web-ext: fish
 wesnoth: fish
 wg-quick: fish
@@ -838,6 +915,7 @@ yajsv: fish
 ykman: click
 yo: fish
 yq: cobra
+ytt: cobra
 zabbix_agent2: fish
 zabbix_agentd: fish
 zabbix_get: fish
