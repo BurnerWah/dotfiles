@@ -366,6 +366,7 @@ git-sizer: fish
 git-xargs: urfavecli
 gitlab-runner: urfavecli
 gitleaks: cobra
+gitlint: click
 gitsign: cobra
 gk: cobra
 glab: cobra
