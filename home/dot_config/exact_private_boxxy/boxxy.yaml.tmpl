@@ -1,5 +1,5 @@
 rules:
-  # {{ $fakehome := "/run/user" .chezmoi.uid "fakehome" }}
+  # {{ $fakehome := joinPath "/run/user" .chezmoi.uid "fakehome" }}
   - name: Fake home directory
     target: '~'
     rewrite: '{{ $fakehome }}'
