@@ -4,6 +4,7 @@ min_version = "2024.12.5"
 experimental = true
 paranoid = false
 not_found_auto_install = false
+idiomatic_version_file_enable_tools = ["go", "java", "node", "python", "ruby"]
 go_default_packages_file = "~/.config/mise/default-go-packages"
 disable_tools = [
   "nim",
