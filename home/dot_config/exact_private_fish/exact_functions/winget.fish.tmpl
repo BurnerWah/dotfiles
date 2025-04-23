@@ -1,0 +1,6 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{ if .device.wsl -}}
+function winget
+    winget.exe $argv
+end
+# {{ end -}}
