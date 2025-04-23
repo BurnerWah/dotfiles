@@ -1,9 +1,7 @@
 {
   "apps": [
     { "Name": "aria2", "Source": "main" },
-    { "Name": "bat", "Source": "main" },
     { "Name": "CascadiaCode-NF", "Source": "nerd-fonts" },
-    { "Name": "chezmoi", "Source": "main" },
     { "Name": "curl", "Source": "main" },
     { "Name": "docker-compose", "Source": "main" },
     { "Name": "exiftool", "Source": "main" },
