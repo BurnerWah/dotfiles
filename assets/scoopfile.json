@@ -1,26 +1,17 @@
 {
   "apps": [
-    { "Name": "1password-cli", "Source": "main" },
-    { "Name": "age", "Source": "extras" },
     { "Name": "aria2", "Source": "main" },
     { "Name": "bat", "Source": "main" },
-    { "Name": "carapace-bin", "Source": "extras" },
     { "Name": "CascadiaCode-NF", "Source": "nerd-fonts" },
     { "Name": "chezmoi", "Source": "main" },
     { "Name": "curl", "Source": "main" },
     { "Name": "docker-compose", "Source": "main" },
-    { "Name": "doggo", "Source": "main" },
-    { "Name": "exercism", "Source": "main" },
     { "Name": "exiftool", "Source": "main" },
-    { "Name": "eza", "Source": "main" },
-    { "Name": "fastfetch", "Source": "main" },
     { "Name": "ffmpeg", "Source": "main" },
     { "Name": "FiraCode-NF", "Source": "nerd-fonts" },
     { "Name": "FiraCode", "Source": "nerd-fonts" },
     { "Name": "FiraMono-NF", "Source": "nerd-fonts" },
-    { "Name": "fossil", "Source": "main" },
     { "Name": "fzf", "Source": "main" },
-    { "Name": "gallery-dl", "Source": "main" },
     { "Name": "gh", "Source": "main" },
     { "Name": "gifski", "Source": "main" },
     { "Name": "godot-mono", "Source": "extras" },
@@ -51,8 +42,7 @@
     { "Name": "tree-sitter", "Source": "main" },
     { "Name": "uutils-coreutils", "Source": "main" },
     { "Name": "winget-ps", "Source": "main" },
-    { "Name": "yt-dlp", "Source": "main" },
-    { "Name": "zoxide", "Source": "main" }
+    { "Name": "yt-dlp", "Source": "main" }
   ],
   "buckets": [
     { "Name": "main" },
