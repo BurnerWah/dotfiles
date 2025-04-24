@@ -1,0 +1,252 @@
+name: jc
+description: Serializes the output of command-line tools to structured JSON output
+
+parsing: non-interspersed
+
+flags:
+  -a, --about: about jc
+  -C, --force-color: force color output (overrides -m)
+  -d, --debug: debug (double for verbose debug)
+  -h, --help: help (--help --parser_name for parser documentation)
+  -m, --monochrome: monochrome output
+  -M, --meta-out: add metadata to output including timestamp, etc.
+  -p, --pretty: pretty print output
+  -q, --quiet: suppress warnings (double to ignore streaming errors)
+  -r, --raw: raw output
+  -s, --slurp: slurp multiple lines into an array
+  -u, --unbuffer: unbuffer output
+  -v, --version: version info
+  -y, --yaml-out: YAML output
+  -B, --bash-comp: gen Bash completion
+  -Z, --zsh-comp: gen Zsh completion
+
+  # Generate this with jc --about | jq -r '.parsers[] | "  \(.argument): \(.description)"'
+  --acpi: acpi command parser
+  --airport: airport -I command parser
+  --airport-s: airport -s command parser
+  --apt-cache-show: apt-cache show command parser
+  --apt-get-sqq: apt-get -sqq command parser
+  --arp: arp command parser
+  --asciitable: ASCII and Unicode table parser
+  --asciitable-m: multi-line ASCII and Unicode table parser
+  --blkid: blkid command parser
+  --bluetoothctl: bluetoothctl command parser
+  --cbt: cbt (Google Bigtable) command parser
+  --cef: CEF string parser
+  --cef-s: CEF string streaming parser
+  --certbot: certbot command parser
+  --chage: chage --list command parser
+  --cksum: cksum and sum command parser
+  --clf: Common and Combined Log Format file parser
+  --clf-s: Common and Combined Log Format file streaming parser
+  --crontab: crontab command and file parser
+  --crontab-u: crontab file parser with user support
+  --csv: CSV file parser
+  --csv-s: CSV file streaming parser
+  --curl-head: curl --head command parser
+  --date: date command parser
+  --datetime-iso: ISO 8601 Datetime string parser
+  --debconf-show: debconf-show command parser
+  --df: df command parser
+  --dig: dig command parser
+  --dir: dir command parser
+  --dmidecode: dmidecode command parser
+  --dpkg-l: dpkg -l command parser
+  --du: du command parser
+  --efibootmgr: efibootmgr command parser
+  --email-address: Email Address string parser
+  --env: env command parser
+  --ethtool: ethtool command parser
+  --file: file command parser
+  --find: find command parser
+  --findmnt: findmnt command parser
+  --finger: finger command parser
+  --free: free command parser
+  --fstab: /etc/fstab file parser
+  --git-log: git log command parser
+  --git-log-s: git log command streaming parser
+  --git-ls-remote: git ls-remote command parser
+  --gpg: gpg --with-colons command parser
+  --group: /etc/group file parser
+  --gshadow: /etc/gshadow file parser
+  --hash: hash command parser
+  --hashsum: hashsum command parser (md5sum, shasum, etc.)
+  --hciconfig: hciconfig command parser
+  --history: history command parser
+  --host: host command parser
+  --hosts: /etc/hosts file parser
+  --http-headers: HTTP headers parser
+  --id: id command parser
+  --ifconfig: ifconfig command parser
+  --ini: INI file parser
+  --ini-dup: INI with duplicate key file parser
+  --iostat: iostat command parser
+  --iostat-s: iostat command streaming parser
+  --ip-address: IPv4 and IPv6 Address string parser
+  --ipconfig: ipconfig Windows command parser
+  --iptables: iptables command parser
+  --ip-route: ip route command parser
+  --iw-scan: iw dev [device] scan command parser
+  --iwconfig: iwconfig command parser
+  --jar-manifest: Java MANIFEST.MF file parser
+  --jobs: jobs command parser
+  --jwt: JWT string parser
+  --kv: Key/Value file and string parser
+  --kv-dup: Key/Value with duplicate key file and string parser
+  --last: last and lastb command parser
+  --ls: ls command parser
+  --ls-s: ls command streaming parser
+  --lsattr: lsattr command parser
+  --lsb-release: lsb_release command parser
+  --lsblk: lsblk command parser
+  --lsmod: lsmod command parser
+  --lsof: lsof command parser
+  --lspci: lspci -mmv command parser
+  --lsusb: lsusb command parser
+  --m3u: M3U and M3U8 file parser
+  --mdadm: mdadm command parser
+  --mount: mount command parser
+  --mpstat: mpstat command parser
+  --mpstat-s: mpstat command streaming parser
+  --needrestart: needrestart -b command parser
+  --netstat: netstat command parser
+  --nmcli: nmcli command parser
+  --nsd-control: nsd-control command parser
+  --ntpq: ntpq -p command parser
+  --openvpn: openvpn-status.log file parser
+  --os-prober: os-prober command parser
+  --os-release: /etc/os-release file parser
+  --pacman: pacman command parser
+  --passwd: /etc/passwd file parser
+  --path: POSIX path string parser
+  --path-list: POSIX path list string parser
+  --pci-ids: pci.ids file parser
+  --pgpass: PostgreSQL password file parser
+  --pidstat: pidstat -H command parser
+  --pidstat-s: pidstat -H command streaming parser
+  --ping: ping and ping6 command parser
+  --ping-s: ping and ping6 command streaming parser
+  --pip-list: pip list command parser
+  --pip-show: pip show command parser
+  --pkg-index-apk: Alpine Linux Package Index file parser
+  --pkg-index-deb: Debian Package Index file parser
+  --plist: PLIST file parser
+  --postconf: postconf -M command parser
+  --proc: /proc/ file parser
+  --proc-buddyinfo: /proc/buddyinfo file parser
+  --proc-cmdline: /proc/cmdline file parser
+  --proc-consoles: /proc/consoles file parser
+  --proc-cpuinfo: /proc/cpuinfo file parser
+  --proc-crypto: /proc/crypto file parser
+  --proc-devices: /proc/devices file parser
+  --proc-diskstats: /proc/diskstats file parser
+  --proc-filesystems: /proc/filesystems file parser
+  --proc-interrupts: /proc/interrupts file parser
+  --proc-iomem: /proc/iomem file parser
+  --proc-ioports: /proc/ioports file parser
+  --proc-loadavg: /proc/loadavg file parser
+  --proc-locks: /proc/locks file parser
+  --proc-meminfo: /proc/meminfo file parser
+  --proc-modules: /proc/modules file parser
+  --proc-mtrr: /proc/mtrr file parser
+  --proc-pagetypeinfo: /proc/pagetypeinfo file parser
+  --proc-partitions: /proc/partitions file parser
+  --proc-slabinfo: /proc/slabinfo file parser
+  --proc-softirqs: /proc/softirqs file parser
+  --proc-stat: /proc/stat file parser
+  --proc-swaps: /proc/swaps file parser
+  --proc-uptime: /proc/uptime file parser
+  --proc-version: /proc/version file parser
+  --proc-vmallocinfo: /proc/vmallocinfo file parser
+  --proc-vmstat: /proc/vmstat file parser
+  --proc-zoneinfo: /proc/zoneinfo file parser
+  --proc-driver-rtc: /proc/driver/rtc file parser
+  --proc-net-arp: /proc/net/arp file parser
+  --proc-net-dev: /proc/net/dev file parser
+  --proc-net-dev-mcast: /proc/net/dev_mcast file parser
+  --proc-net-if-inet6: /proc/net/if_inet6 file parser
+  --proc-net-igmp: /proc/net/igmp file parser
+  --proc-net-igmp6: /proc/net/igmp6 file parser
+  --proc-net-ipv6-route: /proc/net/ipv6_route file parser
+  --proc-net-netlink: /proc/net/netlink file parser
+  --proc-net-netstat: /proc/net/netstat file parser
+  --proc-net-packet: /proc/net/packet file parser
+  --proc-net-protocols: /proc/net/protocols file parser
+  --proc-net-route: /proc/net/route file parser
+  --proc-net-tcp: /proc/net/tcp and /proc/net/tcp6 file parser
+  --proc-net-unix: /proc/net/unix file parser
+  --proc-pid-fdinfo: /proc/<pid>/fdinfo/<fd> file parser
+  --proc-pid-io: /proc/<pid>/io file parser
+  --proc-pid-maps: /proc/<pid>/maps file parser
+  --proc-pid-mountinfo: /proc/<pid>/mountinfo file parser
+  --proc-pid-numa-maps: /proc/<pid>/numa_maps file parser
+  --proc-pid-smaps: /proc/<pid>/smaps file parser
+  --proc-pid-stat: /proc/<pid>/stat file parser
+  --proc-pid-statm: /proc/<pid>/statm file parser
+  --proc-pid-status: /proc/<pid>/status file parser
+  --ps: ps command parser
+  --resolve-conf: /etc/resolve.conf file parser
+  --route: route command parser
+  --rpm-qi: rpm -qi command parser
+  --rsync: rsync command parser
+  --rsync-s: rsync command streaming parser
+  --semver: Semantic Version string parser
+  --sfdisk: sfdisk command parser
+  --shadow: /etc/shadow file parser
+  --srt: SRT file parser
+  --ss: ss command parser
+  --ssh-conf: ssh config file and ssh -G command parser
+  --sshd-conf: sshd config file and sshd -T command parser
+  --stat: stat command parser
+  --stat-s: stat command streaming parser
+  --swapon: swapon command parser
+  --sysctl: sysctl command parser
+  --syslog: Syslog RFC 5424 string parser
+  --syslog-s: Syslog RFC 5424 string streaming parser
+  --syslog-bsd: Syslog RFC 3164 string parser
+  --syslog-bsd-s: Syslog RFC 3164 string streaming parser
+  --systemctl: systemctl command parser
+  --systemctl-lj: systemctl list-jobs command parser
+  --systemctl-ls: systemctl list-sockets command parser
+  --systemctl-luf: systemctl list-unit-files command parser
+  --systeminfo: systeminfo command parser
+  --time: /usr/bin/time command parser
+  --timedatectl: timedatectl status command parser
+  --timestamp: Unix Epoch Timestamp string parser
+  --toml: TOML file parser
+  --top: top -b command parser
+  --top-s: top -b command streaming parser
+  --tracepath: tracepath and tracepath6 command parser
+  --traceroute: traceroute and traceroute6 command parser
+  --tune2fs: tune2fs -l command parser
+  --udevadm: udevadm info command parser
+  --ufw: ufw status command parser
+  --ufw-appinfo: ufw app info [application] command parser
+  --uname: uname -a command parser
+  --update-alt-gs: update-alternatives --get-selections command parser
+  --update-alt-q: update-alternatives --query command parser
+  --upower: upower command parser
+  --uptime: uptime command parser
+  --url: URL string parser
+  --ver: Version string parser
+  --veracrypt: veracrypt command parser
+  --vmstat: vmstat command parser
+  --vmstat-s: vmstat command streaming parser
+  --w: w command parser
+  --wc: wc command parser
+  --wg-show: wg show command parser
+  --who: who command parser
+  --x509-cert: X.509 PEM and DER certificate file parser
+  --x509-csr: X.509 PEM and DER certificate request file parser
+  --xml: XML file parser
+  --xrandr: xrandr command parser
+  --yaml: YAML file parser
+  --zipinfo: zipinfo command parser
+  --zpool-iostat: zpool iostat command parser
+  --zpool-status: zpool status command parser
+
+completion:
+  positional:
+    - - $(jc --about | jq -r '.parsers[] | .magic_commands | arrays[] | split(" ") | .[0]')
+  positionalany:
+    - $carapace.bridge.CarapaceBin([${C_ARG0}])

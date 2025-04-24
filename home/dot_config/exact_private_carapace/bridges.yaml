@@ -595,6 +595,7 @@ mpm: click
 mpstat: zsh
 msfconsole: fish
 msfdb: fish
+multi-gitter: cobra
 murano: zsh
 mycli: click
 mysqladmin: zsh
