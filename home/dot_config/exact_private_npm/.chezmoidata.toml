@@ -1,0 +1,23 @@
+[settings.npm.core]
+sign-git-commit = true
+sign-git-tag = true
+init-author-email = "npm@brnr.link"
+init-author-name = "Burner"
+# pnpm stuff
+update-notifier = false
+
+[settings.npm.by_os.darwin]
+init-module = "${HOME}/.config/npm/config/npm-init.js"
+cache = "${HOME}/Library/Caches/npm"
+global-bin-dir = "${HOME}/.local/bin"
+# pnpm stuff
+prefer-symlinked-executables = true
+store-dir = "${HOME}/Library/Application Support/pnpm/store"
+global-dir = "${HOME}/Library/Application Support/pnpm/global"
+state-dir = "${HOME}/Library/Application Support/pnpm/state"
+
+[settings.npm.by_os.linux]
+init-module = "${XDG_CONFIG_HOME}/npm/config/npm-init.js"
+cache = "${XDG_CACHE_HOME}/npm"
+prefix = "${XDG_DATA_HOME}/npm"
+logs-dir = "${XDG_STATE_HOME}/npm/logs"
