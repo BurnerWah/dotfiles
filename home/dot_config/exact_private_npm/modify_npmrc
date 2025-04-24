@@ -7,7 +7,7 @@ init-author-name=Burner
 init-module=${HOME}/.config/npm/config/npm-init.js
 cache=${HOME}/Library/Caches/npm
 global-bin-dir=${HOME}/.local/bin
-{{- /* pnpm stuff */ -}}
+{{/* pnpm stuff */}}
 prefer-symlinked-executables=true
 store-dir=${HOME}/Library/Application Support/pnpm/store
 global-dir=${HOME}/Library/Application Support/pnpm/global
@@ -19,7 +19,7 @@ prefix=${XDG_DATA_HOME}/npm
 logs-dir=${XDG_STATE_HOME}/npm/logs
 {{- end }}
 update-notifier=false
-{{- /* scoped settings currently are left unmodified */ -}}
+{{/* scoped settings currently are left unmodified */}}
 {{- range regexFindAll "//.+?/:.+" .chezmoi.stdin -1 }}
 {{ . }}
 {{- end }}
