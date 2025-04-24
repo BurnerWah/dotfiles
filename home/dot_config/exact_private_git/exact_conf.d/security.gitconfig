@@ -1,23 +1,33 @@
 [protocol "git"]
     allow = never
+
 [url "https://github.com/"]
     insteadOf = git://github.com/
     insteadOf = http://github.com/
+
 [url "https://gist.github.com/"]
     insteadOf = http://gist.github.com/
     insteadOf = git://gist.github.com/
+
 [url "https://gitlab.com/"]
     insteadOf = git://gitlab.com/
     insteadOf = http://gitlab.com/
+
 [url "https://git.kernel.org/"]
     insteadOf = http://git.kernel.org/
     insteadOf = git://git.kernel.org/
+
 [url "https://anongit.freedesktop.org/git/"]
     insteadOf = http://anongit.freedesktop.org/git/
     insteadOf = git://anongit.freedesktop.org/
+
 [url "https://gitlab.freedesktop.org/"]
     insteadOf = http://gitlab.freedesktop.org/
     insteadOf = git://gitlab.freedesktop.org/
+
 [url "https://gitlab.gnome.org/"]
     insteadOf = http://gitlab.gnome.org/
     insteadOf = git://gitlab.gnome.org/
+
+[url "https://src.fedoraproject.org/"]
+    insteadOf = http://src.fedoraproject.org/

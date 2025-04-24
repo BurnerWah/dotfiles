@@ -7,6 +7,8 @@
 	gpgsign = true
 [init]
 	defaultBranch = main
+[alias]
+	aliases = config --get-regexp alias
 [delta]
 	navigate = true
 [mergetool "code"]

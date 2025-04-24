@@ -5,6 +5,7 @@ settings:
         # keep-sorted start
         ast-grep: ast-grep completions elvish
         atuin: atuin gen-completions --shell elvish
+        bcachefs: bcachefs completions elvish
         bws: bws completions elvish
         chezmoi_modify_manager: chezmoi_modify_manager --bpaf-complete-style-elvish
         dprint: dprint completions elvish
@@ -51,6 +52,7 @@ settings:
         # keep-sorted start
         ast-grep: ast-grep completions powershell
         atuin: atuin gen-completions --shell powershell
+        bcachefs: bcachefs completions powershell
         bws: bws completions powershell
         dprint: dprint completions powershell
         ein: ein completions --shell powershell

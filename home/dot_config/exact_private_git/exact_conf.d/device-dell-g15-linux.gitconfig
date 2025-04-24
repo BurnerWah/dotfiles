@@ -1,0 +1,48 @@
+[user]
+    signingKey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC2pNuOStlSIa0mcKBUg0nkrLCMSTscboEnM7Vvoq4XG
+[commit]
+    gpgSign = true
+[gpg]
+    format = ssh
+[gpg "ssh"]
+    # program = "/opt/1Password/op-ssh-sign"
+    program = op-ssh-sign
+[alias]
+    open = brws
+[fetch]
+    parallel = 0
+    # Run a reasonable number of fetch operations at once
+[index]
+    threads = true # multi-threaded index
+[merge]
+    tool = code
+    guitool = code
+[mergetool]
+    prompt = false
+[pack]
+    threads = 0 # multi-threaded packing
+[submodule]
+    fetchJobs = 0 # clone a reasonable number of submodules at once
+[web]
+    browser = xdg-open # use default browser
+[advice]
+    pushUpdateRejected = true
+    pushUnqualifiedRefname = true
+    statusHints = true
+    statusUoption = true
+    resetQuiet = true
+    resolveConflict = true
+    implicitIdentity = true
+    detachedHead = true
+    checkoutAmbiguousRemoteBranchName = true
+    amWorkDir = true
+    rmHints = true
+    addEmbeddedRepo = true
+    ignoredHook = true
+    waitingForEditor = true
+[delta]
+    side-by-side = false
+    syntax-theme = Monokai Extended
+    line-numbers = true
+[credential]
+    helper = /usr/libexec/git-core/git-credential-libsecret
