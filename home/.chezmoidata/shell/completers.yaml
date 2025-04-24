@@ -1,52 +1,5 @@
 settings:
   shell:
-    elvish:
-      completers:
-        # keep-sorted start
-        ast-grep: ast-grep completions elvish
-        atuin: atuin gen-completions --shell elvish
-        bcachefs: bcachefs completions elvish
-        bws: bws completions elvish
-        chezmoi_modify_manager: chezmoi_modify_manager --bpaf-complete-style-elvish
-        dprint: dprint completions elvish
-        ein: ein completions --shell elvish
-        erd: erd --completions elvish
-        folderify: folderify --completions elvish
-        genact: genact --print-completions elvish
-        git-absorb: git-absorb --gen-completions elvish
-        gix: gix completions --shell elvish
-        hgrep: hgrep --generate-completion-script elvish
-        kondo: kondo --completions elvish
-        kwctl: kwctl completions --shell elvish
-        ltrs: ltrs completions elvish
-        miniserve: miniserve --print-completions elvish
-        nickel: nickel gen-completions elvish
-        onefetch: onefetch --generate elvish
-        pixi: pixi completion --shell elvish
-        procs: procs --gen-completion-out elvish
-        proto: proto completions --shell elvish
-        pueue: pueue completions elvish
-        py-spy: py-spy completions elvish
-        railway: railway completion elvish
-        rav1e: rav1e - -o - advanced --completion elvish
-        rbw: rbw gen-completions elvish
-        ruff: ruff generate-shell-completion elvish
-        sentry-cli: sentry-cli completions elvish
-        sg: sg completions elvish
-        spytrap-adb: spytrap-adb completions elvish
-        tex-fmt: tex-fmt --completion elvish
-        topgrade: topgrade --gen-completion elvish
-        topiary: topiary completion elvish
-        tree-sitter: tree-sitter complete --shell elvish
-        typeshare: typeshare completions elvish
-        uv: uv generate-shell-completion elvish
-        uvx: uvx --generate-shell-completion elvish
-        vrc-get.exe: vrc-get.exe completion elvish
-        warp-cli: warp-cli generate-completions elvish
-        wasmtime: wasmtime completion elvish
-        yr: yr completion elvish
-        zellij: zellij setup --generate-completion elvish
-        # keep-sorted end
     pwsh:
       completers:
         # keep-sorted start
