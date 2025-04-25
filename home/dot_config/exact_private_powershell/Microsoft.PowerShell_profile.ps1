@@ -1,11 +1,10 @@
-# for bkt
 if (($Host.Name -eq 'ConsoleHost') `
         -and ([System.Environment]::UserInteractive) `
         -and -not ([System.Environment]::GetCommandLineArgs().Contains('-NonInteractive'))) {
     if (Get-Command oh-my-posh -ErrorAction SilentlyContinue) {
         oh-my-posh init pwsh | Invoke-Expression
     }
-    
+
     if (Get-Command zoxide -ErrorAction SilentlyContinue) {
         Invoke-Expression (& { (zoxide init powershell | Out-String) })
     }
@@ -26,7 +25,7 @@ if (($Host.Name -eq 'ConsoleHost') `
                     else { Invoke-Expression "$fuck"; }
                 }
             }
-            [Console]::ResetColor() 
+            [Console]::ResetColor()
         }
     }
 }
