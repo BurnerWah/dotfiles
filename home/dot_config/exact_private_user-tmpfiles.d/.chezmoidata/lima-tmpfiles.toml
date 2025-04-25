@@ -15,6 +15,7 @@ shared = [
   ".config/fd",
   ".config/fish/completions",
   ".config/glow",
+  ".config/powershell",
   ".config/rainbow",
   ".config/readline",
   ".config/starship.toml",
