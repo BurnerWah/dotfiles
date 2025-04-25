@@ -1,3 +1,4 @@
+$Env:PSModulePath = $Env:PSModulePath + (($IsWindows) ? ";" : ":") + (Join-Path $PSScriptRoot "Modules")
 if (($Host.Name -eq 'ConsoleHost') `
         -and ([System.Environment]::UserInteractive) `
         -and -not ([System.Environment]::GetCommandLineArgs().Contains('-NonInteractive'))) {
