@@ -101,6 +101,7 @@ btdownloadgui: zsh
 btlaunchmany: zsh
 btlaunchmanycurses: zsh
 btmakemetafile: zsh
+btrbk: fish
 btreannounce: zsh
 btrename: zsh
 btshowmetainfo: zsh
@@ -451,8 +452,10 @@ ikhal: click
 ilasm: fish # mono
 incus: cobra
 influx: urfavecli
+info: zsh
 infracost: cobra
 initdb: zsh
+install-info: zsh
 iostat: zsh
 ipinfo: complete
 ipsw: cobra
@@ -561,6 +564,7 @@ mac2unix: zsh
 magento: fish
 magnum: zsh
 makedepend: fish
+makeinfo: zsh
 makensis: fish
 mani: cobra
 manila: zsh
@@ -604,6 +608,7 @@ mysqlimport: zsh
 mysqlshow: zsh
 nali: cobra
 name-that-hash: click
+namei: fish
 nautilus: zsh
 navi: fish
 neon: yargs # built in completion is broken but it's based on yargs
@@ -658,6 +663,7 @@ parsehdlist: zsh
 patool: fish
 pbget: fish
 pdf2ps: zsh
+pdftexi2dvi: zsh
 perldoc: zsh
 pg_config: zsh
 pg_ctl: zsh
@@ -670,6 +676,7 @@ pgcli: click
 phpunit: fish
 phrase: cobra
 pidstat: zsh
+pinfo: zsh
 pio: click
 pipenv: click
 pipgrip: click
@@ -687,6 +694,9 @@ posting: click
 pre-commit: fish # argcomplete bridge doesn't work
 proxychains: fish
 prt-get: fish
+ps2ascii: zsh
+ps2epsi: zsh
+ps2ps: zsh
 pscale: cobra
 psql: zsh
 pstree: fish
@@ -825,6 +835,7 @@ texi2dvi: zsh
 texi2pdf: zsh
 texindex: zsh
 tf-profile: cobra
+tkinfo: zsh
 tmutil: fish
 tokei: fish # TODO create custom spec
 toolbox: cobra
@@ -846,6 +857,8 @@ tt: cobra
 ttx: fish
 tune2fs: zsh
 tuned-adm: fish
+tunes2pod.pl: zsh
+tunes2pod: zsh
 uml_mconsole: zsh
 uml_moo: zsh
 uml_switch: zsh
@@ -855,9 +868,11 @@ update-eix-remote: fish
 update-eix: fish
 update-rc.d: zsh
 usbguard: bash
+usbip: fish
 userdbctl: fish
 uvicorn: click
 vacuumdb: zsh
+validate-spice: fish
 varlinkctl: zsh
 vault: complete
 VBoxHeadless: fish
@@ -887,28 +902,58 @@ whalebrew: cobra
 wicd-cli: fish
 wicd-client: fish
 wicd-gtk: fish
+wiggle: zsh
 windscribe: fish
 winemaker: fish
 wipefs: zsh
 witness: cobra
+wlr-randr: fish
 wormhole: click
 wrangler: yargs
 wvdial: fish
+xauth: zsh
+xautolock: zsh
 xbps-digest: fish
 xbps-fbulk: fish
 xbps-fetch: fish
 xdg-mime: fish
+xdpyinfo: zsh
 xed: fish
 xeol: cobra
+xev: zsh
+xfd: zsh
+xfig: zsh
+xfontsel: zsh
 xgettext: fish
+xhost: zsh
+xkill: zsh
+xli: zsh
+xloadimage: zsh
+xlsatoms: zsh
+xlsclients: zsh
 xmllint: zsh
+xmlstarlet: zsh
+xmms2: zsh
 xmms: fish
+xmodmap: zsh
+xon: zsh
+xournal: zsh
 xplayer: fish
 xreader: fish
+xscreensaver-command: zsh
 xsel: fish
+xset: zsh
+xsetbg: zsh
+xsetroot: zsh
 xsp: fish
 xsv: fish
+xv: zsh
+xview: zsh
 xviewer: fish
+xwd: zsh
+xwininfo: zsh
+xwit: zsh
+xwud: zsh
 xxh128sum: fish
 xxh32sum: fish
 xxh64sum: fish
@@ -926,6 +971,7 @@ zabbix_proxy: fish
 zabbix_sender: fish
 zabbix_server: fish
 zabbix_web_service: fish
+zed-preview: fish
 zef: fish # raku
 zfs: fish
 zig: fish
