@@ -6,15 +6,12 @@ if (($Host.Name -eq 'ConsoleHost') `
         oh-my-posh init pwsh | Invoke-Expression
     }
 
-    if (Get-Command zoxide -ErrorAction SilentlyContinue) {
-        Invoke-Expression (& { (zoxide init powershell | Out-String) })
-    }
-
     if (Get-Command carapace -ErrorAction SilentlyContinue) {
         Set-PSReadLineOption -Colors @{ "Selection" = "`e[7m" }
         Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
         carapace _carapace powershell | Out-String | Invoke-Expression
     }
 
+    Import-Module -Name Burner.Zoxide
     Import-Module -Name Burner.TheFuck
 }
