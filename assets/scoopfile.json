@@ -5,11 +5,9 @@
     { "Name": "curl", "Source": "main" },
     { "Name": "docker-compose", "Source": "main" },
     { "Name": "exiftool", "Source": "main" },
-    { "Name": "ffmpeg", "Source": "main" },
     { "Name": "FiraCode-NF", "Source": "nerd-fonts" },
     { "Name": "FiraCode", "Source": "nerd-fonts" },
     { "Name": "FiraMono-NF", "Source": "nerd-fonts" },
-    { "Name": "fzf", "Source": "main" },
     { "Name": "gh", "Source": "main" },
     { "Name": "gifski", "Source": "main" },
     { "Name": "godot-mono", "Source": "extras" },
@@ -29,7 +27,6 @@
     { "Name": "neovim", "Source": "main" },
     { "Name": "oh-my-posh", "Source": "main" },
     { "Name": "processhacker", "Source": "extras" },
-    { "Name": "rclone", "Source": "main" },
     { "Name": "regeditor", "Source": "extras" },
     { "Name": "ruffle-nightly", "Source": "versions" },
     { "Name": "scoop-completion", "Source": "extras" },
@@ -39,8 +36,7 @@
     { "Name": "steam-rom-manager", "Source": "games" },
     { "Name": "tree-sitter", "Source": "main" },
     { "Name": "uutils-coreutils", "Source": "main" },
-    { "Name": "winget-ps", "Source": "main" },
-    { "Name": "yt-dlp", "Source": "main" }
+    { "Name": "winget-ps", "Source": "main" }
   ],
   "buckets": [
     { "Name": "main" },
