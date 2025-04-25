@@ -2,7 +2,6 @@
 tap "homebrew/autoupdate" if OS.mac?
 tap "homebrew/command-not-found" if OS.mac?
 tap "buo/cask-upgrade" if OS.mac?
-tap "powershell/tap" if OS.mac?
 tap "gromgit/fuse" if OS.mac?
 
 # Packages
@@ -129,8 +128,6 @@ brew "zenith" # Another htop thing
 brew "zoxide" if OS.mac? # directory jumping
 brew "zstd" if OS.mac?
 
-brew "powershell/tap/powershell", link: true if OS.mac? # PowerShell
-
 cask_args require_sha: true
 
 # Casks
@@ -176,6 +173,7 @@ cask "moonlight" if OS.mac? # local game streaming
 cask "notunes" if OS.mac?
 cask "obs" if OS.mac? # streaming & recording
 cask "obsidian" if OS.mac? # note taking
+cask "powershell" if OS.mac? # powershell tap is slow to be updated
 cask "phpstorm", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
 cask "podman-desktop", greedy: false if OS.mac?
 cask "postico" if OS.mac? # postgres client
