@@ -606,6 +606,9 @@ kyverno: cobra
 launchctl: fish # Mac OS
 ldap: zsh
 ldapsearch: fish
+ldconfig.real: zsh
+ldconfig: zsh
+ldd: zsh
 lefthook: cobra
 legit: click
 license-eye: cobra
@@ -613,14 +616,22 @@ lighty-disable-mod: zsh
 lighty-enable-mod: zsh
 lima-guestagent: cobra
 limactl: cobra
+lintian-info: zsh
+lintian: zsh
 litecli: click
 litmusctl: cobra
+lldb: zsh
 localstack: click
 logkeys: fish
 lpmove: fish
 lppasswd: fish
 lsattr: zsh
 lscfg: zsh
+lsdev: zsh
+lslv: zsh
+lspv: zsh
+lsvg: zsh
+ltrace: zsh
 lunchy: fish # Mac OS
 lux: urfavecli
 lxc: fish
@@ -629,6 +640,7 @@ lzop: zsh
 m-a: zsh
 m4: fish
 mac2unix: zsh
+madison: zsh
 magento: fish
 magnum: zsh
 makedepend: fish
@@ -637,11 +649,20 @@ makensis: fish
 mani: cobra
 manila: zsh
 mariner: fish
+mattrib: zsh
 mcap: cobra
+mcd: zsh
+mcopy: zsh
 md-to-clip: fish
 mddiagnose: fish # Mac OS
+mdel: zsh
+mdeltree: zsh
 mdimport: fish # Mac OS
+mdir: zsh
+mdu: zsh
 metaflac: zsh
+mformat: zsh
+mii-tool: zsh
 minikube: cobra
 mistral: zsh
 mixerctl: zsh
@@ -656,7 +677,11 @@ mksquashfs: fish
 mktunes.pl: zsh
 mktunes: zsh
 mkvextract: fish
+mlabel: zsh
 mlocate: zsh
+mmd: zsh
+mmount: zsh
+mmove: zsh
 mocha: yargs
 mocp: fish
 module-assistant: zsh
@@ -669,15 +694,22 @@ monop: fish
 mozilla-xremote-client: zsh
 mpm: click
 mpstat: zsh
+mrd: zsh
+mread: zsh
+mren: zsh
 msfconsole: fish
 msfdb: fish
+mtoolstest: zsh
+mtype: zsh
 multi-gitter: cobra
+munchlist: zsh
 murano: zsh
 mycli: click
 mysqladmin: zsh
 mysqldiff: zsh
 mysqlimport: zsh
 mysqlshow: zsh
+nail: zsh
 nali: cobra
 name-that-hash: click
 namei: fish
@@ -692,6 +724,7 @@ nerdctl: cobra
 netctl-auto: fish
 netctl: fish
 nethack: fish
+netstat: zsh
 networksetup: zsh
 neutron: zsh
 newgrp: zsh
@@ -709,12 +742,16 @@ notify-send: fish
 nova: zsh
 npq-hero: yargs # TODO create custom spec
 npq: yargs # TODO create custom spec
+nsenter: zsh
 nslookup: zsh
 nth: click
 obnam: fish
 oc: cobra
 ocm: cobra
 octave: fish
+odme: zsh
+odmget: zsh
+odmshow: zsh
 ogg123: zsh
 oggdec: zsh
 ogginfo: zsh
@@ -738,6 +775,7 @@ pactl: fish
 parsehdlist: zsh
 patool: fish
 pbget: fish
+pbuilder: zsh
 pdf2ps: zsh
 pdffonts: zsh
 pdfimages: zsh
@@ -791,10 +829,19 @@ prt-get: fish
 ps2ascii: zsh
 ps2epsi: zsh
 ps2ps: zsh
+psbook: zsh
 pscale: cobra
+psmerge: zsh
+psmulti: zsh
 psql: zsh
+psresize: zsh
+psselect: zsh
+pstoedit: zsh
+pstotgif: zsh
 pstree: fish
+pswrap: zsh
 pydf: fish
+pyhtmlizer: zsh
 pzstd: fish
 qbt: cobra
 qemu: zsh
@@ -804,6 +851,7 @@ qshell: fish
 qubes-gpg-client: fish
 rake: zsh
 rakudo: fish
+ranlib: zsh
 ratify: cobra
 rclone: cobra # built-in fish completions are broken
 realpath: fish
@@ -816,6 +864,8 @@ reindexdb: zsh
 reject: fish
 rejmerge: fish
 rekor-cli: cobra
+removepkg: zsh
+reportbug: zsh
 reuse: click
 rich: click
 rmic: zsh
@@ -843,6 +893,9 @@ rst2s5: fish
 rst2xetex: fish
 rst2xml: fish
 rstpep2html: fish
+rubber-info: zsh
+rubber-pipe: zsh
+rubber: zsh
 ruby-build: fish # TODO create custom spec
 ruby-mri: zsh
 runme: cobra
@@ -864,18 +917,25 @@ scss: fish # ruby-sass
 senlin: zsh
 serialver: zsh
 serve: fish
+setfattr: zsh
 sget: cobra
+showmount: zsh
 shub: click
 singularity: cobra
 skaffold: cobra
 skate: cobra
 skopeo: cobra
+slabtop: zsh
 slsa-verifier: cobra
 smartctl: zsh
+smbclient: zsh
+smbcontrol: zsh
+smbstatus: zsh
 smerge: fish
 snapper: zsh
 softwareupdate: zsh
 sops: urfavecli
+spamassassin: zsh
 sphinx-apidoc: fish
 sphinx-autogen: fish
 sphinx-build: fish
@@ -891,7 +951,14 @@ ssh-keyscan: zsh # TODO create custom spec
 ssh-mitm: argcomplete
 stern: cobra
 stream: fish # imagemagick
+strongswan: zsh
 svn-buildpackage: zsh
+svnadmin-static: zsh
+svnadmin: zsh
+svnlite: zsh
+svnliteadmin: zsh
+swaks: zsh
+swanctl: zsh
 swctl: urfavecli
 swiftc: zsh
 syft: cobra
@@ -921,6 +988,8 @@ systemd-tmpfiles: zsh
 systemd-tty-ask-password-agent: zsh
 sysupgrade: zsh
 tacker: zsh
+tardy: zsh
+tcptraceroute: zsh
 temporal: cobra
 termite: fish
 test-spice: fish
@@ -929,8 +998,10 @@ texi2dvi: zsh
 texi2pdf: zsh
 texindex: zsh
 tf-profile: cobra
+tkconch: zsh
 tkinfo: zsh
 tmutil: fish
+toilet: zsh
 tokei: fish # TODO create custom spec
 toolbox: cobra
 totem: fish
@@ -949,18 +1020,32 @@ trivy: cobra
 trove: zsh
 tt: cobra
 ttx: fish
+tunctl: zsh
 tune2fs: zsh
 tuned-adm: fish
 tunes2pod.pl: zsh
 tunes2pod: zsh
+twidge: zsh
+twist: zsh
+twistd: zsh
 uml_mconsole: zsh
 uml_moo: zsh
 uml_switch: zsh
+unison: zsh
 unix2mac: zsh
 unzstd: fish # TODO create custom spec
 update-eix-remote: fish
 update-eix: fish
 update-rc.d: zsh
+upgradepkg: zsh
+urpme: zsh
+urpmf: zsh
+urpmi.addmedia: zsh
+urpmi.removemedia: zsh
+urpmi.update: zsh
+urpmi: zsh
+urpmq: zsh
+usbconfig: zsh
 usbguard: bash
 usbip: fish
 userdbctl: fish
@@ -983,7 +1068,12 @@ virt-pki-validate: zsh
 virt-xml-validate: zsh
 virtctl: cobra
 vitrage: zsh
+vncserver: zsh
+vncviewer: zsh
 vorbiscomment: zsh
+vpnc-connect: zsh
+vpnc: zsh
+vserver: zsh
 vt: cobra
 vultr: cobra
 vunnel: click
@@ -1002,9 +1092,11 @@ winemaker: fish
 wipefs: zsh
 witness: cobra
 wlr-randr: fish
+wodim: zsh
 wormhole: click
 wrangler: yargs
 wvdial: fish
+xattr: zsh
 xauth: zsh
 xautolock: zsh
 xbps-digest: fish
@@ -1018,6 +1110,7 @@ xev: zsh
 xfd: zsh
 xfig: zsh
 xfontsel: zsh
+xfreerdp: zsh
 xgettext: fish
 xhost: zsh
 xkill: zsh
@@ -1041,9 +1134,12 @@ xsetbg: zsh
 xsetroot: zsh
 xsp: fish
 xsv: fish
+xtightvncviewer: zsh
 xv: zsh
 xview: zsh
 xviewer: fish
+xvnc4viewer: zsh
+xvncviewer: zsh
 xwd: zsh
 xwininfo: zsh
 xwit: zsh
@@ -1052,9 +1148,20 @@ xxh128sum: fish
 xxh32sum: fish
 xxh64sum: fish
 xxhsum: fish
+yafc: zsh
 yajsv: fish
 ykman: click
 yo: fish
+ypbind: zsh
+ypcat: zsh
+ypmatch: zsh
+yppasswd: zsh
+yppoll: zsh
+yppush: zsh
+ypserv: zsh
+ypset: zsh
+ypwhich: zsh
+ypxfr: zsh
 yq: cobra
 ytt: cobra
 zabbix_agent2: fish
