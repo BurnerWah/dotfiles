@@ -12,6 +12,7 @@ if (($Host.Name -eq 'ConsoleHost') `
         carapace _carapace powershell | Out-String | Invoke-Expression
     }
 
+    Import-Module -Name Burner.LazyComplete
     Import-Module -Name Burner.Zoxide
     Import-Module -Name Burner.TheFuck
 }

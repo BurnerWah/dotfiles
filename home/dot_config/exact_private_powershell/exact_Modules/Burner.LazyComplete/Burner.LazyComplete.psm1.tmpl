@@ -1,0 +1,11 @@
+using namespace System.Management.Automation
+using namespace System.Management.Automation.Language
+
+# {{- range $command, $completer := .settings.shell.pwsh.completers }}
+Register-ArgumentCompleter -Native -CommandName '{{ $command }}' -ScriptBlock {
+    param($wordToComplete, $commandAst, $cursorPosition)
+    Register-ArgumentCompleter -Native -CommandName '{{ $command }}' -ScriptBlock {}
+    Invoke-Expression '{{ $completer }}' | Out-String | Invoke-Expression
+    [System.Management.Automation.CommandCompletion]::CompleteInput($commandAst.ToString().PadRight($cursorPosition, ' ').Substring(0, $cursorPosition), $cursorPosition, $null).CompletionMatches
+}
+# {{- end }}
