@@ -51,6 +51,7 @@ apt-spy: fish
 apt-src: fish
 apt-zip-inst: fish
 apt-zip-list: fish
+apvlv: zsh
 arc: fish
 archlinux-java: fish
 arduino-cli: cobra
@@ -83,7 +84,10 @@ az: argcomplete
 azion: cobra
 badblocks: fish
 barbican: zsh
+baz: zsh
+beadm: zsh
 berglas: cobra
+bibtex: zsh
 bilix: click
 bin: cobra
 bind: fish
@@ -121,6 +125,8 @@ carapace: carapace
 cartridge: cobra
 cascadia: fish
 castnow: fish
+ccal: zsh
+cdbs-edit-patch: zsh
 cdebug: cobra
 cdktf: yargs
 ceilometer: zsh
@@ -128,13 +134,17 @@ cekit: click
 certigo: kingpin
 cf2tf: click
 cf: fish
+chage: zsh
 chainloop: cobra
 chamber: cobra
 changie: cobra
+chattr: zsh
 chcon: zsh
 checkinstall: fish
 chezmoi: cobra
 chflags: zsh
+chkconfig: zsh
+chkstow: zsh
 choice: fish
 choom: zsh
 chpass: zsh
@@ -144,7 +154,9 @@ ci: zsh
 cifsiostat: zsh
 cinder: zsh
 cjxl: fish
+ckeygen: zsh
 clasp: fish
+clay: zsh
 cleanmgr: fish
 climate: fish
 clj: fish
@@ -158,6 +170,7 @@ co: zsh
 cobra-cli: cobra
 colima: cobra
 compare: fish # imagemagick
+conch: zsh
 concurrently: yargs
 conjure: fish
 connmanctl: fish
@@ -246,6 +259,8 @@ distrobox-rm: zsh
 distrobox-stop: zsh
 distrobox-upgrade: zsh
 distrobox: zsh
+django-admin.py: zsh
+django-admin: zsh
 djview4: fish
 djview: fish
 djxl: fish
@@ -268,10 +283,14 @@ dpkg-source: zsh
 dput: zsh
 draft: cobra
 driftctl: cobra
+drill: zsh
 dropdb: zsh
 dropuser: zsh # postgres
 dscacheutil: fish # Mac OS
 dscverify: zsh # debian
+dtrace: zsh
+dtruss: zsh
+dumpadm: zsh
 dumpcap: fish
 dumper: zsh
 dupload: zsh
@@ -284,10 +303,13 @@ dvips: zsh
 dviselect: zsh
 dvitodvi: zsh
 dvitype: zsh
+e2label: zsh
+ecasound: zsh
 efibootmgr: fish
 efivar: fish
 eg: fish
 ehco: kingpin
+elfdump: zsh
 elixir: fish
 elm: fish
 emacs: fish
@@ -295,7 +317,12 @@ encfs: fish
 eog: zsh
 eopkg: fish
 erb: zsh
+espeak: zsh
 etags: zsh
+eu-nm: zsh
+eu-objdump: zsh
+eu-readelf: zsh
+eu-strings: zsh
 exercism: cobra
 exif: fish
 expect: fish
@@ -308,6 +335,7 @@ fastboot: fish
 fava: click
 fc-match: zsh
 feishu2md: urfavecli
+fetchmail: zsh
 ffplay: fish
 ffprobe: fish
 filterdiff: zsh
@@ -329,10 +357,13 @@ fixwwps: zsh
 flex++: zsh
 flex: zsh
 flipdiff: zsh
+flowadm: zsh
 flowpipe: cobra
 fluxbox-remote: fish
 fly: cobra
 flyctl: cobra
+fmadm: zsh
+freebsd-update: zsh
 freezer: zsh
 fs_usage: zsh
 fsharpc: fish
@@ -351,8 +382,15 @@ gdbus: fish
 geany: zsh
 gendarme: fish
 genisoimage: zsh
+getafm: zsh
 getclip: zsh
+getconf: zsh
+getent: zsh
 getfacl: zsh
+getfattr: zsh
+getmail: zsh
+getopt: zsh
+ggetopt: zsh
 ggshield: click
 ggv: zsh
 gh: cobra
@@ -372,11 +410,21 @@ gitsign: cobra
 gk: cobra
 glab: cobra
 glance: zsh
+glocate: zsh
 glow: cobra
 gm: zsh
+gmplayer: zsh
 gnocchi: zsh
 gnome-extensions: fish
 gnome-gv: zsh
+gnupod_addsong.pl: zsh
+gnupod_addsong: zsh
+gnupod_check.pl: zsh
+gnupod_check: zsh
+gnupod_INIT.pl: zsh
+gnupod_INIT: zsh
+gnupod_search.pl: zsh
+gnupod_search: zsh
 gnutls-cli-debug: zsh
 gnutls-cli: zsh
 gnutls-serv: zsh
@@ -389,6 +437,7 @@ gopass: urfavecli
 gorename: fish
 greenmask: cobra
 gresource: fish
+groff: zsh
 growisofs: zsh
 grub-file: fish
 grub-install: fish
@@ -430,6 +479,7 @@ harlequin: click
 hashcat: fish
 hatch: click
 hcloud: cobra
+hdiutil: zsh
 heat: zsh
 helm: cobra
 helm_ls: cobra
@@ -446,17 +496,26 @@ hugo: cobra
 i3-msg: fish
 ibus: fish
 icdiff: fish
+icombine: zsh
+iconvconfig: zsh
 ifdata: fish
+ijoin: zsh
 ikdasm: fish # mono
 ikhal: click
 ilasm: fish # mono
+includeres: zsh
 incus: cobra
+inetadm: zsh
 influx: urfavecli
 info: zsh
 infracost: cobra
+initctl: zsh
 initdb: zsh
+insmod: zsh
 install-info: zsh
+installpkg: zsh
 iostat: zsh
+ipfw: zsh
 ipinfo: complete
 ipsw: cobra
 iredis: click
@@ -464,6 +523,7 @@ ironic: zsh
 isag: zsh
 istioctl: cobra
 iw: fish
+iwconfig: zsh
 iwctl: fish
 java_home: fish # Mac OS
 javadoc: zsh
@@ -495,8 +555,10 @@ kernel-install: zsh
 keybase: fish
 keystone: zsh
 keytool: zsh
+kfmclient: zsh
 khal: click
 kind: cobra
+kioclient: zsh
 kitchen: fish
 kk: cobra
 kn: cobra
@@ -509,8 +571,11 @@ kopia: kingpin
 kops: cobra
 kor: cobra
 kosli: cobra
+kpartx: zsh
+kpdf: zsh
 kraft: cobra
 krita: fish
+ktrace: zsh
 kube-bench: cobra
 kube-linter: cobra
 kubeaudit: cobra
@@ -539,10 +604,13 @@ kwokctl: cobra
 kyma: cobra
 kyverno: cobra
 launchctl: fish # Mac OS
+ldap: zsh
 ldapsearch: fish
 lefthook: cobra
 legit: click
 license-eye: cobra
+lighty-disable-mod: zsh
+lighty-enable-mod: zsh
 lima-guestagent: cobra
 limactl: cobra
 litecli: click
@@ -573,8 +641,10 @@ mcap: cobra
 md-to-clip: fish
 mddiagnose: fish # Mac OS
 mdimport: fish # Mac OS
+metaflac: zsh
 minikube: cobra
 mistral: zsh
+mixerctl: zsh
 mkbundle: fish # mono
 mkdocs: fish
 mkdosfs: fish
@@ -583,6 +653,8 @@ mkfs.vfat: fish
 mkisofs: zsh
 mkpasswd: fish
 mksquashfs: fish
+mktunes.pl: zsh
+mktunes: zsh
 mkvextract: fish
 mlocate: zsh
 mocha: yargs
@@ -611,6 +683,7 @@ name-that-hash: click
 namei: fish
 nautilus: zsh
 navi: fish
+ncal: zsh
 neon: yargs # built in completion is broken but it's based on yargs
 neonctl: yargs
 nerdctl.colima: cobra
@@ -621,8 +694,10 @@ netctl: fish
 nethack: fish
 networksetup: zsh
 neutron: zsh
+newgrp: zsh
 newrelic: cobra
 nfpm: cobra
+nginx: zsh
 ngrok: cobra
 nkf: zsh
 nmblookup: zsh
@@ -634,6 +709,7 @@ notify-send: fish
 nova: zsh
 npq-hero: yargs # TODO create custom spec
 npq: yargs # TODO create custom spec
+nslookup: zsh
 nth: click
 obnam: fish
 oc: cobra
@@ -663,7 +739,15 @@ parsehdlist: zsh
 patool: fish
 pbget: fish
 pdf2ps: zsh
+pdffonts: zsh
+pdfimages: zsh
+pdfinfo: zsh
+pdfjadetex: zsh
+pdfopt: zsh
 pdftexi2dvi: zsh
+pdftk: zsh
+pdftopbm: zsh
+pdftops: zsh
 perldoc: zsh
 pg_config: zsh
 pg_ctl: zsh
@@ -685,12 +769,22 @@ pix: fish
 pkg_create: zsh
 pkgin: zsh
 pkgmk: fish
+pkgtool: zsh
 pocketbase: cobra
 podman-remote: cobra
 podman.lima: cobra
 podman: cobra
+podpath: zsh
+podtoc: zsh
+portaudit: zsh
+portlint: zsh
+portsnap: zsh
+postconf: zsh
 postgres: zsh
 posting: click
+postmaster: zsh
+postqueue: zsh
+postsuper: zsh
 pre-commit: fish # argcomplete bridge doesn't work
 proxychains: fish
 prt-get: fish
