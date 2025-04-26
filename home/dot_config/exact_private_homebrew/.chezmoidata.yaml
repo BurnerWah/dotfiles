@@ -251,6 +251,7 @@ settings:
         - groestlcoin
         - huggingface-cli # ai
         - ignite # cryptocurrency
+        - ioctl # cryptocurrency
         - ipget # cryptocurrency
         - k8sgpt
         - kuzco # ai

@@ -18,6 +18,7 @@
 /.gradle
 /.hawtjni
 /.inputrc
+/.inshellisense
 /.ipfs
 /.kube
 /.lesshst
