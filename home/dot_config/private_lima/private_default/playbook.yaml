@@ -63,6 +63,7 @@
           - nbd
           - PackageKit-command-not-found
           - ripgrep
+          - sqlite
           - starship # copr:atim/starship
           - udisks2 # nbd mounting?
           - zsh
