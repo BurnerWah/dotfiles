@@ -1,5 +1,5 @@
 use carapace
-use lazy-completions
+use lazy-completions/init
 use mise
 use starship
 use zoxide
