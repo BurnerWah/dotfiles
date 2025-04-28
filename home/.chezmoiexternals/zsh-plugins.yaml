@@ -1,5 +1,3 @@
-# {{ if ne .chezmoi.os "windows" }}
-
 .config/zsh/functions/site/_bwrap:
   type: file
   url: https://github.com/containers/bubblewrap/raw/refs/heads/main/completions/zsh/_bwrap
@@ -96,4 +94,3 @@
     - '*/src/_rubocop'
     - '*/src/_setup.py'
     - '*/src/_shellcheck'
-# {{ end }}
