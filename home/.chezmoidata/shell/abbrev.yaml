@@ -78,21 +78,3 @@ settings:
         ydlmp3: yt-dlp -x --audio-format mp3
         ydlopus: yt-dlp -x --audio-format opus
         youtube-dl: yt-dlp
-    fish:
-      abbrev:
-        ?: if
-        .: source
-        al: la
-        cmd: command
-        export: set -x
-        fn: function
-        fns: functions
-        fnsv: funcsave
-        fun: function
-        func: function
-        h: help
-        local: set -l
-        loop: while true
-        psrg: ps aux | rg
-        which: whereis
-        xopen: open
