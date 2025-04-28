@@ -1,0 +1,11 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: rink
+description: Unit conversion tool
+flags:
+  --config-path: Prints a path to the config file, then exits
+  -V, --version: Print version information
+  -f, --file=: Reads expressions from a file
+  -h, --help: Print help information
+completion:
+  flag:
+    file: [$files]

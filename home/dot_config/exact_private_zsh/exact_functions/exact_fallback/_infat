@@ -1,0 +1,4 @@
+#compdef infat
+# chezmoiexternal infat completions won't be able to autoload
+# shellcheck disable=SC1090
+source <(infat --generate-completion-script=zsh)

@@ -1,0 +1,6 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{- if lookPath "infat" -}}
+#!/usr/bin/env sh
+# config hash: # {{ include (joinPath .chezmoi.sourceFile ".." "config.toml") | sha256sum }}
+infat --config '# {{ joinPath .chezmoi.targetFile ".." "config.toml" }}'
+# {{ end -}}

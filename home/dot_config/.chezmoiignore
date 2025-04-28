@@ -101,6 +101,7 @@
 /fd
 /firejail
 /fish/completions
+/fish/completions/**
 /gh
 /glab-cli
 /glow
@@ -141,6 +142,7 @@
 
 {{- if ne .chezmoi.os "darwin" }}
 # keep-sorted start case=no
+/infat
 /karabiner
 /lima
 # keep-sorted end
@@ -151,6 +153,7 @@
 /ansible.cfg
 /brew-aliases
 /fish
+/fish/**
 /homebrew
 /kitty
 /npm

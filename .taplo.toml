@@ -41,3 +41,8 @@ keys = [
 # reorder arrays won't work unless you specify the parent keys, which is annoying
 formatting.reorder_arrays = true
 formatting.reorder_keys = true
+
+[[rule]]
+include = ["home/dot_config/*_infat/*"]
+formatting.reorder_arrays = true
+formatting.reorder_keys = true
