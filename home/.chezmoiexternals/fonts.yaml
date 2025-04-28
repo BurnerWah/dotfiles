@@ -1,5 +1,3 @@
-# {{ if and (eq .chezmoi.os "linux") (not (or .ephemeral .headless)) }}
-
 # Refresh periods are very long in this. This is both because some things are
 # manually updated, and because fonts just don't require frequent updates.
 
@@ -20,4 +18,3 @@
   include:
     - monaspace-*/fonts/otf/*.otf
     - monaspace-*/fonts/variable/*.ttf
-# {{ end }}

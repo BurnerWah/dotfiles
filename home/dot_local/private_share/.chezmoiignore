@@ -53,6 +53,8 @@
 /applications
 /flatpak
 /flatpak/**/*
+/fonts
+/fonts/**/*
 # keep-sorted end
 {{- end }}
 
@@ -61,6 +63,8 @@
 /applications
 /flatpak
 /flatpak/**/*
+/fonts
+/fonts/**/*
 /mime
 # keep-sorted end
 {{- end }}
