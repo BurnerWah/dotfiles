@@ -1,3 +1,4 @@
 #compdef git-sizer
 #description Compute various size metrics for a Git repository
+# shellcheck disable=SC1090
 source <(carapace git-sizer zsh)

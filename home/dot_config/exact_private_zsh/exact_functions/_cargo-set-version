@@ -1,2 +1,3 @@
 #compdef cargo-set-version
+# shellcheck disable=SC1090
 source <(carapace cargo-set-version zsh)

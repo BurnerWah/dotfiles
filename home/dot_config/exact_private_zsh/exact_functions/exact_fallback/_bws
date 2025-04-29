@@ -1,2 +1,3 @@
 #compdef bws
+# shellcheck disable=SC1090
 source <(bws completions zsh)

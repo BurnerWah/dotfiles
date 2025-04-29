@@ -1,3 +1,4 @@
 #compdef git-alias
 #description Define, search and show aliases
+# shellcheck disable=SC1090
 source <(carapace git-alias zsh)

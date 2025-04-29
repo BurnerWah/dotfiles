@@ -1,3 +1,4 @@
 #compdef git-coauthor
 #description Add a co-author to the last commit
+# shellcheck disable=SC1090
 source <(carapace git-coauthor zsh)

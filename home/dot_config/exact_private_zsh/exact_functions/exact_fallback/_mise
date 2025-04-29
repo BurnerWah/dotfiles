@@ -1,2 +1,3 @@
 #compdef mise
+# shellcheck disable=SC1090
 source <(mise completion zsh)

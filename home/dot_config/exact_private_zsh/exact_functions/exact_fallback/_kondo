@@ -1,2 +1,3 @@
 #compdef kondo
+# shellcheck disable=SC1090
 source <(kondo --completions zsh 2>/dev/null)

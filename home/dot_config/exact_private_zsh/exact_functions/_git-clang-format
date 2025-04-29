@@ -1,3 +1,4 @@
 #compdef git-clang-format
 #description run clang-format on lines that differ
+# shellcheck disable=SC1090
 source <(carapace git-clang-format zsh)

@@ -1,3 +1,4 @@
 #compdef git-browse-ci
 #description Opens the current git repository CI page in your default web browser
+# shellcheck disable=SC1090
 source <(carapace git-browse-ci zsh)

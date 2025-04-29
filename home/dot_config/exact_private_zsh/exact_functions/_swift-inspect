@@ -1,2 +1,3 @@
 #compdef swift-inspect
+# shellcheck disable=SC1090
 source <(swift-inspect --generate-completion-script=zsh)

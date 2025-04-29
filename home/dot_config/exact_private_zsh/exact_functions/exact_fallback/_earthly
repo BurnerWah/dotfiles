@@ -1,2 +1,3 @@
 #compdef earthly
+# shellcheck disable=SC1090
 source <(earthly bootstrap --source zsh 2>/dev/null)

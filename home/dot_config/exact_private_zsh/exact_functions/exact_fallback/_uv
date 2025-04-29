@@ -1,2 +1,3 @@
 #compdef uv
+# shellcheck disable=SC1090
 source <(uv generate-shell-completion zsh)

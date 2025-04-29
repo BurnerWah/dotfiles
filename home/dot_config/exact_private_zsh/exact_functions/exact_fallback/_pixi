@@ -1,2 +1,3 @@
 #compdef pixi
+# shellcheck disable=SC1090
 source <(pixi completion --shell zsh)

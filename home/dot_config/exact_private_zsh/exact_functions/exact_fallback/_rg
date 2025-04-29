@@ -1,2 +1,3 @@
 #compdef rg
+# shellcheck disable=SC1090
 source <(rg --generate=complete-zsh)

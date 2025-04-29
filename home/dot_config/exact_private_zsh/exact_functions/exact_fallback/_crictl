@@ -1,2 +1,3 @@
 #compdef crictl
+# shellcheck disable=SC1090
 source <(crictl completion zsh)

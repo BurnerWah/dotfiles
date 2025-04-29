@@ -1,3 +1,4 @@
 #compdef git-absorb
 #description Automatic git commit --fixup
+# shellcheck disable=SC1090
 source <(git-absorb --gen-completions zsh)

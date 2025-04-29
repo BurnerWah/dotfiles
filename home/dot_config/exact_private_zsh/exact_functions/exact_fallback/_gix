@@ -1,2 +1,3 @@
 #compdef gix
+# shellcheck disable=SC1090
 source <(gix completions --shell zsh)

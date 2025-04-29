@@ -1,2 +1,3 @@
 #compdef skate
+# shellcheck disable=SC1090
 source <(skate completion zsh)

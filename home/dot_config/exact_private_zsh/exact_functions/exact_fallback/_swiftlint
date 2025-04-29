@@ -1,2 +1,3 @@
 #compdef swiftlint
+# shellcheck disable=SC1090
 source <(swiftlint --generate-completion-script=zsh)

@@ -1,2 +1,3 @@
 #compdef chezmoi_modify_manager
+# shellcheck disable=SC1090
 source <(chezmoi_modify_manager --bpaf-complete-style-zsh)

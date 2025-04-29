@@ -1,3 +1,4 @@
 #compdef git-authors
 #description Generate authors report
+# shellcheck disable=SC1090
 source <(carapace git-authors zsh)

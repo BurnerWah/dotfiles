@@ -1,3 +1,4 @@
 #compdef git-archive-file
 #description Export the current HEAD of the git repository to an archive
+# shellcheck disable=SC1090
 source <(carapace git-archive-file zsh)

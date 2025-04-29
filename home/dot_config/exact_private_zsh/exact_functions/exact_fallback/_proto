@@ -1,2 +1,3 @@
 #compdef proto
+# shellcheck disable=SC1090
 source <(proto completions --shell zsh)

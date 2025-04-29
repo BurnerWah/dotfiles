@@ -1,3 +1,4 @@
 #compdef git-info
 #description Returns information on current repository
+# shellcheck disable=SC1090
 source <(carapace git-info zsh)
