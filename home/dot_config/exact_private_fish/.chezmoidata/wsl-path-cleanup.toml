@@ -1,0 +1,13 @@
+[settings.shell.fish.wsl]
+path_remove = [
+  '/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common',
+  '/mnt/c/Program Files (x86)/Paragon Software/APFS for Windows/',
+  '/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/',
+  '/mnt/c/Program Files/Eclipse Adoptium/jdk-*/bin',
+  '/mnt/c/Program Files/FirefoxPWA/',
+  '/mnt/c/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR',
+  '/mnt/c/Users/*/AppData/Local/mise/shims',
+  '/mnt/c/Users/*/AppData/Roaming/carapace/bin',
+  '/mnt/c/Users/*/scoop/apps/mise/current/mise/shims',
+  '/mnt/c/Users/*/scoop/apps/openjdk/current/bin',
+]

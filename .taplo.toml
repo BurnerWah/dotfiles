@@ -39,6 +39,7 @@ keys = [
   "settings.shell.pwsh.completers",
   "settings.shell.fish.abbrev",
   "settings.shell.common.abbrev",
+  "settings.shell.fish.wsl",
 ]
 # reorder arrays won't work unless you specify the parent keys, which is annoying
 formatting.reorder_arrays = true
