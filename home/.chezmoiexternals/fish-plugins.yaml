@@ -1,5 +1,0 @@
-.config/fish/completions/infat.fish:
-  type: file
-  url: https://github.com/philocalyst/infat/raw/refs/heads/main/Completions/infat.fish
-  refreshPeriod: 744h
-  readonly: true
