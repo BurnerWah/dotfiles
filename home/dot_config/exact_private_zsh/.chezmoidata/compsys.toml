@@ -1279,7 +1279,6 @@ carapace = [
 # the .zcompdump file when entering toolbox & distrobox containers
 unreachable = [
   "_carapace_or_builtin",           # custom fish completion
-  "_swift_argparse",                # custom fish completion
   "abbr",
   "and",                            # fish builtin
   "apk",                            # installed w/ apk
