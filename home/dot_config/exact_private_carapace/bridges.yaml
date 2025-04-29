@@ -414,6 +414,7 @@ gk: cobra
 glab: cobra
 glance: zsh
 glocate: zsh
+glow.exe: cobra
 glow: cobra
 gm: zsh
 gmplayer: zsh
