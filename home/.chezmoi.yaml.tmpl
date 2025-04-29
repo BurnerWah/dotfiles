@@ -126,9 +126,16 @@ textconv:
 # {{- $flatpakUserDir := false }}
 # {{- $scoopApps := false }}
 # {{- $scoopPersist := false }}
+# {{- $brewPrefix := false }}
 # {{- if eq .chezmoi.os "linux" }}
 # {{-   $flatpakSystemDir = env "FLATPAK_SYSTEM_DIR" | default "/var/lib/flatpak" }}
 # {{-   $flatpakUserDir = env "FLATPAK_USER_DIR" | default (joinPath $xdgData "flatpak") }}
+# {{- else if eq .chezmoi.os "darwin" }}
+# {{-   if eq .chezmoi.arch "arm64" }}
+# {{-     $brewPrefix = "/opt/homebrew" }}
+# {{-   else if eq .chezmoi.arch "amd64"}}
+# {{-     $brewPrefix = "/usr/local" }}
+# {{-   end }}
 # {{- else if eq .chezmoi.os "windows" }}
 # {{-   $scoopApps = joinPath .chezmoi.homeDir "scoop/apps" }}
 # {{-   $scoopPersist = joinPath .chezmoi.homeDir "scoop/persist" }}
@@ -155,9 +162,13 @@ data:
     wsl: # {{ $wsl }}
     lima: # {{ $lima }}
   paths:
+    brewPrefix: # {{ toYaml $brewPrefix | trim }}
     flatpak:
       system: # {{ toYaml $flatpakSystemDir | trim }}
       user: # {{ toYaml $flatpakUserDir | trim }}
+    scoop:
+      apps: # {{ toYaml $scoopApps | trim }}
+      persist: # {{ toYaml $scoopPersist | trim }}
     wslHostHome: # {{ toYaml $wslHostHome | trim }}
     xdg:
       cache: # {{ toYaml $xdgCache | trim }}
