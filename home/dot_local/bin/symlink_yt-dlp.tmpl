@@ -1,5 +1,5 @@
 {{ if and .wsl (lookPath "yt-dlp.exe") }}
 {{ lookPath "yt-dlp.exe" }}
 {{ else if and (eq .chezmoi.os "linux") (lookPath "firejail") }}
-/usr/bin/firejail
+{{ lookPath "firejail" }}
 {{ end }}
