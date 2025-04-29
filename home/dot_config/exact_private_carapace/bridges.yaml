@@ -141,6 +141,7 @@ changie: cobra
 chattr: zsh
 chcon: zsh
 checkinstall: fish
+chezmoi.exe: cobra
 chezmoi: cobra
 chflags: zsh
 chkconfig: zsh
@@ -323,6 +324,7 @@ eu-nm: zsh
 eu-objdump: zsh
 eu-readelf: zsh
 eu-strings: zsh
+exercism.exe: cobra
 exercism: cobra
 exif: fish
 expect: fish
@@ -758,6 +760,7 @@ ogginfo: zsh
 oh-my-posh: cobra
 okta-awscli: click
 oomctl: zsh
+op.exe: cobra
 op: cobra
 opa: cobra
 openocd: fish
@@ -853,6 +856,7 @@ rake: zsh
 rakudo: fish
 ranlib: zsh
 ratify: cobra
+rclone.exe: cobra
 rclone: cobra # built-in fish completions are broken
 realpath: fish
 reflector: fish
@@ -1074,6 +1078,7 @@ vorbiscomment: zsh
 vpnc-connect: zsh
 vpnc: zsh
 vserver: zsh
+vt.exe: cobra
 vt: cobra
 vultr: cobra
 vunnel: click
