@@ -121,6 +121,7 @@ carapace-bridge: carapace
 carapace-parse: cobra
 carapace-spec-man: carapace
 carapace-spec: carapace
+carapace.exe: carapace
 carapace: carapace
 cartridge: cobra
 cascadia: fish

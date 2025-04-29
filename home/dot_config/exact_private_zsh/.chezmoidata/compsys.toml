@@ -150,6 +150,7 @@ carapace = [
   "carapace-parse",
   "carapace-spec",
   "carapace-spec-man",
+  "carapace.exe",
   "cargo",
   "cartridge",
   "cascadia",
