@@ -80,12 +80,11 @@ textconv:
 # {{-   if eq $devicename "wah" -}}
 # {{-     $devicename = "dell-g15-linux" -}}
 # {{-   end -}}
-# {{- end -}}
-# {{- if eq .chezmoi.os "windows" -}}
+# {{- else if eq .chezmoi.os "windows" -}}
 # {{-   if eq $devicename "Dell-G15" -}}
 # {{-     $devicename = "dell-g15-windows" -}}
 # {{-   end -}}
-# {{- end -}}
+# {{- end }}
 
 # TODO: prompt user to see if device is ephemeral or headless, when possible
 
@@ -123,32 +122,45 @@ textconv:
 # {{-   $xdgData = joinPath .chezmoi.homeDir "Library/Application Support" }}
 # {{- end }}
 
+# {{- $flatpakSystemDir := false }}
+# {{- $flatpakUserDir := false }}
+# {{- $scoopApps := false }}
+# {{- $scoopPersist := false }}
+# {{- if eq .chezmoi.os "linux" }}
+# {{-   $flatpakSystemDir = env "FLATPAK_SYSTEM_DIR" | default "/var/lib/flatpak" }}
+# {{-   $flatpakUserDir = env "FLATPAK_USER_DIR" | default (joinPath $xdgData "flatpak") }}
+# {{- else if eq .chezmoi.os "windows" }}
+# {{-   $scoopApps = joinPath .chezmoi.homeDir "scoop/apps" }}
+# {{-   $scoopPersist = joinPath .chezmoi.homeDir "scoop/persist" }}
+# {{- end }}
+
 sourceDir: '# {{ .chezmoi.sourceDir }}'
 
 data:
-  devicename: # {{ $devicename }}
-  distro: # {{ $distro }}
-  ephemeral: # {{ $ephemeral }}
-  headless: # {{ $headless }}
-  mullvad: # {{ $mullvad }}
-  osid: # {{ $osID }}
-  wsl: # {{ $wsl }}
+  devicename: # {{ toYaml $devicename }}
+  distro: # {{ toYaml $distro }}
+  ephemeral: # {{ toYaml $ephemeral }}
+  headless: # {{ toYaml $headless }}
+  mullvad: # {{ toYaml $mullvad }}
+  osid: # {{ toYaml $osID }}
+  wsl: # {{ toYaml $wsl }}
   xdg:
     config: '# {{ $xdgConfig }}'
     cache: '# {{ $xdgCache }}'
     data: '# {{ $xdgData }}'
     state: '# {{ $xdgState }}'
-  pkg:
-    scoop:
-      apps: '# {{ joinPath .chezmoi.homeDir "scoop/apps" }}'
-      persist: '# {{ joinPath .chezmoi.homeDir "scoop/persist" }}'
-    flatpak:
-      system: '# {{ env "FLATPAK_SYSTEM_DIR" | default "/var/lib/flatpak" }}'
-      user: '# {{ env "FLATPAK_USER_DIR" | default (joinPath $xdgData "flatpak") }}'
   device:
     # can be "laptop", "desktop", "convertible", "server", "tablet", "handset", "watch", "embedded", "vm", or "container"
-    chassis: '# {{ $chassisType }}'
-    wsl: # {{ $wsl }}
-    lima: # {{ $lima }}
+    chassis: # {{ toYaml $chassisType }}
+    wsl: # {{ toYaml $wsl }}
+    lima: # {{ toYaml $lima }}
   paths:
-    wslHostHome: # {{ $wslHostHome }}
+    flatpak:
+      system: # {{ toYaml $flatpakSystemDir }}
+      user: # {{ toYaml $flatpakUserDir }}
+    wslHostHome: # {{ toYaml $wslHostHome }}
+    xdg:
+      cache: # {{ toYaml $xdgCache }}
+      config: # {{ toYaml $xdgConfig }}
+      data: # {{ toYaml $xdgData }}
+      state: # {{ toYaml $xdgState }}
