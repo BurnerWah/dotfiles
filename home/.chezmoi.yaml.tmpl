@@ -137,13 +137,13 @@ textconv:
 sourceDir: '# {{ .chezmoi.sourceDir }}'
 
 data:
-  devicename: # {{ toYaml $devicename }}
-  distro: # {{ toYaml $distro }}
-  ephemeral: # {{ toYaml $ephemeral }}
-  headless: # {{ toYaml $headless }}
-  mullvad: # {{ toYaml $mullvad }}
-  osid: # {{ toYaml $osID }}
-  wsl: # {{ toYaml $wsl }}
+  devicename: # {{ $devicename }}
+  distro: # {{ $distro }}
+  ephemeral: # {{ $ephemeral }}
+  headless: # {{ $headless }}
+  mullvad: # {{ $mullvad }}
+  osid: # {{ $osID }}
+  wsl: # {{ $wsl }}
   xdg:
     config: '# {{ $xdgConfig }}'
     cache: '# {{ $xdgCache }}'
@@ -151,16 +151,16 @@ data:
     state: '# {{ $xdgState }}'
   device:
     # can be "laptop", "desktop", "convertible", "server", "tablet", "handset", "watch", "embedded", "vm", or "container"
-    chassis: # {{ toYaml $chassisType }}
-    wsl: # {{ toYaml $wsl }}
-    lima: # {{ toYaml $lima }}
+    chassis: # {{ $chassisType }}
+    wsl: # {{ $wsl }}
+    lima: # {{ $lima }}
   paths:
     flatpak:
-      system: # {{ toYaml $flatpakSystemDir }}
-      user: # {{ toYaml $flatpakUserDir }}
-    wslHostHome: # {{ toYaml $wslHostHome }}
+      system: # {{ toYaml $flatpakSystemDir | trim }}
+      user: # {{ toYaml $flatpakUserDir | trim }}
+    wslHostHome: # {{ toYaml $wslHostHome | trim }}
     xdg:
-      cache: # {{ toYaml $xdgCache }}
-      config: # {{ toYaml $xdgConfig }}
-      data: # {{ toYaml $xdgData }}
-      state: # {{ toYaml $xdgState }}
+      cache: # {{ toYaml $xdgCache | trim }}
+      config: # {{ toYaml $xdgConfig | trim }}
+      data: # {{ toYaml $xdgData | trim }}
+      state: # {{ toYaml $xdgState | trim }}
