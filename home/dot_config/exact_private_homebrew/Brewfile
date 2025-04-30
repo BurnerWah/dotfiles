@@ -69,6 +69,7 @@ brew "htop" if OS.mac?
 brew "httpie" if OS.mac?
 brew "hyperfine" if OS.mac? # benchmarking tool
 brew "imagemagick" if OS.mac?
+brew "infat" if OS.mac? # default app management
 brew "iproute2mac" if OS.mac?
 brew "jc" if OS.mac? # JSON parser for various CLIs
 brew "jdupes" if OS.mac? # duplicate file finder
@@ -188,26 +189,25 @@ cask "webstorm", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
 cask "whisky" if OS.mac?
 cask "zoom", greedy: true if OS.mac?
 
-# stuff involving mas is currently broken
-# mas "Affinity Designer 2", id: 1_616_831_348 if OS.mac?
-# mas "Affinity Photo 2", id: 1_616_822_987 if OS.mac?
-# mas "Affinity Publisher 2", id: 1_606_941_598 if OS.mac?
-# mas "Amphetamine", id: 937_984_704 if OS.mac? # Keep mac awake
-# mas "BrightIntosh", id: 6_452_471_855 if OS.mac? # Higher brightness
-# mas "DaVinci Resolve", id: 571_213_070 if OS.mac?
-# mas "Dropover", id: 1_355_679_052 if OS.mac? # Drag and drop manager
-# mas "Ivory", id: 6_444_602_274 if OS.mac? # Mastodon client
-# mas "Keynote", id: 409_183_694 if OS.mac?
-# mas "Numbers", id: 409_203_825 if OS.mac?
-# mas "Pages", id: 409_201_541 if OS.mac?
-# mas "Parcel", id: 639_968_404 if OS.mac? # Package tracker
-# mas "Shareful", id: 1_522_267_256 if OS.mac?
-# mas "Slack", id: 803_453_959 if OS.mac?
-# mas "Tailscale", id: 1_475_387_142 if OS.mac?
-# mas "TickTick", id: 966_085_870 if OS.mac? # Task manager
-# mas "Whisper", id: 1_668_083_311 if OS.mac? # Transcription app
-# mas "Xcode", id: 497_799_835 if OS.mac?
-# mas "Yubico Authenticator", id: 1_497_506_650 if OS.mac?
+mas "Affinity Designer 2", id: 1_616_831_348 if OS.mac?
+mas "Affinity Photo 2", id: 1_616_822_987 if OS.mac?
+mas "Affinity Publisher 2", id: 1_606_941_598 if OS.mac?
+mas "Amphetamine", id: 937_984_704 if OS.mac? # Keep mac awake
+mas "BrightIntosh", id: 6_452_471_855 if OS.mac? # Higher brightness
+mas "DaVinci Resolve", id: 571_213_070 if OS.mac?
+mas "Dropover", id: 1_355_679_052 if OS.mac? # Drag and drop manager
+mas "Ivory", id: 6_444_602_274 if OS.mac? # Mastodon client
+mas "Keynote", id: 409_183_694 if OS.mac?
+mas "Numbers", id: 409_203_825 if OS.mac?
+mas "Pages", id: 409_201_541 if OS.mac?
+mas "Parcel", id: 639_968_404 if OS.mac? # Package tracker
+mas "Shareful", id: 1_522_267_256 if OS.mac?
+mas "Slack", id: 803_453_959 if OS.mac?
+mas "Tailscale", id: 1_475_387_142 if OS.mac?
+mas "TickTick", id: 966_085_870 if OS.mac? # Task manager
+mas "Whisper", id: 1_668_083_311 if OS.mac? # Transcription app
+mas "Xcode", id: 497_799_835 if OS.mac?
+mas "Yubico Authenticator", id: 1_497_506_650 if OS.mac?
 
 # Put at the end of the file because copilot doesn't like profanity lol
 brew "thefuck" if OS.mac?
