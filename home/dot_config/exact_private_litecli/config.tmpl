@@ -20,7 +20,7 @@ destructive_warning = True
 {{- if eq .chezmoi.os "darwin" }}
 {{-   $logFile = joinPath .chezmoi.homeDir "Library/Logs/litecli.log" }}
 {{- else if eq .chezmoi.os "linux" }}
-{{-   $logFile = joinPath .xdg.state "litecli.log" }}
+{{-   $logFile = joinPath .paths.xdg.state "litecli.log" }}
 {{- end }}
 log_file = {{ $logFile }}
 
