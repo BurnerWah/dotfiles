@@ -1,0 +1,3 @@
+#compdef swiftplantuml
+# shellcheck disable=SC1090
+source <(swiftplantuml --generate-completion-script=zsh)
