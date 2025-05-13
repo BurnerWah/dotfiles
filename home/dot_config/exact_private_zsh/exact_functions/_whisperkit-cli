@@ -1,0 +1,3 @@
+#compdef whisperkit-cli
+# shellcheck disable=SC1090
+source <(whisperkit-cli --generate-completion-script=zsh)

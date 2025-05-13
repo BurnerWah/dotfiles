@@ -1,0 +1,13 @@
+name: timer_analyser.d
+description: dtrace timer analyzer
+flags:
+  -p=: examine this PID
+  -n=: examine this process name
+  -t=: the length of time in ms to run until exiting
+  -h: show help
+exclusiveflags:
+  - [p, n]
+completion:
+  flag:
+    p: [$carapace.ps.ProcessIds]
+    n: [$carapace.ps.ProcessExecutables]

@@ -720,6 +720,7 @@ namei: fish
 nautilus: zsh
 navi: fish
 ncal: zsh
+nelm: cobra
 neon: yargs # built in completion is broken but it's based on yargs
 neonctl: yargs
 nerdctl.colima: cobra

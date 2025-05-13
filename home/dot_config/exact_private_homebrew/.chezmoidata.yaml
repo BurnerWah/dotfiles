@@ -90,6 +90,7 @@ settings:
         - grs-bluewallet
         - guilded # roblox
         - hacker-menu # orange site
+        - hedy # ai
         - highlight # ai
         - hstracker # activision-blizzard
         - huggingchat # ai
@@ -124,6 +125,7 @@ settings:
         - mycrypto
         - mymonero
         - nano # cryptocurrency
+        - nao # ai
         - nasas-eyes # US
         - nault # cryptocurrency
         - nocturn # twitter
@@ -225,6 +227,7 @@ settings:
         - circumflex # orange site
         - clarinet # cryptocurrency
         - code2prompt # ai
+        - codex # ai
         - cog # ai
         - cointop
         - cortexso # ai
@@ -254,6 +257,7 @@ settings:
         - ioctl # cryptocurrency
         - ipget # cryptocurrency
         - k8sgpt
+        - kubectl-ai
         - kuzco # ai
         - lexido # ai
         - libbitcoin-blockchain
@@ -312,6 +316,7 @@ settings:
         - tendermint # cryptocurrency
         - tenere # ai
         - tgpt # ai
+        - tmuxai
         - trezor-agent # cryptocurrency
         - trezor-bridge # cryptocurrency
         - truffle # cryptocurrency
