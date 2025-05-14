@@ -1,0 +1,8 @@
+os-*.*
+!os-{{.chezmoi.os}}.*
+
+device-*.*
+!device-{{.devicename}}.*
+
+distro-*.*
+!distro-{{.distro}}.*

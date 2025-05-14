@@ -1,0 +1,8 @@
+"$schema" = "https://jj-vcs.github.io/jj/latest/config-schema.json"
+
+[user]
+name = "Burner"
+email = "10004812+BurnerWah@users.noreply.github.com"
+
+[aliases]
+init = ["git", "init"]

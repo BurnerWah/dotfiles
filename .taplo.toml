@@ -49,3 +49,10 @@ formatting.reorder_keys = true
 include = ["home/dot_config/*_infat/*"]
 formatting.reorder_arrays = true
 formatting.reorder_keys = true
+
+[[rule]]
+include = [
+  "home/dot_config/exact_private_jj/config.toml",
+  "home/dot_config/exact_private_jj/exact_conf.d/*.toml",
+]
+schema.path = "https://jj-vcs.github.io/jj/latest/config-schema.json"
