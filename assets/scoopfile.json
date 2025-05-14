@@ -19,7 +19,6 @@
     { "Name": "less", "Source": "main" },
     { "Name": "lime3ds", "Source": "games" },
     { "Name": "luarocks", "Source": "main" },
-    { "Name": "mercurial", "Source": "main" },
     { "Name": "mise", "Source": "main" },
     { "Name": "Monaspace-NF", "Source": "nerd-fonts" },
     { "Name": "Monaspace", "Source": "nerd-fonts" },

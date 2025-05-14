@@ -37,6 +37,7 @@
         { "PackageIdentifier": "Logitech.LogiBolt" },
         { "PackageIdentifier": "M2Team.NanaZip" },
         { "PackageIdentifier": "MartiCliment.UniGetUI", "Scope": "machine" },
+        { "PackageIdentifier": "Mercurial.Mercurial" },
         { "PackageIdentifier": "MicaForEveryone.MicaForEveryone" },
         { "PackageIdentifier": "Microsoft.Office" },
         { "PackageIdentifier": "Microsoft.PowerToys", "Scope": "user" },
