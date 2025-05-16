@@ -1,0 +1,16 @@
+[Unit]
+Description=Android Debug Bridge (adb) service
+	
+[Service]
+Type=forking
+ExecStart=/usr/bin/adb start-server
+ExecStop=/usr/bin/adb kill-server
+
+CacheDirectory=adb
+CacheDirectoryMode=0700
+
+PrivateTmp=yes
+Environment=HOME=%C/adb
+
+[Install]
+WantedBy=default.target
