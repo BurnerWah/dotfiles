@@ -21,6 +21,9 @@ function chezmoi -d 'Manage your dotfiles across multiple diverse machines, secu
             or set -ql _flag_help # Retian help page
             or set -ql _flag_version # Show version
             command chezmoi $argv_orig
+        else if set -q argv[2]
+            and set -l source_path (command chezmoi source-path $argv[2])
+            cd $source_path
         else if set -ql _flag_source
             # --source seems to decide where chezmoi will cd to if provided,
             # but --working-tree doesn't

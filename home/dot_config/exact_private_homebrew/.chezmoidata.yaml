@@ -68,6 +68,7 @@ settings:
         - elephas # ai
         - elephas@beta # ai
         - ethereum-wallet
+        - feather # cryptocurrency
         - fig # see amazon-q
         - firefly # cryptocurrency
         - firefly-shimmer # cryptocurrency
@@ -172,6 +173,7 @@ settings:
         - spotify4bigsur # spotify
         - spotspot # spotify
         - starcraft # activision-blizzard
+        - status # cryptocurrency
         - statusfy # spotify
         - superwhisper # ai
         - telegram # telegram
@@ -194,6 +196,7 @@ settings:
         - vincelwt-chatgpt
         - vmware-fusion # unusable
         - vmware-fusion@preview # unusable
+        - void # ai
         - vpn-by-google-one
         - vu # facebook
         - warcraft-logs-uploader # activision-blizzard
