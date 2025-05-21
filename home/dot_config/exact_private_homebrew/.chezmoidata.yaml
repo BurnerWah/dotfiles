@@ -23,6 +23,7 @@ settings:
         - baritone # spotify
         - battle-net # activison-blizzard
         - binance
+        - bison-wallet
         - bisq # cryptocurrency
         - bitbox # cryptocurrency
         - bitcoin-core
@@ -203,6 +204,7 @@ settings:
         - wasabi-wallet
         - windsurf # ai
         - windsurf@next # ai
+        - witsy # ai
         - workplace-chat # facebook
         - wowmatrix # activision-blizzard
         - wowup # activision-blizzard

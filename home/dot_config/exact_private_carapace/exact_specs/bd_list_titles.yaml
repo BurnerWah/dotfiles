@@ -1,0 +1,12 @@
+name: bd_list_titles
+description: List the titles and title info of a BD
+
+flags:
+  -s=: Filter out titles shorter than N seconds
+  -a: List all titles
+  -l: Show language codes
+  -h: show help
+
+completion:
+  positional:
+    - [$directories]

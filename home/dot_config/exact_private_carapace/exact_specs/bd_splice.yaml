@@ -1,0 +1,19 @@
+name: bd_splice
+description: splice clips from a Blu-Ray folder together
+
+flags:
+  -t=: Index of title to splice
+  -p=: Playlist to splice
+  -a=: Angle
+  -c=: Chapter or chapter range
+  -k=: AACS keyfile path
+
+exclusiveflags:
+  - [t, p]
+
+completion:
+  positional:
+    - [$directories]
+    - [$files]
+  flag:
+    k: [$files]

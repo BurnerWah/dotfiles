@@ -1,0 +1,7 @@
+name: bd_info
+description: Show BD disc info
+
+completion:
+  positional:
+    - [$directories]
+    - [$files]
