@@ -316,6 +316,7 @@ elixir: fish
 elm: fish
 emacs: fish
 encfs: fish
+ente: cobra
 eog: zsh
 eopkg: fish
 erb: zsh
