@@ -221,6 +221,7 @@ settings:
         - aicommits
         - aider
         - aiven-client # ai
+        - alejandra # nix
         - aptos # cryptocurrency
         - arcade-learning-environment # ai
         - ata # ai
