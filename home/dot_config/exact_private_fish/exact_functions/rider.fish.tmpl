@@ -8,4 +8,8 @@ function rider
         "# {{ lookPath "rider" }}" $argv
     end
 end
+# {{ else if eq .chezmoi.os "darwin" -}}
+function rider --wraps=/Applications/Rider.app/Contents/MacOS/rider --description 'alias rider=/Applications/Rider.app/Contents/MacOS/rider'
+    /Applications/Rider.app/Contents/MacOS/rider $argv
+end
 # {{ end -}}

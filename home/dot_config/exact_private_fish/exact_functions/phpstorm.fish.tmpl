@@ -1,0 +1,6 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{ if eq .chezmoi.os "darwin" -}}
+function phpstorm --wraps=/Applications/PhpStorm.app/Contents/MacOS/phpstorm --description 'alias phpstorm=/Applications/PhpStorm.app/Contents/MacOS/phpstorm'
+    /Applications/PhpStorm.app/Contents/MacOS/phpstorm $argv
+end
+# {{ end -}}

@@ -1,0 +1,6 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{ if eq .chezmoi.os "darwin" -}}
+function pycharm --wraps=/Applications/PyCharm.app/Contents/MacOS/pycharm --description 'alias pycharm=/Applications/PyCharm.app/Contents/MacOS/pycharm'
+    /Applications/PyCharm.app/Contents/MacOS/pycharm $argv
+end
+# {{ end -}}
