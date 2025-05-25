@@ -1,6 +1,5 @@
 #!/usr/bin/env zsh
-# lima.yaml hash: {{ include (joinPath .chezmoi.sourceFile ".." "lima.yaml.tmpl") | sha256sum }}
-# playbook.yaml hash: {{ include (joinPath .chezmoi.sourceFile ".." "playbook.yaml") | sha256sum }}
+# lima.yaml hash: {{ include (joinPath .chezmoi.sourceFile ".." "lima.yaml") | sha256sum }}
 if (( $+commands[limactl] )); then
     limactl stop --force "{{ .chezmoi.targetFile | dir | base }}"
 fi

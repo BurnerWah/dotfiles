@@ -11,7 +11,7 @@ export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 export XDG_CACHE_HOME="${XDG_CACHE_HOME:-$HOME/.cache}"
 export ANSIBLE_CONFIG="${ANSIBLE_CONFIG:-$XDG_CONFIG_HOME/ansible.cfg}"
 
-# {{ if and .wsl (eq .osid "linux-fedora") }}
+# {{ if or (and .wsl (eq .osid "linux-fedora")) .device.lima }}
 # shellcheck disable=SC2154
 ansible-playbook "# {{ $playbook }}"
 # {{ else }}

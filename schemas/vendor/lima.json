@@ -19,6 +19,19 @@
             "additionalProperties": false,
             "type": "object"
         },
+        "BaseTemplates": {
+            "oneOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "array"
+                }
+            ],
+            "items": {
+                "$ref": "#/$defs/LocatorWithDigest"
+            }
+        },
         "CACertificates": {
             "properties": {
                 "removeDefaults": {
@@ -286,6 +299,9 @@
         },
         "LimaYAML": {
             "properties": {
+                "base": {
+                    "$ref": "#/$defs/BaseTemplates"
+                },
                 "minimumLimaVersion": {
                     "oneOf": [
                         {
@@ -343,14 +359,23 @@
                         "x86_64",
                         "aarch64",
                         "armv7l",
-                        "riscv64"
+                        "ppc64le",
+                        "riscv64",
+                        "s390x"
                     ]
                 },
                 "images": {
-                    "items": {
-                        "$ref": "#/$defs/Image"
-                    },
-                    "type": "array"
+                    "oneOf": [
+                        {
+                            "items": {
+                                "$ref": "#/$defs/Image"
+                            },
+                            "type": "array"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
                 },
                 "cpuType": {
                     "oneOf": [
@@ -602,9 +627,28 @@
                 }
             },
             "additionalProperties": false,
-            "type": "object",
+            "type": "object"
+        },
+        "LocatorWithDigest": {
+            "oneOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "object"
+                }
+            ],
+            "properties": {
+                "url": {
+                    "type": "string"
+                },
+                "digest": {
+                    "type": "string"
+                }
+            },
+            "additionalProperties": false,
             "required": [
-                "images"
+                "url"
             ]
         },
         "Mount": {
@@ -784,6 +828,16 @@
                 "script": {
                     "type": "string"
                 },
+                "file": {
+                    "oneOf": [
+                        {
+                            "$ref": "#/$defs/LocatorWithDigest"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
                 "hint": {
                     "type": "string"
                 }
@@ -803,15 +857,51 @@
                 "script": {
                     "type": "string"
                 },
+                "file": {
+                    "oneOf": [
+                        {
+                            "$ref": "#/$defs/LocatorWithDigest"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
                 "playbook": {
+                    "type": "string"
+                },
+                "content": {
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "overwrite": {
+                    "oneOf": [
+                        {
+                            "type": "boolean"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "owner": {
+                    "type": "string"
+                },
+                "path": {
+                    "type": "string"
+                },
+                "permissions": {
                     "type": "string"
                 }
             },
             "additionalProperties": false,
-            "type": "object",
-            "required": [
-                "script"
-            ]
+            "type": "object"
         },
         "QEMUOpts": {
             "properties": {

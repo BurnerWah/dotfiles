@@ -1,6 +1,6 @@
 ---
 - name: Provision VM
-  hosts: all
+  hosts: localhost
 
   tasks:
     - name: Install packages

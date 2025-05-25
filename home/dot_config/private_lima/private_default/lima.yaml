@@ -1,4 +1,3 @@
-# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
 minimumLimaVersion: '1.0.2'
 
 images:
@@ -48,23 +47,4 @@ portForwards:
 # Don't configure the user's shell in here, it stops lima from ever initializing
 
 upgradePackages: true
-provision:
-  - mode: system
-    script: |
-      #!/bin/bash
-      set -eux -o pipefail
-      command -v ansible >/dev/null 2>&1 && exit 0
-      dnf install -y ansible
-
-  - mode: ansible
-    playbook: '# {{ joinPath .chezmoi.targetFile ".." "playbook.yaml" }}'
-
-probes:
-  - description: ansible
-    script: |
-      #!/bin/bash
-      set -eux -o pipefail
-      if ! timeout 30s bash -c "until command -v ansible >/dev/null 2>&1; do sleep 3; done"; then
-        echo >&2 "ansible is not installed yet"
-        exit 1
-      fi
+# Provision in chezmoi

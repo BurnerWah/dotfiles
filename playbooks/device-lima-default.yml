@@ -1,6 +1,6 @@
 ---
 - name: Provision VM
-  hosts: all
+  hosts: localhost
   tasks:
     - name: Gather package facts
       ansible.builtin.package_facts: { manager: auto }
@@ -113,12 +113,3 @@
         enabled: true
         state: started
         scope: user
-
-    - name: Initialize chezmoi config
-      ansible.builtin.command:
-        argv:
-          - chezmoi
-          - --source
-          - /Users/{{ ansible_user_id }}/.local/share/chezmoi
-          - init
-        creates: ~/.config/chezmoi
