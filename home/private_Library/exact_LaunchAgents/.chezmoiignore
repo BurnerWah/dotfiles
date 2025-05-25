@@ -2,6 +2,7 @@
 com.github.domt4.homebrew-autoupdate.plist
 com.huion.HuionTablet.plist
 com.lwouis.alt-tab-macos.plist
+com.valvesoftware.steamclean.plist
 homebrew.mxcl.atuin.plist
 homebrew.mxcl.dura.plist
 homebrew.mxcl.postgresql@*.plist

@@ -1,0 +1,6 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{ if eq .chezmoi.os "darwin" -}}
+function rustrover --wraps=/Applications/RustRover.app/Contents/MacOS/rustrover --description 'alias rustrover=/Applications/RustRover.app/Contents/MacOS/rustrover'
+    /Applications/RustRover.app/Contents/MacOS/rustrover $argv
+end
+# {{ end -}}
