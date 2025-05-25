@@ -753,6 +753,7 @@ nslookup: zsh
 nth: click
 obnam: fish
 oc: cobra
+oci: click
 ocm: cobra
 octave: fish
 odme: zsh

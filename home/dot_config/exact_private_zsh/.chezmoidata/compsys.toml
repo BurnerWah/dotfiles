@@ -812,6 +812,7 @@ carapace = [
   "nvim",
   "obnam",
   "oc",
+  "oci",
   "ocm",
   "octave",
   "od",
