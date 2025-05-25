@@ -31,14 +31,5 @@
         name: '{{ ansible_user_id }}'
         shell: /usr/bin/fish
 
-    - name: Initialize chezmoi config
-      ansible.builtin.command:
-        argv:
-          - chezmoi
-          - --source
-          - /Users/{{ ansible_user_id }}/.local/share/chezmoi
-          - init
-        creates: ~/.config/chezmoi
-
     # TODO: set fish_user_paths
     # TODO: install mise

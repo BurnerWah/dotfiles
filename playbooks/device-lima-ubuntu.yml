@@ -78,12 +78,3 @@
         name: '{{ ansible_user_id }}'
         shell: /usr/bin/fish
         state: present
-
-    - name: Initialize chezmoi config
-      ansible.builtin.command:
-        argv:
-          - chezmoi
-          - --source
-          - /Users/{{ ansible_user_id }}/.local/share/chezmoi
-          - init
-        creates: ~/.config/chezmoi
