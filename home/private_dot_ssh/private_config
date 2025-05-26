@@ -18,8 +18,8 @@ Host *.onion
 Host lima-*
 	StrictHostKeyChecking no
 
-Host oracle-frankfurt
-	User opc
+Host oracle-ubuntu
+	User ubuntu
 
 Include config.d/*
 # vim: ft=sshconfig
