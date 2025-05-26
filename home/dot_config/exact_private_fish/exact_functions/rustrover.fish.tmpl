@@ -1,5 +1,14 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter=}}
-# {{ if eq .chezmoi.os "darwin" -}}
+# {{- if and .device.wsl (lookPath "rustrover" | hasPrefix "/mnt/c/") -}}
+# Temporary workaround for https://github.com/fish-shell/fish-shell/issues/11354
+function rustrover
+    if command -q rustrover
+        command rustrover $argv
+    else
+        "# {{ lookPath "rustrover" }}" $argv
+    end
+end
+# {{ else if eq .chezmoi.os "darwin" -}}
 function rustrover --wraps=/Applications/RustRover.app/Contents/MacOS/rustrover --description 'alias rustrover=/Applications/RustRover.app/Contents/MacOS/rustrover'
     /Applications/RustRover.app/Contents/MacOS/rustrover $argv
 end

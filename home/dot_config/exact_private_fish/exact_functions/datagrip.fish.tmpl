@@ -1,5 +1,14 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter=}}
-# {{ if eq .chezmoi.os "darwin" -}}
+# {{- if and .device.wsl (lookPath "datagrip" | hasPrefix "/mnt/c/") -}}
+# Temporary workaround for https://github.com/fish-shell/fish-shell/issues/11354
+function datagrip
+    if command -q datagrip
+        command datagrip $argv
+    else
+        "# {{ lookPath "datagrip" }}" $argv
+    end
+end
+# {{ else if eq .chezmoi.os "darwin" -}}
 function datagrip --wraps=/Applications/DataGrip.app/Contents/MacOS/datagrip --description 'alias datagrip=/Applications/DataGrip.app/Contents/MacOS/datagrip'
     /Applications/DataGrip.app/Contents/MacOS/datagrip $argv
 end

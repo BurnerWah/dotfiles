@@ -1,5 +1,14 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter=}}
-# {{ if eq .chezmoi.os "darwin" -}}
+# {{- if and .device.wsl (lookPath "phpstorm" | hasPrefix "/mnt/c/") -}}
+# Temporary workaround for https://github.com/fish-shell/fish-shell/issues/11354
+function phpstorm
+    if command -q phpstorm
+        command phpstorm $argv
+    else
+        "# {{ lookPath "phpstorm" }}" $argv
+    end
+end
+# {{ else if eq .chezmoi.os "darwin" -}}
 function phpstorm --wraps=/Applications/PhpStorm.app/Contents/MacOS/phpstorm --description 'alias phpstorm=/Applications/PhpStorm.app/Contents/MacOS/phpstorm'
     /Applications/PhpStorm.app/Contents/MacOS/phpstorm $argv
 end

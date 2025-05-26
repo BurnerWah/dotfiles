@@ -1,5 +1,14 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter=}}
-# {{ if eq .chezmoi.os "darwin" -}}
+# {{- if and .device.wsl (lookPath "clion" | hasPrefix "/mnt/c/") -}}
+# Temporary workaround for https://github.com/fish-shell/fish-shell/issues/11354
+function clion
+    if command -q clion
+        command clion $argv
+    else
+        "# {{ lookPath "clion" }}" $argv
+    end
+end
+# {{ else if eq .chezmoi.os "darwin" -}}
 function clion --wraps=/Applications/CLion.app/Contents/MacOS/clion --description 'alias clion=/Applications/CLion.app/Contents/MacOS/clion'
     /Applications/CLion.app/Contents/MacOS/clion $argv
 end

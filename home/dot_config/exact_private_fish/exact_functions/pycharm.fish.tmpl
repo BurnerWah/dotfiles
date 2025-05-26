@@ -1,5 +1,14 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter=}}
-# {{ if eq .chezmoi.os "darwin" -}}
+# {{- if and .device.wsl (lookPath "pycharm" | hasPrefix "/mnt/c/") -}}
+# Temporary workaround for https://github.com/fish-shell/fish-shell/issues/11354
+function pycharm
+    if command -q pycharm
+        command pycharm $argv
+    else
+        "# {{ lookPath "pycharm" }}" $argv
+    end
+end
+# {{ else if eq .chezmoi.os "darwin" -}}
 function pycharm --wraps=/Applications/PyCharm.app/Contents/MacOS/pycharm --description 'alias pycharm=/Applications/PyCharm.app/Contents/MacOS/pycharm'
     /Applications/PyCharm.app/Contents/MacOS/pycharm $argv
 end
