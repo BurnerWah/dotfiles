@@ -105,6 +105,7 @@ settings:
         - jan # ai
         - katrain # ai
         - kyokan-bob # cryptocurrency
+        - langflow # ai
         - league-of-legends # your honor, league of legends
         - ledger-live # cryptocurrency
         - limitless # ai
@@ -213,6 +214,7 @@ settings:
         - wowup # activision-blizzard
         - zecwallet-lite
         - zeronet # cryptocurrency
+        - zoo-design-studio # ai
         # keep-sorted end
 
       formula:
