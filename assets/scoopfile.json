@@ -2,7 +2,6 @@
   "apps": [
     { "Name": "aria2", "Source": "main" },
     { "Name": "CascadiaCode-NF", "Source": "nerd-fonts" },
-    { "Name": "curl", "Source": "main" },
     { "Name": "docker-compose", "Source": "main" },
     { "Name": "exiftool", "Source": "main" },
     { "Name": "FiraCode-NF", "Source": "nerd-fonts" },
@@ -42,7 +41,6 @@
     { "Name": "extras" },
     { "Name": "versions" },
     { "Name": "games" },
-    { "Name": "nerd-fonts" },
-    { "Name": "xrtools", "Source": "https://github.com/babo4d/scoop-xrtools" }
+    { "Name": "nerd-fonts" }
   ]
 }
