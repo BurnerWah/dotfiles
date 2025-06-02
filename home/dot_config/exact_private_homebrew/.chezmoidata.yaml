@@ -78,7 +78,9 @@ settings:
         - forkgram-telegram # telegram
         - ganache # cryptocurrency
         - geekbench-ai
+        - github
         - github-copilot-for-xcode
+        - github@beta
         - goofy # facebook
         - google-assistant
         - google-chrome
@@ -199,8 +201,6 @@ settings:
         - upm # deprecated
         - vertcoin-core
         - vincelwt-chatgpt
-        - vmware-fusion # unusable
-        - vmware-fusion@preview # unusable
         - void # ai
         - vpn-by-google-one
         - vu # facebook

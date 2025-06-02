@@ -8,8 +8,4 @@ function clion
         "# {{ lookPath "clion" }}" $argv
     end
 end
-# {{ else if eq .chezmoi.os "darwin" -}}
-function clion --wraps=/Applications/CLion.app/Contents/MacOS/clion --description 'alias clion=/Applications/CLion.app/Contents/MacOS/clion'
-    /Applications/CLion.app/Contents/MacOS/clion $argv
-end
 # {{ end -}}

@@ -8,8 +8,4 @@ function rubymine
         "# {{ lookPath "rubymine" }}" $argv
     end
 end
-# {{ else if eq .chezmoi.os "darwin" -}}
-function rubymine --wraps=/Applications/RubyMine.app/Contents/MacOS/rubymine --description 'alias rubymine=/Applications/RubyMine.app/Contents/MacOS/rubymine'
-    /Applications/RubyMine.app/Contents/MacOS/rubymine $argv
-end
 # {{ end -}}

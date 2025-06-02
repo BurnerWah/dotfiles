@@ -8,8 +8,4 @@ function goland
         "# {{ lookPath "goland" }}" $argv
     end
 end
-# {{ else if eq .chezmoi.os "darwin" -}}
-function goland --wraps=/Applications/GoLand.app/Contents/MacOS/goland --description 'alias goland=/Applications/GoLand.app/Contents/MacOS/goland'
-    /Applications/GoLand.app/Contents/MacOS/goland $argv
-end
 # {{ end -}}

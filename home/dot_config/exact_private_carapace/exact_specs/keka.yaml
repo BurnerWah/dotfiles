@@ -1,0 +1,28 @@
+name: keka
+description: Keka CLI
+
+commands:
+  - name: 7z
+  - name: 7zz
+  - name: brotli
+    parsing: disabled
+    completion: { positionalany: ['$carapace.bridge.CarapaceBin([brotli])'] }
+  - name: kwet
+  - name: lrzip
+  - name: lz4
+  - name: lzip
+  - name: pbzip2
+  - name: pigz
+    parsing: disabled
+    completion: { positionalany: ['$carapace.bridge.CarapaceBin([pigz])'] }
+  - name: plzip
+  - name: snzip
+  - name: tar
+    parsing: disabled
+    completion: { positionalany: ['$carapace.bridge.CarapaceBin([tar])'] }
+  - name: unar
+  - name: unrar
+  - name: xz
+    parsing: disabled
+    completion: { positionalany: ['$carapace.bridge.CarapaceBin([xz])'] }
+  - name: zstd

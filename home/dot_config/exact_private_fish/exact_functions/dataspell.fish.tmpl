@@ -8,8 +8,4 @@ function dataspell
         "# {{ lookPath "dataspell" }}" $argv
     end
 end
-# {{ else if eq .chezmoi.os "darwin" -}}
-function dataspell --wraps=/Applications/DataSpell.app/Contents/MacOS/dataspell --description 'alias dataspell=/Applications/DataSpell.app/Contents/MacOS/dataspell'
-    /Applications/DataSpell.app/Contents/MacOS/dataspell $argv
-end
 # {{ end -}}

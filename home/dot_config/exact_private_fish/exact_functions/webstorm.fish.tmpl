@@ -8,8 +8,4 @@ function webstorm
         "# {{ lookPath "webstorm" }}" $argv
     end
 end
-# {{ else if eq .chezmoi.os "darwin" -}}
-function webstorm --wraps=/Applications/WebStorm.app/Contents/MacOS/webstorm --description 'alias webstorm=/Applications/WebStorm.app/Contents/MacOS/webstorm'
-    /Applications/WebStorm.app/Contents/MacOS/webstorm $argv
-end
 # {{ end -}}

@@ -8,8 +8,4 @@ function datagrip
         "# {{ lookPath "datagrip" }}" $argv
     end
 end
-# {{ else if eq .chezmoi.os "darwin" -}}
-function datagrip --wraps=/Applications/DataGrip.app/Contents/MacOS/datagrip --description 'alias datagrip=/Applications/DataGrip.app/Contents/MacOS/datagrip'
-    /Applications/DataGrip.app/Contents/MacOS/datagrip $argv
-end
 # {{ end -}}
