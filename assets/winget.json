@@ -32,6 +32,7 @@
         { "PackageIdentifier": "Intel.PresentMon" },
         { "PackageIdentifier": "ItchIo.Itch" },
         { "PackageIdentifier": "JetBrains.Toolbox" },
+        { "PackageIdentifier": "jqlang.jq" },
         { "PackageIdentifier": "junegunn.fzf" },
         { "PackageIdentifier": "Klocman.BulkCrapUninstaller" },
         { "PackageIdentifier": "LizardByte.Sunshine" },

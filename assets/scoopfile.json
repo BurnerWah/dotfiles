@@ -14,7 +14,6 @@
     { "Name": "jdupes", "Source": "main" },
     { "Name": "JetBrains-Mono", "Source": "nerd-fonts" },
     { "Name": "JetBrainsMono-NF", "Source": "nerd-fonts" },
-    { "Name": "jq", "Source": "main" },
     { "Name": "less", "Source": "main" },
     { "Name": "lime3ds", "Source": "games" },
     { "Name": "luarocks", "Source": "main" },
