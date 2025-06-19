@@ -1,0 +1,14 @@
+name: sdl2-config
+
+flags:
+  --prefix=?: ''
+  --exec-prefix=?: ''
+  --version: ''
+  --cflags: ''
+  --libs: ''
+  --static-libs: ''
+
+completion:
+  flag:
+    prefix: [$directories]
+    exec-prefix: [$directories]

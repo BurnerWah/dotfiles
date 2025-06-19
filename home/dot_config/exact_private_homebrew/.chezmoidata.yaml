@@ -10,6 +10,7 @@ settings:
         - 5ire # ai
         - ace-studio # ai
         - agent-tars # ai
+        - agentkube # ai
         - aide-app # ai
         - aifun
         - ajour # activision-blizzard
@@ -31,6 +32,7 @@ settings:
         - block-goose # ai
         - blockstack # cryptocurrency
         - blockstream-green
+        - bloop # ai
         - bluewallet
         - boltai
         - brave-browser # homophobia
@@ -116,6 +118,9 @@ settings:
         - lm-studio # ai
         - lobehub # ai
         - macai
+        - mailbutler # ai
+        - mem # ai
+        - memory # ai
         - messenger # facebook
         - messenger-native # facebook
         - meta-quest-developer-hub # facebook
@@ -140,6 +145,7 @@ settings:
         - ollama # ai
         - ollamac # ai
         - onekey # cryptocurrency
+        - onlook # ai
         - opencat # ai
         - opera # loan-shark
         - opera-air # loan-shark
@@ -163,8 +169,10 @@ settings:
         - protonvpn # fascism
         - psst # spotify
         - ramme # facebook
+        - rapidminer-studio # ai
         - remix-ide # cryptocurrency
         - repo-prompt # ai
+        - rewind # ai
         - rivet # ai
         - rize # ai
         - roblox # roblox
@@ -172,6 +180,7 @@ settings:
         - runway # ai
         - sanctum # ai
         - scatter # cryptocurrency
+        - shortwave # ai
         - spark-ar-studio # facebook
         - sparkplate # cryptocurrency
         - sparrow # cryptocurrency
@@ -182,11 +191,13 @@ settings:
         - starcraft # activision-blizzard
         - status # cryptocurrency
         - statusfy # spotify
+        - superhuman # ai
         - superwhisper # ai
         - telegram # telegram
         - telegram-a # telegram
         - telegram-desktop # telegram
         - telegram-desktop@beta # telegram
+        - thebrowsercompany-dia # ai
         - threema # threema
         - threema-work # threema
         - threema@beta # threema
@@ -200,7 +211,9 @@ settings:
         - ui-tars # ai
         - upm # deprecated
         - vertcoin-core
+        - vibemeter # ai
         - vincelwt-chatgpt
+        - voicenotes # ai
         - void # ai
         - vpn-by-google-one
         - vu # facebook
@@ -235,8 +248,10 @@ settings:
         - caracal # cryptocurrency
         - chainhook
         - chatblade # ai
+        - chawan # nim
         - circumflex # orange site
         - clarinet # cryptocurrency
+        - claude-squad # ai
         - code2prompt # ai
         - codex # ai
         - cog # ai
@@ -245,6 +260,7 @@ settings:
         - cql # cryptocurrency
         - crytic-compile # cryptocurrency, leaf dependency
         - daemontools # cryptocurrency
+        - dstack # ai
         - echidna # cryptocurrency
         - envd # ai
         - erigon # cryptocurrency
@@ -264,6 +280,7 @@ settings:
         - grin-wallet
         - groestlcoin
         - huggingface-cli # ai
+        - hyper-mcp # ai
         - ignite # cryptocurrency
         - ioctl # cryptocurrency
         - ipget # cryptocurrency
@@ -287,6 +304,7 @@ settings:
         - llm # ai
         - localai
         - mallet # ai
+        - mcp-inspector # ai
         - mcpm # ai
         - medusa # cryptocurrency
         - mentat # ai
@@ -297,9 +315,11 @@ settings:
         - nim # homophobia
         - nixpacks # nix
         - ollama
+        - onnx # ai
         - openssl@1.1 # security, deprecated
         - openvino # ai
         - ord # cryptocurrency
+        - oxen # ai
         - plz-cli # ai
         - promptfoo # ai
         - ramalama # ai
@@ -326,6 +346,7 @@ settings:
         - telegram-downloader # telegram
         - tendermint # cryptocurrency
         - tenere # ai
+        - tfmcp # ai
         - tgpt # ai
         - tmuxai
         - trezor-agent # cryptocurrency
@@ -338,6 +359,8 @@ settings:
         - wally # roblox
         - wasmer # preference
         - wownero # cryptocurrency
+        - xgboost # ai
+        - xgo # ai
         - xlearn # ai
         - xmrig # cryptocurrency
         # keep-sorted end

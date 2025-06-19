@@ -1,7 +1,6 @@
 {
   "recommendations": [
     "bmalehorn.vscode-fish",
-    "charliermarsh.ruff",
     "editorconfig.editorconfig",
     "elves.elvish",
     "esbenp.prettier-vscode",
@@ -11,12 +10,10 @@
     "mads-hartmann.bash-ide-vscode",
     "ms-vscode.powershell",
     "ndonfris.fish-lsp",
-    "oven.bun-vscode",
     "redhat.ansible",
     "redhat.vscode-xml",
     "redhat.vscode-yaml",
     "sharat.vscode-brewfile",
-    "shopify.ruby-lsp",
     "tamasfe.even-better-toml",
     "thenuprojectcontributors.vscode-nushell-lang",
     "yy0931.gitconfig-lsp",

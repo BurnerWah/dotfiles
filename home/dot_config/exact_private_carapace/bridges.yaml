@@ -67,6 +67,7 @@ ash: zsh
 atd: fish
 atmos: cobra
 atom: fish
+atomist: yargs
 attrib: fish
 attributes: fish
 augtool: zsh
@@ -100,6 +101,7 @@ bosh: fish
 boundary: complete
 bower: fish
 brightnessctl: fish
+bru: yargs
 bsdconfig: zsh
 btdownloadgui: zsh
 btlaunchmany: zsh
@@ -129,6 +131,8 @@ castnow: fish
 ccal: zsh
 cdbs-edit-patch: zsh
 cdebug: cobra
+cdk8s: yargs
+cdk: yargs
 cdktf: yargs
 ceilometer: zsh
 cekit: click
@@ -171,7 +175,9 @@ cmp: zsh
 co: zsh
 cobra-cli: cobra
 colima: cobra
+commitlint: yargs
 compare: fish # imagemagick
+conc: yargs
 conch: zsh
 concurrently: yargs
 conjure: fish
@@ -336,6 +342,7 @@ f2: urfavecli
 fab: fish
 fail2ban-client: fish
 fastboot: fish
+fauna: yargs
 fava: click
 fc-match: zsh
 feishu2md: urfavecli
@@ -440,6 +447,7 @@ golint: fish
 gomplate: cobra
 gopass: urfavecli
 gorename: fish
+graphql: yargs
 greenmask: cobra
 gresource: fish
 groff: zsh
@@ -654,6 +662,7 @@ makensis: fish
 mani: cobra
 manila: zsh
 mariner: fish
+marp: yargs
 mattrib: zsh
 mcap: cobra
 mcd: zsh
@@ -736,6 +745,7 @@ neutron: zsh
 newgrp: zsh
 newrelic: cobra
 nfpm: cobra
+ng: yargs
 nginx: zsh
 ngrok: cobra
 nkf: zsh
@@ -768,6 +778,7 @@ oomctl: zsh
 op.exe: cobra
 op: cobra
 opa: cobra
+openapi: yargs
 openocd: fish
 openstack: zsh
 ops: cobra # slow
@@ -832,6 +843,7 @@ postmaster: zsh
 postqueue: zsh
 postsuper: zsh
 pre-commit: fish # argcomplete bridge doesn't work
+prism: yargs
 proxychains: fish
 prt-get: fish
 ps2ascii: zsh
@@ -864,6 +876,7 @@ ratify: cobra
 rclone.exe: cobra
 rclone: cobra # built-in fish completions are broken
 realpath: fish
+redocly: yargs
 reflector: fish
 regal: cobra
 regctl: cobra
@@ -945,6 +958,7 @@ snapper: zsh
 softwareupdate: zsh
 sops: urfavecli
 spamassassin: zsh
+spectral: yargs
 sphinx-apidoc: fish
 sphinx-autogen: fish
 sphinx-build: fish
