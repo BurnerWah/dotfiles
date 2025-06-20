@@ -2,7 +2,6 @@
   "apps": [
     { "Name": "aria2", "Source": "main" },
     { "Name": "CascadiaCode-NF", "Source": "nerd-fonts" },
-    { "Name": "docker-compose", "Source": "main" },
     { "Name": "exiftool", "Source": "main" },
     { "Name": "FiraCode-NF", "Source": "nerd-fonts" },
     { "Name": "FiraCode", "Source": "nerd-fonts" },

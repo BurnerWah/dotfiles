@@ -14,6 +14,7 @@
         { "PackageIdentifier": "CPUID.CPU-Z" },
         { "PackageIdentifier": "cURL.cURL" },
         { "PackageIdentifier": "dandavison.delta" },
+        { "PackageIdentifier": "Docker.DockerCompose" },
         { "PackageIdentifier": "ebkr.r2modman", "Scope": "user" },
         { "PackageIdentifier": "elves.elvish" },
         { "PackageIdentifier": "EpicGames.EpicGamesLauncher" },
