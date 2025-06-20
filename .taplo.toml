@@ -40,10 +40,16 @@ keys = [
   "settings.shell.fish.abbrev",
   "settings.shell.common.abbrev",
   "settings.shell.fish.wsl",
+  "settings.homebrew.forbiddden",
 ]
 # reorder arrays won't work unless you specify the parent keys, which is annoying
 formatting.reorder_arrays = true
 formatting.reorder_keys = true
+
+[[rule]]
+include = ["**/.chezmoidata.toml", "**/.chezmoidata/**/*.toml"]
+keys = ["settings.homebrew.forbiddden"]
+formatting.align_comments = false
 
 [[rule]]
 include = ["home/dot_config/*_infat/*"]

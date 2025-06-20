@@ -1,0 +1,397 @@
+[settings.homebrew.forbiddden]
+cask = [
+  '5ire', # ai
+  'ace-studio', # ai
+  'agent-tars', # ai 
+  'agentkube', # ai
+  'aide-app', # ai
+  'aifun', # ai
+  'ajour', # activision-blizzard
+  'amazon-q', # ai AND absurdly questionably behavior
+  'anchor-wallet', # cryptocurrency
+  'anythingllm', # ai
+  'ark-desktop-wallet', # cryptocurrency
+  'armory', # cryptocurrency
+  'atomic-wallet', # cryptocurrency
+  'ayugram', # telegram
+  'backyard-ai', # ai
+  'baritone', # spotify
+  'battle-net', # activison-blizzard
+  'binance', # cryptocurrency
+  'bison-wallet', # cryptocurrency
+  'bisq', # cryptocurrency
+  'bitbox', # cryptocurrency
+  'bitcoin-core', # cryptocurrency
+  'block-goose', # ai
+  'blockstack', # cryptocurrency
+  'blockstream-green', # cryptocurrency
+  'bloop', # ai
+  'bluewallet', # cryptocurrency
+  'boltai', # ai
+  'brave-browser', # homophobia
+  'brave-browser@beta', # homophobia
+  'brave-browser@dev', # homophobia
+  'brave-browser@nightly', # homophobia
+  'btcpayserver-vault', # cryptocurrency
+  'caprine', # facebook
+  'chatall', # ai
+  'chatbox', # ai
+  'chatgpt', # ai
+  'chatwise', # ai
+  'cherry-studio', # ai
+  'chia', # cryptocurrency
+  'cityofzion-neon', # cryptocurrency
+  'claude', # ai
+  'coin-wallet', # cryptocurrency
+  'coinomi-wallet', # cryptocurrency
+  'comfyui', # ai
+  'copilot-for-xcode', # ai
+  'cursor', # ai
+  'daedalus-mainnet', # cryptocurrency
+  'dash-dash', # cryptocurrency
+  'decentr', # cryptocurrency
+  'decrediton', # cryptocurrency
+  'deepchat', # ai
+  'deepl', # ai
+  'diffusionbee', # ai
+  'dogecoin', # cryptocurrency
+  'draw-things', # ai
+  'electron-cash', # cryptocurrency
+  'electronmail', # protonmail
+  'electrum', # cryptocurrency
+  'electrum-grs', # cryptocurrency
+  'electrum-ltc', # cryptocurrency
+  'electrumsv', # cryptocurrency
+  'elephas', # ai
+  'elephas@beta', # ai
+  'ethereum-wallet', # cryptocurrency
+  'feather', # cryptocurrency
+  'fig', # see amazon-q
+  'firefly', # cryptocurrency
+  'firefly-shimmer', # cryptocurrency
+  'fixkey', # ai
+  'forkgram-telegram', # telegram
+  'ganache', # cryptocurrency
+  'geekbench-ai', # ai
+  'github',
+  'github-copilot-for-xcode', # ai
+  'github@beta',
+  'goofy', # facebook
+  'google-assistant',
+  'google-chrome',
+  'google-chrome@beta',
+  'google-chrome@canary',
+  'google-chrome@dev',
+  'gpt4all', # ai
+  'granola', # ai
+  'greenery', # cryptocurrency
+  'grids', # facebook
+  'groestlcoin-core', # cryptocurrency
+  'grs-bluewallet', # cryptocurrency
+  'guilded', # roblox
+  'hacker-menu', # orange site
+  'hedy', # ai
+  'highlight', # ai
+  'hstracker', # activision-blizzard
+  'huggingchat', # ai
+  'igdm', # facebook
+  'impel', # ai
+  'infoflow', # ai
+  'itermai', # ai
+  'jamie', # ai
+  'jan', # ai
+  'katrain', # ai
+  'kyokan-bob', # cryptocurrency
+  'langflow', # ai
+  'league-of-legends', # your honor, league of legends
+  'ledger-live', # cryptocurrency
+  'limitless', # ai
+  'litecoin', # cryptocurrency
+  'llamachat', # ai
+  'lm-studio', # ai
+  'lobehub', # ai
+  'macai', # ai
+  'mailbutler', # ai
+  'mem', # ai
+  'memory', # ai
+  'messenger', # facebook
+  'messenger-native', # facebook
+  'meta-quest-developer-hub', # facebook
+  'microsoft-edge',
+  'microsoft-edge@beta',
+  'microsoft-edge@canary',
+  'microsoft-edge@dev',
+  'mindmac', # ai
+  'mixin', # cryptocurrency
+  'mochi-diffusion', # ai
+  'monero-wallet', # cryptocurrency
+  'msty', # ai
+  'mumu-x', # ai
+  'mycrypto', # cryptocurrency
+  'mymonero', # cryptocurrency
+  'nano', # cryptocurrency
+  'nao', # ai
+  'nasas-eyes', # US
+  'nault', # cryptocurrency
+  'nocturn', # twitter
+  'notesollama', # ai
+  'ollama', # ai
+  'ollamac', # ai
+  'onekey', # cryptocurrency
+  'onlook', # ai
+  'opencat', # ai
+  'opera', # loan-shark
+  'opera-air', # loan-shark
+  'opera-crypto@developer', # loan-shark
+  'opera-gx', # loan-shark
+  'opera-mobile-emulator', # loan-shark
+  'opera-neon', # loan-shark
+  'opera@beta', # loan-shark
+  'opera@developer', # loan-shark
+  'operadriver', # loan-shark
+  'orion', # i don't like kagi
+  'pdf-pals', # ai
+  'pdl', # ai
+  'planet', # cryptocurrency
+  'poe', # ai
+  'proton-drive', # fascism
+  'proton-mail', # fascism
+  'proton-mail-bridge', # fascism
+  'proton-pass', # fascism
+  'protonmail-import-export', # fascism
+  'protonvpn', # fascism
+  'psst', # spotify
+  'ramme', # facebook
+  'rapidminer-studio', # ai
+  'remix-ide', # cryptocurrency
+  'repo-prompt', # ai
+  'rewind', # ai
+  'rivet', # ai
+  'rize', # ai
+  'roblox', # roblox
+  'robloxstudio', # roblox
+  'runway', # ai
+  'sanctum', # ai
+  'scatter', # cryptocurrency
+  'shortwave', # ai
+  'spark-ar-studio', # facebook
+  'sparkplate', # cryptocurrency
+  'sparrow', # cryptocurrency
+  'specter', # cryptocurrency
+  'spotify', # spotify
+  'spotify4bigsur', # spotify
+  'spotspot', # spotify
+  'starcraft', # activision-blizzard
+  'status', # cryptocurrency
+  'statusfy', # spotify
+  'superhuman', # ai
+  'superwhisper', # ai
+  'telegram', # telegram
+  'telegram-a', # telegram
+  'telegram-desktop', # telegram
+  'telegram-desktop@beta', # telegram
+  'thebrowsercompany-dia', # ai
+  'threema', # threema
+  'threema-work', # threema
+  'threema@beta', # threema
+  'trae', # ai
+  'trae-cn', # ai
+  'trezor-bridge', # cryptocurrency
+  'trezor-suite', # cryptocurrency
+  'trinity', # cryptocurrency
+  'turbotax-2024',
+  'typefully', # twitter
+  'ui-tars', # ai
+  'upm', # deprecated
+  'vertcoin-core', # cryptocurrency
+  'vibemeter', # ai
+  'vincelwt-chatgpt', # ai
+  'voicenotes', # ai
+  'void', # ai
+  'vpn-by-google-one',
+  'vu', # facebook
+  'warcraft-logs-uploader', # activision-blizzard
+  'wasabi-wallet', # cryptocurrency
+  'windsurf', # ai
+  'windsurf@next', # ai
+  'witsy', # ai
+  'workplace-chat', # facebook
+  'wowmatrix', # activision-blizzard
+  'wowup', # activision-blizzard
+  'zecwallet-lite', # cryptocurrency
+  'zeronet', # cryptocurrency
+  'zoo-design-studio', # ai
+]
+
+formula = [
+  'aichat', # ai
+  'aicommit', # ai
+  'aicommits', # ai
+  'aider', # ai
+  'aiven-client', # ai
+  'alejandra', # nix
+  'aptos', # cryptocurrency
+  'arcade-learning-environment', # ai
+  'ata', # ai
+  'bcoin', # cryptocurrency
+  'bitcoin', # cryptocurrency
+  'block-goose-cli', # ai
+  'cadence', # cryptocurrency
+  'caracal', # cryptocurrency
+  'chainhook', # cryptocurrency
+  'chatblade', # ai
+  'chawan', # nim
+  'circumflex', # orange site
+  'clarinet', # cryptocurrency
+  'claude-squad', # ai
+  'code2prompt', # ai
+  'codex', # ai
+  'cog', # ai
+  'cointop', # cryptocurrency
+  'cortexso', # ai
+  'cql', # cryptocurrency
+  'crytic-compile', # cryptocurrency, leaf dependency
+  'daemontools', # cryptocurrency
+  'dstack', # ai
+  'echidna', # cryptocurrency
+  'envd', # ai
+  'erigon', # cryptocurrency
+  'ethereum', # cryptocurrency
+  'fabric-ai', # ai
+  'fades', # use `uv run`
+  'firefly', # cryptocurrency
+  'flow-cli', # cryptocurrency
+  'foundry', # cryptocurrency
+  'github-mcp-server', # ai
+  'gollama', # ai
+  'gorilla-cli', # ai
+  'gptline', # ai
+  'gptme', # ai
+  'gptscript', # ai
+  'grin', # cryptocurrency
+  'grin-wallet', # cryptocurrency
+  'groestlcoin', # cryptocurrency
+  'huggingface-cli', # ai
+  'hyper-mcp', # ai
+  'ignite', # cryptocurrency
+  'ioctl', # cryptocurrency
+  'ipget', # cryptocurrency
+  'k8sgpt', # ai
+  'kubectl-ai', # ai
+  'kuzco', # ai
+  'lexido', # ai
+  'libbitcoin-blockchain', # cryptocurrency
+  'libbitcoin-client', # cryptocurrency
+  'libbitcoin-consensus', # cryptocurrency, leaf dependency
+  'libbitcoin-database', # cryptocurrency
+  'libbitcoin-explorer', # cryptocurrency
+  'libbitcoin-network', # cryptocurrency
+  'libbitcoin-node', # cryptocurrency
+  'libbitcoin-protocol', # cryptocurrency
+  'libbitcoin-server', # cryptocurrency
+  'libbitcoin-system', # cryptocurrency, leaf dependency
+  'librespot', # spotify
+  'lighthouse', # cryptocurrency
+  'llama.cpp', # ai
+  'llm', # ai
+  'localai', # ai
+  'mallet', # ai
+  'mcp-inspector', # ai
+  'mcpm', # ai
+  'medusa', # cryptocurrency
+  'mentat', # ai
+  'mikutter', # twitter
+  'mods', # ai
+  'monero', # cryptocurrency
+  'ncspot', # spotify
+  'nim', # homophobia
+  'nixpacks', # nix
+  'ollama', # ai
+  'onnx', # ai
+  'openssl@1.1', # security, deprecated
+  'openvino', # ai
+  'ord', # cryptocurrency
+  'oxen', # ai
+  'plz-cli', # ai
+  'promptfoo', # ai
+  'ramalama', # ai
+  'rawdog', # ai
+  'repomix', # ai
+  'roblox-ts', # roblox
+  'rojo', # roblox
+  'screenpipe', # ai
+  'shpotify', # spotify
+  'slither-analyzer', # cryptocurrency, leaf dependency
+  'solana', # cryptocurrency
+  'solc-select', # cryptocurrency
+  'solhint', # cryptocurrency
+  'solidity', # cryptocurrency
+  'spicetify-cli', # spotify
+  'spotify_player', # spotify
+  'spotifyd', # spotify
+  'statix', # nix
+  'sui', # cryptocurrency
+  'sysaidmin', # ai
+  't-completion', # twitter
+  'tdlib', # telegram
+  'teku', # cryptocurrency
+  'telegram-downloader', # telegram
+  'tendermint', # cryptocurrency
+  'tenere', # ai
+  'tfmcp', # ai
+  'tgpt', # ai
+  'tmuxai', # ai
+  'trezor-agent', # cryptocurrency
+  'trezor-bridge', # cryptocurrency
+  'truffle', # cryptocurrency
+  'tsui', # fascism
+  'twty', # twitter
+  'vespa-cli', # ai
+  'wagyu', # cryptocurrency
+  'wally', # roblox
+  'wasmer', # preference
+  'wownero', # cryptocurrency
+  'xgboost', # ai
+  'xgo', # ai
+  'xlearn', # ai
+  'xmrig', # cryptocurrency
+]
+
+# These are mostly forbidden to prevent unexpected from-source builds.
+# If it needs to be built from source, do that another way.
+# If it's python, use `uv tool`
+linux = [
+  'cmake',
+  'dbus',
+  'dotnet',
+  'fish',
+  'git-open', # Broken on Linux
+  'glib',
+  'go',
+  'ncurses',
+  'node',
+  'openssl@3', # Broken with my setup
+  'perl',
+  'pkg-config', # Bottle not relocatable
+  'ruby',
+  'systemd',
+]
+
+tap = [
+  'AdoptOpenJDK/openjdk', # deprecated
+  'aquaproj/aqua', # aqua is in homebrew/core
+  'ethereum/ethereum',
+  'homebrew/aliases', # deprecated
+  'homebrew/bundle', # deprecated
+  'homebrew/cask-drivers', # deprecated
+  'homebrew/cask-fonts', # deprecated
+  'homebrew/cask-versions', # deprecated
+  'homebrew/formula-analytics', # deprecated
+  'homebrew/services', # deprecated
+  'nanovms/ops', # builds from source with a weird script
+  'neovim/neovim', # deprecated
+  'pkgxdev/made', # cryptocurrency-adjacent
+  'render-oss/render', # Mac OS only
+  'teamookla/speedtest', # Mac OS only
+  'v2ray/v2ray', # deprecated
+]
