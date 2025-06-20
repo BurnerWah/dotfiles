@@ -41,6 +41,7 @@ keys = [
   "settings.shell.common.abbrev",
   "settings.shell.fish.wsl",
   "settings.homebrew.forbiddden",
+  "settings.bat.syntax",
 ]
 # reorder arrays won't work unless you specify the parent keys, which is annoying
 formatting.reorder_arrays = true
@@ -48,7 +49,7 @@ formatting.reorder_keys = true
 
 [[rule]]
 include = ["**/.chezmoidata.toml", "**/.chezmoidata/**/*.toml"]
-keys = ["settings.homebrew.forbiddden"]
+keys = ["settings.homebrew.forbiddden", "settings.bat.syntax"]
 formatting.align_comments = false
 
 [[rule]]

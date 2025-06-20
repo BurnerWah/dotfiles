@@ -1,0 +1,116 @@
+[settings.bat.syntax]
+'Bourne Again Shell (bash)' = [
+  '**/.config/neofetch/config.conf',
+  '**/.config/zsh/functions/*',
+  '**/etc/bash_completion.d/*',
+  '**/etc/bashrc_*', # Mac OS thing
+  '**/etc/profile',
+  '**/etc/rc.*', # Mac OS thing
+  '**/etc/zshrc_*', # Mac OS thing
+  '**/share/zsh/site-functions/*',
+  '/etc/vconsole.conf',
+  '/opt/homebrew/share/zsh-completions/*',
+  '/usr/share/zsh/*/functions/*',
+  'bash_completion',
+  'bashrc',
+  'zlogin',
+  'zlogout',
+  'zprofile',
+  'zshenv',
+  'zshrc',
+]
+Crontab = ['anacrontab']
+'Git Ignore' = [
+  '.chezmoiignore',
+  '.chezmoiremove',
+  '.dockerignore',
+  '.eslintignore',
+  '.npmignore',
+  '.prettierignore',
+  '.vscodeignore',
+]
+Groovy = ['*.jenkins']
+INI = [
+  '**/.config/copr',
+  '**/.config/litecli/config',
+  '**/share/flatpak/overrides/*',
+  '*.icf',
+  '*.thumbnailer',
+  '.flake8',
+  '.shellcheckrc',
+  '/etc/appstream.conf',
+  '/etc/koji.conf',
+  '/etc/udisks2/*.conf',
+  'QtProject.conf',
+  'ReText.conf',
+  'Trolltech.conf',
+  'conf',
+  'dleyna-server-service.conf',
+  'fprintd.conf',
+  'idmapd.conf',
+  'katemetainfos',
+  'katerc',
+  'kateschemarc',
+  'katesession',
+  'katesyntaxhighlightingrc',
+  'katevirc',
+  'kdeglobals',
+  'knfsshare',
+  'konsolerc',
+  'kritadisplayrc',
+  'libuser.conf',
+  'mimeapps.list',
+  'nfs.conf',
+  'rpkg.conf',
+  'rsyncd.conf',
+  'rygel.conf',
+  'vlcrc',
+  'wgetrc',
+]
+JSON = [
+  '**/.config/pipewire/media-session.d/*',
+  '**/Documents/Zoom/*/recording.conf',
+  '*.code-snippets',
+  '*.godeps',
+  '*.jsonc',
+  '*.nnb',
+  '*.ojsnb',
+  '*.vjson',
+  '*.vmanifest',
+  '.eslintrc',
+  '.jshintrc',
+  '.nycrc',
+  '.tcelldb',
+  'proselintrc',
+]
+'JavaScript (Babel)' = ['*.js.flow']
+Lua = ['*.rockspec', '.busted', '.luacheckrc', '.luacov']
+Makefile = ['BSDmakefile']
+Markdown = ['mkd']
+Python = ['**/site-packages/*.pth']
+'SSH Config' = ['**/.ssh/config.d/*']
+Swift = ['*.swiftinterface']
+VimL = ['virc']
+XML = [
+  '**/etc/dbus-1/*.conf',
+  '*.csproj',
+  '*.dbscheme.stats',
+  '*.dtd',
+  '*.nuspec',
+  '*.resx',
+  '*.vcxproj',
+  '*.vcxproj.filters',
+  '*.vssettings',
+  'monoconfig',
+  'touchegg.conf',
+]
+YAML = [
+  '**/.config/yamllint/config',
+  '*.vyml',
+  '.clang-tidy',
+  '.lua-format',
+  '.oclint',
+]
+fstab = ['/proc/*/mounts', '/proc/mounts']
+group = ['group-']
+passwd = ['passwd-']
