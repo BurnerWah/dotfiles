@@ -383,6 +383,7 @@ carapace = [
   "ffprobe",
   "fgrep",
   "file",
+  "fileicon",
   "find",
   "findmnt",
   "findstr",
