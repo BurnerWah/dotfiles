@@ -1,0 +1,38 @@
+name: lolcrab
+description: Make your console colorful, with OpenSimplex noise
+
+flags:
+  -g, --gradient=: Set color gradient
+  --presets: Show all preset gradients
+  -c, --custom=: Custom gradient in CSS gradient format
+  --sharp=: Sharp gradient
+  -s, --scale=: Noise scale (0.01..0.1)
+  -S, --seed=: Random seed
+  -i, --invert: Colorize the background
+  -r, --random-colors=: Use random colors as custom gradient
+  -L, --lolcat: Lolcat mode
+  -a, --animate: Enable animation mode
+  -d, --duration=: Animation duration
+  --speed=: Animation speed
+  -h, --help: Print help
+  -V, --version: Print version
+  -l, --linear: Activate linear mode
+  -A, --angle=: Angle in degrees (0..360)
+  --spread=: Gradient spread (0..100)
+  --offset=: Gradient offset (0..1)
+
+completion:
+  positionalany:
+    - $files
+  flag:
+    gradient:
+      - $(lolcrab --presets)
+      - "rainbow\tdefault"
+    random-colors:
+      - '$carapace.number.Range({start: 1, end: 15})'
+    duration:
+      - '$carapace.number.Range({start: 1, end: 30})'
+      - "5\tdefault"
+    speed:
+      - '$carapace.number.Range({start: 30, end: 200})'
+      - "150\tdefault"

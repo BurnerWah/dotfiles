@@ -6,6 +6,7 @@ cask = [
   'agentkube', # ai
   'aide-app', # ai
   'aifun', # ai
+  'aigcpanel', # ai
   'ajour', # activision-blizzard
   'amazon-q', # ai AND absurdly questionably behavior
   'anchor-wallet', # cryptocurrency
@@ -13,6 +14,7 @@ cask = [
   'ark-desktop-wallet', # cryptocurrency
   'armory', # cryptocurrency
   'atomic-wallet', # cryptocurrency
+  'augur', # cryptocurrency
   'ayugram', # telegram
   'backyard-ai', # ai
   'baritone', # spotify
@@ -68,8 +70,10 @@ cask = [
   'feather', # cryptocurrency
   'fig', # see amazon-q
   'firefly', # cryptocurrency
+  'firefly-iota-desktop', # cryptocurrency
   'firefly-shimmer', # cryptocurrency
   'fixkey', # ai
+  'flowdown', # ai
   'forkgram-telegram', # telegram
   'ganache', # cryptocurrency
   'geekbench-ai', # ai
@@ -92,6 +96,7 @@ cask = [
   'hacker-menu', # orange site
   'hedy', # ai
   'highlight', # ai
+  'highlight-ai', # ai
   'hstracker', # activision-blizzard
   'huggingchat', # ai
   'igdm', # facebook
@@ -130,9 +135,11 @@ cask = [
   'mycrypto', # cryptocurrency
   'mymonero', # cryptocurrency
   'nano', # cryptocurrency
+  'nano-node', # cryptocurrency
   'nao', # ai
   'nasas-eyes', # US
   'nault', # cryptocurrency
+  'netron', # ai
   'nocturn', # twitter
   'notesollama', # ai
   'ollama', # ai
@@ -161,6 +168,7 @@ cask = [
   'protonmail-import-export', # fascism
   'protonvpn', # fascism
   'psst', # spotify
+  'raiderio', # activision-blizzard
   'ramme', # facebook
   'rapidminer-studio', # ai
   'remix-ide', # cryptocurrency
@@ -181,11 +189,13 @@ cask = [
   'spotify', # spotify
   'spotify4bigsur', # spotify
   'spotspot', # spotify
+  'stability-matrix', # ai
   'starcraft', # activision-blizzard
   'status', # cryptocurrency
   'statusfy', # spotify
   'superhuman', # ai
   'superwhisper', # ai
+  'swama', # ai
   'telegram', # telegram
   'telegram-a', # telegram
   'telegram-desktop', # telegram
@@ -218,6 +228,7 @@ cask = [
   'workplace-chat', # facebook
   'wowmatrix', # activision-blizzard
   'wowup', # activision-blizzard
+  'yuanbao', # ai
   'zecwallet-lite', # cryptocurrency
   'zeronet', # cryptocurrency
   'zoo-design-studio', # ai
@@ -233,6 +244,7 @@ formula = [
   'aptos', # cryptocurrency
   'arcade-learning-environment', # ai
   'ata', # ai
+  'backgroundremover', # ai
   'bcoin', # cryptocurrency
   'bitcoin', # cryptocurrency
   'block-goose-cli', # ai
@@ -248,6 +260,7 @@ formula = [
   'codex', # ai
   'cog', # ai
   'cointop', # cryptocurrency
+  'core-lightning', # cryptocurrency
   'cortexso', # ai
   'cql', # cryptocurrency
   'crytic-compile', # cryptocurrency, leaf dependency
@@ -262,6 +275,7 @@ formula = [
   'firefly', # cryptocurrency
   'flow-cli', # cryptocurrency
   'foundry', # cryptocurrency
+  'gemini-cli', # ai
   'github-mcp-server', # ai
   'gollama', # ai
   'gorilla-cli', # ai
@@ -330,6 +344,8 @@ formula = [
   'spotify_player', # spotify
   'spotifyd', # spotify
   'statix', # nix
+  'stellar-cli', # cryptocurrency
+  'stellar-core', # cryptocurrency
   'sui', # cryptocurrency
   'sysaidmin', # ai
   't-completion', # twitter
@@ -338,6 +354,7 @@ formula = [
   'telegram-downloader', # telegram
   'tendermint', # cryptocurrency
   'tenere', # ai
+  'teslamate', # fascism
   'tfmcp', # ai
   'tgpt', # ai
   'tmuxai', # ai
@@ -355,6 +372,7 @@ formula = [
   'xgo', # ai
   'xlearn', # ai
   'xmrig', # cryptocurrency
+  'yek', # ai
 ]
 
 # These are mostly forbidden to prevent unexpected from-source builds.

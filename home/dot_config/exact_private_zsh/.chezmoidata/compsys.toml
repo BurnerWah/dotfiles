@@ -682,6 +682,7 @@ carapace = [
   "localstack",
   "logkeys",
   "logname",
+  "lolcrab",
   "lpmove",
   "lppasswd",
   "ls",

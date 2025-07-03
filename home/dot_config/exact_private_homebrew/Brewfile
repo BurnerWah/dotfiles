@@ -34,7 +34,6 @@ brew "detect-secrets" if OS.mac?
 brew "devcontainer" if OS.mac? # VSCode devcontainers
 brew "docker-compose" if OS.mac?
 brew "doggo" # DNS lookup tool
-brew "dotnet", link: true if OS.mac?
 brew "dua-cli" if OS.mac? # disk usage
 brew "duf" if OS.mac? # disk usage
 brew "dust" # du alternative
@@ -146,7 +145,6 @@ cask "bluebubbles" if OS.mac? # iMessage server
 cask "bootstrap-studio" if OS.mac?
 cask "datagrip", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
 cask "dataspell", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
-cask "eloston-chromium" if OS.mac? # ungoogled chromium
 cask "eul" if OS.mac? # system monitor
 cask "firefox", greedy: true if OS.mac?
 cask "font-fira-code" if OS.mac?
@@ -154,7 +152,7 @@ cask "font-jetbrains-mono" if OS.mac?
 cask "font-monaspace" if OS.mac?
 cask "font-symbols-only-nerd-font" if OS.mac?
 cask "goland", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
-cask "handbrake" if OS.mac? # encoder
+cask "handbrake-app" if OS.mac? # encoder
 cask "hazeover" if OS.mac? # dims windows that aren't focused
 cask "iina" if OS.mac? # video player
 cask "intellij-idea", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
@@ -186,7 +184,7 @@ cask "rubymine", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
 cask "signal", greedy: true if OS.mac?
 cask "tor-browser", greedy: true if OS.mac?
 cask "tower" if OS.mac? # git client
-cask "visual-studio-code" if OS.mac?
+cask "ungoogled-chromium" if OS.mac?
 cask "webstorm", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
 cask "whisky" if OS.mac?
 cask "zoom", greedy: true if OS.mac?
