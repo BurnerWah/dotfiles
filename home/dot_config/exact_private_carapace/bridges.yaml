@@ -347,6 +347,7 @@ fava: click
 fc-match: zsh
 feishu2md: urfavecli
 fetchmail: zsh
+ffmate: cobra
 ffplay: fish
 ffprobe: fish
 filterdiff: zsh

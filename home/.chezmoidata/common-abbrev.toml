@@ -1,6 +1,7 @@
 [settings.shell.common.abbrev]
 asdf = 'mise'
 batp = 'bat -p'
+breew = 'brew'
 breq = 'brew'
 breqw = 'brew'
 brewq = 'brew'

@@ -378,6 +378,7 @@ carapace = [
   "fd",
   "fdisk",
   "feishu2md",
+  "ffmate",
   "ffmpeg",
   "ffplay",
   "ffprobe",

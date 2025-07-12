@@ -243,6 +243,7 @@ formula = [
   'alejandra', # nix
   'aptos', # cryptocurrency
   'arcade-learning-environment', # ai
+  'arturo', # fascism
   'ata', # ai
   'backgroundremover', # ai
   'bcoin', # cryptocurrency
@@ -315,6 +316,7 @@ formula = [
   'medusa', # cryptocurrency
   'mentat', # ai
   'mikutter', # twitter
+  'min-lang', # fascism
   'mods', # ai
   'monero', # cryptocurrency
   'ncspot', # spotify
@@ -349,6 +351,7 @@ formula = [
   'sui', # cryptocurrency
   'sysaidmin', # ai
   't-completion', # twitter
+  'taskopen', # fascism
   'tdlib', # telegram
   'teku', # cryptocurrency
   'telegram-downloader', # telegram

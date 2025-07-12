@@ -43,6 +43,7 @@
 /.rclone.conf
 /.rd
 /.redhat
+/.rsql
 /.rustup
 /.sentryclirc
 /.ServiceHub
@@ -66,5 +67,4 @@
 /RiderProjects
 /RubymineProjects
 /WebstormProjects
-/.rsql
 # keep-sorted end
