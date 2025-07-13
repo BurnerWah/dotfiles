@@ -307,6 +307,7 @@ formula = [
   'libbitcoin-system', # cryptocurrency, leaf dependency
   'librespot', # spotify
   'lighthouse', # cryptocurrency
+  'litecli', # ai
   'llama.cpp', # ai
   'llm', # ai
   'localai', # ai

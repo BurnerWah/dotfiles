@@ -78,7 +78,6 @@ brew "kondo" # Disk cleanup tool for coding
 brew "lazygit" if OS.mac? # Git terminal UI
 brew "less" if OS.mac? # Mac OS has an ancient version of Less
 brew "lima" if OS.mac? # Linux VM manager
-brew "litecli" if OS.mac? # SQLite client
 brew "lnav" if OS.mac? # log file viewer
 brew "luarocks" if OS.mac?
 brew "m-cli" if OS.mac? # macOS utils

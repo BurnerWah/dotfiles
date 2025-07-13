@@ -1,4 +1,3 @@
 [tools]
 "npm:npm-check-updates" = "latest"
 "npm:npq" = "latest"
-"pipx:litecli" = "latest"
