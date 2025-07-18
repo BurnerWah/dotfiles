@@ -106,6 +106,7 @@ cask = [
   'jamie', # ai
   'jan', # ai
   'katrain', # ai
+  'kiro', # ai
   'kyokan-bob', # cryptocurrency
   'langflow', # ai
   'league-of-legends', # your honor, league of legends
@@ -322,6 +323,7 @@ formula = [
   'monero', # cryptocurrency
   'ncspot', # spotify
   'nim', # homophobia
+  'nixfmt', # nix
   'nixpacks', # nix
   'ollama', # ai
   'onnx', # ai
