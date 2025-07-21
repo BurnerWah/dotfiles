@@ -44,9 +44,12 @@ cask = [
   'chia', # cryptocurrency
   'cityofzion-neon', # cryptocurrency
   'claude', # ai
+  'claude-code', # ai
   'coin-wallet', # cryptocurrency
   'coinomi-wallet', # cryptocurrency
   'comfyui', # ai
+  'conductor', # ai
+  'context', # ai
   'copilot-for-xcode', # ai
   'cursor', # ai
   'daedalus-mainnet', # cryptocurrency
@@ -57,6 +60,7 @@ cask = [
   'deepl', # ai
   'diffusionbee', # ai
   'dogecoin', # cryptocurrency
+  'doubao', # ai
   'draw-things', # ai
   'electron-cash', # cryptocurrency
   'electronmail', # protonmail
@@ -252,6 +256,7 @@ formula = [
   'block-goose-cli', # ai
   'cadence', # cryptocurrency
   'caracal', # cryptocurrency
+  'ccusage', # ai
   'chainhook', # cryptocurrency
   'chatblade', # ai
   'chawan', # nim
@@ -278,6 +283,7 @@ formula = [
   'flow-cli', # cryptocurrency
   'foundry', # cryptocurrency
   'gemini-cli', # ai
+  'genai-toolbox', # ai
   'github-mcp-server', # ai
   'gollama', # ai
   'gorilla-cli', # ai
