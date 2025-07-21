@@ -1,0 +1,8 @@
+/*
+!/User
+/User/*
+!/User/globalStorage
+/User/globalStorage/*
+!/User/globalStorage/zokugun.sync-settings
+/User/globalStorage/zokugun.sync-settings/*
+!/User/globalStorage/zokugun.sync-settings/settings.yml
