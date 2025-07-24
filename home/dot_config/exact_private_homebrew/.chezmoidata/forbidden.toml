@@ -221,6 +221,8 @@ cask = [
   'vertcoin-core', # cryptocurrency
   'vibemeter', # ai
   'vincelwt-chatgpt', # ai
+  'visual-studio-code', # ai
+  'visual-studio-code@insiders', # ai
   'voicenotes', # ai
   'void', # ai
   'vpn-by-google-one',

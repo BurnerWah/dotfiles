@@ -152,7 +152,6 @@ cask "font-monaspace" if OS.mac?
 cask "font-symbols-only-nerd-font" if OS.mac?
 cask "goland", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
 cask "handbrake-app" if OS.mac? # encoder
-cask "hazeover" if OS.mac? # dims windows that aren't focused
 cask "iina" if OS.mac? # video player
 cask "intellij-idea", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
 cask "iterm2" if OS.mac? # terminal emulator
