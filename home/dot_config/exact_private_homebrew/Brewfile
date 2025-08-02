@@ -176,7 +176,6 @@ cask "phpstorm", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
 cask "podman-desktop", greedy: false if OS.mac?
 cask "postico" if OS.mac? # postgres client
 cask "pycharm", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
-cask "raycast", greedy: true if OS.mac? # spotlight replacement
 cask "rider", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
 cask "rubymine", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
 cask "signal", greedy: true if OS.mac?

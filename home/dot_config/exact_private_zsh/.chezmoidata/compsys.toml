@@ -135,6 +135,7 @@ carapace = [
   "boundary",
   "bower",
   "bpython",
+  "brew",
   "brightnessctl",
   "brotli",
   "bru",

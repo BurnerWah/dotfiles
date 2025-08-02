@@ -30,7 +30,6 @@
 /.nimble
 /.node_repl_history
 /.nodenv
-/.npm
 /.nuget
 /.nvm
 /.ollama
@@ -68,3 +67,7 @@
 /RubymineProjects
 /WebstormProjects
 # keep-sorted end
+
+{{- if ne .chezmoi.os "darwin" }}
+/.npm
+{{- end }}

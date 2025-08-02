@@ -148,6 +148,7 @@ cask = [
   'nocturn', # twitter
   'notesollama', # ai
   'ollama', # ai
+  'ollama-app', # ai
   'ollamac', # ai
   'onekey', # cryptocurrency
   'onlook', # ai
@@ -176,6 +177,7 @@ cask = [
   'raiderio', # activision-blizzard
   'ramme', # facebook
   'rapidminer-studio', # ai
+  'raycast', # ai
   'remix-ide', # cryptocurrency
   'repo-prompt', # ai
   'rewind', # ai
@@ -246,6 +248,7 @@ formula = [
   'aicommit', # ai
   'aicommits', # ai
   'aider', # ai
+  'aiken', # cryptocurrency
   'aiven-client', # ai
   'alejandra', # nix
   'aptos', # cryptocurrency
@@ -286,6 +289,7 @@ formula = [
   'foundry', # cryptocurrency
   'gemini-cli', # ai
   'genai-toolbox', # ai
+  'gitea-mcp-server', # ai
   'github-mcp-server', # ai
   'gollama', # ai
   'gorilla-cli', # ai
@@ -322,6 +326,8 @@ formula = [
   'localai', # ai
   'mallet', # ai
   'mcp-inspector', # ai
+  'mcp-toolbox', # ai
+  'mcphost', # ai
   'mcpm', # ai
   'medusa', # cryptocurrency
   'mentat', # ai
@@ -338,6 +344,7 @@ formula = [
   'openssl@1.1', # security, deprecated
   'openvino', # ai
   'ord', # cryptocurrency
+  'oterm', # ai
   'oxen', # ai
   'plz-cli', # ai
   'promptfoo', # ai
@@ -377,6 +384,7 @@ formula = [
   'truffle', # cryptocurrency
   'tsui', # fascism
   'twty', # twitter
+  'unitycatalog', # ai
   'vespa-cli', # ai
   'wagyu', # cryptocurrency
   'wally', # roblox
