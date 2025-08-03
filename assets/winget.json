@@ -46,7 +46,6 @@
         { "PackageIdentifier": "Microsoft.PowerToys", "Scope": "user" },
         { "PackageIdentifier": "Microsoft.VisualStudio.2022.Community" },
         { "PackageIdentifier": "Microsoft.WingetCreate", "Scope": "user" },
-        { "PackageIdentifier": "mikf.gallery-dl" },
         { "PackageIdentifier": "MrKaran.Doggo" },
         { "PackageIdentifier": "Notepad++.Notepad++" },
         { "PackageIdentifier": "Obsidian.Obsidian", "Scope": "user" },
