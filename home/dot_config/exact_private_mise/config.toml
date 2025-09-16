@@ -1,4 +1,4 @@
-min_version = "2024.12.5"
+min_version = "2025.8.20"
 
 [settings]
 experimental = true
@@ -17,6 +17,7 @@ disable_tools = [
   "youtube-dl",
   "aichat",
   "claude",
+  "bun",
 ]
 disable_hints = [
   "python_precompiled",
@@ -39,9 +40,8 @@ default_packages_file = "~/.config/mise/default-python-packages"
 uv_venv_auto = true
 
 [settings.npm]
-bun = true
+bun = false
 
 [tools]
 cargo-binstall = "latest"
-bun = "latest"
-"ubi:VorpalBlade/chezmoi_modify_manager" = "latest"
+"github:VorpalBlade/chezmoi_modify_manager" = "latest"

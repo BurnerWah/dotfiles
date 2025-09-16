@@ -459,6 +459,7 @@ grub-mkrescue: fish
 grunt: fish
 grype: cobra
 gsutil: argcomplete
+gtrash: cobra
 guild: fish
 guile: fish
 guilt-add: zsh
@@ -675,6 +676,7 @@ mdeltree: zsh
 mdimport: fish # Mac OS
 mdir: zsh
 mdu: zsh
+melt: cobra
 metaflac: zsh
 mformat: zsh
 mii-tool: zsh

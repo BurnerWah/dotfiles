@@ -30,6 +30,7 @@ cask = [
   'bloop', # ai
   'bluewallet', # cryptocurrency
   'boltai', # ai
+  'boss', # ai
   'brave-browser', # homophobia
   'brave-browser@beta', # homophobia
   'brave-browser@dev', # homophobia
@@ -45,6 +46,7 @@ cask = [
   'cityofzion-neon', # cryptocurrency
   'claude', # ai
   'claude-code', # ai
+  'codebolt', # ai
   'coin-wallet', # cryptocurrency
   'coinomi-wallet', # cryptocurrency
   'comfyui', # ai
@@ -52,6 +54,7 @@ cask = [
   'context', # ai
   'copilot-for-xcode', # ai
   'cursor', # ai
+  'cursor-cli', # ai
   'daedalus-mainnet', # cryptocurrency
   'dash-dash', # cryptocurrency
   'decentr', # cryptocurrency
@@ -62,6 +65,7 @@ cask = [
   'dogecoin', # cryptocurrency
   'doubao', # ai
   'draw-things', # ai
+  'dyad', # ai
   'electron-cash', # cryptocurrency
   'electronmail', # protonmail
   'electrum', # cryptocurrency
@@ -101,6 +105,7 @@ cask = [
   'hedy', # ai
   'highlight', # ai
   'highlight-ai', # ai
+  'hotovo-aider-desk', # ai
   'hstracker', # activision-blizzard
   'huggingchat', # ai
   'igdm', # facebook
@@ -163,6 +168,7 @@ cask = [
   'opera@developer', # loan-shark
   'operadriver', # loan-shark
   'orion', # i don't like kagi
+  'pally', # ai
   'pdf-pals', # ai
   'pdl', # ai
   'planet', # cryptocurrency
@@ -200,6 +206,7 @@ cask = [
   'starcraft', # activision-blizzard
   'status', # cryptocurrency
   'statusfy', # spotify
+  'stravu-crystal', # ai
   'superhuman', # ai
   'superwhisper', # ai
   'swama', # ai
@@ -222,6 +229,7 @@ cask = [
   'upm', # deprecated
   'vertcoin-core', # cryptocurrency
   'vibemeter', # ai
+  'vibetunnel', # ai
   'vincelwt-chatgpt', # ai
   'visual-studio-code', # ai
   'visual-studio-code@insiders', # ai
@@ -244,6 +252,7 @@ cask = [
 ]
 
 formula = [
+  'aiac', # ai
   'aichat', # ai
   'aicommit', # ai
   'aicommits', # ai
@@ -260,6 +269,7 @@ formula = [
   'bitcoin', # cryptocurrency
   'block-goose-cli', # ai
   'cadence', # cryptocurrency
+  'cai', # ai
   'caracal', # cryptocurrency
   'ccusage', # ai
   'chainhook', # cryptocurrency
@@ -267,7 +277,10 @@ formula = [
   'chawan', # nim
   'circumflex', # orange site
   'clarinet', # cryptocurrency
+  'claude-cmd', # ai
+  'claude-hooks', # ai
   'claude-squad', # ai
+  'claudekit', # ai
   'code2prompt', # ai
   'codex', # ai
   'cog', # ai
@@ -287,6 +300,7 @@ formula = [
   'firefly', # cryptocurrency
   'flow-cli', # cryptocurrency
   'foundry', # cryptocurrency
+  'gbox', # ai
   'gemini-cli', # ai
   'genai-toolbox', # ai
   'gitea-mcp-server', # ai
@@ -306,6 +320,7 @@ formula = [
   'ipget', # cryptocurrency
   'k8sgpt', # ai
   'kubectl-ai', # ai
+  'kubernetes-mcp-server', # ai
   'kuzco', # ai
   'lexido', # ai
   'libbitcoin-blockchain', # cryptocurrency
@@ -325,10 +340,15 @@ formula = [
   'llm', # ai
   'localai', # ai
   'mallet', # ai
+  'mcp-get', # ai
   'mcp-inspector', # ai
+  'mcp-proxy', # ai
+  'mcp-publisher', # ai
+  'mcp-server-kubernetes', # ai
   'mcp-toolbox', # ai
   'mcphost', # ai
   'mcpm', # ai
+  'mcptools', # ai
   'medusa', # cryptocurrency
   'mentat', # ai
   'mikutter', # twitter
@@ -339,7 +359,10 @@ formula = [
   'nim', # homophobia
   'nixfmt', # nix
   'nixpacks', # nix
+  'notion-mcp-server', # ai
+  'oasis', # cryptocurrency
   'ollama', # ai
+  'omnara', # ai
   'onnx', # ai
   'openssl@1.1', # security, deprecated
   'openvino', # ai
@@ -348,12 +371,15 @@ formula = [
   'oxen', # ai
   'plz-cli', # ai
   'promptfoo', # ai
+  'qwen-code', # ai
   'ramalama', # ai
   'rawdog', # ai
   'repomix', # ai
   'roblox-ts', # roblox
   'rojo', # roblox
+  'rulesync', # ai
   'screenpipe', # ai
+  'shimmy', # ai
   'shpotify', # spotify
   'slither-analyzer', # cryptocurrency, leaf dependency
   'solana', # cryptocurrency
@@ -367,14 +393,17 @@ formula = [
   'stellar-cli', # cryptocurrency
   'stellar-core', # cryptocurrency
   'sui', # cryptocurrency
+  'supabase-mcp-server', # ai
   'sysaidmin', # ai
   't-completion', # twitter
   'taskopen', # fascism
+  'tdd-guard', # ai
   'tdlib', # telegram
   'teku', # cryptocurrency
   'telegram-downloader', # telegram
   'tendermint', # cryptocurrency
   'tenere', # ai
+  'terraform-mcp-server', # ai
   'teslamate', # fascism
   'tfmcp', # ai
   'tgpt', # ai
@@ -383,6 +412,7 @@ formula = [
   'trezor-bridge', # cryptocurrency
   'truffle', # cryptocurrency
   'tsui', # fascism
+  'tweakcc', # ai
   'twty', # twitter
   'unitycatalog', # ai
   'vespa-cli', # ai
@@ -395,6 +425,7 @@ formula = [
   'xlearn', # ai
   'xmrig', # cryptocurrency
   'yek', # ai
+  'yutu', # ai
 ]
 
 # These are mostly forbidden to prevent unexpected from-source builds.
@@ -430,6 +461,7 @@ tap = [
   'homebrew/services', # deprecated
   'nanovms/ops', # builds from source with a weird script
   'neovim/neovim', # deprecated
+  'oven-sh/bun', # fascism
   'pkgxdev/made', # cryptocurrency-adjacent
   'render-oss/render', # Mac OS only
   'teamookla/speedtest', # Mac OS only

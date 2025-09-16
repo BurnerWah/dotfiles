@@ -143,7 +143,6 @@ cask "blender" if OS.mac?
 cask "bluebubbles" if OS.mac? # iMessage server
 cask "bootstrap-studio" if OS.mac?
 cask "datagrip", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
-cask "dataspell", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
 cask "eul" if OS.mac? # system monitor
 cask "firefox", greedy: true if OS.mac?
 cask "font-fira-code" if OS.mac?
@@ -183,7 +182,6 @@ cask "tor-browser", greedy: true if OS.mac?
 cask "tower" if OS.mac? # git client
 cask "ungoogled-chromium" if OS.mac?
 cask "webstorm", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
-cask "whisky" if OS.mac?
 cask "zoom", greedy: true if OS.mac?
 
 mas "Affinity Designer 2", id: 1_616_831_348 if OS.mac?

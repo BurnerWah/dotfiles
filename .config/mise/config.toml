@@ -6,10 +6,9 @@ ruby = "latest"
 taplo = "latest"
 gitleaks = "latest"
 ripsecrets = { version = "latest", os = ["linux", "macos"] }
-bun = "latest"
 node = "latest"
 yamllint = "latest"
-"ubi:VorpalBlade/chezmoi_modify_manager" = "latest"
+"github:VorpalBlade/chezmoi_modify_manager" = "latest"
 
 [tasks.apply]
 run = "chezmoi apply"
@@ -33,7 +32,7 @@ description = "Format code"
 # fish doesn't need to be installed.
 
 [tasks."format:prettier"]
-run = "bun run --silent format:prettier"
+run = "npm run format:prettier"
 description = "Format code with Prettier"
 
 [tasks."format:ruff"]
@@ -68,8 +67,8 @@ sources = ["lefthook.*", "lefthook-local.*"]
 outputs = [".git/hooks/*"]
 
 [tasks."install:npm"]
-run = "bun install"
-description = "Install npm packages with bun"
+run = "pnpm install"
+description = "Install npm packages with pnpm"
 
 [tasks.lint]
 depends = ["lint:*"]
@@ -80,7 +79,7 @@ run = "gitleaks git --no-banner"
 description = "Check git repo for secrets"
 
 [tasks."lint:prettier"]
-run = "bun run --silent lint:prettier"
+run = "npm run --silent lint:prettier"
 description = "Lint code formatting with Prettier"
 
 [tasks."lint:ripsecrets"]
