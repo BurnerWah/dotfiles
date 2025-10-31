@@ -17,5 +17,6 @@
     "tamasfe.even-better-toml",
     "thenuprojectcontributors.vscode-nushell-lang",
     "yy0931.gitconfig-lsp",
+    "denoland.vscode-deno",
   ],
 }
