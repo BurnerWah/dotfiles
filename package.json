@@ -2,10 +2,5 @@
   "scripts": {
     "format:prettier": "prettier --write --cache --ignore-unknown .",
     "lint:prettier": "prettier --check --cache --ignore-unknown ."
-  },
-  "devDependencies": {
-    "@prettier/plugin-xml": "^3.4.1",
-    "prettier": "^3.5.3",
-    "prettier-plugin-packagejson": "^2.5.10"
   }
 }

@@ -1,0 +1,21 @@
+{
+  "tasks": {
+    "dev": "deno run --watch main.ts",
+    "prettier": "deno run -P=prettier prettier",
+    "lint:prettier": "deno run -P=prettier prettier --check --cache --ignore-unknown .",
+    "format:prettier": "deno run -P=prettier prettier --write --cache --ignore-unknown ."
+  },
+  "imports": {
+    "prettier": "npm:prettier@^3.5.3",
+    "prettier-plugin-packagejson": "npm:prettier-plugin-packagejson@^2.5.10",
+    "@prettier/plugin-xml": "npm:@prettier/plugin-xml@^3.4.1"
+  },
+  "permissions": {
+    "prettier": {
+      "env": true,
+      "sys": true,
+      "read": ["."],
+      "write": ["node_modules/.cache/prettier", "."]
+    }
+  }
+}

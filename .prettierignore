@@ -3,3 +3,4 @@
 /.ruby-lsp
 /pnpm-lock.yaml
 /schemas/vendor/*
+/deno.lock

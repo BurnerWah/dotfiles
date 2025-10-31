@@ -7,6 +7,7 @@ gitleaks = "latest"
 ripsecrets = { version = "latest", os = ["linux", "macos"] }
 node = "latest"
 yamllint = "latest"
+deno = "latest"
 "github:VorpalBlade/chezmoi_modify_manager" = "latest"
 
 [tasks.apply]
@@ -31,7 +32,7 @@ description = "Format code"
 # fish doesn't need to be installed.
 
 [tasks."format:prettier"]
-run = "npm run format:prettier"
+run = "deno task format:prettier"
 description = "Format code with Prettier"
 
 [tasks."format:ruff"]
@@ -62,8 +63,8 @@ sources = ["lefthook.*", "lefthook-local.*"]
 outputs = [".git/hooks/*"]
 
 [tasks."install:npm"]
-run = "pnpm install"
-description = "Install npm packages with pnpm"
+run = "deno install"
+description = "Install npm packages with deno"
 
 [tasks.lint]
 depends = ["lint:*"]
@@ -74,7 +75,7 @@ run = "gitleaks git --no-banner"
 description = "Check git repo for secrets"
 
 [tasks."lint:prettier"]
-run = "npm run --silent lint:prettier"
+run = "deno task lint:prettier"
 description = "Lint code formatting with Prettier"
 
 [tasks."lint:ripsecrets"]

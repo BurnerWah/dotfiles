@@ -73,7 +73,7 @@ pre-commit:
         parallel: true
         jobs:
           - name: prettier
-            run: mise x -- npx prettier --write --cache --ignore-unknown {staged_files}
+            run: mise x -- deno task prettier --write --cache --ignore-unknown {staged_files}
             glob:
               - '*.{gql,graphql,graphqls}'
               - '*.{hbs,handlebars}'
@@ -95,6 +95,7 @@ pre-commit:
             exclude:
               - lazy-lock.json
               - pnpm-lock.yaml
+              - deno.lock
               - schemas/vendor/*
               - symlink_*
             stage_fixed: true
