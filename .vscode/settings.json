@@ -73,7 +73,6 @@
     "**/.chezmoitemplates/**/*",
     "**/modify_*",
   ],
-  "npm.packageManager": "bun",
   "nushellLanguageServer.includeDirs": [
     "./home/dot_config/exact_private_nushell/modules",
   ],
