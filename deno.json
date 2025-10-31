@@ -1,6 +1,5 @@
 {
   "tasks": {
-    "dev": "deno run --watch main.ts",
     "prettier": "deno run -P=prettier prettier",
     "lint:prettier": "deno run -P=prettier prettier --check --cache --ignore-unknown .",
     "format:prettier": "deno run -P=prettier prettier --write --cache --ignore-unknown ."
