@@ -1,5 +1,6 @@
 os-*.toml
 !os-{{.chezmoi.os}}.toml
+!os-{{.chezmoi.os}}.*.toml
 
 device-*.toml
 !device-{{.devicename}}.toml

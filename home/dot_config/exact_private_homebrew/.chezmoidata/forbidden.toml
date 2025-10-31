@@ -7,6 +7,7 @@ cask = [
   'aide-app', # ai
   'aifun', # ai
   'aigcpanel', # ai
+  'aionui', # ai
   'ajour', # activision-blizzard
   'amazon-q', # ai AND absurdly questionably behavior
   'anchor-wallet', # cryptocurrency
@@ -47,6 +48,8 @@ cask = [
   'claude', # ai
   'claude-code', # ai
   'codebolt', # ai
+  'coderabbit', # ai
+  'codex', # ai
   'coin-wallet', # cryptocurrency
   'coinomi-wallet', # cryptocurrency
   'comfyui', # ai
@@ -57,6 +60,7 @@ cask = [
   'cursor-cli', # ai
   'daedalus-mainnet', # cryptocurrency
   'dash-dash', # cryptocurrency
+  'dayflow', # ai
   'decentr', # cryptocurrency
   'decrediton', # cryptocurrency
   'deepchat', # ai
@@ -65,6 +69,7 @@ cask = [
   'dogecoin', # cryptocurrency
   'doubao', # ai
   'draw-things', # ai
+  'droid', # ai
   'dyad', # ai
   'electron-cash', # cryptocurrency
   'electronmail', # protonmail
@@ -74,6 +79,7 @@ cask = [
   'electrumsv', # cryptocurrency
   'elephas', # ai
   'elephas@beta', # ai
+  'emdash', # ai
   'ethereum-wallet', # cryptocurrency
   'feather', # cryptocurrency
   'fig', # see amazon-q
@@ -157,6 +163,7 @@ cask = [
   'ollamac', # ai
   'onekey', # cryptocurrency
   'onlook', # ai
+  'opcode', # ai
   'opencat', # ai
   'opera', # loan-shark
   'opera-air', # loan-shark
@@ -167,7 +174,9 @@ cask = [
   'opera@beta', # loan-shark
   'opera@developer', # loan-shark
   'operadriver', # loan-shark
+  'origin', # fascism
   'orion', # i don't like kagi
+  'osaurus', # ai
   'pally', # ai
   'pdf-pals', # ai
   'pdl', # ai
@@ -187,6 +196,7 @@ cask = [
   'remix-ide', # cryptocurrency
   'repo-prompt', # ai
   'rewind', # ai
+  'rewritebar', # ai
   'rivet', # ai
   'rize', # ai
   'roblox', # roblox
@@ -218,6 +228,7 @@ cask = [
   'threema', # threema
   'threema-work', # threema
   'threema@beta', # threema
+  'tint', # fascism
   'trae', # ai
   'trae-cn', # ai
   'trezor-bridge', # cryptocurrency
@@ -231,8 +242,6 @@ cask = [
   'vibemeter', # ai
   'vibetunnel', # ai
   'vincelwt-chatgpt', # ai
-  'visual-studio-code', # ai
-  'visual-studio-code@insiders', # ai
   'voicenotes', # ai
   'void', # ai
   'vpn-by-google-one',
@@ -258,6 +267,7 @@ formula = [
   'aicommits', # ai
   'aider', # ai
   'aiken', # cryptocurrency
+  'airtable-mcp-server', # ai
   'aiven-client', # ai
   'alejandra', # nix
   'aptos', # cryptocurrency
@@ -269,22 +279,26 @@ formula = [
   'bitcoin', # cryptocurrency
   'block-goose-cli', # ai
   'cadence', # cryptocurrency
+  'cagent', # ai
   'cai', # ai
   'caracal', # cryptocurrency
   'ccusage', # ai
   'chainhook', # cryptocurrency
   'chatblade', # ai
   'chawan', # nim
+  'chrome-devtools-mcp', # ai
   'circumflex', # orange site
   'clarinet', # cryptocurrency
   'claude-cmd', # ai
   'claude-hooks', # ai
   'claude-squad', # ai
   'claudekit', # ai
+  'cliproxyapi', # ai
   'code2prompt', # ai
   'codex', # ai
   'cog', # ai
   'cointop', # cryptocurrency
+  'context7-mcp', # ai
   'core-lightning', # cryptocurrency
   'cortexso', # ai
   'cql', # cryptocurrency
@@ -297,14 +311,17 @@ formula = [
   'ethereum', # cryptocurrency
   'fabric-ai', # ai
   'fades', # use `uv run`
+  'fastmcp', # ai
   'firefly', # cryptocurrency
   'flow-cli', # cryptocurrency
   'foundry', # cryptocurrency
+  'framework-tool-tui', # framework
   'gbox', # ai
   'gemini-cli', # ai
   'genai-toolbox', # ai
   'gitea-mcp-server', # ai
   'github-mcp-server', # ai
+  'gitingest', # ai
   'gollama', # ai
   'gorilla-cli', # ai
   'gptline', # ai
@@ -319,6 +336,7 @@ formula = [
   'ioctl', # cryptocurrency
   'ipget', # cryptocurrency
   'k8sgpt', # ai
+  'kimi-cli', # ai
   'kubectl-ai', # ai
   'kubernetes-mcp-server', # ai
   'kuzco', # ai
@@ -340,10 +358,14 @@ formula = [
   'llm', # ai
   'localai', # ai
   'mallet', # ai
+  'mcp-atlassian', # ai
   'mcp-get', # ai
+  'mcp-google-sheets', # ai
+  'mcp-grafana', # ai
   'mcp-inspector', # ai
   'mcp-proxy', # ai
   'mcp-publisher', # ai
+  'mcp-server-chart', # ai
   'mcp-server-kubernetes', # ai
   'mcp-toolbox', # ai
   'mcphost', # ai
@@ -353,8 +375,11 @@ formula = [
   'mentat', # ai
   'mikutter', # twitter
   'min-lang', # fascism
+  'mlx-lm', # ai
   'mods', # ai
   'monero', # cryptocurrency
+  'n8n-mcp', # ai
+  'nanobot', # ai
   'ncspot', # spotify
   'nim', # homophobia
   'nixfmt', # nix
@@ -364,11 +389,13 @@ formula = [
   'ollama', # ai
   'omnara', # ai
   'onnx', # ai
+  'opencode', # ai
   'openssl@1.1', # security, deprecated
   'openvino', # ai
   'ord', # cryptocurrency
   'oterm', # ai
   'oxen', # ai
+  'playwright-mcp', #ai
   'plz-cli', # ai
   'promptfoo', # ai
   'qwen-code', # ai
@@ -378,9 +405,12 @@ formula = [
   'roblox-ts', # roblox
   'rojo', # roblox
   'rulesync', # ai
+  'rustywind', # fascism
+  'salesforce-mcp', # ai
   'screenpipe', # ai
   'shimmy', # ai
   'shpotify', # spotify
+  'slack-mcp-server', # ai
   'slither-analyzer', # cryptocurrency, leaf dependency
   'solana', # cryptocurrency
   'solc-select', # cryptocurrency
@@ -396,6 +426,8 @@ formula = [
   'supabase-mcp-server', # ai
   'sysaidmin', # ai
   't-completion', # twitter
+  'tailwindcss', # fascism
+  'tailwindcss-language-server', # fascism
   'taskopen', # fascism
   'tdd-guard', # ai
   'tdlib', # telegram
@@ -412,6 +444,7 @@ formula = [
   'trezor-bridge', # cryptocurrency
   'truffle', # cryptocurrency
   'tsui', # fascism
+  'tuisky', # bluesky
   'tweakcc', # ai
   'twty', # twitter
   'unitycatalog', # ai
@@ -419,6 +452,7 @@ formula = [
   'wagyu', # cryptocurrency
   'wally', # roblox
   'wasmer', # preference
+  'wassette', # ai
   'wownero', # cryptocurrency
   'xgboost', # ai
   'xgo', # ai

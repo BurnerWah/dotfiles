@@ -11,7 +11,6 @@
         zoxide
         mise
         iterm2
-        shadowenv
         starship
         thefuck
     )

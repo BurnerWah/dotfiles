@@ -11,7 +11,7 @@
 
 .config/bat/syntaxes/Bison.sublime-syntax:
   type: file
-  url: https://github.com/ISSOtm/sublime-Bison/raw/master/Bison.sublime-syntax
+  url: https://codeberg.org/ISSOtm/sublime-Bison/raw/branch/master/Bison.sublime-syntax
   refreshPeriod: 744h
 
 .config/bat/syntaxes/elvish.sublime-syntax:

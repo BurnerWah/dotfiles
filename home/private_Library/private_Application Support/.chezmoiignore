@@ -20,6 +20,7 @@
 /CallHistoryDB
 /CallHistoryTransactions
 /CEF
+/Celeste
 /chezmoi
 /Chromium
 /CleanMyMac X
@@ -55,7 +56,10 @@
 /DiskImages
 /Dock
 /dura
+/Element
+/Epic
 /FaceTime
+/Fastmail
 /Figma
 /FileProvider
 /Firefox
@@ -115,6 +119,9 @@
 /powershell
 /privatecloudcomputed
 /ProApps
+/RefSrcSymbols
+/Ryujinx
+/sh.atuin.app
 /Signal
 /spacedrive
 /Stats
@@ -122,6 +129,7 @@
 /stickersd
 /Sublime Text
 /summary-events
+/Symbols
 /SymbolSourceSymbols
 /Syncthing
 /TabNine

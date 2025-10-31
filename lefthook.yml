@@ -88,14 +88,10 @@ pre-commit:
               - '*.html'
               - '*.less'
               - '*.plist{,.tmpl}'
-              - '*.rb'
               - '*.scss'
               - '*.sublime-syntax'
               - '*.vue'
               - '*.xml{,.tmpl}'
-              - Brewfile{,.tmpl}
-              - Gemfile
-              - Rakefile
             exclude:
               - lazy-lock.json
               - pnpm-lock.yaml

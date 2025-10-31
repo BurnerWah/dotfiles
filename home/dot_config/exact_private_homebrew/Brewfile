@@ -138,7 +138,7 @@ cask "alt-tab" if OS.mac?
 cask "android-platform-tools" if OS.mac?
 cask "apparency" if OS.mac? # inspects app bundles + quicklook extension
 cask "background-music", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac? # volume mixer
-cask "bettertouchtool", greedy: true if OS.mac? # trackpad settings
+cask "bettertouchtool" if OS.mac? # trackpad settings
 cask "blender" if OS.mac?
 cask "bluebubbles" if OS.mac? # iMessage server
 cask "bootstrap-studio" if OS.mac?
@@ -159,7 +159,6 @@ cask "karabiner-elements", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac? # key
 cask "kitty" if OS.mac? # terminal emulator
 cask "krita" if OS.mac?
 cask "launchcontrol" if OS.mac?
-cask "launchpad-manager" if OS.mac?
 cask "legcord" if OS.mac?
 cask "lulu", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac? # firewall
 cask "macfuse@dev", greedy: true if OS.mac? # FUSE on Mac OS
@@ -176,7 +175,6 @@ cask "podman-desktop", greedy: false if OS.mac?
 cask "postico" if OS.mac? # postgres client
 cask "pycharm", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
 cask "rider", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
-cask "rubymine", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
 cask "signal", greedy: true if OS.mac?
 cask "tor-browser", greedy: true if OS.mac?
 cask "tower" if OS.mac? # git client

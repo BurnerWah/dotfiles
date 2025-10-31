@@ -25,6 +25,9 @@ disable_hints = [
   "outdated_bump",
   "python_multi",
 ]
+disable_backends = [
+  "gem", # security
+]
 
 [settings.ruby]
 default_packages_file = "~/.config/mise/default-gems"

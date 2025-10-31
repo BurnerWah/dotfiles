@@ -11,7 +11,7 @@ if status is-interactive
     # Skip running `brew --repository` if we already know what it should output
     [ -n "$HOMEBREW_REPOSITORY" ] || set -l HOMEBREW_REPOSITORY (brew --repository)
 
-    set -l HB_CNF_HANDLER "$HOMEBREW_REPOSITORY/Library/Taps/homebrew/homebrew-command-not-found/handler.fish"
+    set -l HB_CNF_HANDLER "$HOMEBREW_REPOSITORY/Library/Homebrew/command-not-found/handler.fish"
     if test -f $HB_CNF_HANDLER
         source $HB_CNF_HANDLER
     end

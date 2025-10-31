@@ -2,7 +2,6 @@
 lefthook = "latest"
 stylua = "latest"
 ruff = "latest"
-ruby = "latest"
 taplo = "latest"
 gitleaks = "latest"
 ripsecrets = { version = "latest", os = ["linux", "macos"] }
@@ -56,10 +55,6 @@ description = "Generate JSON schema for lima.yaml files"
 depends = ["install:*"]
 description = "Install project dependencies"
 
-[tasks."install:gem"]
-run = "bundle install"
-description = "Install ruby packages with bundler"
-
 [tasks."install:lefthook"]
 run = "lefthook install"
 description = "Install git hooks for lefthook"
@@ -97,10 +92,6 @@ description = "Lint Lua code formatting with StyLua"
 [tasks."lint:taplo"]
 run = "taplo lint"
 description = "Format TOML files with Taplo"
-
-[tasks."update:bundle"]
-run = "bundle update"
-description = "Update Gemfile.lock"
 
 [tasks."update:nvim-plugins"]
 run = 'nvim --headless "+Lazy! sync" +qa'
