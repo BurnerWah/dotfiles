@@ -1,0 +1,16 @@
+[settings.shell.zsh.plugins]
+load_order = [
+  # Important stuff
+  "zsh-autosuggestions",
+  "zsh-autopair",
+  "zsh-history-substring-search",
+  "f-sy-h",
+  # Lower priority stuff
+  "command-not-found",
+  "atuin",
+  "zoxide",
+  "mise",
+  "iterm2",
+  "starship",
+  "thefuck",
+]
