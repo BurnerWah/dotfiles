@@ -6,9 +6,9 @@
     "format:prettier": "deno run -P=prettier prettier --write --cache --ignore-unknown ."
   },
   "imports": {
-    "prettier": "npm:prettier@^3.5.3",
-    "prettier-plugin-packagejson": "npm:prettier-plugin-packagejson@^2.5.10",
-    "@prettier/plugin-xml": "npm:@prettier/plugin-xml@^3.4.1"
+    "prettier": "npm:prettier@^3.6.2",
+    "prettier-plugin-packagejson": "npm:prettier-plugin-packagejson@^2.5.19",
+    "@prettier/plugin-xml": "npm:@prettier/plugin-xml@^3.4.2"
   },
   "permissions": {
     "prettier": {
