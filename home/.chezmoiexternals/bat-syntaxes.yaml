@@ -9,11 +9,6 @@
 # https://github.com/eugenesvk/sublime-xonsh (build fails)
 # https://github.com/jnoortheen/vscode-xonsh (converted syntax build fails)
 
-.config/bat/syntaxes/Bison.sublime-syntax:
-  type: file
-  url: https://codeberg.org/ISSOtm/sublime-Bison/raw/branch/master/Bison.sublime-syntax
-  refreshPeriod: 744h
-
 .config/bat/syntaxes/elvish.sublime-syntax:
   type: file
   url: https://github.com/href/elvish_syntax_for_sublime/raw/master/elvish.sublime-syntax
