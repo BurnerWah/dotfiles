@@ -27,6 +27,7 @@ cask = [
   'bitcoin-core', # cryptocurrency
   'block-goose', # ai
   'blockstack', # cryptocurrency
+  'blockstream', # cryptocurrency
   'blockstream-green', # cryptocurrency
   'bloop', # ai
   'bluewallet', # cryptocurrency
@@ -36,17 +37,20 @@ cask = [
   'brave-browser@beta', # homophobia
   'brave-browser@dev', # homophobia
   'brave-browser@nightly', # homophobia
+  'browseros', # ai
   'btcpayserver-vault', # cryptocurrency
   'caprine', # facebook
   'chatall', # ai
   'chatbox', # ai
   'chatgpt', # ai
+  'chatgpt-atlas', # ai
   'chatwise', # ai
   'cherry-studio', # ai
   'chia', # cryptocurrency
   'cityofzion-neon', # cryptocurrency
   'claude', # ai
   'claude-code', # ai
+  'cmd', # ai
   'codebolt', # ai
   'coderabbit', # ai
   'codex', # ai
@@ -83,6 +87,7 @@ cask = [
   'ethereum-wallet', # cryptocurrency
   'feather', # cryptocurrency
   'fig', # see amazon-q
+  'filo', # ai
   'firefly', # cryptocurrency
   'firefly-iota-desktop', # cryptocurrency
   'firefly-shimmer', # cryptocurrency
@@ -121,13 +126,16 @@ cask = [
   'jamie', # ai
   'jan', # ai
   'katrain', # ai
+  'kimi', # ai
   'kiro', # ai
   'kyokan-bob', # cryptocurrency
   'langflow', # ai
   'league-of-legends', # your honor, league of legends
   'ledger-live', # cryptocurrency
+  'ledger-wallet', # cryptocurrency
   'limitless', # ai
   'litecoin', # cryptocurrency
+  'llamabarn', # ai
   'llamachat', # ai
   'lm-studio', # ai
   'lobehub', # ai
@@ -248,6 +256,7 @@ cask = [
   'vu', # facebook
   'warcraft-logs-uploader', # activision-blizzard
   'wasabi-wallet', # cryptocurrency
+  'whodb', # ai
   'windsurf', # ai
   'windsurf@next', # ai
   'witsy', # ai
@@ -264,6 +273,7 @@ formula = [
   'aiac', # ai
   'aichat', # ai
   'aicommit', # ai
+  'aicommit2', # ai
   'aicommits', # ai
   'aider', # ai
   'aiken', # cryptocurrency
@@ -290,10 +300,12 @@ formula = [
   'circumflex', # orange site
   'clarinet', # cryptocurrency
   'claude-cmd', # ai
+  'claude-code-router', # ai
   'claude-hooks', # ai
   'claude-squad', # ai
   'claudekit', # ai
   'cliproxyapi', # ai
+  'cobo-cli', # ai
   'code2prompt', # ai
   'codex', # ai
   'cog', # ai
@@ -330,12 +342,14 @@ formula = [
   'grin', # cryptocurrency
   'grin-wallet', # cryptocurrency
   'groestlcoin', # cryptocurrency
+  'hf-mcp-server', # ai
   'huggingface-cli', # ai
   'hyper-mcp', # ai
   'ignite', # cryptocurrency
   'ioctl', # cryptocurrency
   'ipget', # cryptocurrency
   'k8sgpt', # ai
+  'kagent', # ai
   'kimi-cli', # ai
   'kubectl-ai', # ai
   'kubernetes-mcp-server', # ai
@@ -399,6 +413,7 @@ formula = [
   'plz-cli', # ai
   'promptfoo', # ai
   'qwen-code', # ai
+  'rails-mcp-server', # ai
   'ramalama', # ai
   'rawdog', # ai
   'repomix', # ai
@@ -409,6 +424,7 @@ formula = [
   'salesforce-mcp', # ai
   'screenpipe', # ai
   'shimmy', # ai
+  'shortest', # ai
   'shpotify', # spotify
   'slack-mcp-server', # ai
   'slither-analyzer', # cryptocurrency, leaf dependency
@@ -449,6 +465,8 @@ formula = [
   'twty', # twitter
   'unitycatalog', # ai
   'vespa-cli', # ai
+  'vibecheck', # ai
+  'vtcode', # ai
   'wagyu', # cryptocurrency
   'wally', # roblox
   'wasmer', # preference

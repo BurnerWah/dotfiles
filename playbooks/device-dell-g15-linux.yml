@@ -120,7 +120,6 @@
           - org.signal.Signal
           - page.tesk.Refine
           - rs.ruffle.Ruffle
-          - xyz.armcord.ArmCord
         state: present
 
     - name: Enable sshd socket activation

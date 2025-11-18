@@ -132,7 +132,6 @@
           - org.kde.tokodon
           - org.mozilla.firefox
           - org.videolan.VLC
-          - xyz.armcord.ArmCord
         state: present
 
     - name: Enable sshd socket activation

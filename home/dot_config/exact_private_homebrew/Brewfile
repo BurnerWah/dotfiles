@@ -1,6 +1,5 @@
 # Taps
 tap "homebrew/autoupdate" if OS.mac?
-tap "homebrew/command-not-found" if OS.mac?
 tap "buo/cask-upgrade" if OS.mac?
 tap "gromgit/fuse" if OS.mac?
 
@@ -138,7 +137,6 @@ cask "alt-tab" if OS.mac?
 cask "android-platform-tools" if OS.mac?
 cask "apparency" if OS.mac? # inspects app bundles + quicklook extension
 cask "background-music", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac? # volume mixer
-cask "bettertouchtool" if OS.mac? # trackpad settings
 cask "blender" if OS.mac?
 cask "bluebubbles" if OS.mac? # iMessage server
 cask "bootstrap-studio" if OS.mac?
@@ -169,7 +167,6 @@ cask "moonlight" if OS.mac? # local game streaming
 cask "notunes" if OS.mac?
 cask "obs" if OS.mac? # streaming & recording
 cask "obsidian" if OS.mac? # note taking
-cask "powershell" if OS.mac? # powershell tap is slow to be updated
 cask "phpstorm", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
 cask "podman-desktop", greedy: false if OS.mac?
 cask "postico" if OS.mac? # postgres client

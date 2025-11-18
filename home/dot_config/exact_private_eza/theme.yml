@@ -180,7 +180,6 @@ filenames: # Custom filename-based overrides
   babel.config.js: *babelrc
   babel.config.json: *babelrc
   Brewfile: { icon: { glyph:  } }
-  bun.lockb: { icon: { glyph:  } }
   cypress.config.cjs: { icon: { glyph:  } }
   cypress.config.js: { icon: { glyph:  } }
   cypress.config.mjs: { icon: { glyph:  } }
@@ -248,10 +247,6 @@ filenames: # Custom filename-based overrides
   stylelint.config.mjs: *stylelintrc
   stylua.toml: { icon: { glyph:  } }
   svelte.config.js: { icon: { glyph:  } }
-  tailwind.config.cjs: { icon: { glyph: 󱏿 } }
-  tailwind.config.js: { icon: { glyph: 󱏿 } }
-  tailwind.config.mjs: { icon: { glyph: 󱏿 } }
-  tailwind.config.ts: { icon: { glyph: 󱏿 } }
   torrc: { icon: { glyph:  } }
   torsocks.conf: { icon: { glyph:  } }
   tox.ini: *python
