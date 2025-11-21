@@ -9,7 +9,6 @@ brew "age-plugin-yubikey" if OS.mac?
 brew "ansible" if OS.mac?
 brew "ansible-lint" if OS.mac?
 brew "as-tree"
-brew "asitop" if OS.mac? && Hardware::CPU.arm? # Apple Silicon performance monitor
 brew "atuin" # history sync
 brew "aqua" if OS.mac?
 brew "b3sum" if OS.mac? # checksum tool, also in Fedora repos

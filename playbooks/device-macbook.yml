@@ -1,0 +1,11 @@
+---
+- name: Dell G15 Linux playbook
+  hosts: localhost
+
+  tasks:
+    - name: Install main brew packages
+      community.general.homebrew:
+        force_formula: true
+        name:
+          - asitop # Apple Silicon performance monitor
+        state: present
