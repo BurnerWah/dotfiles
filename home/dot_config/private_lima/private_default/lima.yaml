@@ -1,4 +1,4 @@
-minimumLimaVersion: '1.0.2'
+minimumLimaVersion: '2.0.0'
 
 images:
   - location: 'https://download.fedoraproject.org/pub/fedora/linux/releases/42/Cloud/x86_64/images/Fedora-Cloud-Base-Generic-42-1.1.x86_64.qcow2'
@@ -18,9 +18,11 @@ mountTypesUnsupported: [9p]
 memory: 4GiB
 disk: 100GiB
 
-rosetta:
-  enabled: true
-  binfmt: true
+vmOpts:
+  vz:
+    rosetta:
+      enabled: true
+      binfmt: true
 
 networks:
   - vzNAT: true

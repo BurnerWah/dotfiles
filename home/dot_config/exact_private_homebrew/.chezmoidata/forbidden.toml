@@ -11,6 +11,7 @@ cask = [
   'ajour', # activision-blizzard
   'amazon-q', # ai AND absurdly questionably behavior
   'anchor-wallet', # cryptocurrency
+  'antigravity', # ai
   'anythingllm', # ai
   'ark-desktop-wallet', # cryptocurrency
   'armory', # cryptocurrency
@@ -42,6 +43,7 @@ cask = [
   'caprine', # facebook
   'chatall', # ai
   'chatbox', # ai
+  'chatglm', # ai
   'chatgpt', # ai
   'chatgpt-atlas', # ai
   'chatwise', # ai
@@ -197,6 +199,7 @@ cask = [
   'protonmail-import-export', # fascism
   'protonvpn', # fascism
   'psst', # spotify
+  'qianwen', # ai
   'raiderio', # activision-blizzard
   'ramme', # facebook
   'rapidminer-studio', # ai

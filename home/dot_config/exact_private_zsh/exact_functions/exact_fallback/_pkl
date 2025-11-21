@@ -1,0 +1,3 @@
+#compdef pkl
+# shellcheck disable=SC1090
+source <(pkl shell-completion zsh)
