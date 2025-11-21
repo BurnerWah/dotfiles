@@ -1,2 +1,2 @@
 [tools]
-"ubi:carapace-sh/carapace-bin" = { version = "latest", exe = "carapace" }
+carapace = "latest"
