@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://github.com/lima-vm/lima/pkg/limayaml/lima-yaml",
+    "$id": "https://github.com/lima-vm/lima/v2/pkg/limatype/lima-yaml",
     "$ref": "#/$defs/LimaYAML",
     "$defs": {
         "Audio": {
@@ -811,6 +811,9 @@
                 },
                 "ignore": {
                     "type": "boolean"
+                },
+                "static": {
+                    "type": "boolean"
                 }
             },
             "additionalProperties": false,
@@ -898,14 +901,18 @@
                 },
                 "permissions": {
                     "type": "string"
-                }
-            },
-            "additionalProperties": false,
-            "type": "object"
-        },
-        "QEMUOpts": {
-            "properties": {
-                "minimumVersion": {
+                },
+                "expression": {
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "format": {
                     "oneOf": [
                         {
                             "type": "string"
@@ -1094,12 +1101,6 @@
             "type": "object"
         },
         "VMOpts": {
-            "properties": {
-                "qemu": {
-                    "$ref": "#/$defs/QEMUOpts"
-                }
-            },
-            "additionalProperties": false,
             "type": "object"
         },
         "VNCOptions": {
