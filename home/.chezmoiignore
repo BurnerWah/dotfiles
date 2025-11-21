@@ -53,6 +53,7 @@
 /.gk
 /.Trash
 /.vscode
+/.vscode-oss
 # keep-sorted end
 {{- else }}
 # keep-sorted start case=no
