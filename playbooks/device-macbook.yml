@@ -3,9 +3,58 @@
   hosts: localhost
 
   tasks:
-    - name: Install main brew packages
+    - name: Install brew formulae
       community.general.homebrew:
         force_formula: true
         name:
           - asitop # Apple Silicon performance monitor
+          - dark-mode # macOS dark mode toggle
+          - gawk
+          - gnupg
+          - imagemagick
+          - iproute2mac
+          - m-cli # macOS utils
+          - macos-trash # trash CLI
+          - qemu
+          - util-linux # subset of the util-linux commands for mac OS
+          - zstd
+        state: present
+
+    - name: Install brew casks
+      community.general.homebrew_cask:
+        name:
+          - 1password
+          - 1password-cli
+          - alt-tab
+          - android-platform-tools
+          - apparency # inspects app bundles + quicklook extension
+          - blender
+          - bootstrap-studio
+          - datagrip
+          - eul # system monitor
+          - font-fira-code
+          - font-jetbrains-mono
+          - font-monaspace
+          - font-symbols-only-nerd-font
+          - goland
+          - handbrake-app # encoder
+          - iina # video player
+          - intellij-idea
+          - iterm2 # terminal emulator
+          - kitty # terminal emulator
+          - krita
+          - launchcontrol
+          - legcord # discord client
+          - macs-fan-control
+          - magicquit # quit background apps
+          - menuwhere # access menubar via cmd+right click
+          - moonlight # local game streaming
+          - notunes
+          - obs # streaming & recording
+          - obsidian # note taking
+          - phpstorm
+          - postico # postgres client
+          - pycharm
+          - rider
+          - webstorm
         state: present

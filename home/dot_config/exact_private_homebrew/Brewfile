@@ -17,7 +17,6 @@ brew "bat" if OS.mac? # cat alternative
 brew "bingrep"
 brew "binwalk" if OS.mac?
 brew "bkt" # CLI output caching tool
-brew "blueutil" if OS.mac? # bluetooth util, used by a raycast extension
 brew "bottom" # system monitor
 brew "breezy" if OS.mac?
 brew "btop" if OS.mac? # htop alternative
@@ -26,7 +25,6 @@ brew "carapace" # completions
 brew "chezmoi" if OS.mac?
 brew "cloudflared" if OS.mac?
 brew "cosign"
-brew "dark-mode" if OS.mac? # macOS dark mode toggle
 brew "ddgr" if OS.mac? # DuckDuckGo search
 brew "detect-secrets" if OS.mac?
 brew "devcontainer" if OS.mac? # VSCode devcontainers
@@ -47,7 +45,6 @@ brew "fossil" if OS.mac? # version control
 brew "fx" if OS.mac? # JSON viewer
 brew "fzf" if OS.mac?
 brew "gallery-dl" if OS.mac?
-brew "gawk" if OS.mac?
 brew "gh" # GitHub CLI
 brew "git" if OS.mac?
 brew "git-delta" if OS.mac?
@@ -57,33 +54,25 @@ brew "git-remote-hg" if OS.mac?
 brew "gitlint" if OS.mac?
 brew "gitsign"
 brew "glow" # markdown reader
-brew "gnupg" if OS.mac?
 brew "grc" if OS.mac? # CLI output colorizer
 brew "grex" if OS.mac? # regex generator
-brew "helm" if OS.mac?
 brew "hexyl" if OS.mac? # hex viewer
 brew "htop" if OS.mac?
 brew "httpie" if OS.mac?
 brew "hyperfine" if OS.mac? # benchmarking tool
-brew "imagemagick" if OS.mac?
 brew "infat" if OS.mac? # default app management
-brew "iproute2mac" if OS.mac?
 brew "jc" if OS.mac? # JSON parser for various CLIs
 brew "jdupes" if OS.mac? # duplicate file finder
 brew "jq" if OS.mac? # JSON manipulator
-brew "kind" if OS.mac? # Kubernetes in Docker
 brew "kondo" # Disk cleanup tool for coding
 brew "lazygit" if OS.mac? # Git terminal UI
 brew "less" if OS.mac? # Mac OS has an ancient version of Less
 brew "lima" if OS.mac? # Linux VM manager
 brew "lnav" if OS.mac? # log file viewer
 brew "luarocks" if OS.mac?
-brew "m-cli" if OS.mac? # macOS utils
-brew "macos-trash" if OS.mac? # trash CLI
 brew "mas" if OS.mac? # Mac App Store CLI
 brew "mercurial" if OS.mac? # version control
 brew "microsocks" if OS.linux? # SOCKS5 proxy
-brew "minikube" if OS.mac?
 brew "miniserve" # file server
 brew "mise" if OS.mac? # really good version manager
 brew "most" if OS.mac? # another pager, handles manpages well
@@ -97,7 +86,6 @@ brew "pigz" if OS.mac? # parallel gzip
 brew "podman" if OS.mac?
 brew "podman-tui" if OS.mac?
 brew "podman-compose" if OS.mac?
-brew "qemu" if OS.mac?
 brew "rclone" if OS.mac? # cloud storage manager
 brew "rename" if OS.mac? # rename files
 brew "ripgrep" if OS.mac? # grep alternative
@@ -109,7 +97,6 @@ brew "texinfo" if OS.mac?
 brew "thefuck" if OS.mac?
 brew "tlrc" # fast tldr page viewer
 brew "tokei" if OS.mac? # count lines of code
-brew "util-linux" if OS.mac? # subset of the util-linux commands for mac OS
 brew "uv" if OS.mac? # Python package manager
 brew "vhs" if OS.mac? # terminal recorder
 brew "viu" # terminal image viewer
@@ -124,7 +111,6 @@ brew "yubikey-agent", restart_service: true if OS.mac? # SSH Agent for YubiKeys
 brew "zellij" if OS.mac? # tmux alternative
 brew "zenith" # Another htop thing
 brew "zoxide" if OS.mac? # directory jumping
-brew "zstd" if OS.mac?
 
 cask_args require_sha: true
 
@@ -132,68 +118,38 @@ cask_args require_sha: true
 # Check against `ENV["HOMEBREW_CHEZMOI"].nil?` to skip something on chezmoi apply
 cask "1password", greedy: true if OS.mac?
 cask "1password-cli" if OS.mac?
-cask "alt-tab" if OS.mac?
 cask "android-platform-tools" if OS.mac?
-cask "apparency" if OS.mac? # inspects app bundles + quicklook extension
 cask "background-music", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac? # volume mixer
-cask "blender" if OS.mac?
 cask "bluebubbles" if OS.mac? # iMessage server
-cask "bootstrap-studio" if OS.mac?
-cask "datagrip", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
-cask "eul" if OS.mac? # system monitor
 cask "firefox", greedy: true if OS.mac?
-cask "font-fira-code" if OS.mac?
-cask "font-jetbrains-mono" if OS.mac?
-cask "font-monaspace" if OS.mac?
-cask "font-symbols-only-nerd-font" if OS.mac?
-cask "goland", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
-cask "handbrake-app" if OS.mac? # encoder
-cask "iina" if OS.mac? # video player
-cask "intellij-idea", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
-cask "iterm2" if OS.mac? # terminal emulator
 cask "jetbrains-toolbox", greedy: true if OS.mac?
 cask "karabiner-elements", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac? # keyboard remapper
-cask "kitty" if OS.mac? # terminal emulator
-cask "krita" if OS.mac?
-cask "launchcontrol" if OS.mac?
-cask "legcord" if OS.mac?
 cask "lulu", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac? # firewall
 cask "macfuse@dev", greedy: true if OS.mac? # FUSE on Mac OS
-cask "macs-fan-control" if OS.mac?
-cask "magicquit" if OS.mac? # quit background apps
-cask "menuwhere" if OS.mac? # access menubar via cmd+right click
-cask "moonlight" if OS.mac? # local game streaming
-cask "notunes" if OS.mac?
-cask "obs" if OS.mac? # streaming & recording
-cask "obsidian" if OS.mac? # note taking
-cask "phpstorm", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
 cask "podman-desktop", greedy: false if OS.mac?
-cask "postico" if OS.mac? # postgres client
-cask "pycharm", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
-cask "rider", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
 cask "signal", greedy: true if OS.mac?
 cask "tor-browser", greedy: true if OS.mac?
 cask "tower" if OS.mac? # git client
 cask "ungoogled-chromium" if OS.mac?
-cask "webstorm", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac?
 cask "zoom", greedy: true if OS.mac?
 
-mas "Affinity Designer 2", id: 1_616_831_348 if OS.mac?
-mas "Affinity Photo 2", id: 1_616_822_987 if OS.mac?
-mas "Affinity Publisher 2", id: 1_606_941_598 if OS.mac?
-mas "Amphetamine", id: 937_984_704 if OS.mac? # Keep mac awake
-mas "BrightIntosh", id: 6_452_471_855 if OS.mac? # Higher brightness
-mas "DaVinci Resolve", id: 571_213_070 if OS.mac?
-mas "Dropover", id: 1_355_679_052 if OS.mac? # Drag and drop manager
-mas "Ivory", id: 6_444_602_274 if OS.mac? # Mastodon client
-mas "Keynote", id: 409_183_694 if OS.mac?
-mas "Numbers", id: 409_203_825 if OS.mac?
-mas "Pages", id: 409_201_541 if OS.mac?
-mas "Parcel", id: 639_968_404 if OS.mac? # Package tracker
-mas "Shareful", id: 1_522_267_256 if OS.mac?
-mas "Slack", id: 803_453_959 if OS.mac?
-mas "Tailscale", id: 1_475_387_142 if OS.mac?
-mas "TickTick", id: 966_085_870 if OS.mac? # Task manager
-mas "Whisper", id: 1_668_083_311 if OS.mac? # Transcription app
-mas "Xcode", id: 497_799_835 if OS.mac?
-mas "Yubico Authenticator", id: 1_497_506_650 if OS.mac?
+# Mas isn't really working right now
+# mas "Affinity Designer 2", id: 1_616_831_348 if OS.mac?
+# mas "Affinity Photo 2", id: 1_616_822_987 if OS.mac?
+# mas "Affinity Publisher 2", id: 1_606_941_598 if OS.mac?
+# mas "Amphetamine", id: 937_984_704 if OS.mac? # Keep mac awake
+# mas "BrightIntosh", id: 6_452_471_855 if OS.mac? # Higher brightness
+# mas "DaVinci Resolve", id: 571_213_070 if OS.mac?
+# mas "Dropover", id: 1_355_679_052 if OS.mac? # Drag and drop manager
+# mas "Ivory", id: 6_444_602_274 if OS.mac? # Mastodon client
+# mas "Keynote", id: 409_183_694 if OS.mac?
+# mas "Numbers", id: 409_203_825 if OS.mac?
+# mas "Pages", id: 409_201_541 if OS.mac?
+# mas "Parcel", id: 375_589_283 if OS.mac? # Package tracker
+# mas "Shareful", id: 1_522_267_256 if OS.mac?
+# mas "Slack", id: 803_453_959 if OS.mac?
+# mas "Tailscale", id: 1_475_387_142 if OS.mac?
+# mas "TickTick", id: 966_085_870 if OS.mac? # Task manager
+# mas "Whisper", id: 1_668_083_311 if OS.mac? # Transcription app
+# mas "Xcode", id: 497_799_835 if OS.mac?
+# mas "Yubico Authenticator", id: 1_497_506_650 if OS.mac?
