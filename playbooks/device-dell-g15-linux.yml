@@ -148,10 +148,3 @@
       ansible.builtin.systemd_service:
         name: snapper-cleanup.timer
         enabled: true
-
-    - name: Enable atuin user services
-      ansible.builtin.systemd_service:
-        name: atuin.socket
-        enabled: true
-        state: started
-        scope: user
