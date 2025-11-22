@@ -19,6 +19,11 @@ $character\
 """
 right_format = """$all"""
 
+bun.disabled = true
+nim.disabled = true
+nix_shell.disabled = true
+solidity.disabled = true
+
 [aws]
 # nf-md-cloud_outline - all the aws icons are too small
 symbol = "󰅣 "
@@ -37,12 +42,6 @@ empty_symbol = "󰂎 "
 [buf]
 # nf-oct-bold
 symbol = " "
-
-[bun]
-symbol = " "
-version_format = "${raw}"
-style = "bold fg:#f452ac bg:#2d1120"
-format = "[[](#2d1120)$symbol($version)]($style)[](#2d1120) "
 
 [c]
 # nf-custom-c
@@ -75,8 +74,9 @@ format = "[$symbol($version )]($style)"
 
 [deno]
 symbol = " "
+style = "bold fg:#00e37d bg:#0d482b"
 version_format = "${raw}"
-format = "[$symbol($version )]($style)"
+format = "[[](#0d482b)$symbol($version)]($style)[](#0d482b) "
 
 [directory]
 read_only = " 󰌾"
@@ -225,12 +225,6 @@ symbol = "󰍛 "
 # nf-md-triangle_outline
 symbol = "󰔷 "
 
-[nim]
-disabled = true
-
-[nix_shell]
-disabled = true
-
 [nodejs]
 symbol = "󰎙 "
 style = "bold fg:#42e66c bg:#00430d"
@@ -377,13 +371,7 @@ version_format = "${raw}"
 style = "bold fg:#f19e2e bg:#2e1b10"
 format = "[[](#2e1b10)$symbol($version)]($style)[](#2e1b10) "
 
-[scala]
-disabled = true
-
 [shell]
-disabled = true
-
-[solidity]
 disabled = true
 
 [swift]
