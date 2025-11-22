@@ -32,7 +32,7 @@
 
     - name: Install surface-linux packages
       become: true
-      when: ansible_facts.distribution_release | int <= surface_linux_max_release
+      when: ansible_facts.distribution_version | int <= surface_linux_max_release
       ansible.builtin.dnf5:
         name:
           - kernel-surface
@@ -44,7 +44,7 @@
     # I don't think this would work correctly on a brand new system
     - name: Install surface-linux secure boot key
       become: true
-      when: ansible_facts.distribution_release | int <= surface_linux_max_release
+      when: ansible_facts.distribution_version | int <= surface_linux_max_release
       ansible.builtin.dnf5:
         name: [surface-secureboot]
         state: present
