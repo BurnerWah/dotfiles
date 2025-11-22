@@ -30,6 +30,7 @@
       ansible.builtin.dnf5:
         name:
           - firefox
+          - firefox-langpacks # Dependents have to be listed here I guess?
           - gnome-calculator
           - gnome-calendar
           - gnome-clocks
@@ -97,6 +98,7 @@
           - fr.handbrake.ghb
           - io.ente.auth
           - io.github.flattool.Warehouse
+          - io.github.kolunmi.Bazaar
           - io.github.mpobaschnig.Vaults
           - io.github.pwr_solaar.solaar
           - io.itch.itch
