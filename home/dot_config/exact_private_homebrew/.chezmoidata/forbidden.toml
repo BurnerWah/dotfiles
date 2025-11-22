@@ -441,6 +441,7 @@ formula = [
   'statix', # nix
   'stellar-cli', # cryptocurrency
   'stellar-core', # cryptocurrency
+  'strands-agents-sops', # ai
   'sui', # cryptocurrency
   'supabase-mcp-server', # ai
   'sysaidmin', # ai
