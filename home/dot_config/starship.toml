@@ -70,7 +70,8 @@ disabled = true
 # nf-dev-dart - not very clear at term size
 symbol = " "
 version_format = "${raw}"
-format = "[$symbol($version )]($style)"
+style = "bold fg:#3392e2 bg:#15314b"
+format = "[[](#15314b)$symbol($version)]($style)[](#15314b) "
 
 [deno]
 symbol = " "
@@ -203,7 +204,8 @@ format = "[$symbol($version )]($style)"
 # nf-seti-kotlin - all the kotlin icons look the same
 symbol = " "
 version_format = "${raw}"
-format = "[$symbol($version )]($style)"
+style = "bold fg:#916fff bg:#251651"
+format = "[[](#251651)$symbol($version)]($style)[](#251651) "
 
 [kubernetes]
 # nf-md-kubernetes - the only kubernetes icon
@@ -395,6 +397,9 @@ show_always = true
 
 [vagrant]
 symbol = " "
+version_format = "${raw}"
+style = "bold fg:#2b7dff bg:#16305e"
+format = "[[](#16305e)$symbol($version)]($style)[](#16305e) "
 
 [vlang]
 symbol = " "

@@ -103,6 +103,7 @@
     - name: Install flatpaks from flathub
       community.general.flatpak:
         name:
+          # keep-sorted start case=no
           - app.drey.Warp
           - com.boxy_svg.BoxySVG
           - com.github.flxzt.rnote
@@ -137,6 +138,7 @@
           - org.kde.tokodon
           - org.mozilla.firefox
           - org.videolan.VLC
+          # keep-sorted end
         state: present
 
     - name: Enable sshd socket activation

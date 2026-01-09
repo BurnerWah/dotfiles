@@ -80,6 +80,7 @@
     - name: Install flatpaks from flathub
       community.general.flatpak:
         name:
+          # keep-sorted start case=no
           - app.bluebubbles.BlueBubbles
           - app.devsuite.Ptyxis
           - app.drey.KeyRack
@@ -99,6 +100,7 @@
           - io.github.flattool.Warehouse
           - io.github.kolunmi.Bazaar
           - io.github.mpobaschnig.Vaults
+          - io.github.nokse22.Exhibit
           - io.github.pwr_solaar.solaar
           - io.itch.itch
           - it.mijorus.gearlever
@@ -112,6 +114,7 @@
           - org.gnome.Lollypop
           - org.gnome.Loupe
           - org.gnome.Maps
+          - org.gnome.Showtime
           - org.gnome.SimpleScan
           - org.gnome.Snapshot
           - org.gnome.Weather
@@ -121,6 +124,7 @@
           - org.signal.Signal
           - page.tesk.Refine
           - rs.ruffle.Ruffle
+          # keep-sorted end
         state: present
 
     - name: Enable sshd socket activation

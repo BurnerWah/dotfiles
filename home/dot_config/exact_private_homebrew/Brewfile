@@ -45,7 +45,6 @@ brew "fossil" if OS.mac? # version control
 brew "fx" if OS.mac? # JSON viewer
 brew "fzf" if OS.mac?
 brew "gallery-dl" if OS.mac?
-brew "gh" # GitHub CLI
 brew "git" if OS.mac?
 brew "git-delta" if OS.mac?
 brew "git-lfs" if OS.mac?

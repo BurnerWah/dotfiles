@@ -1,3 +1,0 @@
-#compdef gh
-# shellcheck disable=SC1090
-source <(carapace gh zsh)

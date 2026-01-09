@@ -18,6 +18,14 @@ disable_tools = [
   "aichat",
   "claude",
   "bun",
+  "claude-squad",
+  "codex",
+  "specstory",
+  "code",
+  "codebuff",
+  "amp",
+  "gemini-cli",
+  "jules",
 ]
 disable_hints = [
   "python_precompiled",

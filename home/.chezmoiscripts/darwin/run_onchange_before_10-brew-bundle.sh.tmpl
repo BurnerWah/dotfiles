@@ -56,11 +56,6 @@ export HOMEBREW_BUNDLE_BREW_SKIP={{ list
   | sortAlpha | compact | join " " | quote
 }}
 
-# Bundle dependencies
-if ! command -v gh  >/dev/null 2>&1; then
-  brew install --formula --force-bottle gh
-fi
-
 brew bundle
 
 echo 'Some packages may have been skipped during brew bundle to speed things up.
