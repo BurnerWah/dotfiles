@@ -4,7 +4,7 @@
     {
       "Packages": [
         { "PackageIdentifier": "AgileBits.1Password.CLI" },
-        { "PackageIdentifier": "AgileBits.1Password", "Scope": "user" },
+        { "PackageIdentifier": "AgileBits.1Password" },
         { "PackageIdentifier": "ajeetdsouza.zoxide" },
         { "PackageIdentifier": "anatawa12.ALCOM" },
         { "PackageIdentifier": "anatawa12.vrc-get" },
@@ -83,36 +83,6 @@
         "Identifier": "Microsoft.Winget.Source_8wekyb3d8bbwe",
         "Name": "winget",
         "Type": "Microsoft.PreIndexed.Package"
-      }
-    },
-    {
-      "Packages": [
-        { "PackageIdentifier": "9N2D0P16C80H" },
-        { "PackageIdentifier": "9N41MSQ1WNM8" },
-        { "PackageIdentifier": "9N93MRMSXBF0" },
-        { "PackageIdentifier": "9NB9M5KZ8SLX" },
-        { "PackageIdentifier": "9NCTJ2CQWXV0" },
-        { "PackageIdentifier": "9NFNG39387K0" },
-        { "PackageIdentifier": "9NJ9Q3JR29L2" },
-        { "PackageIdentifier": "9NTV2DZ11KD9" },
-        { "PackageIdentifier": "9NWMW7BB59HW" },
-        { "PackageIdentifier": "9NZVDKPMR9RD" },
-        { "PackageIdentifier": "9P3XF8KJ0LSM" },
-        { "PackageIdentifier": "9P7KNL5RWT25" },
-        { "PackageIdentifier": "9P8DVF1XW02V" },
-        { "PackageIdentifier": "9PD5F2D90LS5" },
-        { "PackageIdentifier": "9PFXCD722M2C" },
-        { "PackageIdentifier": "9PJZ3BTL5PV6" },
-        { "PackageIdentifier": "9PM5VM1S3VMQ" },
-        { "PackageIdentifier": "9PNSJCLXDZ0V" },
-        { "PackageIdentifier": "9PP3C07GTVRH" },
-        { "PackageIdentifier": "9WZDNCRDK3WP" }
-      ],
-      "SourceDetails": {
-        "Argument": "https://storeedgefd.dsx.mp.microsoft.com/v9.0",
-        "Identifier": "StoreEdgeFD",
-        "Name": "msstore",
-        "Type": "Microsoft.Rest"
       }
     }
   ]

@@ -7,7 +7,8 @@ if (($Host.Name -eq 'ConsoleHost') `
     $Script:ProfileDir = Split-Path -Path $PROFILE -Parent
 
     if (Get-Command oh-my-posh -ErrorAction SilentlyContinue) {
-        oh-my-posh init pwsh --config (Join-Path $env:POSH_THEMES_PATH "jandedobbeleer.omp.json") | Invoke-Expression # DevSkim: ignore DS104456
+        # oh-my-posh init pwsh --config (Join-Path $env:POSH_THEMES_PATH "jandedobbeleer.omp.json") | Invoke-Expression # DevSkim: ignore DS104456
+        oh-my-posh init pwsh --config jandedobbeleer | Invoke-Expression # DevSkim: ignore DS104456
     }
 
     Import-Module -Name scoop-completion

@@ -13,7 +13,7 @@
     "prettier": {
       "env": true,
       "sys": true,
-      "read": ["."],
+      "read": true,
       "write": ["node_modules/.cache/prettier", "."]
     }
   }
