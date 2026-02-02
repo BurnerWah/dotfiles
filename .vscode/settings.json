@@ -80,10 +80,10 @@
   "prettier.singleQuote": true,
   "prettier.trailingComma": "all",
   "python.analysis.extraPaths": [
-    "/opt/homebrew/opt/xonsh/libexec/lib/python3.13/site-packages",
+    "/opt/homebrew/opt/xonsh/libexec/lib/python3.14/site-packages",
   ],
   "python.autoComplete.extraPaths": [
-    "/opt/homebrew/opt/xonsh/libexec/lib/python3.13/site-packages",
+    "/opt/homebrew/opt/xonsh/libexec/lib/python3.14/site-packages",
   ],
   "yaml.schemas": {
     "./schemas/chezmoi/config.yaml": ["home/.chezmoi.yaml.tmpl"],

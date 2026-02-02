@@ -5,9 +5,6 @@
       "type": "both",
     },
   },
-  "general": {
-    "multithreading": true,
-  },
   "modules": [
     "title",
     "separator",
@@ -15,7 +12,10 @@
     "host",
     "kernel",
     "uptime",
-    "packages",
+    {
+      "type": "packages",
+      "disabled": ["winget", "nix"],
+    },
     "shell",
     "display",
     "de",

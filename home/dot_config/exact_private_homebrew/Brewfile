@@ -39,7 +39,6 @@ brew "exiftool" if OS.mac?
 brew "eza" if OS.mac? # ls alternative
 brew "fastfetch" if OS.mac? # better neofetch
 brew "fd" if OS.mac? # find alternative
-brew "ffmpeg" if OS.mac?
 brew "fish" if OS.mac?
 brew "fossil" if OS.mac? # version control
 brew "fx" if OS.mac? # JSON viewer
@@ -77,7 +76,6 @@ brew "mise" if OS.mac? # really good version manager
 brew "most" if OS.mac? # another pager, handles manpages well
 brew "neovim" if OS.mac?
 brew "npm-check-updates" if OS.mac?
-brew "nushell" if OS.mac?
 brew "oh-my-posh"
 brew "openjdk" if OS.mac?
 brew "pandoc" if OS.mac?
@@ -97,7 +95,6 @@ brew "thefuck" if OS.mac?
 brew "tlrc" # fast tldr page viewer
 brew "tokei" if OS.mac? # count lines of code
 brew "uv" if OS.mac? # Python package manager
-brew "vhs" if OS.mac? # terminal recorder
 brew "viu" # terminal image viewer
 brew "vivid" # LS_COLORS generator
 brew "watchman" if OS.mac?
