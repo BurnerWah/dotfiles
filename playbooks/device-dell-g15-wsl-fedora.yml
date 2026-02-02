@@ -101,6 +101,7 @@
         state: stopped
       loop:
         # keep-sorted start
+        - NetworkManager-wait-online # https://github.com/microsoft/WSL/issues/13826
         - atd
         - avahi-daemon
         - crond
