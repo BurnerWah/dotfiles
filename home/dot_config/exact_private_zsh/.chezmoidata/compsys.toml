@@ -427,6 +427,8 @@ carapace = [
   "getsebool",
   "gftp",
   "ggshield",
+  "gh",
+  "gh-dash",
   "ghorg",
   "ghostty",
   "ghostunnel",

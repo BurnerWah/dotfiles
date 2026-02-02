@@ -370,7 +370,6 @@ formula = [
   'gbox', # ai
   'gemini-cli', # ai
   'genai-toolbox', # ai
-  'gh', # ai
   'gitea-mcp-server', # ai
   'github-mcp-server', # ai
   'gitingest', # ai

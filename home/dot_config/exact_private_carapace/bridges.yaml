@@ -405,6 +405,7 @@ getopt: zsh
 ggetopt: zsh
 ggshield: click
 ggv: zsh
+gh: cobra
 ghorg: cobra
 ghostscript: zsh
 ghostunnel: kingpin
