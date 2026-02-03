@@ -1,6 +1,5 @@
 # yaml-language-server: $schema=../../../schemas/carapace-bridges.yaml
 # keep-sorted start case=no
-aliae: cobra
 ansible-console: argcomplete
 ansible-doc: argcomplete
 ansible-galaxy: argcomplete
@@ -11,7 +10,6 @@ ansible-test: argcomplete
 ansible-vault: argcomplete
 ansible: argcomplete
 antidot: cobra
-anyquery: cobra
 apko: cobra
 arduino-cli: cobra
 argo: cobra
@@ -19,26 +17,17 @@ argocd-vault-plugin: cobra
 argocd: cobra
 atmos: cobra
 aws-nuke: urfavecli
-azion: cobra
-berglas: cobra
 caddy: cobra
-carapace-bridge: carapace
 carapace-spec-man: carapace
-carapace-spec: carapace
 carapace.exe: carapace
-cartridge: cobra
 cdk: yargs
-certigo: kingpin
-chainloop: cobra
 chamber: cobra
 changie: cobra
 chezmoi.exe: cobra
 clusterctl: cobra
-cobra-cli: cobra
 conc: yargs
 concurrently: yargs
 crane: cobra
-crc: cobra
 ctlptl: cobra
 dashing: urfavecli
 dblab: cobra
@@ -48,7 +37,6 @@ diffoci: cobra
 dnscontrol: urfavecli
 draft: cobra
 driftctl: cobra
-ehco: kingpin
 exercism.exe: cobra
 f2: urfavecli
 feishu2md: urfavecli
@@ -60,7 +48,6 @@ ggshield: click
 ghorg: cobra
 ghostunnel: kingpin
 gibo: cobra
-git-xargs: urfavecli
 gitlab-runner: urfavecli
 gk: cobra
 glow.exe: cobra
@@ -176,7 +163,6 @@ tf-profile: cobra
 trivy: cobra
 tt: cobra
 velero: cobra
-vincent: carapace
 virtctl: cobra
 vt.exe: cobra
 vultr: cobra

@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: carapace-spec
+description: A multi-shell completion spec
+parsing: disabled
+completion:
+  positionalany: ['$carapace.bridge.Carapace([carapace-spec])']

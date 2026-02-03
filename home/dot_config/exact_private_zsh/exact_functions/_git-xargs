@@ -1,4 +1,0 @@
-#compdef git-xargs
-#description CLI for making updates across multiple Github repositories with a single command
-# shellcheck disable=SC1090
-source <(carapace git-xargs zsh)
