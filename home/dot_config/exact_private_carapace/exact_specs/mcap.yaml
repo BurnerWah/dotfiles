@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: mcap
+description: Serialization-agnostic container file format for pub/sub messages
+parsing: disabled
+completion:
+  positionalany: ['$carapace.bridge.Cobra([mcap])']

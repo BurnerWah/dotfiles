@@ -1,0 +1,8 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+# a custom spec would probably be better for this, or else using the
+# carapace-bin bridge with `podman`
+name: podman.lima
+description: podman in lima
+parsing: disabled
+completion:
+  positionalany: ['$carapace.bridge.Cobra([podman.lima])']

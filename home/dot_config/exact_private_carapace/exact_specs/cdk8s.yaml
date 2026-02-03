@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: cdk8s
+description: Define k8s native apps and abstractions using object-oriented programming
+parsing: disabled
+completion:
+  positionalany: ['$carapace.bridge.Yargs([cdk8s])']

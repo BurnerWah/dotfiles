@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: oci
+description: Oracle Cloud Infrastructure CLI
+parsing: disabled
+completion:
+  positionalany: ['$carapace.bridge.Click([oci])']

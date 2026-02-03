@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: slsa-verifier
+description: Verify SLSA provenance for Github Actions
+parsing: disabled
+completion:
+  positionalany: ['$carapace.bridge.Cobra([slsa-verifier])']

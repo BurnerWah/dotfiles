@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: ente
+description: CLI tool for exporting your photos from ente.io
+parsing: disabled
+completion:
+  positionalany: ['$carapace.bridge.Cobra([ente])']

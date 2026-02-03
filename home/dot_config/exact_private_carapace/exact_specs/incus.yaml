@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: incus
+description: Container hypervisor based on LXC
+parsing: disabled
+completion:
+  positionalany: ['$carapace.bridge.Cobra([incus])']

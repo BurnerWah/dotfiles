@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: toolbox
+description: Tool for interactive command line environments on Linux
+parsing: disabled
+completion:
+  positionalany: ['$carapace.bridge.Cobra([toolbox])']

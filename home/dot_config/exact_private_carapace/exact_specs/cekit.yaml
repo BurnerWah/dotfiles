@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: cekit
+description: Container Evolution Kit
+parsing: disabled
+completion:
+  positionalany: ['$carapace.bridge.Click([cekit])']

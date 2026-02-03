@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: gitleaks
+description: Audit git repos for secrets
+parsing: disabled
+completion:
+  positionalany: ['$carapace.bridge.Cobra([gitleaks])']

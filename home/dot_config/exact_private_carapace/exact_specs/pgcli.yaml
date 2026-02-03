@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: pgcli
+description: CLI for Postgres with auto-completion and syntax highlighting
+parsing: disabled
+completion:
+  positionalany: ['$carapace.bridge.Click([pgcli])']

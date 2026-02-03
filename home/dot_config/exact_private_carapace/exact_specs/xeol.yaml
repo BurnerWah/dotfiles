@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: xeol
+description: scanner for end-of-life software in container images, filesystems, and SBOMs
+parsing: disabled
+completion:
+  positionalany: ['$carapace.bridge.Cobra([xeol])']

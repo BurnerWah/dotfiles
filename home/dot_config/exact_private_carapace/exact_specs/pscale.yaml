@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: pscale
+description: CLI for PlanetScale Database
+parsing: disabled
+completion:
+  positionalany: ['$carapace.bridge.Cobra([pscale])']
