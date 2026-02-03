@@ -47,6 +47,10 @@
 # keep-sorted end
 {{- end }}
 
+{{- if .device.wsl }}
+/.dotnet
+{{- end }}
+
 {{- if eq .chezmoi.os "darwin" }}
 # keep-sorted start case=no
 /.CFUserTextEncoding
