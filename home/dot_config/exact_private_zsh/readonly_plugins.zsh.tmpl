@@ -1,4 +1,5 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# shellcheck disable=SC1090
 # {{ range .settings.shell.zsh.plugins.load_order -}}
 source "$ZDOTDIR/plugins/# {{.}}/"*.plugin.zsh
 # {{ end -}}
