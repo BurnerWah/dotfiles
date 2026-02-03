@@ -19,11 +19,9 @@ atmos: cobra
 aws-nuke: urfavecli
 caddy: cobra
 carapace-spec-man: carapace
-carapace.exe: carapace
 cdk: yargs
 chamber: cobra
 changie: cobra
-chezmoi.exe: cobra
 clusterctl: cobra
 conc: yargs
 concurrently: yargs
@@ -37,7 +35,6 @@ diffoci: cobra
 dnscontrol: urfavecli
 draft: cobra
 driftctl: cobra
-exercism.exe: cobra
 f2: urfavecli
 feishu2md: urfavecli
 ffmate: cobra
@@ -50,7 +47,6 @@ ghostunnel: kingpin
 gibo: cobra
 gitlab-runner: urfavecli
 gk: cobra
-glow.exe: cobra
 gomplate: cobra
 gopass: urfavecli
 greenmask: cobra
@@ -124,7 +120,6 @@ ngrok: cobra
 npq-hero: yargs # TODO create custom spec
 oc: cobra
 ocm: cobra
-op.exe: cobra
 opa: cobra
 openapi: yargs
 ops: cobra # slow
@@ -137,7 +132,6 @@ pocketbase: cobra
 posting: click
 qbt: cobra
 ratify: cobra
-rclone.exe: cobra
 redocly: yargs
 regal: cobra
 regctl: cobra
@@ -164,7 +158,6 @@ trivy: cobra
 tt: cobra
 velero: cobra
 virtctl: cobra
-vt.exe: cobra
 vultr: cobra
 witness: cobra
 wrangler: yargs
