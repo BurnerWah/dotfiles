@@ -1,7 +1,0 @@
-# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
-# {{- if and (lookPath "carapace") (not .device.lima) -}}
-#!/usr/bin/env bash
-
-# Carapace-bridges hash: # {{ include "dot_config/exact_private_carapace/bridges.yaml" | sha256sum }}
-carapace --clear-cache
-# {{ end -}}
