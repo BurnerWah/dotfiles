@@ -6,6 +6,8 @@ path_remove = [
   '/mnt/c/Program Files/Eclipse Adoptium/jdk-*/bin',
   '/mnt/c/Program Files/FirefoxPWA/',
   '/mnt/c/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR',
+  '/mnt/c/Users/*/AppData/Local/Microsoft/WinGet/Packages/yt-dlp.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/*',
+  '/mnt/c/Users/*/AppData/Local/PowerToys/DSCModules/',
   '/mnt/c/Users/*/AppData/Local/mise/shims',
   '/mnt/c/Users/*/AppData/Roaming/carapace/bin',
   '/mnt/c/Users/*/scoop/apps/mise/current/mise/shims',

@@ -12,6 +12,13 @@ begin
         string match /sbin $PATH
         string match /usr/sbin $PATH
     end | path filter --type=link
+    # the windows folder somehow shows up twice in the PATH
+    for i in (
+        string match '/mnt/c/Windows' $PATH
+        string match '/mnt/c/Windows/*' $PATH
+    )
+        string match (string replace Windows WINDOWS $i) $PATH
+    end
 end | while read -l match
     set -l index (contains -i -- $match $PATH)
     set -e PATH[$index]
