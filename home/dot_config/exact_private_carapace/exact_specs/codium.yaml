@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: codium
+description: VSCodium
+parsing: disabled
+completion:
+  positionalany: ['$carapace.bridge.CarapaceBin([code])']
