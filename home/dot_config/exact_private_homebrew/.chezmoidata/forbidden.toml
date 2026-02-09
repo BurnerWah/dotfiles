@@ -256,6 +256,7 @@ cask = [
   'superset', # ai
   'superwhisper', # ai
   'swama', # ai
+  'tana', # ai
   'telegram', # telegram
   'telegram-a', # telegram
   'telegram-desktop', # telegram
@@ -301,6 +302,7 @@ cask = [
 ]
 
 formula = [
+  'agent-browser', # ai
   'aiac', # ai
   'aichat', # ai
   'aicommit', # ai
