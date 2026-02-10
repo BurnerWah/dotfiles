@@ -91,7 +91,6 @@ runme: cobra
 s5cmd: urfavecli
 sam: click # slow
 sget: cobra
-singularity: cobra
 skaffold: cobra
 skopeo: cobra
 sqlc: cobra
