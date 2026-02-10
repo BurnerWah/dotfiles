@@ -1,0 +1,7 @@
+#compdef {{ .settings.shell.zsh.compsys.carapace | sortAlpha | compact | join " " }}
+if (( ! $+commands[carapace] )); then
+    return
+fi
+
+source <(carapace _carapace zsh)
+_carapace_completer
