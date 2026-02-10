@@ -294,6 +294,7 @@ carapace = [
   "ggshield",
   "gh",
   "gh-dash",
+  "ghalint",
   "ghostty",
   "gibo",
   "gimp",
