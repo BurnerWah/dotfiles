@@ -252,6 +252,7 @@ cask = [
   'status', # cryptocurrency
   'statusfy', # spotify
   'stravu-crystal', # ai
+  'supacode', # ai
   'superhuman', # ai
   'superset', # ai
   'superwhisper', # ai
