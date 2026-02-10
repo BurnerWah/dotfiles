@@ -1,4 +1,0 @@
-#compdef git-standup
-#description Recall the commit history
-# shellcheck disable=SC1090
-source <(carapace git-standup zsh)

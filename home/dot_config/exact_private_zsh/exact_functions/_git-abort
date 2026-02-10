@@ -1,4 +1,0 @@
-#compdef git-abort
-#description Abort current rebase, merge or cherry-pick, without the need to find exact command in history
-# shellcheck disable=SC1090
-source <(carapace git-abort zsh)

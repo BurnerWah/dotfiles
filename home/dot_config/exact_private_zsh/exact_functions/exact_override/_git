@@ -1,0 +1,3 @@
+#compdef git
+compdef _carapace_completer "git"
+_carapace_completer

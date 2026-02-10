@@ -1,3 +1,0 @@
-#compdef cargo-clippy
-# shellcheck disable=SC1090
-source <(carapace cargo-clippy zsh)

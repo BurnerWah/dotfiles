@@ -1,4 +1,0 @@
-#compdef git-clear
-#description Rigorously clean up a repository
-# shellcheck disable=SC1090
-source <(carapace git-clear zsh)

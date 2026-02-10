@@ -1,4 +1,0 @@
-#compdef git-extras
-#description Awesome GIT utilities
-# shellcheck disable=SC1090
-source <(carapace git-extras zsh)

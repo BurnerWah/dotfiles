@@ -1,4 +1,4 @@
 #compdef git-lfs
 #description Work with large files in Git repositories
-# shellcheck disable=SC1090
-source <(carapace git-lfs zsh)
+compdef _carapace_completer "git-lfs"
+_carapace_completer

@@ -1,3 +1,0 @@
-#compdef cargo-metadata
-# shellcheck disable=SC1090
-source <(carapace cargo-metadata zsh)

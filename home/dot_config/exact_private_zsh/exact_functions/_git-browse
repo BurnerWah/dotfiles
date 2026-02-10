@@ -1,4 +1,0 @@
-#compdef git-browse
-#description Opens the current git repository website in your default web browser
-# shellcheck disable=SC1090
-source <(carapace git-browse zsh)

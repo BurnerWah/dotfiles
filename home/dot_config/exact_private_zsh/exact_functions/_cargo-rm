@@ -1,3 +1,0 @@
-#compdef cargo-rm
-# shellcheck disable=SC1090
-source <(carapace cargo-rm zsh)

@@ -1,3 +1,0 @@
-#compdef cargo-watch
-# shellcheck disable=SC1090
-source <(carapace cargo-watch zsh)
