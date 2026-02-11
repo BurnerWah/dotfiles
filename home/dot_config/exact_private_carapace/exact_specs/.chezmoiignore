@@ -1,0 +1,18 @@
+# argcomplete often only works on linux, since system-wide python packages are
+# more common there. I haven't really tested these on windows though.
+{{ $AllowExtraArgcomplete := eq .chezmoi.os "linux" }}
+
+{{ if not $AllowExtraArgcomplete }}
+# keep-sorted start case=no
+/ansible-console.yaml
+/ansible-doc.yaml
+/ansible-galaxy.yaml
+/ansible-inventory.yaml
+/ansible-playbook.yaml
+/ansible-pull.yaml
+/ansible-test.yaml
+/ansible-vault.yaml
+/ansible.yaml
+/gsutil.yaml
+# keep-sorted end
+{{ end }}

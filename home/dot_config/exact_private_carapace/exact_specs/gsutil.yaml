@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: gsutil
+description: Google Cloud Storage Command Line Tool
+parsing: disabled
+completion:
+  positionalany: ['$carapace.bridge.Argcomplete([gsutil])']

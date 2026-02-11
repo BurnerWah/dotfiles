@@ -1,15 +1,5 @@
 # yaml-language-server: $schema=../../../schemas/carapace-bridges.yaml
 # keep-sorted start case=no
-ansible-console: argcomplete
-ansible-doc: argcomplete
-ansible-galaxy: argcomplete
-ansible-inventory: argcomplete
-ansible-playbook: argcomplete
-ansible-pull: argcomplete
-ansible-test: argcomplete
-ansible-vault: argcomplete
-ansible: argcomplete
-gsutil: argcomplete
 npq-hero: yargs # TODO create custom spec
 openapi: yargs
 # keep-sorted end
