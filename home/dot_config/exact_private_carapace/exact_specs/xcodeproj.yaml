@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: xcodeproj
+description: Xcodeproj lets you create and modify Xcode projects
+parsing: disabled
+completion:
+  positionalany: ['$carapace.bridge.Inshellisense([xcodeproj])']

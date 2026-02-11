@@ -5,14 +5,23 @@
 {{ if not $AllowExtraArgcomplete }}
 # keep-sorted start case=no
 /ansible-console.yaml
-/ansible-doc.yaml
-/ansible-galaxy.yaml
 /ansible-inventory.yaml
-/ansible-playbook.yaml
 /ansible-pull.yaml
 /ansible-test.yaml
 /ansible-vault.yaml
-/ansible.yaml
 /gsutil.yaml
+# keep-sorted end
+{{ end }}
+
+{{ if ne .chezmoi.os "darwin" }}
+# keep-sorted start case=no
+/dscacheutil.yaml
+/softwareupdate.yaml
+/xcodebuild.yaml
+/xcodeproj.yaml
+/xcodes.yaml
+/xcrun.yaml
+/shortcuts.yaml
+/mas.yaml
 # keep-sorted end
 {{ end }}
