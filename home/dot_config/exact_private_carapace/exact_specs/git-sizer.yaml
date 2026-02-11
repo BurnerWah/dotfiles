@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: git-sizer
+description: Compute various size metrics for a Git repository
+parsing: disabled
+completion:
+  positionalany: ['$carapace.bridge.Fish([git-sizer])']
