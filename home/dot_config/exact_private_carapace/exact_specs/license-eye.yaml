@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: license-eye
+description: Tool to check and fix license headers and resolve dependency licenses
+parsing: disabled
+completion:
+  positionalany: ['$carapace.bridge.Cobra([license-eye])']

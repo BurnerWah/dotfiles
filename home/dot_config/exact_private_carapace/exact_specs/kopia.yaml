@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: kopia
+description: Fast and secure open-source backup
+parsing: disabled
+completion:
+  positionalany: ['$carapace.bridge.Kingpin([kopia])']

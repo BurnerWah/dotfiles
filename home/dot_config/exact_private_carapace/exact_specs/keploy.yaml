@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: keploy
+description: Testing Toolkit creates test-cases and data mocks from API calls, DB queries
+parsing: disabled
+completion:
+  positionalany: ['$carapace.bridge.Cobra([keploy])']

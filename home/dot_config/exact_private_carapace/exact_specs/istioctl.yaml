@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: istioctl
+description: Istio configuration command-line utility
+parsing: disabled
+completion:
+  positionalany: ['$carapace.bridge.Cobra([istioctl])']

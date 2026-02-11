@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: s5cmd
+description: Parallel S3 and local filesystem execution tool
+parsing: disabled
+completion:
+  positionalany: ['$carapace.bridge.UrfavecliV1([s5cmd])']

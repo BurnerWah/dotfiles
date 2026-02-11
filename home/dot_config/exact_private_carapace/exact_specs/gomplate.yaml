@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: gomplate
+description: Command-line Golang template processor
+parsing: disabled
+completion:
+  positionalany: ['$carapace.bridge.Cobra([gomplate])']

@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: changie
+description: Automated changelog tool for preparing releases
+parsing: disabled
+completion:
+  positionalany: ['$carapace.bridge.Cobra([changie])']

@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: sqlfluff
+description: SQL linter and auto-formatter for Humans
+parsing: disabled
+completion:
+  positionalany: ['$carapace.bridge.Click([sqlfluff])']

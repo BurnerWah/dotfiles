@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: kubebuilder
+description: SDK for building Kubernetes APIs using CRDs
+parsing: disabled
+completion:
+  positionalany: ['$carapace.bridge.Cobra([kubebuilder])']

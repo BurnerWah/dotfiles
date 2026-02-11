@@ -1,0 +1,7 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: wrangler
+# Also aliased to wrangler2 but i don't feel like adding that today
+description: Command-line interface for all things Cloudflare Workers
+parsing: disabled
+completion:
+  positionalany: ['$carapace.bridge.Yargs([wrangler])']

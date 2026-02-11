@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: antidot
+description: Clean your $HOME from those pesky dotfiles
+parsing: disabled
+completion:
+  positionalany: ['$carapace.bridge.Cobra([antidot])']

@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: gup
+description: Update binaries installed by "go install" with goroutines
+parsing: disabled
+completion:
+  positionalany: ['$carapace.bridge.Cobra([gup])']

@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: localstack
+description: Fully functional local AWS cloud stack
+parsing: disabled
+completion:
+  positionalany: ['$carapace.bridge.Click([localstack])']
