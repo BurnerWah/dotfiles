@@ -1,5 +1,0 @@
-# yaml-language-server: $schema=../../../schemas/carapace-bridges.yaml
-# keep-sorted start case=no
-npq-hero: yargs # TODO create custom spec
-openapi: yargs
-# keep-sorted end

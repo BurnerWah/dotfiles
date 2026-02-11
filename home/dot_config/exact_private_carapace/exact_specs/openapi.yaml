@@ -1,0 +1,11 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: openapi
+description: Your all-in-one OpenAPI utility
+parsing: disabled
+completion:
+  positionalany:
+    # redocly is the default because it appears on the surface to be more popular
+    # https://redocly.com/docs/cli
+    - '$carapace.bridge.CarapaceBin([redocly])'
+    # https://github.com/speakeasy-api/openapi
+    # - '$carapace.bridge.Cobra([openapi])'

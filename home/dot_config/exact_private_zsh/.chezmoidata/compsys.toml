@@ -564,7 +564,6 @@ carapace = [
   "npm",
   "npm-check-updates",
   "npq",
-  "npq-hero",
   "nproc",
   "ntfy",
   "nth",
