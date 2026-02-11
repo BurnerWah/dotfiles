@@ -1,0 +1,13 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: launchctl
+description: Interfaces with launchd
+parsing: disabled
+completion:
+  positionalany:
+    - '
+      {{- if lookPath "inshellisense" -}}
+      $carapace.bridge.Inshellisense([launchctl])
+      {{- else -}}
+      $carapace.bridge.Fish([launchctl])
+      {{- end -}}
+      '

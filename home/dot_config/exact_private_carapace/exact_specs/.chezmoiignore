@@ -17,10 +17,20 @@
 
 {{ if not $AllowInshellisence }}
 # keep-sorted start case=no
-/dscacheutil.yaml
+/astro.yaml
+/atuin.yaml
+/cmake.yaml
+/dotnet.yaml
+/esbuild.yaml
+/eslint.yaml
 /mas.yaml
+/networkQuality.yaml
+/prettier.yaml
+/rollup.yaml
 /shortcuts.yaml
-/softwareupdate.yaml
+/swc.yaml
+/vite.yaml
+/watchman.yaml
 /xcodebuild.yaml
 /xcodeproj.yaml
 /xcodes.yaml

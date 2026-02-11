@@ -3,4 +3,11 @@ name: dscacheutil
 description: gather information, statistics and initiate queries to the Directory Service cache
 parsing: disabled
 completion:
-  positionalany: ['$carapace.bridge.Inshellisense([dscacheutil])']
+  positionalany:
+    - '
+      {{- if lookPath "inshellisense" -}}
+      $carapace.bridge.Inshellisense([dscacheutil])
+      {{- else -}}
+      $carapace.bridge.Fish([dscacheutil])
+      {{- end -}}
+      '

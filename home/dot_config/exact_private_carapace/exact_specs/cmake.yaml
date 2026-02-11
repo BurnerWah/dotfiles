@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: cmake
+description: Command-line interface of the cross-platform buildsystem generator CMake
+parsing: disabled
+completion:
+  positionalany: ['$carapace.bridge.Inshellisense([cmake])']

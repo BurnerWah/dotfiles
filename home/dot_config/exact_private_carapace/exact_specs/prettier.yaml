@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: prettier
+description: Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
+parsing: disabled
+completion:
+  positionalany: ['$carapace.bridge.Inshellisense([prettier])']
