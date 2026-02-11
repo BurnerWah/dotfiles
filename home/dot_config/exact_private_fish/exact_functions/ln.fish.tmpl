@@ -2,8 +2,8 @@
 # {{ if eq .chezmoi.os "darwin" -}}
 # Prefer uutils or coreutils ln if available, as they have more functionality
 if command -q uln
-    function ln -w uln -d 'alias ln uln'
-        uln $argv
+    function ln -w uln -d 'alias ln uu-ln'
+        uu-ln $argv
     end
 else if command -q gln
     function ln -w gln -d 'alias ln gln'

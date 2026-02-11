@@ -10,7 +10,7 @@ end
 # {{ else if and (eq .chezmoi.os "darwin") (lookPath "ustat") (lookPath "grc") -}}
 function stat
     if isatty stdout
-        grc -c conf.stat ustat $argv
+        grc -c conf.stat uu-stat $argv
     else
         command stat $argv
     end
