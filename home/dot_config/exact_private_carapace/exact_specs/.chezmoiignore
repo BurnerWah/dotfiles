@@ -1,6 +1,8 @@
 # argcomplete often only works on linux, since system-wide python packages are
 # more common there. I haven't really tested these on windows though.
 {{ $AllowExtraArgcomplete := eq .chezmoi.os "linux" }}
+# I only want Inshellisence used on mac os for now
+{{ $AllowInshellisence := eq .chezmoi.os "darwin" }}
 
 {{ if not $AllowExtraArgcomplete }}
 # keep-sorted start case=no
@@ -13,7 +15,7 @@
 # keep-sorted end
 {{ end }}
 
-{{ if ne .chezmoi.os "darwin" }}
+{{ if not $AllowInshellisence }}
 # keep-sorted start case=no
 /dscacheutil.yaml
 /mas.yaml
