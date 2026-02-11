@@ -16,12 +16,12 @@
 {{ if ne .chezmoi.os "darwin" }}
 # keep-sorted start case=no
 /dscacheutil.yaml
+/mas.yaml
+/shortcuts.yaml
 /softwareupdate.yaml
 /xcodebuild.yaml
 /xcodeproj.yaml
 /xcodes.yaml
 /xcrun.yaml
-/shortcuts.yaml
-/mas.yaml
 # keep-sorted end
 {{ end }}
