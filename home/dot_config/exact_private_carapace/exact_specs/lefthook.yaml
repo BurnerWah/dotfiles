@@ -3,4 +3,4 @@ name: lefthook
 description: Fast and powerful Git hooks manager for any type of projects
 parsing: disabled
 completion:
-  positionalany: ['$carapace.bridge.Cobra([lefthook])']
+  positionalany: ['$carapace.bridge.Urfavecli([lefthook])']
