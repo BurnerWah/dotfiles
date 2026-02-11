@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: fish_indent
+description: Fish indenter and prettifier
+parsing: disabled
+completion:
+  positionalany: ['$carapace.bridge.Fish([fish_indent])']

@@ -42,6 +42,9 @@
 
 {{ if not $AllowUnixShells }}
 # keep-sorted start case=no
+/fish-lsp.yaml
+/fish_indent.yaml
+/java_home.yaml
 /javah.yaml
 # keep-sorted end
 {{ end }}
