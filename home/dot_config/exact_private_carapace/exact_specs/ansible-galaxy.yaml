@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: ansible-galaxy
+description: Perform various Role and Collection related operations
+parsing: disabled
+completion:
+  positionalany: ['$carapace.bridge.Argcomplete([ansible-galaxy])']
