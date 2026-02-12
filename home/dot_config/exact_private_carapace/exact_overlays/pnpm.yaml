@@ -1,0 +1,40 @@
+name: pnpm
+commands:
+  - name: ls
+    aliases: [list]
+    description: List installed packages
+    parsing: disabled
+    completion:
+      positionalany: ['$carapace.bridge.CarapaceBin([npm, ls])']
+
+  - name: why
+    description: Shows all packages that depend on the specified package
+
+  - name: create
+    description: Create a project from a "create-*" or "@foo/create-*" starter kit
+    flags:
+      --allow-build: A list of package names that are allowed to run postinstall scripts during installation
+
+  - name: dlx
+    description: Execute a package from the npm registry
+
+  - name: config
+    aliases: [c]
+    description: Manage the pnpm configuration files
+    # This is probably incorrect but it's good enough for now
+    parsing: disabled
+    completion:
+      positionalany: ['$carapace.bridge.CarapaceBin([npm, config])']
+
+  - name: init
+    description: Create a package.json file
+    flags:
+      --bare: Create a package.json file with the bare minimum of required fields
+      --init-package-manager: Pin the project to the current pnpm version by adding a "packageManager" field to package.json
+      --init-type=: Set the module system for the package. Defaults to "commonjs".
+    completion:
+      flag:
+        init-type: [commonjs, module]
+
+  - name: self-update
+    description: Updates pnpm to the latest version

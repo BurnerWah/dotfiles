@@ -386,6 +386,7 @@ formula = [
   'grin', # cryptocurrency
   'grin-wallet', # cryptocurrency
   'groestlcoin', # cryptocurrency
+  'happy-coder', # ai
   'hf-mcp-server', # ai
   'hub',
   'huggingface-cli', # ai
