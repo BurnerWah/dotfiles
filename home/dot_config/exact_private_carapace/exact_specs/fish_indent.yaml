@@ -1,6 +1,21 @@
 # yaml-language-server: $schema=https://carapace.sh/schemas/command.json
 name: fish_indent
 description: Fish indenter and prettifier
-parsing: disabled
+flags:
+  -w, --write: Write to file
+  -i, --no-indent: Do not indent commands; only reformat to one job per line
+  --only-indent: Do not reformat, only indent each lines
+  --only-unindent: Do not reformat, only unindent each lines
+  -c, --check: Do not indent, only return 0 if the code is already indented as fish_indent would
+  -v, --version: Display version and exit
+  --ansi: Colorize the output using ANSI escape sequences
+  --html: Output in HTML format
+  --dump-parse-tree: Dump information about parsed statements to stderr
+  -h, --help: Display help and exit
+  # Not in manual so I'm marking them as hidden
+  --pygments&: Output pygments format # Undocumented flag
 completion:
-  positionalany: ['$carapace.bridge.Fish([fish_indent])']
+  flag:
+    debug-output: [$files]
+  positionalany:
+    - '$files([.fish])'

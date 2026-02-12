@@ -43,7 +43,6 @@
 {{ if not $AllowUnixShells }}
 # keep-sorted start case=no
 /fish-lsp.yaml
-/fish_indent.yaml
 /git-sizer.yaml
 /gnome-extensions.yaml
 /java_home.yaml
