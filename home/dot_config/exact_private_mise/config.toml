@@ -52,6 +52,7 @@ uv_venv_auto = true
 
 [settings.npm]
 bun = false
+package_manager = "pnpm"
 
 [tools]
 cargo-binstall = "latest"
