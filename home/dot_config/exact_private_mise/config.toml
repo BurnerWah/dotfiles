@@ -36,6 +36,7 @@ disable_hints = [
 disable_backends = [
   "gem", # security
 ]
+env_cache = true
 
 [settings.ruby]
 default_packages_file = "~/.config/mise/default-gems"
