@@ -6,20 +6,24 @@ commands:
   - name: add
     description: Add dependencies
     flags:
-      --allow-scripts=: Allow running npm lifecycle scripts for the given packages
-      -D, --dev: Add the package as a dev dependency
-      --jsr: assume unprefixed package names are jsr packages
-      --lockfile-only: Install only updating the lockfile
-      --npm: assume unprefixed package names are npm packages
-      --frozen=: Error out if lockfile is out of date
-      --lock=?: Check the specified lock file
-      --no-lock: Disable auto discovery of the lock file
+      <<:
+        - --allow-scripts=: Allow running npm lifecycle scripts for the given packages
+          -D, --dev: Add the package as a dev dependency
+          --jsr: assume unprefixed package names are jsr packages
+          --lockfile-only: Install only updating the lockfile
+          --npm: assume unprefixed package names are npm packages
+        - &dependency_management_options_flags
+          --frozen=: Error out if lockfile is out of date
+          --lock=?: Check the specified lock file
+          --no-lock: Disable auto discovery of the lock file
     exclusiveflags:
       - [jsr, npm]
     completion:
       flag:
-        frozen: ['true', 'false']
-        lock: [$files]
+        <<:
+          - &dependency_management_options_completion
+            frozen: ['true', 'false']
+            lock: [$files]
       positionalany:
         # TODO add JSR search
         - '$carapace.tools.npm.PackageNames ||| $prefix(npm:)'
@@ -32,6 +36,13 @@ commands:
 
   - name: remove
     description: Remove dependencies from the configuration file
+    flags:
+      <<:
+        - --lockfile-only: Install only updating the lockfile
+        - *dependency_management_options_flags
+    completion:
+      flag: *dependency_management_options_completion
+      # TODO complete packages
 
   - name: clean
     description: Remove the cache directory
