@@ -2,16 +2,20 @@ name: deno
 commands:
   - name: serve
     description: Run a server
+    group: execution
+    # This command is enormous, only work on it for codegen
 
   - name: add
     description: Add dependencies
+    group: dependency management
     flags:
       <<:
         - --allow-scripts=: Allow running npm lifecycle scripts for the given packages
           -D, --dev: Add the package as a dev dependency
           --jsr: assume unprefixed package names are jsr packages
-          --lockfile-only: Install only updating the lockfile
           --npm: assume unprefixed package names are npm packages
+        - &flag_lockfile_only
+          --lockfile-only: Install only updating the lockfile
         - &dependency_management_options_flags
           --frozen=: Error out if lockfile is out of date
           --lock=?: Check the specified lock file
@@ -30,15 +34,36 @@ commands:
 
   - name: outdated
     description: Find and update outdated dependencies
+    group: dependency management
+    flags:
+      <<:
+        - --compatible: Only consider versions that satisfy semver requirements
+          -i, --interactive: Interactively select which dependencies to update
+          --latest: Consider the latest version, regardless of semver constraints
+          --minimum-dependency-age=: (Unstable) The age in minutes, ISO-8601 duration or RFC3339 absolute timestamp
+          -r, --recursive: Include all workspace members
+          -u, --update: Update dependency versions
+        - *flag_lockfile_only
+        - *dependency_management_options_flags
+    completion:
+      flag:
+        <<:
+          - *dependency_management_options_completion
+      # TODO positional completion
 
   - name: approve-scripts
     description: Approve npm lifecycle scripts
+    group: dependency management
+    flags: *flag_lockfile_only
+    # TODO positional completions
+    # completions are in the form of npm:$PackageName@$Version
 
   - name: remove
     description: Remove dependencies from the configuration file
+    group: dependency management
     flags:
       <<:
-        - --lockfile-only: Install only updating the lockfile
+        - *flag_lockfile_only
         - *dependency_management_options_flags
     completion:
       flag: *dependency_management_options_completion
@@ -46,15 +71,57 @@ commands:
 
   - name: clean
     description: Remove the cache directory
+    group: tooling
+    flags:
+      --dry-run: Show what would be removed without performing any actions
+      -e, --except: Retain cache data needed by the given files
+      --node-modules-dir=?: Sets the node modules management mode for npm packages
+      --vendor=?: Toggles local vendor folder usage for remote modules and a node_modules folder for npm packages
+    completion:
+      flag:
+        vendor: ['true', 'false']
 
   - name: deploy
     description: Manage and publish applications with Deno Deploy
+    group: tooling
+    # Probably can skip this since it's really a separate program
 
   - name: jupyter
     description: Deno kernel for Jupyter notebooks
+    group: tooling
+    flags:
+      --conn=: Path to JSON file describing connection parameters, provided by Jupyter
+      -d, --display=?: Set a display name for the kernel (defaults to 'Deno')
+      --force: Force installation of a kernel, overwriting previously existing kernelspec
+      --install: Install a kernelspec
+      --kernel: Start the kernel
+      -n, --name=?: Set a name for the kernel (defaults to 'deno')
 
   - name: init
     description: Initialize a new project
+    group: tooling
+    flags:
+      --empty: Generate a minimal project with just main.ts and deno.json
+      --lib: Generate an example library project
+      --npm: Generate a npm create-* project
+      --serve: Generate an example project for `deno serve`
+      -y, --yes: Bypass the prompt and run with full permissions
+    # TODO positional completions
 
   - name: publish
     description: Publish the current working directory's package or workspace
+    group: tooling
+    flags:
+      -c, --config=: Configure different aspects of deno including TypeScript, linting, and code formatting.
+      --no-config: Disable automatic loading of the configuration file
+      --allow-dirty: Allow publishing if the repository has uncommitted changed
+      --allow-slow-types: Allow publishing with slow types
+      --dry-run: Prepare the package for publishing performing all checks and validations without uploading
+      --no-provenance: Disable provenance attestation.
+      --set-version=: Set version for a package to be published.
+      --token=: The API token to use when publishing. If unset, interactive authentication is be used
+      --check=?: Set type-checking behavior. This subcommand type-checks local modules by default, so adding --check is redundant
+      --no-check=?: Skip type-checking. If the value of "remote" is supplied, diagnostic errors from remote modules will be ignored
+    completion:
+      flag:
+        config: [$files]
