@@ -1,0 +1,1 @@
+dotnet-suggest.exe.fish

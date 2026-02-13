@@ -48,7 +48,10 @@
 {{- end }}
 
 {{- if .device.wsl }}
+# keep-sorted start case=no
 /.dotnet
+/.nuget
+# keep-sorted end
 {{- end }}
 
 {{- if eq .chezmoi.os "darwin" }}
