@@ -1,25 +1,10 @@
 # to make argcomplete work on mac os, run `pip install --user --break-system-packages argcomplete`
 # the homebrew package is useless
-{{ $AllowExtraArgcomplete := ne .chezmoi.os "windows" }}
+
 # I only want Inshellisence used on mac os for now
 {{ $AllowInshellisence := eq .chezmoi.os "darwin" }}
 # Unix shell bridges won't work on windows
 {{ $AllowUnixShells := ne .chezmoi.os "windows" }}
-
-{{ if not $AllowExtraArgcomplete }}
-# keep-sorted start case=no
-/ansible-console.yaml
-/ansible-doc.yaml
-/ansible-galaxy.yaml
-/ansible-inventory.yaml
-/ansible-playbook.yaml
-/ansible-pull.yaml
-/ansible-test.yaml
-/ansible-vault.yaml
-/ansible.yaml
-/gsutil.yaml
-# keep-sorted end
-{{ end }}
 
 {{ if not $AllowInshellisence }}
 # keep-sorted start case=no

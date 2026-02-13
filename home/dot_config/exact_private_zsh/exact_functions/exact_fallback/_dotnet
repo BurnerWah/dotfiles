@@ -1,0 +1,3 @@
+#compdef dotnet
+# shellcheck disable=SC1090
+source <(dotnet completions script zsh)

@@ -17,6 +17,7 @@ carapace = [
   "ansible",
   "ansible-config",
   "ansible-console",
+  "ansible-creator",
   "ansible-doc",
   "ansible-galaxy",
   "ansible-inventory",
