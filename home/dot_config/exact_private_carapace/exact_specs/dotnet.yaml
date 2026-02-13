@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: dotnet
-description: The dotnet cli
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Inshellisense([dotnet])']

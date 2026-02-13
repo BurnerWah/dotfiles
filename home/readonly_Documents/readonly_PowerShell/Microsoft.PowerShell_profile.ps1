@@ -12,7 +12,6 @@ if (($Host.Name -eq 'ConsoleHost') `
     }
 
     Import-Module -Name scoop-completion
-    Import-Module -Name Burner.Completions # Custom module I put all my completions into
     Import-Module -Name Burner.LazyComplete
     Import-Module -Name Burner.Zoxide
     Import-Module -Name Burner.Generated # Custom module I put all my generated scripts into
