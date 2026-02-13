@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: nerdctl
-description: containerd CLI
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Cobra([nerdctl])']

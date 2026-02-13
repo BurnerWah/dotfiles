@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: stern
-description: Tail multiple Kubernetes pods & their containers
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Cobra([stern])']

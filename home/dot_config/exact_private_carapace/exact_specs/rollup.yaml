@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: rollup
-description: Next-generation ES module bundler
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Inshellisense([rollup])']

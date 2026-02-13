@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: pipx
-description: Execute binaries from Python packages in isolated environments
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Argcomplete([pipx])']

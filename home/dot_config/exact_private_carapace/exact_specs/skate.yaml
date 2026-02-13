@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: skate
-description: Personal key value store
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Cobra([skate])']

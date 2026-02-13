@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: gitsign
-description: Keyless Git signing with Sigstore!
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Cobra([gitsign])']

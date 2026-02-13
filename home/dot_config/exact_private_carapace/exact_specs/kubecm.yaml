@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: kubecm
-description: KubeConfig Manager
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Cobra([kubecm])']

@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: flyctl
-description: Command-line tools for fly.io services
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Cobra([flyctl])']

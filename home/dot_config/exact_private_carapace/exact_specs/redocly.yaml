@@ -1,7 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: redocly
-# redocly also comes with an `openapi` command but that clashes with other tools
-description: Your all-in-one OpenAPI utility
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Yargs([redocly])']

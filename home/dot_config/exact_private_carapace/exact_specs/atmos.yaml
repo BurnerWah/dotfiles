@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: atmos
-description: Universal Tool for DevOps and Cloud Automation
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Cobra([atmos])']

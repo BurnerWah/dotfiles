@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: mpm
-description: Wrapper around all package managers with a unifying CLI
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Click([mpm])']

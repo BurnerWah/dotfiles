@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: k3d
-description: k3s in Docker
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Cobra([k3d])']

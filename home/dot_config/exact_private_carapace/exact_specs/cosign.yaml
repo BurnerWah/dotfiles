@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: cosign
-description: Container Signing
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Cobra([cosign])']

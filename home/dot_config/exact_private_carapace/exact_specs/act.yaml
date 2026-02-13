@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: act
-description: Run your GitHub Actions locally
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Cobra([act])']

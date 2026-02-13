@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: k9s
-description: Kubernetes CLI To Manage Your Clusters In Style
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Cobra([k9s])']

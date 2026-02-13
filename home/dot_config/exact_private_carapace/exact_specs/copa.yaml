@@ -1,7 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-# very slow
-name: copa
-description: container patching tool
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Cobra([copa])']

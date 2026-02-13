@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: ansible-pull
-description: pulls playbooks from a VCS repo and executes them on target host
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Argcomplete([ansible-pull])']

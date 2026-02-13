@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: vunnel
-description: Tool for collecting vulnerability data from various sources
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Click([vunnel])']

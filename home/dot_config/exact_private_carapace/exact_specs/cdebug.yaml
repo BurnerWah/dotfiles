@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: cdebug
-description: a swiss army knife of container debugging
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Cobra([cdebug])']

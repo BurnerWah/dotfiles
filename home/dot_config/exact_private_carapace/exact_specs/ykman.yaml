@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: ykman
-description: Configure your YubiKey via the command line
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Click([ykman])']

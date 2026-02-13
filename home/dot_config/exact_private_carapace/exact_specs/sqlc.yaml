@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: sqlc
-description: Generate type safe Go from SQL
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Cobra([sqlc])']

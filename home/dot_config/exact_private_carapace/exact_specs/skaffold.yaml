@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: skaffold
-description: Easy and Repeatable Kubernetes Development
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Cobra([skaffold])']

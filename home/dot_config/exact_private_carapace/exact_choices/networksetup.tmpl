@@ -1,0 +1,5 @@
+{{- if lookPath "inshellisense" -}}
+networksetup/inshellisense@bridge
+{{- else if lookPath "zsh" -}}
+networksetup/zsh@bridge
+{{- end }}

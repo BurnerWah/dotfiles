@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: kustomize
-description: Template-free customization of Kubernetes YAML manifests
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Cobra([kustomize])']

@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: kubectl.lima
-description: kubectl for kubernetes in lima
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Cobra([kubectl.lima])']

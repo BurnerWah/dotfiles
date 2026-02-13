@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: ansible-console
-description: REPL console for executing Ansible tasks
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Argcomplete([ansible-console])']

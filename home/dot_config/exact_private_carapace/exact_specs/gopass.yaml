@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: gopass
-description: Slightly more awesome Standard Unix Password Manager for Teams
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.UrfavecliV1([gopass])']

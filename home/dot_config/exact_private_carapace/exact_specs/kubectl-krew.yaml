@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: kubectl-krew
-description: Package manager for kubectl plugins
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Cobra([kubectl-krew])']

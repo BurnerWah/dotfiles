@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: cdk
-description: AWS Cloud Development Kit - framework for defining AWS infra as code
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Yargs([cdk])']

@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: concurrently
-description: Run commands concurrently in npm scripts
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Yargs([concurrently])']

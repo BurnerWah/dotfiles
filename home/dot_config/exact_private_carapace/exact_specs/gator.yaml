@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: gator
-description: CLI Utility for Open Policy Agent Gatekeeper
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Cobra([gator])']

@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: prism
-description: Utility for API mocking and contract testing
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Yargs([prism])']

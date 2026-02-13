@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: kubeshark
-description: API Traffic Analyzer providing real-time visibility into Kubernetes network
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Cobra([kubeshark])']

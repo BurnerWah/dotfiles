@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: orb
-description: Manage manage OrbStack and its machines
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.CarapaceBin([orbstack])']

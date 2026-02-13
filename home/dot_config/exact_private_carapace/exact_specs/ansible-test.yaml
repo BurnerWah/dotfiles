@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: ansible-test
-description: Ansible testing tool # Add a better description
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Argcomplete([ansible-test])']

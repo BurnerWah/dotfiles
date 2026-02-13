@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: yq
-description: Process YAML, JSON, XML, CSV and properties documents from the CLI
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Cobra([yq])']

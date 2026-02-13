@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: ctlptl
-description: Making local Kubernetes clusters fun and easy to set up
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Cobra([ctlptl])']

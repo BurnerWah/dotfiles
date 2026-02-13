@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: posting
-description: A TUI for testing HTTP APIs
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Click([posting])']

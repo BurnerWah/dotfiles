@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: arduino-cli
-description: Arduino command-line interface
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Cobra([arduino-cli])']

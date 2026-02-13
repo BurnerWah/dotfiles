@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: crane
-description: Tool for interacting with remote images and registries
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Cobra([crane])']

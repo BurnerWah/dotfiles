@@ -1,0 +1,5 @@
+{{- if lookPath "inshellisense" -}}
+softwareupdate/inshellisense@bridge
+{{- else if lookPath "zsh" -}}
+softwareupdate/zsh@bridge
+{{- end }}

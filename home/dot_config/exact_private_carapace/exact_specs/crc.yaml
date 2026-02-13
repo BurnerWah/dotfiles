@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: crc
-description: Local OpenShift 4.x testing cluster
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Cobra([crc])']

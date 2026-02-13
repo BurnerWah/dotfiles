@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: temporal
-description: Command-line interface for running and interacting with Temporal Server and UI
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Cobra([temporal])']

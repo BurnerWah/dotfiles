@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: runme
-description: Execute commands inside your runbooks, docs, and READMEs
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Cobra([runme])']

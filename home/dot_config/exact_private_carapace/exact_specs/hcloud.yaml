@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: hcloud
-description: Command-line interface for Hetzner Cloud
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Cobra([hcloud])']

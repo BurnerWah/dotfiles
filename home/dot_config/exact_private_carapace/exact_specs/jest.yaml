@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: jest
-description: Delightful JavaScript Testing
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Yargs([jest])']

@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: ghalint
-description: GitHub Actions linter
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Urfavecli([ghalint])']

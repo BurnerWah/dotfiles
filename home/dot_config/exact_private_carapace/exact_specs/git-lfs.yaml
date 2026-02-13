@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: git-lfs
-description: Git extension for versioning large files
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Cobra([git-lfs])']

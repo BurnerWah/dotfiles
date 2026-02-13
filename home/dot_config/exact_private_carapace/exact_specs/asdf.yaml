@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: asdf
-description: Extendable version manager with support for Ruby, Node.js, Elixir, Erlang & more
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Inshellisense([asdf])']

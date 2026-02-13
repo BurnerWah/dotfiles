@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: devcontainer
-description: Use a Docker container as a development environment
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Yargs([devcontainer])']

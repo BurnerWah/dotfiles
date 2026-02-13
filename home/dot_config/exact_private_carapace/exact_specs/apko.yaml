@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: apko
-description: Build OCI images from APK packages directly without Dockerfile
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Cobra([apko])']

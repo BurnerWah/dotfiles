@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: caddy
-description: Powerful, enterprise-ready, open source web server with automatic HTTPS
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Cobra([caddy])']

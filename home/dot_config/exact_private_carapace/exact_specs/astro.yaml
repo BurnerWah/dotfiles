@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: astro
-description: The web framework for content-driven websites
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Inshellisense([astro])']

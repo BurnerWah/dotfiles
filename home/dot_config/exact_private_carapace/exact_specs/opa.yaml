@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: opa
-description: Open source, general-purpose policy engine
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Cobra([opa])']

@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: swc
-description: Rust-based platform for the Web
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Inshellisense([swc])']

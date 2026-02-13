@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: sam
-description: AWS Serverless Application Model (SAM) CLI
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Click([sam])']

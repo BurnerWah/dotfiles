@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: spectral
-description: JSON/YAML linter and support OpenAPI v3.1/v3.0/v2.0, and AsyncAPI v2.x
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Yargs([spectral])']

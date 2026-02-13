@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: vite
-description: Native ESM-powered web dev build tool
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Inshellisense([vite])']

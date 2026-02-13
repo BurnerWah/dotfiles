@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: k6
-description: Modern load testing tool, using Go and JavaScript
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Cobra([k6])']

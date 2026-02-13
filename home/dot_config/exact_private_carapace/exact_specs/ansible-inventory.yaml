@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: ansible-inventory
-description: Show Ansible inventory information
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Argcomplete([ansible-inventory])']

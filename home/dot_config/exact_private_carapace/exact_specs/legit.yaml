@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: legit
-description: Command-line interface for Git, optimized for workflow simplicity
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Click([legit])']

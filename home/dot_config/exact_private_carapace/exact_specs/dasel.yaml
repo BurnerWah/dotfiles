@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: dasel
-description: JSON, YAML, TOML, XML, and CSV query and modification tool
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.Cobra([dasel])']
