@@ -1,0 +1,159 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: store
+description: Microsoft Store CLI
+
+# As best as I can tell a lot of parameters for this will have to be hardcoded,
+# because the outputs of commands are not particularly convenient to parse.
+# That likely goes for the final carapace completer too.
+
+persistentflags:
+  --help: Print help about commands
+
+commands:
+  - name: addons
+    description: List add-ons for a game
+    group: discovery
+    flags:
+      --item-types=: The type of DLC items to retrieve
+      --market=: Optional two-letter country code for market
+      --language=: Optional language code
+    completion:
+      flag:
+        item-types: ["durable\tDLC", "consumable\tConsumable"]
+
+  - name: browse-apps
+    description: Browse ranked app lists
+    group: discovery
+    flags:
+      --category=: The app category to filter by
+      --subcategory=: Optional subcategory for more specific filtering
+      --page=: Optional page number for pagination, starting at 1
+      --only-sale=: Optional flag to filter for apps on sale
+      --market=: Optional two-letter country code for market
+      --language=: Optional language code
+    completion:
+      positional:
+        - - "top-free\tTop Free Apps"
+          - "top-paid\tTop Paid Apps"
+          - "new-and-trending\tNew Free Apps"
+          - "most-popular\tMost Popular Paid Apps"
+          - "top-grossing\tTop Grossing Apps"
+
+  - name: browse-games
+    description: Browse ranked game lists
+    group: discovery
+    flags:
+      --category=: The game category to filter by
+      --page=: Optional page number for pagination, starting at 1
+      --only-sale=: Show only items currently on sale
+      --only-game-pass=: Show only games included with Game Pass
+      --number-of-players=: Optional filter for number of players
+      --market=: Optional two-letter country code for market
+      --language=: Optional language code
+    completion:
+      positional:
+        - - "top-free\tTop Free Games"
+          - "top-paid\tTop Paid Games"
+          - "top-grossing\tTop Grossing Games"
+      flag:
+        number-of-players:
+          - all
+          - single-player
+          - online-multiplayer
+          - local-multiplayer
+          - online-coop
+          - local-coop
+
+  - name: extension
+    description: Find apps that open specific file types
+    group: discovery
+    flags:
+      --market=: Optional two-letter country code for market
+      --language=: Optional language code
+
+  - name: protocol
+    description: Find apps that handle custom URL schemes
+    group: discovery
+    flags:
+      --market=: Optional two-letter country code for market
+      --language=: Optional language code
+
+  - name: publisher
+    description: Find products from a publisher
+    group: discovery
+    flags:
+      --market=: Optional two-letter country code for market
+      --language=: Optional language code
+
+  - name: search
+    description: Search for apps and games
+    group: discovery
+    flags:
+      --market=: Optional two-letter country code for market
+      --language=: Optional language code
+      --type=: Optional type filter
+    completion:
+      flag:
+        type: [all, apps, games]
+
+  - name: show
+    description: Show product details and ratings
+    group: discovery
+    flags:
+      --market=: Optional two-letter country code for market
+      --language=: Optional language code
+
+  - name: similar
+    description: Find similar products
+    group: discovery
+    flags:
+      --category=: The category to filter by (optional)
+      --market=: Optional two-letter country code for market
+      --language=: Optional language code
+
+  - name: install
+    description: Install an app from the Store
+    group: operations
+
+  - name: installed
+    description: List all installed apps
+    group: operations
+    flags:
+      --filter=: Filter apps by name or publisher
+      --sort=: Sort option for the results
+      --reverse=: Reverse the sorting order
+    completion:
+      flag:
+        sort:
+          - "name\tSort by display name"
+          - "publisher\tSort by publisher name"
+          - "date\tSort by most recent install or update date"
+
+  - name: update
+    description: Check updates for a specific app
+    group: operations
+    flags:
+      --apply=: If true, the update is applied immediately if available
+
+  - name: updates
+    description: Check for updates across all installed apps
+    group: operations
+    flags:
+      --filter=: Filter apps by name or publisher
+      --sort=: Sort option for the results
+      --reverse=: Reverse the sorting order
+      --apply=: If true, the update is applied immediately if available
+    completion:
+      flag:
+        sort:
+          - "name\tSort by display name"
+          - "publisher\tSort by publisher name"
+          - "date\tSort by most recent install or update date"
+
+  - name: app-categories
+    description: List app categories
+    group: helper
+
+  - name: game-categories
+    description: List game categories
+    group: helper
