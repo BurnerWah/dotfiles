@@ -54,6 +54,7 @@ cask = [
   'cityofzion-neon', # cryptocurrency
   'claude', # ai
   'claude-code', # ai
+  'claudebar', # ai
   'cmd', # ai
   'codebolt', # ai
   'codebuddy', # ai
@@ -63,6 +64,7 @@ cask = [
   'codex', # ai
   'codex-app', # ai
   'codexbar', # ai
+  'codexmonitor', # ai
   'coin-wallet', # cryptocurrency
   'coinomi-wallet', # cryptocurrency
   'comet', # ai
@@ -238,6 +240,7 @@ cask = [
   'runway', # ai
   'sanctum', # ai
   'scatter', # cryptocurrency
+  'sculptor', # ai
   'shortwave', # ai
   'sky', # bluesky
   'spark-ar-studio', # facebook
@@ -339,6 +342,7 @@ formula = [
   'clarinet', # cryptocurrency
   'claude-cmd', # ai
   'claude-code-router', # ai
+  'claude-code-templates', # ai
   'claude-hooks', # ai
   'claude-squad', # ai
   'claudebar', # ai
@@ -522,6 +526,7 @@ formula = [
   'twty', # twitter
   'unitycatalog', # ai
   'vespa-cli', # ai
+  'vibe-log-cli', # ai
   'vibecheck', # ai
   'vtcode', # ai
   'wagyu', # cryptocurrency

@@ -130,17 +130,11 @@ cask "ungoogled-chromium" if OS.mac?
 cask "zoom", greedy: true if OS.mac?
 
 # Mas isn't really working right now
-# mas "Affinity Designer 2", id: 1_616_831_348 if OS.mac?
-# mas "Affinity Photo 2", id: 1_616_822_987 if OS.mac?
-# mas "Affinity Publisher 2", id: 1_606_941_598 if OS.mac?
 # mas "Amphetamine", id: 937_984_704 if OS.mac? # Keep mac awake
 # mas "BrightIntosh", id: 6_452_471_855 if OS.mac? # Higher brightness
 # mas "DaVinci Resolve", id: 571_213_070 if OS.mac?
 # mas "Dropover", id: 1_355_679_052 if OS.mac? # Drag and drop manager
 # mas "Ivory", id: 6_444_602_274 if OS.mac? # Mastodon client
-# mas "Keynote", id: 409_183_694 if OS.mac?
-# mas "Numbers", id: 409_203_825 if OS.mac?
-# mas "Pages", id: 409_201_541 if OS.mac?
 # mas "Parcel", id: 375_589_283 if OS.mac? # Package tracker
 # mas "Shareful", id: 1_522_267_256 if OS.mac?
 # mas "Slack", id: 803_453_959 if OS.mac?
