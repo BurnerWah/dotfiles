@@ -10,7 +10,7 @@ flags:
   -V, --version: Print version
 
 documentation:
-  command: |
+  command: >
     Infat allows you to inspect and modify default applications for file types and URL schemes on macOS.
     It supports declarative configuration through TOML files for reproducible setups across machines.
   flag:
@@ -29,11 +29,15 @@ commands:
       -h, --help: Print help
       --scheme=: Show information for a URL scheme
       --type=: Show information for a file type
+    exclusiveflags:
+      - [app, ext, scheme, type]
     completion:
       flag:
         app: &apps
           # `fd` is being used here because it's more accurate for a spec, but
           # it isn't needed when this is made into native code.
+          # Also, directories ending in `.app` should be completed too, but
+          # that's hard to do in a carapace spec.
           # - $files([.app]) ||| $chdir(/Applications)
           - $(fd -td -d1 -j1 --format '{.}' -e app) ||| $chdir(/Applications)
           - Safari # `fd -td` misses this but it's not worth forking again to include it
@@ -42,6 +46,10 @@ commands:
           # - $files([.app]) ||| $chdir(~/Applications)
           - $(fd -td -d1 -j1 --format '{.}' -e app) ||| $chdir(~/Applications)
         ext: [$carapace.fs.FilenameExtensions]
+        type:
+          &types # This is so janky, there's gotta be a better way of handling it
+          - $(plutil -convert json -o - ~/Library/Preferences/com.apple.LaunchServices/com.apple.launchservices.secure.plist |
+            jq -r '.LSHandlers[].LSHandlerContentType | strings')
 
   - name: set
     description: Set default application for file extension, URL scheme, or file type
@@ -50,9 +58,12 @@ commands:
       -h, --help: Print help
       --scheme=: URL scheme to associate
       --type=: File type to associate
+    exclusiveflags:
+      - [ext, scheme, type]
     completion:
       flag:
         ext: [$carapace.fs.FilenameExtensions]
+        type: *types
       positional:
         - *apps
 
