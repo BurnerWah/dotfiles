@@ -31,16 +31,17 @@ commands:
       --type=: Show information for a file type
     completion:
       flag:
-        app:
+        app: &apps
           # `fd` is being used here because it's more accurate for a spec, but
           # it isn't needed when this is made into native code.
+          # - $files([.app]) ||| $chdir(/Applications)
           - $(fd -td -d1 -j1 --format '{.}' -e app) ||| $chdir(/Applications)
           - Safari # `fd -td` misses this but it's not worth forking again to include it
-          # - $files([.app]) ||| $chdir(/Applications)
-          - $(fd -td -d1 -j1 --format '{.}' -e app) ||| $chdir(/System/Applications)
           # - $files([.app]) ||| $chdir(/System/Applications)
-          - $(fd -td -d1 -j1 --format '{.}' -e app) ||| $chdir(~/Applications)
+          - $(fd -td -d1 -j1 --format '{.}' -e app) ||| $chdir(/System/Applications)
           # - $files([.app]) ||| $chdir(~/Applications)
+          - $(fd -td -d1 -j1 --format '{.}' -e app) ||| $chdir(~/Applications)
+        ext: [$carapace.fs.FilenameExtensions]
 
   - name: set
     description: Set default application for file extension, URL scheme, or file type
@@ -49,6 +50,11 @@ commands:
       -h, --help: Print help
       --scheme=: URL scheme to associate
       --type=: File type to associate
+    completion:
+      flag:
+        ext: [$carapace.fs.FilenameExtensions]
+      positional:
+        - *apps
 
   - name: init
     description: Initialize configuration from current Launch Services settings
