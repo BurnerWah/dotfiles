@@ -1,0 +1,72 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: infat
+description: Declaratively manage macOS file associations and URL schemes
+flags:
+  -c, --config=: Path to the configuration file
+  -h, --help: Print help (see more with '--help')
+  -q, --quiet: Suppress all output except errors
+  --robust: Continue processing on errors when possible
+  -v, --verbose: Enable verbose logging
+  -V, --version: Print version
+
+documentation:
+  command: |
+    Infat allows you to inspect and modify default applications for file types and URL schemes on macOS.
+    It supports declarative configuration through TOML files for reproducible setups across machines.
+  flag:
+    help: Print help (see a summary with '-h')
+
+completion:
+  flag:
+    config: [$files]
+
+commands:
+  - name: info
+    description: Show file association information
+    flags:
+      --app=: Show information for a specific application
+      --ext=: Show information for a file extension
+      -h, --help: Print help
+      --scheme=: Show information for a URL scheme
+      --type=: Show information for a file type
+    completion:
+      flag:
+        app:
+          # `fd` is being used here because it's more accurate for a spec, but
+          # it isn't needed when this is made into native code.
+          - $(fd -td -d1 -j1 --format '{.}' -e app) ||| $chdir(/Applications)
+          - Safari # `fd -td` misses this but it's not worth forking again to include it
+          # - $files([.app]) ||| $chdir(/Applications)
+          - $(fd -td -d1 -j1 --format '{.}' -e app) ||| $chdir(/System/Applications)
+          # - $files([.app]) ||| $chdir(/System/Applications)
+          - $(fd -td -d1 -j1 --format '{.}' -e app) ||| $chdir(~/Applications)
+          # - $files([.app]) ||| $chdir(~/Applications)
+
+  - name: set
+    description: Set default application for file extension, URL scheme, or file type
+    flags:
+      --ext=: File extension to associate (without the dot)
+      -h, --help: Print help
+      --scheme=: URL scheme to associate
+      --type=: File type to associate
+
+  - name: init
+    description: Initialize configuration from current Launch Services settings
+    flags:
+      -h, --help: Print help
+      -o, --output=: Output configuration file path (defaults to XDG config location)
+    completion:
+      flag:
+        output: [$files]
+
+  - name: help
+    description: Print this message or the help of the given subcommand(s)
+    commands:
+      - name: info
+        description: Show file association information
+      - name: set
+        description: Set default application for file extension, URL scheme, or file type
+      - name: init
+        description: Initialize configuration from current Launch Services settings
+      - name: help
+        description: Print this message or the help of the given subcommand(s)
