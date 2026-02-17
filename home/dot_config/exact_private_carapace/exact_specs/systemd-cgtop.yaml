@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: systemd-cgtop
+description: Show top control groups by their resource usage
+
+flags:
+  -h, --help: Print a short help text and exit
+  --version: Print a short version string and exit
+  -p: Order by control group path name
+  -t: Order by number of tasks/processes in the control group
+  -c: Order by CPU load
+  -m: Order by memory usage
+  -i: Order by disk I/O load
+  --order=: Order by ...
+  -r, --raw: Provide raw (not human-readable) numbers
+  --cpu=: Show CPU usage as ...
+  -P: Count userspace processes instead of tasks (excl. kernel)
+  -k: Count all processes instead of tasks (incl. kernel)
+  --recursive=: Sum up process count recursively
+  -d, --delay=: Delay between updates
+  -n, --iterations=: Run for N iterations before exiting
+  -1: Shortcut for --iterations=1
+  -b, --batch: Run in batch mode, accepting no input
+  --depth=: 'Maximum traversal depth (default: 3)'
+  -M, --machine=: Show container
+
+
+exclusiveflags:
+  - [order, p, t, c, m, i]
+  - [iterations, '1']
+  - [P, k]
+
+completion:
+  positional:
+    - - $(systemd-cgtop -1b | awk '{print $1}')
+  flag:
+    order:
+      - "path\tOrder by control group path name"
+      - "tasks\tOrder by number of tasks/processes in the control group"
+      - "cpu\tOrder by CPU load (default)"
+      - "memory\tOrder by memory usage"
+      - "io\tOrder by disk I/O load"
+    cpu:
+      - "percentage\tShow CPU usage as percentage (default)"
+      - "time\tShow CPU usage as time"

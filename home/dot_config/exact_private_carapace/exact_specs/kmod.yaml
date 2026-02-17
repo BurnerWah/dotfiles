@@ -1,0 +1,32 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: kmod
+description: Manage kernel modules
+
+flags:
+  -V, --version: show version
+
+persistentflags:
+  -h, --help: show help message
+
+commands:
+  - name: help
+    description: show help message
+  
+  - name: list
+    description: list currently loaded modules
+    flags:
+      -v, --verbose: print to syslog, not stderr
+      -s, --syslog: print to syslog, not stderr
+
+  - name: static-nodes
+    description: output the static-node information installed with the currently running kernel
+    flags:
+      -f, --format=: choose format to use
+      -o, --output=: write output to file
+    completion:
+      flag:
+        format:
+          - "human\tA human readable format (default) "
+          - "tmpfiles\tThe tmpfiles.d(5) format used by systemd-tmpfiles"
+          - "devname\tThe modules.devname format"
+        output: [$files]
