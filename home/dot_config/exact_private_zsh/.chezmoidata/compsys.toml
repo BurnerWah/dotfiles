@@ -43,6 +43,7 @@ carapace = [
   "apropos",
   "apt-cache",
   "apt-get",
+  "aqua",
   "ar",
   "archlinux-java",
   "arduino-cli",
