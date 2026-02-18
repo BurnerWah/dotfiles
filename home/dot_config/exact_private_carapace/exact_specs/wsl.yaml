@@ -1,0 +1,66 @@
+name: wsl
+description: Windows Subsystem for Linux
+
+flags:
+  -e, --exec=: Execute the specified command without using the default Linux shell
+  --shell-type=: Execute the specified command with the provided shell type
+
+  --cd=: Sets the specified directory as the current working directory
+  -d, --distribution=: Run the specified distribution
+  --distribution-id=: Run the specified distribution ID
+  -u, --user=: Run as the specified user
+  --system: Launches a shell for the system distribution
+
+  --help: Display usage information
+  --debug-shell: Open a WSL2 debug shell for diagnostics purposes
+  --install=: Install a Windows Subsystem for Linux distribution
+  # There's a bunch of flags that are included with --install
+  --manage=: Changes distro specific options
+  # Has extra flags
+  --mount=: Attaches and mounts a physical or virtual disk in all WSL 2 distributions
+  # Has extra flags
+  --set-default-version=: Changes the default install version for new distributions
+  --shutdown: Immediately terminates all running distributions and the WSL 2
+  # Has an extra flag
+  --status: Show the status of Windows Subsystem for Linux
+  --unmount=?: Unmounts and detaches a disk from all WSL2 distributions
+  --uninstall: Uninstalls the Windows Subsystem for Linux package from this machine
+  --update: Update the Windows Subsystem for Linux package
+  # Has an extra flag
+  -v, --version: Display version information
+
+  --export=: { description: Exports the distribution to a tar file, nargs: 2 }
+  # Has an extra flag
+  --import=:
+    description: Imports the specified tar file as a new distribution
+    nargs: 3
+  # Has an extra flag
+  --import-in-place=:
+    description: Imports the specified .vhdx file as a new distribution
+    nargs: 2
+  -l, --list: Lists distributions
+  # Has extra flags
+  -s, --set-default=: Sets the distribution as the default
+  --set-version=:
+    description: Changes the version of the specified distribution
+    nargs: 2
+  -t, --terminate=: Terminates the specified distribution
+  --unregister=: Unregisters the distribution and deletes the root filesystem
+
+exclusiveflags:
+  - [system, distribution]
+  - [system, distribution-id]
+
+completion:
+  flag:
+    # Positional flag completion doesn't actually work, but this pretends it
+    # does to be a better reference for native completions
+    shell-type: [standard, login, none]
+    # `wsl --list -q` has a messy output that can't actually be used
+    distribution: [&installed_distros $(wsl --list -q)]
+    manage: [*installed_distros]
+    export: [*installed_distros, $files]
+    set-default: [*installed_distros]
+    set-version: [*installed_distros, '1', '2']
+    terminate: [$(wsl --list --running -q)]
+    unregister: [*installed_distros]

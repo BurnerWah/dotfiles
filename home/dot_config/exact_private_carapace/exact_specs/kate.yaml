@@ -1,0 +1,25 @@
+name: kate
+description: KDE Advanced Text Editor
+
+flags:
+  -h, --help: Displays help on commandline options
+  -?: Displays help on commandline options
+  --help-all: Displays help, including generic Qt options
+  -v, --version: Displays version information
+  --author: Show author information
+  --license: Show license information
+  --desktopfile=: The base file name of the desktop entry for this application
+  -s, --start=: Start Kate with a given session
+  --startanon: Start Kate with a new anonymous session
+  -n, --new: Force start of a new kate instance
+  -b, --block: If using an already running kate instance, block until it exits
+  -p, --pid=: Only try to reuse kate instance with this pid
+  -e, --encoding=: Set encoding for the file to open
+  -l, --line=: Navigate to this line
+  -c, --column=: Navigate to this column
+  -i, --stdin: Read the contents of stdin
+  --tempfile: The files/URLs opened by the application will be deleted after use
+
+completion:
+  positionalany:
+    - $files

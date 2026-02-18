@@ -1,0 +1,99 @@
+name: wt
+description: the Windows Terminal
+
+# TODO add external command completion
+# TODO add profile completion
+
+flags:
+  -h, --help: Show help
+  -v, --version: Display application version
+  -M, --maximized: Launch the window maximized
+  -F, --fullscreen: Launch the window in fullscreen mode
+  -f, --focus: Launch the window in focus mode
+  --pos=: Specify the position for the terminal
+  --size=: Specify the number of columns and rows for the terminal
+  -w, --window=: Specify the ternimal window to run the given commandline in
+  -s, --saved=&: internal
+
+exclusiveflags:
+  - [maximized, fullscreen]
+  - [focus, fullscreen]
+
+commands:
+  - name: new-tab
+    aliases: [nt]
+    description: Create a new tab
+    flags:
+      <<:
+        - &profile_flags
+          -p, --profile=: What profile to use
+          --startingDirectory=: Starting directory to use
+          --starting-directory=: Starting directory to use
+          --title=: Title to use
+          --tabColor=: Tab color to use
+          --suppressApplicationTitle: Override the profile's suppressApplicationTitle setting, and set it to true
+          --useApplicationTitle: Override the profile's suppressApplicationTitle setting, and set it to false
+          --colorScheme=: Override the profile's colorScheme setting
+        - --appendCommandLine: Appends the provided command-line to the profile's default command instead of replacing it
+          --inheritEnvironment: Inherit the terminal's own environment variables when creating the new session
+    exclusiveflags:
+      - [starting-directory, startingDirectory]
+
+  - name: split-pane
+    aliases: [sp]
+    description: Create a new split pane
+    flags:
+      <<:
+        - *profile_flags
+        - -H, --horizontal: Split horizontally
+          -V, --vertical: Split vertically
+          -s, --size=: Creates a new split window pane with the assigned size
+          -D, --duplicate: Creates a new split window pane that duplicates the current pane
+    exclusiveflags:
+      - [horizontal, vertical]
+      - [starting-directory, startingDirectory]
+
+  - name: focus-tab
+    aliases: [ft]
+    description: Move focus to another tab
+    flags:
+      -t, --target=: Focuses on a specific tab according to its tab index number
+
+  - name: move-focus
+    aliases: [mf]
+    description: Move focus to the adjacent pane in the specified direction
+    completion:
+      positional:
+        - &directions
+          - up
+          - down
+          - left
+          - rigt
+          - first
+          - previous
+          - nextInOrder
+          - previousInOrder
+
+  - name: move-pane
+    aliases: [mp]
+    description: Move focused pane to another tab
+    flags:
+      -t, --tab=: Move the active pane to the given tab in the window
+
+  - name: swap-pane
+    description: Swap the focused pane with the adjacent pane in the specified direction
+    completion:
+      positional:
+        - *directions
+
+  - name: focus-pane
+    aliases: [fp]
+    description: Move focus to another pane
+    flags:
+      -t, --target=: Focus the pane at the given index
+
+  - name: x-save
+    description: Save command line as input action
+    flags:
+      -n, --name=: ''
+      -k, --keychord=: ''

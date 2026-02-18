@@ -1,0 +1,117 @@
+name: wingetcreate
+description: Windows Package Manager Manifest Creator
+
+# This spec is not complete yet
+
+persistentflags:
+  -h, --help: Show help
+
+commands:
+  - name: new
+    description: Launches a series of questions to help generate a new manifest
+    flags:
+      -o, --out=: The output directory to store the generated manifests locally
+      --allow-unsecure-downloads: Allow unsecure downloads (HTTP) for this operation
+      -f, --format=: Output format of the manifest
+      -t, --token=: GitHub personal access token
+    completion:
+      flag:
+        out: [$directories]
+        format: ["yaml\tdefault", json]
+
+  - name: update
+    description: Updates fields of an existing manifest
+    flags:
+      -v, --version=: Version to be used when updating the package version field
+      -d, --display-version=: Version to be used when updating the display version field
+      --release-notes-url=: URL to be used when updating the release notes url field
+      --release-date=: Date to be used when updating the release date field
+      -o, --out=: The output directory to store the generated manifests locally
+      -p, --prtitle=: The title of the pull request submitted to GitHub
+      -s, --submit=: Boolean value for submitting to the Windows Package Manager repo
+      -r, --replace=: Boolean value for replacing an existing manifest from the Windows Package Manager repo
+      -i, --interactive=: Boolean value for making the update command interactive
+      -f, --format=: Output format of the manifest
+      --allow-unsecure-downloads: Allow unsecure downloads (HTTP) for this operation
+      -t, --token=: GitHub personal access token
+      -u, --urls=: Installer Url(s) used to extract relevant metadata for generating a manifest
+    completion:
+      flag:
+        out: [$directories]
+        format: ["yaml\tdefault", json]
+
+  - name: new-locale
+    description: Launches a series of questions to help generate a new locale manifest
+    flags:
+      -v, --version=: The version of the package to add a new locale for
+      -l, --locale=: The package locale to create a new manifest for
+      -r, --reference-locale=: Existing locale manifest to be used as reference for default values
+      -o, --out=: The output directory to store the generated manifests locally
+      -f, --format=: Output format of the manifest
+      -t, --token=: GitHub personal access token
+    completion:
+      flag:
+        out: [$directories]
+        format: ["yaml\tdefault", json]
+
+  - name: update-locale
+    description: Launches a series of questions to help update an existing locale manifest
+    flags:
+      -v, --version=: The version of the package to update the locale for
+      -l, --locale=: The package locale to update the manifest for
+      -o, --out=: The output directory to store the generated manifests locally
+      -f, --format=: Output format of the manifest
+      -t, --token=: GitHub personal access token
+    completion:
+      flag:
+        out: [$directories]
+        format: ["yaml\tdefault", json]
+
+  - name: submit
+    description: Submits a valid manifest directly to the Windows Package Manager repo
+    flags:
+      -p, --prtitle=: The title of the pull request submitted to GitHub
+      -r, --replace=: Boolean value for replacing an existing manifest from the Windows Package Manager repo
+      -t, --token=: GitHub personal access token
+
+  - name: settings
+    description: Open settings
+
+  - name: token
+    description: Modifies the GitHub auth token cache
+    flags:
+      -c, --clear=: Clear the cached GitHub token
+      -s, --store=: Set the cached GitHub token
+      -t, --token=: GitHub personal access token
+
+  - name: cache
+    description: Manage downloaded installers stored in cache
+    flags:
+      -c, --clean: Deletes all downloaded installers in the cache folder
+      -l, --list: Lists out all the downloaded installers stored in cache
+      -o, --open: Opens the cache folder storing the downloaded installers
+
+  - name: show
+    description: Display a manifest from the Windows Package Manager repository
+    flags:
+      -v, --version=: The version of the package to show the manifest for
+      -i, --installer-manifest: Display the installer manifest of the package
+      -d, --defaultlocale-manifest: Display the default locale manifest of the package
+      -l, --locale-manifest: Display all locale manifests of the package
+      --version-manifest: Display the version manifest of the package
+      -f, --format=: Output format of the manifest
+    completion:
+      flag:
+        format: ["yaml\tdefault", json]
+
+  - name: info
+    description: Displays general info of the tool
+
+  - name: dsc
+    description: DSC v3 resource commands
+    flags:
+      -g, --get: Get the resource state
+      -s, --set: Set the resource state
+      -t, --test: Test the resource state
+      -e, --export: Get all state instances
+      --schema: Outputs schema of the resource

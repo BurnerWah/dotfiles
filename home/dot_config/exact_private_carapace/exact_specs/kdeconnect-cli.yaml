@@ -1,0 +1,50 @@
+name: kdeconnect-cli
+description: KDE Connect CLI tool
+
+flags:
+  -l, --list-devices: List all devices
+  -a, --list-available: List available (paired and reachable) devices
+  -b, --list-backends: List all backends and status
+  --enable-backend=: Enable the specified backend
+  --disable-backend=: Disable the specified backend
+  --id-only: only print device ID
+  --name-only: only print device name
+  --id-name-only: only print device ID and name
+  --refresh: Search for devices in the network and re-establish connections
+  --pair: Request pairing to a said device
+  --ring: Find the said device by ringing it
+  --unpair: Stop pairing to a said device
+  --ping: Sends a ping to said device
+  --ping-msg=: Same as ping but you can set the message to display
+  --send-clipboard: Sends the current clipboard to said device
+  --share=: Share a file/URL to a said device
+  --share-text=: Share text to a said device
+  --list-notifications: Display the notifications on a said device
+  --lock: Lock the specified device
+  --unlock: Unlock the specified device
+  --send-sms=: Sends an SMS. Requires destination
+  --destination=: Phone number to send the message
+  --attachment=*: File URLs to send attachments with the message
+  -d, --device=: Device ID
+  -n, --name=: Device Name
+  --encryption-info: Get encryption info about said device
+  --list-commands: Lists remote commands and their ids
+  --execute-command=: Executes a remote command by id
+  -k, --send-keys=: Sends keys to a said device
+  --my-id: Display this device's id and exit
+  --mount: Mount filesystem of a said device
+  --get-mount-point: Print mount point for the filesystem of a said device
+  -h, --help: Displays help on commandline options
+  -?: Displays help on commandline options
+  --help-all: Displays help, including generic Qt options
+  -v, --version: Displays version information
+  --author: Show author information.
+  --license: Show license information.
+  --desktopfile=: The base file name of the desktop entry for this application
+
+completion:
+  flag:
+    share: [$files]
+    attachment: [$files]
+    device: [$(kdeconnect-cli --list-devices --id-only)]
+    name: [$(kdeconnect-cli --list-devices --name-only)]

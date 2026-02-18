@@ -1,0 +1,23 @@
+name: wslconfig
+description: Performs administrative operations on Windows Subsystem for Linux
+
+commands:
+  - name: /l
+    aliases: [/list]
+    description: Lists registered distributions
+    completion:
+      positional:
+        - - "/all\tOptionally list all distributions"
+          - "/running\tList only distributions that are currently running"
+
+  - name: /s
+    aliases: [/setdefault]
+    description: Sets the distribution as the default
+
+  - name: /t
+    aliases: [/terminate]
+    description: Terminates the distribution
+
+  - name: /u
+    aliases: [/unregister]
+    description: Unregisters the distribution and deletes the root filesystem
