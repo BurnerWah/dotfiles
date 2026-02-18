@@ -1,0 +1,37 @@
+name: git-pages-cli
+description: Tool for publishing a site to a git-pages server
+
+flags:
+  --atomic: require partial updates to be atomic
+  --challenge: compute DNS challenge entry from password (output zone file record)
+  --challenge-bare: compute DNS challenge entry from password (output bare TXT value)
+  --debug-manifest: retrieve site manifest as ProtoJSON, for debugging
+  --delete: delete whole site or a path
+  --incremental: make --upload-dir only upload changed files
+  --parents: create parent directories of --path
+  --password=: password for DNS challenge authorization
+  --path=: partially update site at specified path
+  --server=: hostname of server to connect to
+  --token=: token for forge authorization
+  --upload-dir=: replace whole site or a path with contents of specified directory
+  --upload-git=: replace site with contents of specified git repository
+  -v, --verbose: display more information for debugging
+  -V, --version: display version information
+  -h, --help: show help
+
+exclusiveflags:
+  - [
+      challenge,
+      challenge-bare,
+      debug-manifest,
+      delete,
+      upload-dir,
+      upload-git,
+      version,
+    ]
+
+completion:
+  positional:
+    - [$usage(Site URL)]
+  flag:
+    upload-dir: [$directories]

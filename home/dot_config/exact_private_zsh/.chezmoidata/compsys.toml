@@ -349,6 +349,7 @@ carapace = [
   "git-extras",
   "git-info",
   "git-lfs",
+  "git-pages-cli",
   "git-sizer",
   "git-standup",
   "git-unlock",
