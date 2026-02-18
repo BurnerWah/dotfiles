@@ -318,6 +318,7 @@ formula = [
   'aiven-client', # ai
   'alejandra', # nix
   'amical', # ai
+  'aoe', # ai
   'aptos', # cryptocurrency
   'arcade-learning-environment', # ai
   'arturo', # fascism
@@ -476,6 +477,7 @@ formula = [
   'repomix', # ai
   'roblox-ts', # roblox
   'rojo', # roblox
+  'rtk', # ai
   'rulesync', # ai
   'rustywind', # fascism
   'salesforce-mcp', # ai
