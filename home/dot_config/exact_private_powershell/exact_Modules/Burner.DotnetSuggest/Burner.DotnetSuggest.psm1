@@ -2,7 +2,10 @@
 # applies completions to programs that don't actually work with dotnet-suggest.
 # It'll probably need updates as time passes.
 if (Get-Command 'dotnet-suggest' -ErrorAction SilentlyContinue) {
-    $Script:DotnetSuggestCommands = @('dotnet-suggest', 'vpm')
+    $Script:DotnetSuggestCommands = @(
+        'dotnet-suggest'
+        'vpm'
+    )
 
     Register-ArgumentCompleter -Native -CommandName $Script:DotnetSuggestCommands -ScriptBlock {
         param($wordToComplete, $commandAst, $cursorPosition)
