@@ -56,8 +56,14 @@ completion:
     # Positional flag completion doesn't actually work, but this pretends it
     # does to be a better reference for native completions
     shell-type: [standard, login, none]
-    # `wsl --list -q` has a messy output that can't actually be used
-    distribution: [&installed_distros $(wsl --list -q)]
+    distribution:
+      # `wsl --list -q` has a messy output that can't actually be used
+      # - $(wsl --list -q)
+      # This pwsh snippet is a little slow but it gets the correct values
+      # This is around 300x faster (no really i checked) but unparsable in a spec:
+      # `reg.exe query HKCU\Software\Microsoft\Windows\CurrentVersion\Lxss /s /t REG_SZ /f DistributionName /e /c`
+      # even `wsl --list -q` is about 80x faster than this actually, so it's certainly fast enough for a native completer.
+      - &installed_distros $pwsh((Get-ItemProperty -Path Registry::HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Lxss\*).DistributionName)
     manage: [*installed_distros]
     export: [*installed_distros, $files]
     set-default: [*installed_distros]
