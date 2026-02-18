@@ -13,6 +13,7 @@ if (($Host.Name -eq 'ConsoleHost') `
 
     Import-Module -Name scoop-completion
     Import-Module -Name Burner.LazyComplete
+    Import-Module -Name Burner.DotnetSuggest
     Import-Module -Name Burner.Zoxide
     Import-Module -Name Burner.Generated # Custom module I put all my generated scripts into
 
