@@ -471,6 +471,8 @@ carapace = [
   "kak",
   "kak-lsp",
   "karabiner_cli",
+  "kate",
+  "kdeconnect-cli",
   "keep-sorted",
   "keka",
   "keploy",
