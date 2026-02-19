@@ -2,6 +2,9 @@
 
 exclude = ["**/symlink_*", "tmp/**"]
 
+[formatting]
+align_comments = false
+
 [[rule]]
 include = [
   ".config/mise.*.toml",
