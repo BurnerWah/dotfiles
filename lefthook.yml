@@ -68,6 +68,11 @@ pre-commit:
               - windows-incompatible
               - macos-incompatible
 
+          - name: tombi
+            run: mise x -- tombi lint {staged_files}
+            glob: ['*.toml']
+            exclude: symlink_*
+
     - name: Formatting
       group:
         parallel: true
