@@ -1,0 +1,36 @@
+{
+  "$id": "https://json-schema.furry.codes/infat-config.json",
+  "$schema": "http://json-schema.org/draft/2020-12/schema",
+  "title": "Infat Config",
+  "type": "object",
+  "properties": {
+    "extensions": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "x-tombi-table-keys-order": {
+        "additionalProperties": "ascending"
+      }
+    },
+    "schemes": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "x-tombi-table-keys-order": {
+        "additionalProperties": "ascending"
+      }
+    },
+    "types": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "x-tombi-table-keys-order": {
+        "additionalProperties": "ascending"
+      }
+    }
+  },
+  "required": []
+}

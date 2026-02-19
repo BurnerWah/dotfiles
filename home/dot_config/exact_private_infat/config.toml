@@ -1,4 +1,3 @@
-# tombi: format.rules.table-keys-order = 'ascending'
 [extensions]
 3fr = 'Preview'
 af = 'Affinity'
@@ -285,7 +284,6 @@ zprofile = 'Visual Studio Code'
 zshenv = 'Visual Studio Code'
 zshrc = 'Visual Studio Code'
 
-# tombi: format.rules.table-keys-order = 'ascending'
 [schemes]
 affinity = 'Affinity'
 affinity-designer = 'Affinity Designer 2'
@@ -333,7 +331,6 @@ x-github-client = 'Tower'
 zoommtg = 'zoom.us'
 zoomus = 'zoom.us'
 
-# tombi: format.rules.table-keys-order = 'ascending'
 [types]
 aiff = 'VLC'
 avi = 'IINA'

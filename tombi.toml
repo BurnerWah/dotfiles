@@ -40,6 +40,10 @@ include = [
   "home/dot_config/*_jj/exact_conf.d/*.toml",
 ]
 
+[[schemas]]
+path = "./schemas/infat-config.json"
+include = ["home/dot_config/*_infat/config.toml"]
+
 [[overrides]]
 files.include = [
   "home/.chezmoidata/common-abbrev.toml",
