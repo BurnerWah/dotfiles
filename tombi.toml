@@ -46,6 +46,11 @@ include = [
 path = "./schemas/infat-config.json"
 include = ["home/dot_config/*_infat/config.toml"]
 
+[[schemas]]
+root = "settings.bat"
+path = "./schemas/settings/bat.json"
+include = ["home/**/.chezmoidata.toml", "home/**/.chezmoidata/**/*.toml"]
+
 [[overrides]]
 [overrides.files]
 # tombi: format.rules.array-values-order = "ascending"

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://json-schema.furry.codes/internal/chezmoi/bat.json",
+  "title": "bat settings",
+  "description": "bat settings",
+  "$defs": {
+    "SyntaxMapping": {
+      "type": "object",
+      "description": "Mapping of syntaxes to file extensions",
+      "additionalProperties": {
+        "type": "array",
+        "items": { "type": "string" },
+        "x-tombi-array-values-order": "ascending"
+      },
+      "x-tombi-table-keys-order": {
+        "additionalProperties": "ascending"
+      }
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "syntax": { "$ref": "#/$defs/SyntaxMapping" }
+  },
+  "required": ["syntax"]
+}

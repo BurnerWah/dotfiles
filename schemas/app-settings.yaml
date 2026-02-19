@@ -2,7 +2,7 @@
 title: App Settings
 type: object
 properties:
-  bat: { $ref: ./settings/bat.yaml }
+  bat: { $ref: ./settings/bat.json }
   chezmoi: { $ref: ./settings/chezmoi.yaml }
   homebrew: { $ref: ./settings/homebrew.yaml }
   launchd: { $ref: ./settings/launchd.yaml }
