@@ -1,0 +1,36 @@
+name: dasel
+description: Query and modify data structures from the command line.
+
+persistentflags:
+  -h, --help: Show context-sensitive help.
+
+commands:
+  - name: query
+    description: Execute a query (default)
+    flags:
+      <<:
+        - &query_shared_flags
+          --var=*: Variables to pass to the query.
+          --rw-flag=*: Read/Write flag to customise parsing/output.
+          --read-flag=*: Reader flag to customise parsing.
+          --write-flag=*: Writer flag to customise output.
+          -i, --in=: The format of the input data.
+          -o, --out=: The format of the output data.
+          -c, --config=: Path to config file
+        - --root: Return the root value.
+          --unstable: Allow access to potentially unstable features.
+          --it: Run in interactive mode (alpha).
+    completion:
+      flag: &query_shared_flag_completion
+        config: ['$files([.yaml, .yml])']
+        in: [csv, hcl, ini, json, toml, xml, yaml]
+        out: [csv, hcl, ini, json, toml, xml, yaml]
+
+  - name: version
+    description: Print the version
+
+  - name: interactive
+    description: Start an interactive session (alpha)
+    flags: *query_shared_flags
+    completion:
+      flag: *query_shared_flag_completion
