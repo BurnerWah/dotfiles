@@ -2,7 +2,6 @@
 exclude = ["**/symlink_*", "tmp/**"]
 
 [format.rules]
-# string-quote-style = "preserve"
 trailing-comment-space-width = 1
 
 [schema]
