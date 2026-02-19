@@ -52,7 +52,6 @@ default_packages_file = "~/.config/mise/default-python-packages"
 uv_venv_auto = true
 
 [settings.npm]
-bun = false
 package_manager = "pnpm"
 
 [tools]
