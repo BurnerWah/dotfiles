@@ -48,6 +48,13 @@ description = "Format Lua code with StyLua"
 run = "taplo format"
 description = "Format TOML files with Taplo"
 
+[tasks."format:tombi"]
+usage = '''
+arg "[files]" var=#true
+'''
+run = "tombi format ${usage_files}"
+description = "Format TOML files with Tombi"
+
 # This task could be removed once there's a URL I can feasibly use for Lima's Schema
 [tasks."generate:lima-schema"]
 run = "limactl generate-jsonschema > schemas/vendor/lima.json"
