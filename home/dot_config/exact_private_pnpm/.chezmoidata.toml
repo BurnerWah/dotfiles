@@ -1,0 +1,9 @@
+[settings.pnpm.core]
+update-notifier = false
+
+[settings.pnpm.by_os.darwin]
+prefer-symlinked-executables = true
+global-bin-dir = "${HOME}/.local/bin"
+store-dir = "${HOME}/Library/Application Support/pnpm/store"
+global-dir = "${HOME}/Library/Application Support/pnpm/global"
+state-dir = "${HOME}/Library/Application Support/pnpm/state"

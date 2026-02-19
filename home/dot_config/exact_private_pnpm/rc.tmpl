@@ -1,0 +1,5 @@
+{{- $config := .settings.pnpm.core -}}
+{{- if hasKey .settings.pnpm.by_os .chezmoi.os -}}
+{{-   $_ := get .settings.pnpm.by_os .chezmoi.os | merge $config -}}
+{{- end -}}
+{{- toIni $config -}}
