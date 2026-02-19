@@ -5,5 +5,4 @@ description: template data for chezmoi
 type: object
 additionalProperties: true
 properties:
-  packages: { $ref: ../packages.yaml }
   settings: { $ref: ../app-settings.yaml }
