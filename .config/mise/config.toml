@@ -10,6 +10,7 @@ yamllint = "latest"
 deno = "latest"
 "github:VorpalBlade/chezmoi_modify_manager" = "latest"
 tombi = "latest"
+"github:google/keep-sorted" = "latest"
 
 [tasks.apply]
 run = "chezmoi apply"
