@@ -5,6 +5,9 @@ exclude = ["**/symlink_*", "tmp/**"]
 string-quote-style = "preserve"
 trailing-comment-space-width = 1
 
+[schema]
+strict = false
+
 [[schemas]]
 path = "https://mise.jdx.dev/schema/mise.json"
 include = [
