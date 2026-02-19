@@ -9,6 +9,7 @@ strict = false
 
 [[schemas]]
 path = "https://mise.jdx.dev/schema/mise.json"
+# tombi: format.rules.array-values-order = "ascending"
 include = [
   ".config/mise.*.toml",
   ".config/mise.toml",
@@ -17,14 +18,14 @@ include = [
   ".config/mise/config.toml",
   ".mise.*.toml",
   ".mise.toml",
-  "home/dot_config/*_mise/config.*.toml",
-  "home/dot_config/*_mise/config.toml",
-  "home/dot_config/*_mise/*_conf.d/*.toml.tmpl",
-  "home/dot_config/*_mise/*_conf.d/*.toml",
+  "home/*_dot_var/app/*/config/*_mise/*_conf.d/*.toml",
+  "home/*_dot_var/app/*/config/*_mise/*_conf.d/*.toml.tmpl",
   "home/*_dot_var/app/*/config/*_mise/config.*.toml",
   "home/*_dot_var/app/*/config/*_mise/config.toml",
-  "home/*_dot_var/app/*/config/*_mise/*_conf.d/*.toml.tmpl",
-  "home/*_dot_var/app/*/config/*_mise/*_conf.d/*.toml",
+  "home/dot_config/*_mise/*_conf.d/*.toml",
+  "home/dot_config/*_mise/*_conf.d/*.toml.tmpl",
+  "home/dot_config/*_mise/config.*.toml",
+  "home/dot_config/*_mise/config.toml",
   "mise.*.toml",
   "mise.toml",
 ]
@@ -35,9 +36,10 @@ include = ["home/dot_config/*_bottom/*"]
 
 [[schemas]]
 path = "https://jj-vcs.github.io/jj/latest/config-schema.json"
+# tombi: format.rules.array-values-order = "ascending"
 include = [
+  "home/dot_config/*_jj/*_conf.d/*.toml",
   "home/dot_config/*_jj/config.toml",
-  "home/dot_config/*_jj/exact_conf.d/*.toml",
 ]
 
 [[schemas]]
@@ -45,7 +47,9 @@ path = "./schemas/infat-config.json"
 include = ["home/dot_config/*_infat/config.toml"]
 
 [[overrides]]
-files.include = [
+[overrides.files]
+# tombi: format.rules.array-values-order = "ascending"
+include = [
   "home/.chezmoidata/common-abbrev.toml",
   "home/.chezmoidata/pwsh-completers.toml",
   "home/dot_config/*_bat/.chezmoidata/bat-syntax-overrides.toml",
@@ -56,4 +60,6 @@ files.include = [
   "home/dot_config/*_infat/config.toml",
   "home/dot_config/*_zsh/.chezmoidata/aliased-completion.toml",
 ]
-format.rules.string-quote-style = "single"
+
+[overrides.format.rules]
+string-quote-style = "single"
