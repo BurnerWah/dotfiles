@@ -93,7 +93,11 @@ description = "Lint Lua code formatting with StyLua"
 
 [tasks."lint:taplo"]
 run = "taplo lint"
-description = "Format TOML files with Taplo"
+description = "Lint TOML files with Taplo"
+
+[tasks."lint:tombi"]
+run = "tombi lint"
+description = "Lint TOML files with Tombi"
 
 [tasks."update:nvim-plugins"]
 run = 'nvim --headless "+Lazy! sync" +qa'
