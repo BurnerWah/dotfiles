@@ -2,7 +2,7 @@
 exclude = ["**/symlink_*", "tmp/**"]
 
 [format.rules]
-string-quote-style = "preserve"
+# string-quote-style = "preserve"
 trailing-comment-space-width = 1
 
 [schema]
@@ -42,5 +42,15 @@ include = [
 ]
 
 [[overrides]]
-files.include = ["home/dot_config/*_homebrew/.chezmoidata/forbidden.toml"]
-format.rules.trailing-comment-alignment = false
+files.include = [
+  "home/.chezmoidata/common-abbrev.toml",
+  "home/.chezmoidata/pwsh-completers.toml",
+  "home/dot_config/*_bat/.chezmoidata/bat-syntax-overrides.toml",
+  "home/dot_config/*_elvish/.chezmoidata/completers.toml",
+  "home/dot_config/*_fish/.chezmoidata/abbrev.toml",
+  "home/dot_config/*_fish/.chezmoidata/wsl-path-cleanup.toml",
+  "home/dot_config/*_homebrew/.chezmoidata/forbidden.toml",
+  "home/dot_config/*_infat/config.toml",
+  "home/dot_config/*_zsh/.chezmoidata/aliased-completion.toml",
+]
+format.rules.string-quote-style = "single"
