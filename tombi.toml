@@ -1,0 +1,43 @@
+[files]
+exclude = ["**/symlink_*", "tmp/**"]
+
+[format.rules]
+string-quote-style = "preserve"
+trailing-comment-space-width = 1
+
+[[schemas]]
+path = "https://mise.jdx.dev/schema/mise.json"
+include = [
+  ".config/mise.*.toml",
+  ".config/mise.toml",
+  ".config/mise/conf.d/*.toml",
+  ".config/mise/config.*.toml",
+  ".config/mise/config.toml",
+  ".mise.*.toml",
+  ".mise.toml",
+  "home/dot_config/*_mise/config.*.toml",
+  "home/dot_config/*_mise/config.toml",
+  "home/dot_config/*_mise/*_conf.d/*.toml.tmpl",
+  "home/dot_config/*_mise/*_conf.d/*.toml",
+  "home/*_dot_var/app/*/config/*_mise/config.*.toml",
+  "home/*_dot_var/app/*/config/*_mise/config.toml",
+  "home/*_dot_var/app/*/config/*_mise/*_conf.d/*.toml.tmpl",
+  "home/*_dot_var/app/*/config/*_mise/*_conf.d/*.toml",
+  "mise.*.toml",
+  "mise.toml",
+]
+
+[[schemas]]
+path = "https://github.com/ClementTsang/bottom/raw/refs/heads/main/schema/v0.10/bottom.json"
+include = ["home/dot_config/*_bottom/*"]
+
+[[schemas]]
+path = "https://jj-vcs.github.io/jj/latest/config-schema.json"
+include = [
+  "home/dot_config/*_jj/config.toml",
+  "home/dot_config/*_jj/exact_conf.d/*.toml",
+]
+
+[[overrides]]
+files.include = ["home/dot_config/*_homebrew/.chezmoidata/forbidden.toml"]
+format.rules.trailing-comment-alignment = false

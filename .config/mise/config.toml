@@ -9,6 +9,7 @@ node = "latest"
 yamllint = "latest"
 deno = "latest"
 "github:VorpalBlade/chezmoi_modify_manager" = "latest"
+tombi = "latest"
 
 [tasks.apply]
 run = "chezmoi apply"

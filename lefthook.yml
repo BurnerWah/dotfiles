@@ -123,8 +123,14 @@ pre-commit:
             exclude: symlink_*
             stage_fixed: true
 
-          - name: taplo
-            run: mise x -- taplo format {staged_files}
+          # - name: taplo
+          #   run: mise x -- taplo format {staged_files}
+          #   glob: ['*.toml']
+          #   exclude: symlink_*
+          #   stage_fixed: true
+
+          - name: tombi
+            run: mise x -- tombi format {staged_files}
             glob: ['*.toml']
             exclude: symlink_*
             stage_fixed: true

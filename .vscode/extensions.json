@@ -14,8 +14,8 @@
     "redhat.vscode-xml",
     "redhat.vscode-yaml",
     "sharat.vscode-brewfile",
-    "tamasfe.even-better-toml",
     "yy0931.gitconfig-lsp",
     "denoland.vscode-deno",
+    "tombi-toml.tombi",
   ],
 }
