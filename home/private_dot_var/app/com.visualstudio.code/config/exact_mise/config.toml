@@ -1,5 +1,4 @@
 [settings]
-
 # GPG Verification currently does not work within the VSCode flatpak
 [settings.node]
 gpg_verify = false

@@ -2,7 +2,7 @@
 cask = [
   '5ire', # ai
   'ace-studio', # ai
-  'agent-tars', # ai 
+  'agent-tars', # ai
   'agentkube', # ai
   'aide-app', # ai
   'aifun', # ai
@@ -304,7 +304,6 @@ cask = [
   'zo', # ai
   'zoo-design-studio', # ai
 ]
-
 formula = [
   'agent-browser', # ai
   'aiac', # ai
@@ -465,7 +464,7 @@ formula = [
   'oterm', # ai
   'oxen', # ai
   'patchpal', # ai
-  'playwright-mcp', #ai
+  'playwright-mcp', # ai
   'plz-cli', # ai
   'promptfoo', # ai
   'qqqa', # ai
@@ -545,7 +544,6 @@ formula = [
   'yek', # ai
   'yutu', # ai
 ]
-
 # These are mostly forbidden to prevent unexpected from-source builds.
 # If it needs to be built from source, do that another way.
 # If it's python, use `uv tool`
@@ -565,7 +563,6 @@ linux = [
   'ruby',
   'systemd',
 ]
-
 tap = [
   'AdoptOpenJDK/openjdk', # deprecated
   'aquaproj/aqua', # aqua is in homebrew/core

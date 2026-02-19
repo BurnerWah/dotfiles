@@ -1,7 +1,5 @@
 "$schema" = 'https://starship.rs/config-schema.json'
-
 add_newline = false
-
 format = """
 $username\
 $directory\
@@ -18,7 +16,6 @@ $pijul_channel\
 $character\
 """
 right_format = """$all"""
-
 bun.disabled = true
 nim.disabled = true
 nix_shell.disabled = true
@@ -303,8 +300,8 @@ detect_files = [
   "META.json",
   "META.yml",
   ".perl-version",
-  "!brew",             # Don't show in brew prefix
-  "!xdg-open",         # Shows up in /usr/bin in freedesktop runtime
+  "!brew", # Don't show in brew prefix
+  "!xdg-open", # Shows up in /usr/bin in freedesktop runtime
 ]
 format = "[$symbol($version )]($style)"
 
@@ -336,10 +333,10 @@ detect_files = [
   "pixi.toml",
   "uv.toml",
   "uv.lock",
-  ".poetry-version",  # from mise plugin
+  ".poetry-version", # from mise plugin
   "poetry.lock",
-  "!brew",            # Don't show in brew prefix
-  "!systemctl",       # Don't show in /usr/bin
+  "!brew", # Don't show in brew prefix
+  "!systemctl", # Don't show in /usr/bin
 ]
 style = "bold fg:#e4f34a bg:#3d420d"
 format = '[[](#3d420d)${symbol}${pyenv_prefix}(${version})( \($virtualenv\))]($style)[](#3d420d) '

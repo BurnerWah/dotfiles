@@ -6,7 +6,6 @@ powershell-core = "latest"
 "npm:@microsoft/inshellisense" = "latest"
 
 [settings]
-
 # I have yet to test GPG Verification in flatpaks.
 # GPG isn't that useful though, so I'm not that focused on getting it working.
 [settings.swift]

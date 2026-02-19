@@ -1000,28 +1000,27 @@ carapace = [
   "zoxide",
   "zx",
 ]
-
 # These are here to simplify analisys of zsh completions & fish completions
 # They include fish builtins, and some commands where site-functions should
 # be available
 # Creating dedicated empty compdef files for these can help avoid rebuilding
 # the .zcompdump file when entering toolbox & distrobox containers
 unreachable = [
-  "_carapace_or_builtin",           # custom fish completion
+  "_carapace_or_builtin", # custom fish completion
   "abbr",
-  "and",                            # fish builtin
-  "argparse",                       # fish builtin
+  "and", # fish builtin
+  "argparse", # fish builtin
   "asp",
-  "aura",                           # installed w/ aura, could be made external
+  "aura", # installed w/ aura, could be made external
   "bd",
-  "begin",                          # fish builtin
-  "block",                          # fish builtin
-  "bootctl",                        # installed w/ systemd
-  "busctl",                         # installed w/ systemd
-  "cdh",                            # fish standard
-  "commandline",                    # fish builtin
-  "complete",                       # fish builtin
-  "contains",                       # fish builtin
+  "begin", # fish builtin
+  "block", # fish builtin
+  "bootctl", # installed w/ systemd
+  "busctl", # installed w/ systemd
+  "cdh", # fish standard
+  "commandline", # fish builtin
+  "complete", # fish builtin
+  "contains", # fish builtin
   "distrobox",
   "distrobox-assemble",
   "distrobox-create",
@@ -1040,79 +1039,79 @@ unreachable = [
   "eix-sync",
   "emaint",
   "emerge",
-  "emit",                           # fish builtin
+  "emit", # fish builtin
   "epkginfo",
   "equery",
   "eselect",
   "firejail",
-  "firewall-cmd",                   # installed w/ firewalld
-  "firewall-offline-cmd",           # installed w/ firewalld
-  "fish_add_path",                  # fish standard
-  "fish_config",                    # fish standard
-  "fish_delta",                     # fish standard
-  "fish_opt",                       # fish standard
-  "funced",                         # fish standard
-  "funcsave",                       # fish standard
-  "hostnamectl",                    # installed w/ systemd
+  "firewall-cmd", # installed w/ firewalld
+  "firewall-offline-cmd", # installed w/ firewalld
+  "fish_add_path", # fish standard
+  "fish_config", # fish standard
+  "fish_delta", # fish standard
+  "fish_opt", # fish standard
+  "funced", # fish standard
+  "funcsave", # fish standard
+  "hostnamectl", # installed w/ systemd
   "isatty",
-  "kernel-install",                 # installed w/ systemd
+  "kernel-install", # installed w/ systemd
   "lein",
   "llm",
-  "loginctl",                       # installed w/ systemd
-  "machinectl",                     # installed w/ systemd
-  "math",                           # fish builtin
-  "mkinitcpio",                     # installed w/ mkinitcpio
-  "networkctl",                     # installed w/ systemd
-  "nextd",                          # fish standard
-  "not",                            # fish builtin
+  "loginctl", # installed w/ systemd
+  "machinectl", # installed w/ systemd
+  "math", # fish builtin
+  "mkinitcpio", # installed w/ mkinitcpio
+  "networkctl", # installed w/ systemd
+  "nextd", # fish standard
+  "not", # fish builtin
   "nvme",
-  "oomctl",                         # installed w/ systemd
+  "oomctl", # installed w/ systemd
   "opam",
-  "or",                             # fish builtin
+  "or", # fish builtin
   "ouch",
   "pacaur",
-  "pacmatic",                       # installed w/ pacmatic
+  "pacmatic", # installed w/ pacmatic
   "pactree",
-  "path",                           # fish builtin
+  "path", # fish builtin
   "pkgfile",
-  "powerpill",                      # installed w/ powerpill
-  "prevd",                          # fish standard
-  "psub",                           # fish standard
+  "powerpill", # installed w/ powerpill
+  "prevd", # fish standard
+  "psub", # fish standard
   "rbenv",
-  "rc-service",                     # installed w/ openrc
-  "rc-status",                      # installed w/ openrc
-  "rc-update",                      # installed w/ openrc
-  "resolvectl",                     # installed w/ systemd
-  "run0",                           # installed w/ systemd
-  "set_color",                      # fish builtin
-  "sfdx",                           # salesforce cli, weird completion script
+  "rc-service", # installed w/ openrc
+  "rc-status", # installed w/ openrc
+  "rc-update", # installed w/ openrc
+  "resolvectl", # installed w/ systemd
+  "run0", # installed w/ systemd
+  "set_color", # fish builtin
+  "sfdx", # salesforce cli, weird completion script
   "snap",
   "snapper",
-  "string",                         # fish builtin
-  "systemd-analyze",                # installed w/ systemd
-  "systemd-ask-password",           # installed w/ systemd
-  "systemd-cat",                    # installed w/ systemd
-  "systemd-cgls",                   # installed w/ systemd
-  "systemd-cgtop",                  # installed w/ systemd
-  "systemd-delta",                  # installed w/ systemd
-  "systemd-detect-virt",            # installed w/ systemd
-  "systemd-inhibit",                # installed w/ systemd
-  "systemd-machine-id-setup",       # installed w/ systemd
-  "systemd-notify",                 # installed w/ systemd
-  "systemd-nspawn",                 # installed w/ systemd
-  "systemd-path",                   # installed w/ systemd
-  "systemd-resolve",                # installed w/ systemd
-  "systemd-run",                    # installed w/ systemd
-  "systemd-tmpfiles",               # installed w/ systemd
+  "string", # fish builtin
+  "systemd-analyze", # installed w/ systemd
+  "systemd-ask-password", # installed w/ systemd
+  "systemd-cat", # installed w/ systemd
+  "systemd-cgls", # installed w/ systemd
+  "systemd-cgtop", # installed w/ systemd
+  "systemd-delta", # installed w/ systemd
+  "systemd-detect-virt", # installed w/ systemd
+  "systemd-inhibit", # installed w/ systemd
+  "systemd-machine-id-setup", # installed w/ systemd
+  "systemd-notify", # installed w/ systemd
+  "systemd-nspawn", # installed w/ systemd
+  "systemd-path", # installed w/ systemd
+  "systemd-resolve", # installed w/ systemd
+  "systemd-run", # installed w/ systemd
+  "systemd-tmpfiles", # installed w/ systemd
   "systemd-tty-ask-password-agent", # installed w/ systemd
   "timedatectl",
   "tmuxinator",
   "toot",
   "typst",
-  "udevadm",                        # installed w/ systemd
-  "udisksctl",                      # installed w/ udisks2
-  "varlinkctl",                     # installed w/ systemd
-  "wpctl",                          # installed w/ wireplumber
+  "udevadm", # installed w/ systemd
+  "udisksctl", # installed w/ udisks2
+  "varlinkctl", # installed w/ systemd
+  "wpctl", # installed w/ wireplumber
   "xbps-alternatives",
   "xbps-checkvers",
   "xbps-create",
