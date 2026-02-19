@@ -1,3 +1,4 @@
+# tombi: format.rules.table-keys-order = 'ascending'
 [settings.shell.pwsh.completers]
 ast-grep = 'ast-grep completions powershell'
 atuin = 'atuin gen-completions --shell powershell'

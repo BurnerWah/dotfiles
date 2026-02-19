@@ -1,4 +1,5 @@
 [settings.homebrew.forbiddden]
+# tombi: format.rules.array-values-order = 'ascending'
 cask = [
   '5ire', # ai
   'ace-studio', # ai
@@ -304,6 +305,7 @@ cask = [
   'zo', # ai
   'zoo-design-studio', # ai
 ]
+# tombi: format.rules.array-values-order = 'ascending'
 formula = [
   'agent-browser', # ai
   'aiac', # ai
@@ -547,6 +549,7 @@ formula = [
 # These are mostly forbidden to prevent unexpected from-source builds.
 # If it needs to be built from source, do that another way.
 # If it's python, use `uv tool`
+# tombi: format.rules.array-values-order = 'ascending'
 linux = [
   'cmake',
   'dbus',
@@ -563,6 +566,7 @@ linux = [
   'ruby',
   'systemd',
 ]
+# tombi: format.rules.array-values-order = 'ascending'
 tap = [
   'AdoptOpenJDK/openjdk', # deprecated
   'aquaproj/aqua', # aqua is in homebrew/core

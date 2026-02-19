@@ -1,3 +1,4 @@
+# tombi: format.rules.table-keys-order = 'ascending'
 [settings.shell.common.abbrev]
 asdf = 'mise'
 batp = 'bat -p'

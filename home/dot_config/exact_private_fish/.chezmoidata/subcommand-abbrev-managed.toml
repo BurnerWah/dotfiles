@@ -1,3 +1,4 @@
+# tombi: format.rules.table-keys-order = "ascending"
 [settings.shell.fish.subcommand_abbrevs]
 apptainer.b = "build"
 apptainer.sh = "shell"

@@ -1,4 +1,5 @@
 [settings.shell.fish.wsl]
+# tombi: format.rules.array-values-order = 'ascending'
 path_remove = [
   '/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common',
   '/mnt/c/Program Files (x86)/Paragon Software/APFS for Windows/',
