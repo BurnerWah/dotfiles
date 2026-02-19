@@ -1,4 +1,4 @@
-"$schema" = 'https://starship.rs/config-schema.json'
+"$schema" = "https://starship.rs/config-schema.json"
 add_newline = false
 format = """
 $username\
@@ -79,7 +79,7 @@ format = "[[](#0d482b)$symbol($version)]($style)[](#0d482b) "
 [directory]
 read_only = " 󰌾"
 fish_style_pwd_dir_length = 1
-truncation_symbol = '…/'
+truncation_symbol = "…/"
 
 [docker_context]
 symbol = "󰡨 "
