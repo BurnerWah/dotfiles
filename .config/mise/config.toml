@@ -38,7 +38,10 @@ run = "deno task format:prettier"
 description = "Format code with Prettier"
 
 [tasks."format:ruff"]
-run = "ruff format"
+usage = '''
+arg "[files]" var=#true
+'''
+run = "ruff format ${usage_files}"
 description = "Format Python code with Ruff"
 
 [tasks."format:stylua"]
@@ -55,6 +58,7 @@ arg "[files]" var=#true
 '''
 run = "tombi format ${usage_files}"
 description = "Format TOML files with Tombi"
+wait_for = ["format:taplo"]
 
 # This task could be removed once there's a URL I can feasibly use for Lima's Schema
 [tasks."generate:lima-schema"]
@@ -92,7 +96,10 @@ run = "ripsecrets --strict-ignore"
 description = "Check git repo for secrets"
 
 [tasks."lint:ruff"]
-run = "ruff check"
+usage = '''
+arg "[files]" var=#true
+'''
+run = "ruff check ${usage_files}"
 description = "Lint Python code with Ruff"
 
 [tasks."lint:stylua"]
@@ -104,7 +111,10 @@ run = "taplo lint"
 description = "Lint TOML files with Taplo"
 
 [tasks."lint:tombi"]
-run = "tombi lint"
+usage = '''
+arg "[files]" var=#true
+'''
+run = "tombi lint ${usage_files}"
 description = "Lint TOML files with Tombi"
 
 [tasks."update:nvim-plugins"]
