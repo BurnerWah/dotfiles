@@ -1,0 +1,5 @@
+.config/topiary/queries/nu.scm:
+  type: file
+  url: https://github.com/blindFS/topiary-nushell/raw/refs/heads/main/queries/nu.scm
+  refreshPeriod: 744h
+  readonly: true

@@ -73,6 +73,16 @@ pre-commit:
             glob: ['*.toml']
             exclude: symlink_*
 
+          - name: topiary
+            run: topiary check-grammar {staged_files}
+            glob: ['*.desktop']
+            exclude: symlink_*
+            skip:
+              - run: test "$OS" == "Windows_NT"
+              - run: '! command -v topiary'
+            tags:
+              - windows-incompatible
+
     - name: Formatting
       group:
         parallel: true
@@ -142,7 +152,7 @@ pre-commit:
 
           - name: topiary
             run: topiary format {staged_files}
-            glob: ['*.ncl', '*.scm']
+            glob: ['*.ncl', '*.scm', '*.nu']
             stage_fixed: true
             exclude: symlink_*
             skip:
