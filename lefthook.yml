@@ -140,6 +140,17 @@ pre-commit:
             exclude: symlink_*
             stage_fixed: true
 
+          - name: topiary
+            run: topiary format {staged_files}
+            glob: ['*.ncl', '*.scm']
+            stage_fixed: true
+            exclude: symlink_*
+            skip:
+              - run: test "$OS" == "Windows_NT"
+              - run: '! command -v topiary'
+            tags:
+              - windows-incompatible
+
 pre-push:
   parallel: true
   commands:
