@@ -348,6 +348,7 @@ carapace = [
   "git-clear-soft",
   "git-coauthor",
   "git-extras",
+  "git-flow",
   "git-info",
   "git-lfs",
   "git-pages-cli",

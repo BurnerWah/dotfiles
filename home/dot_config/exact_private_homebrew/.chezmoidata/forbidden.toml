@@ -55,6 +55,8 @@ cask = [
   'cityofzion-neon', # cryptocurrency
   'claude', # ai
   'claude-code', # ai
+  'claude-devtools', # ai
+  'claude-island', # ai
   'claudebar', # ai
   'cmd', # ai
   'codebolt', # ai
