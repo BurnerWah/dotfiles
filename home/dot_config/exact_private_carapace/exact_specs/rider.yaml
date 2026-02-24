@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: rider
-description: Rider CLI
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.CarapaceBin([idea])']

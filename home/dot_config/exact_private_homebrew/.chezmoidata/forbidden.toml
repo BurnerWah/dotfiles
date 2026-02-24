@@ -405,12 +405,14 @@ formula = [
   'imagemagick', # use imagemagick-full
   'ioctl', # cryptocurrency
   'ipget', # cryptocurrency
+  'ironclaw', # ai
   'k8sgpt', # ai
   'kagent', # ai
   'kimi-cli', # ai
   'kubectl-ai', # ai
   'kubernetes-mcp-server', # ai
   'kuzco', # ai
+  'letta-code', # ai
   'lexido', # ai
   'libbitcoin-blockchain', # cryptocurrency
   'libbitcoin-client', # cryptocurrency
@@ -426,6 +428,7 @@ formula = [
   'lighthouse', # cryptocurrency
   'litecli', # ai
   'llm', # ai
+  'llmfit', # ai
   'localai', # ai
   'mallet', # ai
   'mcp-atlassian', # ai
@@ -458,6 +461,7 @@ formula = [
   'nixfmt', # nix
   'nixpacks', # nix
   'notion-mcp-server', # ai
+  'nullclaw', # ai
   'oasis', # cryptocurrency
   'ollama', # ai
   'omnara', # ai
@@ -550,6 +554,7 @@ formula = [
   'xmrig', # cryptocurrency
   'yek', # ai
   'yutu', # ai
+  'zeptoclaw', # ai
   'zeroclaw', # ai
 ]
 # These are mostly forbidden to prevent unexpected from-source builds.

@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: goland
-description: GoLand CLI
-parsing: disabled
-completion:
-  positionalany: ['$carapace.bridge.CarapaceBin([idea])']
