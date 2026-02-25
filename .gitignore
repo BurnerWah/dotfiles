@@ -443,7 +443,6 @@ xcuserdata/
 
 /mise.local.toml
 /.config/lefthook-local.*
-/.config/.lefthook-local
 
 /.ansible
 
