@@ -1,22 +1,24 @@
-minimumLimaVersion: '2.0.0'
+minimumLimaVersion: 2.0.0
 
 images:
-  - location: 'https://download.fedoraproject.org/pub/fedora/linux/releases/42/Cloud/x86_64/images/Fedora-Cloud-Base-Generic-42-1.1.x86_64.qcow2'
+  - location: 'https://download.fedoraproject.org/pub/fedora/linux/releases/43/Cloud/x86_64/images/Fedora-Cloud-Base-Generic-43-1.6.x86_64.qcow2'
     arch: 'x86_64'
-    digest: 'sha256:e401a4db2e5e04d1967b6729774faa96da629bcf3ba90b67d8d9cce9906bec0f'
-  - location: 'https://download.fedoraproject.org/pub/fedora/linux/releases/42/Cloud/aarch64/images/Fedora-Cloud-Base-Generic-42-1.1.aarch64.qcow2'
+    digest: 'sha256:846574c8a97cd2d8dc1f231062d73107cc85cbbbda56335e264a46e3a6c8ab2f'
+  - location: 'https://download.fedoraproject.org/pub/fedora/linux/releases/43/Cloud/aarch64/images/Fedora-Cloud-Base-Generic-43-1.6.aarch64.qcow2'
     arch: 'aarch64'
-    digest: 'sha256:e10658419a8d50231037dc781c3155aa94180a8c7a74e5cac2a6b09eaa9342b7'
+    digest: 'sha256:66031aea9ec61e6d0d5bba12b9454e80ca94e8a79c913d37ded4c60311705b8b'
 
 mounts:
   - location: '~'
-  - location: /tmp/lima
+  - location: '{{.GlobalTempDir}}/lima'
+    mountPoint: /tmp/lima
     writable: true
-
-mountTypesUnsupported: [9p]
 
 memory: 4GiB
 disk: 100GiB
+
+ssh:
+  overVsock: false # bugged on f43 rn
 
 vmOpts:
   vz:
@@ -27,24 +29,24 @@ vmOpts:
 networks:
   - vzNAT: true
 
-audio:
-  device: vz
+# audio:
+#   device: vz
 
 # Enabling video causes a GUI window to show up
 
-portForwards:
-  # from template://podman
-  - guestSocket: '/run/user/{{.UID}}/podman/podman.sock'
-    hostSocket: '{{.Dir}}/sock/podman.sock'
-  # from template://buildkit
-  - guestSocket: '/run/user/{{.UID}}/buildkit-default/buildkitd.sock'
-    hostSocket: '{{.Dir}}/sock/buildkitd.sock'
+# portForwards:
+#   # from template://podman
+#   - guestSocket: '/run/user/{{.UID}}/podman/podman.sock'
+#     hostSocket: '{{.Dir}}/sock/podman.sock'
+#   # from template://buildkit
+#   - guestSocket: '/run/user/{{.UID}}/buildkit-default/buildkitd.sock'
+#     hostSocket: '{{.Dir}}/sock/buildkitd.sock'
 
-  # Host's 1Password SSH agent
-  # Turning on `ssh.forwardAgent` generally doesn't forward this
-  - guestSocket: '/run/user/{{.UID}}/host-services/op-ssh.sock'
-    hostSocket: '{{.Home}}/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock'
-    reverse: true
+#   # Host's 1Password SSH agent
+#   # Turning on `ssh.forwardAgent` generally doesn't forward this
+#   - guestSocket: '/run/user/{{.UID}}/host-services/op-ssh.sock'
+#     hostSocket: '{{.Home}}/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock'
+#     reverse: true
 
 # Don't configure the user's shell in here, it stops lima from ever initializing
 

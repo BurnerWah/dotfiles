@@ -1,36 +1,45 @@
-minimumLimaVersion: '1.0.2'
+minimumLimaVersion: 2.0.0
 
 images:
   # Try to use release-yyyyMMdd image if available. Note that release-yyyyMMdd will be removed after several months.
-  - location: 'https://cloud-images.ubuntu.com/releases/oracular/release-20250305/ubuntu-24.10-server-cloudimg-amd64.img'
+  - location: 'https://cloud-images.ubuntu.com/releases/questing/release-20251212/ubuntu-25.10-server-cloudimg-amd64.img'
     arch: 'x86_64'
-    digest: 'sha256:c2c3ed89097c5f5c90ebbe45216d1569e3ea2d3c8d0993eeae74f859f6467cdb'
-  - location: 'https://cloud-images.ubuntu.com/releases/oracular/release-20250305/ubuntu-24.10-server-cloudimg-arm64.img'
+    digest: 'sha256:3d0977875af04e32a0eb176d73e7164df18cd774a8e0a51605584627490837a1'
+  - location: 'https://cloud-images.ubuntu.com/releases/questing/release-20251212/ubuntu-25.10-server-cloudimg-arm64.img'
     arch: 'aarch64'
-    digest: 'sha256:9d8e0c98858d53866117d5c701a554a9d2434bedffec1c0ab7253691bfd2c70e'
-  - location: 'https://cloud-images.ubuntu.com/releases/oracular/release-20250305/ubuntu-24.10-server-cloudimg-riscv64.img'
+    digest: 'sha256:ec93c8acae3e7630daf723e31716703639417d86b87eb6962f3a0003d1045c15'
+  - location: 'https://cloud-images.ubuntu.com/releases/questing/release-20251212/ubuntu-25.10-server-cloudimg-riscv64.img'
     arch: 'riscv64'
-    digest: 'sha256:be6109cfed964a2b745330681f7ec5b9ddc45bb180f41837b6e3969b4be9e8b5'
-  - location: 'https://cloud-images.ubuntu.com/releases/oracular/release-20250305/ubuntu-24.10-server-cloudimg-armhf.img'
+    digest: 'sha256:7dd6b84ff53fe5ba4bff54ff8f3dc9c201db95eca47f84cf6c54ca040dcbe33c'
+  - location: 'https://cloud-images.ubuntu.com/releases/questing/release-20251212/ubuntu-25.10-server-cloudimg-armhf.img'
     arch: 'armv7l'
-    digest: 'sha256:8f3a22d7392512b56ffbcbf30d4f5df0805b7d515f08fb86c5a8f87405ca7f02'
+    digest: 'sha256:6f869eda5ef8b5bdc6b042efd0c3253feb7f82f157d15ad08f2964ab94266a70'
+  - location: 'https://cloud-images.ubuntu.com/releases/questing/release-20251212/ubuntu-25.10-server-cloudimg-s390x.img'
+    arch: 's390x'
+    digest: 'sha256:459d6909ec1e6b1154bbd82abd7da7b7d0ad7226079cc7cb8215158d0f14856e'
+  - location: 'https://cloud-images.ubuntu.com/releases/questing/release-20251212/ubuntu-25.10-server-cloudimg-ppc64el.img'
+    arch: 'ppc64le'
+    digest: 'sha256:2dff4c9468ddaa57089188c7e50649bf6f6fdbbe853af083bf5d3a0f10cdbba9'
   # Fallback to the latest release image.
   # Hint: run `limactl prune` to invalidate the cache
-  - location: 'https://cloud-images.ubuntu.com/releases/oracular/release/ubuntu-24.10-server-cloudimg-amd64.img'
-    arch: 'x86_64'
-  - location: 'https://cloud-images.ubuntu.com/releases/oracular/release/ubuntu-24.10-server-cloudimg-arm64.img'
-    arch: 'aarch64'
-  - location: 'https://cloud-images.ubuntu.com/releases/oracular/release/ubuntu-24.10-server-cloudimg-riscv64.img'
-    arch: 'riscv64'
-  - location: 'https://cloud-images.ubuntu.com/releases/oracular/release/ubuntu-24.10-server-cloudimg-armhf.img'
-    arch: 'armv7l'
+  - location: https://cloud-images.ubuntu.com/releases/questing/release/ubuntu-25.10-server-cloudimg-amd64.img
+    arch: x86_64
+  - location: https://cloud-images.ubuntu.com/releases/questing/release/ubuntu-25.10-server-cloudimg-arm64.img
+    arch: aarch64
+  - location: https://cloud-images.ubuntu.com/releases/questing/release/ubuntu-25.10-server-cloudimg-riscv64.img
+    arch: riscv64
+  - location: https://cloud-images.ubuntu.com/releases/questing/release/ubuntu-25.10-server-cloudimg-armhf.img
+    arch: armv7l
+  - location: https://cloud-images.ubuntu.com/releases/questing/release/ubuntu-25.10-server-cloudimg-s390x.img
+    arch: s390x
+  - location: https://cloud-images.ubuntu.com/releases/questing/release/ubuntu-25.10-server-cloudimg-ppc64el.img
+    arch: ppc64le
 
 mounts:
   - location: '~'
-  - location: /tmp/lima
+  - location: '{{.GlobalTempDir}}/lima'
+    mountPoint: /tmp/lima
     writable: true
-
-mountTypesUnsupported: [9p]
 
 memory: 4GiB
 

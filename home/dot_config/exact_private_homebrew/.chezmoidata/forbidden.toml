@@ -375,7 +375,7 @@ formula = [
   'fabric-ai', # ai
   'fades', # use `uv run`
   'fastmcp', # ai
-  'ffmpeg', # use ffmpeg-full
+  'ffmpeg', # use a more competent package manager
   'firefly', # cryptocurrency
   'flow-cli', # cryptocurrency
   'foundry', # cryptocurrency
@@ -402,7 +402,7 @@ formula = [
   'huggingface-cli', # ai
   'hyper-mcp', # ai
   'ignite', # cryptocurrency
-  'imagemagick', # use imagemagick-full
+  'imagemagick', # use a more competent package manager
   'ioctl', # cryptocurrency
   'ipget', # cryptocurrency
   'ironclaw', # ai
