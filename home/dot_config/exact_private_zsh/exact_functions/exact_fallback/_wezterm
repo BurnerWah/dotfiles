@@ -1,3 +1,0 @@
-#compdef wezterm
-# shellcheck disable=SC1090
-source <(wezterm shell-completion --shell zsh)

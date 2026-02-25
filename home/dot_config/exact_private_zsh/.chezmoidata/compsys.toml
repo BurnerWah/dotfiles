@@ -61,6 +61,7 @@ carapace = [
   "astro",
   "atmos",
   "atool",
+  "atuin",
   "aunpack",
   "autoconf",
   "avdmanager",

@@ -1,3 +1,0 @@
-#compdef apptainer singularity=apptainer
-# shellcheck disable=SC1090
-source <(apptainer completion zsh)

@@ -1,3 +1,0 @@
-#compdef atuin
-# shellcheck disable=SC1090
-source <(atuin gen-completions --shell zsh)

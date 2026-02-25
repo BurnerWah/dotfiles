@@ -474,6 +474,7 @@ formula = [
   'oterm', # ai
   'oxen', # ai
   'patchpal', # ai
+  'pi-coding-agent', # ai
   'picoclaw', # ai
   'playwright-mcp', # ai
   'plz-cli', # ai

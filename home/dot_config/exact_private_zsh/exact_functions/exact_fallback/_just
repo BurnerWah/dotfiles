@@ -1,3 +1,0 @@
-#compdef just
-# shellcheck disable=SC1090
-source <(just --completions zsh)

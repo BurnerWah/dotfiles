@@ -1,3 +1,0 @@
-#compdef starship
-# shellcheck disable=SC1090
-source <(starship completions zsh)

@@ -1,3 +1,0 @@
-#compdef exercism
-# shellcheck disable=SC1090
-source <(exercism completion zsh)

@@ -1,3 +1,0 @@
-#compdef op
-# shellcheck disable=SC1090
-source <(op completion zsh)

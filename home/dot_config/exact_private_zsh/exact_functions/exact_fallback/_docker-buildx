@@ -1,3 +1,0 @@
-#compdef docker-buildx
-# shellcheck disable=SC1090
-source <(docker-buildx completion zsh)

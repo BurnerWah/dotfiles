@@ -1,3 +1,0 @@
-#compdef watchexec
-# shellcheck disable=SC1090
-source <(watchexec --completions zsh)

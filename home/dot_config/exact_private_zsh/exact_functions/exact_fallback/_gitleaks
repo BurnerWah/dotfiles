@@ -1,3 +1,0 @@
-#compdef gitleaks
-# shellcheck disable=SC1090
-source <(gitleaks completion zsh)

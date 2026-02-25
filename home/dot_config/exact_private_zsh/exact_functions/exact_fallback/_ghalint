@@ -1,3 +1,0 @@
-#compdef ghalint
-# shellcheck disable=SC1090
-source <(ghalint completion zsh)
