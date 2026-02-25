@@ -78,28 +78,32 @@ $RECYCLE.BIN/
 # End of https://www.toptal.com/developers/gitignore/api/windows,macos,linux
 
 # Mise local config files should never be included in git
+# keep-sorted start
+/.config/mise.local.toml
 /.config/mise/config.local.toml
 /.config/mise/mise.local.toml
-/.config/mise.local.toml
+/.mise.local.toml
 /.mise/config.local.toml
-/mise/config.local.toml
 /.rtx.local.toml
 /mise.local.toml
-/.mise.local.toml
+/mise/config.local.toml
+# keep-sorted end
 
 # Lefthook local configs
-/lefthook-local.yml
-/lefthook-local.yaml
-/lefthook-local.json
-/lefthook-local.jsonc
-/lefthook-local.toml
-/.lefthook-local.yml
-/.lefthook-local.yaml
-/.lefthook-local.json
-/.lefthook-local.jsonc
-/.lefthook-local.toml
-/.config/lefthook-local.yml
-/.config/lefthook-local.yaml
+# keep-sorted start
 /.config/lefthook-local.json
 /.config/lefthook-local.jsonc
 /.config/lefthook-local.toml
+/.config/lefthook-local.yaml
+/.config/lefthook-local.yml
+/.lefthook-local.json
+/.lefthook-local.jsonc
+/.lefthook-local.toml
+/.lefthook-local.yaml
+/.lefthook-local.yml
+/lefthook-local.json
+/lefthook-local.jsonc
+/lefthook-local.toml
+/lefthook-local.yaml
+/lefthook-local.yml
+# keep-sorted end
