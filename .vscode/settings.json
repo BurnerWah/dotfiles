@@ -89,38 +89,12 @@
     "/opt/homebrew/opt/xonsh/libexec/lib/python3.14/site-packages",
   ],
   "yaml.schemas": {
-    "./schemas/chezmoi/config.yaml": ["home/.chezmoi.yaml.tmpl"],
-    "./schemas/chezmoi/data.yaml": [
-      "**/.chezmoidata.yaml",
-      "**/.chezmoidata/**/*",
-    ],
-    "./schemas/chezmoi/externals.yaml": ["home/.chezmoiexternals/**/*"],
-    "./schemas/vendor/lima.json": [
-      "home/dot_config/private_lima/*/lima.yaml",
-      "home/dot_config/private_lima/*/lima.yaml.tmpl",
-    ],
-    "https://carapace.sh/schemas/command.json": [
-      "home/dot_config/*_carapace/exact_specs/*.yaml",
-      "home/dot_config/*_carapace/exact_specs/*.yaml.tmpl",
-      "home/dot_config/*_carapace/exact_overlays/*.yaml",
-      "home/dot_config/*_carapace/exact_overlays/*.yaml.tmpl",
-    ],
-    "https://github.com/evilmartians/lefthook/raw/refs/heads/master/schema.json": [
-      ".lefthook-local.yaml",
-      ".lefthook-local.yml",
-      ".lefthook.yaml",
-      ".lefthook.yml",
-      "lefthook-local.yaml",
-      "lefthook-local.yml",
-      "lefthook.yaml",
-      "lefthook.yml",
-    ],
-    "https://github.com/sharkdp/vivid/raw/refs/heads/master/schemas/filetypes.json": [
-      "home/dot_config/vivid/filetypes.yml",
-      "home/dot_config/vivid/filetypes.yml.tmpl",
-    ],
-    "https://github.com/sharkdp/vivid/raw/refs/heads/master/schemas/theme.json": [
-      "home/dot_config/vivid/themes/*",
-    ],
+    "./schemas/chezmoi/config.yaml": "home/.chezmoi.yaml.tmpl",
+    "./schemas/chezmoi/data.yaml": "**/{.chezmoidata.yaml,.chezmoidata/**/*}",
+    "./schemas/chezmoi/externals.yaml": "home/.chezmoiexternals/**/*",
+    "./schemas/vendor/lima.json": "home/dot_config/private_lima/*/lima.yaml{,.tmpl}",
+    "https://carapace.sh/schemas/command.json": "home/dot_config/*_carapace/*_{specs,overlays}/*.yaml{,.tmpl}",
+    "https://github.com/sharkdp/vivid/raw/refs/heads/master/schemas/filetypes.json": "home/dot_config/vivid/filetypes.yml{,.tmpl}",
+    "https://github.com/sharkdp/vivid/raw/refs/heads/master/schemas/theme.json": "home/dot_config/vivid/themes/*",
   },
 }
