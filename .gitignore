@@ -442,8 +442,8 @@ xcuserdata/
 /.config/mise/config.local.toml
 
 /mise.local.toml
-/lefthook-local.*
-/.lefthook-local
+/.config/lefthook-local.*
+/.config/.lefthook-local
 
 /.ansible
 
