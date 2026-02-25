@@ -1,0 +1,5 @@
+name: git-delete-tag
+description: Delete tags
+completion:
+  positionalany:
+    - $carapace.tools.git.Tags

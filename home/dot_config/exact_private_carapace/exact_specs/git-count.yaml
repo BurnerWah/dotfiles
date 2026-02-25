@@ -1,0 +1,4 @@
+name: git-count
+description: Show commit count
+flags:
+  --all: Show commit count details

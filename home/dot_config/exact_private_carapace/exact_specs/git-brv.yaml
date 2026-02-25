@@ -1,0 +1,4 @@
+name: git-brv
+description: List branches sorted by their last commit date
+flags:
+  -r, --reverse: Reverses the output to put the most recent branch at the bottom of the list

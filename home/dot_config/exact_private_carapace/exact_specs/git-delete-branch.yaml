@@ -1,0 +1,5 @@
+name: git-delete-branch
+description: Delete branches
+completion:
+  positionalany:
+    - $carapace.tools.git.LocalBranches

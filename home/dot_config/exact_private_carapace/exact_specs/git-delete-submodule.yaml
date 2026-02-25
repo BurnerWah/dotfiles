@@ -1,0 +1,5 @@
+name: git-delete-submodule
+description: Delete submodules
+completion:
+  positional:
+    - - $carapace.tools.git.SubmoduleNames # i think this works?

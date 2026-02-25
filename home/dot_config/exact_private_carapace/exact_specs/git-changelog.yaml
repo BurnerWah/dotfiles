@@ -1,0 +1,26 @@
+name: git-changelog
+description: Generate a changelog report
+flags:
+  -a, --all: Retrieve all commits
+  -l, --list: Show commits in list format (without titles, dates)
+  -t, --tag=: Specify a tag label to use for most-recent (untagged) commits
+  -f, --final-tag=: When specifying a range, the newest tag at which point commit retrieval will end
+  -s, --start-tag=: When specifying a range, the oldest tag to retrieve commits from
+  --start-commit=: Like the --start-tag but specify the oldest commit instead of tag
+  -n, --no-merges: Filters out merge commits (commits with more than 1 parent) from generated changelog
+  -m, --merges-only: Uses only merge commits (commits with more than 1 parent) for generated changelog
+  -p, --prune-old: Replace existing changelog entirely with newly generated content
+  -x, --stdout: Write output to stdout instead of to a new changelog file
+  -h, --help: Show a help message with basic usage information
+exclusiveflags:
+  - [all, start-tag, start-commit]
+  - [all, final-tag]
+  - [no-merges, merges-only]
+completion:
+  positional:
+    - - $files
+  flag:
+    tag: [$carapace.tools.git.Tags]
+    start-tag: [$carapace.tools.git.Tags]
+    final-tag: [$carapace.tools.git.Tags]
+    start-commit: [$carapace.tools.git.RecentCommits(50)]

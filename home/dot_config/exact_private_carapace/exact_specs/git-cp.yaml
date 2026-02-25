@@ -1,0 +1,6 @@
+name: git-cp
+description: Copy a file keeping its history
+completion:
+  positional:
+    - - $files
+    - - $files

@@ -1,0 +1,6 @@
+name: git-graft
+description: Merge and destroy a given branch
+completion:
+  positional:
+    - - $carapace.tools.git.LocalBranches
+    - - $carapace.tools.git.LocalBranches
