@@ -1,5 +1,10 @@
 minimumLimaVersion: 2.0.0
 
+# Known issues to workaround:
+# - Setting the user's shell in here prevents the VM from initializing
+# - Provisioning sucks, use chezmoi
+# - Enabling video causes a GUI window to show up
+
 images:
   - location: 'https://download.fedoraproject.org/pub/fedora/linux/releases/43/Cloud/x86_64/images/Fedora-Cloud-Base-Generic-43-1.6.x86_64.qcow2'
     arch: 'x86_64'
@@ -14,41 +19,30 @@ mounts:
     mountPoint: /tmp/lima
     writable: true
 
-memory: 4GiB
+# memory: 4GiB
 disk: 100GiB
 
 ssh:
   overVsock: false # bugged on f43 rn
 
-vmOpts:
-  vz:
-    rosetta:
-      enabled: true
-      binfmt: true
+# vmOpts:
+#   vz:
+#     rosetta:
+#       enabled: true
+#       binfmt: true
 
 networks:
   - vzNAT: true
 
-# audio:
-#   device: vz
-
-# Enabling video causes a GUI window to show up
-
-# portForwards:
-#   # from template://podman
-#   - guestSocket: '/run/user/{{.UID}}/podman/podman.sock'
-#     hostSocket: '{{.Dir}}/sock/podman.sock'
-#   # from template://buildkit
-#   - guestSocket: '/run/user/{{.UID}}/buildkit-default/buildkitd.sock'
-#     hostSocket: '{{.Dir}}/sock/buildkitd.sock'
-
-#   # Host's 1Password SSH agent
-#   # Turning on `ssh.forwardAgent` generally doesn't forward this
-#   - guestSocket: '/run/user/{{.UID}}/host-services/op-ssh.sock'
-#     hostSocket: '{{.Home}}/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock'
-#     reverse: true
-
-# Don't configure the user's shell in here, it stops lima from ever initializing
-
-upgradePackages: true
-# Provision in chezmoi
+portForwards:
+  # from template://podman
+  - guestSocket: '/run/user/{{.UID}}/podman/podman.sock'
+    hostSocket: '{{.Dir}}/sock/podman.sock'
+  # from template://buildkit
+  - guestSocket: '/run/user/{{.UID}}/buildkit-default/buildkitd.sock'
+    hostSocket: '{{.Dir}}/sock/buildkitd.sock'
+  # Host's 1Password SSH agent
+  # Turning on `ssh.forwardAgent` generally doesn't forward this
+  - guestSocket: '/run/user/{{.UID}}/host-services/op-ssh.sock'
+    hostSocket: '{{.Home}}/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock'
+    reverse: true

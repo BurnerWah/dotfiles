@@ -11,9 +11,9 @@
 # instead of /var etc.
 paths:
   # socketVMNet requires Lima >= 0.12 .
-  socketVMNet: /opt/local/bin/socket_vmnet # from macports
+  # socketVMNet: /opt/local/bin/socket_vmnet # from macports
   varRun: /private/var/run/lima
-  sudoers: /private/etc/sudoers.d/lima
+  # sudoers: /private/etc/sudoers.d/lima
 
 group: everyone
 

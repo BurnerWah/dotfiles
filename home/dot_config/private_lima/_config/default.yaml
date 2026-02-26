@@ -9,3 +9,6 @@ disk: 60GiB # Manually set it to 100GiB for non-utility VMs
 networks:
   # configuring vzNAT here *at all* will prevent the creation of qemu VMs entirely
   - lima: user-v2
+
+# upgradePackages causes VMs to fail to fully boot or time out
+upgradePackages: false

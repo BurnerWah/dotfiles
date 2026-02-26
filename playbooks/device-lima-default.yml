@@ -13,16 +13,8 @@
       loop:
         # keep-sorted start case=no
         - atim/starship
-        - lihaohong/chezmoi
+        - jdxcode/mise
         # keep-sorted end
-
-    - name: Add mise dnf repo
-      become: true
-      ansible.builtin.get_url:
-        url: https://mise.jdx.dev/rpm/mise.repo
-        dest: /etc/yum.repos.d/mise.repo
-        mode: '0644'
-        checksum: sha256:0feedc30bb4f5faa705bae31b0c3ade63bc42260ee3aca576156cb84a0c26c00
 
     - name: Install RPM Fusion
       become: true
@@ -38,15 +30,16 @@
       ansible.builtin.dnf5:
         name:
           # keep-sorted start case=no
-          - '@smb-server' # Mac OS likes this more than NFS
-          - '@standard' # nbd mounting?
-          - apptainer
+          # - '@smb-server' # Mac OS likes this more than NFS
+          # - '@standard' # nbd mounting?
+          # - apptainer
           - avahi # Gives the host a hostname to connect to this with
           - bat
           - btop
           - bubblewrap
-          - chezmoi # copr:lihaohong/chezmoi
+          - chezmoi
           - fd-find
+          - ffmpeg
           - fish
           - fzf
           - git
@@ -54,40 +47,41 @@
           - git-lfs
           - grc
           - hyperfine
-          - kernel-modules
-          - kernel-modules-extra
+          - ImageMagick
+          # - kernel-modules
+          # - kernel-modules-extra
           - kitty-shell-integration
           - kitty-terminfo
-          - mise # mise.repo
+          - mise # copr:jdxcode/mise
           - most
-          - nbd
+          # - nbd
           - PackageKit-command-not-found
           - ripgrep
           - sqlite
           - starship # copr:atim/starship
-          - udisks2 # nbd mounting?
+          # - udisks2 # nbd mounting?
           - zsh
           # keep-sorted end
         state: present
 
-    - name: Disable unwanted services
-      become: true
-      ansible.builtin.systemd_service:
-        name: '{{ item }}'
-        enabled: false
-        state: stopped
-      loop:
-        # keep-sorted start
-        - abrt-journal-core
-        - abrt-oops
-        - abrt-vmcore
-        - abrt-xorg
-        - abrtd
-        - atd
-        - crond
-        - plocate-updatedb.timer
-        - rsyslog
-        # keep-sorted end
+    # - name: Disable unwanted services
+    #   become: true
+    #   ansible.builtin.systemd_service:
+    #     name: '{{ item }}'
+    #     enabled: false
+    #     state: stopped
+    #   loop:
+    #     # keep-sorted start
+    #     - abrt-journal-core
+    #     - abrt-oops
+    #     - abrt-vmcore
+    #     - abrt-xorg
+    #     - abrtd
+    #     - atd
+    #     - crond
+    #     - plocate-updatedb.timer
+    #     - rsyslog
+    #     # keep-sorted end
 
     - name: Enable avahi
       become: true

@@ -6,7 +6,6 @@ shared = [
   ".config/carapace/bridge/bash",
   ".config/carapace/bridge/fish",
   ".config/carapace/bridge/powershell",
-  ".config/carapace/bridges.yaml",
   ".config/carapace/overlays",
   ".config/carapace/specs",
   ".config/carapace/styles.json",

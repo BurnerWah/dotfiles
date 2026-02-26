@@ -1,5 +1,7 @@
 minimumLimaVersion: 2.0.0
 
+# vzNAT isn't working in ubuntu
+
 images:
   # Try to use release-yyyyMMdd image if available. Note that release-yyyyMMdd will be removed after several months.
   - location: 'https://cloud-images.ubuntu.com/releases/questing/release-20251212/ubuntu-25.10-server-cloudimg-amd64.img'
@@ -46,7 +48,3 @@ memory: 4GiB
 containerd:
   system: false
   user: false
-
-# vzNAT isn't working in ubuntu
-
-upgradePackages: true
