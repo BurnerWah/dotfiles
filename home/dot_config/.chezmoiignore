@@ -89,6 +89,7 @@
 /carapace/bridge/fish
 /carapace/bridge/powershell
 /carapace/bridges.yaml
+/carapace/choices
 /carapace/overlays
 /carapace/specs
 /carapace/styles.json
