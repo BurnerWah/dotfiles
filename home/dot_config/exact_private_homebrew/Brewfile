@@ -99,13 +99,11 @@ brew "uv" if OS.mac? # Python package manager
 brew "viu" # terminal image viewer
 brew "vivid" # LS_COLORS generator
 brew "watchman" if OS.mac?
-brew "whalebrew"
 brew "xonsh" if OS.mac?
 brew "xz" if OS.mac?
 brew "ykman" if OS.mac? # YubiKey manager
 brew "yt-dlp" if OS.mac?
 brew "yubikey-agent", restart_service: true if OS.mac? # SSH Agent for YubiKeys
-brew "zellij" if OS.mac? # tmux alternative
 brew "zenith" # Another htop thing
 brew "zoxide" if OS.mac? # directory jumping
 
