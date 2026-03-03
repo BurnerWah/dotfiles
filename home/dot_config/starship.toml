@@ -215,6 +215,7 @@ style = "bold fg:#bbc2ff bg:#211a65"
 format = "[[](#211a65)$symbol($version)]($style)[](#211a65) "
 detect_files = [".lua-version", ".luarc.json", "!systemctl"]
 detect_extensions = ["lua", "rockspec"]
+detect_folders = ["lua", "!lua@5.4"]
 
 [memory_usage]
 # nf-md-memory

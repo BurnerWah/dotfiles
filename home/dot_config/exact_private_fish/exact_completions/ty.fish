@@ -1,0 +1,1 @@
+__fish_cache_sourced_completions ty generate-shell-completion fish
