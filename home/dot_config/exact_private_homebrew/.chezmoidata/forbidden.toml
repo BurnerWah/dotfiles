@@ -59,6 +59,7 @@ cask = [
   'claude-island', # ai
   'claudebar', # ai
   'cmd', # ai
+  'cmux', # ai
   'codebolt', # ai
   'codebuddy', # ai
   'codebuddy-cn', # ai
@@ -148,6 +149,7 @@ cask = [
   'itermai', # ai
   'jamie', # ai
   'jan', # ai
+  'kameleo', # ai
   'katrain', # ai
   'kimi', # ai
   'kiro', # ai
@@ -497,6 +499,7 @@ formula = [
   'shimmy', # ai
   'shortest', # ai
   'shpotify', # spotify
+  'skills', # ai
   'slack-mcp-server', # ai
   'slither-analyzer', # cryptocurrency, leaf dependency
   'solana', # cryptocurrency
@@ -548,6 +551,7 @@ formula = [
   'wassette', # ai
   'worktrunk', # ai
   'wownero', # cryptocurrency
+  'x-cli', # fascism
   'xcsift', # ai
   'xgboost', # ai
   'xgo', # ai

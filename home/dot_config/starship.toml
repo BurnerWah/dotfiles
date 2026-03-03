@@ -363,12 +363,14 @@ version_format = "${raw}"
 detect_variables = ["RUBY_VERSION", "RBENV_VERSION", "MISE_RUBY_VERSION"]
 style = "bold fg:#e64747 bg:#2f0c0b"
 format = "[[](#2f0c0b)$symbol($version)]($style)[](#2f0c0b) "
+detect_files = ["Gemfile", ".ruby-version", "!brew"]
 
 [rust]
 symbol = " "
 version_format = "${raw}"
 style = "bold fg:#f19e2e bg:#2e1b10"
 format = "[[](#2e1b10)$symbol($version)]($style)[](#2e1b10) "
+detect_files = ["Cargo.toml", "!brew"]
 
 [shell]
 disabled = true
