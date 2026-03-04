@@ -29,7 +29,6 @@ pre-commit:
             run: ansible-lint --fix {staged_files}
             glob:
               - playbooks/*.yml
-              - home/dot_config/private_lima/private_*/playbook.yaml
             exclude: symlink_*
             stage_fixed: true
             skip:
@@ -43,7 +42,9 @@ pre-commit:
           - name: ruff
             run: mise x -- ruff check --fix {staged_files}
             glob: ['*.py']
-            exclude: symlink_*
+            exclude:
+              - symlink_*
+              - home/dot_config/*_zsh/*_functions/* # Some zsh completions get included without this
             stage_fixed: true
 
           - name: yamllint
@@ -118,7 +119,10 @@ pre-commit:
           - name: fish_indent
             run: fish_indent -w {staged_files}
             glob: ['*.fish', '*.fish.tmpl']
-            exclude: symlink_*
+            exclude:
+              - symlink_*
+              - home/dot_config/*_fish/*_completions/chezmoi.fish.tmpl
+              - home/dot_config/*_fish/*_conf.d/readonly_99-abbr.fish.tmpl # Remove whenever this template is redone
             stage_fixed: true
             skip:
               - run: test "$OS" == "Windows_NT"
@@ -129,7 +133,9 @@ pre-commit:
           - name: ruff
             run: mise x -- ruff format {staged_files}
             glob: ['*.py']
-            exclude: symlink_*
+            exclude:
+              - symlink_*
+              - home/dot_config/*_zsh/*_functions/* # Some zsh completions get included without this
             stage_fixed: true
 
           - name: stylua
