@@ -1,0 +1,99 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: erd
+description: erdtree (erd) is a cross-platform, multi-threaded, and general purpose filesystem and disk usage utility.
+flags:
+  -C, --color=: Mode of coloring output
+  --completions=: Print completions for a given shell to stdout
+  -c, --config=: Use configuration of named table rather than the top-level table in .erdtree.toml
+  --dir-order=: Sort directories before or after all other file types
+  --dirs-only: Only print directories
+  -d, --disk-usage=: Print physical or logical file size
+  -t, --file-type=: Restrict regex or glob search to a particular file-type
+  -f, --follow: Follow symlinks
+  --glob: Enables glob based searching
+  --group: Show file's groups
+  -h, --help: Print help (see more with '--help')
+  -., --hidden: Show hidden files
+  -H, --human: Print disk usage in human-readable format
+  -I, --icons: Display file icons
+  --iglob: Enables case-insensitive glob based searching
+  --ino: Show each file's ino
+  -y, --layout=: Which kind of layout to use when rendering the output
+  -L, --level=: Maximum depth to display
+  -l, --long: Show extended metadata and attributes
+  --nlink: Show the total number of hardlinks to the underlying inode
+  --no-config: Don't read configuration file
+  --no-git: Disable traversal of .git directory when traversing hidden files
+  -i, --no-ignore: Do not respect .gitignore files
+  --no-progress: Hides the progress indicator
+  --octal: Show permissions in numeric octal format instead of symbolic
+  -x, --one-file-system: Prevent traversal into directories that are on different filesystems
+  -p, --pattern=: Regular expression (or glob if '--glob' or '--iglob' is used) used to match files
+  -P, --prune: Remove empty directories from output
+  -s, --sort=: How to sort entries
+  --suppress-size: Omit disk usage from output
+  -T, --threads=: Number of threads to use
+  --time=: Which kind of timestamp to use; modified by default
+  --time-format=: Which format to use for the timestamp; default by default
+  --truncate: Truncate output to fit terminal emulator window
+  -u, --unit=: Report disk usage in binary or SI units
+  -V, --version: Print version
+documentation:
+  flag:
+    help: Print help (see a summary with '-h')
+completion:
+  positional:
+    - - $directories
+  flag:
+    color:
+      - "none\tPrint plainly without ANSI escapes"
+      - "auto\tAttempt to colorize output"
+      - "force\tTurn on colorization always"
+    completions:
+      - bash
+      - elvish
+      - fish
+      - powershell
+      - zsh
+    dir-order:
+      - "none\tDirectories are ordered as if they were regular nodes"
+      - "first\tSort directories above files"
+      - "last\tSort directories below files"
+    disk-usage:
+      - "logical\tHow many bytes does a file contain"
+      - "physical\tHow many actual bytes on disk, taking into account blocks, sparse files, and compression"
+      - "line\tHow many total lines a file contains"
+      - "word\tHow many total words a file contains"
+      - "block\tHow many blocks are allocated to store the file"
+    file-type:
+      - "file\tA regular file"
+      - "dir\tA directory"
+      - "link\tA symlink"
+    layout:
+      - "regular\tOutputs the tree with the root node at the bottom of the output"
+      - "inverted\tOutputs the tree with the root node at the top of the output"
+      - "flat\tOutputs a flat layout using paths rather than an ASCII tree"
+      - "iflat\tOutputs an inverted flat layout with the root at the top of the output"
+    sort:
+      - "name\tSort entries by file name in lexicographical order"
+      - "rname\tSort entries by file name in reversed lexicographical order"
+      - "size\tSort entries by size smallest to largest, top to bottom"
+      - "rsize\tSort entries by size largest to smallest, bottom to top"
+      - "access\tSort entries by newer to older Accessing Date"
+      - "raccess\tSort entries by older to newer Accessing Date"
+      - "create\tSort entries by newer to older Creation Date"
+      - "rcreate\tSort entries by older to newer Creation Date"
+      - "mod\tSort entries by newer to older Alteration Date"
+      - "rmod\tSort entries by older to newer Alteration Date"
+    time:
+      - "create\tTime created (alias: ctime)"
+      - "access\tTime last accessed (alias: atime)"
+      - "mod\tTime last modified (alias: mtime)"
+    time-format:
+      - "iso\tTimestamp formatted following the iso8601, with slight differences and the time-zone omitted"
+      - "iso-strict\tTimestamp formatted following the exact iso8601 specifications"
+      - "short\tTimestamp only shows date without time in YYYY-MM-DD format"
+      - "default\tTimestamp is shown in DD MMM HH:MM format"
+    unit:
+      - "bin\tDisplays disk usage using binary prefixes"
+      - "si\tDisplays disk usage using SI prefixes"

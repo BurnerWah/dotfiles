@@ -1,8 +1,8 @@
 # Generic script to use carapace if possible, but fall back on fish's built-in
 # completion scripts for a given command
-set -l cmd (status basename | string replace .fish '')
+set -l cmd (status basename | path change-extension '')
 if command -q carapace
-    carapace $cmd fish | source
+    complete -c $cmd -f -a "(_carapace_completer $cmd)"
 else
     # @fish-lsp-disable-next-line 1004
     source $__fish_data_dir/completions/{$cmd}.fish

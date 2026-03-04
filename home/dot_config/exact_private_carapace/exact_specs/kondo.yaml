@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: kondo
+description: Kondo recursively cleans project directories
+flags:
+  -a, --all: Clean all found projects without confirmation
+  --completions=: Generates completions for the specified shell
+  -d, --default: If there is no input, defaults to yes
+  -n, --dry-run: Only list the directories that would be cleaned, without actually cleaning them
+  -L, --follow-symlinks: Follow symbolic links
+  -h, --help: Print help (see more with '--help')
+  -I, --ignored-dirs=*: Directories to ignore. Will also prevent recursive traversal within
+  -o, --older=: 'Only directories with a file last modified n units of time ago will be looked at. Ex: 20d. Units are m: minutes, h: hours, d: days, w: weeks, M: months and y: years'
+  -q, --quiet*: Quiet mode. Won't output to the terminal. -qq prevents all output
+  -s, --same-filesystem: Restrict directory traversal to the root filesystem
+  --single-key: Accept one-letter input without waiting for the Enter key
+documentation:
+  command: |-
+    Kondo recursively cleans project directories.
+
+    Supported project types: Cargo, Node, Unity, SBT, Haskell Stack, Maven, Unreal Engine, Jupyter Notebook, Python, Jupyter Notebooks, CMake, Composer, Pub, Elixir, Swift, Gradle, and .NET projects.
+  flag:
+    help: Print help (see a summary with '-h')
+completion:
+  positionalany:
+    - $directories
+  flag:
+    completions:
+      - bash
+      - elvish
+      - fish
+      - powershell
+      - zsh
+    ignored-dirs:
+      - $directories

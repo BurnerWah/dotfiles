@@ -1,0 +1,41 @@
+name: git-trim
+description: Automatically trims your tracking branches whose upstream branches are merged or stray
+flags:
+  -b, --bases=: Comma separated multiple names of branches
+  --base=: Comma separated multiple names of branches
+  -p, --protected=: Comma separated multiple glob patterns (e.g. `release-*`, `feature/*`) of branches that should never be deleted
+  --no-update: Do not update remotes
+  --update&: ''
+  --update-interval=: Prevents too frequent updates. Seconds between updates in seconds. 0 to disable. # [default: 5]
+  --no-confirm: Do not ask confirm
+  --confirm&: ''
+  --no-detach: Do not detach when HEAD is about to be deleted
+  --detach&: ''
+  -d, --delete=: Comma separated values of `<delete range>[:<remote name>]`
+  --dry-run: Do not delete branches, show what branches will be deleted
+  -h, --help: Print help information (use `--help` for more detail)
+  -V, --version: Print version information
+
+exclusiveflags:
+  - [update, no-update]
+  - [confirm, no-confirm]
+  - [detach, no-detach]
+  - [bases, base]
+
+completion:
+  flag:
+    bases: &bases
+      - $carapace.tools.git.LocalBranches
+      - $uniquelist(,)
+    base: *bases
+    # This might be wrong
+    delete:
+      - $carapace.tools.git.Remotes ||| $prefix(merged:)
+      - merged-local
+      - $carapace.tools.git.Remotes ||| $prefix(merged-remote:)
+      - stray
+      - $carapace.tools.git.Remotes ||| $prefix(diverged:)
+      - local
+      - $carapace.tools.git.Remotes ||| $prefix(remote:)
+      - $multiparts([':'])
+      - $uniquelist(,)

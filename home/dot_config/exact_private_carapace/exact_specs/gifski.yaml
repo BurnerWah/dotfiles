@@ -1,0 +1,34 @@
+name: gifski
+description: Highest-quality GIF encoder based on pngquant
+flags:
+  -o, --output=!: Destination file to write to
+  -r, --fps=: Frame rate of animation # [default: 20]
+  --fast-forward=: Multiply speed of video by a factor # [default: 1]
+  --fast: 50% faster encoding, but 10% worse quality and larger file size
+  --extra: 50% slower encoding, but 1% better quality and usually larger file size
+  -Q, --quality=: Lower quality may give smaller file # [default: 90]
+  --motion-quality=: Lower values reduce motion
+  --lossy-quality=: Lower values introduce noise and streaks
+  -W, --width=: Maximum width. By default anims are limited to about 800x600
+  -H, --height=: Maximum height (stretches if the width is also set)
+  -q, --quiet: Do not display anything on standard output/console
+  --repeat=: Number of times the animation is repeated (-1 none, 0 forever or <value> repetitions)
+  --matte=: Background color for semitransparent pixels
+  -h, --help: Print help (see more with '--help')
+  -V, --version: Print version
+
+  --no-sort: Use files exactly in the order given, rather than sorted
+  --bounce: Make animation play forwards then backwards
+  --fixed-color=*: Always include this color in the palette
+  --y4m-color-override=: The color space of the input YUV4MPEG2 video
+exclusiveflags:
+  - [fast, extra]
+completion:
+  positionalany:
+    - $files
+  flag:
+    output: ['$files([.gif])']
+    quality: ['$carapace.number.Range({start: 1, end: 100})', "90\tdefault"]
+    motion-quality: ['$carapace.number.Range({start: 1, end: 100})']
+    lossy-quality: ['$carapace.number.Range({start: 1, end: 100})']
+    y4m-color-override: [bt709, fcc, bt470bg, bt601, smpte240, ycgco]

@@ -1,3 +1,0 @@
-#compdef erd
-# shellcheck disable=SC1090
-source <(erd --completions zsh)

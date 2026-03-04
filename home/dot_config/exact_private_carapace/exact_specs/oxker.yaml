@@ -1,0 +1,25 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: oxker
+description: A simple tui to view & control docker containers
+flags:
+  -c: Attempt to colorize the logs, conflicts with "-r"
+  --config-file=: Path to a config file, readable as TOML, JSONC, or JSON
+  -d=: Docker update interval in ms, minimum effectively 1000
+  -g: Don't draw gui - for debugging - mostly pointless
+  -h, --help: Print help
+  --host=: Docker host, defaults to `/var/run/docker.sock`
+  --no-stderr: Do not include stderr output in logs
+  -r: Show raw logs, default is to remove ansi formatting, conflicts with "-c"
+  -s: Show self when running as a docker container
+  --save-dir=: Directory for saving exported logs, defaults to `$HOME`
+  -t: Remove timestamps from Docker logs
+  --timezone=: Display the container logs timestamp with a given timezone, default is UTC
+  --use-cli: Force use of docker cli when execing into containers
+  -V, --version: Print version
+exclusiveflags:
+  - [c, r]
+completion:
+  flag:
+    config-file: ['$files([.json, .jsonc, .toml])']
+    host: [$files]
+    save-dir: [$directories]
