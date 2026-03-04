@@ -2,13 +2,11 @@
 //MISE dir="{{cwd}}"
 //MISE description="Fix carapace choice templates for shells"
 //USAGE arg "<files>" var=#true
-//USAGE flag "-p --preview"
+//USAGE flag "--preview"
 
 const SD_REPLACEMENT_TEMPLATE = `{{- if ne .chezmoi.os "windows" -}}
 $1
 {{- end }}`
-
-const files = Deno.env.get('usage_files') ?? ''
 
 const command = new Deno.Command('sd', {
   args: [
@@ -17,7 +15,7 @@ const command = new Deno.Command('sd', {
     '--across',
     '\\A([\\w+-]+/(?:fish|bash|zsh)@bridge)$',
     SD_REPLACEMENT_TEMPLATE,
-    ...files.split(' '),
+    ...Deno.args.filter((arg) => arg !== '--preview'),
   ],
   stdin: 'null',
   stdout: 'inherit',
