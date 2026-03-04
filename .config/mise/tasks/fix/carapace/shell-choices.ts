@@ -1,6 +1,7 @@
 #!/usr/bin/env -S deno run --allow-env --allow-run
 //MISE dir="{{cwd}}"
 //MISE description="Fix carapace choice templates for shells"
+//MISE tools={sd="latest"}
 //USAGE arg "<files>" var=#true
 //USAGE flag "--preview"
 
