@@ -1,0 +1,15 @@
+name: xzdec
+description: Decompress files in the .xz format to standard output
+flags:
+  -q, --quiet: specify *twice* to suppress errors
+  -h, --help: display this help and exit
+  -V, --version: display the version number and exit
+
+  -d, --decompress&: ignored
+  -k, --keep&: ignored
+  -c, --stdout&: ignored
+  -Q, --no-warn&: ignored
+
+completion:
+  positionalany:
+    - $files([.xz, .txz])

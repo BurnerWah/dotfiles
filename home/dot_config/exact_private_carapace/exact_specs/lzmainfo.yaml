@@ -1,0 +1,9 @@
+name: lzmainfo
+description: Decompress files in the .lzma format to standard output
+flags:
+  -h, --help: display this help and exit
+  -V, --version: display the version number and exit
+
+completion:
+  positionalany:
+    - $files([.lzma, .tlz])
