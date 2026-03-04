@@ -844,6 +844,7 @@ carapace = [
   "supervisord",
   "svg-term",
   "svgcleaner",
+  "svgo",
   "sway",
   "swaybar",
   "swaybg",

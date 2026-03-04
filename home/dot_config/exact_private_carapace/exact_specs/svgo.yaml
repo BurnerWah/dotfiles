@@ -1,0 +1,40 @@
+name: svgo
+description: Node.js tool for optimizing SVG files
+flags:
+  -v, --version: output the version number
+  -i, --input=:
+    description: Input files, "-" for STDIN
+    nargs: -1
+  -s, --string=: Input SVG data string
+  -f, --folder=: Input folder, optimize and rewrite all *.svg files
+  -o, --output=:
+    description: Output file or folder (by default the same as the input), "-" for STDOUT
+    nargs: -1
+  -p, --precision=: Set number of digits in the fractional part, overrides plugins params
+  --config=: Custom config file, only .js, .mjs, and .cjs is supported
+  --datauri=: Output as Data URI string (base64), URI encoded (enc) or unencoded (unenc)
+  --multipass: Pass over SVGs multiple times to ensure all optimizations are applied
+  --pretty: Make SVG pretty printed
+  --indent=: Indent number when pretty printing SVGs
+  --eol=: Line break to use when outputting SVG. If unspecified, uses platform default.
+  --final-newline: Ensure SVG ends with a line break
+  -r, --recursive: Use with '--folder'. Optimizes *.svg files in folders recursively.
+  --exclude=:
+    description: Use with '--folder'. Exclude files matching regular expression pattern.
+    nargs: -1
+  -q, --quiet: Only output error messages, not regular status messages
+  --show-plugins: Show available plugins and exit
+  --no-color: Output plain text without color
+  -h, --help: display help for command
+
+completion:
+  positionalany:
+    - $files([.svg])
+  flag:
+    input: ['$files([.svg])']
+    folder: [$directories]
+    output: ['$files([.svg])']
+    precision: ['$carapace.number.Range({start: 0, end: 20})']
+    config: ['$files([.js, .mjs, .cjs])']
+    datauri: [base64, enc, unenc]
+    eol: [lf, crlf]

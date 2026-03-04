@@ -2,7 +2,6 @@
 [settings.shell.pwsh.completers]
 ab-av1 = 'ab-av1 print-completions powershell'
 ast-grep = 'ast-grep completions powershell'
-atuin = 'atuin gen-completions --shell powershell'
 bcachefs = 'bcachefs completions powershell'
 bws = 'bws completions powershell'
 dotnet = 'dotnet completions script pwsh'

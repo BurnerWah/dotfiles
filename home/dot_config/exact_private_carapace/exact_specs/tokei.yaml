@@ -4,24 +4,24 @@ description: |-
   Count your code, quickly.
   Support this project on GitHub Sponsors: https://github.com/sponsors/XAMPPRocky
 flags:
-  -c, --columns=: Sets a strict column width of the output, only available for terminal output.
-  -C, --compact: Do not print statistics about embedded languages.
-  -e, --exclude=*: Ignore all files & directories matching the pattern.
-  -f, --files: Will print out statistics on individual files.
+  -c, --columns=: Sets a strict column width of the output, only available for terminal output
+  -C, --compact: Do not print statistics about embedded languages
+  -e, --exclude=*: Ignore all files & directories matching the pattern
+  -f, --files: Will print out statistics on individual files
   -h, --help: Print help
-  --hidden: Count hidden files.
+  --hidden: Count hidden files
   -i, --input=: Gives statistics from a previous tokei run. # Can be given a file path, or "stdin" to read from stdin.
-  -l, --languages: Prints out supported languages and their extensions.
+  -l, --languages: Prints out supported languages and their extensions
   --no-ignore: Don't respect ignore files (.gitignore, .ignore, etc.). # This implies --no-ignore-parent, --no-ignore-dot, and --no-ignore-vcs.
   --no-ignore-dot: Don't respect .ignore and .tokeignore files, including those in parent directories.
   --no-ignore-parent: Don't respect ignore files (.gitignore, .ignore, etc.) in parent directories.
   --no-ignore-vcs: Don't respect VCS ignore files (.gitignore, .hgignore, etc.) including those in parent directories.
-  -n, --num-format=: Format of printed numbers, i.e., plain (1234, default), commas (1,234), dots (1.234), or underscores (1_234). # Cannot be used with --output.
-  -o, --output=: Outputs Tokei in a specific format. Compile with additional features for more format support.
+  -n, --num-format=: Format of printed numbers
+  -o, --output=: Outputs Tokei in a specific format. # Compile with additional features for more format support.
   -r, --rsort=: Reverse sort languages based on column
   -s, --sort=: Sort languages based on column
   --streaming=: prints the (language, path, lines, blanks, code, comments) records as simple lines or as Json for batch processing
-  -t, --types=*: Filters output by language type, separated by a comma. i.e. -t=Rust,Markdown
+  -t, --types=*: Filters output by language type, separated by a comma
   -v, --verbose*: Set log output level
   -V, --version: Print version
 exclusiveflags:
@@ -34,10 +34,10 @@ completion:
     - $files
   flag:
     num-format:
-      - commas
-      - dots
-      - plain
-      - underscores
+      - "commas\t1,234"
+      - "dots\t1.234"
+      - "plain\t1234 (default)"
+      - "underscores\t1_234"
     rsort:
       - files
       - lines
@@ -55,7 +55,12 @@ completion:
       - json
     input: [$files]
     exclude: [$files]
-    output: [json, cbor, yaml]
-    types: #
+    output:
+      # depends on the build of tokei, but can be detected with `tokei --version`
+      - json
+      - cbor
+      - yaml
+    types: # This is kinda annoying to parse
       - $(tokei --languages | rg --only-matching --replace '$1' '^┃ (.+?)  +')
+      - $filter([Language])
       - $uniquelist(,)

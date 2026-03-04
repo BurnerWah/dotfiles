@@ -2,7 +2,6 @@
 [settings.shell.elvish.completers]
 ab-av1 = 'ab-av1 print-completions elvish'
 ast-grep = 'ast-grep completions elvish'
-atuin = 'atuin gen-completions --shell elvish'
 bcachefs = 'bcachefs completions elvish'
 bws = 'bws completions elvish'
 chezmoi_modify_manager = 'chezmoi_modify_manager --bpaf-complete-style-elvish'
