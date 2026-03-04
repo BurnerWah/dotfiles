@@ -84,6 +84,21 @@ pre-commit:
             tags:
               - windows-incompatible
 
+          - name: carapace choices
+            group:
+              jobs:
+                - name: fix:carapace:shell-choices
+                  run: mise run fix:carapace:shell-choices {staged_files}
+                  glob:
+                    - home/dot_config/*_carapace/*_choices/*.tmpl
+                  stage_fixed: true
+
+                - name: fix:carapace:inshellisense-choices
+                  run: mise run fix:carapace:inshellisense-choices {staged_files}
+                  glob:
+                    - home/dot_config/*_carapace/*_choices/*.tmpl
+                  stage_fixed: true
+
     - name: Formatting
       group:
         parallel: true
