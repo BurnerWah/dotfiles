@@ -1,0 +1,3 @@
+#compdef wormhole-rs
+# shellcheck disable=SC1090
+source <(wormhole-rs completion zsh)

@@ -1,0 +1,6 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: dx
+description: Execute a binary from npm or jsr, like npx
+parsing: disabled
+completion:
+  positionalany: ['$carapace.bridge.CarapaceBin([deno, x])']

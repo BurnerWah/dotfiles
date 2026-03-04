@@ -1,0 +1,1 @@
+__fish_cache_sourced_completions wormhole-rs completion fish

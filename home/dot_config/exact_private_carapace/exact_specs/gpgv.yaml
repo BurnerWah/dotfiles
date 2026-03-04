@@ -1,0 +1,42 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: gpgv
+description: Verify OpenPGP signatures
+# A full list of options without descriptions can be obtained by running
+# `gpgv --dump-options`, or with `gpgv --dump-option-table` for a more
+# parsable format.
+# This is also not really complete.
+flags:
+  # From --help
+  -v, --verbose: verbose
+  -q, --quiet: be somewhat more quiet
+  --keyring=: take the keys from the keyring FILE
+  -o, --output=: write output to FILE
+  --ignore-time-conflict: make timestamp conflicts only a warning
+  --status-fd=: write status info to this FD
+  --weak-digest=: reject signatures made with ALGO
+
+  # From manual, hidden intentionally
+  --logger-fd=&: Write log output to file descriptor n and not to stderr
+  --log-file=&: Same as --logger-fd, except the logger data is written to file file
+  --homedir=&: Set the name of the home directory to dir
+  --enable-special-filenames&: |-
+    This option enables a mode in which filenames of the form '-&n', where n is a non-negative
+    decimal number, refer to the file descriptor n and not to a file with that name.
+  --assert-pubkey-algo=&: This option works in the same way as described for gpg
+  # Not in Manual
+  --help: display usage information
+  --version: print info on program version and supported algorithms
+  --dump-options&: ''
+  --dump-option-table&: ''
+
+  # From zsh completions, hidden due to potental non-existence
+  -e, --encrypt&: encrypt data
+  -d, --decrypt&: decrypt data (default)
+  -c, --symmetric&: encryption only with symmetric cipher
+  -s, --sign&: make a signature
+  -r, --recipient=&: encrypt for USER-ID
+  -u, --local-user=&: use USER-ID to sign or decrypt
+
+completion:
+  positionalany:
+    - $files
