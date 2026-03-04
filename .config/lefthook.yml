@@ -84,6 +84,11 @@ pre-commit:
             tags:
               - windows-incompatible
 
+          - name: deno lint
+            run: mise x -- deno lint {staged_files}
+            glob: ['*.ts', '*.js']
+            exclude: symlink_*
+
           - name: carapace choices
             group:
               jobs:
