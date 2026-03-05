@@ -4,3 +4,4 @@
 /pnpm-lock.yaml
 /schemas/vendor/*
 /deno.lock
+*.ncl

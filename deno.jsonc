@@ -11,9 +11,22 @@
   },
   "permissions": {
     "prettier": {
-      "env": true,
+      "env": {
+        "allow": true,
+        "ignore": [
+          "ATUIN_SESSION",
+          "CARAPACE_EXCLUDES",
+          "KITTY_PID",
+          "KITTY_PUBLIC_KEY",
+          "KITTY_WINDOW_ID",
+          "LS_COLORS",
+          "STARSHIP_SESSION_KEY",
+          "WINDOWID",
+          "XPC_SERVICE_NAME",
+        ],
+      },
       "sys": true,
-      "read": true,
+      "read": ["."],
       "write": ["node_modules/.cache/prettier", "."],
     },
   },
