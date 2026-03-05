@@ -19,6 +19,7 @@ pre-commit:
               - run: test "$OS" == "Windows_NT"
             tags:
               - windows-incompatible
+            file_types: [text]
 
     - name: Linting
       group:
@@ -29,7 +30,7 @@ pre-commit:
             run: ansible-lint --fix {staged_files}
             glob:
               - playbooks/*.yml
-            exclude: symlink_*
+            exclude: [symlink_*, modify_*, remove_*]
             stage_fixed: true
             skip:
               - run: test "$OS" == "Windows_NT"
@@ -38,29 +39,31 @@ pre-commit:
             tags:
               - windows-incompatible
               - linux-incompatible
+            file_types: [text]
 
           - name: ruff
             run: mise x -- ruff check --fix {staged_files}
             glob: ['*.py']
-            exclude:
-              - symlink_*
-              - home/dot_config/*_zsh/*_functions/* # Some zsh completions get included without this
+            exclude: [symlink_*, remove_*]
             stage_fixed: true
+            file_types: [text]
 
           - name: yamllint
             run: mise x -- yamllint {staged_files}
             glob: ['*.yml', '*.yaml']
             exclude:
-              - home/dot_config/private_lima/private_*/playbook.yaml
               - playbooks/* # Redundant with ansible-lint
               - pnpm-lock.yaml
               - schemas/vendor/*
               - symlink_*
+              - modify_*
+              - remove_*
+            file_types: [text]
 
           - name: desktop-file-validate
             run: desktop-file-validate {staged_files}
             glob: ['*.desktop']
-            exclude: symlink_*
+            exclude: [symlink_*, modify_*, remove_*]
             skip:
               - run: test "$OS" == "Windows_NT"
               - run: test "$(uname)" != "Linux"
@@ -68,28 +71,33 @@ pre-commit:
             tags:
               - windows-incompatible
               - macos-incompatible
+            file_types: [text]
 
           - name: tombi
             run: mise x -- tombi lint {staged_files}
             glob: ['*.toml']
-            exclude: symlink_*
+            exclude: [symlink_*, modify_*, remove_*]
+            file_types: [text]
 
           - name: topiary
             run: topiary check-grammar {staged_files}
             glob: ['*.desktop']
-            exclude: symlink_*
+            exclude: [symlink_*, modify_*, remove_*]
             skip:
               - run: test "$OS" == "Windows_NT"
               - run: '! command -v topiary'
             tags:
               - windows-incompatible
+            file_types: [text]
 
           - name: deno lint
             run: mise x -- deno lint {staged_files}
             glob: ['*.ts', '*.js']
-            exclude: symlink_*
+            exclude: [symlink_*, remove_*]
+            file_types: [text]
 
           - name: carapace choices
+            file_types: [text]
             group:
               jobs:
                 - name: fix:carapace:shell-choices
@@ -134,13 +142,16 @@ pre-commit:
               - deno.lock
               - schemas/vendor/*
               - symlink_*
+              - remove_*
             stage_fixed: true
+            file_types: [text]
 
           - name: fish_indent
             run: fish_indent -w {staged_files}
             glob: ['*.fish', '*.fish.tmpl']
             exclude:
               - symlink_*
+              - remove_*
               - home/dot_config/*_fish/*_completions/chezmoi.fish.tmpl
               - home/dot_config/*_fish/*_conf.d/readonly_99-abbr.fish.tmpl # Remove whenever this template is redone
             stage_fixed: true
@@ -149,32 +160,28 @@ pre-commit:
               - run: '! command -v fish_indent'
             tags:
               - windows-incompatible
+            file_types: [text]
 
           - name: ruff
             run: mise x -- ruff format {staged_files}
             glob: ['*.py']
-            exclude:
-              - symlink_*
-              - home/dot_config/*_zsh/*_functions/* # Some zsh completions get included without this
+            exclude: [symlink_*, remove_*]
             stage_fixed: true
+            file_types: [text]
 
           - name: stylua
             run: mise x -- stylua --respect-ignores {staged_files}
             glob: ['*.lua']
-            exclude: symlink_*
+            exclude: [symlink_*, remove_*]
             stage_fixed: true
-
-          # - name: taplo
-          #   run: mise x -- taplo format {staged_files}
-          #   glob: ['*.toml']
-          #   exclude: symlink_*
-          #   stage_fixed: true
+            file_types: [text]
 
           - name: tombi
             run: mise x -- tombi format {staged_files}
             glob: ['*.toml']
-            exclude: symlink_*
+            exclude: [symlink_*, modify_*, remove_*]
             stage_fixed: true
+            file_types: [text]
 
           - name: topiary
             run: topiary format {staged_files}
@@ -186,6 +193,7 @@ pre-commit:
               - run: '! command -v topiary'
             tags:
               - windows-incompatible
+            file_types: [text]
 
 pre-push:
   parallel: true
