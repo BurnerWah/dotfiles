@@ -97,4 +97,7 @@
     "https://github.com/sharkdp/vivid/raw/refs/heads/master/schemas/filetypes.json": "home/dot_config/vivid/filetypes.yml{,.tmpl}",
     "https://github.com/sharkdp/vivid/raw/refs/heads/master/schemas/theme.json": "home/dot_config/vivid/themes/*",
   },
+  "fish-lsp.initializationOptions": {
+    "fish_lsp_prefer_builtin_fish_commands": true,
+  },
 }

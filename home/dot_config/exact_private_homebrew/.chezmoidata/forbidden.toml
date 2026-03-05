@@ -378,7 +378,6 @@ formula = [
   'fabric-ai', # ai
   'fades', # use `uv run`
   'fastmcp', # ai
-  'ffmpeg', # use a more competent package manager
   'firefly', # cryptocurrency
   'flow-cli', # cryptocurrency
   'foundry', # cryptocurrency

@@ -7,7 +7,7 @@ function dump-fish-completions
             $__fish_data_dir/completions \
             $__fish_config_dir/completions \
             (path filter -d $__fish_vendor_completionsdirs) \
-            -X echo {/.}
+            | path basename --no-extension
 
         echo fish # This is missed somehow
     end | string split ' ' \
