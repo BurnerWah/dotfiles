@@ -1,8 +1,11 @@
 *_environment.d/* eol=lf
+*_environment.d/*.conf text linguist-language=Dotenv
 *_fish/*        eol=lf
 *_homebrew/*    eol=lf
 *_kitty/*       eol=lf
 *_user-tmpfiles.d/* eol=lf
+*_fd/ignore     text linguist-language=Ignore-List
+*_git/ignore    text linguist-language=Ignore-List
 autostart/*     eol=lf
 boxxy/*         eol=lf
 systemd/*       eol=lf

@@ -1,0 +1,6 @@
+*.service.d/*.conf text eol=lf linguist-language=desktop
+*.socket        text eol=lf linguist-language=desktop
+*.socket.d/*.conf text eol=lf linguist-language=desktop
+*.timer         text eol=lf linguist-language=desktop
+*.timer.d/*.conf text eol=lf linguist-language=desktop
+

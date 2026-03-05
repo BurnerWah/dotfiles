@@ -13,8 +13,15 @@
 *.desktop.tmpl  text eol=lf linguist-language=desktop
 *.xsh.tmpl      text eol=lf linguist-language=Xonsh
 *.plist.tmpl    text eol=lf linguist-language=XML-Property-List
+*.gitconfig.tmpl text linguist-language=Git-Config
+
+# Dotfiles
+dot_bashrc      text eol=lf linguist-language=Shell
+dot_zshrc       text eol=lf linguist-language=Shell
+dot_wslconfig   text linguist-language=INI
 
 # Chezmoi files
 *.chezmoiignore text eol=lf linguist-language=Ignore-List
 *.chezmoiremove text eol=lf linguist-language=Ignore-List
-*/symlink_*     text
+symlink_*       text linguist-language=Text
+symlink_*.tmpl  text linguist-language=Go-Template
