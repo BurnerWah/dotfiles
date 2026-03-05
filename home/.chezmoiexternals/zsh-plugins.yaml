@@ -92,5 +92,4 @@
     - '*/src/_pygmentize'
     - '*/src/_rspec'
     - '*/src/_rubocop'
-    - '*/src/_setup.py'
     - '*/src/_shellcheck'
