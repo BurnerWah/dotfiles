@@ -72,7 +72,7 @@ description = "Install project dependencies"
 [tasks."install:lefthook"]
 run = "lefthook install"
 description = "Install git hooks for lefthook"
-sources = ["lefthook.*", "lefthook-local.*"]
+sources = [".config/lefthook.*", ".config/lefthook-local.*"]
 outputs = [".git/hooks/*"]
 
 [tasks."install:npm"]
@@ -82,6 +82,13 @@ description = "Install npm packages with deno"
 [tasks.lint]
 depends = ["lint:*"]
 description = "Lint code"
+
+[tasks."lint:deno"]
+usage = '''
+arg "[files]" var=#true
+'''
+run = "deno lint ${usage_files}"
+description = "Lint JS/TS with Deno"
 
 [tasks."lint:gitleaks"]
 run = "gitleaks git --no-banner"
