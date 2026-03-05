@@ -275,6 +275,7 @@ carapace = [
   "egrep",
   "electron",
   "elvish",
+  "encfs",
   "ente",
   "env",
   "envsubst",
@@ -776,6 +777,7 @@ carapace = [
   "rmmod",
   "rollup",
   "rsync",
+  "ruby-build",
   "rubymine",
   "run0",
   "runme",
@@ -1060,21 +1062,11 @@ carapace = [
 # the .zcompdump file when entering toolbox & distrobox containers
 # tombi: format.rules.array-values-order = "ascending"
 unreachable = [
-  "_carapace_or_builtin", # custom fish completion
-  "abbr",
-  "and", # fish builtin
-  "argparse", # fish builtin
   "asp",
   "aura", # installed w/ aura, could be made external
   "bd",
-  "begin", # fish builtin
-  "block", # fish builtin
   "bootctl", # installed w/ systemd
   "busctl", # installed w/ systemd
-  "cdh", # fish standard
-  "commandline", # fish builtin
-  "complete", # fish builtin
-  "contains", # fish builtin
   "distrobox",
   "distrobox-assemble",
   "distrobox-create",
@@ -1093,55 +1085,38 @@ unreachable = [
   "eix-sync",
   "emaint",
   "emerge",
-  "emit", # fish builtin
   "epkginfo",
   "equery",
   "eselect",
   "firejail",
   "firewall-cmd", # installed w/ firewalld
   "firewall-offline-cmd", # installed w/ firewalld
-  "fish_add_path", # fish standard
-  "fish_config", # fish standard
-  "fish_delta", # fish standard
-  "fish_opt", # fish standard
-  "funced", # fish standard
-  "funcsave", # fish standard
   "hostnamectl", # installed w/ systemd
-  "isatty",
   "kernel-install", # installed w/ systemd
   "lein",
   "llm",
   "loginctl", # installed w/ systemd
   "machinectl", # installed w/ systemd
-  "math", # fish builtin
   "mkinitcpio", # installed w/ mkinitcpio
   "networkctl", # installed w/ systemd
-  "nextd", # fish standard
-  "not", # fish builtin
   "nvme",
   "oomctl", # installed w/ systemd
   "opam",
-  "or", # fish builtin
   "ouch",
   "pacaur",
   "pacmatic", # installed w/ pacmatic
   "pactree",
-  "path", # fish builtin
   "pkgfile",
   "powerpill", # installed w/ powerpill
-  "prevd", # fish standard
-  "psub", # fish standard
   "rbenv",
   "rc-service", # installed w/ openrc
   "rc-status", # installed w/ openrc
   "rc-update", # installed w/ openrc
   "resolvectl", # installed w/ systemd
   "run0", # installed w/ systemd
-  "set_color", # fish builtin
   "sfdx", # salesforce cli, weird completion script
   "snap",
   "snapper",
-  "string", # fish builtin
   "systemd-analyze", # installed w/ systemd
   "systemd-ask-password", # installed w/ systemd
   "systemd-cat", # installed w/ systemd

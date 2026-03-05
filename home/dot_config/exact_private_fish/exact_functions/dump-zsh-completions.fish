@@ -1,4 +1,12 @@
 function dump-zsh-completions
+    set -l zsh_ignore_completions \
+        zsh-mime-handler zstat zpty zsocket zsetattr zdelattr ztodo zlistattr \
+        zgetattr zcalc zargs zln zmv zcp compdef complete-word add-zsh-hook \
+        vcs_info_hookadd vcs_info_hookdel Mail
+    # Most of these are builtins that aren't guaranteed to be loaded initially,
+    # but still make no sense to compare between shells.
+    # `Mail` is here because it screws up analysis on Mac OS.
+
     begin
         set -l zsh_fpath \
             /usr/share/zsh/5.9/functions /usr/share/zsh/site-functions \
@@ -15,8 +23,8 @@ function dump-zsh-completions
     end | string replace '.exe' '' \
         | string match -v '_*' \
         | string match -v 'add-zle-*' \
-        | string match -vr '^(unalias|printf|fc|getopts|hash|Mail)$' \
+        | string match -v 'zf_*' \
+        | string match -vr "^($(zsh -c 'echo ${(k)builtins}' | string split ' ' | string match -r '[a-z]+' | string join '|'))\$" \
+        | string match -vr "^($(string join '|' $zsh_ignore_completions))\$" \
         | sort -u
-    # Mail isn't a builtin, but it does make diffing this with dumped fish
-    # completions annoying so I filtered it out anyways
 end
