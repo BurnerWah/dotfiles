@@ -11,7 +11,7 @@ persistentflags:
 commands:
   - name: help
     description: show help message
-  
+
   - name: list
     description: list currently loaded modules
     flags:
