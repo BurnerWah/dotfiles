@@ -1,4 +1,4 @@
-#!/usr/bin/env -S deno run --allow-env --allow-run
+#!/usr/bin/env -S deno run --allow-env --allow-run=sd
 //MISE dir="{{cwd}}"
 //MISE description="Fix carapace choice templates for inshellisense"
 //MISE tools={sd="latest"}
