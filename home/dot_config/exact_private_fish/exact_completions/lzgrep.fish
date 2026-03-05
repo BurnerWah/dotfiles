@@ -1,2 +1,2 @@
-complete -c xzgrep -w grep
-complete -c xzgrep -xa (_CM_suffixes .lzma .tlz)
+complete -c lzgrep -w grep
+complete -c lzgrep -xa (_CM_suffixes .lzma .tlz)

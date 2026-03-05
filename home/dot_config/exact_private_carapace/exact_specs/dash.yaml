@@ -1,0 +1,44 @@
+name: dash
+description: Debian Almquist Shell
+flags:
+  -a: Export all variables assigned to
+  -c=: execute specified command string
+  -C: Don't overwrite existing files with '>'
+  -e: If not interactive, exit immediately if any untested command fails.
+  -f: Disable pathname expansion.
+  -n: If not interactive, read commands but do not execute them.
+  -u: Exit on unset variables
+  -v: The shell writes its input to standard error as it is read.
+  -x: Write each command to standard error before it is executed.
+  -I: Ignore EOF's from input when interactive.
+  -i: Force the shell to behave interactively.
+  -l: Make dash act as if it had been invoked as a login shell.
+  -m: Turn on job control (set automatically when interactive).
+  -s: Read commands from standard input
+  -V: Enable the built-in vi(1) command line editor
+  -E: Enable the built-in emacs(1) command line editor
+  -b: Enable asynchronous notification of background job completion.
+  -o=*: Set option
+
+exclusiveflags:
+  - [V, E]
+completion:
+  positional:
+    - - $files
+  flag:
+    c: [$carapace.bridge.CarapaceBin ||| $splitp]
+    o:
+      - allexport
+      - noclobber
+      - errexit
+      - noglob
+      - noexec
+      - nounset
+      - verbose
+      - xtrace
+      - ignoreeof
+      - interactive
+      - monitor
+      - stdin
+      - vi
+      - emacs
