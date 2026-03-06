@@ -152,8 +152,6 @@ pre-commit:
             exclude:
               - symlink_*
               - remove_*
-              - home/dot_config/*_fish/*_completions/chezmoi.fish.tmpl
-              - home/dot_config/*_fish/*_conf.d/readonly_99-abbr.fish.tmpl # Remove whenever this template is redone
             stage_fixed: true
             skip:
               - run: test "$OS" == "Windows_NT"
