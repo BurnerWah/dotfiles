@@ -48,6 +48,12 @@ pre-commit:
             stage_fixed: true
             file_types: [text]
 
+          - name: ty
+            run: mise x -- ty check {staged_files}
+            glob: ['*.py']
+            exclude: [symlink_*, remove_*]
+            file_types: [text]
+
           - name: yamllint
             run: mise x -- yamllint {staged_files}
             glob: ['*.yml', '*.yaml']

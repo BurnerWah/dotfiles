@@ -10,6 +10,7 @@ deno = "latest"
 "github:VorpalBlade/chezmoi_modify_manager" = "latest"
 tombi = "latest"
 "github:google/keep-sorted" = "latest"
+ty = "latest"
 
 [tasks.apply]
 run = "chezmoi apply"
@@ -130,6 +131,13 @@ arg "[files]" var=#true
 '''
 run = "tombi lint ${usage_files}"
 description = "Lint TOML files with Tombi"
+
+[tasks."lint:ty"]
+usage = '''
+arg "[files]" var=#true
+'''
+run = "ty check ${usage_files}"
+description = "Type check Python code with Ty"
 
 [tasks."update:nvim-plugins"]
 run = 'nvim --headless "+Lazy! sync" +qa'
