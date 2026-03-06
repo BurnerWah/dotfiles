@@ -1,6 +1,7 @@
-from xonsh.execer import Execer
-from xonsh.built_ins import XSH
 import subprocess
+
+from xonsh.built_ins import XSH
+from xonsh.execer import Execer
 
 execx: Execer = XSH.builtins.execx  # ty:ignore[unresolved-attribute]
 

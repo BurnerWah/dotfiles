@@ -25,6 +25,9 @@ disable = [
 [tool.ruff]
 extend-exclude = ["symlink_*", "remove_*"]
 
+[tool.ruff.lint]
+extend-select = ["I", "W", "C", "PLE", "RUF"]
+
 [tool.ty.src]
 exclude = ["**/symlink_*", "**/remove_*"]
 
