@@ -5,6 +5,10 @@ if (($Host.Name -eq 'ConsoleHost') `
         -and -not ([System.Environment]::GetCommandLineArgs().Contains('-Command'))) {
     # Should be an interactive session
 
+    if (Get-Command mise -ErrorAction SilentlyContinue) {
+        (&mise activate pwsh) | Out-String | Invoke-Expression
+    }
+
     if (Get-Command oh-my-posh -ErrorAction SilentlyContinue) {
         oh-my-posh init pwsh --config jandedobbeleer | Invoke-Expression
     }
