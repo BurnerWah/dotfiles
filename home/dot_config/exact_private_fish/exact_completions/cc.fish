@@ -1,4 +1,4 @@
-switch (uname)
+switch (__fish_uname)
     case Darwin
         complete -c cc -w clang
     case "*"

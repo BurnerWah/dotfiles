@@ -1,7 +1,7 @@
 # chezmoi:template:left-delimiter="# {{" right-delimiter=}}
 # {{ if eq .chezmoi.os "darwin" -}}
 # Prefer uutils or coreutils ln if available, as they have more functionality
-if command -q uln
+if command -q uu-ln
     function ln -w uln -d 'alias ln uu-ln'
         uu-ln $argv
     end
