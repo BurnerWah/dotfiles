@@ -17,5 +17,8 @@
     "yy0931.gitconfig-lsp",
     "denoland.vscode-deno",
     "tombi-toml.tombi",
+    "charliermarsh.ruff",
+    "astral-sh.ty",
+    "hverlin.mise-vscode",
   ],
 }
