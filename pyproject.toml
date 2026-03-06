@@ -1,3 +1,9 @@
+[project]
+name = "chezmoi-config"
+version = "0.1.0"
+requires-python = ">=3.14"
+dependencies = []
+
 [tool.pylint."messages control"]
 disable = [
   # Defaults
@@ -17,4 +23,12 @@ disable = [
 ]
 
 [tool.ruff]
-extend-exclude = ["symlink_*"]
+extend-exclude = ["symlink_*", "remove_*"]
+
+[tool.ty.src]
+exclude = ["**/symlink_*", "**/remove_*"]
+
+[tool.uv.workspace]
+members = [
+  "home/dot_config/private_xonsh",
+]

@@ -1,0 +1,36 @@
+version = 1
+revision = 3
+requires-python = ">=3.14"
+
+[manifest]
+members = [
+    "chezmoi-config",
+    "xonsh-config",
+]
+
+[[package]]
+name = "chezmoi-config"
+version = "0.1.0"
+source = { virtual = "." }
+
+[[package]]
+name = "xonsh"
+version = "0.22.6"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/6f/c8/bbaa8ac73f7fa19d9ae05a19d0ef088ceec675523fcbc138e4b3c6699985/xonsh-0.22.6.tar.gz", hash = "sha256:830df3fd7d403b5efa255b199bc3aecb4357f46964c37d5c4b05b19b69d156bd", size = 828299, upload-time = "2026-03-05T12:19:33.547Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/f8/8c/1ac19702b9e8b1f562d0fae248599efd92872a652819fb31308060240f5a/xonsh-0.22.6-py311-none-any.whl", hash = "sha256:fecd83e33435da96ae819945b847fdf0e4df941bf967acefdefe3f1d9ae0f1ef", size = 654988, upload-time = "2026-03-05T12:19:31.69Z" },
+    { url = "https://files.pythonhosted.org/packages/4f/98/afe7128e033f2d218091630c868f9406fb53910440f9ac83bae810c44063/xonsh-0.22.6-py312-none-any.whl", hash = "sha256:b98e6ec842c64de8139b06a4bef034a2068490823b5685bad6b3f8d37cf80880", size = 654979, upload-time = "2026-03-05T12:19:58.151Z" },
+    { url = "https://files.pythonhosted.org/packages/dc/49/477c8556b284a4034b8d910db0236d3d6f8327e07a63c967fa1cabcbf33d/xonsh-0.22.6-py313-none-any.whl", hash = "sha256:10591d817e838facbde578fcc2bcb686d7a07b0b301f04168338566fdf2348ca", size = 655405, upload-time = "2026-03-05T12:19:43.676Z" },
+]
+
+[[package]]
+name = "xonsh-config"
+version = "0.1.0"
+source = { virtual = "home/dot_config/private_xonsh" }
+dependencies = [
+    { name = "xonsh" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "xonsh", specifier = ">=0.22.6" }]
