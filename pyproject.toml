@@ -28,6 +28,9 @@ extend-exclude = ["symlink_*", "remove_*"]
 [tool.ty.src]
 exclude = ["**/symlink_*", "**/remove_*"]
 
+[tool.ty.environment]
+python = "./.venv"
+
 [tool.uv.workspace]
 members = [
   "home/dot_config/private_xonsh",
