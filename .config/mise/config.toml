@@ -2,7 +2,6 @@
 lefthook = "latest"
 stylua = "latest"
 ruff = "latest"
-taplo = "latest"
 gitleaks = "latest"
 ripsecrets = { version = "latest", os = ["linux", "macos"] }
 node = "latest"
@@ -34,7 +33,10 @@ description = "Format code"
 # fish doesn't need to be installed.
 
 [tasks."format:prettier"]
-run = "deno task format:prettier"
+usage = '''
+arg "[files]" var=#true default="."
+'''
+run = "deno task --quiet prettier --write --cache --ignore-unknown ${usage_files}"
 description = "Format code with Prettier"
 
 [tasks."format:ruff"]
@@ -45,12 +47,11 @@ run = "ruff format ${usage_files}"
 description = "Format Python code with Ruff"
 
 [tasks."format:stylua"]
-run = "stylua --respect-ignores ."
+usage = '''
+arg "[files]" var=#true default="."
+'''
+run = "stylua --respect-ignores ${usage_files}"
 description = "Format Lua code with StyLua"
-
-[tasks."format:taplo"]
-run = "taplo format"
-description = "Format TOML files with Taplo"
 
 [tasks."format:tombi"]
 usage = '''
@@ -64,18 +65,19 @@ wait_for = ["format:taplo"]
 [tasks."generate:lima-schema"]
 run = "limactl generate-jsonschema > schemas/vendor/lima.json"
 description = "Generate JSON schema for lima.yaml files"
+outputs = ["schemas/vendor/lima.json"]
 
-[tasks.install]
-depends = ["install:*"]
+[tasks.postinstall]
+depends = ["postinstall:*"]
 description = "Install project dependencies"
 
-[tasks."install:lefthook"]
+[tasks."postinstall:lefthook"]
 run = "lefthook install"
 description = "Install git hooks for lefthook"
 sources = [".config/lefthook.*", ".config/lefthook-local.*"]
 outputs = [".git/hooks/*"]
 
-[tasks."install:npm"]
+[tasks."postinstall:npm"]
 run = "deno install"
 description = "Install npm packages with deno"
 
@@ -95,11 +97,17 @@ run = "gitleaks git --no-banner"
 description = "Check git repo for secrets"
 
 [tasks."lint:prettier"]
-run = "deno task lint:prettier"
+usage = '''
+arg "[files]" var=#true default="."
+'''
+run = "deno task --quiet prettier --check --cache --ignore-unknown ${usage_files}"
 description = "Lint code formatting with Prettier"
 
 [tasks."lint:ripsecrets"]
-run = "ripsecrets --strict-ignore"
+usage = '''
+arg "[files]" var=#true
+'''
+run = "ripsecrets --strict-ignore ${usage_files}"
 description = "Check git repo for secrets"
 
 [tasks."lint:ruff"]
@@ -110,12 +118,11 @@ run = "ruff check ${usage_files}"
 description = "Lint Python code with Ruff"
 
 [tasks."lint:stylua"]
-run = "stylua --respect-ignores --check ."
+usage = '''
+arg "[files]" var=#true default="."
+'''
+run = "stylua --respect-ignores --check ${usage_files}"
 description = "Lint Lua code formatting with StyLua"
-
-[tasks."lint:taplo"]
-run = "taplo lint"
-description = "Lint TOML files with Taplo"
 
 [tasks."lint:tombi"]
 usage = '''
