@@ -9,7 +9,8 @@ pre-commit:
             run: mise x -- gitleaks git --no-banner --pre-commit --redact --staged --verbose
 
           - name: ripsecrets
-            run: mise x -- ripsecrets --strict-ignore {staged_files}
+            run: mise x -- ripsecrets --strict-ignore -- {staged_files}
+            file_types: text
             skip:
               # With skip run checks, make sure that the first one is the "skip windows" check,
               # as windows takes 10x longer to run things than mac os or linux, and the first
@@ -19,7 +20,6 @@ pre-commit:
               - run: test "$OS" == "Windows_NT"
             tags:
               - windows-incompatible
-            file_types: text
 
     - name: Linting
       group:
@@ -27,11 +27,12 @@ pre-commit:
         jobs:
           # Currently not managed by mise but I'll fix that eventually
           - name: ansible-lint
-            run: ansible-lint --fix {staged_files}
+            run: ansible-lint --fix -- {staged_files}
+            stage_fixed: true
             glob:
               - playbooks/*.yml
             exclude: ['**/symlink_*', '**/modify_*', '**/remove_*']
-            stage_fixed: true
+            file_types: text
             skip:
               - run: test "$OS" == "Windows_NT"
               - run: test "$(uname)" != "Darwin"
@@ -39,20 +40,19 @@ pre-commit:
             tags:
               - windows-incompatible
               - linux-incompatible
-            file_types: text
 
           - name: ruff
-            run: mise x -- ruff check --fix {staged_files}
+            run: mise x -- ruff check --fix -- {staged_files}
+            stage_fixed: true
             glob: ['*.py']
             exclude:
               - '**/symlink_*'
               - '**/remove_*'
               - home/dot_config/*_carapace/*_choices
-            stage_fixed: true
             file_types: text
 
           - name: ty
-            run: mise x -- ty check {staged_files}
+            run: mise x -- ty check -- {staged_files}
             glob: ['*.py']
             exclude:
               - '**/symlink_*'
@@ -61,7 +61,7 @@ pre-commit:
             file_types: text
 
           - name: yamllint
-            run: mise x -- yamllint {staged_files}
+            run: mise x -- yamllint -- {staged_files}
             glob: ['*.yml', '*.yaml']
             exclude:
               - playbooks/* # Redundant with ansible-lint
@@ -74,7 +74,7 @@ pre-commit:
 
           - name: desktop-file-validate
             run: desktop-file-validate {staged_files}
-            glob: ['*.desktop']
+            glob: '*.desktop'
             exclude: ['**/symlink_*', '**/remove_*', '**/modify_*']
             file_types: text
             skip:
@@ -86,32 +86,32 @@ pre-commit:
               - macos-incompatible
 
           - name: tombi
-            run: mise x -- tombi lint {staged_files}
+            run: mise x -- tombi lint -- {staged_files}
             glob: ['*.toml']
-            exclude: ['**/symlink_*', '**/remove_*', '**/modify_*']
+            exclude:
+              - '**/symlink_*'
+              - '**/remove_*'
+              - '**/modify_*'
+              - uv.lock
             file_types: text
 
           - name: topiary
-            run: topiary check-grammar {staged_files}
-            glob: ['*.desktop']
+            run: topiary check-grammar -- {staged_files}
+            glob: ['*.desktop', '*.fish']
             exclude: ['**/symlink_*', '**/remove_*']
+            file_types: text
             skip:
               - run: test "$OS" == "Windows_NT"
               - run: '! command -v topiary'
             tags:
               - windows-incompatible
-            file_types: text
 
           - name: deno lint
-            run: mise x -- deno lint --fix {staged_files}
-            glob:
-              - '*.ts'
-              - '*.tsx'
-              - '*.js'
-              - '*.jsx'
+            run: mise x -- deno lint --fix -- {staged_files}
+            stage_fixed: true
+            glob: ['*.ts', '*.tsx', '*.js', '*.jsx']
             exclude: ['**/symlink_*', '**/remove_*']
             file_types: text
-            stage_fixed: true
 
           - name: carapace choices
             file_types: text
@@ -127,19 +127,32 @@ pre-commit:
                   run: mise run fix:carapace:inshellisense-choices {staged_files}
                   stage_fixed: true
 
+          # This might be able to run in a container
+          - name: systemd-tmpfiles
+            run: systemd-tmpfiles --dry-run --user --create --exclude-prefix=/ -- {staged_files}
+            fail_text: syntax error in systemd tmpfile
+            glob: home/dot_config/*_user-tmpfiles.d/*.conf
+            exclude: ['**/symlink_*', '**/remove_*', '**/modify_*']
+            file_types: text
+            skip:
+              - run: test "$OS" == "Windows_NT"
+              - run: test "$(uname)" != "Linux"
+              - run: '! command -v systemd-tmpfiles'
+            tags:
+              - windows-incompatible
+              - macos-incompatible
+
     - name: Formatting
       group:
         parallel: true
         jobs:
           - name: prettier
-            run: mise x -- deno task --quiet prettier --write --cache --ignore-unknown {staged_files}
+            run: mise x -- deno task --quiet prettier --write --cache --ignore-unknown -- {staged_files}
+            stage_fixed: true
             glob:
-              - '*.{gql,graphql,graphqls}'
-              - '*.{hbs,handlebars}'
               - '*.{js,cjs,mjs,jsx}'
               - '*.{json,jsonc,json5}'
               - '*.{md,mdx}'
-              - '*.{pcss,postcss}'
               - '*.{ts,cts,mts,tsx}'
               - '*.{yaml,yml}{,.tmpl}'
               - '*.code-snippets'
@@ -158,74 +171,73 @@ pre-commit:
               - schemas/vendor/*
               - '**/symlink_*'
               - '**/remove_*'
-            stage_fixed: true
             file_types: text
 
           - name: fish_indent
-            run: fish_indent -w {staged_files}
+            run: fish_indent --write -- {staged_files}
+            stage_fixed: true
             glob: ['*.fish', '*.fish.tmpl']
             exclude:
               - '**/symlink_*'
               - '**/remove_*'
               - home/dot_config/*_carapace/*_choices
-            stage_fixed: true
+            file_types: text
             skip:
               - run: test "$OS" == "Windows_NT"
               - run: '! command -v fish_indent'
             tags:
               - windows-incompatible
-            file_types: text
 
           - name: ruff
-            run: mise x -- ruff format {staged_files}
+            run: mise x -- ruff format -- {staged_files}
+            stage_fixed: true
             glob: ['*.py']
             exclude:
               - '**/symlink_*'
               - '**/remove_*'
               - home/dot_config/*_carapace/*_choices
-            stage_fixed: true
             file_types: text
 
           - name: stylua
-            run: mise x -- stylua --respect-ignores {staged_files}
+            run: mise x -- stylua --respect-ignores -- {staged_files}
+            stage_fixed: true
             glob: ['*.lua']
             exclude:
               - '**/symlink_*'
               - '**/remove_*'
               - home/dot_config/*_carapace/*_choices
-            stage_fixed: true
             file_types: text
 
           - name: tombi
-            run: mise x -- tombi format {staged_files}
+            run: mise x -- tombi format -- {staged_files}
+            stage_fixed: true
             glob: ['*.toml']
             exclude:
               - '**/symlink_*'
               - '**/remove_*'
               - '**/modify_*'
               - uv.lock
-            stage_fixed: true
             file_types: text
 
           - name: topiary
-            run: topiary format {staged_files}
-            glob: ['*.ncl', '*.scm', '*.nu']
+            run: topiary format -- {staged_files}
             stage_fixed: true
+            glob: ['*.ncl', '*.scm', '*.nu']
             exclude: ['**/symlink_*', '**/remove_*']
+            file_types: text
             skip:
               - run: test "$OS" == "Windows_NT"
               - run: '! command -v topiary'
             tags:
               - windows-incompatible
-            file_types: text
 
 pre-push:
   parallel: true
   commands:
     ripsecrets:
-      run: mise x -- ripsecrets --strict-ignore {push_files}
+      run: mise x -- ripsecrets --strict-ignore -- {push_files}
+      file_types: text
       skip:
         - run: test "$OS" == "Windows_NT"
       tags:
         - windows-incompatible
-      file_types: text
