@@ -22,8 +22,9 @@ exclude_paths:
   - '*.tmpl'
   - '*.toml'
   - '*.xsh'
+  - '*.ts'
+  - '*.sh'
   - assets/
-  - bun.lockb
   - Gemfile*
   - home/AppData/
   - home/dot_config/exact_*/
@@ -31,7 +32,7 @@ exclude_paths:
   - home/dot_config/private_glab-cli/
   - home/dot_config/private_glow/
   - home/dot_config/private_go/
-  - home/dot_config/private_lima/_config/
+  - home/dot_config/private_lima/
   - home/dot_config/systemd/
   - home/dot_config/vivid/
   - home/dot_local/
@@ -39,6 +40,7 @@ exclude_paths:
   - home/private_dot_var/
   - home/private_Library/
   - home/readonly_Documents/
+  - home/dot_wslconfig
   - lefthook.yml
   - lima.yaml
   - node_modules/
@@ -46,3 +48,6 @@ exclude_paths:
   - run_*
   - schemas/
   - symlink_*
+  - modify_*
+  - remove_*
+  - deno.lock

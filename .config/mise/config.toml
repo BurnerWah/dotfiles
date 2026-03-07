@@ -12,6 +12,15 @@ tombi = "latest"
 "github:google/keep-sorted" = "latest"
 ty = "latest"
 
+[tools."pipx:ansible-dev-tools"]
+version = "latest"
+uvx_args = """\
+  --with argcomplete \
+  --with-executables-from \
+  ansible-builder,ansible-creator,ansible-dev-environment,ansible-lint,\
+  ansible-navigator,ansible-sign,molecule\
+  """
+
 [tasks.apply]
 run = "chezmoi apply"
 description = "Apply dotfiles"
@@ -37,28 +46,28 @@ description = "Format code"
 usage = '''
 arg "[files]" var=#true default="."
 '''
-run = "deno task --quiet prettier --write --cache --ignore-unknown ${usage_files}"
+run = "deno task --quiet prettier --write --cache --ignore-unknown -- ${usage_files}"
 description = "Format code with Prettier"
 
 [tasks."format:ruff"]
 usage = '''
 arg "[files]" var=#true
 '''
-run = "ruff format ${usage_files}"
+run = "ruff format -- ${usage_files}"
 description = "Format Python code with Ruff"
 
 [tasks."format:stylua"]
 usage = '''
 arg "[files]" var=#true default="."
 '''
-run = "stylua --respect-ignores ${usage_files}"
+run = "stylua --respect-ignores -- ${usage_files}"
 description = "Format Lua code with StyLua"
 
 [tasks."format:tombi"]
 usage = '''
 arg "[files]" var=#true
 '''
-run = "tombi format ${usage_files}"
+run = "tombi format -- ${usage_files}"
 description = "Format TOML files with Tombi"
 
 # This task could be removed once there's a URL I can feasibly use for Lima's Schema
@@ -85,11 +94,18 @@ description = "Install npm packages with deno"
 depends = ["lint:*"]
 description = "Lint code"
 
+[tasks."lint:ansible-lint"]
+usage = '''
+arg "[files]" var=#true
+'''
+run = "ansible-lint -- ${usage_files}"
+description = "Lint ansible playbooks"
+
 [tasks."lint:deno"]
 usage = '''
 arg "[files]" var=#true
 '''
-run = "deno lint ${usage_files}"
+run = "deno lint -- ${usage_files}"
 description = "Lint JS/TS with Deno"
 
 [tasks."lint:gitleaks"]
@@ -100,42 +116,42 @@ description = "Check git repo for secrets"
 usage = '''
 arg "[files]" var=#true default="."
 '''
-run = "deno task --quiet prettier --check --cache --ignore-unknown ${usage_files}"
+run = "deno task --quiet prettier --check --ignore-unknown -- ${usage_files}"
 description = "Lint code formatting with Prettier"
 
 [tasks."lint:ripsecrets"]
 usage = '''
 arg "[files]" var=#true
 '''
-run = "ripsecrets --strict-ignore ${usage_files}"
+run = "ripsecrets --strict-ignore -- ${usage_files}"
 description = "Check git repo for secrets"
 
 [tasks."lint:ruff"]
 usage = '''
 arg "[files]" var=#true
 '''
-run = "ruff check ${usage_files}"
+run = "ruff check -- ${usage_files}"
 description = "Lint Python code with Ruff"
 
 [tasks."lint:stylua"]
 usage = '''
 arg "[files]" var=#true default="."
 '''
-run = "stylua --respect-ignores --check ${usage_files}"
+run = "stylua --respect-ignores --check -- ${usage_files}"
 description = "Lint Lua code formatting with StyLua"
 
 [tasks."lint:tombi"]
 usage = '''
 arg "[files]" var=#true
 '''
-run = "tombi lint ${usage_files}"
+run = "tombi lint -- ${usage_files}"
 description = "Lint TOML files with Tombi"
 
 [tasks."lint:ty"]
 usage = '''
 arg "[files]" var=#true
 '''
-run = "ty check ${usage_files}"
+run = "ty check -- ${usage_files}"
 description = "Type check Python code with Ty"
 
 [tasks."lint:yamllint"]
@@ -146,7 +162,7 @@ flag "--format <format>" {
   default "auto"
 }
 '''
-run = "yamllint --format ${usage_format} ${usage_files}"
+run = "yamllint --format ${usage_format} -- ${usage_files}"
 description = "Lint yaml files with yamllint"
 
 [tasks."update:nvim-plugins"]
