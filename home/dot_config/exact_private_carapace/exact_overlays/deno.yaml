@@ -1,5 +1,12 @@
 name: deno
 commands:
+  - name: task
+    completion:
+      positional:
+        # TODO remove when carapace 1.6.4 or later is out
+        - - $(json5 deno.jsonc | jq -r '.tasks | to_entries[] | "\(.key)\t\(.value)"')
+          - $chdir($parent([deno.jsonc]))
+
   - name: serve
     description: Run a server
     group: execution

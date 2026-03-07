@@ -1,0 +1,9 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{- $topiaryConfig := joinPath .chezmoi.homeDir ".config/topiary/languages.ncl" -}}
+# {{- if and (lookPath "topiary") (stat $topiaryConfig) -}}
+#!/usr/bin/env bash
+
+# # {{ include $topiaryConfig | sha256sum }}
+topiary prefetch
+
+# {{ end -}}

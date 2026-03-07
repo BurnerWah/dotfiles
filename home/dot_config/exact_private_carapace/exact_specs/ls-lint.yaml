@@ -1,0 +1,15 @@
+name: ls-lint
+description: Extremely fast file and directory name linter
+flags:
+  -config=: ls-lint config file path(s)
+  -debug: write debug informations to stdout
+  -error-output-format=: use a specific error output format (text, json) (default "text")
+  -version: prints version information for ls-lint
+  -warn: write lint errors to stdout instead of stderr (exit 0)
+  -workdir=: change working directory before executing the given subcommand (default ".")
+completion:
+  positionalany: [$files, $directories]
+  flag:
+    config: [$files]
+    error-output-format: [text, json]
+    workdir: [$directories]

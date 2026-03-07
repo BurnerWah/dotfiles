@@ -1,0 +1,138 @@
+name: devskim
+description: Security linter # change this
+persistentflags:
+  --help: Display this help screen.
+  --version: Display version information.
+
+commands:
+  - name: analyze
+    description: Analyze source code using DevSkim
+    flags:
+      --options-json=: The path to a .json file that contains a serialized SerializedAnalyzeCommandOptions object
+      -I, --source-code=!: Path to a directory containing files to scan or a single file to scan
+      -O, --output-file=: Filename for result file, uses stdout if not set.
+      -r=: Comma separated list of paths to rules files to use
+      --rule-ids=: Comma separated list of rule IDs to limit analysis to
+      --ignore-rule-ids=: Comma separated list of rule IDs to ignore
+      --languages=: Path to custom json formatted Language file to specify languages
+      --comments=: Path to custom json formatted Comments file to specify languages
+      -o, --output-format=: Format for output text.
+      -f, --file-format=: Format type for output.
+      -s, --severity=: Comma-separated Severities to match
+      --confidence=: Comma-separated Severities to match
+      -g, --ignore-globs=: Comma-separated Globs for files to skip analyzing
+      --include-globs=: If set, files must match one of these globs to be analyzed
+      -d, --disable-supression: Disable comment suppressions
+      --disable-parallel: Disable parallel processing
+      -i, --ignore-default-rules: Ignore default rules
+      -c, --crawl-archives: Analyze files contained inside of archives
+      -E: Use exit code for number of issues. Negative on error.
+      --base-path=: Specify what path to root result URIs in Sarif results with.
+      --absolute-path: Output absolute paths (overrides --base-path).
+      --skip-git-ignored-files: Set to skip files which are ignored by .gitignore. Requires git to be installed.
+      --skip-excerpts: Set to skip gathering excerpts and samples to include in the report.
+      -x, --console-verbosity=: Console verbosity
+      --disable-console: Disable console output of logging messages.
+      -v, --log-file-level=: Log file level
+      -l, --log-file-path=: Log file path. If not set, will not log to file.
+    completion:
+      flag:
+        options-json: ['$files([.json])']
+        source-code: [$directories]
+        output-file: [$files]
+        r: ['$files ||| $uniquelist(,)']
+        languages: ['$files([.json])']
+        comments: ['$files([.json])']
+        file-format: [text, sarif, vs]
+        severity: # incomplete
+          - Critical
+          - Important
+          - Moderate
+          - BestPractice
+          - ManualReview
+          - $uniquelist(,)
+        confidence: # incomplete
+          - High
+          - Medium
+          - $uniquelist(,)
+        base-path: [$files]
+        console-verbosity: [Verbose, Debug, Information, Warning, Error, Fatal]
+        log-file-level: [Verbose, Debug, Information, Warning, Error, Fatal]
+        log-file-path: [$files]
+
+  - name: fix
+    description: Apply fixes from a Sarif
+    flags:
+      -I, --source-code=!: Path to the parent directory containing the source code that was scanned to produce the sarif.
+      -O, --sarif-result=!: Filename for the output sarif from DevSkim Analyze.
+      --dry-run: Print information about files that would be changed without changing them.
+      --all: Apply all fixes.
+      --files=: Comma separated list of paths to apply fixes to
+      --rules=: Comma separated list of rules to apply fixes for
+      -x, --console-verbosity=: Console verbosity
+      --disable-console: Disable console output of logging messages.
+      -v, --log-file-level=: Log file level
+      -l, --log-file-path=: Log file path. If not set, will not log to file.
+    completion:
+      flag:
+        source-code: [$directories]
+        sarif-result: [$files]
+        console-verbosity: [Verbose, Debug, Information, Warning, Error, Fatal]
+        log-file-level: [Verbose, Debug, Information, Warning, Error, Fatal]
+        log-file-path: [$files]
+
+  - name: verify
+    description: Verify rule validity
+    flags:
+      -r=: Comma separated list of paths to rules files to use
+      --languages=: Path to custom json formatted Language file to specify languages
+      --comments=: Path to custom json formatted Comments file to specify languages
+      -x, --console-verbosity=: Console verbosity
+      --disable-console: Disable console output of logging messages.
+      -v, --log-file-level=: Log file level
+      -l, --log-file-path=: Log file path. If not set, will not log to file.
+    completion:
+      flag:
+        r: ['$files ||| $uniquelist(,)']
+        languages: ['$files([.json])']
+        comments: ['$files([.json])']
+        console-verbosity: [Verbose, Debug, Information, Warning, Error, Fatal]
+        log-file-level: [Verbose, Debug, Information, Warning, Error, Fatal]
+        log-file-path: [$files]
+
+  - name: suppress
+    description: Suppress issues identified in a DevSkim Sarif
+    flags:
+      -I, --source-code=!: Path to the parent directory containing the source code that was scanned to produce the sarif.
+      -O, --sarif-result=!: Filename for the output sarif from DevSkim Analyze.
+      --dry-run: Print information about files that would be changed without changing them.
+      --all: Apply all ignore.
+      --files=: Comma separated list of paths to apply ignore to
+      --rules=: Comma separated list of rules to apply ignore for
+      --prefer-multiline: Prefer using multi-line formatted suppression comments
+      --duration=: Optional duration for suppressions in days from current system time
+      --languages=: Path to custom json formatted Language file to specify languages
+      --comments=: Path to custom json formatted Comments file to specify languages
+      --reviewer=: Set an optional reviewer name to be associated with added suppressions
+      -x, --console-verbosity=: Console verbosity
+      --disable-console: Disable console output of logging messages.
+      -v, --log-file-level=: Log file level
+      -l, --log-file-path=: Log file path. If not set, will not log to file.
+    completion:
+      flag:
+        source-code: [$directories]
+        sarif-result: [$files]
+        files: ['$files ||| $uniquelist(,)']
+        languages: ['$files([.json])']
+        comments: ['$files([.json])']
+        console-verbosity: [Verbose, Debug, Information, Warning, Error, Fatal]
+        log-file-level: [Verbose, Debug, Information, Warning, Error, Fatal]
+        log-file-path: [$files]
+
+  - name: help
+    description: Display more information on a specific command.
+    completion:
+      positional: [[analyze, fix, verify, suppress]]
+
+  - name: version
+    description: Display version information.

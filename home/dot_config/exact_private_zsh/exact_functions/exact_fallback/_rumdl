@@ -1,0 +1,3 @@
+#compdef rumdl
+# shellcheck disable=SC1090
+source <(rumdl completions zsh)
