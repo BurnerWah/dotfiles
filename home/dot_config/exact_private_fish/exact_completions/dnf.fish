@@ -2,7 +2,7 @@
 if command -q dnf_completer
     __fish_cache_sourced_completions dnf_completer _carapace fish
 else if command -q carapace
-    complete -c dnf -w '(_carapace_completer dnf)'
+    complete -c dnf -f -a '(_carapace_completer dnf)'
 else
     source $__fish_data_dir/completions/dnf.fish
 end

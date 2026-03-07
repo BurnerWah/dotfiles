@@ -60,7 +60,6 @@ arg "[files]" var=#true
 '''
 run = "tombi format ${usage_files}"
 description = "Format TOML files with Tombi"
-wait_for = ["format:taplo"]
 
 # This task could be removed once there's a URL I can feasibly use for Lima's Schema
 [tasks."generate:lima-schema"]
@@ -138,6 +137,17 @@ arg "[files]" var=#true
 '''
 run = "ty check ${usage_files}"
 description = "Type check Python code with Ty"
+
+[tasks."lint:yamllint"]
+usage = '''
+arg "[files]" var=#true default="."
+flag "--format <format>" {
+  choices "parsable" "standard" "colored" "github" "auto"
+  default "auto"
+}
+'''
+run = "yamllint --format ${usage_format} ${usage_files}"
+description = "Lint yaml files with yamllint"
 
 [tasks."update:nvim-plugins"]
 run = 'nvim --headless "+Lazy! sync" +qa'
