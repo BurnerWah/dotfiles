@@ -13,7 +13,7 @@ local options = {
     markdown = { "markdownlint-cli2", "prettier" },
     python = { "ruff_fix", "ruff_format" },
     scss = { "prettier" },
-    toml = { "taplo", lsp_fallback = "never" },
+    toml = { "tombi", lsp_fallback = "never" },
     typescript = { "biome-check", "prettier" },
     typescriptreact = { "biome-check", "prettier" },
     vue = { "prettier" },

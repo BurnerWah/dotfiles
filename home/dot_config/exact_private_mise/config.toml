@@ -4,7 +4,13 @@ min_version = "2025.8.20"
 experimental = true
 paranoid = false
 not_found_auto_install = false
-idiomatic_version_file_enable_tools = ["go", "java", "node", "python", "ruby"]
+idiomatic_version_file_enable_tools = [
+  "go",
+  "java",
+  "node",
+  "deno",
+  "python",
+]
 go_default_packages_file = "~/.config/mise/default-go-packages"
 disable_tools = [
   "nim",
@@ -53,6 +59,9 @@ uv_venv_auto = true
 
 [settings.npm]
 package_manager = "pnpm"
+
+[settings.node]
+corepack = true
 
 [tools]
 cargo-binstall = "latest"

@@ -165,6 +165,7 @@ cask = [
   'llamachat', # ai
   'lm-studio', # ai
   'lobehub', # ai
+  'ltx-desktop', # ai
   'macai', # ai
   'maestro', # ai
   'mailbutler', # ai
@@ -389,6 +390,7 @@ formula = [
   'gitea-mcp-server', # ai
   'github-mcp-server', # ai
   'gitingest', # ai
+  'gittype', # ai
   'goat', # fascism
   'gollama', # ai
   'gorilla-cli', # ai
@@ -470,11 +472,13 @@ formula = [
   'onnx', # ai
   'opencode', # ai
   'openskills', # ai
+  'openspec', # ai
   'openssl@1.1', # security, deprecated
   'openvino', # ai
   'ord', # cryptocurrency
   'oterm', # ai
   'oxen', # ai
+  'paseo', # ai
   'patchpal', # ai
   'pi-coding-agent', # ai
   'picoclaw', # ai

@@ -21,6 +21,12 @@ nim.disabled = true
 nix_shell.disabled = true
 solidity.disabled = true
 
+# When making custom colors, use https://www.radix-ui.com/colors/custom
+# The background should be dark
+# For a segment, the background should usually be color 3, and the foreground
+# should be color 11
+# Sources for palettes can often be found on https://simpleicons.org/
+
 [aws]
 # nf-md-cloud_outline - all the aws icons are too small
 symbol = "󰅣 "
@@ -45,9 +51,11 @@ symbol = " "
 symbol = " "
 
 [cmake]
+# uses custom radix palette
 symbol = " "
 version_format = "${raw}"
-format = "[$symbol($version )]($style)"
+style = "bold fg:#69B8FF bg:#032444"
+format = "[[](#032444)$symbol($version)]($style)[](#032444) "
 
 [conda]
 # nf-fa-circle_o
@@ -65,16 +73,18 @@ disabled = true
 
 [dart]
 # nf-dev-dart - not very clear at term size
+# uses custom radix palette
 symbol = " "
 version_format = "${raw}"
-style = "bold fg:#3392e2 bg:#15314b"
-format = "[[](#15314b)$symbol($version)]($style)[](#15314b) "
+style = "bold fg:#64BBFF bg:#002544"
+format = "[[](#002544)$symbol($version)]($style)[](#002544) "
 
 [deno]
+# uses custom radix palette
 symbol = " "
-style = "bold fg:#00e37d bg:#0d482b"
+style = "bold fg:#00DB76 bg:#0E2A18"
 version_format = "${raw}"
-format = "[[](#0d482b)$symbol($version)]($style)[](#0d482b) "
+format = "[[](#0E2A18)$symbol($version)]($style)[](#0E2A18) "
 
 [directory]
 read_only = " 󰌾"
@@ -82,15 +92,17 @@ fish_style_pwd_dir_length = 1
 truncation_symbol = "…/"
 
 [docker_context]
+# uses custom radix palette
 symbol = "󰡨 "
-style = "bold fg:#2496ed bg:#1a3955"
-format = "[[](#1a3955)$symbol$context]($style)[](#1a3955) "
+style = "bold fg:#74BBFC bg:#09253D"
+format = "[[](#09253D)$symbol$context]($style)[](#09253D) "
 
 [dotnet]
+# uses custom radix palette
 symbol = " "
 version_format = "${raw}"
-style = "bold fg:#3287c4 bg:#0e0e0e"
-format = "[[](#0e0e0e)$symbol($version)( 󰓾 $tfm)]($style)[](#0e0e0e) "
+style = "bold fg:#A9AAFF bg:#1F1A4B"
+format = "[[](#1F1A4B)$symbol($version)( 󰓾 $tfm)]($style)[](#1F1A4B) "
 
 [elixir]
 # nf-fae-drop
@@ -124,7 +136,8 @@ symbol = "󱇶 "
 
 [git_branch]
 symbol = " "
-style = "fg:#c5a4f2 bg:#212121"
+# fg: radix violet 11
+style = "fg:#BAA7FF bg:#212121"
 format = "[[](#212121)$symbol$branch(:$remote_branch)]($style)[](#212121) "
 
 [git_metrics]
@@ -136,16 +149,19 @@ version_format = "${raw}"
 format = "[$symbol($version )]($style)"
 
 [golang]
+# uses custom radix palette
 symbol = "󰟓 "
 version_format = "${raw}"
-style = "bold fg:#72d5f9 bg:#144454"
-format = "[[](#144454)$symbol($version)( $mod_version)]($style)[](#144454) "
+style = "bold fg:#4BC9F3 bg:#002834"
+format = "[[](#002834)$symbol($version)( $mod_version)]($style)[](#002834) "
 
 [gradle]
 # nf-seti-gradle
+# uses custom radix palette
 symbol = " "
 version_format = "${raw}"
-format = "[$symbol($version )]($style)"
+style = "bold fg:#80C5D8 bg:#002933"
+format = "[[](#002933)$symbol($version)]($style)[](#002933) "
 
 [guix_shell]
 # nf-linux-gnu_guix
@@ -189,7 +205,8 @@ detect_files = [
   "mvnvm.properties", # From mise plugin
 ]
 version_format = "${raw}"
-format = "[$symbol($version )]($style)"
+style = "bold fg:#ff9592 bg:#3b1219"
+format = "[[](#3b1219)$symbol($version)]($style)[](#3b1219) "
 
 [julia]
 # nf-seti-julia
@@ -199,21 +216,23 @@ format = "[$symbol($version )]($style)"
 
 [kotlin]
 # nf-seti-kotlin - all the kotlin icons look the same
+# uses custom radix palette
 symbol = " "
 version_format = "${raw}"
-style = "bold fg:#916fff bg:#251651"
-format = "[[](#251651)$symbol($version)]($style)[](#251651) "
+style = "bold fg:#B4A6FF bg:#23174D"
+format = "[[](#23174D)$symbol($version)]($style)[](#23174D) "
 
 [kubernetes]
 # nf-md-kubernetes - the only kubernetes icon
 symbol = "󱃾 "
 
 [lua]
+# uses custom radix palette
 symbol = " "
 version_format = "${major}.${minor}"
-style = "bold fg:#bbc2ff bg:#211a65"
-format = "[[](#211a65)$symbol($version)]($style)[](#211a65) "
-detect_files = [".lua-version", ".luarc.json", "!systemctl"]
+style = "bold fg:#A3ACFF bg:#1C1C4B"
+format = "[[](#1C1C4B)$symbol($version)]($style)[](#1C1C4B) "
+detect_files = [".lua-version", ".luarc.json", ".emmyrc.json", "!systemctl"]
 detect_extensions = ["lua", "rockspec"]
 detect_folders = ["lua", "!lua@5.4"]
 
@@ -226,10 +245,11 @@ symbol = "󰍛 "
 symbol = "󰔷 "
 
 [nodejs]
+# uses custom radix palette
 symbol = "󰎙 "
-style = "bold fg:#42e66c bg:#00430d"
+style = "bold fg:#8BCB7A bg:#1B2519"
 version_format = "${major}"
-format = "[[](#00430d)$symbol($version( $engines_version))]($style)[](#00430d) "
+format = "[[](#1B2519)$symbol($version( $engines_version))]($style)[](#1B2519) "
 
 [ocaml]
 # nf-seti-ocaml - the only ocaml icon
@@ -286,8 +306,11 @@ Windows = "󰍲 "
 [package]
 # nf-oct-package - big and readable
 # was suggested nf-md-package_variant_closed but it's too complex
+# uses radix palette
 symbol = " "
 version_format = "${raw}"
+style = "bold fg:#FFCA16 bg:#302008"
+format = "[[](#302008)$symbol($version)]($style)[](#302008) "
 
 [perl]
 # nf-seti-perl - the only perl icon
@@ -320,6 +343,7 @@ version_format = "${raw}"
 format = "[$symbol($version )]($style)"
 
 [python]
+# uses custom radix palette
 symbol = " "
 version_format = "${major}.${minor}"
 detect_files = [
@@ -339,8 +363,8 @@ detect_files = [
   "!brew", # Don't show in brew prefix
   "!systemctl", # Don't show in /usr/bin
 ]
-style = "bold fg:#e4f34a bg:#3d420d"
-format = '[[](#3d420d)${symbol}${pyenv_prefix}(${version})( \($virtualenv\))]($style)[](#3d420d) '
+style = "bold fg:#88C0F3 bg:#0C253A"
+format = '[[](#0C253A)${symbol}${pyenv_prefix}(${version})( \($virtualenv\))]($style)[](#0C253A) '
 
 [raku]
 symbol = " "
@@ -359,11 +383,12 @@ version_format = "${raw}"
 format = "[$symbol($version )]($style)"
 
 [ruby]
+# uses custom radix palette
 symbol = "󰴭 "
 version_format = "${raw}"
 detect_variables = ["RUBY_VERSION", "RBENV_VERSION", "MISE_RUBY_VERSION"]
-style = "bold fg:#e64747 bg:#2f0c0b"
-format = "[[](#2f0c0b)$symbol($version)]($style)[](#2f0c0b) "
+style = "bold fg:#FF9082 bg:#3D0705"
+format = "[[](#3D0705)$symbol($version)]($style)[](#3D0705) "
 detect_files = ["Gemfile", ".ruby-version", "!brew"]
 
 [rust]
@@ -377,10 +402,11 @@ detect_files = ["Cargo.toml", "!brew"]
 disabled = true
 
 [swift]
+# uses custom radix palette
 symbol = " "
 version_format = "${raw}"
-style = "bold fg:#f05237 bg:#190806"
-format = "[[](#190806)$symbol($version)]($style)[](#190806) "
+style = "bold fg:#FF917B bg:#35120C"
+format = "[[](#35120C)$symbol($version)]($style)[](#35120C) "
 
 [terraform]
 # nf-md-terraform
@@ -396,10 +422,11 @@ format = "[$symbol($version )]($style)"
 show_always = true
 
 [vagrant]
+# uses custom radix palette
 symbol = " "
 version_format = "${raw}"
-style = "bold fg:#2b7dff bg:#16305e"
-format = "[[](#16305e)$symbol($version)]($style)[](#16305e) "
+style = "bold fg:#85B6FF bg:#0B2149"
+format = "[[](#0B2149)$symbol($version)]($style)[](#0B2149) "
 
 [vlang]
 symbol = " "

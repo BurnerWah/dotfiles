@@ -176,6 +176,7 @@ programming:
     mathematica: [.nb]
     matlab: [.matlab, .m, .mn]
     mojo: [.mojo]
+    nickel: [.ncl]
     ocaml: [.ml, .mli]
     openscad: [.scad]
     pascal: [.pas, .p, .dpr]
@@ -292,6 +293,7 @@ media:
       - .kra # Krita
       - .psd # Photoshop
       - .xvf # GIMP
+      - .afphoto # Affinity Photo
 
     bitmap:
       - .avif

@@ -303,6 +303,7 @@ carapace = [
   "fc-list",
   "fd",
   "fdisk",
+  "fence",
   "ffmpeg",
   "ffplay",
   "ffprobe",

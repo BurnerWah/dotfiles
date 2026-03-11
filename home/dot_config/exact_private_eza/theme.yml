@@ -1,29 +1,31 @@
 # Initially based on https://github.com/eza-community/eza-themes/blob/main/themes/default.yml
+# A lot of manual colors are from https://www.radix-ui.com/colors
+
 colourful: true
 
 filekinds:
   normal: { foreground: Default }
-  directory: { foreground: Blue, is_bold: true }
-  symlink: { foreground: Cyan }
+  directory: { foreground: '#70B8FF', is_bold: true }
+  symlink: { foreground: '#FF8DCC' }
   pipe: { foreground: Yellow }
   block_device: { foreground: Yellow, is_bold: true }
   char_device: { foreground: Yellow, is_bold: true }
   socket: { foreground: Red, is_bold: true }
   special: { foreground: Yellow }
   executable: { foreground: Green, is_bold: true }
-  mount_point: { foreground: Blue, is_bold: true, is_underlined: true }
+  mount_point: { foreground: Blue, is_bold: true, is_underline: true }
 
 perms:
-  user_read: { foreground: Yellow, is_bold: true }
-  user_write: { foreground: Red, is_bold: true }
-  user_execute_file: { foreground: Green, is_bold: true, is_underlined: true }
-  user_execute_other: { foreground: Green, is_bold: true }
-  group_read: { foreground: Yellow }
-  group_write: { foreground: Red }
-  group_execute: { foreground: Green }
-  other_read: { foreground: Yellow }
-  other_write: { foreground: Red }
-  other_execute: { foreground: Green }
+  user_read: { foreground: '#FFE629', bold: true }
+  user_write: { foreground: '#E93D82', bold: true }
+  user_execute_file: { foreground: '#3DD68C', bold: true, underline: true }
+  user_execute_other: { foreground: '#3DD68C', bold: true }
+  group_read: { foreground: '#FFE629' }
+  group_write: { foreground: '#E93D82' }
+  group_execute: { foreground: '#3DD68C' }
+  other_read: { foreground: '#FFE629' }
+  other_write: { foreground: '#E93D82' }
+  other_execute: { foreground: '#3DD68C' }
   special_user_file: { foreground: Purple }
   special_other: { foreground: Purple }
   attribute: { foreground: Default }
@@ -55,69 +57,81 @@ links:
   multi_link_file: { foreground: Red, background: Yellow }
 
 git:
-  new: { foreground: Green }
+  new: { foreground: '#30A46C' }
   modified: { foreground: Blue }
-  deleted: { foreground: Red }
+  deleted: { foreground: '#E5484D' }
   renamed: { foreground: Yellow }
   typechange: { foreground: Purple }
   ignored: { foreground: Default, is_dimmed: true }
   conflicted: { foreground: Red }
 
 git_repo:
-  branch_main: { foreground: Green }
-  branch_other: { foreground: Yellow }
-  git_clean: { foreground: Green }
-  git_dirty: { foreground: Yellow }
+  branch_main: { foreground: '#1FD8A4' }
+  branch_other: { foreground: '#F5E147' }
+  git_clean: { foreground: '#27B08B' }
+  git_dirty: { foreground: '#FFFF57' }
 
 security_context:
-  colon: { foreground: Default, is_dimmed: true }
-  user: { foreground: Blue }
-  role: { foreground: Green }
-  typ: { foreground: Yellow }
-  range: { foreground: Cyan }
+  selinux:
+    colon: { foreground: Default, is_dimmed: true }
+    user: { foreground: Blue }
+    role: { foreground: Green }
+    typ: { foreground: Yellow }
+    range: { foreground: Cyan }
 
 file_type:
   image: { foreground: Purple }
   video: { foreground: Purple, is_bold: true }
   music: { foreground: Cyan }
   lossless: { foreground: Cyan, is_bold: true }
-  crypto: { foreground: Green, is_bold: true }
+  crypto: { foreground: '#1FD8A4', is_bold: true }
   document: { foreground: Green }
   compressed: { foreground: Red }
   temp: { foreground: White }
   compiled: { foreground: Yellow }
-  build: { foreground: Yellow, is_bold: true, is_underlined: true }
+  build: { foreground: '#F5E147', is_bold: true, is_underline: true }
   source: { foreground: Yellow, is_bold: true }
 
 punctuation: { foreground: DarkGray, is_bold: true }
 date: { foreground: Blue }
 inode: { foreground: Purple }
 blocks: { foreground: Cyan }
-header: { foreground: Default, is_underlined: true }
+header: { foreground: Default, is_underline: true }
 octal: { foreground: Purple }
 flags: { foreground: Default }
 
 symlink_path: { foreground: Cyan }
 control_char: { foreground: Red }
 broken_symlink: { foreground: Red }
-broken_path_overlay: { foreground: Default, is_underlined: true }
+broken_path_overlay: { foreground: Default, is_underline: true }
 
 extensions: # Custom extension-based overrides
+  afdesign~lock~: &lock
+    filename: &lock_style { foreground: DarkGray }
+  affinity~lock~: *lock
+  afphoto:
+    icon: { glyph: , style: { foreground: '#E796F3' } }
+    filename: { foreground: '#E796F3' }
+  afphoto~lock~: *lock
+  afpub~lock~: *lock
+  af~lock~: *lock
   astro: &astro { icon: { glyph:  } }
   babelrc: &babelrc { icon: { glyph:  } }
   bashrc: { icon: { glyph: 󱆃 } }
-  cr: &crystal { icon: { glyph:  } }
+  cr: { icon: { glyph:  } }
   dds: { icon: { glyph: 󰔌 } }
   elv: { icon: { glyph: 󱆃 } }
   eslintrc: &eslintrc { icon: { glyph:  } }
   icns: { icon: { glyph:  } }
+  mobileconfig: { icon: { glyph:  } }
   prettierrc: &prettierrc { icon: { glyph:  } }
   rbi: { icon: { glyph:  } }
   rockspec: { icon: { glyph:  } }
   sqlite: { icon: { glyph: 󰆼 } }
   stylelintrc: &stylelintrc { icon: { glyph:  } }
-  sublime-syntax: { icon: { glyph:  } }
+  sublime-syntax: { icon: { glyph:  } }
   timer: { icon: { glyph: 󱎫 } }
+  xsh: { icon: { glyph:  } }
 
 filenames: # Custom filename-based overrides
   .1password: { icon: { glyph: 󰢁 } }
@@ -125,23 +139,46 @@ filenames: # Custom filename-based overrides
   .ansible-lint: { icon: { glyph:  } }
   .babelrc.js: *babelrc
   .babelrc.json: *babelrc
+  .busted: { icon: { glyph:  } }
+  .CFUserTextEncoding:
+    icon: { style: { foreground: DarkGray } }
+    filename: { foreground: DarkGray }
   .circleci: { icon: { glyph:  } }
   .clippy.toml: { icon: { glyph:  } }
   .codeclimate.yml: { icon: { glyph:  } }
   .codecov.yml: { icon: { glyph:  } }
-  .crystal-version: *crystal
-  .dart_tool: &dart { icon: { glyph:  } }
+  .crystal-version: { icon: { glyph:  } }
+  .dart_tool: { icon: { glyph:  } }
+  .DS_Store:
+    icon: { style: { foreground: DarkGray } }
+    filename: { foreground: DarkGray }
   .editorconfig: { icon: { glyph:  } }
+  .emmyrc.json: { icon: { glyph:  } }
+  .eslintcache:
+    icon: { glyph: , style: { foreground: DarkGray } }
+    filename: { foreground: DarkGray }
   .eslintignore: *eslintrc
   .exenv-version: { icon: { glyph:  } }
   .flatpak-helper: { icon: { glyph:  } }
   .flatpak: { icon: { glyph:  } }
-  .go-version: &golang { icon: { glyph:  } }
+  .go-version: { icon: { glyph:  } }
   .java-version: { icon: { glyph:  } }
+  .lefthook-local.json: &lefthook_config
+    icon: { glyph: 󰛢 }
+  .lefthook-local.jsonc: *lefthook_config
+  .lefthook-local.toml: *lefthook_config
+  .lefthook-local.yaml: *lefthook_config
+  .lefthook-local.yml: *lefthook_config
+  .lefthook.json: *lefthook_config
+  .lefthook.jsonc: *lefthook_config
+  .lefthook.toml: *lefthook_config
+  .lefthook.yaml: *lefthook_config
+  .lefthook.yml: *lefthook_config
   .lua-format: { icon: { glyph:  } }
   .lua-version: { icon: { glyph:  } }
   .luacheckrc: { icon: { glyph:  } }
   .luarc.json: { icon: { glyph:  } }
+  .neoconf.json: { icon: { glyph:  } }
   .node-version: { icon: { glyph:  } }
   .nvmrc: { icon: { glyph:  } }
   .packer-version: { icon: { glyph:  } }
@@ -171,6 +208,7 @@ filenames: # Custom filename-based overrides
   .styluaignore: { icon: { glyph:  } }
   .terraform-version: { icon: { glyph: 󱁢 } }
   .vscode: { icon: { glyph:  } }
+  .vscode-oss: { icon: { glyph:  } }
   ansible.cfg: { icon: { glyph:  } }
   astro.config.cjs: *astro
   astro.config.js: *astro
@@ -179,6 +217,7 @@ filenames: # Custom filename-based overrides
   azure-pipelines.yml: { icon: { glyph:  } }
   babel.config.js: *babelrc
   babel.config.json: *babelrc
+  bashrc_Apple_Terminal: { icon: { glyph: 󱆃 } }
   Brewfile: { icon: { glyph:  } }
   cypress.config.cjs: { icon: { glyph:  } }
   cypress.config.js: { icon: { glyph:  } }
@@ -187,10 +226,17 @@ filenames: # Custom filename-based overrides
   cypress.json: { icon: { glyph:  } }
   deno.json: { icon: { glyph:  } }
   deno.jsonc: { icon: { glyph:  } }
-  deno.lock: { icon: { glyph:  } }
+  deno.lock: { icon: { glyph: , style: *lock_style }, filename: *lock_style }
   dependabot.yml: { icon: { glyph:  } }
+  devcontainer.json: { icon: { glyph:  } }
   docker.sock: { icon: { glyph: 󰡨 } }
   Documents: { icon: { glyph: 󰲂 } }
+  electron-builder.js: { icon: { glyph: 󱀤 } }
+  electron-builder.json: { icon: { glyph: 󱀤 } }
+  electron-builder.json5: { icon: { glyph: 󱀤 } }
+  electron-builder.ts: { icon: { glyph: 󱀤 } }
+  electron-builder.yaml: { icon: { glyph: 󱀤 } }
+  electron-builder.yml: { icon: { glyph: 󱀤 } }
   eslint.config.cjs: *eslintrc
   eslint.config.cts: *eslintrc
   eslint.config.js: *eslintrc
@@ -202,8 +248,8 @@ filenames: # Custom filename-based overrides
   fly.toml: { icon: { glyph:  } }
   Gemfile: { icon: { glyph:  } }
   gitconfig: { icon: { glyph:  } }
-  Gopkg.lock: *golang
-  Gopkg.yml: *golang
+  Gopkg.lock: { icon: { glyph: , style: *lock_style }, filename: *lock_style }
+  Gopkg.yml: { icon: { glyph:  } }
   jest.config.cjs: { icon: { glyph:  } }
   jest.config.js: { icon: { glyph:  } }
   jest.config.json: { icon: { glyph:  } }
@@ -211,6 +257,19 @@ filenames: # Custom filename-based overrides
   jest.config.ts: { icon: { glyph:  } }
   kritadisplayrc: { icon: { glyph:  } }
   kritarc: { icon: { glyph:  } }
+  lazy-lock.json:
+    icon: { glyph: , style: *lock_style }
+    filename: *lock_style
+  lefthook.json: *lefthook_config
+  lefthook.jsonc: *lefthook_config
+  lefthook.toml: *lefthook_config
+  lefthook.yaml: *lefthook_config
+  lefthook.yml: *lefthook_config
+  lefthook-local.json: *lefthook_config
+  lefthook-local.jsonc: *lefthook_config
+  lefthook-local.toml: *lefthook_config
+  lefthook-local.yaml: *lefthook_config
+  lefthook-local.yml: *lefthook_config
   netlify.toml: { icon: { glyph:  } }
   next.config.js: { icon: { glyph:  } }
   next.config.mjs: { icon: { glyph:  } }
@@ -218,30 +277,34 @@ filenames: # Custom filename-based overrides
   nuxt.config.js: { icon: { glyph: 󱄆 } }
   nuxt.config.ts: { icon: { glyph: 󱄆 } }
   OneDrive: { icon: { glyph: 󰏊 } }
-  Pipfile: *python
   pixi.toml: *python
   PkgInfo: { icon: { glyph:  } }
   playwright.config.js: { icon: { glyph:  } }
   playwright.config.ts: { icon: { glyph:  } }
-  pnpm-lock.yaml: { icon: { glyph:  } }
+  pnpm-lock.yaml:
+    icon: { glyph: , style: *lock_style }
+    filename: *lock_style
   pnpm-workspace.yaml: { icon: { glyph:  } }
   podman.sock: { icon: { glyph:  } }
-  poetry.lock: { icon: { glyph:  } }
+  poetry.lock: { icon: { glyph: , style: *lock_style }, filename: *lock_style }
   prettier.config.cjs: *prettierrc
   prettier.config.js: *prettierrc
   prettier.config.mjs: *prettierrc
   proc: { icon: { glyph:  } }
   Public: { icon: { glyph: 󰉙 } }
-  pubspec.lock: *dart
-  pubspec.yaml: *dart
-  pubspec.yml: *dart
+  pubspec.lock:
+    icon: { glyph: , style: *lock_style }
+    filename: *lock_style
+  pubspec.yaml: { icon: { glyph:  } }
+  pubspec.yml: { icon: { glyph:  } }
   rollup.config.js: { icon: { glyph:  } }
   rollup.config.mjs: { icon: { glyph:  } }
   rollup.config.ts: { icon: { glyph:  } }
   ruff.toml: *python
   rust-toolchain.toml: { icon: { glyph:  } }
   selene.toml: { icon: { glyph:  } }
-  shard.yml: *crystal
+  shard.yml: { icon: { glyph:  } }
+  staticcheck.conf: { icon: { glyph:  } }
   stylelint.config.cjs: *stylelintrc
   stylelint.config.js: *stylelintrc
   stylelint.config.mjs: *stylelintrc
@@ -251,7 +314,8 @@ filenames: # Custom filename-based overrides
   torsocks.conf: { icon: { glyph:  } }
   tox.ini: *python
   tsconfig.json: { icon: { glyph:  } }
-  uv.lock: *python
+  ty.toml: *python
+  uv.lock: { icon: { glyph: , style: *lock_style }, filename: *lock_style }
   uv.toml: *python
   Vaults: { icon: { glyph: 󰉐 } }
   vimrc: { icon: { glyph:  } }
@@ -264,8 +328,10 @@ filenames: # Custom filename-based overrides
   vitest.config.ts: { icon: { glyph:  } }
   vlcrc: { icon: { glyph: 󰕼 } }
   wayland-0: { icon: { glyph:  } }
-  webpack.config.babel.js: { icon: { glyph: 󰜫 } }
-  webpack.config.cjs: { icon: { glyph: 󰜫 } }
-  webpack.config.coffee: { icon: { glyph: 󰜫 } }
-  webpack.config.ts: { icon: { glyph: 󰜫 } }
+  webpack.config.babel.js: &webpack_config
+    icon: { glyph: 󰜫 }
+  webpack.config.cjs: *webpack_config
+  webpack.config.coffee: *webpack_config
+  webpack.config.ts: *webpack_config
   wrangler.toml: { icon: { glyph:  } }
+  zshrc_Apple_Terminal: { icon: { glyph: 󱆃 } }

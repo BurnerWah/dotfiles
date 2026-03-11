@@ -17,4 +17,19 @@ return {
     "nvim-treesitter/nvim-treesitter",
     opts = require("configs.tree-sitter"),
   },
+
+  {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    branch = "main",
+  },
+  {
+    "kylechui/nvim-surround",
+    version = "^4.0.0",
+    event = "VeryLazy",
+    -- config = function()
+    --     require("nvim-surround").setup({
+    --         -- Put your configuration here
+    --     })
+    -- end
+  },
 }
