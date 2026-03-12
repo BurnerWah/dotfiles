@@ -5,6 +5,8 @@ ignore:
   - /node_modules/*
   - /pnpm-lock.yaml
   - /schemas/vendor/*
+  - modify_*
+  - remove_*
   - symlink_*
 
 rules:

@@ -27,7 +27,7 @@
       },
       "sys": true,
       "read": ["."],
-      "write": ["node_modules/.cache/prettier", "."],
+      "write": ["./node_modules/.cache/prettier", "."],
     },
   },
 }

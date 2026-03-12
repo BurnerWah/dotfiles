@@ -1,1 +1,5 @@
-disable=SC1128 # false positive on templates
+# Disable shellcheck lints that are problematic in this repo.
+# This is particularly relevant for chezmoi templates, which aren't bound by
+# the limits of what shellcheck can parse, but it also applies to stuff like
+# zsh which will probably also be parsed wrong.
+disable=SC1128 # shebang on first line - false positive on templates

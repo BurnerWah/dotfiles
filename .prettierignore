@@ -1,7 +1,9 @@
+# keep-sorted start
 **/lazy-lock.json
-**/symlink_*
-/.ruby-lsp
+*.ncl
+/deno.lock
 /pnpm-lock.yaml
 /schemas/vendor/*
-/deno.lock
-*.ncl
+remove_*
+symlink_*
+# keep-sorted end

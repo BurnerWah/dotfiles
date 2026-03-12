@@ -29,7 +29,7 @@ local options = {
     "yaml",
   },
   -- auto installs tend to not work for me even with the tree-sitter CLI
-  ignore_install = { "nim", "nim_format_string", "solidity" },
+  ignore_install = { "nim", "nim_format_string", "solidity", "nix" },
 }
 
 return options

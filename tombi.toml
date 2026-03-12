@@ -1,5 +1,6 @@
 [files]
-exclude = ["**/symlink_*", "tmp/**"]
+# tombi: format.rules.array-values-order = "ascending"
+exclude = ["**/modify_*", "**/remove_*", "**/symlink_*", "tmp/**"]
 
 [format.rules]
 trailing-comment-space-width = 1

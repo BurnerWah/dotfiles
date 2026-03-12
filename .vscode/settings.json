@@ -28,6 +28,7 @@
   "files.associations": {
     ".chezmoiignore": "ignore",
     ".chezmoiremove": "ignore",
+    ".shellcheckrc": "ini",
     "*.desktop": "ini",
     "*.elv.tmpl": "elvish",
     "*.env.tmpl": "dotenv",
