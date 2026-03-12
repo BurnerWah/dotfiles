@@ -1,8 +1,19 @@
+---@type LazySpec
 return {
   {
     "stevearc/conform.nvim",
     event = "BufWritePre", -- uncomment for format on save
     opts = require("configs.conform"),
+  },
+
+  { "folke/neoconf.nvim" },
+
+  {
+    "mfussenegger/nvim-lint",
+    event = { "BufWritePost", "BufReadPost", "InsertLeave" },
+    config = function()
+      require("configs.nvim-lint")
+    end,
   },
 
   -- These are some examples, uncomment them if you want to see them work!

@@ -2,7 +2,7 @@ local options = {
   -- Avoid prettierd as it tends to create leftover processes
   formatters_by_ft = {
     css = { "stylelint", "prettier" },
-    fish = { "fish_indent" },
+    fish = { "fish_indent", lsp_fallback = "prefer" },
     html = { "prettier" },
     javascript = { "biome-check", "prettier" },
     javascriptreact = { "biome-check", "prettier" },
@@ -10,10 +10,11 @@ local options = {
     jsonc = { "prettier" },
     less = { "prettier" },
     lua = { "stylua" },
-    markdown = { "markdownlint-cli2", "prettier" },
+    markdown = { "rumdl", "prettier" },
     python = { "ruff_fix", "ruff_format" },
+    ps1 = { lsp_fallback = "prefer" },
     scss = { "prettier" },
-    toml = { "tombi", lsp_fallback = "never" },
+    toml = { "tombi", lsp_fallback = "prefer" },
     typescript = { "biome-check", "prettier" },
     typescriptreact = { "biome-check", "prettier" },
     vue = { "prettier" },
