@@ -12,4 +12,5 @@ homebrew.mxcl.runit.plist
 homebrew.mxcl.syncthing.plist
 homebrew.mxcl.yubikey-agent.plist
 org.git-scm.git.*.plist
+pitchfork.plist
 # keep-sorted end
