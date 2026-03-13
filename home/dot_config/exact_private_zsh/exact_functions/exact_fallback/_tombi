@@ -1,3 +1,0 @@
-#compdef tombi
-# shellcheck disable=SC1090
-source <(tombi completion zsh)

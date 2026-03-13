@@ -1,0 +1,155 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: tombi
+description: TOML Toolkit
+flags:
+  -h, --help: Print help (see more with '--help')
+  -V, --version: Print version
+persistentflags:
+  -v, --verbose*: Change the logging level
+documentation:
+  flag:
+    help: Print help (see a summary with '-h')
+    verbose: |-
+      Change the logging level
+
+      -v: DEBUG
+
+      -vv: TRACE
+
+      [default: INFO]
+commands:
+  - name: format
+    aliases: [fmt]
+    description: Format TOML files
+    flags:
+      --check: Check only and don't overwrite files
+      --diff: Show format changes
+      -h, --help: Print help (see more with '--help')
+      --quiet: Quiet mode
+      --stdin-filename=: Filename to use when reading from stdin
+    persistentflags:
+      --no-cache: Do not use cache
+      --offline: Disable network access
+    completion:
+      positionalany:
+        - $files([.toml])
+      flag:
+        stdin-filename: ['$files([.toml])']
+    documentation:
+      flag:
+        help: Print help (see a summary with '-h')
+        no-cache: |-
+          Do not use cache
+
+          Fetch the latest data from remote and save it to the cache
+        offline: |-
+          Disable network access
+
+          Don't fetch from remote and use local schemas cache.
+        quiet: |-
+          Quiet mode
+
+          If `true`, the program will not print summary output messages.
+        stdin-filename: |-
+          Filename to use when reading from stdin
+
+          This is useful for determining which JSON Schema should be applied, for more rich formatting.
+        verbose: |-
+          Change the logging level
+
+          -v: DEBUG
+
+          -vv: TRACE
+
+          [default: INFO]
+  - name: lint
+    aliases: [check]
+    description: Lint TOML files
+    flags:
+      --error-on-warnings: Exit with error code on warnings
+      -h, --help: Print help (see more with '--help')
+      --quiet: Quiet mode
+      --stdin-filename=: Filename to use when reading from stdin
+    persistentflags:
+      --no-cache: Do not use cache
+      --offline: Disable network access
+    completion:
+      positionalany:
+        - $files([.toml])
+      flag:
+        stdin-filename: ['$files([.toml])']
+    documentation:
+      flag:
+        error-on-warnings: |-
+          Exit with error code on warnings
+
+          If `true`, the program will exit with error code if there are warnings.
+        help: Print help (see a summary with '-h')
+        no-cache: |-
+          Do not use cache
+
+          Fetch the latest data from remote and save it to the cache
+        offline: |-
+          Disable network access
+
+          Don't fetch from remote and use local schemas cache.
+        quiet: |-
+          Quiet mode
+
+          If `true`, the program will not print summary output messages.
+        stdin-filename: |-
+          Filename to use when reading from stdin
+
+          This is useful for determining which JSON Schema should be applied, for more rich linting.
+        verbose: |-
+          Change the logging level
+
+          -v: DEBUG
+
+          -vv: TRACE
+
+          [default: INFO]
+  - name: lsp
+    aliases: [serve]
+    description: Run TOML Language Server
+    flags:
+      -h, --help: Print help (see more with '--help')
+    persistentflags:
+      --no-cache: Do not use cache
+      --offline: Disable network access
+    documentation:
+      flag:
+        help: Print help (see a summary with '-h')
+        no-cache: |-
+          Do not use cache
+
+          Fetch the latest data from remote and save it to the cache
+        offline: |-
+          Disable network access
+
+          Don't fetch from remote and use local schemas cache.
+        verbose: |-
+          Change the logging level
+
+          -v: DEBUG
+
+          -vv: TRACE
+
+          [default: INFO]
+  - name: completion
+    description: Generate shell completion
+    flags:
+      -h, --help: Print help (see more with '--help')
+    completion:
+      positional: [[bash, elvish, fish, powershell, zsh]]
+    documentation:
+      flag:
+        help: Print help (see a summary with '-h')
+        verbose: |-
+          Change the logging level
+
+          -v: DEBUG
+
+          -vv: TRACE
+
+          [default: INFO]

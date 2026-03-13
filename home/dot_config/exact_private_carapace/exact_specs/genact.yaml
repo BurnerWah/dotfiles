@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: genact
+description: A nonsense activity generator
+flags:
+  --exit-after-modules=: Exit after running this many modules
+  --exit-after-time=: 'Exit after running for this long (format example: 2h10min)'
+  -h, --help: Print help
+  --inhibit: Keep the computer awake and the display on while genact is running
+  -i, --instant-print-lines=: Instantly print this many lines
+  -l, --list-modules: List available modules
+  -m, --modules=*: Run only these modules
+  --print-completions=: Generate completion file for a shell
+  --print-manpage: Generate man page
+  -s, --speed-factor=: Global speed factor
+  -V, --version: Print version
+completion:
+  flag:
+    modules:
+      - ansible
+      - bootlog
+      - botnet
+      - bruteforce
+      - cargo
+      - cc
+      - composer
+      - cryptomining
+      - docker_build
+      - docker_image_rm
+      - download
+      - julia
+      - kernel_compile
+      - memdump
+      - mkinitcpio
+      - rkhunter
+      - simcity
+      - terraform
+      - weblog
+      - wpt
+    print-completions:
+      - bash
+      - elvish
+      - fish
+      - powershell
+      - zsh

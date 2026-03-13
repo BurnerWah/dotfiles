@@ -1,0 +1,110 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: hgrep
+description: grep with human-friendly search output.
+flags:
+  -c, --min-context=: Minimum lines of context surrounding each match
+  -C, --max-context=: Maximum lines of context surrounding each match
+  -G, --no-grid: Remove borderlines for more compact output
+  --grid: Add borderlines to output
+  --tab=: Number of spaces for tab character. Set 0 to pass tabs through directly
+  --theme=: Theme for syntax highlighting
+  --list-themes: List all available theme names and their samples
+  -p, --printer=: Printer to print the match results
+  --term-width=: Width (number of characters) of terminal window
+  --wrap=: Text-wrapping mode
+  -f, --first-only: Show only the first code snippet per file
+  -E, --encoding=: Specify the text encoding that hgrep will use on all files printed like 'sjis'
+  --generate-completion-script=: Print completion script for SHELL to stdout
+  --generate-man-page: Print man page to stdout
+  --custom-assets: Load bat's custom assets. This flag is only for bat printer
+  --background: Paint background colors. This flag is only for syntect printer
+  --ascii-lines: Use ASCII characters for drawing border lines instead of Unicode characters
+  --no-ignore: Don't respect ignore files (.gitignore, .ignore, etc.)
+  -i, --ignore-case: Search case insensitively
+  -S, --smart-case: Search case sensitively unless the pattern is all lowercase
+  -., --hidden: Search hidden files and directories
+  --ignore-file=*: Specify a path to one or more gitignore formatted rules files
+  -g, --glob=*: Include or exclude files and directories for searching that match the given glob
+  --glob-case-insensitive: Process globs case insensitively
+  -F, --fixed-strings: Treat the pattern as a literal string instead of a regular expression
+  -w, --word-regexp: Only show matches surrounded by word boundaries
+  -L, --follow: Follow symbolic links while traversing directories
+  -U, --multiline: Enable matching across multiple lines
+  --multiline-dotall: Make '.' match newlines when multiline searching is enabled
+  --crlf: Treat CRLF ('\r\n') as a line terminator instead of just '\n'
+  --mmap: Search using memory maps when possible
+  -m, --max-count=: Limit the number of matching lines per file searched to NUM
+  --max-depth=: Limit the depth of directory traversal to NUM levels beyond the paths given
+  -x, --line-regexp: Only show matches surrounded by line boundaries
+  -P, --pcre2: Use the PCRE2 regex engine
+  -t, --type=*: Only search files matching TYPE
+  -T, --type-not=*: Do not search files matching TYPE
+  --type-list: Show all supported file types and their corresponding globs
+  --max-filesize=: Ignore files larger than NUM in size
+  -v, --invert-match: Show lines that do not match the given pattern
+  --one-file-system: Do not cross file system boundaries relative to where the search started from
+  --no-unicode: Disable unicode-aware regular expression matching
+  --regex-size-limit=: The upper size limit of the compiled regex
+  --dfa-size-limit=: The upper size limit of the regex DFA
+  -u, --unrestricted*: Reduce the level of "smart" filtering by repeated uses (up to 2)
+  -j, --threads=: The approximate number of threads to use
+  -h, --help: Print help
+  -V, --version: Print version
+exclusiveflags: # These are largely subjective.
+  - [no-grid, grid]
+  - [line-regexp, word-regexp]
+  - [ignore-case, smart-case]
+completion:
+  positional:
+    - - $usage(Pattern to search. Regular expression is available)
+  positionalany: [$files]
+  flag:
+    generate-completion-script: [bash, zsh, powershell, fish, elvish, nushell]
+    printer: [syntect, bat]
+    wrap:
+      - "char\tenables character-wise text-wrapping (default)"
+      - "never\tdisables text-wrapping"
+    theme:
+      # This is janky and I don't like it
+      - '$fish(hgrep --list-themes | string match -rg ''^\e\[1m"(.*)"\e\[0m$'')'
+      # This macro isn't really much simpler under the hood, and isn't fully accurate either,
+      # so it's here more as a reference for how to implement this in go.
+      # - $carapace.tools.bat.Themes
+    ignore-file: [$files]
+    type: # This is also janky and I still don't like it
+      - &types '$fish(hgrep --type-list | string replace -r ''\e\[1m(.+?)\e\[0m: (.*)'' ''$1\t$2'')'
+      - $filter(${C_FLAG_TYPE})
+    type-not: # It seems to not be possible to filter out values from this flag
+      - *types
+      - $filter(${C_FLAG_TYPE})
+
+documentation:
+  flag:
+    unrestricted: |-
+      Reduce the level of "smart" filtering by repeated uses (up to 2).
+
+      A single flag is equivalent to --no-ignore.
+      Two flags are equivalent to --no-ignore --hidden.
+      Unlike ripgrep, three flags are not supported since hgrep doesn't support --binary flag
+    threads: |-
+      The approximate number of threads to use.
+
+      A The default value causes ripgrep to choose the thread count using heuristics
+    max-filesize: |-
+      Ignore files larger than NUM in size. This does not apply to directories.
+
+      The input format accepts suffixes of K, M or G which correspond to kilobytes, megabytes and gigabytes, respectively.
+      If no suffix is provided the input is treated as bytes
+    line-regexp: |-
+      Only show matches surrounded by line boundaries.
+
+      This is equivalent to putting ^...$ around the search pattern.
+      This flag overrides --word-regexp
+    regex-size-limit: |-
+      The upper size limit of the compiled regex.
+
+      The default limit is 10M. For the size suffixes, see --max-filesize
+    dfa-size-limit: |-
+      The upper size limit of the regex DFA
+
+      The default limit is 10M. For the size suffixes, see --max-filesize

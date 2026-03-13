@@ -1,1 +1,0 @@
-__fish_cache_sourced_completions vrc-get.exe completion fish

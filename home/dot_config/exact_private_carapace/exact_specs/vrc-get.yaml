@@ -1,0 +1,324 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: vrc-get
+description: Open Source command line client of VRChat Package Manager.
+# Almost every command has these flags
+persistentflags:
+  -h, --help: Print help
+  -V, --version: Print version
+
+# TODO add argument completion
+commands:
+  - name: install
+    aliases: [i]
+    description: Adds package to unity project
+    flags:
+      <<:
+        - &flag_project_def
+          -p, --project=: Path to project dir. by default CWD or parents of CWD will be used
+        - &flag_yes_def
+          -y, --yes: skip confirm
+        - &flags_offline_def
+          --no-update: do not update local repository cache
+          --offline: do not connect to remote servers, use local caches only. implicitly --no-update
+        - &flag_prerelease
+          --prerelease: Include prerelease
+      -n, --name: Install package by display name instead of name
+    completion:
+      positional:
+        - - $usage(id of Package)
+        - - $usage(Version of package. if not specified, latest version will be used)
+      flag:
+        <<:
+          - &flag_project_cmp
+            project: [$directories]
+    documentation:
+      command: |-
+        Adds package to unity project
+
+        With install command, you'll add to dependencies. With upgrade command, you'll upgrade dependencies or locked dependencies but not add to dependencies.
+      flag:
+        help: Print help (see a summary with '-h')
+        name: |-
+          Install package by display name instead of name
+
+          This option is experimental and behavior may change in the future.
+  - name: resolve
+    description: (re)installs all locked packages
+    flags:
+      <<: [*flag_project_def, *flags_offline_def]
+    completion:
+      flag: *flag_project_cmp
+    documentation:
+      command: |-
+        (re)installs all locked packages
+
+        If some install packages that is not locked depends on non installed packages, This command tries to install those packages.
+      flag:
+        help: Print help (see a summary with '-h')
+  - name: remove
+    aliases: [rm]
+    description: Remove package from Unity project
+    flags:
+      <<:
+        - *flag_project_def
+        - *flag_yes_def
+        - *flags_offline_def
+    completion:
+      positionalany:
+        - $usage(Name of Packages to remove)
+      flag: *flag_project_cmp
+  - name: reinstall
+    description: Reinstall specified packages
+    flags:
+      <<:
+        - *flag_project_def
+        - *flag_yes_def
+        - *flags_offline_def
+    completion:
+      positionalany:
+        - $usage(Name of Packages to reinstall)
+      flag: *flag_project_cmp
+  - name: update
+    description: Update local repository cache
+  - name: outdated
+    description: Show list of outdated packages
+    flags:
+      <<:
+        - *flag_project_def
+        - *flags_offline_def
+        - *flag_prerelease
+      --json-format=: With this option, output is printed in json format
+    completion:
+      flag:
+        <<: *flag_project_cmp
+        json-format: ['1']
+  - name: upgrade
+    description: Upgrade specified package or all packages to latest or specified version
+    flags:
+      <<:
+        - *flag_project_def
+        - *flag_yes_def
+        - *flags_offline_def
+        - *flag_prerelease
+    completion:
+      positional:
+        - - $usage(Name of Package)
+        - - $usage(Version of package. if not specified, latest version will be used)
+      flag: *flag_project_cmp
+    documentation:
+      command: |-
+        Upgrade specified package or all packages to latest or specified version.
+
+        With install command, you'll add to dependencies. With upgrade command, you'll upgrade dependencies or locked dependencies but not add to dependencies.
+      flag:
+        help: Print help (see a summary with '-h')
+  - name: downgrade
+    description: Downgrade the specified package specified version
+    flags:
+      <<:
+        - *flag_project_def
+        - *flag_yes_def
+        - *flags_offline_def
+        - *flag_prerelease
+    completion:
+      positional:
+        - - $usage(Name of Package)
+        - - $usage(Version of package)
+      flag: *flag_project_cmp
+    documentation:
+      command: |-
+        Downgrade the specified package specified version.
+
+        With install command, you'll add to dependencies. With upgrade command, you'll upgrade dependencies or locked dependencies but not add to dependencies.
+      flag:
+        help: Print help (see a summary with '-h')
+  - name: search
+    description: Search package by the query
+    flags: *flags_offline_def
+    completion:
+      positionalany:
+        - $usage(Name of Package)
+    documentation:
+      command: |-
+        Search package by the query
+
+        Search for packages that includes query in either name, displayName, or description.
+      flag:
+        help: Print help (see a summary with '-h')
+  - name: repo
+    description: Commands around repositories
+    commands:
+      - name: list
+        description: List all repositories
+        flags: *flags_offline_def
+      - name: add
+        description: Add remote or local repository
+        flags:
+          <<: *flags_offline_def
+          -H, --header=*: Headers
+        completion:
+          positional:
+            - - $usage(URL of Package)
+            - - $usage(Name of Package)
+      - name: remove
+        description: Remove repository with specified url, path or name
+        flags:
+          <<: *flags_offline_def
+          --id: Find repository to remove by id
+          --name: Find repository to remove by name
+          --path: Find repository to remove by local path
+          --url: Find repository to remove by url
+        completion:
+          positional:
+            - - $usage(id, url, name, or path of repository)
+      - name: cleanup
+        description: Cleanup repositories in Repos directory
+        flags: *flags_offline_def
+        documentation:
+          command: |-
+            Cleanup repositories in Repos directory
+
+            The official VPM CLI will add &lt;uuid&gt;.json in the Repos directory even if error occurs. So this command will cleanup Repos directory.
+          flag:
+            help: Print help (see a summary with '-h')
+      - name: packages
+        description: List packages in specified repository
+        flags: *flags_offline_def
+        completion:
+          positional:
+            - - $usage(NAME_OR_URL)
+      - name: import
+        description: Import repository list file
+        flags:
+          <<: [*flags_offline_def, *flag_yes_def]
+        completion:
+          positional:
+            - - $files ||| $usage(REPOSITORIES_FILE)
+      - name: export
+        description: Export user repository list file
+        flags: *flags_offline_def
+      - name: help
+        description: Print this message or the help of the given subcommand(s)
+        flags:
+          <<:
+            - &hide_help
+              -h, --help&: ''
+            - &hide_version
+              -V, --version&: ''
+        completion:
+          positional:
+            - - $carapace.bridge.CarapaceBin([vrc-get, repo])
+  - name: user-package
+    description: Commands around user packages
+    commands:
+      - name: list
+        description: List all user packages
+      - name: add
+        description: Add user package
+        completion:
+          positional:
+            - - $files ||| $usage(Path to package)
+      - name: remove
+        description: Remove user package
+        completion:
+          positional:
+            - - $files ||| $usage(Path to package)
+      - name: help
+        description: Print this message or the help of the given subcommand(s)
+        flags:
+          <<: [*hide_help, *hide_version]
+        completion:
+          positional:
+            - - $carapace.bridge.CarapaceBin([vrc-get, user-package])
+  - name: info
+    description: Shows information for other program
+    commands:
+      - name: project
+        description: Show project information
+        flags:
+          <<:
+            - *flag_project_def
+            - &flag_json_format_def
+              --json-format=: Output json format
+        completion:
+          flag:
+            <<:
+              - *flag_project_cmp
+              - &flag_json_format_cmp
+                json-format: ['1']
+        documentation:
+          command: |-
+            Show project information
+
+            Without --json-format, this will emit human readable information With --json-format, this will emit machine-readable information with json
+          flag:
+            help: Print help (see a summary with '-h')
+      - name: package
+        description: Show project information
+        flags:
+          <<: [*flags_offline_def, *flag_json_format_def]
+        completion:
+          positional:
+            - - $usage(PACKAGE)
+          flag: *flag_json_format_cmp
+      - name: help
+        description: Print this message or the help of the given subcommand(s)
+        flags:
+          <<: [*hide_help, *hide_version]
+        completion:
+          positional:
+            - - $carapace.bridge.CarapaceBin([vrc-get, info])
+  - name: migrate
+    description: Migrate Unity Project
+    commands:
+      - name: unity2022
+        description: Migrate your project to Unity 2022
+        flags:
+          <<: [*flags_offline_def, *flag_project_def, *hide_version]
+          --unity!=: Path to unity 2022 executable
+        completion:
+          flag:
+            <<: *flag_project_cmp
+            unity: [$files]
+      - name: vpm
+        description: Migrate your legacy (unitypackage) VRCSDK project to VPM project
+        flags:
+          <<: [*flags_offline_def, *flag_project_def, *hide_version]
+        completion:
+          flag:
+            <<: *flag_project_cmp
+      - name: help
+        description: Print this message or the help of the given subcommand(s)
+        flags:
+          <<: [*hide_help, *hide_version]
+        completion:
+          positional:
+            - - $carapace.bridge.CarapaceBin([vrc-get, migrate])
+  - name: cache
+    description: Commands about cache control
+    commands:
+      - name: clear
+        description: Cleanup package cache
+        flags: *flags_offline_def
+      - name: help
+        description: Print this message or the help of the given subcommand(s)
+        flags:
+          <<: [*hide_help, *hide_version]
+        completion:
+          positional:
+            - - $carapace.bridge.CarapaceBin([vrc-get, cache])
+  - name: completion
+    description: ''
+    completion:
+      positional:
+        - [bash, elvish, fish, powershell, zsh, $usage(SHELL)]
+    flags: *hide_version
+  - name: help
+    description: Print this message or the help of the given subcommand(s)
+    persistentflags:
+      <<: [*hide_help, *hide_version]
+    completion:
+      # This is very hacky, but it's a lot less code than we'd otehrwise need
+      positional:
+        - - $carapace.bridge.CarapaceBin([vrc-get]) ||| $filter([i, rm])
+        - - $carapace.bridge.CarapaceBin([vrc-get, ${C_ARG1}]) ||| $filter([help])

@@ -1,3 +1,0 @@
-#compdef vrc-get vrc-get.exe
-# shellcheck disable=SC1090
-source <(vrc-get completion fish)

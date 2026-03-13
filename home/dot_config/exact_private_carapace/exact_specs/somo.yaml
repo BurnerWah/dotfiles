@@ -1,0 +1,84 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: somo
+description: A human-friendly alternative to netstat for socket and port monitoring on Linux and macOS.
+flags:
+  -a, --annotate-remote-port: Annotate remote port with service name and ephemeral tag
+  -c, --compact: Get compact table view
+  --config-file: Retrieve config file path
+  -e, --established: Filter by established connections
+  --exclude-ipv6&: "Deprecated: Use '--ipv4' instead"
+  --format=: Format the output in a certain way
+  -h, --help: Print help
+  --ip=: Filter connections by remote IP address
+  -4, --ipv4: Get only IPv4 connections
+  -6, --ipv6: Get only IPv6 connections
+  --json: Output in JSON
+  -k, --kill: Display an interactive selection option after inspecting connections
+  -l, --listen: Filter by listening connections
+  --no-config: Ignore config file
+  --no-pager: Never page output
+  -o, --open: Filter by open connections
+  --pid=: Filter connections by PID
+  -p, --port=: Filter connections by local port
+  --program=: Filter connections by program name
+  --proto=&: "Deprecated: Use '--tcp' and '--udp' instead"
+  --remote-port=: Filter connections by remote port
+  -r, --reverse: Reverse order of the table
+  -s, --sort=: Sort by column name
+  -t, --tcp: Include TCP connections
+  -u, --udp: Include UDP connections
+  -V, --version: Print version
+exclusiveflags:
+  - [ipv6, exclude-ipv6] # only conflict listed in the code
+completion:
+  flag:
+    sort:
+      - proto
+      - local_port
+      - remote_address
+      - remote_port
+      - program
+      - pid
+      - state
+    ip:
+      - $(somo --format {{remote_address}})
+      - "127.0.0.1\tlocalhost (ipv4)"
+      - "::1\tlocalhost (ipv6)"
+      - "0.0.0.0\tunspecified (ipv4)"
+      - "::\tunspecified (ipv4)"
+      # - $carapace.net.Ipv4Addresses
+    pid:
+      - $sh(somo --format $'{{pid}}\t{{program}}')
+      # - $carapace.ps.ProcessIds
+    port:
+      - "$sh(somo --format $'{{local_port}}\tused by: {{program}}')"
+      - $carapace.net.Ports # Known & used, with descriptions
+      # - $carapace.net.UsedPorts
+    program:
+      - $(somo --format {{program}})
+    remote-port:
+      - $(somo --format {{remote_port}})
+      - $carapace.net.KnownPorts
+      - "-\tunspecified/unknown" # need to look more at code to understand this better
+      - "0\tlistening connections"
+    proto: [tcp, udp]
+commands:
+  - name: generate-completions
+    description: Generate shell completions
+    flags:
+      -h, --help: Print help
+    completion:
+      positional: [[bash, elvish, fish, powershell, zsh]]
+  - name: generate-config-file
+    description: Generate config file
+    flags:
+      -h, --help: Print help
+  - name: help
+    description: Print this message or the help of the given subcommand(s)
+    commands:
+      - name: generate-completions
+        description: Generate shell completions
+      - name: generate-config-file
+        description: Generate config file
+      - name: help
+        description: Print this message or the help of the given subcommand(s)

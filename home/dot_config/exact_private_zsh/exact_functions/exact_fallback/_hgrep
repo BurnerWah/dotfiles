@@ -1,3 +1,0 @@
-#compdef hgrep
-# shellcheck disable=SC1090
-source <(hgrep --generate-completion-script zsh)

@@ -1,0 +1,538 @@
+name: biome
+description: Biome official CLI
+persistentflags:
+  -h, --help: Prints help information
+flags:
+  -V, --version: Prints version information
+
+# TODO improve descriptions
+# TODO add argument descriptions
+
+commands:
+  - name: version
+    description: Shows the Biome version information and quit.
+    flags: &flags_global_def
+      --colors=: Set the formatting mode for markup
+      --use-server: Connect to a running instance of the Biome daemon server.
+      --verbose: Print additional diagnostics, and some diagnostics show more information.
+      --config-path=: Set the file path to the configuration file, or the directory path to find `biome.json` or `biome.jsonc`.
+      --max-diagnostics=: Cap the amount of diagnostics displayed.
+      --skip-parse-errors: Skip over files containing syntax errors instead of emitting an error diagnostic.
+      --no-errors-on-unmatched: Silence errors that would be emitted in case no files were processed during the execution of the command.
+      --error-on-warnings: Tell Biome to exit with an error code if some diagnostics emit warnings.
+      --reporter=: Allows to change how diagnostics and summary are reported.
+      --reporter-file=: File to output reports to
+      --diagnostic-level=: The level of diagnostics to show.
+    completion:
+      flag: &flags_global_cmp
+        colors: ['off', force]
+        config-path: ['$files([.json, .jsonc])']
+        reporter:
+          - default
+          - json
+          - json-pretty
+          - github
+          - junit
+          - summary
+          - gitlab
+          - checkstyle
+          - rdjson
+          - sarif
+        reporter-file: [$files]
+        diagnostic-level: [info, warn, error]
+
+  - name: rage
+    description: Prints information for debugging.
+    flags:
+      <<:
+        - *flags_global_def
+        - &flags_logging_def
+          --log-file=: Optional path/file to redirect log messages to.
+          --log-prefix-name=: ''
+          --log-path=: Allows changing the folder where logs are stored.
+          --log-level=: The level of logging.
+          --log-kind=: What the log should look like.
+        - --daemon-logs: Prints the Biome daemon server logs
+          --formatter: Prints the formatter options applied
+          --linter: Prints the linter options applied
+
+    completion:
+      flag:
+        <<:
+          - *flags_global_cmp
+          - &flags_logging_cmp
+            log-path: [$directories]
+            log-level: [none, debug, info, warn, error]
+            log-kind: [pretty, compact, json]
+  - name: start
+    description: Starts the Biome daemon server process.
+    flags:
+      <<:
+        - *flags_logging_def
+        - &flags_daemon_def
+          --watcher-kind=: Controls how the Biome file watcher should behave.
+          --watcher-polling-interval=: The polling interval in milliseconds.
+
+    completion:
+      flag:
+        <<:
+          - *flags_logging_cmp
+          - &flags_daemon_cmp
+            watcher-kind: [polling, recommended, none]
+  - name: stop
+    description: Stops the Biome daemon server process.
+
+  - name: lint
+    description: Run various checks on a set of files.
+    flags:
+      <<:
+        - *flags_global_def
+        - *flags_logging_def
+        - &flags_json_parser_def
+          --json-parse-allow-comments=: Allow parsing comments in `.json` files
+          --json-parse-allow-trailing-commas=: Allow parsing trailing commas in `.json` files
+        - &flags_vcs_def
+          --vcs-enabled=: Whether Biome should integrate itself with the VCS client
+          --vcs-client-kind=: The kind of client.
+          --vcs-use-ignore-file=: Whether Biome should use the VCS ignore file.
+          --vcs-root=: The folder where Biome should check for VCS files
+          --vcs-default-branch=: The main branch of the project
+        - &flags_filesystem_def
+          --files-max-size=: The maximum allowed size for source code files in bytes
+          --files-ignore-unknown=: Tells Biome to not emit diagnostics when handling files that it doesn't know
+        - &flags_js_linter_def
+          --javascript-linter-enabled=: Control the linter for JavaScript (and its super languages) files.
+        - &flags_json_linter_def
+          --json-linter-enabled=: Control the linter for JSON (and its super languages) files.
+        - --write: Writes safe fixes
+          --unsafe: Apply unsafe fixes. Should be used with `--write` or `--fix`
+          --fix: Alias for `--write`, writes safe fixes
+          --suppress: Fixes lint rule violations with comment suppressions instead of using a rule code action (fix)
+          --reason=: Explanation for suppressing diagnostics with `--suppress`
+        - &flags_vcs_file_selection_staged_def
+          --staged: When set to true, only the files that have been staged (the ones prepared to be committed) will be linted.
+        - &flags_vcs_file_selection_def
+          --changed: When set to true, only the files that have been changed compared to your `defaultBranch` configuration will be linted.
+          --since=: Use this to specify the base branch to compare against when you're using the --changed flag and the `defaultBranch` is not set in your biome.json
+        - &flags_stdin_file_path_def
+          --stdin-file-path=: Use this option when you want to format code piped from `stdin`, and print the output to `stdout`.
+        - &flags_rule_selection_def
+          --only=: Run only the given lint rule, assist action, group of rules and actions, or domain.
+          --skip=: Skip the given lint rule, assist action, group of rules and actions, or domain by setting the severity level of the rules to `off`.
+        - &flags_profile_rules_def
+          --profile-rules: Enable rule profiling output.
+    completion:
+      positionalany: [$files]
+      flag:
+        <<:
+          - *flags_global_cmp
+          - *flags_logging_cmp
+          - &flags_json_parser_cmp
+            json-parse-allow-comments: &bool ['true', 'false']
+            json-parse-allow-trailing-commas: *bool
+          - &flags_vcs_cmp
+            vcs-enabled: *bool
+            vcs-client-kind: [git]
+            vcs-use-ignore-file: *bool
+            vcs-root: [$directories]
+            vcs-default-branch: [$carapace.tools.git.LocalBranches]
+          - &flags_filesystem_cmp
+            files-ignore-unknown: *bool
+          - &flags_js_linter_cmp
+            javascript-linter-enabled: *bool
+          - &flags_json_linter_cmp
+            json-linter-enabled: *bool
+          - &flags_stdin_file_path_cmp
+            stdin-file-path: [$files]
+          - &flags_vcs_file_selection_cmp
+            since: # This might be wrong
+              - $carapace.tools.git.LocalBranches
+
+  - name: format
+    description: Run the formatter on a set of files.
+    flags:
+      <<:
+        - &flags_global_fmt_def
+          --format-with-errors=: Whether formatting should be allowed to proceed if a given file has syntax errors
+          --indent-style=: The indent style.
+          --indent-width=: The size of the indentation, 2 by default
+          --line-ending=: The type of line ending.
+          --attribute-position=: The attribute position style in HTML-ish languages.
+          --bracket-same-line=: Put the `>` of a multi-line HTML or JSX element at the end of the last line instead of being alone on the next line
+          --bracket-spacing=: Whether to insert spaces around brackets in object literals.
+          --expand=: Whether to expand arrays and objects on multiple lines.
+          --trailing-newline=: Whether to add a trailing newline at the end of the file.
+          --use-editorconfig=: Use any `.editorconfig` files to configure the formatter.
+        - &flags_js_fmt_def
+          --javascript-formatter-enabled=: Control the formatter for JavaScript (and its super languages) files.
+          --jsx-quote-style=: The type of quotes used in JSX. Defaults to double.
+          --quote-properties=: When properties in objects are quoted. Defaults to asNeeded.
+          --trailing-commas=: Print trailing commas wherever possible in multi-line comma-separated syntactic structures. Defaults to "all".
+          --semicolons=: Whether the formatter prints semicolons for all statements or only in for statements where it is necessary because of ASI.
+          --arrow-parentheses=: Whether to add non-necessary parentheses to arrow functions. Defaults to "always".
+          --bracket-same-line=: Whether to hug the closing bracket of multiline HTML/JSX tags to the end of the last line, rather than being alone on the following line. Defaults to false.
+          --javascript-formatter-indent-style=: The indent style applied to JavaScript (and its super languages) files.
+          --javascript-formatter-indent-width=: The size of the indentation applied to JavaScript (and its super languages) files. Default to 2.
+          --javascript-formatter-line-ending=: The type of line ending applied to JavaScript (and its super languages) files. `auto` uses CRLF on Windows and LF on other platforms.
+          --javascript-formatter-line-width=: What's the max width of a line applied to JavaScript (and its super languages) files. Defaults to 80.
+          --javascript-formatter-quote-style=: The type of quotes used in JavaScript code. Defaults to double.
+          --javascript-formatter-attribute-position=: The attribute position style in JSX elements. Defaults to auto.
+          --javascript-formatter-bracket-spacing=: Whether to insert spaces around brackets in object literals. Defaults to true.
+          --javascript-formatter-expand=: Whether to expand arrays and objects on multiple lines.
+          --javascript-formatter-operator-linebreak=: When breaking binary expressions into multiple lines, whether to break them before or after the binary operator. Defaults to "after".
+          --javascript-formatter-trailing-newline=: Whether to add a trailing newline at the end of the file.
+        - *flags_json_parser_def
+        - &flags_css_parser_def
+          --css-parse-css-modules=: Enables parsing of CSS Modules specific features.
+          --css-parse-tailwind-directives=: Enables parsing of Tailwind CSS 4.0 directives and functions.
+        - &flags_graphql_fmt_def
+          --graphql-formatter-enabled=: Control the formatter for GraphQL files.
+          --graphql-formatter-indent-style=: The indent style applied to GraphQL files.
+          --graphql-formatter-indent-width=: The size of the indentation applied to GraphQL files. Default to 2.
+          --graphql-formatter-line-ending=: The type of line ending applied to GraphQL files. `auto` uses CRLF on Windows and LF on other platforms.
+          --graphql-formatter-line-width=: What's the max width of a line applied to GraphQL files. Defaults to 80.
+          --graphql-formatter-quote-style=: The type of quotes used in GraphQL code. Defaults to double.
+          --bracket-spacing=: Whether to insert spaces around brackets in object literals. Defaults to true.
+          --graphql-formatter-trailing-newline=: Whether to add a trailing newline at the end of the file.
+        - &flags_css_fmt_def
+          --css-formatter-enabled=: Control the formatter for CSS (and its super languages) files.
+          --css-formatter-indent-style=: The indent style applied to CSS (and its super languages) files.
+          --css-formatter-indent-width=: The size of the indentation applied to CSS (and its super languages) files. Default to 2.
+          --css-formatter-line-ending=: The type of line ending applied to CSS (and its super languages) files. `auto` uses CRLF on Windows and LF on other platforms.
+          --css-formatter-line-width=: What's the max width of a line applied to CSS (and its super languages) files. Defaults to 80.
+          --css-formatter-quote-style=: The type of quotes used in CSS code. Defaults to double.
+          --css-formatter-trailing-newline=: Whether to add a trailing newline at the end of the file.
+        - &flags_html_fmt_def
+          --html-formatter-enabled=: Control the formatter for HTML (and its super languages) files.
+          --html-formatter-indent-style=: The indent style applied to HTML (and its super languages) files.
+          --html-formatter-indent-width=: The size of the indentation applied to HTML (and its super languages) files. Default to 2.
+          --html-formatter-line-ending=: The type of line ending applied to HTML (and its super languages) files. `auto` uses CRLF on Windows and LF on other platforms.
+          --html-formatter-line-width=: What's the max width of a line applied to HTML (and its super languages) files. Defaults to 80.
+          --html-formatter-attribute-position=: The attribute position style in HTML elements. Defaults to auto.
+          --html-formatter-bracket-same-line=: Whether to hug the closing bracket of multiline HTML tags to the end of the last line, rather than being alone on the following line. Defaults to false.
+          --html-formatter-whitespace-sensitivity=: Whether to account for whitespace sensitivity when formatting HTML (and its super languages). Defaults to "css".
+          --html-formatter-indent-script-and-style=: Whether to indent the `<script>` and `<style>` tags for HTML (and its super languages). Defaults to false.
+          --html-formatter-self-close-void-elements=: Whether void elements should be self-closed. Defaults to never.
+          --html-formatter-trailing-newline=: Whether to add a trailing newline at the end of the file.
+        - *flags_vcs_def
+        - *flags_filesystem_def
+        - *flags_global_def
+        - *flags_logging_def
+        - &flags_json_fmt_def
+          --json-formatter-enabled=: Control the formatter for JSON (and its super languages) files.
+          --json-formatter-indent-style=: The indent style applied to JSON (and its super languages) files.
+          --json-formatter-indent-width=: The size of the indentation applied to JSON (and its super languages) files. Default to 2.
+          --json-formatter-line-ending=: The type of line ending applied to JSON (and its super languages) files. `auto` uses CRLF on Windows and LF on other platforms.
+          --json-formatter-line-width=: What's the max width of a line applied to JSON (and its super languages) files. Defaults to 80.
+          --json-formatter-trailing-commas=: Print trailing commas wherever possible in multi-line comma-separated syntactic structures. Defaults to "none".
+          --json-formatter-expand=: Whether to expand arrays and objects on multiple lines.
+          --json-formatter-bracket-spacing=: Whether to insert spaces around brackets in object literals. Defaults to true.
+          --json-formatter-trailing-newline=: Whether to add a trailing newline at the end of the file.
+        - --write: Writes formatted files to a file system.
+          --fix: Alias of `--write`, writes formatted files to a file system.
+        - *flags_stdin_file_path_def
+        - *flags_vcs_file_selection_def
+        - *flags_vcs_file_selection_staged_def
+    completion:
+      positionalany: [$files]
+      flag:
+        <<:
+          - &flags_global_fmt_cmp
+            format-with-errors: *bool
+            indent-style: &indentstyle [tab, space]
+            line-ending: &lineending [lf, crlf, cr, auto]
+            attribute-position: &attributeposition [multiline, auto]
+            bracket-same-line: *bool
+            bracket-spacing: *bool
+            expand: &expandarrobj [auto, always, never]
+            trailing-newline: *bool
+            use-editorconfig: *bool
+          - &flags_js_fmt_cmp
+            javascript-formatter-enabled: *bool
+            jsx-quote-style: &quotestyle [double, single]
+            quote-properties: [preserve, as-needed]
+            trailing-commas: [all, es5, none]
+            semicolons: [always, as-needed]
+            arrow-parentheses: [always, as-needed]
+            bracket-same-line: *bool
+            javascript-formatter-indent-style: *indentstyle
+            javascript-formatter-line-ending: *lineending
+            javascript-formatter-quote-style: *quotestyle
+            javascript-formatter-attribute-position: *attributeposition
+            javascript-formatter-bracket-spacing: *bool
+            javascript-formatter-expand: *expandarrobj
+            javascript-formatter-operator-linebreak: [before, after]
+            javascript-formatter-trailing-newline: *bool
+          - *flags_json_parser_cmp
+          - &flags_css_parser_cmp
+            css-parse-css-modules: *bool
+            css-parse-tailwind-directives: *bool
+          - &flags_graphql_fmt_cmp
+            graphql-formatter-enabled: *bool
+            graphql-formatter-indent-style: *indentstyle
+            graphql-formatter-line-ending: *lineending
+            graphql-formatter-quote-style: *quotestyle
+            bracket-spacing: *bool
+            graphql-formatter-trailing-newline: *bool
+          - &flags_css_fmt_cmp
+            css-formatter-enabled: *bool
+            css-formatter-indent-style: *indentstyle
+            css-formatter-line-ending: *lineending
+            css-formatter-quote-style: *quotestyle
+            css-formatter-trailing-newline: *bool
+          - &flags_html_fmt_cmp
+            html-formatter-enabled: *bool
+            html-formatter-indent-style: *indentstyle
+            html-formatter-line-ending: *lineending
+            html-formatter-attribute-position: *attributeposition
+            html-formatter-bracket-same-line: *bool
+            html-formatter-whitespace-sensitivity: [css, strict, ignore]
+            html-formatter-indent-script-and-style: *bool
+            html-formatter-self-close-void-elements: [always, never]
+            html-formatter-trailing-newline: *bool
+          - *flags_vcs_cmp
+          - *flags_filesystem_cmp
+          - *flags_global_cmp
+          - *flags_logging_cmp
+          - &flags_json_fmt_cmp
+            json-formatter-enabled: *bool
+            json-formatter-indent-style: *indentstyle
+            json-formatter-line-ending: *lineending
+            json-formatter-trailing-commas: [none, all]
+            json-formatter-expand: *expandarrobj
+            json-formatter-bracket-spacing: *bool
+            json-formatter-trailing-newline: *bool
+          - *flags_vcs_file_selection_cmp
+          - *flags_stdin_file_path_cmp
+
+  - name: check
+    description: Runs formatter, linter and import sorting to the requested files.
+    flags:
+      <<:
+        - *flags_global_def
+        - *flags_logging_def
+        - *flags_vcs_def
+        - *flags_filesystem_def
+        - *flags_global_fmt_def
+        - *flags_json_fmt_def
+        - *flags_js_fmt_def
+        - *flags_json_parser_def
+        - *flags_css_parser_def
+        - *flags_css_fmt_def
+        - *flags_graphql_fmt_def
+        - *flags_html_fmt_def
+        - *flags_js_linter_def
+        - *flags_json_linter_def
+        - *flags_rule_selection_def
+        - *flags_profile_rules_def
+        - *flags_stdin_file_path_def
+        - *flags_vcs_file_selection_def
+        - *flags_vcs_file_selection_staged_def
+        - &flags_css_linter_def
+          --css-linter-enabled=: Control the linter for CSS files.
+        - &flags_html_linter_def
+          --html-linter-enabled=: Control the linter for HTML (and its super languages) files.
+        - &flags_grit_linter_def
+          --grit-linter-enabled=: Control the linter for Grit files.
+        - &flags_graphql_linter_def
+          --graphql-linter-enabled=: Control the formatter for GraphQL files.
+        - &flags_grit_fmt_def
+          --grit-formatter-enabled=: Control the formatter for Grit files.
+          --grit-formatter-indent-style=: The indent style applied to Grit files.
+          --grit-formatter-indent-width=: The size of the indentation applied to Grit files. Default to 2.
+          --grit-formatter-line-ending=: The type of line ending applied to Grit files.
+          --grit-formatter-line-width=: What's the max width of a line applied to Grit files. Defaults to 80.
+          --grit-formatter-trailing-newline=: Whether to add a trailing newline at the end of the file.
+        - &flags_enabled_assist_def
+          --javascript-assist-enabled=: Control the assist for JavaScript (and its super languages) files.
+          --css-assist-enabled=: Control the assist for CSS files.
+          --graphql-assist-enabled=: Control the formatter for GraphQL files.
+          --grit-assist-enabled=: Control the assist functionality for Grit files.
+          --json-assist-enabled=: Control the assist for JSON (and its super languages) files.
+          --html-assist-enabled=: Control the assist for HTML (and its super languages) files.
+        - &flags_enabled_checks_def
+          --formatter-enabled=: Allow enabling or disabling the formatter check.
+          --linter-enabled=: Allow enabling or disabling the linter check.
+          --assist-enabled=: Allow enabling or disabling the assist.
+          --enforce-assist=: Allows enforcing assist, and make the CLI fail if some actions aren't applied. Defaults to `true`.
+        - &flags_check_shared_misc_def
+          --jsx-everywhere=: When enabled, files like `.js`/`.mjs`/`.cjs` may contain JSX syntax.
+          --line-width=: What's the max width of a line. Defaults to 80.
+        - --write: Apply safe fixes, formatting and import sorting
+          --unsafe: Apply unsafe fixes. Should be used with `--write` or `--fix`
+          --fix: Alias for `--write`, writes safe fixes, formatting and import sorting
+    completion:
+      positionalany: [$files]
+      flag:
+        <<:
+          - *flags_global_cmp
+          - *flags_logging_cmp
+          - *flags_vcs_cmp
+          - *flags_filesystem_cmp
+          - *flags_global_fmt_cmp
+          - *flags_json_fmt_cmp
+          - *flags_js_fmt_cmp
+          - *flags_json_parser_cmp
+          - *flags_css_parser_cmp
+          - *flags_css_fmt_cmp
+          - *flags_graphql_fmt_cmp
+          - *flags_html_fmt_cmp
+          - *flags_js_linter_cmp
+          - *flags_json_linter_cmp
+          - *flags_stdin_file_path_cmp
+          - *flags_vcs_file_selection_cmp
+          - &flags_css_linter_cmp
+            css-linter-enabled: *bool
+          - &flags_html_linter_cmp
+            html-linter-enabled: *bool
+          - &flags_grit_linter_cmp
+            grit-linter-enabled: *bool
+          - &flags_graphql_linter_cmp
+            graphql-linter-enabled: *bool
+          - &flags_grit_fmt_cmp
+            grit-formatter-enabled: *bool
+            grit-formatter-indent-style: *indentstyle
+            grit-formatter-line-ending: *lineending
+            grit-formatter-trailing-newline: *bool
+          - &flags_enabled_assist_cmp
+            javascript-assist-enabled: *bool
+            css-assist-enabled: *bool
+            graphql-assist-enabled: *bool
+            grit-assist-enabled: *bool
+            json-assist-enabled: *bool
+            html-assist-enabled: *bool
+          - &flags_check_shared_misc_cmp
+            jsx-everywhere: *bool
+          - &flags_enabled_checks_cmp
+            formatter-enabled: *bool
+            linter-enabled: *bool
+            assist-enabled: *bool
+            enforce-assist: *bool
+
+  - name: ci
+    description: Command to use in CI environments. Runs formatter, linter and import sorting to the requested files.
+    flags:
+      <<:
+        - *flags_global_def
+        - *flags_logging_def
+        - *flags_js_fmt_def
+        - *flags_js_linter_def
+        - *flags_enabled_checks_def
+        - *flags_global_fmt_def
+        - *flags_enabled_assist_def
+        - *flags_css_fmt_def
+        - *flags_css_parser_def
+        - *flags_css_linter_def
+        - *flags_filesystem_def
+        - *flags_graphql_fmt_def
+        - *flags_graphql_linter_def
+        - *flags_html_fmt_def
+        - *flags_html_linter_def
+        - *flags_grit_fmt_def
+        - *flags_grit_linter_def
+        - *flags_rule_selection_def
+        - *flags_vcs_def
+        - *flags_json_fmt_def
+        - *flags_json_linter_def
+        - *flags_json_parser_def
+        - *flags_vcs_file_selection_def
+        - *flags_check_shared_misc_def
+        - --threads=: The number of threads to use.
+    completion:
+      positionalany: [$files]
+      flag:
+        <<:
+          - *flags_global_cmp
+          - *flags_logging_cmp
+          - *flags_js_fmt_cmp
+          - *flags_js_linter_cmp
+          - *flags_enabled_checks_cmp
+          - *flags_global_fmt_cmp
+          - *flags_enabled_assist_cmp
+          - *flags_css_fmt_cmp
+          - *flags_css_parser_cmp
+          - *flags_css_linter_cmp
+          - *flags_filesystem_cmp
+          - *flags_graphql_fmt_cmp
+          - *flags_graphql_linter_cmp
+          - *flags_html_fmt_cmp
+          - *flags_html_linter_cmp
+          - *flags_grit_fmt_cmp
+          - *flags_grit_linter_cmp
+          - *flags_vcs_cmp
+          - *flags_json_fmt_cmp
+          - *flags_json_linter_cmp
+          - *flags_json_parser_cmp
+          - *flags_vcs_file_selection_cmp
+          - *flags_check_shared_misc_cmp
+
+  - name: init
+    description: Bootstraps a new biome project. Creates a configuration file with some defaults.
+    flags:
+      --jsonc: Tells Biome to emit a `biome.jsonc` file.
+
+  - name: lsp-proxy
+    description: Acts as a server for the Language Server Protocol over stdin/stdout.
+    flags:
+      <<:
+        - *flags_logging_def
+        - *flags_daemon_def
+    completion:
+      flag:
+        <<:
+          - *flags_logging_cmp
+          - *flags_daemon_cmp
+
+  - name: migrate
+    description: Updates the configuration when there are breaking changes.
+    commands:
+      - name: prettier
+        description: Import Prettier config
+      - name: eslint
+        description: Import ESLint config
+        flags:
+          --include-inspired: Includes rules inspired from an eslint rule in the migration
+          --include-nursery: Includes nursery rules in the migration
+    flags:
+      <<:
+        - *flags_global_def
+        - *flags_logging_def
+        - --write: Writes the new configuration file to disk
+          --fix: Alias of `--write`, writes the new configuration file to disk
+    completion:
+      flag:
+        <<:
+          - *flags_global_cmp
+          - *flags_logging_cmp
+
+  - name: search
+    description: (EXPERIMENTAL) Searches for Grit patterns across a project.
+    flags:
+      <<:
+        - *flags_global_def
+        - *flags_filesystem_def
+        - *flags_logging_def
+        - *flags_vcs_def
+        - --stdin-file-path=: Use this option when you want to search through code piped from `stdin`, and print the output to `stdout`.
+          -l, --language=: The language to which the pattern applies.
+    completion:
+      positional:
+        - - $usage(PATTERN)
+      positionalany:
+        - $files
+      flag:
+        <<:
+          - *flags_global_cmp
+          - *flags_filesystem_cmp
+          - *flags_logging_cmp
+          - *flags_vcs_cmp
+          - *flags_stdin_file_path_cmp
+          - stdin-file-path: [$files]
+
+  - name: explain
+    description: Shows documentation of various aspects of the CLI.
+    completion:
+      positional: [[$usage(Single name to display documentation for.)]]
+
+  - name: clean
+    description: Cleans the logs emitted by the daemon.

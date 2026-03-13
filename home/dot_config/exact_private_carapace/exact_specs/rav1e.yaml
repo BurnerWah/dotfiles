@@ -1,0 +1,160 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: rav1e
+description: AV1 video encoder
+# TODO finish this
+flags:
+  --benchmark: Provide a benchmark report at the end of the encoding
+  -b, --bitrate=: Bitrate (kbps)
+  --content-light=: Content light level used to describe content luminosity (cll,fall)
+  --film-grain-table=: Uses a film grain table file to apply grain synthesis to the encode.
+  --photon-noise-table=&: Uses a film grain table file to apply grain synthesis to the encode.
+  --first-pass=: Perform the first pass of a two-pass encode, saving the pass data to the specified file for future passes
+  --frame-rate=: Constant frame rate to set at the output (inferred from input when omitted)
+  -h, --help: Print help (see more with '--help')
+  --high-bitdepth: Force the high bitdepth codepath even for 8bit content. Mainly for debugging purposes
+  -I, --keyint=: Maximum interval between keyframes. When set to 0, disables fixed-interval keyframes
+  --level=: AV1 level to target in the form <major>.<minor>, e.g. 3.1.
+  -l, --limit=: Maximum number of frames to encode
+  --low-latency: Low latency mode; disables frame reordering. Has a significant speed-to-quality trade-off
+  --mastering-display=: Mastering display primaries in the form of G(x,y)B(x,y)R(x,y)WP(x,y)L(max,min)
+  --matrix=: Matrix coefficients used to describe color parameters
+  --metrics: Calculate and display several metrics including PSNR, SSIM, CIEDE2000 etc
+  -i, --min-keyint=: Minimum interval between keyframes
+  --min-quantizer=: 'Minimum quantizer (0-255) to use in bitrate mode [default: 0]'
+  --no-scene-detection: Disables scene detection entirely
+  -o, --output!=: Compressed AV1 in IVF video output
+  --photon-noise=: Uses grain synthesis to add photon noise to the resulting encode. Takes a strength value 0-64
+  --primaries=: Color primaries used to describe color parameters
+  --psnr: Calculate and display PSNR metrics
+  --quantizer=: 'Quantizer (0-255), smaller values are higher quality [default: 100]'
+  -q, --quiet: Do not output any status message
+  --range=: Pixel range
+  --rdo-lookahead-frames=: Number of frames encoder should lookahead for RDO purposes
+  -r, --reconstruction=: Outputs a Y4M file containing the output from the decoder
+  --reservoir-frame-delay=: Number of frames over which rate control should distribute the reservoir
+  --scd-speed=: Speed level for scene-change detection
+  --second-pass=: Perform the second pass of a two-pass encode, reading the pass data saved from a previous pass from the specified file
+  --skip=: Skip n number of frames and encode
+  --slots=&: Maximum number of GOPs that can be encoded in parallel # feature:unstable
+  -s, --speed=: Speed level (0 is best quality, 10 is fastest). Speeds 10 and 0 are extremes and are generally not recommended
+  --still-picture: Still picture mode
+  -S, --switch-frame-interval=: Maximum interval between switch frames. When set to 0, disables switch frames
+  --threads=: Set the threadpool size.
+  --tile-cols=: Number of tile columns. Must be a power of 2.
+  --tile-rows=: Number of tile rows. Must be a power of 2.
+  --tiles=: Number of tiles.
+  --time-scale=: The time scale associated with the frame rate if provided (ignored otherwise)
+  --transfer=: Transfer characteristics used to describe color parameters
+  --tune=: Quality tuning
+  -v, --verbose: Verbose logging; outputs info for every frame
+  -V, --version: Print version
+  -y: Overwrite output file
+exclusiveflags:
+  - [tiles, tile-cols]
+  - [tiles, tile-rows]
+  - [quiet, verbose]
+  - [psnr, metrics]
+completion:
+  flag:
+    film-grain-table: [$files]
+    photon-noise-table: [$files]
+    first-pass: [$files]
+    output: [$files]
+    reconstruction: [$files]
+    second-pass: [$files]
+    speed:
+      - '$carapace.number.Range({start: 0, end: 10})'
+      - "0\tbest quality"
+      - "10\tfastest"
+    scd-speed:
+      - "0\tbest quality, default for s0-s9"
+      - "1\tfastest mode, default for s10"
+    tune:
+      - "Psychovisual\tdefault"
+      - Psnr
+    range:
+      - "Limited\tStudio swing representation, default"
+      - "Full\tFull swing representation"
+    primaries:
+      - "BT709\tBT.709"
+      - "BT470M\tBT.470 System M (historical)"
+      - "BT470BG\tBT.470 System B, G (historical)"
+      - "BT601\tBT.601-7 525 (SMPTE 170 M)"
+      - "SMPTE240\tSMPTE 240M (historical)"
+      - "GenericFilm\tGeneric film"
+      - "BT2020\tBT.2020, BT.2100"
+      - "XYZ\tSMPTE 248 (CIE 1921 XYZ)"
+      - "SMPTE431\tSMPTE RP 431-2"
+      - "SMPTE432\tSMPTE EG 432-1"
+      - "EBU3213\tEBU Tech. 3213-E"
+    transfer: # TODO add descriptions
+      - BT709
+      - BT470M
+      - BT470BG
+      - BT601
+      - SMPTE240
+      - Linear
+      - Log100
+      - Log100Sqrt10
+      - IEC61966
+      - BT1361
+      - SRGB
+      - BT2020_10Bit
+      - BT2020_12Bit
+      - SMPTE2084
+      - SMPTE428
+      - HLG
+    matrix: # TODO add descriptions
+      - Identity
+      - BT709
+      - FCC
+      - BT470BG
+      - BT601
+      - SMPTE240
+      - YCgCo
+      - BT2020NCL
+      - BT2020CL
+      - SMPTE2085
+      - ChromatNCL
+      - ChromatCL
+      - ICtCp
+    level:
+      - "auto\tlet the encoder choose (default)"
+      - "unconstrained\tno level constraints"
+      # Version in format {major}.{minor} where {major} is less than 7 and {minor} is less than 3
+      - '$carapace.number.Range({format: "%d.0", start: 0, end: 7})'
+      - '$carapace.number.Range({format: "%d.1", start: 0, end: 7})'
+      - '$carapace.number.Range({format: "%d.2", start: 0, end: 7})'
+      - '$carapace.number.Range({format: "%d.3", start: 0, end: 7})'
+  positional:
+    - - $files
+documentation:
+  flag:
+    help: Print help (see a summary with '-h')
+commands:
+  - name: advanced
+    description: Advanced features
+    flags:
+      -c, --completion=: Output to stdout the completion definition for the shell
+      -h, --help: Print help
+      -l, --load-config=: Load the encoder configuration from a toml file
+      -s, --save-config=: Save the current configuration in a toml file
+    completion:
+      flag:
+        completion:
+          - bash
+          - elvish
+          - fish
+          - powershell
+          - zsh
+        load-config:
+          - $files
+        save-config:
+          - $files
+  - name: help
+    description: Print this message or the help of the given subcommand(s)
+    commands:
+      - name: advanced
+        description: Advanced features
+      - name: help
+        description: Print this message or the help of the given subcommand(s)

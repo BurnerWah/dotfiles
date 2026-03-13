@@ -1,0 +1,34 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: git-absorb
+description: Automatically absorb staged changes into your current branch
+flags:
+  -r, --and-rebase: Run rebase if successful
+  -b, --base=: Use this commit as the base of the absorb stack
+  -n, --dry-run: Don't make any actual changes
+  -f, --force: Skip all safety checks as if all --force-* flags were given
+  --force-author: Generate fixups to commits not made by you
+  --force-detach: Generate fixups even when on a non-branch (detached) HEAD
+  --gen-completions=: Generate completions
+  -h, --help: Print help
+  -m, --message=: Commit message body that is given to all fixup commits
+  --no-limit: Remove absorb stack limit. Be careful with this
+  -F, --one-fixup-per-commit: Only generate one fixup per commit
+  -s, --squash: Create squash commits instead of fixup
+  -v, --verbose: Display more output
+  -V, --version: Print version
+  -w, --whole-file: Match the change against the complete file
+completion:
+  dashany:
+    - $carapace.bridge.CarapaceBin([git, rebase])
+  flag:
+    base:
+      - $carapace.tools.git.RecentCommits(20)
+      - '$carapace.tools.git.Refs({localbranches: true, tags: true})'
+      # I'm pretty sure localbranches work and i suspect tags work, everything else idk
+    gen-completions:
+      - bash
+      - fish
+      - nushell
+      - zsh
+      - powershell
+      - elvish
