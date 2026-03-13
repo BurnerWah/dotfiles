@@ -1,0 +1,40 @@
+name: ddgr
+description: DuckDuckGo from the terminal
+flags:
+  -h, --help: show this help message and exit
+  -n, --num=: number of results to show per page
+  -r, --reg=: region-specific search e.g. 'us-en' for US (default); visit https://duckduckgo.com/params
+  --colorize?=: whether to colorize output
+  -C, --nocolor: equivalent to --colorize=never
+  --colors=: set output colors (see man page for details)
+  -j, --ducky: open the first result in a web browser; implies --np
+  -t, --time=: time limit search [d (1 day), w (1 wk), m (1 month), y (1 year)]
+  -w, --site=: search sites using DuckDuckGo
+  -x, --expand: Show complete url in search results
+  -p, --proxy=: tunnel traffic through an HTTPS proxy # URI format: [http[s]://][user:pwd@]host[:port]
+  --unsafe: disable safe search
+  --noua: disable user agent
+  --json: output in JSON format; implies --np
+  --gui-browser: open a bang directly in gui browser
+  --gb: open a bang directly in gui browser
+  --noprompt: perform search and exit, do not prompt
+  --np: perform search and exit, do not prompt
+  --reverse: list entries in reversed order
+  --rev: list entries in reversed order
+  --url-handler=: custom script or cli utility to open results
+  --show-browser-logs: do not suppress browser output (stdout and stderr)
+  -v, --version: show program's version number and exit
+  -d, --debug: enable debugging
+exclusiveflags:
+  - [colorize, nocolor]
+  - [gui-browser, gb]
+  - [noprompt, np]
+  - [reverse, rev]
+completion:
+  positionalany: [$usage(search keywords)]
+  flag:
+    colorize: [auto, always, never]
+    num:
+      - '$carapace.number.Range({start: 0, end: 25})'
+      - "10\tdefault"
+      - "0\tshows actual number of results fetched per page"

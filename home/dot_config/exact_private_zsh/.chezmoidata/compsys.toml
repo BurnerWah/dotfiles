@@ -219,6 +219,7 @@ carapace = [
   "dbt",
   "dc",
   "dd",
+  "ddgr",
   "deadcode",
   "delta",
   "deno",
