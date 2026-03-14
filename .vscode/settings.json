@@ -88,7 +88,7 @@
     "./schemas/chezmoi/data.yaml": "**/{.chezmoidata.yaml,.chezmoidata/**/*}",
     "./schemas/chezmoi/externals.yaml": "home/.chezmoiexternals/**/*",
     "./schemas/vendor/lima.json": "home/dot_config/private_lima/{*/lima,_config/default}.yaml{,.tmpl}",
-    "./schemas/eza-theme.yaml": "home/dot_config/*_eza/theme.yml",
+    "./schemas/generated/eza-theme.json": "home/dot_config/*_eza/theme.yml",
     "https://carapace.sh/schemas/command.json": "home/dot_config/*_carapace/*_{specs,overlays}/*.yaml{,.tmpl}",
     "https://github.com/sharkdp/vivid/raw/refs/heads/master/schemas/filetypes.json": "home/dot_config/vivid/filetypes.yml{,.tmpl}",
     "https://github.com/sharkdp/vivid/raw/refs/heads/master/schemas/theme.json": "home/dot_config/vivid/themes/*",
