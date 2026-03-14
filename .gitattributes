@@ -37,5 +37,7 @@
 *.desktop       text eol=lf
 *.styluaignore  text linguist-language=Ignore-List
 
+schemas/generated/* linguist-generated
+
 # Vendored files included in the repo
 schemas/vendor/* linguist-vendored

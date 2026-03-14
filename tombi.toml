@@ -44,7 +44,7 @@ include = [
 ]
 
 [[schemas]]
-path = "./schemas/infat-config.json"
+path = "./schemas/generated/infat-config.json"
 include = ["home/dot_config/*_infat/config.toml"]
 
 [[schemas]]

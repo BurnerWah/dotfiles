@@ -165,6 +165,7 @@ pre-commit:
               - home/dot_config/*_nvim/lazy-lock.json
               - pnpm-lock.yaml
               - deno.lock
+              - schemas/generated/*
               - schemas/vendor/*
               - '**/symlink_*'
               - '**/remove_*'

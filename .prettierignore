@@ -3,6 +3,7 @@
 *.ncl
 /deno.lock
 /pnpm-lock.yaml
+/schemas/generated/*
 /schemas/vendor/*
 remove_*
 symlink_*
