@@ -85,7 +85,7 @@
   "prettier.trailingComma": "all",
   "yaml.schemas": {
     "./schemas/chezmoi/config.yaml": "home/.chezmoi.yaml.tmpl",
-    "./schemas/chezmoi/data.yaml": "**/{.chezmoidata.yaml,.chezmoidata/**/*}",
+    "./schemas/generated/chezmoidata.json": "**/{.chezmoidata.yaml,.chezmoidata/**/*}",
     "./schemas/chezmoi/externals.yaml": "home/.chezmoiexternals/**/*",
     "./schemas/vendor/lima.json": "home/dot_config/private_lima/{*/lima,_config/default}.yaml{,.tmpl}",
     "./schemas/generated/eza-theme.json": "home/dot_config/*_eza/theme.yml",

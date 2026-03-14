@@ -48,8 +48,7 @@ path = "./schemas/generated/infat-config.json"
 include = ["home/dot_config/*_infat/config.toml"]
 
 [[schemas]]
-root = "settings.bat"
-path = "./schemas/settings/bat.json"
+path = "./schemas/generated/chezmoidata.json"
 include = ["home/**/.chezmoidata.toml", "home/**/.chezmoidata/**/*.toml"]
 
 [[overrides]]

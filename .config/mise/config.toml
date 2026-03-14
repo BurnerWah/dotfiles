@@ -146,6 +146,7 @@ arg "[files]" var=#true
 '''
 run = "tombi lint -- ${usage_files}"
 description = "Lint TOML files with Tombi"
+wait_for = ["generate:schema:chezmoidata", "generate:schema:infat-config"]
 
 [tasks."lint:ty"]
 usage = '''
