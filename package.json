@@ -2,5 +2,13 @@
   "scripts": {
     "format:prettier": "prettier --write --cache --ignore-unknown .",
     "lint:prettier": "prettier --check --cache --ignore-unknown ."
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@eslint/json": "^1.1.0",
+    "eslint": "^10.0.3",
+    "globals": "^17.4.0",
+    "jiti": "^2.6.1",
+    "typescript-eslint": "^8.57.0"
   }
 }

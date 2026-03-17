@@ -86,6 +86,7 @@ const PrefixWithReset = z.boolean().optional().meta({
 })
 
 // Strong schema for styles that json schema can't handle
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const _StyleStrong = z.union([
   z.xor([z.object({ foreground: Foreground }), z.object({ fg: Foreground })]),
   z.xor([z.object({ background: Background }), z.object({ bg: Background })]),

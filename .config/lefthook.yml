@@ -110,6 +110,13 @@ pre-commit:
             exclude: ['**/symlink_*', '**/remove_*']
             file_types: text
 
+          - name: eslint
+            run: mise x -- deno task --quiet eslint --cache --fix -- {staged_files}
+            stage_fixed: true
+            glob: ['*.ts', '*.tsx', '*.js', '*.jsx', '*.json', '*.jsonc']
+            exclude: ['**/symlink_*', '**/remove_*']
+            file_types: text
+
           - name: carapace choices
             file_types: text
             glob: [home/dot_config/*_carapace/*_choices/*.tmpl]

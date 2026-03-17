@@ -108,6 +108,13 @@ arg "[files]" var=#true
 run = "deno lint -- ${usage_files}"
 description = "Lint JS/TS with Deno"
 
+[tasks."lint:eslint"]
+usage = '''
+arg "[files]" var=#true
+'''
+run = "deno task --quiet eslint -- ${usage_files}"
+description = "Lint files with ESLint"
+
 [tasks."lint:gitleaks"]
 run = "gitleaks git --no-banner"
 description = "Check git repo for secrets"
