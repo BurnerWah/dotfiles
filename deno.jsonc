@@ -7,9 +7,6 @@
   },
   "imports": {
     "@zod/zod": "jsr:@zod/zod@^4.3.6",
-    "prettier": "npm:prettier@^3.8.1",
-    "prettier-plugin-packagejson": "npm:prettier-plugin-packagejson@^3.0.2",
-    "@prettier/plugin-xml": "npm:@prettier/plugin-xml@^3.4.2",
   },
   "nodeModulesDir": "auto",
   "permissions": {

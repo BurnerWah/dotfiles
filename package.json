@@ -6,9 +6,12 @@
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@eslint/json": "^1.1.0",
+    "@prettier/plugin-xml": "^3.4.2",
     "eslint": "^10.0.3",
     "globals": "^17.4.0",
     "jiti": "^2.6.1",
+    "prettier": "^3.8.1",
+    "prettier-plugin-packagejson": "^3.0.2",
     "typescript-eslint": "^8.57.0"
   }
 }

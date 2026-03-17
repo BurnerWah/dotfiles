@@ -621,18 +621,18 @@
   },
   "workspace": {
     "dependencies": [
-      "jsr:@zod/zod@^4.3.6",
-      "npm:@prettier/plugin-xml@^3.4.2",
-      "npm:prettier-plugin-packagejson@^3.0.2",
-      "npm:prettier@^3.8.1"
+      "jsr:@zod/zod@^4.3.6"
     ],
     "packageJson": {
       "dependencies": [
         "npm:@eslint/js@^10.0.1",
         "npm:@eslint/json@^1.1.0",
+        "npm:@prettier/plugin-xml@^3.4.2",
         "npm:eslint@^10.0.3",
         "npm:globals@^17.4.0",
         "npm:jiti@^2.6.1",
+        "npm:prettier-plugin-packagejson@^3.0.2",
+        "npm:prettier@^3.8.1",
         "npm:typescript-eslint@^8.57.0"
       ]
     }
