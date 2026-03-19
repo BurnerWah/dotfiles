@@ -113,8 +113,18 @@ pre-commit:
           - name: eslint
             run: mise x -- deno task --quiet eslint --cache --fix -- {staged_files}
             stage_fixed: true
-            glob: ['*.ts', '*.tsx', '*.js', '*.jsx', '*.json', '*.jsonc']
-            exclude: ['**/symlink_*', '**/remove_*']
+            glob:
+              - '*.ts'
+              - '*.tsx'
+              - '*.js'
+              - '*.jsx'
+              - '*.json'
+              - '*.jsonc'
+              - '*.yml'
+              - '*.yaml'
+            exclude:
+              - '**/symlink_*'
+              - '**/remove_*'
             file_types: text
 
           - name: check-jsonschema

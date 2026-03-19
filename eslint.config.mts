@@ -1,10 +1,22 @@
 import js from '@eslint/js'
 import json from '@eslint/json'
+import jsonschema from 'eslint-plugin-json-schema-validator'
+import yml from 'eslint-plugin-yml'
 import { defineConfig } from 'eslint/config'
 import globals from 'globals'
 import tseslint from 'typescript-eslint'
 
 export default defineConfig([
+  {
+    ignores: [
+      'home/**/symlink_*',
+      'home/**/remove_*',
+      'home/**/modify_*.json',
+      'home/**/modify_*.jsonc',
+      'home/**/modify_*.yml',
+      'home/**/modify_*.yaml',
+    ],
+  },
   {
     files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
     plugins: { js },
@@ -42,5 +54,14 @@ export default defineConfig([
       allowTrailingCommas: true,
     },
     extends: ['json/recommended'],
+  },
+  {
+    files: ['*.yaml', '**/*.yaml', '*.yml', '**/*.yml'],
+    plugins: { yml, jsonschema },
+    language: 'yml/yaml',
+    extends: ['yml/recommended', 'yml/prettier'],
+    rules: {
+      'jsonschema/no-invalid': 'warn',
+    },
   },
 ])

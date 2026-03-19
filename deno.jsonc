@@ -29,6 +29,9 @@
       // just have to put up with it doing what it wants.
       "read": true,
       "write": true,
+      "net": {
+        "allow": ["www.schemastore.org:443", "raw.githubusercontent.com:443"],
+      },
     },
     "prettier": {
       "env": {
