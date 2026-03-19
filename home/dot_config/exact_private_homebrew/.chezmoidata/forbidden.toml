@@ -1,4 +1,4 @@
-[settings.homebrew.forbiddden]
+[settings.homebrew.forbidden]
 cask = [
   '5ire', # ai
   'ace-studio', # ai

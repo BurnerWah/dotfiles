@@ -1,9 +1,8 @@
 import * as z from '@zod/zod'
 
 export const HomebrewSettings = z
-  .looseObject({
-    // oh no there's a typo to fix
-    forbiddden: z
+  .strictObject({
+    forbidden: z
       .strictObject({
         cask: z.array(z.string()).optional().meta({
           description: 'Casks to forbid installing',

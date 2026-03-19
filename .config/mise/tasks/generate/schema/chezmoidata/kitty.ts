@@ -1,14 +1,14 @@
 import * as z from '@zod/zod'
-import { looseObject } from '@zod/zod'
+import { strictObject } from '@zod/zod'
 
-const FontAdjust = looseObject({
+const FontAdjust = strictObject({
   column_width: z.union([z.number(), z.string()]),
   line_height: z.union([z.number(), z.string()]),
 }).meta({
   description: 'Change the size of each character cell kitty renders.',
 })
 
-const FontMain = looseObject({
+const FontMain = strictObject({
   bold: z.string().nonempty(),
   bold_italic: z.string().nonempty(),
   family: z.string().nonempty(),
@@ -17,7 +17,7 @@ const FontMain = looseObject({
 
 const FontSymbolMap = z
   .array(
-    looseObject({
+    strictObject({
       codepoints: z.array(z.string()).nonempty(),
       font: z.string().nonempty(),
     }),
@@ -28,12 +28,12 @@ const FontSymbolMap = z
     uniqueItems: true,
   })
 
-const Scrollback = looseObject({
+const Scrollback = strictObject({
   lines: z.int().min(-1).meta({
     description:
       'Number of lines of history to keep in memory for scrolling back',
   }),
-  pager: looseObject({
+  pager: strictObject({
     command: z.string().nonempty().meta({
       description: 'Program with which to view scrollback in a new window',
     }),
@@ -44,7 +44,7 @@ const Scrollback = looseObject({
   }).meta({
     description: 'Pager settings',
   }),
-  multiplier: looseObject({
+  multiplier: strictObject({
     wheel: z.number().meta({
       description: 'Modify the amount scrolled by the mouse wheel',
     }),
@@ -123,8 +123,8 @@ const OSSettings = z.strictObject({
   macos: MacOSSettings,
 })
 
-export const KittySettings = looseObject({
-  fonts: looseObject({
+export const KittySettings = strictObject({
+  fonts: strictObject({
     adjust: FontAdjust,
     main: FontMain,
     symbol_map: FontSymbolMap,
