@@ -17,6 +17,8 @@ export default defineConfig([
       'home/**/modify_*.yaml',
       'schemas/generated/*',
       'schemas/vendor/*',
+      'playbooks/*.yml',
+      'playbooks/*.yaml',
     ],
   },
   {

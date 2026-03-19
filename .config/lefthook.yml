@@ -129,8 +129,10 @@ pre-commit:
               - '**/modify_*.jsonc'
               - '**/modify_*.yml'
               - '**/modify_*.yaml'
-              - 'schemas/generated/*'
-              - 'schemas/vendor/*'
+              - schemas/generated/*
+              - schemas/vendor/*
+              - playbooks/*.yml
+              - playbooks/*.yaml
             file_types: text
 
           - name: check-jsonschema
