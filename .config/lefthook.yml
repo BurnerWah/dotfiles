@@ -125,6 +125,10 @@ pre-commit:
             exclude:
               - '**/symlink_*'
               - '**/remove_*'
+              - '**/modify_*.json'
+              - '**/modify_*.jsonc'
+              - '**/modify_*.yml'
+              - '**/modify_*.yaml'
             file_types: text
 
           - name: check-jsonschema
