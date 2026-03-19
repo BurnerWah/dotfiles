@@ -1,4 +1,4 @@
-min_version: 1.10.0
+min_version: 2.0.5
 pre-commit:
   jobs:
     - name: Check Secrets
@@ -116,6 +116,47 @@ pre-commit:
             glob: ['*.ts', '*.tsx', '*.js', '*.jsx', '*.json', '*.jsonc']
             exclude: ['**/symlink_*', '**/remove_*']
             file_types: text
+
+          - name: check-jsonschema
+            file_types: text
+            exclude: ['**/symlink_*', '**/remove_*', '**/modify_*']
+            group:
+              parallel: true
+              jobs:
+                - run: mise x -- check-jsonschema --schemafile schemas/generated/chezmoidata.json
+                  args: '{staged_files}'
+                  glob:
+                    - home/.chezmoidata/*.{yml,yaml,json}
+                    - home/.chezmoidata/**/*.{yml,yaml,json}
+                    - home/**/.chezmoidata.{yml,yaml,json}
+                    - home/**/.chezmoidata/*.{yml,yaml,json}
+                    - home/**/.chezmoidata/**/*.{yml,yaml,json}
+
+                - run: mise x -- check-jsonschema --schemafile schemas/generated/eza-theme.json
+                  args: '{staged_files}'
+                  glob: home/dot_config/*_eza/*theme.yml
+
+                - run: mise x -- check-jsonschema --schemafile schemas/vendor/lima.json
+                  args: '{staged_files}'
+                  glob: home/dot_config/*_lima/private_*/lima.yaml
+
+                - run: mise x -- check-jsonschema --schemafile https://www.schemastore.org/prettierrc.json
+                  args: '{staged_files}'
+                  glob: .prettierrc.yaml
+
+                - run: mise x -- check-jsonschema --schemafile https://www.schemastore.org/yamllint.json
+                  args: '{staged_files}'
+                  glob: .yamllint.yaml
+
+                - run: mise x -- check-jsonschema --schemafile https://carapace.sh/schemas/command.json
+                  args: '{staged_files}'
+                  glob:
+                    - home/dot_config/*_carapace/*_specs/*.yaml
+                    - home/dot_config/*_carapace/*_overlays/*.yaml
+
+                - run: mise x -- check-jsonschema --schemafile https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json
+                  args: --force-filetype json5 {staged_files}
+                  glob: home/dot_config/*_fastfetch/*config.jsonc
 
           - name: carapace choices
             file_types: text

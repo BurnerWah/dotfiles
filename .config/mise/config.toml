@@ -21,6 +21,10 @@ uvx_args = """\
   ansible-navigator,ansible-sign,molecule\
   """
 
+[tools."pipx:check-jsonschema"]
+version = "latest"
+uvx_args = "--with jsonschema[format],pyjson5"
+
 [tasks.apply]
 run = "chezmoi apply"
 description = "Apply dotfiles"
