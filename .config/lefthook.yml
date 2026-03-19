@@ -129,6 +129,8 @@ pre-commit:
               - '**/modify_*.jsonc'
               - '**/modify_*.yml'
               - '**/modify_*.yaml'
+              - 'schemas/generated/*'
+              - 'schemas/vendor/*'
             file_types: text
 
           - name: check-jsonschema
@@ -140,27 +142,11 @@ pre-commit:
                 - run: mise x -- check-jsonschema --schemafile schemas/generated/chezmoidata.json
                   args: '{staged_files}'
                   glob:
-                    - home/.chezmoidata/*.{yml,yaml,json}
-                    - home/.chezmoidata/**/*.{yml,yaml,json}
-                    - home/**/.chezmoidata.{yml,yaml,json}
-                    - home/**/.chezmoidata/*.{yml,yaml,json}
-                    - home/**/.chezmoidata/**/*.{yml,yaml,json}
-
-                - run: mise x -- check-jsonschema --schemafile schemas/generated/eza-theme.json
-                  args: '{staged_files}'
-                  glob: home/dot_config/*_eza/*theme.yml
-
-                - run: mise x -- check-jsonschema --schemafile schemas/vendor/lima.json
-                  args: '{staged_files}'
-                  glob: home/dot_config/*_lima/private_*/lima.yaml
-
-                - run: mise x -- check-jsonschema --schemafile https://www.schemastore.org/prettierrc.json
-                  args: '{staged_files}'
-                  glob: .prettierrc.yaml
-
-                - run: mise x -- check-jsonschema --schemafile https://www.schemastore.org/yamllint.json
-                  args: '{staged_files}'
-                  glob: .yamllint.yaml
+                    - home/.chezmoidata/*.{json}
+                    - home/.chezmoidata/**/*.{json}
+                    - home/**/.chezmoidata.{json}
+                    - home/**/.chezmoidata/*.{json}
+                    - home/**/.chezmoidata/**/*.{json}
 
                 - run: mise x -- check-jsonschema --schemafile https://carapace.sh/schemas/command.json
                   args: '{staged_files}'

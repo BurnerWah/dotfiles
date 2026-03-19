@@ -15,6 +15,8 @@ export default defineConfig([
       'home/**/modify_*.jsonc',
       'home/**/modify_*.yml',
       'home/**/modify_*.yaml',
+      'schemas/generated/*',
+      'schemas/vendor/*',
     ],
   },
   {
@@ -61,7 +63,36 @@ export default defineConfig([
     language: 'yml/yaml',
     extends: ['yml/recommended', 'yml/prettier'],
     rules: {
-      'jsonschema/no-invalid': 'warn',
+      'jsonschema/no-invalid': [
+        'warn',
+        {
+          schemas: [
+            {
+              // This has tons of parsing problems due to anchor usage
+              fileMatch: [
+                'home/dot_config/*_carapace/*_specs/*.yaml',
+                'home/dot_config/*_carapace/*_overlays/*.yaml',
+              ],
+              schema: 'https://carapace.sh/schemas/command.json',
+            },
+            {
+              fileMatch: [
+                'home/**/.chezmoidata/*.{yml,yaml,json,jsonc}',
+                'home/**/.chezmoidata.{yml,yaml,json,jsonc}',
+              ],
+              schema: 'schemas/generated/chezmoidata.json',
+            },
+            {
+              fileMatch: ['home/dot_config/*_eza/*theme.yml'],
+              schema: 'schemas/generated/eza-theme.json',
+            },
+            {
+              fileMatch: ['home/dot_config/*_lima/private_*/lima.yaml'],
+              schema: 'schemas/vendor/lima.json',
+            },
+          ],
+        },
+      ],
     },
   },
 ])
