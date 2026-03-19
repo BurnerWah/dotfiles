@@ -356,6 +356,7 @@ formula = [
   'claudebar', # ai
   'claudekit', # ai
   'clawdbot-cli', # ai
+  'cline', # ai
   'cliproxyapi', # ai
   'cobo-cli', # ai
   'code2prompt', # ai
@@ -368,6 +369,7 @@ formula = [
   'cortexso', # ai
   'cql', # cryptocurrency
   'crytic-compile', # cryptocurrency, leaf dependency
+  'ctx7', # ai
   'daemontools', # cryptocurrency
   'dstack', # ai
   'echidna', # cryptocurrency
