@@ -1,4 +1,3 @@
-# tombi: format.rules.table-keys-order = 'ascending'
 [settings.shell.pwsh.completers]
 ab-av1 = 'ab-av1 print-completions powershell'
 ast-grep = 'ast-grep completions powershell'

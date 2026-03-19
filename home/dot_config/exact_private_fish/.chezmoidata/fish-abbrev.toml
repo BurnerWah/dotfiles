@@ -1,4 +1,3 @@
-# tombi: format.rules.table-keys-order = "ascending"
 [settings.shell.fish.abbrev]
 '.' = "source"
 '?' = "if"

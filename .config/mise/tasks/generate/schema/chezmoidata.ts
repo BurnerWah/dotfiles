@@ -6,6 +6,7 @@ import { ChezmoiSettings } from './chezmoidata/chezmoi.ts'
 import { HomebrewSettings } from './chezmoidata/homebrew.ts'
 import { KittySettings } from './chezmoidata/kitty.ts'
 import { LaunchdSettings } from './chezmoidata/launchd.ts'
+import { LimaSettings } from './chezmoidata/lima.ts'
 import { ShellSettings } from './chezmoidata/shell.ts'
 import { SystemdSettings } from './chezmoidata/systemd.ts'
 
@@ -18,6 +19,7 @@ const schema = z
         homebrew: HomebrewSettings,
         kitty: KittySettings,
         launchd: LaunchdSettings,
+        lima: LimaSettings,
         shell: ShellSettings,
         systemd: SystemdSettings,
       })

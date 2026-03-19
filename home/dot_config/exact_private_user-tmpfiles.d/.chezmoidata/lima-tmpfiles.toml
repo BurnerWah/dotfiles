@@ -1,5 +1,4 @@
 [settings.lima.tmpfiles]
-# tombi: format.rules.array-values-order = "ascending"
 shared = [
   ".config/bat",
   ".config/bottom",

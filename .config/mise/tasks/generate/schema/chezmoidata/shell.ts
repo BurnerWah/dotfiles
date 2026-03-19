@@ -33,8 +33,16 @@ export const ShellSettings = z
         }),
       }).partial(),
       subcommand_abbrevs: z
-        .record(z.string(), z.record(z.string(), z.string()))
+        .record(
+          z.string(),
+          z.record(z.string(), z.string()).meta({
+            'x-tombi-table-keys-order': {
+              additionalProperties: 'ascending',
+            },
+          }),
+        )
         .meta({
+          description: 'Abbreviations for subcommands',
           'x-tombi-table-keys-order': {
             additionalProperties: 'ascending',
           },
