@@ -86,7 +86,7 @@
   "yaml.schemas": {
     "./schemas/chezmoi/config.yaml": "home/.chezmoi.yaml.tmpl",
     "./schemas/generated/chezmoidata.json": "**/{.chezmoidata.yaml,.chezmoidata/**/*}",
-    "./schemas/chezmoi/externals.yaml": "home/.chezmoiexternals/**/*",
+    "./schemas/generated/chezmoiexternals.json": "home/.chezmoiexternals/**/*",
     "./schemas/vendor/lima.json": "home/dot_config/private_lima/{*/lima,_config/default}.yaml{,.tmpl}",
     "./schemas/generated/eza-theme.json": "home/dot_config/*_eza/theme.yml",
     "https://carapace.sh/schemas/command.json": "home/dot_config/*_carapace/*_{specs,overlays}/*.yaml{,.tmpl}",

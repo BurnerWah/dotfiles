@@ -51,6 +51,13 @@ include = ["home/dot_config/*_infat/config.toml"]
 path = "./schemas/generated/chezmoidata.json"
 include = ["home/**/.chezmoidata.toml", "home/**/.chezmoidata/**/*.toml"]
 
+[[schemas]]
+path = "./schemas/generated/chezmoiexternals.json"
+include = [
+  "home/**/.chezmoiexternals.toml",
+  "home/**/.chezmoiexternals/**/*.toml"
+]
+
 [[overrides]]
 [overrides.files]
 # tombi: format.rules.array-values-order = "ascending"
