@@ -74,12 +74,14 @@ arg "[files]" var=#true
 '''
 run = "tombi format -- ${usage_files}"
 description = "Format TOML files with Tombi"
+wait_for = ["generate:schema:*"]
 
 # This task could be removed once there's a URL I can feasibly use for Lima's Schema
-[tasks."generate:lima-schema"]
+[tasks."generate:schema:lima"]
 run = "limactl generate-jsonschema > schemas/vendor/lima.json"
 description = "Generate JSON schema for lima.yaml files"
 outputs = ["schemas/vendor/lima.json"]
+alias = ["generate:lima-schema"]
 
 [tasks.postinstall]
 depends = ["postinstall:*"]
@@ -126,6 +128,7 @@ arg "[files]" var=#true
 '''
 run = "deno task --quiet eslint -- ${usage_files}"
 description = "Lint files with ESLint"
+wait_for = ["generate:schema:*"]
 
 [tasks."lint:gitleaks"]
 run = "gitleaks git --no-banner"
@@ -165,7 +168,7 @@ arg "[files]" var=#true
 '''
 run = "tombi lint -- ${usage_files}"
 description = "Lint TOML files with Tombi"
-wait_for = ["generate:schema:chezmoidata", "generate:schema:infat-config"]
+wait_for = ["generate:schema:*"]
 
 [tasks."lint:ty"]
 usage = '''
