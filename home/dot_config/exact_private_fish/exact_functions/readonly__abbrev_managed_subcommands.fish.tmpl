@@ -1,25 +1,32 @@
-# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# chezmoi:template:left-delimiter='{{ right-delimiter=}}'
 function _abbrev_managed_subcommands -d "Generated function for subcommand abbreviations"
     # Using `commandline -c` causes this to fail when pressing enter
     set -l tokens (commandline -xp)
-    if [ (count $tokens) != 2 ]
-        echo $argv
-        return
-    end
+    set -l tokenCount (count $tokens)
 
+    # This is implemented in a way that attempts o minimze file sizes, since
+    # the function is massive otherwise. It probably could be tweaked to not
+    # use nested switch statements and have cases be so long.
     switch $tokens[1]
-        # {{- range $cmd, $subcmds := .settings.shell.fish.subcommand_abbrevs }}
-        case "# {{$cmd}}"
-            switch $argv
-                # {{- /* Using printf here reduces file sizes */ -}}
-                # {{- range $subcmd, $expansion := $subcmds }}
-                # {{ printf "case %s; echo %s" $subcmd $expansion }}
-                # {{- end }}
-                case '*' # {{- "; " -}}
+        # '{{- range $cmd, $subcmds := .settings.shell.fish.subcommand_abbrevs }}'
+        case '{{ $cmd | quote }}'
+            switch "$tokenCount:$argv:$tokens[2]"
+                case '{{- range $subcmd, $expansion := $subcmds }}'
+                    '{{-   if kindIs "string" $expansion }}'
+                case 2:'{{ $subcmd }}':'{{ $subcmd }}' '{{- "; " -}}'
+                    echo '{{ $expansion }}'
+                    '{{-   else if kindIs "map" $expansion }}'
+                    '{{-     range $subcmd_2, $expansion_2 := $expansion }}'
+                case 3:'{{ $subcmd_2 }}':'{{ $subcmd }}' '{{- "; " -}}'
+                    echo '{{ $expansion_2 }}'
+                    '{{-     end }}'
+                    '{{-   end }}'
+                    '{{- end }}'
+                case '*' '{{- "; " -}}'
                     echo $argv
             end
-            # {{- end }}
-        case '*' # {{- "; " -}}
+            '{{- end }}'
+        case '*' '{{- "; " -}}'
             echo $argv
     end
 end
