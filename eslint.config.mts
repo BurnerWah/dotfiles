@@ -48,6 +48,7 @@ export default defineConfig([
   {
     files: [
       'deno.jsonc',
+      'biome.jsonc',
       '.vscode/*.json',
       '.vscode/*.code-snippets',
       'home/dot_config/*_fastfetch/config.jsonc',

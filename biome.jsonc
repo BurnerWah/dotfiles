@@ -1,0 +1,68 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.4.8/schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true,
+  },
+  "files": {
+    "ignoreUnknown": true,
+    "includes": [
+      "**",
+      "!!schemas/vendor",
+      "!!schemas/generated",
+      "!home/dot_config/*_nvim/lazy-lock.json",
+      "!home/**/symlink_*",
+      "!home/**/remove_*",
+      "!home/**/modify_*.json",
+      "!home/**/modify_*.jsonc",
+    ],
+  },
+  "formatter": {
+    // The formatting settings are consistent w/ prettier, I just don't intend
+    // to turn it on yet
+    "enabled": false,
+    "indentStyle": "space",
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+    },
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single",
+      "semicolons": "asNeeded",
+    },
+  },
+  "assist": {
+    "enabled": true,
+    "actions": {
+      "source": {
+        // I haven't decided what to have handle import sorting yet
+        "organizeImports": "off",
+      },
+    },
+  },
+  "overrides": [
+    {
+      "includes": [
+        "**/*.jsonc",
+        ".vscode/extensions.json",
+        ".vscode/launch.json",
+        ".vscode/settings.json",
+        ".vscode/tasks.json",
+        ".vscode/*.code-snippets",
+      ],
+      "json": {
+        "parser": {
+          "allowTrailingCommas": true,
+        },
+        "formatter": {
+          "trailingCommas": "all",
+        },
+      },
+    },
+  ],
+}

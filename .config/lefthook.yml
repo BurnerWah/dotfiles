@@ -115,8 +115,12 @@ pre-commit:
             stage_fixed: true
             glob:
               - '*.ts'
+              - '*.mts'
+              - '*.cts'
               - '*.tsx'
               - '*.js'
+              - '*.mjs'
+              - '*.cjs'
               - '*.jsx'
               - '*.json'
               - '*.jsonc'
@@ -133,6 +137,30 @@ pre-commit:
               - schemas/vendor/*
               - playbooks/*.yml
               - playbooks/*.yaml
+            file_types: text
+
+          - name: biome
+            run: mise x -- biome lint --fix -- {staged_files}
+            stage_fixed: true
+            glob:
+              - '*.ts'
+              - '*.mts'
+              - '*.cts'
+              - '*.tsx'
+              - '*.js'
+              - '*.mjs'
+              - '*.cjs'
+              - '*.jsx'
+              - '*.json'
+              - '*.jsonc'
+              - '*.code-snippets'
+            exclude:
+              - '**/symlink_*'
+              - '**/remove_*'
+              - '**/modify_*.json'
+              - '**/modify_*.jsonc'
+              - schemas/generated/*
+              - schemas/vendor/*
             file_types: text
 
           - name: check-jsonschema

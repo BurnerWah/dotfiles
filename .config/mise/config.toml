@@ -11,6 +11,7 @@ deno = "latest"
 tombi = "latest"
 "github:google/keep-sorted" = "latest"
 ty = "latest"
+biome = "latest"
 
 [tools."pipx:ansible-dev-tools"]
 version = "latest"
@@ -111,6 +112,13 @@ arg "[files]" var=#true
 '''
 run = "deno lint -- ${usage_files}"
 description = "Lint JS/TS with Deno"
+
+[tasks."lint:biome"]
+usage = '''
+arg "[files]" var=#true
+'''
+run = "biome lint -- ${usage_files}"
+description = "Lint files with Biome"
 
 [tasks."lint:eslint"]
 usage = '''
