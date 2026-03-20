@@ -182,6 +182,7 @@ cask = [
   'mixin', # cryptocurrency
   'mochi-diffusion', # ai
   'monero-wallet', # cryptocurrency
+  'monologue', # ai
   'msty', # ai
   'mstystudio', # ai
   'mumu-x', # ai
@@ -218,6 +219,7 @@ cask = [
   'orion', # i don't like kagi
   'osaurus', # ai
   'pally', # ai
+  'paseo', # ai
   'pdf-pals', # ai
   'pdl', # ai
   'planet', # cryptocurrency
@@ -262,11 +264,13 @@ cask = [
   'status', # cryptocurrency
   'statusfy', # spotify
   'stravu-crystal', # ai
+  'strawberry', # ai
   'supacode', # ai
   'superhuman', # ai
   'superset', # ai
   'superwhisper', # ai
   'swama', # ai
+  't3-code', # ai
   'tana', # ai
   'telegram', # telegram
   'telegram-a', # telegram
@@ -431,6 +435,7 @@ formula = [
   'librespot', # spotify
   'lighthouse', # cryptocurrency
   'litecli', # ai
+  'llama.cpp', # ai
   'llm', # ai
   'llmfit', # ai
   'localai', # ai
@@ -455,6 +460,7 @@ formula = [
   'min-lang', # fascism
   'mistral-vibe', # ai
   'mlx-lm', # ai
+  'models', # ai
   'mods', # ai
   'monero', # cryptocurrency
   'n8n-mcp', # ai
@@ -471,6 +477,7 @@ formula = [
   'ollama', # ai
   'omnara', # ai
   'onnx', # ai
+  'openclaw-cli', # ai
   'opencode', # ai
   'openskills', # ai
   'openspec', # ai
@@ -479,7 +486,6 @@ formula = [
   'ord', # cryptocurrency
   'oterm', # ai
   'oxen', # ai
-  'paseo', # ai
   'patchpal', # ai
   'pi-coding-agent', # ai
   'picoclaw', # ai
@@ -505,8 +511,10 @@ formula = [
   'shortest', # ai
   'shpotify', # spotify
   'skills', # ai
+  'skillshare', # ai
   'slack-mcp-server', # ai
   'slither-analyzer', # cryptocurrency, leaf dependency
+  'snyk-agent-scan', # ai
   'solana', # cryptocurrency
   'solc-select', # cryptocurrency
   'solhint', # cryptocurrency

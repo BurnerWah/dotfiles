@@ -26,6 +26,7 @@
       }
     },
     # gitconfig parser has linkage issues
+    # gotmpl parser isn't really useful for chezmoi templates
     ini = {
       extensions = ["ini"],
       grammar.source.git = {

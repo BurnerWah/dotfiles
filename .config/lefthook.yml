@@ -252,7 +252,10 @@ pre-commit:
           - name: fish_indent
             run: fish_indent --write -- {staged_files}
             stage_fixed: true
-            glob: ['*.fish', '*.fish.tmpl']
+            glob:
+              - '*.fish'
+              - '*.fish.tmpl'
+              - home/dot_config/*_brew-aliases/executable_search_filtered
             exclude:
               - '**/symlink_*'
               - '**/remove_*'
