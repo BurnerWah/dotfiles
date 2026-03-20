@@ -2,12 +2,10 @@
 //MISE description="Generate a JSON schema for Chezmoi's config file"
 import * as z from '@zod/zod'
 import { strictObject } from '@zod/zod'
+import { GoDuration } from './shared/gotypes.ts'
 
 // This is mostly finished but could probably still use some work
 
-const Duration = z
-  .string()
-  .regex(/^-?(\d+h)?(\d+m)?(\d+s)?(\d+ms)?(\d+[uµ]s)?(\d+ns)?$/)
 const AutoBool = z.union([z.boolean(), z.literal('auto')])
 const Environment = z.record(z.string(), z.string())
 const Command = z.string().describe('CLI command')
@@ -124,7 +122,7 @@ const EditConfig = strictObject({
   hardlink: z.boolean().default(true).meta({
     description: 'Invoke editor with a hardlink to the source file',
   }),
-  minDuration: Duration.default('1s').meta({
+  minDuration: GoDuration.default('1s').meta({
     description: 'Minimum duration for edit command',
   }),
   watch: z.boolean().default(false).meta({
@@ -335,7 +333,7 @@ const schema = z
     ejson: EJsonConfig.partial(),
     git: GitConfig.partial(),
     gitHub: strictObject({
-      refreshPeriod: Duration.default('1m').meta({
+      refreshPeriod: GoDuration.default('1m').meta({
         description: 'Minimum duration between identical GitHub API requests',
       }),
     }).partial(),

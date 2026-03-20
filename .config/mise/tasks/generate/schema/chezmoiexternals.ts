@@ -1,11 +1,12 @@
 #!/usr/bin/env -S deno run --allow-write=schemas/generated
 //MISE description="Generate a JSON schema for Chezmoi Externals"
 import * as z from '@zod/zod'
+import { GoDuration } from './shared/gotypes.ts'
 
 // This might not be fully functional right now
 
 const RefreshPeriod = z.object({
-  refreshPeriod: z.string().default('0').optional().meta({
+  refreshPeriod: GoDuration.default('0').optional().meta({
     description: 'Refresh period',
   }),
 })
@@ -37,8 +38,6 @@ const Executable = z.object({
   }),
 })
 
-const ExternalURI = z.url({ protocol: /^(https?|file)$/ })
-
 const Common = z.object({
   encrypted: z.boolean().default(false).optional().meta({
     description: 'Whether the external is encrypted',
@@ -49,8 +48,6 @@ const Common = z.object({
   readonly: z.boolean().default(false).optional().meta({
     description: 'Add `readonly_` attribute to file',
   }),
-  url: ExternalURI.optional().describe('URL of external'),
-  urls: z.array(ExternalURI).optional(),
   checksum: z
     .object({
       md5: z.hash('md5', { enc: 'hex' }).optional().meta({
@@ -81,6 +78,12 @@ const Common = z.object({
   }),
 })
 
+const ExternalURI = z.url({ protocol: /^(https?|file)$/ })
+const CommonURIs = z.object({
+  url: ExternalURI.optional().describe('URL of external'),
+  urls: z.array(ExternalURI).optional(),
+})
+
 const Archive = z
   .object({
     type: z.literal('archive').describe('External type'),
@@ -95,6 +98,7 @@ const Archive = z
     }),
   })
   .safeExtend(Common.shape)
+  .safeExtend(CommonURIs.shape)
   .safeExtend(ArchiveCommon.shape)
   .safeExtend(RefreshPeriod.shape)
 
@@ -104,6 +108,7 @@ const ArchiveFile = z
     path: z.string().describe('Path to file in archive'),
   })
   .safeExtend(Common.shape)
+  .safeExtend(CommonURIs.shape)
   .safeExtend(ArchiveCommon.shape)
   .safeExtend(Executable.shape)
 
@@ -123,6 +128,7 @@ const File = z
       .optional(),
   })
   .safeExtend(Common.shape)
+  .safeExtend(CommonURIs.shape)
   .safeExtend(RefreshPeriod.shape)
   .safeExtend(Executable.shape)
 
@@ -139,6 +145,9 @@ const GitRepo = z
         args: z.array(z.string()).describe('Extra args to `git pull`'),
       })
       .optional(),
+    // git urls are different from other externals
+    url: z.string().optional().describe('URL of external'),
+    urls: z.array(z.string()).optional(),
   })
   .safeExtend(Common.shape)
 
