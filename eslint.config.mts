@@ -2,25 +2,23 @@ import js from '@eslint/js'
 import json from '@eslint/json'
 import jsonschema from 'eslint-plugin-json-schema-validator'
 import yml from 'eslint-plugin-yml'
-import { defineConfig } from 'eslint/config'
+import { defineConfig, globalIgnores } from 'eslint/config'
 import globals from 'globals'
 import tseslint from 'typescript-eslint'
 
 export default defineConfig([
-  {
-    ignores: [
-      'home/**/symlink_*',
-      'home/**/remove_*',
-      'home/**/modify_*.json',
-      'home/**/modify_*.jsonc',
-      'home/**/modify_*.yml',
-      'home/**/modify_*.yaml',
-      'schemas/generated/*',
-      'schemas/vendor/*',
-      'playbooks/*.yml',
-      'playbooks/*.yaml',
-    ],
-  },
+  globalIgnores([
+    'home/**/symlink_*',
+    'home/**/remove_*',
+    'home/**/modify_*.json',
+    'home/**/modify_*.jsonc',
+    'home/**/modify_*.yml',
+    'home/**/modify_*.yaml',
+    'schemas/generated/',
+    'schemas/vendor/',
+    'playbooks/*.yml',
+    'playbooks/*.yaml',
+  ]),
   {
     files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
     plugins: { js },
@@ -96,6 +94,27 @@ export default defineConfig([
           ],
         },
       ],
+    },
+  },
+  {
+    // Put carapace specs that use anchors heavily here
+    files: [
+      'home/dot_config/*_carapace/*_overlays/deno.yaml',
+      'home/dot_config/*_carapace/*_specs/biome.yaml',
+      'home/dot_config/*_carapace/*_specs/dasel.yaml',
+      'home/dot_config/*_carapace/*_specs/dnf.yaml',
+      'home/dot_config/*_carapace/*_specs/scalar.yaml',
+      'home/dot_config/*_carapace/*_specs/vrc-get.yaml',
+      'home/dot_config/*_carapace/*_specs/wt.yaml',
+    ],
+    rules: {
+      'jsonschema/no-invalid': 'off',
+    },
+  },
+  {
+    files: ['home/dot_config/*_gh/*_config.yml'],
+    rules: {
+      'yml/no-empty-mapping-value': 'off',
     },
   },
 ])
