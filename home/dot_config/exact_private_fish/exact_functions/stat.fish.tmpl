@@ -7,10 +7,16 @@ function stat
         command stat $argv
     end
 end
-# {{ else if and (eq .chezmoi.os "darwin") (lookPath "uu-stat") (lookPath "grc") -}}
+# {{ else if and (eq .chezmoi.os "darwin") (lookPath "grc") -}}
 function stat
-    if isatty stdout
-        grc -c conf.stat uu-stat $argv
+    if isatty stdout; and command -q grc
+        if command -q uu-stat
+            grc -c conf.stat uu-stat $argv
+        else if command -q gstat
+            grc -c conf.stat gstat $argv
+        else
+            grc stat $argv
+        end
     else
         command stat $argv
     end

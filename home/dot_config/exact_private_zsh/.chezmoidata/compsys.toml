@@ -754,6 +754,7 @@ carapace = [
   "ps",
   "pscale",
   "ptx",
+  "pulsar",
   "pulumi",
   "pwait",
   "pwd",

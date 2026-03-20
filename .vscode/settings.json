@@ -96,4 +96,5 @@
   "fish-lsp.initializationOptions": {
     "fish_lsp_prefer_builtin_fish_commands": true,
   },
+  "go-template.languages": ["fish"],
 }

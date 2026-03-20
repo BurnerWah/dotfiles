@@ -1,0 +1,29 @@
+name: pulsar
+description: A community-led, hyper-hackable text editor
+
+flags:
+  -d, --dev: Run in development mode # [boolean]
+  -f, --foreground: Keep the main process in the foreground # [boolean]
+  -h, --help: Print usage message # [boolean]
+  -l, --log-file=: Log all output to file when running tests # [string]
+  -n, --new-window: Open a new window # [boolean]
+  --profile-startup: Create a profile of the startup execution time # [boolean]
+  --crashdump: Generate a crashdump in ~/.pulsar/crashdumps in the event of a crash # [boolean]
+  -r, --resource-path=: Set the path to the Pulsar source directory and enable dev-mode # [string]
+  --safe: Do not load packages from ~/.pulsar/packages or ~/.pulsar/dev/packages # [boolean]
+  --benchmark&: This option is no longer supported # [boolean]
+  --benchmark-test&: This option is no longer supported # [boolean]
+  -t, --test: Run the specified specs and exit with error code on failures # [boolean]
+  -m, --main-process: Run the specified specs in the main process # [boolean]
+  --timeout=: When in test mode, waits until the specified time (in minutes) and kills the process # [string]
+  -w, --wait: Wait for window to be closed before returning # [boolean]
+  --clear-window-state: Delete all Pulsar environment state # [boolean]
+  --enable-electron-logging: Enable low-level logging messages from Electron # [boolean]
+  -a, --add: Open path as a new project in last used window # [boolean]
+  -p, --package: Delegate all commands to Pulsar's package management. Run with --package for more details # [boolean]
+  -v, --version: Show version number # [boolean]
+completion:
+  positionalany: [$files]
+  flag:
+    log-file: [$files]
+    resource-path: [$directories]
