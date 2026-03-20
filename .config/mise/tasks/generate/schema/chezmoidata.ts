@@ -3,28 +3,33 @@
 import * as z from '@zod/zod'
 import { BatSettings } from './chezmoidata/bat.ts'
 import { ChezmoiSettings } from './chezmoidata/chezmoi.ts'
+import { CoreChezmoiData } from './chezmoidata/core.ts'
 import { HomebrewSettings } from './chezmoidata/homebrew.ts'
 import { KittySettings } from './chezmoidata/kitty.ts'
 import { LaunchdSettings } from './chezmoidata/launchd.ts'
 import { LimaSettings } from './chezmoidata/lima.ts'
+import { NpmSettings, PnpmSettings } from './chezmoidata/npm-pnpm.ts'
 import { ShellSettings } from './chezmoidata/shell.ts'
 import { SystemdSettings } from './chezmoidata/systemd.ts'
 
 const schema = z
-  .looseObject({
+  .strictObject({
     settings: z
-      .looseObject({
+      .strictObject({
         bat: BatSettings,
         chezmoi: ChezmoiSettings,
         homebrew: HomebrewSettings,
         kitty: KittySettings,
         launchd: LaunchdSettings,
         lima: LimaSettings,
+        npm: NpmSettings,
+        pnpm: PnpmSettings,
         shell: ShellSettings,
         systemd: SystemdSettings,
       })
       .partial(),
   })
+  .safeExtend(CoreChezmoiData.shape)
   .partial()
 
 const jsonSchema = z.toJSONSchema(
