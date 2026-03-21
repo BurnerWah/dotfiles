@@ -527,6 +527,8 @@ $RECYCLE.BIN/
 
 /tmp
 
+/.mise/prepare-state.toml
+
 /.config/mise.local.toml
 /.config/mise/config.local.toml
 

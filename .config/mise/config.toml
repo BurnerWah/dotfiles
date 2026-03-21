@@ -27,12 +27,21 @@ version = "latest"
 uvx_args = "--with jsonschema[format],pyjson5"
 
 # prepare hooks aren't fully ready for use yet
+[prepare.uv]
+
+[prepare.deno]
+auto = true
+run = "deno install"
+depends = ["deno"]
+sources = ["deno.jsonc", "deno.lock", "package.json"]
+outputs = ["node_modules"]
+
 [prepare.lefthook]
 auto = false
 run = "lefthook install"
 depends = ["lefthook"]
 sources = [".config/lefthook.*", ".config/lefthook-local.*"]
-outputs = [".git/hooks/*"]
+outputs = [".git/hooks"]
 description = "Install git hooks for lefthook"
 
 [tasks.apply]
@@ -91,14 +100,6 @@ run = "limactl generate-jsonschema > schemas/vendor/lima.json"
 description = "Generate JSON schema for lima.yaml files"
 outputs = ["schemas/vendor/lima.json"]
 alias = ["generate:lima-schema"]
-
-[tasks.postinstall]
-depends = ["postinstall:*"]
-description = "Install project dependencies"
-
-[tasks."postinstall:npm"]
-run = "deno install"
-description = "Install npm packages with deno"
 
 [tasks.lint]
 depends = ["lint:*"]
