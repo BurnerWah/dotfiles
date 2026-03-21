@@ -26,6 +26,15 @@ uvx_args = """\
 version = "latest"
 uvx_args = "--with jsonschema[format],pyjson5"
 
+# prepare hooks aren't fully ready for use yet
+[prepare.lefthook]
+auto = false
+run = "lefthook install"
+depends = ["lefthook"]
+sources = [".config/lefthook.*", ".config/lefthook-local.*"]
+outputs = [".git/hooks/*"]
+description = "Install git hooks for lefthook"
+
 [tasks.apply]
 run = "chezmoi apply"
 description = "Apply dotfiles"
@@ -87,12 +96,6 @@ alias = ["generate:lima-schema"]
 depends = ["postinstall:*"]
 description = "Install project dependencies"
 
-[tasks."postinstall:lefthook"]
-run = "lefthook install"
-description = "Install git hooks for lefthook"
-sources = [".config/lefthook.*", ".config/lefthook-local.*"]
-outputs = [".git/hooks/*"]
-
 [tasks."postinstall:npm"]
 run = "deno install"
 description = "Install npm packages with deno"
@@ -107,6 +110,14 @@ arg "[files]" var=#true
 '''
 run = "ansible-lint -- ${usage_files}"
 description = "Lint ansible playbooks"
+env = { ANSIBLE_DEPRECATION_WARNINGS = "false" }
+# ansible-lint is kinda slow so the outputs are here to avoid re-running it
+sources = [
+  ".config/ansible-lint.yml",
+  ".yamllint.yaml",
+  "playbooks/**/*.yml",
+  "collections/**/*.yml",
+]
 
 [tasks."lint:deno"]
 usage = '''
@@ -114,6 +125,7 @@ arg "[files]" var=#true
 '''
 run = "deno lint -- ${usage_files}"
 description = "Lint JS/TS with Deno"
+# deno is fast enough that sources aren't necessary
 
 [tasks."lint:biome"]
 usage = '''
@@ -121,6 +133,7 @@ arg "[files]" var=#true
 '''
 run = "biome lint -- ${usage_files}"
 description = "Lint files with Biome"
+# biome is fast enough that sources aren't necessary
 
 [tasks."lint:eslint"]
 usage = '''
@@ -129,6 +142,7 @@ arg "[files]" var=#true
 run = "deno task --quiet eslint --cache -- ${usage_files}"
 description = "Lint files with ESLint"
 wait_for = ["generate:schema:*"]
+# eslint caching is (barely) fast enough that sources aren't necessary
 
 [tasks."lint:gitleaks"]
 run = "gitleaks git --no-banner"
@@ -138,8 +152,9 @@ description = "Check git repo for secrets"
 usage = '''
 arg "[files]" var=#true default="."
 '''
-run = "deno task --quiet prettier --check --ignore-unknown -- ${usage_files}"
+run = "deno task --quiet prettier --check --ignore-unknown --cache -- ${usage_files}"
 description = "Lint code formatting with Prettier"
+# cached prettier isn't that fast but the source files take too long to check
 
 [tasks."lint:ripsecrets"]
 usage = '''
@@ -154,6 +169,7 @@ arg "[files]" var=#true
 '''
 run = "ruff check -- ${usage_files}"
 description = "Lint Python code with Ruff"
+# ruff is fast enough that sources aren't necessary
 
 [tasks."lint:stylua"]
 usage = '''
@@ -161,6 +177,7 @@ arg "[files]" var=#true default="."
 '''
 run = "stylua --respect-ignores --check -- ${usage_files}"
 description = "Lint Lua code formatting with StyLua"
+# stylua is fast enough that sources aren't necessary
 
 [tasks."lint:tombi"]
 usage = '''
@@ -169,6 +186,7 @@ arg "[files]" var=#true
 run = "tombi lint -- ${usage_files}"
 description = "Lint TOML files with Tombi"
 wait_for = ["generate:schema:*"]
+# tombi is fast enough that sources aren't necessary
 
 [tasks."lint:ty"]
 usage = '''
@@ -176,6 +194,7 @@ arg "[files]" var=#true
 '''
 run = "ty check -- ${usage_files}"
 description = "Type check Python code with Ty"
+# ty is fast enough that sources aren't necessary
 
 [tasks."lint:yamllint"]
 usage = '''
@@ -187,6 +206,7 @@ flag "--format <format>" {
 '''
 run = "yamllint --format ${usage_format} -- ${usage_files}"
 description = "Lint yaml files with yamllint"
+sources = [".yamllint.yaml", "**/*.yaml", "**/*.yml"]
 
 [tasks."update:nvim-plugins"]
 run = 'nvim --headless "+Lazy! sync" +qa'

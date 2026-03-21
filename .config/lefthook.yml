@@ -27,9 +27,12 @@ pre-commit:
         jobs:
           - name: ansible-lint
             run: mise x -- ansible-lint --fix=all -- {staged_files}
+            env:
+              ANSIBLE_DEPRECATION_WARNINGS: 'false'
             stage_fixed: true
             glob:
               - playbooks/*.yml
+              - collections/*.yml
             exclude: ['**/symlink_*', '**/modify_*', '**/remove_*']
             file_types: text
             # This might work fine on Windows now, I haven't tested it
@@ -106,7 +109,15 @@ pre-commit:
           - name: deno lint
             run: mise x -- deno lint --fix -- {staged_files}
             stage_fixed: true
-            glob: ['*.ts', '*.tsx', '*.js', '*.jsx']
+            glob:
+              - '*.ts'
+              - '*.mts'
+              - '*.cts'
+              - '*.tsx'
+              - '*.js'
+              - '*.mjs'
+              - '*.cjs'
+              - '*.jsx'
             exclude: ['**/symlink_*', '**/remove_*']
             file_types: text
 
