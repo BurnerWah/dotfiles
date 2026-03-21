@@ -45,7 +45,7 @@ if string match -vqr '^[0123]\.*' $version
     '{{-      $patterns = append $patterns $subcmd }}'
     '{{-    end }}'
     '{{-  end }}'
-    for k in '{{ $patterns | sortAlpha | join " " }}'
+    for k in '{{ $patterns | sortAlpha | uniq | join " " }}'
         abbr -a "'{{$cmd}}'::$k" -c "'{{$cmd}}'" -r "$k" -f _abbrev_managed_subcommands
     end
     '{{- end }}'
