@@ -6,6 +6,7 @@ const abbrev = z.record(z.string(), z.string()).meta({
   'x-tombi-table-keys-order': {
     additionalProperties: 'ascending',
   },
+  'x-tombi-additional-key-label': 'name',
 })
 const windows_executables = z.array(z.string()).meta({
   description: 'Windows executables to include in completions',
@@ -15,6 +16,7 @@ const completers = z.record(z.string(), z.string()).meta({
   'x-tombi-table-keys-order': {
     additionalProperties: 'ascending',
   },
+  'x-tombi-additional-key-label': 'command',
 })
 
 export const ShellSettings = z
@@ -58,6 +60,7 @@ export const ShellSettings = z
           'x-tombi-table-keys-order': {
             additionalProperties: 'ascending',
           },
+          'x-tombi-additional-key-label': 'command',
         }),
     })
       .partial()
