@@ -16,8 +16,6 @@ export default defineConfig([
     'home/**/modify_*.yaml',
     'schemas/generated/',
     'schemas/vendor/',
-    'playbooks/*.yml',
-    'playbooks/*.yaml',
   ]),
   {
     files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],

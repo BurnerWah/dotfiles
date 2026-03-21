@@ -126,7 +126,7 @@ description = "Lint files with Biome"
 usage = '''
 arg "[files]" var=#true
 '''
-run = "deno task --quiet eslint -- ${usage_files}"
+run = "deno task --quiet eslint --cache -- ${usage_files}"
 description = "Lint files with ESLint"
 wait_for = ["generate:schema:*"]
 

@@ -135,8 +135,6 @@ pre-commit:
               - '**/modify_*.yaml'
               - schemas/generated/*
               - schemas/vendor/*
-              - playbooks/*.yml
-              - playbooks/*.yaml
             file_types: text
 
           - name: biome
