@@ -71,7 +71,7 @@ const ShellIntegration = z.array(
     'no-sudo',
   ]),
 )
-const Env = z.record(z.string(), z.string()).meta({
+const Env = z.record(z.string().regex(/^\w+$/), z.string()).meta({
   description: 'Environment variables to set when running kitty',
 })
 const Advanced = z.strictObject({

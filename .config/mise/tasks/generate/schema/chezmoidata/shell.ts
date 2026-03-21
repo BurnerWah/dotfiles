@@ -1,17 +1,17 @@
 import * as z from '@zod/zod'
 import { strictObject } from '@zod/zod'
 
-const abbrev = z.record(z.string(), z.string()).meta({
+const abbrev = z.record(z.string().nonempty(), z.string()).meta({
   description: 'Abbreviations',
   'x-tombi-table-keys-order': {
     additionalProperties: 'ascending',
   },
   'x-tombi-additional-key-label': 'name',
 })
-const windows_executables = z.array(z.string()).meta({
+const windows_executables = z.array(z.string().nonempty()).meta({
   description: 'Windows executables to include in completions',
 })
-const completers = z.record(z.string(), z.string()).meta({
+const completers = z.record(z.string().nonempty(), z.string().nonempty()).meta({
   description: 'Commands used to generate completions',
   'x-tombi-table-keys-order': {
     additionalProperties: 'ascending',
@@ -30,19 +30,20 @@ export const ShellSettings = z
     fish: strictObject({
       abbrev,
       wsl: strictObject({
-        path_remove: z.array(z.string()).meta({
+        path_remove: z.array(z.string().nonempty()).meta({
+          description: 'Patterns to remove from the PATH under WSL',
           'x-tombi-array-values-order': 'ascending',
         }),
       }).partial(),
       subcommand_abbrevs: z
         .record(
-          z.string(),
+          z.string().nonempty(),
           z
             .record(
-              z.string(),
+              z.string().nonempty(),
               z.union([
                 z.string(),
-                z.record(z.string(), z.string()).meta({
+                z.record(z.string().nonempty(), z.string()).meta({
                   'x-tombi-table-keys-order': {
                     additionalProperties: 'ascending',
                   },
@@ -72,21 +73,21 @@ export const ShellSettings = z
     }),
     zsh: strictObject({
       compsys: strictObject({
-        carapace: z.array(z.string()).meta({
+        carapace: z.array(z.string().nonempty()).meta({
           description: 'Commands to complete with Carapace',
           'x-tombi-array-values-order': 'ascending',
         }),
-        aliases: z.record(z.string(), z.string()).meta({
+        aliases: z.record(z.string().nonempty(), z.string().nonempty()).meta({
           'x-tombi-table-keys-order': {
             additionalProperties: 'ascending',
           },
         }),
-        unreachable: z.array(z.string()).meta({
+        unreachable: z.array(z.string().nonempty()).meta({
           'x-tombi-array-values-order': 'ascending',
         }),
       }).partial(),
       plugins: strictObject({
-        load_order: z.array(z.string()),
+        load_order: z.array(z.string().nonempty()),
       }).partial(),
     })
       .partial()
