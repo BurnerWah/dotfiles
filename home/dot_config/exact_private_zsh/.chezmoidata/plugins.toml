@@ -7,9 +7,10 @@ load_order = [
   "f-sy-h",
   # Lower priority stuff
   "command-not-found",
+  "mise",
+  "pitchfork",
   "atuin",
   "zoxide",
-  "mise",
   "iterm2",
   "starship",
   "thefuck",

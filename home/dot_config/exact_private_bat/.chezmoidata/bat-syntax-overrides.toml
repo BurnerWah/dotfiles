@@ -81,6 +81,7 @@ JSON = [
   '.jshintrc',
   '.nycrc',
   '.tcelldb',
+  'deno.lock',
   'proselintrc',
 ]
 'JavaScript (Babel)' = ['*.js.flow']
