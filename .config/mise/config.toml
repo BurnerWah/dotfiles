@@ -74,7 +74,7 @@ arg "[files]" var=#true default="."
 '''
 run = "deno task --quiet prettier --write --cache --ignore-unknown -- ${usage_files}"
 description = "Format code with Prettier"
-wait_for = ["format:keep-sorted"]
+wait_for = ["format:keep-sorted"] # runs on some yaml files
 
 [tasks."format:ruff"]
 usage = '''
@@ -82,7 +82,10 @@ arg "[files]" var=#true
 '''
 run = "ruff format -- ${usage_files}"
 description = "Format Python code with Ruff"
-wait_for = ["format:tombi"] # tombi formats ruff's config file
+wait_for = [
+  "format:tombi", # tombi formats ruff's config file
+  "fix:ruff", # fix issues in code before formatting
+]
 
 [tasks."format:stylua"]
 usage = '''
@@ -98,7 +101,11 @@ arg "[files]" var=#true
 '''
 run = "tombi format -- ${usage_files}"
 description = "Format TOML files with Tombi"
-wait_for = ["generate:schema:*"]
+wait_for = ["generate:schema:*"] # json schemas are used by tombi
+
+[tasks.fix]
+depends = ["fix:*"]
+description = "Fix code"
 
 [tasks."fix:ansible-lint"]
 usage = '''
@@ -120,6 +127,37 @@ wait_for = [
 ]
 alias = ["format:ansible-lint"]
 
+[tasks."fix:deno"]
+usage = '''
+arg "[files]" var=#true
+'''
+run = "deno lint --fix -- ${usage_files}"
+description = "Fix JS/TS with Deno"
+wait_for = ["format:prettier"] # Formats deno's config file
+alias = ["format:deno-check"]
+
+[tasks."fix:eslint"]
+usage = '''
+arg "[files]" var=#true
+'''
+run = "deno task --quiet eslint --cache --fix -- ${usage_files}"
+description = "Fix code with ESLint"
+wait_for = [
+  "generate:schema:*", # json schemas are used by an eslint plugin
+  "format:prettier", # operates on the same files
+  "fix:deno", # operates on the same files
+]
+alias = ["format:eslint"]
+
+[tasks."fix:ruff"]
+usage = '''
+arg "[files]" var=#true
+'''
+run = "ruff check --fix -- ${usage_files}"
+description = "Fix Python code with Ruff"
+wait_for = ["format:tombi"] # tombi formats ruff's config file
+alias = ["format:ruff-check"]
+
 [tasks."fix:rumdl"]
 usage = '''
 arg "[files]" var=#true
@@ -131,14 +169,6 @@ wait_for = [
   "format:prettier", # prettier can fix some rumdl rules
 ]
 alias = ["format:rumdl"]
-
-[tasks."fix:deno"]
-usage = '''
-arg "[files]" var=#true
-'''
-run = "deno lint --fix -- ${usage_files}"
-description = "Fix JS/TS with Deno"
-# deno actually has a formatter, so no alias here
 
 # This task could be removed once there's a URL I can feasibly use for Lima's Schema
 [tasks."generate:schema:lima"]
