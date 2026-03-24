@@ -52,7 +52,14 @@ run = "chezmoi apply"
 description = "Apply dotfiles"
 wait_for = ["format:*"]
 
-[tasks.keep-sorted]
+[tasks.format]
+depends = ["format:*"]
+description = "Format code"
+
+# Need to figure out how to add fish_indent to this, preferably in a way where
+# fish doesn't need to be installed.
+
+[tasks."format:keep-sorted"]
 # xargs is needed to handle spaces in paths
 run = "git grep -zlE 'keep-sorted (start|end)' | xargs -0 keep-sorted"
 # I think this run_windows should work?
@@ -61,19 +68,13 @@ run_windows = '''
 keep-sorted $(git grep -lE 'keep-sorted (start|end)')
 '''
 
-[tasks.format]
-depends = ["format:*"]
-description = "Format code"
-
-# Need to figure out how to add fish_indent to this, preferably in a way where
-# fish doesn't need to be installed.
-
 [tasks."format:prettier"]
 usage = '''
 arg "[files]" var=#true default="."
 '''
 run = "deno task --quiet prettier --write --cache --ignore-unknown -- ${usage_files}"
 description = "Format code with Prettier"
+wait_for = ["format:keep-sorted"]
 
 [tasks."format:ruff"]
 usage = '''
@@ -99,7 +100,27 @@ run = "tombi format -- ${usage_files}"
 description = "Format TOML files with Tombi"
 wait_for = ["generate:schema:*"]
 
-[tasks."format:rumdl"]
+[tasks."fix:ansible-lint"]
+usage = '''
+arg "[files]" var=#true
+'''
+run = "ansible-lint --fix=all -- ${usage_files}"
+description = "Fix ansible playbooks"
+env = { ANSIBLE_DEPRECATION_WARNINGS = "false" }
+# ansible-lint is kinda slow so the outputs are here to avoid re-running it
+sources = [
+  ".config/ansible-lint.yml",
+  ".yamllint.yaml",
+  "playbooks/**/*.yml",
+  "collections/**/*.yml",
+]
+wait_for = [
+  "format:keep-sorted", # runs on ansible playbooks
+  "format:prettier", # formats ansible playbooks, no real good order to put these two in
+]
+alias = ["format:ansible-lint"]
+
+[tasks."fix:rumdl"]
 usage = '''
 arg "[files]" var=#true
 '''
@@ -109,7 +130,15 @@ wait_for = [
   "format:tombi", # tombi formats rumdl's config file
   "format:prettier", # prettier can fix some rumdl rules
 ]
-alias = ["fix:rumdl"]
+alias = ["format:rumdl"]
+
+[tasks."fix:deno"]
+usage = '''
+arg "[files]" var=#true
+'''
+run = "deno lint --fix -- ${usage_files}"
+description = "Fix JS/TS with Deno"
+# deno actually has a formatter, so no alias here
 
 # This task could be removed once there's a URL I can feasibly use for Lima's Schema
 [tasks."generate:schema:lima"]
