@@ -27,3 +27,8 @@ overrides:
   - files: ['*.plist', '*.plist.tmpl']
     options:
       printWidth: 120
+
+  # Consistency with rumdl
+  - files: ['*.md']
+    options:
+      proseWrap: always

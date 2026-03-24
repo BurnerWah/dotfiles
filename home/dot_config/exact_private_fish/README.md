@@ -2,8 +2,9 @@
 
 ## conf.d sequencing
 
-The conf.d folder is loaded in alphabetical order, so files here are prefixed with a number to control the order in which they are loaded.
-The ranges are as follows:
+The conf.d folder is loaded in alphabetical order, so files here are prefixed
+with a number to control the order in which they are loaded. The ranges are as
+follows:
 
 | Range | Description                             |
 | ----- | --------------------------------------- |

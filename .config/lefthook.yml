@@ -60,6 +60,12 @@ pre-commit:
               - home/dot_config/*_carapace/*_choices
             file_types: text
 
+          - name: rumdl
+            run: mise x -- rumdl check --fix {staged_files}
+            glob: ['*.md']
+            exclude: ['**/symlink_*', '**/modify_*', '**/remove_*']
+            file_types: text
+
           - name: yamllint
             run: mise x -- yamllint -- {staged_files}
             glob: ['*.yml', '*.yaml']

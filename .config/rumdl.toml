@@ -1,0 +1,38 @@
+[global]
+exclude = [
+  # Common directories to exclude
+  ".git",
+  ".github",
+  "node_modules",
+  "vendor",
+  "dist",
+  "build",
+
+  # chezmoi related
+  "home/**/symlink_*",
+  "home/**/modify_*",
+  "home/**/remove_*",
+
+  # Specific files or patterns
+  "CHANGELOG.md",
+  "LICENSE.md",
+]
+flavor = "gfm"
+line-length = 80
+
+# This is configured to be consistent with prettier
+
+[MD003]
+style = "atx" # Heading style (atx, atx_closed, setext)
+
+[MD004]
+style = "consistent" # Unordered list style (asterisk, plus, dash, consistent)
+
+[MD007]
+indent = 2 # Unordered list indentation
+
+[MD049]
+style = "underscore"
+
+[MD050]
+style = "asterisk"

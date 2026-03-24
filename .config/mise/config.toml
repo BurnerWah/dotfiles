@@ -12,6 +12,7 @@ tombi = "latest"
 "github:google/keep-sorted" = "latest"
 ty = "latest"
 biome = "latest"
+rumdl = "latest"
 
 [tools."pipx:ansible-dev-tools"]
 version = "latest"
@@ -73,6 +74,7 @@ arg "[files]" var=#true default="."
 '''
 run = "deno task --quiet prettier --write --cache --ignore-unknown -- ${usage_files}"
 description = "Format code with Prettier"
+wait_for = ["format:rumdl"]
 
 [tasks."format:ruff"]
 usage = '''
@@ -95,6 +97,13 @@ arg "[files]" var=#true
 run = "tombi format -- ${usage_files}"
 description = "Format TOML files with Tombi"
 wait_for = ["generate:schema:*"]
+
+[tasks."format:rumdl"]
+usage = '''
+arg "[files]" var=#true
+'''
+run = "rumdl check --fix -- ${usage_files}"
+description = "Fix markdown with rumdl"
 
 # This task could be removed once there's a URL I can feasibly use for Lima's Schema
 [tasks."generate:schema:lima"]
@@ -158,6 +167,14 @@ arg "[files]" var=#true default="."
 run = "deno task --quiet prettier --check --ignore-unknown --cache -- ${usage_files}"
 description = "Lint code formatting with Prettier"
 # cached prettier isn't that fast but the source files take too long to check
+
+[tasks."lint:rumdl"]
+usage = '''
+arg "[files]" var=#true
+'''
+run = "rumdl check -- ${usage_files}"
+description = "Lint markdown with rumdl"
+# checking sources takes longer than running rumdl would
 
 [tasks."lint:ripsecrets"]
 usage = '''
