@@ -74,7 +74,6 @@ arg "[files]" var=#true default="."
 '''
 run = "deno task --quiet prettier --write --cache --ignore-unknown -- ${usage_files}"
 description = "Format code with Prettier"
-wait_for = ["format:rumdl"]
 
 [tasks."format:ruff"]
 usage = '''
@@ -82,6 +81,7 @@ arg "[files]" var=#true
 '''
 run = "ruff format -- ${usage_files}"
 description = "Format Python code with Ruff"
+wait_for = ["format:tombi"] # tombi formats ruff's config file
 
 [tasks."format:stylua"]
 usage = '''
@@ -89,6 +89,7 @@ arg "[files]" var=#true default="."
 '''
 run = "stylua --respect-ignores -- ${usage_files}"
 description = "Format Lua code with StyLua"
+wait_for = ["format:tombi"] # tombi formats stylua's config file
 
 [tasks."format:tombi"]
 usage = '''
@@ -104,6 +105,11 @@ arg "[files]" var=#true
 '''
 run = "rumdl check --fix -- ${usage_files}"
 description = "Fix markdown with rumdl"
+wait_for = [
+  "format:tombi", # tombi formats rumdl's config file
+  "format:prettier", # prettier can fix some rumdl rules
+]
+alias = ["fix:rumdl"]
 
 # This task could be removed once there's a URL I can feasibly use for Lima's Schema
 [tasks."generate:schema:lima"]
