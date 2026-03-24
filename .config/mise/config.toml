@@ -67,6 +67,7 @@ run_windows = '''
 #!/usr/bin/env pwsh
 keep-sorted $(git grep -lE 'keep-sorted (start|end)')
 '''
+description = "Sort lines in various files"
 
 [tasks."format:prettier"]
 usage = '''
@@ -127,6 +128,15 @@ wait_for = [
 ]
 alias = ["format:ansible-lint"]
 
+[tasks."fix:biome"]
+usage = '''
+arg "[files]" var=#true
+'''
+run = "biome lint --fix -- ${usage_files}"
+description = "Lint files with Biome"
+wait_for = ["format:prettier", "fix:deno"]
+alias = ["format:biome-lint"]
+
 [tasks."fix:deno"]
 usage = '''
 arg "[files]" var=#true
@@ -134,7 +144,7 @@ arg "[files]" var=#true
 run = "deno lint --fix -- ${usage_files}"
 description = "Fix JS/TS with Deno"
 wait_for = ["format:prettier"] # Formats deno's config file
-alias = ["format:deno-check"]
+alias = ["format:deno-lint"]
 
 [tasks."fix:eslint"]
 usage = '''
@@ -146,6 +156,7 @@ wait_for = [
   "generate:schema:*", # json schemas are used by an eslint plugin
   "format:prettier", # operates on the same files
   "fix:deno", # operates on the same files
+  "fix:biome",
 ]
 alias = ["format:eslint"]
 
