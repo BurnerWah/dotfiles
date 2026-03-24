@@ -216,7 +216,6 @@ run = 'nvim --headless "+Lazy! sync" +qa'
 description = "Update neovim plugins"
 wait_for = ["apply"]
 
-[tasks."update:package"]
-run = "npm-check-updates --packageFile package.json --interactive"
-description = "Update packages found in package.json"
-tools = { "npm:npm-check-updates" = "latest" }
+[tasks."update:deno"]
+run = "deno update --interactive"
+description = "Update npm & jsr packages"
