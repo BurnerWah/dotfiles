@@ -1,3 +1,3 @@
 if (( $+commands[atuin] )); then
-  eval "$(atuin init --disable-up-arrow zsh)"
+  eval "$(atuin init --disable-up-arrow --disable-ai zsh)"
 fi

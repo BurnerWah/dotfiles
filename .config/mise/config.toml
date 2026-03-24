@@ -28,12 +28,14 @@ uvx_args = "--with jsonschema[format],pyjson5"
 
 # prepare hooks aren't fully ready for use yet
 [prepare.uv]
+# run is overridden because this is a workspace
+run = "uv sync --all-packages"
 
 [prepare.deno]
 auto = true
 run = "deno install"
 depends = ["deno"]
-sources = ["deno.jsonc", "deno.lock", "package.json"]
+sources = ["deno.json*", "deno.lock", "package.json"]
 outputs = ["node_modules"]
 
 [prepare.lefthook]
@@ -187,7 +189,7 @@ arg "[files]" var=#true
 run = "tombi lint -- ${usage_files}"
 description = "Lint TOML files with Tombi"
 wait_for = ["generate:schema:*"]
-# tombi is fast enough that sources aren't necessary
+# tombi runs about as quickly as mise can check its source files
 
 [tasks."lint:ty"]
 usage = '''

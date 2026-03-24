@@ -527,6 +527,7 @@ formula = [
   'stellar-core', # cryptocurrency
   'strands-agents-sops', # ai
   'sui', # cryptocurrency
+  'summarize', # ai
   'supabase-mcp-server', # ai
   'sysaidmin', # ai
   't-completion', # twitter

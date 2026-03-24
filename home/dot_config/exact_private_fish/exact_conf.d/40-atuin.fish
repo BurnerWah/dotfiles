@@ -5,5 +5,5 @@ if status is-interactive
     if [ -n "$WSL_INTEROP" ]
         [ -d "$XDG_RUNTIME_DIR" ] || exit 0
     end
-    atuin init --disable-up-arrow fish | source
+    atuin init --disable-up-arrow --disable-ai fish | source
 end
