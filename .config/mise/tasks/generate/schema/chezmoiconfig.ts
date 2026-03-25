@@ -394,6 +394,7 @@ const jsonSchema = z.toJSONSchema(
   schema.meta({
     id: 'https://json-schema.furry.codes/chezmoiconfig.json',
     title: 'Chezmoi Config',
+    'x-tombi-toml-version': 'v1.1.0',
   }),
   { target: 'draft-2020-12' },
 )

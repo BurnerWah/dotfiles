@@ -9,6 +9,7 @@ trailing-comment-space-width = 1
 strict = false
 
 [[schemas]]
+toml-version = "v1.1.0"
 path = "https://mise.jdx.dev/schema/mise.json"
 # tombi: format.rules.array-values-order = "ascending"
 include = [
@@ -32,10 +33,12 @@ include = [
 ]
 
 [[schemas]]
+toml-version = "v1.1.0"
 path = "https://github.com/ClementTsang/bottom/raw/refs/heads/main/schema/v0.10/bottom.json"
 include = ["home/dot_config/*_bottom/*"]
 
 [[schemas]]
+toml-version = "v1.1.0"
 path = "https://jj-vcs.github.io/jj/latest/config-schema.json"
 # tombi: format.rules.array-values-order = "ascending"
 include = [
