@@ -1,827 +1,855 @@
 [settings.shell.fish.subcommand_abbrevs]
-apptainer.b = "build"
-apptainer.sh = "shell"
-apptainer.x = "exec"
-aqua.g = "generate"
-aqua.gr = "generate-registry"
-aqua.h = "help"
-aqua.i = "install"
-aqua.rm = "remove"
-aqua.up = "update"
-aqua.upa = "update-aqua"
-aqua.upc = "update-checksum"
-atuin.a = "account"
-atuin.dr = "doctor"
-atuin.h = "history"
-atuin.kv.ls = "list"
-atuin.kv.rm = "delete"
-atuin.sc = "scripts"
-atuin.scripts.ls = "list"
-atuin.se = "search"
-brew.abv = "info"
-brew.dr = "doctor"
-brew.home = "homepage"
-brew.instal = "install"
-brew.lc = "livecheck"
-brew.ln = "link"
-brew.ls = "list"
-brew.out = "outdated"
-brew.pitdated = "outdated"
-brew.post_install = "postinstall"
-brew.remove = "uninstall"
-brew.rm = "uninstall"
-brew.tc = "typecheck"
-brew.uninstal = "uninstall"
-brew.uograde = "upgrade"
-brew.up = "update"
-brew.upg = "upgrade"
-brew.yopgrade = "upgrade"
-brew.ypgrade = "upgrade"
-brz.a = "add"
-brz.ann = "annotate"
-brz.b = "branch"
-brz.c = "commit"
-brz.co = "checkout"
-brz.d = "diff"
-brz.st = "status"
-buildctl.b = "build"
-buildctl.h = "help"
-bundle.a = "add"
-bundle.b = "binstubs"
-bundle.c = "check"
-bundle.cfg = "config"
-bundle.cn = "clean"
-bundle.dr = "doctor"
-bundle.e = "exec"
-bundle.ex = "exec"
-bundle.exe = "exec"
-bundle.g = "gem"
-bundle.h = "help"
-bundle.i = "install"
-bundle.ls = "list"
-bundle.out = "outdated"
-bundle.pack = "cache"
-bundle.package = "cache"
-bundle.s = "show"
-bundle.u = "update"
-bundle.up = "update"
-bundle.x = "exec"
-cargo.b = "build"
-cargo.c = "check"
-cargo.d = "doc"
-cargo.r = "run"
-cargo.rm = "remove"
-cargo.t = "test"
-chezmoi.a = "add"
-chezmoi.ap = "apply"
-chezmoi.dr = "doctor"
-chezmoi.list = "managed"
-chezmoi.manage = "add"
-chezmoi.s = "status"
-chezmoi.unmanage = "forget"
-chezmoi.up = "update"
-container.builder.rm = "delete"
-container.i = "image"
-container.image.ls = "list"
-container.image.rm = "delete"
-container.images = "image list"
-container.ls = "list"
-container.n = "network"
-container.network.ls = "list"
-container.network.rm = "delete"
-container.networks = "network list"
-container.r = "registry"
-container.registry.ls = "list"
-container.rm = "delete"
-container.s = "system"
-container.v = "volume"
-container.volume.ls = "list"
-container.volume.rm = "delete"
-container.volumes = "volume list"
-crictl.event = "events"
-crictl.h = "help"
-crictl.image = "images"
-crictl.img = "images"
-deno.a = "add"
-deno.l = "lint"
-deno.out = "outdated"
-deno.rm = "remove"
-dnf.check-update = "check-upgrade"
-dnf.dg = "downgrade"
-dnf.dsync = "distro-sync"
-dnf.grp = "grp"
-dnf.if = "info"
-dnf.in = "install"
-dnf.ls = "list"
-dnf.mc = "makecache"
-dnf.rei = "reinstall"
-dnf.repoinfo = "repo info"
-dnf.repolist = "repo list"
-dnf.rm = "remove"
-dnf.rq = "repoquery"
-dnf.se = "search"
-dnf.up = "upgrade"
-dnf.update = "upgrade"
-dnf.updateinfo = "advisory"
-dnf.upgrade-minimal = "upgrade --minimal"
-docker.bl = "build"
-docker.builder.f = "bake"
-docker.builder.list = "ls"
-docker.builder.remove = "rm"
-docker.builders = "builder ls"
-docker.buildx.f = "bake"
-docker.buildx.list = "ls"
-docker.buildx.remove = "rm"
-docker.checkpoint.list = "ls"
-docker.checkpoint.remove = "rm"
-docker.checkpoints = "checkpoint ls"
-docker.compose.list = "ls"
-docker.compose.remove = "rm"
-docker.config.list = "ls"
-docker.config.remove = "rm"
-docker.configs = "config ls"
-docker.container.list = "ls"
-docker.container.ps = "ls"
-docker.container.remove = "rm"
-docker.containers = "container ls"
-docker.context.list = "ls"
-docker.context.remove = "rm"
-docker.contexts = "context ls"
-docker.ctx = "context"
-docker.image.list = "ls"
-docker.image.remove = "rm"
-docker.image.rmi = "rm"
-docker.images = "image ls"
-docker.img = "image"
-docker.manifest.remove = "rm"
-docker.net = "network"
-docker.network.list = "ls"
-docker.network.remove = "rm"
-docker.networks = "network ls"
-docker.node.list = "ls"
-docker.node.remove = "rm"
-docker.nodes = "node ls"
-docker.plugin.list = "ls"
-docker.plugin.remove = "rm"
-docker.plugins = "plugin ls"
-docker.secret.list = "ls"
-docker.secret.remove = "rm"
-docker.secrets = "secret ls"
-docker.service.list = "ls"
-docker.service.remove = "rm"
-docker.services = "service ls"
-docker.stack.cfg = "config"
-docker.stack.conf = "config"
-docker.stack.down = "rm"
-docker.stack.list = "ls"
-docker.stack.remove = "rm"
-docker.stacks = "stack ls"
-docker.sys = "system"
-docker.v = "volume"
-docker.vls = "volume ls"
-docker.vol = "volume"
-docker.volume.list = "ls"
-docker.volume.remove = "rm"
-docker.volumes = "volume ls"
-docker.x = "exec"
-dotnet.a = "add"
-dotnet.b = "build"
-dotnet.rm = "remove"
-dua.a = "aggregate"
-dua.i = "interactive"
-dum.i = "install"
-dum.t = "test"
-ein.initialize = "init"
-ein.t = "tool"
-ein.tool.h = "estimate-hours"
-ein.tool.hours = "estimate-hours"
-exercism.c = "configure"
-exercism.d = "download"
-exercism.debug = "troubleshoot"
-exercism.o = "open"
-exercism.p = "prepare"
-exercism.s = "submit"
-exercism.t = "test"
-exercism.u = "upgrade"
-exercism.v = "version"
-exercism.w = "workspace"
-fnox.c = "check"
-fnox.delete = "remove"
-fnox.dr = "doctor"
-fnox.ex = "export"
-fnox.i = "init"
-fnox.im = "import"
-fnox.ls = "list"
-fnox.provider.a = "add"
-fnox.provider.delete = "remove"
-fnox.provider.list = "ls"
-fnox.provider.rm = "remove"
-fnox.provider.set = "add"
-fnox.provider.t = "test"
-fnox.rm = "remove"
-fnox.s = "set"
-fnox.secrets = "list"
-fnox.v = "version"
-fnox.x = "exec"
-gh.alias.ls = "list"
-gh.at = "attestation"
-gh.cache.ls = "list"
-gh.codespace.ls = "list"
-gh.config.ls = "list"
-gh.cs = "codespace"
-gh.ext = "extension"
-gh.extension.ls = "list"
-gh.extensions = "extension"
-gh.gist.ls = "list"
-gh.gist.new = "create"
-gh.gpg-key.ls = "list"
-gh.issue.ls = "list"
-gh.issue.new = "create"
-gh.label.ls = "list"
-gh.org.ls = "list"
-gh.pr.co = "checkout"
-gh.pr.ls = "list"
-gh.pr.new = "create"
-gh.project.ls = "list"
-gh.release.ls = "list"
-gh.release.new = "create"
-gh.repo.ls = "list"
-gh.repo.new = "create"
-gh.rs = "ruleset"
-gh.ruleset.ls = "list"
-gh.run.ls = "list"
-gh.ssh-key.ls = "list"
-gh.variable.ls = "list"
-gh.variable.remove = "delete"
-gh.workflow.ls = "list"
-ghalint.act = "run-action"
-ghalint.exp = "experiment"
-ghalint.h = "help"
-git.a = "add"
-git.b = "branch"
-git.c = "commit"
-git.co = "checkout"
-git.d = "diff"
-git.st = "status"
-gitleaks.directory = "dir"
-gitleaks.file = "dir"
-gix.attrs = "attributes"
-gix.branches = "branch"
-gix.credential.erase = "reject"
-gix.credential.get = "fill"
-gix.credential.store = "approve"
-gix.index.read-tree = "from-tree"
-gix.no-repo = "free"
-gix.odb.statistics = "stats"
-gix.r = "revision"
-gix.remotes = "remote"
-gix.rev = "revision"
-gix.revision.e = "explain"
-gix.revision.l = "list"
-gix.revision.p = "resolve"
-gix.revision.parse = "resolve"
-gix.revision.prev = "previous-branches"
-gix.revision.query = "resolve"
-gix.tags = "tag"
-glab.alias.ls = "list"
-glab.ci.create = "run"
-glab.ci.stats = "status"
-glab.conf = "config"
-glab.incident.comment = "note"
-glab.incident.ls = "list"
-glab.incident.open = "reopen"
-glab.incident.resolve = "close"
-glab.incident.show = "view"
-glab.incident.sub = "subscribe"
-glab.incident.unsub = "unsubscribe"
-glab.issue.comment = "note"
-glab.issue.del = "delete"
-glab.issue.ls = "list"
-glab.issue.new = "create"
-glab.issue.open = "reopen"
-glab.issue.show = "view"
-glab.issue.sub = "subscribe"
-glab.issue.unsub = "unsubscribe"
-glab.iteration.ls = "list"
-glab.label.ls = "list"
-glab.label.new = "create"
-glab.mr.accept = "merge"
-glab.mr.add-todo = "todo"
-glab.mr.comment = "note"
-glab.mr.del = "delete"
-glab.mr.issue = "issues"
-glab.mr.ls = "list"
-glab.mr.new = "create"
-glab.mr.open = "reopen"
-glab.mr.show = "view"
-glab.mr.sub = "subscribe"
-glab.mr.unapprove = "revoke"
-glab.mr.unsub = "unsubscribe"
-glab.pipe = "ci"
-glab.pipeline = "ci"
-glab.project = "repo"
-glab.release.find = "search"
-glab.release.lookup = "search"
-glab.release.ls = "list"
-glab.release.users = "contributors"
-glab.repo.ls = "list"
-glab.sched = "schedule"
-glab.securefile.delete = "remove"
-glab.securefile.ls = "list"
-glab.securefile.rm = "remove"
-glab.securefile.show = "get"
-glab.securefile.upload = "create"
-glab.skd = "schedule"
-glab.snippet.new = "create"
-glab.stack.ls = "list"
-glab.stack.new = "create"
-glab.stacks = "stack"
-glab.terraform = "opentofu"
-glab.tf = "opentofu"
-glab.token.ls = "list"
-glab.token.new = "create"
-glab.token.rm = "revoke"
-glab.token.rot = "rotate"
-glab.update = "check-update"
-glab.v = "version"
-glab.var = "variable"
-glab.variable.create = "set"
-glab.variable.ex = "export"
-glab.variable.ls = "list"
-glab.variable.new = "set"
-glab.variable.remove = "delete"
-go.b = "build"
-hk.c = "check"
-hk.cfg = "config"
-hk.f = "fix"
-hk.i = "install"
-hk.r = "run"
-hk.run.cm = "commit-msg"
-hk.run.pc = "pre-commit"
-hk.run.pcm = "prepare-commit-msg"
-hk.run.pp = "pre-push"
-incus.cluster.delete = "remove"
-incus.cluster.evac = "evacuate"
-incus.cluster.ls = "list"
-incus.cluster.mv = "rename"
-incus.cluster.rm = "remove"
-incus.cluster.update-cert = "update-certificate"
-incus.cp = "copy"
-incus.file.remove = "delete"
-incus.file.rm = "delete"
-incus.freeze = "pause"
-incus.image.cp = "copy"
-incus.image.ls = "list"
-incus.image.remove = "delete"
-incus.image.rm = "delete"
-incus.ls = "list"
-incus.mv = "move"
-incus.network.add = "create"
-incus.network.ls = "list"
-incus.network.mv = "rename"
-incus.network.remove = "delete"
-incus.network.rm = "delete"
-incus.profile.apply = "assign"
-incus.profile.cp = "copy"
-incus.profile.ls = "list"
-incus.profile.mv = "rename"
-incus.profile.rm = "delete"
-incus.project.add = "create"
-incus.project.ls = "list"
-incus.project.mv = "rename"
-incus.project.remove = "delete"
-incus.project.rm = "delete"
-incus.remote.delete = "remove"
-incus.remote.ls = "list"
-incus.remote.mv = "rename"
-incus.remote.rm = "remove"
-incus.remote.set-default = "switch"
-incus.remove = "delete"
-incus.rm = "delete"
-incus.snapshot.add = "create"
-incus.snapshot.ls = "list"
-incus.snapshot.remove = "delete"
-incus.snapshot.rm = "delete"
-incus.storage.add = "create"
-incus.storage.ls = "list"
-incus.storage.remove = "delete"
-incus.storage.rm = "delete"
-incus.unfreeze = "resume"
-jj.b = "bookmark"
-jj.bookmark.a = "advance"
-jj.bookmark.c = "create"
-jj.bookmark.d = "delete"
-jj.bookmark.f = "forget"
-jj.bookmark.l = "list"
-jj.bookmark.m = "move"
-jj.bookmark.r = "rename"
-jj.bookmark.s = "set"
-jj.bookmark.t = "track"
-jj.ci = "commit"
-jj.config.e = "edit"
-jj.config.g = "get"
-jj.config.l = "list"
-jj.config.p = "path"
-jj.config.s = "set"
-jj.config.u = "unset"
-jj.desc = "describe"
-jj.evolution-log = "evolog"
-jj.obslog = "evolog"
-jj.op = "operation"
-jj.st = "status"
-jj.tag.d = "delete"
-jj.tag.l = "list"
-jj.tag.s = "set"
-lefthook.h = "help"
-limactl.cp = "copy"
-limactl.disk.ls = "list"
-limactl.disk.remove = "delete"
-limactl.disk.rm = "delete"
-limactl.ls = "list"
-limactl.network.ls = "list"
-limactl.network.remove = "delete"
-limactl.network.rm = "delete"
-limactl.remove = "delete"
-limactl.rm = "delete"
-limactl.snapshot.del = "delete"
-limactl.snapshot.load = "apply"
-limactl.snapshot.ls = "list"
-limactl.snapshot.save = "create"
-limactl.tmpl = "template"
-mas.info = "lookup"
-mas.purchase = "get"
-mas.upgrade = "update"
-mas.vendor = "seller"
-melt.r = "restore"
-melt.res = "restore"
-mise.a = "alias"
-mise.b = "backends"
-mise.backends.list = "ls"
-mise.cache.c = "clear"
-mise.cache.dir = "path"
-mise.cache.p = "prune"
-mise.cfg = "config"
-mise.config.list = "ls"
-mise.dr = "doctor"
-mise.e = "env"
-mise.exec = "x" # exec is the true command
-mise.gen = "generate"
-mise.generate.pre-commit = "git-pre-commit"
-mise.i = "install"
-mise.list = "ls"
-mise.ln = "link"
-mise.out = "outdated"
-mise.p = "plugins"
-mise.plugins.a = "install"
-mise.plugins.add = "install"
-mise.plugins.i = "install"
-mise.plugins.list = "ls"
-mise.plugins.list-all = "ls-remote"
-mise.plugins.list-remote = "ls-remote"
-mise.plugins.ln = "link"
-mise.plugins.remove = "uninstall"
-mise.plugins.rm = "uninstall"
-mise.plugins.up = "update"
-mise.plugins.upgrade = "update"
-mise.prep = "prepare"
-mise.r = "run"
-mise.remove = "unuse"
-mise.rm = "unuse"
-mise.settings.create = "set"
-mise.settings.del = "unset"
-mise.settings.delete = "unset"
-mise.settings.list = "ls"
-mise.settings.remove = "unset"
-mise.settings.rm = "unset"
-mise.sh = "shell"
-mise.shell-alias.add = "set"
-mise.shell-alias.create = "set"
-mise.shell-alias.del = "unset"
-mise.shell-alias.delete = "unset"
-mise.shell-alias.list = "ls"
-mise.shell-alias.remove = "unset"
-mise.shell-alias.rm = "unset"
-mise.t = "tasks"
-mise.tasks.r = "run"
-mise.tool-alias.add = "set"
-mise.tool-alias.create = "set"
-mise.tool-alias.del = "unset"
-mise.tool-alias.delete = "unset"
-mise.tool-alias.list = "ls"
-mise.tool-alias.remove = "unset"
-mise.tool-alias.rm = "unset"
-mise.u = "use"
-mise.up = "upgrade"
-mise.v = "version"
-mise.w = "watch"
-mpm.freeze = "backup"
-mpm.list = "installed"
-mpm.locate = "which"
-mpm.lock = "backup"
-mpm.snapshot = "backup"
-mpm.uninstall = "remove"
-mpm.update = "upgrade"
-nerdctl.apparmor.list = "ls"
-nerdctl.bl = "build"
-nerdctl.checkpoint.list = "ls"
-nerdctl.checkpoint.remove = "rm"
-nerdctl.container.list = "ls"
-nerdctl.container.remove = "rm"
-nerdctl.image.list = "ls"
-nerdctl.image.remove = "rm"
-nerdctl.images = "image ls"
-nerdctl.img = "image"
-nerdctl.namespace.list = "ls"
-nerdctl.namespace.remove = "rm"
-nerdctl.net = "network"
-nerdctl.network.list = "ls"
-nerdctl.network.remove = "rm"
-nerdctl.networks = "network ls"
-nerdctl.sys = "system"
-nerdctl.v = "volume"
-nerdctl.vls = "volume ls"
-nerdctl.vol = "volume"
-nerdctl.volume.list = "ls"
-nerdctl.volume.remove = "rm"
-nerdctl.volumes = "volume ls"
-nerdctl.x = "exec"
-notation.cert = "certificate"
-notation.ls = "list"
-npm.add = "install"
-npm.add-user = "adduser"
-npm.author = "owner"
-npm.c = "config"
-npm.cit = "install-ci-test"
-npm.clean-install = "ci"
-npm.clean-install-test = "install-ci-test"
-npm.create = "init"
-npm.ddp = "dedupe"
-npm.dist-tags = "dist-tag"
-npm.find = "search"
-npm.hlep = "help"
-npm.home = "docs"
-npm.i = "install"
-npm.ic = "ci"
-npm.in = "install"
-npm.info = "view"
-npm.innit = "init"
-npm.ins = "install"
-npm.inst = "install"
-npm.insta = "install"
-npm.instal = "install"
-npm.install-clean = "ci"
-npm.isnt = "install"
-npm.isnta = "install"
-npm.isntal = "install"
-npm.isntall = "install"
-npm.isntall-clean = "ci"
-npm.issues = "bugs"
-npm.it = "install-test"
-npm.la = "ll"
-npm.list = "ls"
-npm.ln = "link"
-npm.ogr = "org"
-npm.out = "outdated"
-npm.r = "uninstall"
-npm.rb = "rebuild"
-npm.remove = "uninstall"
-npm.rm = "uninstall"
-npm.rum = "run"
-npm.run-script = "run" # run-script is the true command but run is better
-npm.s = "search"
-npm.se = "search"
-npm.show = "view"
-npm.sit = "install-ci-test"
-npm.t = "test"
-npm.tst = "test"
-npm.udpate = "update"
-npm.un = "uninstall"
-npm.unlink = "uninstall"
-npm.up = "update"
-npm.upgrade = "update"
-npm.urn = "run"
-npm.v = "view"
-npm.verison = "version"
-npm.why = "explain"
-npm.x = "exec"
-ntfy.h = "help"
-ntfy.pub = "publish"
-ntfy.send = "publish"
-ntfy.sub = "subscribe"
-ntfy.trigger = "publish"
-pastel.colour = "color"
-pastel.display = "color"
-pastel.show = "color"
-pastel.sort = "sort-by"
-pastel.take = "color"
-pitchfork.c = "clean"
-pitchfork.cfg = "config"
-pitchfork.config.a = "add"
-pitchfork.config.rm = "remove"
-pitchfork.d = "disable"
-pitchfork.e = "enable"
-pitchfork.kill = "stop"
-pitchfork.l = "logs"
-pitchfork.ls = "list"
-pitchfork.r = "run"
-pitchfork.s = "start"
-pitchfork.stat = "status"
-pitchfork.sup = "supervisor"
-pitchfork.w = "wait"
-pnpm.dislink = "unlink"
-pnpm.dr = "doctor"
-pnpm.i = "install"
-pnpm.it = "install-test"
-pnpm.list = "ls"
-pnpm.ln = "link"
-pnpm.out = "outdated"
-pnpm.rb = "rebuild"
-pnpm.rm = "remove"
-pnpm.run-script = "run"
-pnpm.t = "test"
-pnpm.tst = "test"
-pnpm.un = "remove"
-pnpm.uninstall = "remove"
-pnpm.up = "update"
-pnpm.upgrade = "update"
-podlet.c = "compose"
-podlet.g = "generate"
-podlet.p = "podman"
-podman.artifact.list = "ls"
-podman.artifact.remove = "rm"
-podman.artifacts = "artifact ls"
-podman.b = "build"
-podman.bl = "build"
-podman.container.freeze = "pause"
-podman.container.ls = "list"
-podman.container.remove = "rm"
-podman.container.unfreeze = "unpause"
-podman.containers = "container list"
-podman.context = "system connection"
-podman.ctx = "system connection"
-podman.farm.ls = "list"
-podman.farm.rm = "remove"
-podman.farms = "farm list"
-podman.freeze = "pause"
-podman.gen = "generate"
-podman.hc = "healthcheck"
-podman.health = "healthcheck"
-podman.image.ls = "list"
-podman.image.remove = "rm"
-podman.images = "image list"
-podman.img = "image"
-podman.machine.ls = "list"
-podman.machine.remove = "rm"
-podman.machines = "machine list"
-podman.net = "network"
-podman.network.list = "ls"
-podman.network.remove = "rm"
-podman.networks = "network ls"
-podman.pod.list = "ps"
-podman.pod.ls = "ps"
-podman.pod.remove = "rm"
-podman.pods = "pod ps"
-podman.quadlet.cat = "print"
-podman.quadlet.ls = "list"
-podman.quadlet.remove = "rm"
-podman.quadlets = "quadlet list"
-podman.secret.list = "ls"
-podman.secret.remove = "rm"
-podman.secrets = "secret ls"
-podman.sys = "system"
-podman.unfreeze = "unpause"
-podman.v = "volume"
-podman.vls = "volume ls"
-podman.vol = "volume"
-podman.volume.list = "ls"
-podman.volume.remove = "rm"
-podman.volumes = "volume ls"
-podman.x = "exec"
-rustup.component.del = "remove"
-rustup.component.delete = "remove"
-rustup.component.rm = "remove"
-rustup.component.uninstall = "remove"
-rustup.docs = "doc"
-rustup.override.add = "set"
-rustup.override.del = "unset"
-rustup.override.delete = "unset"
-rustup.override.remove = "unset"
-rustup.override.rm = "unset"
-rustup.target.del = "remove"
-rustup.target.delete = "remove"
-rustup.target.install = "add"
-rustup.target.rm = "remove"
-rustup.target.uninstall = "remove"
-rustup.tc = "toolchain"
-rustup.toolchain.add = "install"
-rustup.toolchain.del = "uninstall"
-rustup.toolchain.delete = "uninstall"
-rustup.toolchain.remove = "uninstall"
-rustup.toolchain.rm = "uninstall"
-rustup.toolchain.update = "install"
-rustup.up = "update"
-rustup.upgrade = "update"
-rv.ci = "clean-install"
-rv.r = "run"
-rv.ruby.i = "install"
-rv.ruby.ls = "list"
-rv.ruby.rm = "uninstall"
-rv.tool.i = "install"
-rv.tool.ls = "list"
-rv.tool.rm = "uninstall"
-sops.h = "help"
-sq.dec = "decrypt"
-sq.e = "encrypt"
-sq.enc = "encrypt"
-sq.s = "sign"
-sq.v = "verify"
-string.c = "collect"
-string.e = "escape"
-string.j = "join"
-string.j0 = "join0"
-string.le = "length"
-string.len = "length"
-string.lo = "lower"
-string.m = "match"
-string.p = "pad"
-string.repl = "replace"
-string.s = "split"
-string.s0 = "split0"
-string.sh = "shorten"
-string.short = "shorten"
-string.t = "trim"
-string.tr = "trim"
-string.une = "unescape"
-string.up = "upper"
-tombi.check = "lint"
-tombi.fmt = "format"
-tombi.serve = "lsp"
-topiary.cfg = "config"
-topiary.check = "check-grammar"
-topiary.fmt = "format"
-topiary.view = "visualise"
-topiary.vis = "visualise"
-topiary.visualize = "visualise"
-tree-sitter.g = "generate"
-tree-sitter.gen = "generate"
-tree-sitter.i = "init"
-trivy.conf = "config"
-trivy.conv = "convert"
-trivy.fs = "filesystem"
-trivy.i = "image"
-trivy.k8s = "kubernetes"
-trivy.m = "module"
-trivy.p = "plugin"
-trivy.repo = "repository"
-trivy.s = "server"
-typst.c = "compile"
-typst.w = "watch"
-usage.cw = "complete-word"
-usage.g = "generate"
-usage.generate.c = "completion"
-usage.generate.man = "manpage"
-usage.generate.md = "markdown"
-usage.x = "exec"
-uv.a = "add"
-uv.b = "build"
-uv.cache.clear = "clean"
-uv.pip.ls = "list"
-uv.pub = "publish"
-uv.python.ensurepath = "update-shell"
-uv.python.i = "install"
-uv.python.ls = "list"
-uv.python.rm = "uninstall"
-uv.rm = "remove"
-uv.tool.ensurepath = "update-shell"
-uv.tool.i = "install"
-uv.tool.ls = "list"
-uv.tool.rm = "uninstall"
-uv.tool.update = "upgrade"
-uv.v = "venv"
-uv.virtualenv = "venv"
-vivid.g = "generate"
-vivid.p = "preview"
-vivid.t = "themes"
-vrc-get.i = "install"
-vrc-get.out = "outdated"
-vrc-get.repo.ls = "list"
-vrc-get.repo.rm = "remove"
-vrc-get.rm = "remove"
-vrc-get.user-package.ls = "list"
-vrc-get.user-package.rm = "remove"
-vt.an = "analysis"
-vt.dl = "download"
-vt.ht = "hunting"
-vt.is = "iocstream"
-vt.rh = "retrohunt"
-zellij.a = "attach"
-zellij.ac = "action"
-zellij.d = "delete-session"
-zellij.da = "delete-all-sessions"
-zellij.e = "edit"
-zellij.k = "kill-session"
-zellij.ka = "kill-all-sessions"
-zellij.la = "list-aliases"
-zellij.ls = "list-sessions"
-zellij.p = "plugin"
-zellij.r = "run"
+apptainer = { b = "build", sh = "shell", x = "exec" }
+aqua = {
+  g = "generate",
+  gr = "generate-registry",
+  h = "help",
+  i = "install",
+  rm = "remove",
+  up = "update",
+  upa = "update-aqua",
+  upc = "update-checksum",
+}
+atuin = {
+  a = "account",
+  dr = "doctor",
+  h = "history",
+  kv = { ls = "list", rm = "delete" },
+  sc = "scripts",
+  scripts = { ls = "list" },
+  se = "search",
+}
+brew = {
+  abv = "info",
+  dr = "doctor",
+  home = "homepage",
+  instal = "install",
+  lc = "livecheck",
+  ln = "link",
+  ls = "list",
+  out = "outdated",
+  pitdated = "outdated",
+  post_install = "postinstall",
+  remove = "uninstall",
+  rm = "uninstall",
+  tc = "typecheck",
+  uninstal = "uninstall",
+  uograde = "upgrade",
+  up = "update",
+  upg = "upgrade",
+  yopgrade = "upgrade",
+  ypgrade = "upgrade",
+}
+brz = {
+  a = "add",
+  ann = "annotate",
+  b = "branch",
+  c = "commit",
+  co = "checkout",
+  d = "diff",
+  st = "status",
+}
+buildctl = { b = "build", h = "help" }
+bundle = {
+  a = "add",
+  b = "binstubs",
+  c = "check",
+  cfg = "config",
+  cn = "clean",
+  dr = "doctor",
+  e = "exec",
+  ex = "exec",
+  exe = "exec",
+  g = "gem",
+  h = "help",
+  i = "install",
+  ls = "list",
+  out = "outdated",
+  pack = "cache",
+  package = "cache",
+  s = "show",
+  u = "update",
+  up = "update",
+  x = "exec",
+}
+cargo = {
+  b = "build",
+  c = "check",
+  d = "doc",
+  r = "run",
+  rm = "remove",
+  t = "test",
+}
+chezmoi = {
+  a = "add",
+  ap = "apply",
+  dr = "doctor",
+  list = "managed",
+  manage = "add",
+  s = "status",
+  unmanage = "forget",
+  up = "update",
+}
+container = {
+  builder = { rm = "delete" },
+  i = "image",
+  image = { ls = "list", rm = "delete" },
+  images = "image list",
+  ls = "list",
+  n = "network",
+  network = { ls = "list", rm = "delete" },
+  networks = "network list",
+  r = "registry",
+  registry = { ls = "list" },
+  rm = "delete",
+  s = "system",
+  v = "volume",
+  volume = { ls = "list", rm = "delete" },
+  volumes = "volume list",
+}
+crictl = { event = "events", h = "help", image = "images", img = "images" }
+deno = { a = "add", l = "lint", out = "outdated", rm = "remove" }
+dnf = {
+  check-update = "check-upgrade",
+  dg = "downgrade",
+  dsync = "distro-sync",
+  grp = "grp",
+  if = "info",
+  in = "install",
+  ls = "list",
+  mc = "makecache",
+  rei = "reinstall",
+  repoinfo = "repo info",
+  repolist = "repo list",
+  rm = "remove",
+  rq = "repoquery",
+  se = "search",
+  up = "upgrade",
+  update = "upgrade",
+  updateinfo = "advisory",
+  upgrade-minimal = "upgrade --minimal",
+}
+docker = {
+  bl = "build",
+  builder = { f = "bake", list = "ls", remove = "rm" },
+  builders = "builder ls",
+  buildx = { f = "bake", list = "ls", remove = "rm" },
+  checkpoint = { list = "ls", remove = "rm" },
+  checkpoints = "checkpoint ls",
+  compose = { list = "ls", remove = "rm" },
+  config = { list = "ls", remove = "rm" },
+  configs = "config ls",
+  container = { list = "ls", ps = "ls", remove = "rm" },
+  containers = "container ls",
+  context = { list = "ls", remove = "rm" },
+  contexts = "context ls",
+  ctx = "context",
+  image = { list = "ls", remove = "rm", rmi = "rm" },
+  images = "image ls",
+  img = "image",
+  manifest = { remove = "rm" },
+  net = "network",
+  network = { list = "ls", remove = "rm" },
+  networks = "network ls",
+  node = { list = "ls", remove = "rm" },
+  nodes = "node ls",
+  plugin = { list = "ls", remove = "rm" },
+  plugins = "plugin ls",
+  secret = { list = "ls", remove = "rm" },
+  secrets = "secret ls",
+  service = { list = "ls", remove = "rm" },
+  services = "service ls",
+  stack = {
+    cfg = "config",
+    conf = "config",
+    down = "rm",
+    list = "ls",
+    remove = "rm",
+  },
+  stacks = "stack ls",
+  sys = "system",
+  v = "volume",
+  vls = "volume ls",
+  vol = "volume",
+  volume = { list = "ls", remove = "rm" },
+  volumes = "volume ls",
+  x = "exec",
+}
+dotnet = { a = "add", b = "build", rm = "remove" }
+dua = { a = "aggregate", i = "interactive" }
+dum = { i = "install", t = "test" }
+ein = {
+  initialize = "init",
+  t = "tool",
+  tool = { h = "estimate-hours", hours = "estimate-hours" },
+}
+exercism = {
+  c = "configure",
+  d = "download",
+  debug = "troubleshoot",
+  o = "open",
+  p = "prepare",
+  s = "submit",
+  t = "test",
+  u = "upgrade",
+  v = "version",
+  w = "workspace",
+}
+fnox = {
+  c = "check",
+  delete = "remove",
+  dr = "doctor",
+  ex = "export",
+  i = "init",
+  im = "import",
+  ls = "list",
+  provider = {
+    a = "add",
+    delete = "remove",
+    list = "ls",
+    rm = "remove",
+    set = "add",
+    t = "test",
+  },
+  rm = "remove",
+  s = "set",
+  secrets = "list",
+  v = "version",
+  x = "exec",
+}
+gh = {
+  alias = { ls = "list" },
+  at = "attestation",
+  cache = { ls = "list" },
+  codespace = { ls = "list" },
+  config = { ls = "list" },
+  cs = "codespace",
+  ext = "extension",
+  extension = { ls = "list" },
+  extensions = "extension",
+  gist = { ls = "list", new = "create" },
+  gpg-key = { ls = "list" },
+  issue = { ls = "list", new = "create" },
+  label = { ls = "list" },
+  org = { ls = "list" },
+  pr = { co = "checkout", ls = "list", new = "create" },
+  project = { ls = "list" },
+  release = { ls = "list", new = "create" },
+  repo = { ls = "list", new = "create" },
+  rs = "ruleset",
+  ruleset = { ls = "list" },
+  run = { ls = "list" },
+  ssh-key = { ls = "list" },
+  variable = { ls = "list", remove = "delete" },
+  workflow = { ls = "list" },
+}
+ghalint = { act = "run-action", exp = "experiment", h = "help" }
+git = {
+  a = "add",
+  b = "branch",
+  c = "commit",
+  co = "checkout",
+  d = "diff",
+  st = "status",
+}
+gitleaks = { directory = "dir", file = "dir" }
+gix = {
+  attrs = "attributes",
+  branches = "branch",
+  credential = { erase = "reject", get = "fill", store = "approve" },
+  index = { read-tree = "from-tree" },
+  no-repo = "free",
+  odb = { statistics = "stats" },
+  r = "revision",
+  remotes = "remote",
+  rev = "revision",
+  revision = {
+    e = "explain",
+    l = "list",
+    p = "resolve",
+    parse = "resolve",
+    prev = "previous-branches",
+    query = "resolve",
+  },
+  tags = "tag",
+}
+glab = {
+  alias = { ls = "list" },
+  ci = { create = "run", stats = "status" },
+  conf = "config",
+  incident = {
+    comment = "note",
+    ls = "list",
+    open = "reopen",
+    resolve = "close",
+    show = "view",
+    sub = "subscribe",
+    unsub = "unsubscribe",
+  },
+  issue = {
+    comment = "note",
+    del = "delete",
+    ls = "list",
+    new = "create",
+    open = "reopen",
+    show = "view",
+    sub = "subscribe",
+    unsub = "unsubscribe",
+  },
+  iteration = { ls = "list" },
+  label = { ls = "list", new = "create" },
+  mr = {
+    accept = "merge",
+    add-todo = "todo",
+    comment = "note",
+    del = "delete",
+    issue = "issues",
+    ls = "list",
+    new = "create",
+    open = "reopen",
+    show = "view",
+    sub = "subscribe",
+    unapprove = "revoke",
+    unsub = "unsubscribe",
+  },
+  pipe = "ci",
+  pipeline = "ci",
+  project = "repo",
+  release = {
+    find = "search",
+    lookup = "search",
+    ls = "list",
+    users = "contributors",
+  },
+  repo = { ls = "list" },
+  sched = "schedule",
+  securefile = {
+    delete = "remove",
+    ls = "list",
+    rm = "remove",
+    show = "get",
+    upload = "create",
+  },
+  skd = "schedule",
+  snippet = { new = "create" },
+  stack = { ls = "list", new = "create" },
+  stacks = "stack",
+  terraform = "opentofu",
+  tf = "opentofu",
+  token = { ls = "list", new = "create", rm = "revoke", rot = "rotate" },
+  update = "check-update",
+  v = "version",
+  var = "variable",
+  variable = {
+    create = "set",
+    ex = "export",
+    ls = "list",
+    new = "set",
+    remove = "delete",
+  },
+}
+go = { b = "build" }
+hk = {
+  c = "check",
+  cfg = "config",
+  f = "fix",
+  i = "install",
+  r = "run",
+  run = {
+    cm = "commit-msg",
+    pc = "pre-commit",
+    pcm = "prepare-commit-msg",
+    pp = "pre-push",
+  },
+}
+incus = {
+  cluster = {
+    delete = "remove",
+    evac = "evacuate",
+    ls = "list",
+    mv = "rename",
+    rm = "remove",
+    update-cert = "update-certificate",
+  },
+  cp = "copy",
+  file = { remove = "delete", rm = "delete" },
+  freeze = "pause",
+  image = { cp = "copy", ls = "list", remove = "delete", rm = "delete" },
+  ls = "list",
+  mv = "move",
+  network = {
+    add = "create",
+    ls = "list",
+    mv = "rename",
+    remove = "delete",
+    rm = "delete",
+  },
+  profile = {
+    apply = "assign",
+    cp = "copy",
+    ls = "list",
+    mv = "rename",
+    rm = "delete",
+  },
+  project = {
+    add = "create",
+    ls = "list",
+    mv = "rename",
+    remove = "delete",
+    rm = "delete",
+  },
+  remote = {
+    delete = "remove",
+    ls = "list",
+    mv = "rename",
+    rm = "remove",
+    set-default = "switch",
+  },
+  remove = "delete",
+  rm = "delete",
+  snapshot = { add = "create", ls = "list", remove = "delete", rm = "delete" },
+  storage = { add = "create", ls = "list", remove = "delete", rm = "delete" },
+  unfreeze = "resume",
+}
+jj = {
+  b = "bookmark",
+  bookmark = {
+    a = "advance",
+    c = "create",
+    d = "delete",
+    f = "forget",
+    l = "list",
+    m = "move",
+    r = "rename",
+    s = "set",
+    t = "track",
+  },
+  ci = "commit",
+  config = {
+    e = "edit",
+    g = "get",
+    l = "list",
+    p = "path",
+    s = "set",
+    u = "unset",
+  },
+  desc = "describe",
+  evolution-log = "evolog",
+  obslog = "evolog",
+  op = "operation",
+  st = "status",
+  tag = { d = "delete", l = "list", s = "set" },
+}
+lefthook = { h = "help" }
+limactl = {
+  cp = "copy",
+  disk = { ls = "list", remove = "delete", rm = "delete" },
+  ls = "list",
+  network = { ls = "list", remove = "delete", rm = "delete" },
+  remove = "delete",
+  rm = "delete",
+  snapshot = { del = "delete", load = "apply", ls = "list", save = "create" },
+  tmpl = "template",
+}
+mas = {
+  info = "lookup",
+  purchase = "get",
+  upgrade = "update",
+  vendor = "seller",
+}
+melt = { r = "restore", res = "restore" }
+mise = {
+  a = "alias",
+  b = "backends",
+  backends = { list = "ls" },
+  cache = { c = "clear", dir = "path", p = "prune" },
+  cfg = "config",
+  config = { list = "ls" },
+  dr = "doctor",
+  e = "env",
+  exec = "x", # exec is the true command
+  gen = "generate",
+  generate = { pre-commit = "git-pre-commit" },
+  i = "install",
+  list = "ls",
+  ln = "link",
+  out = "outdated",
+  p = "plugins",
+  plugins = {
+    a = "install",
+    add = "install",
+    i = "install",
+    list = "ls",
+    list-all = "ls-remote",
+    list-remote = "ls-remote",
+    ln = "link",
+    remove = "uninstall",
+    rm = "uninstall",
+    up = "update",
+    upgrade = "update",
+  },
+  prep = "prepare",
+  r = "run",
+  remove = "unuse",
+  rm = "unuse",
+  settings = {
+    create = "set",
+    del = "unset",
+    delete = "unset",
+    list = "ls",
+    remove = "unset",
+    rm = "unset",
+  },
+  sh = "shell",
+  shell-alias = {
+    add = "set",
+    create = "set",
+    del = "unset",
+    delete = "unset",
+    list = "ls",
+    remove = "unset",
+    rm = "unset",
+  },
+  t = "tasks",
+  tasks = { r = "run" },
+  tool-alias = {
+    add = "set",
+    create = "set",
+    del = "unset",
+    delete = "unset",
+    list = "ls",
+    remove = "unset",
+    rm = "unset",
+  },
+  u = "use",
+  up = "upgrade",
+  v = "version",
+  w = "watch",
+}
+mpm = {
+  freeze = "backup",
+  list = "installed",
+  locate = "which",
+  lock = "backup",
+  snapshot = "backup",
+  uninstall = "remove",
+  update = "upgrade",
+}
+nerdctl = {
+  apparmor = { list = "ls" },
+  bl = "build",
+  checkpoint = { list = "ls", remove = "rm" },
+  container = { list = "ls", remove = "rm" },
+  image = { list = "ls", remove = "rm" },
+  images = "image ls",
+  img = "image",
+  namespace = { list = "ls", remove = "rm" },
+  net = "network",
+  network = { list = "ls", remove = "rm" },
+  networks = "network ls",
+  sys = "system",
+  v = "volume",
+  vls = "volume ls",
+  vol = "volume",
+  volume = { list = "ls", remove = "rm" },
+  volumes = "volume ls",
+  x = "exec",
+}
+notation = { cert = "certificate", ls = "list" }
+npm = {
+  add = "install",
+  add-user = "adduser",
+  author = "owner",
+  c = "config",
+  cit = "install-ci-test",
+  clean-install = "ci",
+  clean-install-test = "install-ci-test",
+  create = "init",
+  ddp = "dedupe",
+  dist-tags = "dist-tag",
+  find = "search",
+  hlep = "help",
+  home = "docs",
+  i = "install",
+  ic = "ci",
+  in = "install",
+  info = "view",
+  innit = "init",
+  ins = "install",
+  inst = "install",
+  insta = "install",
+  instal = "install",
+  install-clean = "ci",
+  isnt = "install",
+  isnta = "install",
+  isntal = "install",
+  isntall = "install",
+  isntall-clean = "ci",
+  issues = "bugs",
+  it = "install-test",
+  la = "ll",
+  list = "ls",
+  ln = "link",
+  ogr = "org",
+  out = "outdated",
+  r = "uninstall",
+  rb = "rebuild",
+  remove = "uninstall",
+  rm = "uninstall",
+  rum = "run",
+  run-script = "run", # run-script is the true command but run is better
+  s = "search",
+  se = "search",
+  show = "view",
+  sit = "install-ci-test",
+  t = "test",
+  tst = "test",
+  udpate = "update",
+  un = "uninstall",
+  unlink = "uninstall",
+  up = "update",
+  upgrade = "update",
+  urn = "run",
+  v = "view",
+  verison = "version",
+  why = "explain",
+  x = "exec",
+}
+ntfy = {
+  h = "help",
+  pub = "publish",
+  send = "publish",
+  sub = "subscribe",
+  trigger = "publish",
+}
+pastel = {
+  colour = "color",
+  display = "color",
+  show = "color",
+  sort = "sort-by",
+  take = "color",
+}
+pitchfork = {
+  c = "clean",
+  cfg = "config",
+  config = { a = "add", rm = "remove" },
+  d = "disable",
+  e = "enable",
+  kill = "stop",
+  l = "logs",
+  ls = "list",
+  r = "run",
+  s = "start",
+  stat = "status",
+  sup = "supervisor",
+  w = "wait",
+}
+pnpm = {
+  dislink = "unlink",
+  dr = "doctor",
+  i = "install",
+  it = "install-test",
+  list = "ls",
+  ln = "link",
+  out = "outdated",
+  rb = "rebuild",
+  rm = "remove",
+  run-script = "run",
+  t = "test",
+  tst = "test",
+  un = "remove",
+  uninstall = "remove",
+  up = "update",
+  upgrade = "update",
+}
+podlet = { c = "compose", g = "generate", p = "podman" }
+podman = {
+  artifact = { list = "ls", remove = "rm" },
+  artifacts = "artifact ls",
+  b = "build",
+  bl = "build",
+  container = {
+    freeze = "pause",
+    ls = "list",
+    remove = "rm",
+    unfreeze = "unpause",
+  },
+  containers = "container list",
+  context = "system connection",
+  ctx = "system connection",
+  farm = { ls = "list", rm = "remove" },
+  farms = "farm list",
+  freeze = "pause",
+  gen = "generate",
+  hc = "healthcheck",
+  health = "healthcheck",
+  image = { ls = "list", remove = "rm" },
+  images = "image list",
+  img = "image",
+  machine = { ls = "list", remove = "rm" },
+  machines = "machine list",
+  net = "network",
+  network = { list = "ls", remove = "rm" },
+  networks = "network ls",
+  pod = { list = "ps", ls = "ps", remove = "rm" },
+  pods = "pod ps",
+  quadlet = { cat = "print", ls = "list", remove = "rm" },
+  quadlets = "quadlet list",
+  secret = { list = "ls", remove = "rm" },
+  secrets = "secret ls",
+  sys = "system",
+  unfreeze = "unpause",
+  v = "volume",
+  vls = "volume ls",
+  vol = "volume",
+  volume = { list = "ls", remove = "rm" },
+  volumes = "volume ls",
+  x = "exec",
+}
+rustup = {
+  component = {
+    del = "remove",
+    delete = "remove",
+    rm = "remove",
+    uninstall = "remove",
+  },
+  docs = "doc",
+  override = {
+    add = "set",
+    del = "unset",
+    delete = "unset",
+    remove = "unset",
+    rm = "unset",
+  },
+  target = {
+    del = "remove",
+    delete = "remove",
+    install = "add",
+    rm = "remove",
+    uninstall = "remove",
+  },
+  tc = "toolchain",
+  toolchain = {
+    add = "install",
+    del = "uninstall",
+    delete = "uninstall",
+    remove = "uninstall",
+    rm = "uninstall",
+    update = "install",
+  },
+  up = "update",
+  upgrade = "update",
+}
+rv = {
+  ci = "clean-install",
+  r = "run",
+  ruby = { i = "install", ls = "list", rm = "uninstall" },
+  tool = { i = "install", ls = "list", rm = "uninstall" },
+}
+sops = { h = "help" }
+sq = {
+  dec = "decrypt",
+  e = "encrypt",
+  enc = "encrypt",
+  s = "sign",
+  v = "verify",
+}
+string = {
+  c = "collect",
+  e = "escape",
+  j = "join",
+  j0 = "join0",
+  le = "length",
+  len = "length",
+  lo = "lower",
+  m = "match",
+  p = "pad",
+  repl = "replace",
+  s = "split",
+  s0 = "split0",
+  sh = "shorten",
+  short = "shorten",
+  t = "trim",
+  tr = "trim",
+  une = "unescape",
+  up = "upper",
+}
+tombi = { check = "lint", fmt = "format", serve = "lsp" }
+topiary = {
+  cfg = "config",
+  check = "check-grammar",
+  fmt = "format",
+  view = "visualise",
+  vis = "visualise",
+  visualize = "visualise",
+}
+tree-sitter = { g = "generate", gen = "generate", i = "init" }
+trivy = {
+  conf = "config",
+  conv = "convert",
+  fs = "filesystem",
+  i = "image",
+  k8s = "kubernetes",
+  m = "module",
+  p = "plugin",
+  repo = "repository",
+  s = "server",
+}
+typst = { c = "compile", w = "watch" }
+usage = {
+  cw = "complete-word",
+  g = "generate",
+  generate = { c = "completion", man = "manpage", md = "markdown" },
+  x = "exec",
+}
+uv = {
+  a = "add",
+  b = "build",
+  cache = { clear = "clean" },
+  pip = { ls = "list" },
+  pub = "publish",
+  python = {
+    ensurepath = "update-shell",
+    i = "install",
+    ls = "list",
+    rm = "uninstall"
+  },
+  rm = "remove",
+  tool = {
+    ensurepath = "update-shell",
+    i = "install",
+    ls = "list",
+    rm = "uninstall",
+    update = "upgrade"
+  },
+  v = "venv",
+  virtualenv = "venv",
+}
+vivid = { g = "generate", p = "preview", t = "themes" }
+vrc-get = {
+  i = "install",
+  out = "outdated",
+  repo = { ls = "list", rm = "remove" },
+  rm = "remove",
+  user-package = { ls = "list", rm = "remove" },
+}
+vt = {
+  an = "analysis",
+  dl = "download",
+  ht = "hunting",
+  is = "iocstream",
+  rh = "retrohunt",
+}
+zellij = {
+  a = "attach",
+  ac = "action",
+  d = "delete-session",
+  da = "delete-all-sessions",
+  e = "edit",
+  k = "kill-session",
+  ka = "kill-all-sessions",
+  la = "list-aliases",
+  ls = "list-sessions",
+  p = "plugin",
+  r = "run",
+}
