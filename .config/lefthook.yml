@@ -61,7 +61,7 @@ pre-commit:
             file_types: text
 
           - name: rumdl
-            run: mise x -- rumdl check --fix --fail-on error --force-exclude {staged_files}
+            run: mise x -- rumdl check --fix --fail-on error {staged_files}
             glob: ['*.md']
             exclude: ['**/symlink_*', '**/modify_*', '**/remove_*']
             file_types: text

@@ -1,0 +1,30 @@
+# tombi: format.rules.table-keys-order = "ascending"
+
+[task_templates."linter:ansible-lint"]
+usage = '''
+arg "[files]" var=#true
+'''
+run = "ansible-lint {{vars.args}} -- ${usage_files}"
+vars = { args = "" }
+env = { ANSIBLE_DEPRECATION_WARNINGS = "false" }
+# ansible-lint is kinda slow so the outputs are here to avoid re-running it
+sources = [
+  ".config/ansible-lint.yml",
+  ".yamllint.yaml",
+  "playbooks/**/*.yml",
+  "collections/**/*.yml",
+]
+wait_for = [
+  "format:keep-sorted", # runs on ansible playbooks
+  "format:prettier", # formats ansible playbooks, no real good order to put these two in
+]
+
+[tasks."fix:ansible-lint"]
+extends = "linter:ansible-lint"
+vars.args = "--fix=all"
+description = "Fix ansible playbooks"
+alias = ["format:ansible-lint"]
+
+[tasks."lint:ansible-lint"]
+extends = "linter:ansible-lint"
+description = "Lint ansible playbooks"

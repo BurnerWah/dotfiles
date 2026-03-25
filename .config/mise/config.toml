@@ -49,27 +49,6 @@ description = "Install git hooks for lefthook"
 run = "uv sync --all-packages"
 
 # tombi: format.rules.table-keys-order = "ascending"
-[task_templates]
-[task_templates."linter:ansible-lint"]
-usage = '''
-arg "[files]" var=#true
-'''
-run = "ansible-lint {{vars.args}} -- ${usage_files}"
-vars = { args = "" }
-env = { ANSIBLE_DEPRECATION_WARNINGS = "false" }
-# ansible-lint is kinda slow so the outputs are here to avoid re-running it
-sources = [
-  ".config/ansible-lint.yml",
-  ".yamllint.yaml",
-  "playbooks/**/*.yml",
-  "collections/**/*.yml",
-]
-wait_for = [
-  "format:keep-sorted", # runs on ansible playbooks
-  "format:prettier", # formats ansible playbooks, no real good order to put these two in
-]
-
-# tombi: format.rules.table-keys-order = "ascending"
 [tasks]
 [tasks.apply]
 run = "chezmoi apply"
@@ -79,12 +58,6 @@ wait_for = ["format:*"]
 [tasks.fix]
 depends = ["fix:*"]
 description = "Fix code"
-
-[tasks."fix:ansible-lint"]
-extends = "linter:ansible-lint"
-vars.args = "--fix=all"
-description = "Fix ansible playbooks"
-alias = ["format:ansible-lint"]
 
 [tasks."fix:biome"]
 usage = '''
@@ -134,7 +107,7 @@ alias = ["format:ruff-check"]
 usage = '''
 arg "[files]" var=#true
 '''
-run = "rumdl check --fix --fail-on error --force-exclude -- ${usage_files}"
+run = "rumdl check --fix --fail-on error -- ${usage_files}"
 description = "Fix markdown with rumdl"
 wait_for = [
   "format:tombi", # tombi formats rumdl's config file
@@ -201,10 +174,6 @@ alias = ["generate:lima-schema"]
 [tasks.lint]
 depends = ["lint:*"]
 description = "Lint code"
-
-[tasks."lint:ansible-lint"]
-extends = "linter:ansible-lint"
-description = "Lint ansible playbooks"
 
 [tasks."lint:biome"]
 usage = '''
@@ -274,7 +243,7 @@ wait_for = ["format:tombi"]
 usage = '''
 arg "[files]" var=#true
 '''
-run = "rumdl check --fail-on error --force-exclude -- ${usage_files}"
+run = "rumdl check --fail-on error -- ${usage_files}"
 description = "Lint markdown with rumdl"
 wait_for = ["format:tombi"]
 # checking sources takes longer than running rumdl would
