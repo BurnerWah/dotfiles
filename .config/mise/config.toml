@@ -27,10 +27,8 @@ rumdl = "latest"
   """,
 }
 
-[prepare.uv]
-# run is overridden because this is a workspace
-run = "uv sync --all-packages"
-
+# tombi: format.rules.table-keys-order = "ascending"
+[prepare]
 [prepare.deno]
 auto = true
 run = "deno install"
@@ -46,62 +44,16 @@ sources = [".config/lefthook.*", ".config/lefthook-local.*"]
 outputs = [".git/hooks"]
 description = "Install git hooks for lefthook"
 
+[prepare.uv]
+# run is overridden because this is a workspace
+run = "uv sync --all-packages"
+
+# tombi: format.rules.table-keys-order = "ascending"
+[tasks]
 [tasks.apply]
 run = "chezmoi apply"
 description = "Apply dotfiles"
 wait_for = ["format:*"]
-
-[tasks.format]
-depends = ["format:*"]
-description = "Format code"
-
-# Need to figure out how to add fish_indent to this, preferably in a way where
-# fish doesn't need to be installed.
-
-[tasks."format:keep-sorted"]
-# xargs is needed to handle spaces in paths
-run = "git grep -zlE 'keep-sorted (start|end)' | xargs -0 keep-sorted"
-# I think this run_windows should work?
-run_windows = '''
-#!/usr/bin/env pwsh
-keep-sorted $(git grep -lE 'keep-sorted (start|end)')
-'''
-description = "Sort lines in various files"
-
-[tasks."format:prettier"]
-usage = '''
-arg "[files]" var=#true default="."
-'''
-run = "deno task -q prettier --write --cache --ignore-unknown -- ${usage_files}"
-description = "Format code with Prettier"
-wait_for = ["format:keep-sorted"] # runs on some yaml files
-
-[tasks."format:ruff"]
-usage = '''
-arg "[files]" var=#true
-'''
-run = "ruff format --force-exclude -- ${usage_files}"
-description = "Format Python code with Ruff"
-wait_for = [
-  "format:tombi", # tombi formats ruff's config file
-  "fix:ruff", # fix issues in code before formatting
-]
-
-[tasks."format:stylua"]
-usage = '''
-arg "[files]" var=#true default="."
-'''
-run = "stylua --respect-ignores -- ${usage_files}"
-description = "Format Lua code with StyLua"
-wait_for = ["format:tombi"] # tombi formats stylua's config file
-
-[tasks."format:tombi"]
-usage = '''
-arg "[files]" var=#true
-'''
-run = "tombi format -- ${usage_files}"
-description = "Format TOML files with Tombi"
-wait_for = ["generate:schema:*"] # json schemas are used by tombi
 
 [tasks.fix]
 depends = ["fix:*"]
@@ -183,8 +135,57 @@ wait_for = [
 ]
 alias = ["format:rumdl"]
 
-# This task could be removed once there's a URL I can feasibly use for Lima's Schema
+[tasks.format]
+depends = ["format:*"]
+description = "Format code"
+
+[tasks."format:keep-sorted"]
+# xargs is needed to handle spaces in paths
+run = "git grep -zlE 'keep-sorted (start|end)' | xargs -0 keep-sorted"
+# I think this run_windows should work?
+run_windows = '''
+#!/usr/bin/env pwsh
+keep-sorted $(git grep -lE 'keep-sorted (start|end)')
+'''
+description = "Sort lines in various files"
+
+[tasks."format:prettier"]
+usage = '''
+arg "[files]" var=#true default="."
+'''
+run = "deno task -q prettier --write --cache --ignore-unknown -- ${usage_files}"
+description = "Format code with Prettier"
+wait_for = ["format:keep-sorted"] # runs on some yaml files
+
+[tasks."format:ruff"]
+usage = '''
+arg "[files]" var=#true
+'''
+run = "ruff format --force-exclude -- ${usage_files}"
+description = "Format Python code with Ruff"
+wait_for = [
+  "format:tombi", # tombi formats ruff's config file
+  "fix:ruff", # fix issues in code before formatting
+]
+
+[tasks."format:stylua"]
+usage = '''
+arg "[files]" var=#true default="."
+'''
+run = "stylua --respect-ignores -- ${usage_files}"
+description = "Format Lua code with StyLua"
+wait_for = ["format:tombi"] # tombi formats stylua's config file
+
+[tasks."format:tombi"]
+usage = '''
+arg "[files]" var=#true
+'''
+run = "tombi format -- ${usage_files}"
+description = "Format TOML files with Tombi"
+wait_for = ["generate:schema:*"] # json schemas are used by tombi
+
 [tasks."generate:schema:lima"]
+# This task could be removed once there's a URL I can feasibly use for Lima's Schema
 run = "limactl generate-jsonschema > schemas/vendor/lima.json"
 description = "Generate JSON schema for lima.yaml files"
 outputs = ["schemas/vendor/lima.json"]
@@ -210,6 +211,15 @@ sources = [
 ]
 wait_for = ["format:prettier"]
 
+[tasks."lint:biome"]
+usage = '''
+arg "[files]" var=#true
+'''
+run = "biome lint -- ${usage_files}"
+description = "Lint files with Biome"
+wait_for = ["format:prettier"]
+# biome is fast enough that sources aren't necessary
+
 [tasks."lint:deno"]
 usage = '''
 arg "[files]" var=#true
@@ -225,15 +235,6 @@ arg "[files]" var=#true
 '''
 run = "deno check -- ${usage_files}"
 description = "Type-check JS/TS with Deno"
-
-[tasks."lint:biome"]
-usage = '''
-arg "[files]" var=#true
-'''
-run = "biome lint -- ${usage_files}"
-description = "Lint files with Biome"
-wait_for = ["format:prettier"]
-# biome is fast enough that sources aren't necessary
 
 [tasks."lint:eslint"]
 usage = '''
@@ -258,15 +259,6 @@ description = "Lint code formatting with Prettier"
 # prettier can't use sources without complicating things because mise can't
 # exclude the `node_modules` folder from its sources
 
-[tasks."lint:rumdl"]
-usage = '''
-arg "[files]" var=#true
-'''
-run = "rumdl check --fail-on error --force-exclude -- ${usage_files}"
-description = "Lint markdown with rumdl"
-wait_for = ["format:tombi"]
-# checking sources takes longer than running rumdl would
-
 [tasks."lint:ripsecrets"]
 usage = '''
 arg "[files]" var=#true
@@ -282,6 +274,15 @@ run = "ruff check --force-exclude -- ${usage_files}"
 description = "Lint Python code with Ruff"
 wait_for = ["format:tombi"]
 # ruff is fast enough that sources aren't necessary
+
+[tasks."lint:rumdl"]
+usage = '''
+arg "[files]" var=#true
+'''
+run = "rumdl check --fail-on error --force-exclude -- ${usage_files}"
+description = "Lint markdown with rumdl"
+wait_for = ["format:tombi"]
+# checking sources takes longer than running rumdl would
 
 [tasks."lint:stylua"]
 usage = '''
@@ -328,11 +329,11 @@ description = "Lint yaml files with yamllint"
 sources = [".yamllint.yaml", "**/*.yaml", "**/*.yml"]
 wait_for = ["format:prettier"]
 
+[tasks."update:deno"]
+run = "deno update --interactive"
+description = "Update npm & jsr packages"
+
 [tasks."update:nvim-plugins"]
 run = 'nvim --headless "+Lazy! sync" +qa'
 description = "Update neovim plugins"
 wait_for = ["apply"]
-
-[tasks."update:deno"]
-run = "deno update --interactive"
-description = "Update npm & jsr packages"

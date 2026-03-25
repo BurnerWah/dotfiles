@@ -1,3 +1,4 @@
+# tombi: format.rules.table-keys-order = "ascending"
 # These are mostly intended for usage in lefthook git hooks
 
 [task_templates."linter:check-jsonschema"]
@@ -16,10 +17,6 @@ check-jsonschema --default-filetype json5 --schemafile {{vars.schema}} -- ${usag
 extends = "linter:check-jsonschema"
 vars.schema = "https://carapace.sh/schemas/command.json"
 
-[tasks."validate:schema:fastfetch"]
-extends = "linter:check-jsonschema"
-vars.schema = "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json"
-
 [tasks."validate:schema:chezmoidata"]
 extends = "linter:check-jsonschema"
 vars.schema = "schemas/generated/chezmoidata.json"
@@ -30,3 +27,7 @@ vars.schema = "https://raw.githubusercontent.com/denoland/deno/main/cli/schemas/
 vars.default = "deno.jsonc"
 description = "Validate Deno's config file"
 alias = ["lint:schema:deno"]
+
+[tasks."validate:schema:fastfetch"]
+extends = "linter:check-jsonschema"
+vars.schema = "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json"
