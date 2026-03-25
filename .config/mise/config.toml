@@ -220,6 +220,13 @@ description = "Lint JS/TS with Deno"
 wait_for = ["format:prettier"]
 # deno is fast enough that sources aren't necessary
 
+[tasks."lint:deno:typecheck"]
+usage = '''
+arg "[files]" var=#true
+'''
+run = "deno check -- ${usage_files}"
+description = "Type-check JS/TS with Deno"
+
 [tasks."lint:biome"]
 usage = '''
 arg "[files]" var=#true

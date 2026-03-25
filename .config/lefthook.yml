@@ -127,6 +127,20 @@ pre-commit:
             exclude: ['**/symlink_*', '**/remove_*']
             file_types: text
 
+          - name: deno typecheck
+            run: mise x -- deno check -- {staged_files}
+            glob:
+              - '*.ts'
+              - '*.mts'
+              - '*.cts'
+              - '*.tsx'
+              - '*.js'
+              - '*.mjs'
+              - '*.cjs'
+              - '*.jsx'
+            exclude: ['**/symlink_*', '**/remove_*']
+            file_types: text
+
           - name: eslint
             run: mise x -- deno task --quiet eslint --cache --fix --concurrency auto -- {staged_files}
             stage_fixed: true
@@ -199,6 +213,9 @@ pre-commit:
 
                 - run: mise run -q validate:schema:fastfetch -- {staged_files}
                   glob: home/dot_config/*_fastfetch/*config.jsonc
+
+                - run: mise run -q validate:schema:deno -- {staged_files}
+                  glob: deno.jsonc
 
           - name: carapace choices
             file_types: text
