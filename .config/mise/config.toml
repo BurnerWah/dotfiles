@@ -49,22 +49,13 @@ description = "Install git hooks for lefthook"
 run = "uv sync --all-packages"
 
 # tombi: format.rules.table-keys-order = "ascending"
-[tasks]
-[tasks.apply]
-run = "chezmoi apply"
-description = "Apply dotfiles"
-wait_for = ["format:*"]
-
-[tasks.fix]
-depends = ["fix:*"]
-description = "Fix code"
-
-[tasks."fix:ansible-lint"]
+[task_templates]
+[task_templates."linter:ansible-lint"]
 usage = '''
 arg "[files]" var=#true
 '''
-run = "ansible-lint --fix=all -- ${usage_files}"
-description = "Fix ansible playbooks"
+run = "ansible-lint {{vars.args}} -- ${usage_files}"
+vars = { args = "" }
 env = { ANSIBLE_DEPRECATION_WARNINGS = "false" }
 # ansible-lint is kinda slow so the outputs are here to avoid re-running it
 sources = [
@@ -77,6 +68,22 @@ wait_for = [
   "format:keep-sorted", # runs on ansible playbooks
   "format:prettier", # formats ansible playbooks, no real good order to put these two in
 ]
+
+# tombi: format.rules.table-keys-order = "ascending"
+[tasks]
+[tasks.apply]
+run = "chezmoi apply"
+description = "Apply dotfiles"
+wait_for = ["format:*"]
+
+[tasks.fix]
+depends = ["fix:*"]
+description = "Fix code"
+
+[tasks."fix:ansible-lint"]
+extends = "linter:ansible-lint"
+vars.args = "--fix=all"
+description = "Fix ansible playbooks"
 alias = ["format:ansible-lint"]
 
 [tasks."fix:biome"]
@@ -196,20 +203,8 @@ depends = ["lint:*"]
 description = "Lint code"
 
 [tasks."lint:ansible-lint"]
-usage = '''
-arg "[files]" var=#true
-'''
-run = "ansible-lint -- ${usage_files}"
+extends = "linter:ansible-lint"
 description = "Lint ansible playbooks"
-env = { ANSIBLE_DEPRECATION_WARNINGS = "false" }
-# ansible-lint is kinda slow so the outputs are here to avoid re-running it
-sources = [
-  ".config/ansible-lint.yml",
-  ".yamllint.yaml",
-  "playbooks/**/*.yml",
-  "collections/**/*.yml",
-]
-wait_for = ["format:prettier"]
 
 [tasks."lint:biome"]
 usage = '''
