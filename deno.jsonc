@@ -9,6 +9,22 @@
     "@zod/zod": "jsr:@zod/zod@^4.3.6",
   },
   "nodeModulesDir": "auto",
+  "fmt": {
+    // Deno formatting is currently not used, but that may change in the future
+    "singleQuote": true,
+    "semiColons": false,
+    "exclude": [
+      "schemas/generated",
+      "schemas/vendor",
+      "home/dot_config/*_nvim/lazy-lock.json",
+      ".vscode/*.json",
+      "**/*.json",
+      "**/*.jsonc",
+      "**/*.yaml",
+      "**/*.yml",
+      "**/*.xml",
+    ],
+  },
   "permissions": {
     "eslint": {
       "env": {

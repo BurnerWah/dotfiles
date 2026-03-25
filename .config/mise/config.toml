@@ -73,7 +73,7 @@ description = "Sort lines in various files"
 usage = '''
 arg "[files]" var=#true default="."
 '''
-run = "deno task --quiet prettier --write --cache --ignore-unknown -- ${usage_files}"
+run = "deno task -q prettier --write --cache --ignore-unknown -- ${usage_files}"
 description = "Format code with Prettier"
 wait_for = ["format:keep-sorted"] # runs on some yaml files
 
@@ -81,7 +81,7 @@ wait_for = ["format:keep-sorted"] # runs on some yaml files
 usage = '''
 arg "[files]" var=#true
 '''
-run = "ruff format -- ${usage_files}"
+run = "ruff format --force-exclude -- ${usage_files}"
 description = "Format Python code with Ruff"
 wait_for = [
   "format:tombi", # tombi formats ruff's config file
@@ -134,7 +134,10 @@ arg "[files]" var=#true
 '''
 run = "biome lint --fix -- ${usage_files}"
 description = "Lint files with Biome"
-wait_for = ["format:prettier", "fix:deno"]
+wait_for = [
+  "format:prettier", # formats biome's config file
+  "fix:deno", # operates on the same files
+]
 alias = ["format:biome-lint"]
 
 [tasks."fix:deno"]
@@ -150,13 +153,13 @@ alias = ["format:deno-lint"]
 usage = '''
 arg "[files]" var=#true
 '''
-run = "deno task --quiet eslint --cache --fix -- ${usage_files}"
+run = "deno task -q eslint --cache --fix --concurrency auto -- ${usage_files}"
 description = "Fix code with ESLint"
 wait_for = [
   "generate:schema:*", # json schemas are used by an eslint plugin
-  "format:prettier", # operates on the same files
-  "fix:deno", # operates on the same files
-  "fix:biome",
+  "format:prettier", # operates on the same files & eslint's config file
+  "fix:deno", # operates on the same files & eslint's config file
+  "fix:biome", # operates on the same files & eslint's config file
 ]
 alias = ["format:eslint"]
 
@@ -164,7 +167,7 @@ alias = ["format:eslint"]
 usage = '''
 arg "[files]" var=#true
 '''
-run = "ruff check --fix -- ${usage_files}"
+run = "ruff check --fix --force-exclude -- ${usage_files}"
 description = "Fix Python code with Ruff"
 wait_for = ["format:tombi"] # tombi formats ruff's config file
 alias = ["format:ruff-check"]
@@ -173,7 +176,7 @@ alias = ["format:ruff-check"]
 usage = '''
 arg "[files]" var=#true
 '''
-run = "rumdl check --fix -- ${usage_files}"
+run = "rumdl check --fix --fail-on error --force-exclude -- ${usage_files}"
 description = "Fix markdown with rumdl"
 wait_for = [
   "format:tombi", # tombi formats rumdl's config file
@@ -206,6 +209,7 @@ sources = [
   "playbooks/**/*.yml",
   "collections/**/*.yml",
 ]
+wait_for = ["format:prettier"]
 
 [tasks."lint:deno"]
 usage = '''
@@ -213,6 +217,7 @@ arg "[files]" var=#true
 '''
 run = "deno lint -- ${usage_files}"
 description = "Lint JS/TS with Deno"
+wait_for = ["format:prettier"]
 # deno is fast enough that sources aren't necessary
 
 [tasks."lint:biome"]
@@ -221,16 +226,18 @@ arg "[files]" var=#true
 '''
 run = "biome lint -- ${usage_files}"
 description = "Lint files with Biome"
+wait_for = ["format:prettier"]
 # biome is fast enough that sources aren't necessary
 
 [tasks."lint:eslint"]
 usage = '''
 arg "[files]" var=#true
 '''
-run = "deno task --quiet eslint --cache -- ${usage_files}"
+run = "deno task -q eslint --cache --concurrency auto -- ${usage_files}"
 description = "Lint files with ESLint"
-wait_for = ["generate:schema:*"]
-# eslint caching is (barely) fast enough that sources aren't necessary
+wait_for = ["generate:schema:*", "format:prettier"]
+# eslint can't use sources without complicating things because mise can't
+# exclude the `node_modules` folder from its sources
 
 [tasks."lint:gitleaks"]
 run = "gitleaks git --no-banner"
@@ -240,16 +247,18 @@ description = "Check git repo for secrets"
 usage = '''
 arg "[files]" var=#true default="."
 '''
-run = "deno task --quiet prettier --check --ignore-unknown --cache -- ${usage_files}"
+run = "deno task -q prettier --check --ignore-unknown --cache -- ${usage_files}"
 description = "Lint code formatting with Prettier"
-# cached prettier isn't that fast but the source files take too long to check
+# prettier can't use sources without complicating things because mise can't
+# exclude the `node_modules` folder from its sources
 
 [tasks."lint:rumdl"]
 usage = '''
 arg "[files]" var=#true
 '''
-run = "rumdl check -- ${usage_files}"
+run = "rumdl check --fail-on error --force-exclude -- ${usage_files}"
 description = "Lint markdown with rumdl"
+wait_for = ["format:tombi"]
 # checking sources takes longer than running rumdl would
 
 [tasks."lint:ripsecrets"]
@@ -263,8 +272,9 @@ description = "Check git repo for secrets"
 usage = '''
 arg "[files]" var=#true
 '''
-run = "ruff check -- ${usage_files}"
+run = "ruff check --force-exclude -- ${usage_files}"
 description = "Lint Python code with Ruff"
+wait_for = ["format:tombi"]
 # ruff is fast enough that sources aren't necessary
 
 [tasks."lint:stylua"]
@@ -273,6 +283,7 @@ arg "[files]" var=#true default="."
 '''
 run = "stylua --respect-ignores --check -- ${usage_files}"
 description = "Lint Lua code formatting with StyLua"
+wait_for = ["format:tombi"]
 # stylua is fast enough that sources aren't necessary
 
 [tasks."lint:tombi"]
@@ -288,8 +299,9 @@ wait_for = ["generate:schema:*"]
 usage = '''
 arg "[files]" var=#true
 '''
-run = "ty check -- ${usage_files}"
+run = "ty check --force-exclude -- ${usage_files}"
 description = "Type check Python code with Ty"
+wait_for = ["format:tombi"]
 # ty is fast enough that sources aren't necessary
 
 [tasks."lint:yamllint"]
@@ -303,6 +315,7 @@ flag "--format <format>" {
 run = "yamllint --format ${usage_format} -- ${usage_files}"
 description = "Lint yaml files with yamllint"
 sources = [".yamllint.yaml", "**/*.yaml", "**/*.yml"]
+wait_for = ["format:prettier"]
 
 [tasks."update:nvim-plugins"]
 run = 'nvim --headless "+Lazy! sync" +qa'
