@@ -1,5 +1,20 @@
 [settings.shell.fish.subcommand_abbrevs]
-apptainer = { b = "build", sh = "shell", x = "exec" }
+apptainer = {
+  b = "build",
+  cache = { ls = "list" },
+  capability = { ls = "list" },
+  checkpoint = { ls = "list", remove = "delete", rm = "delete" },
+  instance = { ls = "list" },
+  key = { delete = "remove", ls = "list", rm = "remove" },
+  keyserver = { delete = "remove", ls = "list", rm = "remove" },
+  oci = { remove = "delete", rm = "delete" },
+  plugin = { ls = "list" },
+  registry = { ls = "list" },
+  remote = { delete = "remove", ls = "list", rm = "remove" },
+  sh = "shell",
+  sif = { ls = "list" },
+  x = "exec",
+}
 aqua = {
   g = "generate",
   gr = "generate-registry",
@@ -14,11 +29,13 @@ atuin = {
   a = "account",
   dr = "doctor",
   h = "history",
+  history = { ls = "list" },
   kv = { ls = "list", rm = "delete" },
   sc = "scripts",
-  scripts = { ls = "list" },
+  scripts = { ls = "list", rm = "delete" },
   se = "search",
 }
+biome = { fmt = "format" }
 brew = {
   abv = "info",
   dr = "doctor",
@@ -217,6 +234,7 @@ fnox = {
   v = "version",
   x = "exec",
 }
+fossil = { ci = "commit", co = "checkout", init = "new" }
 gh = {
   alias = { ls = "list" },
   at = "attestation",
@@ -348,7 +366,7 @@ glab = {
     remove = "delete",
   },
 }
-go = { b = "build" }
+go = { b = "build", ls = "list", mod = { dl = "download" } }
 hk = {
   c = "check",
   cfg = "config",
@@ -440,7 +458,7 @@ jj = {
   st = "status",
   tag = { d = "delete", l = "list", s = "set" },
 }
-lefthook = { h = "help" }
+lefthook = { h = "help", i = "install", r = "run" }
 limactl = {
   cp = "copy",
   disk = { ls = "list", remove = "delete", rm = "delete" },
@@ -451,15 +469,19 @@ limactl = {
   snapshot = { del = "delete", load = "apply", ls = "list", save = "create" },
   tmpl = "template",
 }
+luarocks = { ls = "list" }
 mas = {
   info = "lookup",
+  ls = "list",
+  out = "outdated",
   purchase = "get",
   upgrade = "update",
   vendor = "seller",
 }
 melt = { r = "restore", res = "restore" }
 mise = {
-  a = "alias",
+  add = "use",
+  alias = "tool-alias",
   b = "backends",
   backends = { list = "ls" },
   cache = { c = "clear", dir = "path", p = "prune" },
@@ -622,6 +644,16 @@ ntfy = {
   sub = "subscribe",
   trigger = "publish",
 }
+op = {
+  account = { ls = "list" },
+  document = { ls = "list", remove = "delete", rm = "delete" },
+  group = { ls = "list", remove = "delete", rm = "delete" },
+  item = { ls = "list", mv = "move", remove = "delete", rm = "delete" },
+  plugin = { info = "inspect", ls = "list", reset = "clear" },
+  service-account = { ratelimits = "ratelimit" },
+  user = { ls = "list", remove = "delete", rm = "delete" },
+  vault = { ls = "list", remove = "delete", rm = "delete" },
+}
 pastel = {
   colour = "color",
   display = "color",
@@ -706,6 +738,7 @@ podman = {
   volumes = "volume ls",
   x = "exec",
 }
+rumdl = { cfg = "config", fmt = "check --fix", lint = "check", why = "explain" }
 rustup = {
   component = {
     del = "remove",
@@ -746,7 +779,7 @@ rv = {
   ruby = { i = "install", ls = "list", rm = "uninstall" },
   tool = { i = "install", ls = "list", rm = "uninstall" },
 }
-sops = { h = "help" }
+sops = { dec = "decrypt", enc = "encrypt", h = "help", rot = "rotate" }
 sq = {
   dec = "decrypt",
   e = "encrypt",
@@ -853,3 +886,4 @@ zellij = {
   p = "plugin",
   r = "run",
 }
+zoxide = { q = "query" }
