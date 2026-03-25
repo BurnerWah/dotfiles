@@ -13,21 +13,20 @@ tombi = "latest"
 ty = "latest"
 biome = "latest"
 rumdl = "latest"
+"pipx:check-jsonschema" = {
+  version = "latest",
+  uvx_args = "--with jsonschema[format],pyjson5"
+}
+"pipx:ansible-dev-tools" = {
+  version = "latest",
+  uvx_args = """\
+    --with argcomplete \
+    --with-executables-from \
+      ansible-builder,ansible-creator,ansible-dev-environment,ansible-lint,\
+      ansible-navigator,ansible-sign,molecule\
+  """,
+}
 
-[tools."pipx:ansible-dev-tools"]
-version = "latest"
-uvx_args = """\
-  --with argcomplete \
-  --with-executables-from \
-  ansible-builder,ansible-creator,ansible-dev-environment,ansible-lint,\
-  ansible-navigator,ansible-sign,molecule\
-  """
-
-[tools."pipx:check-jsonschema"]
-version = "latest"
-uvx_args = "--with jsonschema[format],pyjson5"
-
-# prepare hooks aren't fully ready for use yet
 [prepare.uv]
 # run is overridden because this is a workspace
 run = "uv sync --all-packages"
@@ -310,6 +309,11 @@ run = "ty check --force-exclude -- ${usage_files}"
 description = "Type check Python code with Ty"
 wait_for = ["format:tombi"]
 # ty is fast enough that sources aren't necessary
+
+[tasks."lint:uv"]
+run = "uv audit"
+description = "Audit uv dependencies"
+# should not be cached
 
 [tasks."lint:yamllint"]
 usage = '''
