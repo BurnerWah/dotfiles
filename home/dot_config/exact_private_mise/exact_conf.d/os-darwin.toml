@@ -13,3 +13,6 @@ gpg_verify = true
 
 [settings.node]
 gpg_verify = true
+
+[settings.github]
+use_git_credentials = true

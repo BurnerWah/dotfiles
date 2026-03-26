@@ -1,3 +1,6 @@
 [tools]
 node = "latest"
 usage = "latest"
+
+[settings.github]
+use_git_credentials = true

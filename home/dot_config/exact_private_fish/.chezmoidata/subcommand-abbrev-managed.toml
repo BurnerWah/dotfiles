@@ -126,6 +126,7 @@ container = {
 }
 crictl = { event = "events", h = "help", image = "images", img = "images" }
 deno = { a = "add", l = "lint", out = "outdated", rm = "remove" }
+devcontainer = { out = "outdated", x = "exec" }
 dnf = {
   check-update = "check-upgrade",
   dg = "downgrade",
@@ -147,12 +148,14 @@ dnf = {
   upgrade-minimal = "upgrade --minimal",
 }
 docker = {
+  attach = "container attach",
   bl = "build",
   builder = { f = "bake", list = "ls", remove = "rm" },
   builders = "builder ls",
   buildx = { f = "bake", list = "ls", remove = "rm" },
   checkpoint = { list = "ls", remove = "rm" },
   checkpoints = "checkpoint ls",
+  commit = "container commit",
   compose = { list = "ls", remove = "rm" },
   config = { list = "ls", remove = "rm" },
   configs = "config ls",
@@ -160,18 +163,33 @@ docker = {
   containers = "container ls",
   context = { list = "ls", remove = "rm" },
   contexts = "context ls",
+  cp = "container cp",
+  create = "container create",
   ctx = "context",
+  diff = "container diff",
+  export = "container export",
+  history = "image history",
   image = { list = "ls", remove = "rm", rmi = "rm" },
   images = "image ls",
   img = "image",
+  import = "image import",
+  kill = "container kill",
+  load = "image load",
   manifest = { remove = "rm" },
   net = "network",
   network = { list = "ls", remove = "rm" },
   networks = "network ls",
   node = { list = "ls", remove = "rm" },
   nodes = "node ls",
+  pause = "container pause",
   plugin = { list = "ls", remove = "rm" },
   plugins = "plugin ls",
+  port = "container port",
+  rename = "container rename",
+  restart = "container restart",
+  rm = "container rm",
+  rmi = "image rm",
+  save = "image save",
   secret = { list = "ls", remove = "rm" },
   secrets = "secret ls",
   service = { list = "ls", remove = "rm" },
@@ -184,12 +202,19 @@ docker = {
     remove = "rm",
   },
   stacks = "stack ls",
+  start = "container start",
+  stats = "container stats",
+  stop = "container stop",
   sys = "system",
+  top = "container top",
+  unpause = "container unpause",
+  update = "container update",
   v = "volume",
   vls = "volume ls",
   vol = "volume",
   volume = { list = "ls", remove = "rm" },
   volumes = "volume ls",
+  wait = "container wait",
   x = "exec",
 }
 dotnet = { a = "add", b = "build", rm = "remove" }
@@ -262,12 +287,20 @@ gh = {
   workflow = { ls = "list" },
 }
 ghalint = { act = "run-action", exp = "experiment", h = "help" }
+gio = { cp = "copy", ls = "list", mv = "move" }
 git = {
   a = "add",
   b = "branch",
   c = "commit",
   co = "checkout",
   d = "diff",
+  pkgs = {
+    audit = "vulns",
+    find = "where",
+    grep = "search",
+    ls = "list",
+    rm = "remove",
+  },
   st = "status",
 }
 gitleaks = { directory = "dir", file = "dir" }
@@ -367,6 +400,7 @@ glab = {
   },
 }
 go = { b = "build", ls = "list", mod = { dl = "download" } }
+grype = { db = { ls = "list" } }
 hk = {
   c = "check",
   cfg = "config",
@@ -458,6 +492,7 @@ jj = {
   st = "status",
   tag = { d = "delete", l = "list", s = "set" },
 }
+kustomize = { init = "create" }
 lefthook = { h = "help", i = "install", r = "run" }
 limactl = {
   cp = "copy",
@@ -470,6 +505,7 @@ limactl = {
   tmpl = "template",
 }
 luarocks = { ls = "list" }
+manifest-tool = { h = "help" }
 mas = {
   info = "lookup",
   ls = "list",
@@ -478,6 +514,7 @@ mas = {
   upgrade = "update",
   vendor = "seller",
 }
+mcap = { dr = "doctor", ls = "list" }
 melt = { r = "restore", res = "restore" }
 mise = {
   add = "use",
@@ -698,8 +735,10 @@ podlet = { c = "compose", g = "generate", p = "podman" }
 podman = {
   artifact = { list = "ls", remove = "rm" },
   artifacts = "artifact ls",
+  attach = "container attach",
   b = "build",
   bl = "build",
+  commit = "container commit",
   container = {
     freeze = "pause",
     ls = "list",
@@ -708,36 +747,61 @@ podman = {
   },
   containers = "container list",
   context = "system connection",
+  cp = "container cp",
+  create = "container create",
   ctx = "system connection",
+  diff = "container diff",
+  export = "container export",
   farm = { ls = "list", rm = "remove" },
   farms = "farm list",
-  freeze = "pause",
+  freeze = "container pause",
   gen = "generate",
   hc = "healthcheck",
   health = "healthcheck",
-  image = { ls = "list", remove = "rm" },
+  history = "image history",
+  image = { b = "build", ls = "list", remove = "rm" },
   images = "image list",
   img = "image",
+  import = "image import",
+  init = "container init",
+  kill = "container kill",
+  load = "image load",
+  logs = "container logs",
   machine = { ls = "list", remove = "rm" },
   machines = "machine list",
   net = "network",
   network = { list = "ls", remove = "rm" },
   networks = "network ls",
+  pause = "container pause",
   pod = { list = "ps", ls = "ps", remove = "rm" },
   pods = "pod ps",
+  port = "container port",
   quadlet = { cat = "print", ls = "list", remove = "rm" },
   quadlets = "quadlet list",
+  rename = "container rename",
+  restart = "container restart",
+  rm = "container rm",
+  rmi = "image rm",
+  save = "image save",
   secret = { list = "ls", remove = "rm" },
   secrets = "secret ls",
+  start = "container start",
+  stats = "container stats",
+  stop = "container stop",
   sys = "system",
-  unfreeze = "unpause",
+  top = "container top",
+  unfreeze = "container unpause",
+  unpause = "container unpause",
+  update = "container update",
   v = "volume",
   vls = "volume ls",
   vol = "volume",
   volume = { list = "ls", remove = "rm" },
   volumes = "volume ls",
+  wait = "container wait",
   x = "exec",
 }
+port = { out = "outdated" }
 rumdl = { cfg = "config", fmt = "check --fix", lint = "check", why = "explain" }
 rustup = {
   component = {
@@ -780,10 +844,15 @@ rv = {
   tool = { i = "install", ls = "list", rm = "uninstall" },
 }
 sops = { dec = "decrypt", enc = "encrypt", h = "help", rot = "rotate" }
+spytrap-adb = { ls = "list" }
 sq = {
+  cert = { ls = "list" },
   dec = "decrypt",
+  dl = "download",
   e = "encrypt",
   enc = "encrypt",
+  key = { ls = "list", rm = "delete" },
+  keyring = { ls = "list" },
   s = "sign",
   v = "verify",
 }
@@ -870,9 +939,16 @@ vt = {
   an = "analysis",
   dl = "download",
   ht = "hunting",
+  hunting = { nt = "notification", rs = "ruleset" },
+  iocstream = { il = "list", ls = "list" },
   is = "iocstream",
+  monitor = { ls = "list" },
+  monitorpartner = { ls = "list" },
+  retrohunt = { del = "delete", ls = "list", rm = "delete" },
   rh = "retrohunt",
+  threatprofile = { ls = "list" },
 }
+ykman = { ls = "list" }
 zellij = {
   a = "attach",
   ac = "action",

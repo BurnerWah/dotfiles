@@ -39,7 +39,6 @@
           - bubblewrap
           - chezmoi
           - fd-find
-          - ffmpeg
           - fish
           - fzf
           - git
