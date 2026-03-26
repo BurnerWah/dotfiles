@@ -37,20 +37,7 @@ abbr -a dotdot --regex '^\.\.+$' --function _multicd
 
 if string match -vqr '^[0123]\.*' $version
     '{{- range $cmd, $subcmds := .settings.shell.fish.subcommand_abbrevs }}'
-    '{{-  $patterns := list }}'
-    '{{-  range $subcmd, $val := $subcmds }}'
-    '{{-    if kindIs "map" $val }}'
-    '{{-      range $subcmd_2, $val_2 := $val }}'
-    '{{-        if kindIs "map" $val_2 }}'
-    '{{-          $patterns = concat $patterns (keys $val_2) }}'
-    '{{-        else }}'
-    '{{-          $patterns = append $patterns $subcmd_2 }}'
-    '{{-        end }}'
-    '{{-      end }}'
-    '{{-    else }}'
-    '{{-      $patterns = append $patterns $subcmd }}'
-    '{{-    end }}'
-    '{{-  end }}'
+    '{{-  $patterns := $subcmds | jq "paths(type == \"string\") | last" }}'
     abbr -a '{{$cmd}}'::subcommand -c '{{$cmd}}' -r '{{ $patterns | sortAlpha | uniq | join "|" | printf "^(%s)$" | squote }}' -f _abbrev_managed_subcommands
     '{{- end }}'
 end
