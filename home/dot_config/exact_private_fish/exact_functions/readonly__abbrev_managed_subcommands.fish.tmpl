@@ -15,22 +15,26 @@ function _abbrev_managed_subcommands -d "Generated function for subcommand abbre
         echo "argv: '$argv'" >/dev/stderr
     end
 
+    # asserts that match and last token are the same
+    if test "$argv" != "$tokens[$tokenCount]"
+        return 124
+    end
+
     # This is implemented in a way that attempts o minimze file sizes, since
     # the function is massive otherwise. It probably could be tweaked to not
     # use nested switch statements and have cases be so long.
     # $tokens[1] matches the command
     # $tokenCount verifies that the position is correct
-    # $argv is what is being expanded
-    # $tokens[2] is what the last subcommand was
-    switch "$tokens[1]:$tokenCount:$argv:$tokens[2]"
+    # $tokens[2..] is what we're matching
+    switch "$tokens[1]:$tokenCount:$tokens[2..]"
         case '{{- range $cmd, $subcmds := .settings.shell.fish.subcommand_abbrevs }}'
             '{{- range $subcmd, $expansion := $subcmds }}'
             '{{-   if kindIs "string" $expansion }}'
-        case '{{ $cmd }}':2:'{{ $subcmd }}':'{{ $subcmd }}' '{{- "; " -}}'
+        case '{{ $cmd }}':2:'{{ $subcmd }}' '{{- "; " -}}'
             echo '{{ $expansion }}'
             '{{-   else if kindIs "map" $expansion }}'
             '{{-     range $subcmd_2, $expansion_2 := $expansion }}'
-        case '{{ $cmd }}':3:'{{ $subcmd_2 }}':'{{ $subcmd }}' '{{- "; " -}}'
+        case '{{ $cmd }}':3:'{{ printf "%s %s" $subcmd $subcmd_2 | squote }}' '{{- "; " -}}'
             echo '{{ $expansion_2 }}'
             '{{-     end }}'
             '{{-   end }}'
