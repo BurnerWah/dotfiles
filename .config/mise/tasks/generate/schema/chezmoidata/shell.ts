@@ -43,11 +43,23 @@ export const ShellSettings = z
               z.string().nonempty(),
               z.union([
                 z.string(),
-                z.record(z.string().nonempty(), z.string()).meta({
-                  'x-tombi-table-keys-order': {
-                    additionalProperties: 'ascending',
-                  },
-                }),
+                z
+                  .record(
+                    z.string().nonempty(),
+                    z.union([
+                      z.string(),
+                      z.record(z.string().nonempty(), z.string()).meta({
+                        'x-tombi-table-keys-order': {
+                          additionalProperties: 'ascending',
+                        },
+                      }),
+                    ]),
+                  )
+                  .meta({
+                    'x-tombi-table-keys-order': {
+                      additionalProperties: 'ascending',
+                    },
+                  }),
               ]),
             )
             .meta({
