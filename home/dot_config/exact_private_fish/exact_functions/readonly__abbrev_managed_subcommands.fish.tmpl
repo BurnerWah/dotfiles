@@ -1,32 +1,42 @@
 # chezmoi:template:left-delimiter='{{ right-delimiter=}}'
 function _abbrev_managed_subcommands -d "Generated function for subcommand abbreviations"
-    # Using `commandline -c` causes this to fail when pressing enter
-    set -l tokens (commandline -xp)
+    set -l tokens (commandline -xpc)
+    # Workaround for `commandline -c` missing tokens when we press enter
+    set -l ctoken (commandline -xpt)
+    if test -n "$ctoken"
+        set -a tokens $ctoken
+    end
     set -l tokenCount (count $tokens)
+
+    # debug helper
+    if set -q _abbrev_subcommand_debug
+        echo "tokens: '$tokens'" >/dev/stderr
+        echo "tokenCount: '$tokenCount'" >/dev/stderr
+        echo "argv: '$argv'" >/dev/stderr
+    end
 
     # This is implemented in a way that attempts o minimze file sizes, since
     # the function is massive otherwise. It probably could be tweaked to not
     # use nested switch statements and have cases be so long.
-    switch $tokens[1]
-        # '{{- range $cmd, $subcmds := .settings.shell.fish.subcommand_abbrevs }}'
-        case '{{ $cmd | quote }}'
-            switch "$tokenCount:$argv:$tokens[2]"
-                case '{{- range $subcmd, $expansion := $subcmds }}'
-                    '{{-   if kindIs "string" $expansion }}'
-                case 2:'{{ $subcmd }}':'{{ $subcmd }}' '{{- "; " -}}'
-                    echo '{{ $expansion }}'
-                    '{{-   else if kindIs "map" $expansion }}'
-                    '{{-     range $subcmd_2, $expansion_2 := $expansion }}'
-                case 3:'{{ $subcmd_2 }}':'{{ $subcmd }}' '{{- "; " -}}'
-                    echo '{{ $expansion_2 }}'
-                    '{{-     end }}'
-                    '{{-   end }}'
-                    '{{- end }}'
-                case '*' '{{- "; " -}}'
-                    echo $argv
-            end
+    # $tokens[1] matches the command
+    # $tokenCount verifies that the position is correct
+    # $argv is what is being expanded
+    # $tokens[2] is what the last subcommand was
+    switch "$tokens[1]:$tokenCount:$argv:$tokens[2]"
+        case '{{- range $cmd, $subcmds := .settings.shell.fish.subcommand_abbrevs }}'
+            '{{- range $subcmd, $expansion := $subcmds }}'
+            '{{-   if kindIs "string" $expansion }}'
+        case '{{ $cmd }}':2:'{{ $subcmd }}':'{{ $subcmd }}' '{{- "; " -}}'
+            echo '{{ $expansion }}'
+            '{{-   else if kindIs "map" $expansion }}'
+            '{{-     range $subcmd_2, $expansion_2 := $expansion }}'
+        case '{{ $cmd }}':3:'{{ $subcmd_2 }}':'{{ $subcmd }}' '{{- "; " -}}'
+            echo '{{ $expansion_2 }}'
+            '{{-     end }}'
+            '{{-   end }}'
+            '{{- end }}'
             '{{- end }}'
         case '*' '{{- "; " -}}'
-            echo $argv
+            return 124
     end
 end
