@@ -1,5 +1,7 @@
 #!/usr/bin/env -S deno run --allow-write=schemas/generated
 //MISE description="Generate a JSON schema for Infat config files"
+//MISE sources=["deno.lock", ".config/mise/tasks/generate/schema/infat-config.ts"]
+//MISE outputs=["schemas/generated/infat-config.json"]
 import * as z from '@zod/zod'
 
 const InfatTable = z.record(z.string(), z.string()).optional()

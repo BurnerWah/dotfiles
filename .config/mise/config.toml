@@ -98,6 +98,7 @@ wait_for = [
   "fix:biome", # operates on the same files & eslint's config file
   "fix:oxlint",
 ]
+depends = ["generate:schema:chezmoidata", "generate:schema:eza-theme"]
 alias = ["format:eslint"]
 
 [tasks."fix:oxlint"]
@@ -178,7 +179,7 @@ arg "[files]" var=#true
 run = "tombi format -- ${usage_files}"
 description = "Format TOML files with Tombi"
 wait_for = ["generate:schema:*"] # json schemas are used by tombi
-depends = ["generate:schema:chezmoidata"]
+depends = ["generate:schema:chezmoidata", "generate:schema:infat-config"]
 
 [tasks.lint]
 depends = ["lint:*"]
@@ -216,6 +217,7 @@ arg "[files]" var=#true
 run = "deno task -q eslint --cache --concurrency auto -- ${usage_files}"
 description = "Lint files with ESLint"
 wait_for = ["generate:schema:*", "format:prettier"]
+depends = ["generate:schema:chezmoidata", "generate:schema:eza-theme"]
 # eslint can't use sources without complicating things because mise can't
 # exclude the `node_modules` folder from its sources
 
@@ -281,7 +283,7 @@ arg "[files]" var=#true
 run = "tombi lint -- ${usage_files}"
 description = "Lint TOML files with Tombi"
 wait_for = ["generate:schema:*"]
-depends = ["generate:schema:chezmoidata"]
+depends = ["generate:schema:chezmoidata", "generate:schema:infat-config"]
 # tombi runs about as quickly as mise can check its source files
 
 [tasks."lint:ty"]

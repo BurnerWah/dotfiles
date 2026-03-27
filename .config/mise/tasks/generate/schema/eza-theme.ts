@@ -1,5 +1,7 @@
 #!/usr/bin/env -S deno run --allow-write=schemas/generated
 //MISE description="Generate a JSON schema for Eza themes"
+//MISE sources=["deno.lock", ".config/mise/tasks/generate/schema/eza-theme.ts"]
+//MISE outputs=["schemas/generated/eza-theme.json"]
 import * as z from '@zod/zod'
 
 const Color = z.xor([
