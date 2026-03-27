@@ -1,16 +1,16 @@
 #!/usr/bin/env -S deno run --allow-write=schemas/generated
 //MISE description="Generate a JSON schema for chezmoidata"
 import * as z from '@zod/zod'
-import { BatSettings } from './chezmoidata/bat.ts'
-import { ChezmoiSettings } from './chezmoidata/chezmoi.ts'
-import { CoreChezmoiData } from './chezmoidata/core.ts'
-import { HomebrewSettings } from './chezmoidata/homebrew.ts'
-import { KittySettings } from './chezmoidata/kitty.ts'
-import { LaunchdSettings } from './chezmoidata/launchd.ts'
-import { LimaSettings } from './chezmoidata/lima.ts'
-import { NpmSettings, PnpmSettings } from './chezmoidata/npm-pnpm.ts'
-import { ShellSettings } from './chezmoidata/shell.ts'
-import { SystemdSettings } from './chezmoidata/systemd.ts'
+import { BatSettings } from './bat.ts'
+import { ChezmoiSettings } from './chezmoi.ts'
+import { CoreChezmoiData } from './core.ts'
+import { HomebrewSettings } from './homebrew.ts'
+import { KittySettings } from './kitty.ts'
+import { LaunchdSettings } from './launchd.ts'
+import { LimaSettings } from './lima.ts'
+import { NpmSettings, PnpmSettings } from './npm-pnpm.ts'
+import { ShellSettings } from './shell.ts'
+import { SystemdSettings } from './systemd.ts'
 
 const schema = z
   .strictObject({
