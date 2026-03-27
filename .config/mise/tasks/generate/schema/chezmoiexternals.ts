@@ -111,6 +111,7 @@ const ArchiveFile = z
   .safeExtend(CommonURIs.shape)
   .safeExtend(ArchiveCommon.shape)
   .safeExtend(Executable.shape)
+  .safeExtend(RefreshPeriod.shape)
 
 const File = z
   .object({
