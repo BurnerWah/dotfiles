@@ -1,0 +1,104 @@
+name: glab
+commands:
+  - name: attestation
+    description: Manage software attestations.
+    parsing: disabled
+    completion:
+      positionalany:
+        - $carapace.bridge.Cobra([glab, attestation])
+
+  - name: ci
+    description: Work with GitLab CI/CD pipelines and jobs.
+    commands:
+      - name: artifact
+        aliases: [push]
+        parsing: disabled
+        completion:
+          positionalany:
+            - $carapace.bridge.Cobra([glab, ci, artifact])
+
+  - name: cluster
+    description: Manage GitLab Agents for Kubernetes and their clusters.
+    commands:
+      - name: agent
+        description: Manage GitLab Agents for Kubernetes.
+        commands:
+          - name: token-cache
+            description: Manage cached GitLab Agent tokens.
+            parsing: disabled
+            completion:
+              positionalany:
+                - $carapace.bridge.Cobra([glab, cluster, agent, token-cache])
+
+  - name: gpg-key
+    description: Manage GPG keys registered with your GitLab account.
+    parsing: disabled
+    completion:
+      positionalany:
+        - $carapace.bridge.Cobra([glab, gpg-key])
+
+  - name: label
+    description: Manage labels on remote.
+    commands:
+      - name: edit
+        description: Edit group or project label.
+        parsing: disabled
+        completion:
+          positionalany:
+            - $carapace.bridge.Cobra([glab, label, edit])
+
+      - name: get
+        description: Returns a single label specified by the ID.
+        parsing: disabled
+        completion:
+          positionalany:
+            - $carapace.bridge.Cobra([glab, label, get])
+
+  - name: milestone
+    description: Manage group or project milestones.
+    parsing: disabled
+    completion:
+      positionalany:
+        - $carapace.bridge.Cobra([glab, milestone])
+
+  - name: mr
+    description: Create, view, and manage merge requests.
+    commands:
+      - name: for
+        aliases: [create-for, new-for, for-issue]
+        description: Create a new merge request for an issue.
+        parsing: disabled
+        completion:
+          positionalany:
+            - $carapace.bridge.Cobra([glab, mr, for])
+
+  - name: repo
+    description: Work with GitLab repositories and projects.
+    commands:
+      - name: members
+        description: Manage project members.
+        parsing: disabled
+        completion:
+          positionalany:
+            - $carapace.bridge.Cobra([glab, repo, members])
+
+  - name: runner
+    description: Manage GitLab CI/CD runners.
+    parsing: disabled
+    completion:
+      positionalany:
+        - $carapace.bridge.Cobra([glab, runner])
+
+  - name: runner-controller
+    description: Manage runner controllers.
+    parsing: disabled
+    completion:
+      positionalany:
+        - $carapace.bridge.Cobra([glab, runner-controller])
+
+  - name: work-items
+    description: Manage work items.
+    parsing: disabled
+    completion:
+      positionalany:
+        - $carapace.bridge.Cobra([glab, work-items])
