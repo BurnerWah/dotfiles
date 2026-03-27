@@ -36,7 +36,14 @@ const SubcommandAbbrevFinite = record(
             record(
               Subcommand,
               Expansion.or(
-                record(Subcommand, Expansion).meta(additionalPropsAscending),
+                record(
+                  Subcommand,
+                  Expansion.or(
+                    record(Subcommand, Expansion).meta(
+                      additionalPropsAscending,
+                    ),
+                  ),
+                ).meta(additionalPropsAscending),
               ),
             ).meta(additionalPropsAscending),
           ),
@@ -62,7 +69,10 @@ export const ShellSettings = z
           'x-tombi-array-values-order': 'ascending',
         }),
       }).partial(),
-      subcommand_abbrevs: SubcommandAbbrevFinite.meta({
+      subcommand_abbrevs: record(
+        z.string().nonempty(),
+        SubcommandAbbrevFinite,
+      ).meta({
         description: 'Abbreviations for subcommands',
         'x-tombi-table-keys-order': {
           additionalProperties: 'ascending',
