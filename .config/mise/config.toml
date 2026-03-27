@@ -3,7 +3,11 @@ lefthook = "latest"
 stylua = "latest"
 ruff = "latest"
 gitleaks = "latest"
-ripsecrets = { version = "latest", os = ["linux", "macos"] }
+ripsecrets = {
+  version = "latest",
+  os = ["linux", "macos"],
+  symlink_bins = true,
+}
 node = "latest"
 yamllint = "latest"
 deno = "latest"
