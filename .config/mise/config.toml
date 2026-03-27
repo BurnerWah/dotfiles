@@ -178,6 +178,7 @@ arg "[files]" var=#true
 run = "tombi format -- ${usage_files}"
 description = "Format TOML files with Tombi"
 wait_for = ["generate:schema:*"] # json schemas are used by tombi
+depends = ["generate:schema:chezmoidata"]
 
 [tasks."generate:schema:lima"]
 # This task could be removed once there's a URL I can feasibly use for Lima's Schema
@@ -287,6 +288,7 @@ arg "[files]" var=#true
 run = "tombi lint -- ${usage_files}"
 description = "Lint TOML files with Tombi"
 wait_for = ["generate:schema:*"]
+depends = ["generate:schema:chezmoidata"]
 # tombi runs about as quickly as mise can check its source files
 
 [tasks."lint:ty"]

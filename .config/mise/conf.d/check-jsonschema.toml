@@ -20,6 +20,7 @@ vars.schema = "https://carapace.sh/schemas/command.json"
 [tasks."validate:schema:chezmoidata"]
 extends = "linter:check-jsonschema"
 vars.schema = "schemas/generated/chezmoidata.json"
+depends = ["generate:schema:chezmoidata"]
 
 [tasks."validate:schema:deno"]
 extends = "linter:check-jsonschema"

@@ -1,5 +1,7 @@
 #!/usr/bin/env -S deno run --allow-write=schemas/generated
 //MISE description="Generate a JSON schema for chezmoidata"
+//MISE sources=["deno.lock", ".config/mise/tasks/generate/schema/chezmoidata/*.ts", ".config/mise/tasks/generate/schema/shared/*.ts"]
+//MISE outputs=["schemas/generated/chezmoidata.json"]
 import * as z from '@zod/zod'
 import { BatSettings } from './bat.ts'
 import { ChezmoiSettings } from './chezmoi.ts'
