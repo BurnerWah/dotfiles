@@ -14,6 +14,11 @@ overrides:
       - .vscode/tasks.json
     options: { parser: jsonc }
 
+  - files:
+      - biome.jsonc
+    options:
+      trailingComma: none
+
   - files: ['*.plist.tmpl']
     options: { parser: xml }
 

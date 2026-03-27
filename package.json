@@ -1,8 +1,4 @@
 {
-  "scripts": {
-    "format:prettier": "prettier --write --cache --ignore-unknown .",
-    "lint:prettier": "prettier --check --cache --ignore-unknown ."
-  },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@eslint/json": "^1.2.0",

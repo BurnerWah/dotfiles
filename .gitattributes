@@ -12,7 +12,7 @@
 *.bat           text eol=crlf
 *.cmd           text eol=crlf
 # I think powershel requires a little bit more care
-# *.ps1									text eol=crlf
+# *.ps1           text eol=crlf
 
 # Serialisation
 *.json          text eol=lf

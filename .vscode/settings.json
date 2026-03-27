@@ -97,4 +97,11 @@
     "fish_lsp_prefer_builtin_fish_commands": true,
   },
   "go-template.languages": ["fish"],
+  "json.schemas": [
+    {
+      "fileMatch": ["deno.jsonc"],
+      "schema": { "allowTrailingCommas": true },
+      "url": "https://raw.githubusercontent.com/denoland/deno/main/cli/schemas/config-file.v1.json",
+    },
+  ],
 }
