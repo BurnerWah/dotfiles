@@ -4,6 +4,7 @@
     "prettier": "deno run -P=prettier prettier --experimental-cli",
     "lint:prettier": "deno run -P=prettier prettier --experimental-cli --check --ignore-unknown .",
     "format:prettier": "deno run -P=prettier prettier --experimental-cli --write --ignore-unknown .",
+    "oxlint": "deno run -P=oxlint oxlint",
   },
   "imports": {
     "@zod/zod": "jsr:@zod/zod@^4.3.6",
@@ -85,6 +86,17 @@
       "sys": true,
       "read": true,
       "write": ["./node_modules/.cache/prettier", "."],
+    },
+    "oxlint": {
+      "env": {
+        "allow": ["NAPI_RS_*"],
+      },
+      "ffi": true,
+      "read": ["."],
+      "write": {
+        "allow": ["."],
+        "deny": ["deno.jsonc"],
+      },
     },
   },
 }

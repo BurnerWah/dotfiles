@@ -22,5 +22,6 @@
     "hverlin.mise-vscode",
     "dbaeumer.vscode-eslint",
     "biomejs.biome",
+    "oxc.oxc-vscode",
   ],
 }

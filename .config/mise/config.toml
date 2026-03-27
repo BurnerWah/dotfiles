@@ -68,6 +68,7 @@ description = "Lint files with Biome"
 wait_for = [
   "format:prettier", # formats biome's config file
   "fix:deno", # operates on the same files
+  "fix:oxlint",
 ]
 alias = ["format:biome-lint"]
 
@@ -91,8 +92,18 @@ wait_for = [
   "format:prettier", # operates on the same files & eslint's config file
   "fix:deno", # operates on the same files & eslint's config file
   "fix:biome", # operates on the same files & eslint's config file
+  "fix:oxlint",
 ]
 alias = ["format:eslint"]
+
+[tasks."fix:oxlint"]
+usage = '''
+arg "[files]" var=#true
+'''
+run = "deno task -q oxlint --fix -- ${usage_files}"
+description = "Fix JS/TS code with oxlint"
+wait_for = ["format:prettier"]
+alias = ["format:oxlint"]
 
 [tasks."fix:ruff"]
 usage = '''
@@ -214,6 +225,14 @@ wait_for = ["generate:schema:*", "format:prettier"]
 run = "gitleaks git --no-banner"
 description = "Check git repo for secrets"
 
+[tasks."lint:oxlint"]
+usage = '''
+arg "[files]" var=#true
+'''
+run = "deno task -q oxlint -- ${usage_files}"
+description = "Lint JS/TS code with oxlint"
+wait_for = ["format:prettier"]
+
 [tasks."lint:prettier"]
 usage = '''
 arg "[files]" var=#true default="."
@@ -277,6 +296,7 @@ wait_for = ["format:tombi"]
 
 [tasks."lint:uv"]
 run = "uv audit"
+env.UV_PREVIEW_FEATURES = "audit"
 description = "Audit uv dependencies"
 # should not be cached
 

@@ -141,6 +141,21 @@ pre-commit:
             exclude: ['**/symlink_*', '**/remove_*']
             file_types: text
 
+          - name: oxlint
+            run: mise x -- deno task -q oxlint --fix -- {staged_files}
+            stage_fixed: true
+            glob:
+              - '*.ts'
+              - '*.mts'
+              - '*.cts'
+              - '*.tsx'
+              - '*.js'
+              - '*.mjs'
+              - '*.cjs'
+              - '*.jsx'
+            exclude: ['**/symlink_*', '**/remove_*']
+            file_types: text
+
           - name: eslint
             run: mise x -- deno task --quiet eslint --cache --fix --concurrency auto -- {staged_files}
             stage_fixed: true
