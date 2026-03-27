@@ -1,0 +1,7 @@
+# Part of a custom flatpak extension
+['.local/share/flatpak/extension/org.freedesktop.Sdk.Extension.mise/x86_64/current/bin/mise']
+type = "file"
+url = "https://mise.jdx.dev/mise-latest-linux-x64"
+refreshPeriod = "48h"
+executable = true
+readonly = true

@@ -8,15 +8,6 @@
 # {{    end }}
 # {{  end }}
 
-# {{ if not (or .ephemeral .headless) }}
-.local/share/flatpak/extension/org.freedesktop.Sdk.Extension.mise/x86_64/current/bin/mise:
-  type: file
-  url: https://mise.jdx.dev/mise-latest-linux-x64
-  refreshPeriod: 48h
-  executable: true
-  readonly: true
-# {{ end }}
-
 # {{ if and (ne .distro "arch") (ne .devicename "dell-g15-linux") (has .chezmoi.arch (list "amd64" "arm64")) }}
 .local/bin/atuin:
   type: archive-file
