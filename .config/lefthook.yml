@@ -251,7 +251,7 @@ pre-commit:
         parallel: true
         jobs:
           - name: prettier
-            run: mise x -- deno task --quiet prettier --write --cache --ignore-unknown -- {staged_files}
+            run: mise x -- deno task --quiet prettier --write --ignore-unknown -- {staged_files}
             stage_fixed: true
             glob:
               - '*.{js,cjs,mjs,jsx}'

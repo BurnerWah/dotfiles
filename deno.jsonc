@@ -1,9 +1,9 @@
 {
   "tasks": {
     "eslint": "deno run -P=eslint eslint",
-    "prettier": "deno run -P=prettier prettier",
-    "lint:prettier": "deno run -P=prettier prettier --check --cache --ignore-unknown .",
-    "format:prettier": "deno run -P=prettier prettier --write --cache --ignore-unknown .",
+    "prettier": "deno run -P=prettier prettier --experimental-cli",
+    "lint:prettier": "deno run -P=prettier prettier --experimental-cli --check --ignore-unknown .",
+    "format:prettier": "deno run -P=prettier prettier --experimental-cli --write --ignore-unknown .",
   },
   "imports": {
     "@zod/zod": "jsr:@zod/zod@^4.3.6",
@@ -83,7 +83,7 @@
         ],
       },
       "sys": true,
-      "read": ["."],
+      "read": true,
       "write": ["./node_modules/.cache/prettier", "."],
     },
   },

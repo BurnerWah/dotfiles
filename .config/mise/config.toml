@@ -133,7 +133,7 @@ description = "Sort lines in various files"
 usage = '''
 arg "[files]" var=#true default="."
 '''
-run = "deno task -q prettier --write --cache --ignore-unknown -- ${usage_files}"
+run = "deno task -q prettier --write --ignore-unknown -- ${usage_files}"
 description = "Format code with Prettier"
 wait_for = ["format:keep-sorted"] # runs on some yaml files
 
@@ -218,10 +218,10 @@ description = "Check git repo for secrets"
 usage = '''
 arg "[files]" var=#true default="."
 '''
-run = "deno task -q prettier --check --ignore-unknown --cache -- ${usage_files}"
+run = "deno task -q prettier --check --ignore-unknown -- ${usage_files}"
 description = "Lint code formatting with Prettier"
-# prettier can't use sources without complicating things because mise can't
-# exclude the `node_modules` folder from its sources
+# I'm now using prettier's experimental CLI, which is fast enough that sources
+# aren't needed
 
 [tasks."lint:ripsecrets"]
 usage = '''
