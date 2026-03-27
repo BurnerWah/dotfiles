@@ -1,0 +1,10 @@
+[tasks."generate:schema:lima"]
+# This task could be removed once there's a URL I can feasibly use for Lima's Schema
+run = "limactl generate-jsonschema > schemas/vendor/lima.json"
+description = "Generate JSON schema for lima.yaml files"
+# I *think* this should work? lima isn't expected to be managed by mise, so
+# the sources are set to the paths lima is expected to be found at.
+# Probably will misbehave if lima isn't installed (ex. on windows).
+sources = ["/opt/homebrew/bin/limactl"]
+outputs = ["schemas/vendor/lima.json"]
+alias = ["generate:lima-schema"]

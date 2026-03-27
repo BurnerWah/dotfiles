@@ -342,7 +342,9 @@
                     ],
                     "enum": [
                         null,
-                        "Linux"
+                        "Linux",
+                        "Darwin",
+                        "FreeBSD"
                     ]
                 },
                 "arch": {
