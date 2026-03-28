@@ -1,4 +1,4 @@
-min_version = "2025.8.20"
+min_version = "2026.3.17"
 
 [settings]
 experimental = true
@@ -13,25 +13,42 @@ idiomatic_version_file_enable_tools = [
 ]
 go_default_packages_file = "~/.config/mise/default-go-packages"
 disable_tools = [
-  "nim",
-  "ollama",
-  "rome",
-  "solidity",
-  "starknet-foundry",
+  "nim", # fascism
+  "ollama", # ai
+  "rome", # deprecated
+  "solidity", # cryptocurrency
+  "starknet-foundry", # cryptocurrency
   "starport",
   "wasmer",
-  "youtube-dl",
-  "aichat",
-  "claude",
-  "bun",
-  "claude-squad",
-  "codex",
-  "specstory",
-  "code",
-  "codebuff",
-  "amp",
-  "gemini-cli",
-  "jules",
+  "youtube-dl", # deprecated
+  "aichat", # ai
+  "claude", # ai
+  "bun", # fascism
+  "claude-squad", # ai
+  "codex", # ai
+  "specstory", # ai
+  "code", # ai
+  "codebuff", # ai
+  "amp", # ai
+  "gemini-cli", # ai
+  "jules", # ai
+  "claude-powerline", # ai
+  "qwen", # ai
+  "opencode", # ai
+  "communique", # ai
+  "graphite", # ai
+  "qwen-code", # ai, alias
+  "crush", # ai
+  "gemini", # ai, alias
+  "vespa-cli", # ai
+  "entireio-cli", # ai
+  "entire", # ai, alias
+  "rtk", # ai
+  "claude-code", # ai, alias
+  "container-use", # ai
+  "starknet-foundry-sncast", # cryptocurrency, alias
+  "clarinet", # cryptocurrency
+  "sui", # cryptocurrency
 ]
 disable_hints = [
   "python_precompiled",

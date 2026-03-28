@@ -32,6 +32,10 @@ rumdl = "latest"
 }
 
 # tombi: format.rules.table-keys-order = "ascending"
+[env]
+PRETTIER_EXPERIMENTAL_CLI = 1
+
+# tombi: format.rules.table-keys-order = "ascending"
 [prepare]
 [prepare.deno]
 auto = true

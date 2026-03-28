@@ -1,10 +1,10 @@
 {
   "tasks": {
-    "eslint": "deno run -P=eslint eslint",
-    "prettier": "deno run -P=prettier prettier --experimental-cli",
-    "lint:prettier": "deno run -P=prettier prettier --experimental-cli --check --ignore-unknown .",
-    "format:prettier": "deno run -P=prettier prettier --experimental-cli --write --ignore-unknown .",
-    "oxlint": "deno run -P=oxlint oxlint",
+    "eslint": "deno run -q -P=eslint eslint",
+    "prettier": "deno run -q -P=prettier prettier --experimental-cli",
+    "lint:prettier": "deno task -q prettier --check --ignore-unknown .",
+    "format:prettier": "deno task -q prettier --write --ignore-unknown .",
+    "oxlint": "deno run -q -P=oxlint oxlint",
   },
   "imports": {
     "@zod/zod": "jsr:@zod/zod@^4.3.6",
@@ -29,59 +29,52 @@
   "permissions": {
     "eslint": {
       "env": {
-        "allow": true,
-        "ignore": [
-          "ATUIN_SESSION",
-          "CARAPACE_EXCLUDES",
-          "KITTY_PID",
-          "KITTY_PUBLIC_KEY",
-          "KITTY_WINDOW_ID",
-          "LS_COLORS",
-          "STARSHIP_SESSION_KEY",
-          "WINDOWID",
-          "XPC_SERVICE_NAME",
+        "allow": [
+          "ESLINT_*",
+          "DEBUG",
+          "TIMING",
+          "OSTYPE",
+          "SYNCKIT_*",
+          "TSC_*",
+          "NODE_ENV",
         ],
+        "ignore": [
+          "__MINIMATCH_*",
+          "IGNORE_*",
+          "NODE_V8_COVERAGE",
+          "NODE_INSPECTOR_IPC",
+          "VSCODE_INSPECTOR_OPTIONS",
+          "LOG_TOKENS",
+          "LOG_STREAM",
+        ],
+        "deny": ["SSH_*"],
       },
       // eslint's fs needs don't play that well with deno permissions, so we
       // just have to put up with it doing what it wants.
       "read": true,
-      "write": true,
+      "write": ["."],
       "net": {
         "allow": [
           "www.schemastore.org:443",
           // Sometimes eslint needs to access specific IPs related to github.
-          // If it's not doing that, leave these out of the config file.
-          // "[2606:50c0:8000::153]:443",
-          // "[2606:50c0:8001::153]:443",
-          // "[2606:50c0:8002::153]:443",
-          // "[2606:50c0:8003::153]:443",
-          // "185.199.108.153/32:443",
-          // "185.199.109.153/32:443",
-          // "185.199.110.153/32:443",
-          // "185.199.111.153/32:443",
-          // "[2606:50c0:8000::154]:443",
-          // "[2606:50c0:8001::154]:443",
-          // "[2606:50c0:8002::154]:443",
-          // "[2606:50c0:8003::154]:443",
+          // When that happens just manually allow them.
           "raw.githubusercontent.com:443",
           "carapace.sh:443",
         ],
       },
+      "sys": {
+        "allow": ["osRelease"], // for --env-info
+      },
     },
     "prettier": {
       "env": {
-        "allow": true,
-        "ignore": [
-          "ATUIN_SESSION",
-          "CARAPACE_EXCLUDES",
-          "KITTY_PID",
-          "KITTY_PUBLIC_KEY",
-          "KITTY_WINDOW_ID",
-          "LS_COLORS",
-          "STARSHIP_SESSION_KEY",
-          "WINDOWID",
-          "XPC_SERVICE_NAME",
-        ],
+        // Attempt at getting the minimal env for prettier, will likely need to
+        // change in future version.
+        "allow": ["PRETTIER_*", "COLOR", "TERM", "TMPDIR"],
+        // Prettier checks a lot of variables to see if it's running in CI, but
+        // here, it just isn't. I don't wanna include them all here.
+        "ignore": true,
+        "deny": ["SSH_*"],
       },
       "sys": true,
       "read": true,

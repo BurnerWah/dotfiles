@@ -5,6 +5,16 @@ pitchfork = "latest"
 "npm:empty-trash-cli" = "latest"
 "github:daptify14/chezit" = "latest"
 
+# tombi: format.rules.table-keys-order = "ascending"
+[env]
+FLY_CONFIG_DIR = "{{ xdg_config_home }}/fly"
+GHCUP_USE_XDG_DIRS = 1
+MYPY_CACHE_DIR = "{{ xdg_cache_home }}/mypy"
+NODE_REPL_HISTORY = "{{ xdg_cache_home }}/node_repl_history"
+RUFF_CACHE_DIR = "{{ xdg_cache_home }}/ruff"
+RUMDL_CACHE_DIR = "{{ xdg_cache_home }}/rumdl"
+TS_NODE_HISTORY = "{{ xdg_cache_home }}/ts_node_repl_history"
+
 [settings]
 # I have yet to test GPG Verification in flatpaks.
 # GPG isn't that useful though, so I'm not that focused on getting it working.

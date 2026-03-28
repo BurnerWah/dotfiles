@@ -157,7 +157,7 @@ pre-commit:
             file_types: text
 
           - name: eslint
-            run: mise x -- deno task --quiet eslint --cache --fix --concurrency auto -- {staged_files}
+            run: mise x -- deno task -q eslint --cache --fix --concurrency auto -- {staged_files}
             stage_fixed: true
             glob:
               - '*.ts'
@@ -266,7 +266,9 @@ pre-commit:
         parallel: true
         jobs:
           - name: prettier
-            run: mise x -- deno task --quiet prettier --write --ignore-unknown -- {staged_files}
+            run: mise x -- deno task -q prettier --write --ignore-unknown -- {staged_files}
+            env:
+              PRETTIER_EXPERIMENTAL_CLI: '1'
             stage_fixed: true
             glob:
               - '*.{js,cjs,mjs,jsx}'
