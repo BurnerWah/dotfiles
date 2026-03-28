@@ -30,6 +30,7 @@ export default defineConfig({
     'capitalized-comments': 'allow',
     'import/no-named-export': 'allow',
     'sort-imports': 'allow', // I haven't got import sorting figured out yet
+    'import/prefer-default-export': 'allow',
   },
   overrides: [
     {

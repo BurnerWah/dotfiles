@@ -14,7 +14,7 @@ const command = new Deno.Command('sd', {
     ...(Deno.env.get('usage_preview') ? ['--preview'] : []),
     '--flags=m',
     '--across',
-    '\\A([\\w+-]+/inshellisense@bridge)$',
+    String.raw`\A([\w+-]+/inshellisense@bridge)$`,
     SD_REPLACEMENT_TEMPLATE,
     ...Deno.args.filter((arg) => arg !== '--preview'),
   ],

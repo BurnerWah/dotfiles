@@ -14,7 +14,7 @@ const command = new Deno.Command('sd', {
     ...(Deno.env.get('usage_preview') ? ['--preview'] : []),
     '--flags=m',
     '--across',
-    '\\A([\\w+-]+/(?:fish|bash|zsh)@bridge)$',
+    String.raw`\A([\w+-]+/(?:fish|bash|zsh)@bridge)$`,
     SD_REPLACEMENT_TEMPLATE,
     ...Deno.args.filter((arg) => arg !== '--preview'),
   ],
