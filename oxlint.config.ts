@@ -17,10 +17,19 @@ export default defineConfig({
     suspicious: 'warn',
     perf: 'warn',
     restriction: 'warn',
+    style: 'warn',
   },
   rules: {
     'oxc/no-rest-spread-properties': 'allow',
     'import/no-relative-parent-imports': 'allow',
+    'sort-keys': 'off',
+    'id-length': ['warn', { exceptions: ['z'] }],
+    'import/no-namespace': ['warn', { ignore: ['@zod/zod'] }],
+    'no-magic-numbers': 'allow',
+    'no-ternary': 'allow',
+    'capitalized-comments': 'allow',
+    'import/no-named-export': 'allow',
+    'sort-imports': 'allow', // I haven't got import sorting figured out yet
   },
   overrides: [
     {
