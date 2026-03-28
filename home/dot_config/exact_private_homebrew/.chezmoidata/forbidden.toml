@@ -469,6 +469,7 @@ formula = [
   'ncspot', # spotify
   'neo4j-mcp', # ai
   'nim', # homophobia
+  'nimbalyst', # ai
   'nixfmt', # nix
   'nixpacks', # nix
   'notion-mcp-server', # ai

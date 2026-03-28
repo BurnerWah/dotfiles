@@ -18,6 +18,7 @@ local servers = {
   "html",
   "jsonls",
   "nushell",
+  "oxfmt",
   "oxlint",
   "powershell_es",
   "ruff",
