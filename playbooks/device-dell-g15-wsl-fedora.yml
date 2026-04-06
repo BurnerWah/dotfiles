@@ -68,9 +68,7 @@
           - libffi-devel
           - libyaml-devel
           - mise # jdxcode/mise
-          - neovim
           - openssl-devel
-          - python3-neovim
           - readline-devel
           - ripgrep
           - starship # atim/starship
