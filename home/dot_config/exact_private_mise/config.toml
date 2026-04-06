@@ -49,6 +49,7 @@ disable_tools = [
   "starknet-foundry-sncast", # cryptocurrency, alias
   "clarinet", # cryptocurrency
   "sui", # cryptocurrency
+  "taplo", # deprecated
 ]
 disable_hints = [
   "python_precompiled",
@@ -60,7 +61,7 @@ disable_backends = [
   "gem", # security
 ]
 env_cache = true
-install_before = "2d"
+install_before = "7d"
 
 [settings.ruby]
 default_packages_file = "~/.config/mise/default-gems"
@@ -83,4 +84,3 @@ corepack = true
 
 [tools]
 cargo-binstall = "latest"
-"github:VorpalBlade/chezmoi_modify_manager" = "latest"

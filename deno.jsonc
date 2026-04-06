@@ -9,6 +9,7 @@
   "imports": {
     "@zod/zod": "jsr:@zod/zod@^4.3.6",
   },
+  "minimumDependencyAge": { "age": "P7D" },
   "nodeModulesDir": "auto",
   "fmt": {
     // Deno formatting is currently not used, but that may change in the future
@@ -84,7 +85,9 @@
       "env": {
         "allow": ["NAPI_RS_*"],
       },
-      "ffi": true,
+      "ffi": {
+        "allow": ["node_modules/.deno"],
+      },
       "read": ["."],
       "write": {
         "allow": ["."],

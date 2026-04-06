@@ -1,8 +1,6 @@
 [tools]
 pnpm = "latest"
 pitchfork = "latest"
-"npm:do-not-disturb-cli" = "latest"
-"npm:empty-trash-cli" = "latest"
 "github:daptify14/chezit" = "latest"
 
 # tombi: format.rules.table-keys-order = "ascending"

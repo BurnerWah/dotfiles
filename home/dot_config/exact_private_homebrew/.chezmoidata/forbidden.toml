@@ -79,6 +79,7 @@ cask = [
   'copilot-cli', # ai
   'copilot-cli@prerelease', # ai
   'copilot-for-xcode', # ai
+  'craft-agents', # ai
   'cursor', # ai
   'cursor-cli', # ai
   'daedalus-mainnet', # cryptocurrency
@@ -228,6 +229,7 @@ cask = [
   'proton-drive', # fascism
   'proton-mail', # fascism
   'proton-mail-bridge', # fascism
+  'proton-meet', # protonmail
   'proton-pass', # fascism
   'protonmail-import-export', # fascism
   'protonvpn', # fascism
@@ -293,6 +295,7 @@ cask = [
   'upm', # deprecated
   'vertcoin-core', # cryptocurrency
   'vibemeter', # ai
+  'vibeproxy', # ai
   'vibetunnel', # ai
   'vincelwt-chatgpt', # ai
   'voicenotes', # ai
@@ -370,6 +373,7 @@ formula = [
   'cog', # ai
   'cointop', # cryptocurrency
   'context7-mcp', # ai
+  'copilot-language-server', # ai
   'core-lightning', # cryptocurrency
   'cortexso', # ai
   'cql', # cryptocurrency

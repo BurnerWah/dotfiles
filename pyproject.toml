@@ -34,6 +34,9 @@ exclude = ["**/symlink_*", "**/remove_*"]
 [tool.ty.environment]
 python = "./.venv"
 
+[tool.uv]
+exclude-newer = "7 days"
+
 [tool.uv.workspace]
 members = [
   "home/dot_config/private_xonsh",

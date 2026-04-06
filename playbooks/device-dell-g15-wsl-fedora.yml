@@ -27,21 +27,16 @@
         name: python3-dnf
         state: present
 
-    - name: Add mise dnf repo
-      become: true
-      ansible.builtin.get_url:
-        url: https://mise.jdx.dev/rpm/mise.repo
-        dest: /etc/yum.repos.d/mise.repo
-        mode: '0644'
-        checksum: sha256:0feedc30bb4f5faa705bae31b0c3ade63bc42260ee3aca576156cb84a0c26c00
-
     - name: Add copr repos
       become: true
       community.general.copr:
         name: '{{ item }}'
         state: enabled
       loop:
+        # keep-sorted start case=no
         - atim/starship
+        - jdxcode/mise
+        # keep-sorted end
 
     - name: Install RPM Fusion
       become: true
@@ -72,7 +67,7 @@
           - grc
           - libffi-devel
           - libyaml-devel
-          - mise
+          - mise # jdxcode/mise
           - neovim
           - openssl-devel
           - python3-neovim

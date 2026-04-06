@@ -684,6 +684,7 @@ carapace = [
   "orb",
   "orbctl",
   "osascript",
+  "oxfmt",
   "oxker",
   "oxlint",
   "packer",

@@ -1,0 +1,32 @@
+name: oxfmt
+description: High-performance formatting tool for JavaScript and TypeScript
+flags:
+  --init: Initialize `.oxfmtrc.json` with default values
+  --migrate=: Migrate configuration to `.oxfmtrc.json` from specified source
+  --lsp: Start language server protocol (LSP) server
+  --stdin-filepath=: Specify the file name to use to infer which parser to use
+
+  --write: Format and write files in place (default)
+  --check: Check if files are formatted, also show statistics
+  --list-different: List files that would be changed
+
+  -c, --config=: Path to the configuration file
+
+  --ignore-path=: Path to ignore file(s). Can be specified multiple times.
+  --with-node-modules: Format code in node_modules directory (skipped by default)
+
+  --no-error-on-unmatched-pattern: Do not exit with error when pattern is unmatched
+  --threads=: Number of threads to use. Set to 1 for using only 1 CPU core.
+
+  -h, --help: Prints help information
+  -V, --version: Prints version information
+
+completion:
+  positionalany:
+    - $files
+    - $files ||| $prefix(!)
+  flag:
+    migrate: [prettier, biome]
+    stdin-filepath: [$files]
+    config: ['$files([.json, .jsonc, .ts, .mts, .cts, .js, .mjs, .cjs])']
+    ignore-path: [$files]

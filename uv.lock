@@ -2,6 +2,10 @@ version = 1
 revision = 3
 requires-python = ">=3.14"
 
+[options]
+exclude-newer = "2026-03-21T05:35:30.394084Z"
+exclude-newer-span = "P7D"
+
 [manifest]
 members = [
     "chezmoi-config",

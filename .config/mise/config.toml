@@ -1,5 +1,5 @@
 [tools]
-lefthook = "latest"
+lefthook = { version = "latest", symlink_bins = true }
 stylua = "latest"
 ruff = "latest"
 gitleaks = "latest"
@@ -11,8 +11,7 @@ ripsecrets = {
 node = "latest"
 yamllint = "latest"
 deno = "latest"
-"github:VorpalBlade/chezmoi_modify_manager" = "latest"
-tombi = "latest"
+tombi = { version = "latest", symlink_bins = true }
 "github:google/keep-sorted" = "latest"
 ty = "latest"
 biome = "latest"
@@ -226,7 +225,7 @@ depends = ["generate:schema:chezmoidata", "generate:schema:eza-theme"]
 # exclude the `node_modules` folder from its sources
 
 [tasks."lint:gitleaks"]
-run = "gitleaks git --no-banner"
+run = "gitleaks dir --no-banner"
 description = "Check git repo for secrets"
 
 [tasks."lint:oxlint"]

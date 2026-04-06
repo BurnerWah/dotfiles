@@ -276,6 +276,32 @@ exercism = {
   v = "version",
   w = "workspace",
 }
+fj = {
+  actions = {
+    secrets = { ls = "list", rm = "delete" },
+    variables = { ls = "list", rm = "delete" },
+  },
+  auth = { ls = "list" },
+  org = {
+    label = { delete = "rm", ls = "list" },
+    ls = "list",
+    repo = { ls = "list" },
+    team = {
+      ls = "list",
+      member = { delete = "rm", ls = "list" },
+      repo = { delete = "rm", ls = "list" },
+      rm = "delete",
+    },
+  },
+  pr = { co = "checkout" },
+  release = { asset = { rm = "delete" }, ls = "list", rm = "delete" },
+  repo = { rm = "delete" },
+  tag = { ls = "list", rm = "delete" },
+  user = {
+    gpg = { ls = "list", rm = "delete" },
+    key = { ls = "list", rm = "delete" },
+  }
+}
 fnox = {
   c = "check",
   delete = "remove",
@@ -1053,7 +1079,7 @@ podman = {
   wait = "container wait",
   x = "exec",
 }
-port = { out = "outdated" }
+port = { in = "install", out = "outdated", up = "upgrade" }
 rumdl = { cfg = "config", fmt = "check --fix", lint = "check", why = "explain" }
 rustup = {
   component = {
@@ -1209,7 +1235,17 @@ vt = {
   rh = "retrohunt",
   threatprofile = { ls = "list" },
 }
-ykman = { ls = "list" }
+ykman = {
+  fido = {
+    credentials = { ls = "list", rm = "delete" },
+    fingerprints = { ls = "list", rm = "delete" },
+  },
+  hsmauth = { credentials = { ls = "list", rm = "delete" } },
+  ls = "list",
+  oath = { accounts = { ls = "list", rm = "delete" } },
+  openpgp = { certificates = { rm = "delete" } },
+  piv = { certificates = { rm = "delete" }, keys = { rm = "delete" } },
+}
 zellij = {
   a = "attach",
   ac = "action",
