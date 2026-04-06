@@ -205,6 +205,7 @@ pre-commit:
               - '**/modify_*.jsonc'
               - schemas/generated/*
               - schemas/vendor/*
+              - home/dot_config/*_nvim/lazy-lock.json
             file_types: text
 
           - name: check-jsonschema
