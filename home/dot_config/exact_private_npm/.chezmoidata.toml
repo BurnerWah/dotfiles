@@ -4,6 +4,7 @@ sign-git-tag = true
 init-author-email = "npm@brnr.link"
 init-author-name = "Burner"
 min-release-age = 7
+ignore-scripts = true
 
 [settings.npm.by_os.darwin]
 init-module = "${HOME}/.config/npm/config/npm-init.js"

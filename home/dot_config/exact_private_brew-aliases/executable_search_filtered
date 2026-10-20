@@ -9,9 +9,12 @@ argparse formula cask desc -- $argv
 or return
 if not set -q _flag_cask
     if set -q _flag_desc
-        brew search --formula --desc --eval-all $argv | rg -vFf (chezmoi data | jq -r '"\(.settings.homebrew.forbidden.formula[]):"' | psub)
+        # brew search --desc is broken lmao not reporting that shit
+        # brew search --formula --desc --eval-all $argv | rg -vFf (chezmoi data | jq -r '"\(.settings.homebrew.forbidden.formula[]):"' | psub)
+        # brew desc --search --formula --eval-all $argv | rg -vFf (chezmoi data | jq -r '"\(.settings.homebrew.forbidden.formula[]):"' | psub)
+        brew desc --search --formula $argv | string match -vr "^($(string replace -a ' ' '|' $HOMEBREW_FORBIDDEN_FORMULAE)):"
     else
-        brew search --formula $argv | rg -vFf (chezmoi data | jq -r .settings.homebrew.forbiddden.formula[] | psub)
+        brew search --formula $argv | rg -vFf (string split ' ' $HOMEBREW_FORBIDDEN_FORMULAE | psub)
     end
     if not set -q _flag_formula
         echo
@@ -19,8 +22,10 @@ if not set -q _flag_cask
 end
 if not set -q _flag_formula
     if set -q _flag_desc
-        brew search --cask --desc --eval-all $argv | rg -vFf (chezmoi data | jq -r '"\(.settings.homebrew.forbidden.cask[]):"' | psub)
+        # brew search --cask --desc --eval-all $argv | rg -vFf (chezmoi data | jq -r '"\(.settings.homebrew.forbidden.cask[]):"' | psub)
+        # brew desc --search --cask --eval-all $argv | rg -vFf (chezmoi data | jq -r '"\(.settings.homebrew.forbidden.cask[]):"' | psub)
+        brew desc --search --cask $argv | string match -vr "^($(string replace -a ' ' '|' $HOMEBREW_FORBIDDEN_CASKS)):"
     else
-        brew search --cask $argv | rg -vFf (chezmoi data | jq -r .settings.homebrew.forbiddden.cask[] | psub)
+        brew search --cask $argv | rg -vFf (string split ' ' $HOMEBREW_FORBIDDEN_CASKS | psub)
     end
 end

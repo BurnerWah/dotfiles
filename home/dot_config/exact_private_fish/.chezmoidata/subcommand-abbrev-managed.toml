@@ -1,4 +1,19 @@
 [settings.shell.fish.subcommand_abbrevs]
+adb = { sh = "shell" }
+ansible-builder = { b = "build", c = "create" }
+ansible-config = { ls = "list" }
+ansible-creator = {
+  a = "add",
+  add = { r = "resource" },
+  i = "init",
+  init = { c = "collection", p = "playbook" },
+}
+ansible-galaxy = {
+  c = "collection",
+  collection = { ls = "list" },
+  r = "role",
+  role = { ls = "list" },
+}
 apptainer = {
   b = "build",
   cache = { ls = "list" },
@@ -44,6 +59,34 @@ atuin = {
   sc = "scripts",
   scripts = { ls = "list", rm = "delete" },
   se = "search",
+}
+aube = {
+  a = "add",
+  clean-install = "ci",
+  config = {
+    ls = "list",
+    remove = "delete",
+    rm = "delete",
+    search = "find",
+    unset = "delete",
+  },
+  dist-tag = { remove = "rm" },
+  dist-tags = "dist-tag",
+  info = "view",
+  ln = "link",
+  ls = "list",
+  m = "recursive",
+  multi = "recursive",
+  out = "outdated",
+  rb = "rebuild",
+  rm = "remove",
+  show = "view",
+  start = "run start",
+  stop = "run stop",
+  t = "run test",
+  test = "run test",
+  w = "why",
+  x = "exec",
 }
 biome = { fmt = "format" }
 brew = {
@@ -109,6 +152,7 @@ cargo = {
   rm = "remove",
   t = "test",
 }
+cekit = { b = "build" }
 chezmoi = {
   a = "add",
   ap = "apply",
@@ -119,6 +163,18 @@ chezmoi = {
   s = "status",
   unmanage = "forget",
   up = "update",
+}
+cloudflared = {
+  access = { h = "help" },
+  forward = "access",
+  h = "help",
+  service = { h = "help" },
+  tunnel = {
+    h = "help",
+    ls = "list",
+    route = { h = "help", ip = { h = "help", list = "show", ls = "show" } },
+    vnet = { h = "help", ls = "list" }
+  }
 }
 container = {
   builder = { rm = "delete" },
@@ -275,6 +331,12 @@ exercism = {
   u = "upgrade",
   v = "version",
   w = "workspace",
+}
+firefoxpwa = {
+  profile = { ls = "list", rm = "remove" },
+  profiles = "profile list",
+  runtime = { i = "install" },
+  site = { add = "install", remove = "uninstall", rm = "uninstall" },
 }
 fj = {
   actions = {
@@ -688,6 +750,10 @@ jj = {
   st = "status",
   tag = { d = "delete", l = "list", s = "set" },
 }
+kubectl = {
+  plugin = { ls = "list" },
+  top = { no = "node", nodes = "node", po = "pod", pods = "pod" },
+}
 kustomize = { init = "create" }
 lefthook = { h = "help", i = "install", r = "run" }
 limactl = {
@@ -700,6 +766,7 @@ limactl = {
   snapshot = { del = "delete", load = "apply", ls = "list", save = "create" },
   tmpl = "template",
 }
+lis = { b = "build", fmt = "format" }
 luarocks = { ls = "list" }
 manifest-tool = { h = "help" }
 mas = {
@@ -720,6 +787,7 @@ mise = {
   cache = { c = "clear", dir = "path", p = "prune" },
   cfg = "config",
   config = { list = "ls" },
+  dep = "deps",
   dr = "doctor",
   e = "env",
   exec = "x", # exec is the true command
@@ -743,7 +811,8 @@ mise = {
     up = "update",
     upgrade = "update",
   },
-  prep = "prepare",
+  prep = "deps",
+  prepare = "deps",
   r = "run",
   remove = "unuse",
   rm = "unuse",
@@ -1158,6 +1227,7 @@ string = {
   une = "unescape",
   up = "upper",
 }
+swift = { package = { up = "update" }, pkg = "package", test = { ls = "list" } }
 tombi = { check = "lint", fmt = "format", serve = "lsp" }
 topiary = {
   cfg = "config",
@@ -1235,6 +1305,8 @@ vt = {
   rh = "retrohunt",
   threatprofile = { ls = "list" },
 }
+wormhole = { rx = "receive", tx = "send" }
+wormhole-rs = { forward = { open = "serve" }, rx = "receive", tx = "send" }
 ykman = {
   fido = {
     credentials = { ls = "list", rm = "delete" },

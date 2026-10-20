@@ -1,0 +1,15 @@
+name: sarif-fmt
+description: Pretty print SARIF results
+
+flags:
+  -m, --message-format=: One of plain or pretty
+  -i, --input=: input file; reads from stdin if none is given
+  -c, --color=: Allows to override coloring engine
+  -h, --help: Print help
+  -V, --version: Print version
+
+completion:
+  flag:
+    message-format: [plain, "pretty\tdefault"]
+    input: [$files]
+    color: [always, always-ansi, "auto\tdefault", never]

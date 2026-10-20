@@ -40,9 +40,13 @@ commands:
           # that's hard to do in a carapace spec.
           # - $files([.app]) ||| $chdir(/Applications)
           - $(fd -td -d1 -j1 --format '{.}' -e app) ||| $chdir(/Applications)
+          # - $files([.app]) ||| $chdir(/Applications/Utilities)
+          - $(fd -td -d1 -j1 --format '{.}' -e app) ||| $chdir(/Applications/Utilities)
           - Safari # `fd -td` misses this but it's not worth forking again to include it
           # - $files([.app]) ||| $chdir(/System/Applications)
           - $(fd -td -d1 -j1 --format '{.}' -e app) ||| $chdir(/System/Applications)
+          # - $files([.app]) ||| $chdir(/System/Applications/Utilities)
+          - $(fd -td -d1 -j1 --format '{.}' -e app) ||| $chdir(/System/Applications/Utilities)
           # - $files([.app]) ||| $chdir(~/Applications)
           - $(fd -td -d1 -j1 --format '{.}' -e app) ||| $chdir(~/Applications)
         ext: [$carapace.fs.FilenameExtensions]
@@ -50,6 +54,9 @@ commands:
           &types # This is so janky, there's gotta be a better way of handling it
           - $(plutil -convert json -o - ~/Library/Preferences/com.apple.LaunchServices/com.apple.launchservices.secure.plist |
             jq -r '.LSHandlers[].LSHandlerContentType | strings')
+        scheme: &schemes
+          - $(plutil -convert json -o - ~/Library/Preferences/com.apple.LaunchServices/com.apple.launchservices.secure.plist |
+            jq -r '.LSHandlers[].LSHandlerURLScheme | strings')
 
   - name: set
     description: Set default application for file extension, URL scheme, or file type
@@ -64,6 +71,7 @@ commands:
       flag:
         ext: [$carapace.fs.FilenameExtensions]
         type: *types
+        scheme: *schemes
       positional:
         - *apps
 

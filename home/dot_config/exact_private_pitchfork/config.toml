@@ -1,0 +1,20 @@
+#:schema https://pitchfork.jdx.dev/schema.json
+
+[daemons.tlrc-update]
+run = "/opt/homebrew/bin/tldr --update"
+cron = { schedule = "0 0 0 * * 0", retrigger = "always" }
+
+[daemons.lima-default]
+run = "/opt/homebrew/bin/limactl start default --foreground"
+retry = 0
+# auto_bump_port = false
+# port_bump_attempts = 10
+
+[daemons.lima-default.env]
+LIMA_HOME = "/Users/burner/.config/lima"
+
+[daemons.dumpenv]
+run = "env"
+cron = { schedule = "0 * * * *" }
+boot_start = true
+mise = true

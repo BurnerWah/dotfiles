@@ -1,0 +1,24 @@
+name: gram
+description: The Gram CLI
+
+flags:
+  -w, --wait: Wait for all of the given paths to be opened/closed before exiting
+  -a, --add: Add files to the currently open workspace
+  -n, --new: Create a new workspace
+  -r, --reuse: Reuse an existing window, replacing its workspace
+  --user-data-dir=: Sets a custom directory for all user data (e.g., database, extensions, logs).
+  -v, --version: Print Gram's version and the app path
+  --foreground: Run gram in the foreground (useful for debugging)
+  --gram=: Custom path to Gram.app or the editor binary
+  --dev-server-token=: Run gram in dev-server mode
+  --system-specs&: Not supported in Gram CLI, only supported on Gram binary Will attempt to give the correct command to run
+  --diff*=: { description: Pairs of file paths to diff, nargs: 2 }
+  --uninstall: Uninstall Gram from user system
+  -h, --help: Print help (see more with '--help')
+
+completion:
+  flag:
+    user-data-dir: [$directories]
+    diff: [$files]
+  positionalany:
+    - $files

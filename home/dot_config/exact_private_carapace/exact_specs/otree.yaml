@@ -1,0 +1,45 @@
+name: otree
+description: Command-line tool to view objects (JSON/YAML/TOML) in TUI tree widget
+
+flags:
+  --config=: The config file to use
+  -t, --content-type=: The data content type
+  -o, --to=: Convert data to another content type and print to stdout
+  --disable-header: Don't show the header
+  --disable-footer: Don't show the footer
+  --disable-filter: Disable the filter
+  --tree-disable-selected-highlight: Disable highlight the selected item in tree
+  --tree-selected-symbol=: The symbol to indicate the selected item in tree
+  --filter-ignore-case: Ignore case when filtering
+  --filter-exclude-mode: Hide items that do not match the filter
+  -f, --header-format=: The header format
+  -V, --vertical: Use vertical layout
+  -H, --horizontal: Use horizontal layout
+  -s, --size=: The tree widget size (percent), should be in range [10, 80]
+  --disable-highlight: Disable syntax highlighting in data block
+  -w, --wrap: Enable wrap mode in data block
+  --show-config: Print loaded config
+  --ignore-config: Force to use the default config
+  --build-info: Print build info
+  --max-data-size=: Limit data size to read. In MiB
+  -R, --live-reload: Watch file changes, reload tui if updates
+  --debug=: Write debug logs into this file. The file will be created if not exists
+  -v, --version: Print version
+  -h, --help: Print help (see more with '--help')
+
+completion:
+  positional:
+    - - $files
+  flag:
+    config: ['$files([.toml])']
+    content-type: [json, yaml, toml, xml, hcl, jsonl]
+    to: [json, yaml, toml, xml, hcl, jsonl]
+    debug: [$files]
+    size: ['$carapace.number.Range({start: 10, end: 80})']
+
+exclusiveflags:
+  - [config, ignore-config]
+  - [disable-header, header-format]
+  - [disable-filter, filter-ignore-case]
+  - [disable-filter, filter-exclude-mode]
+  - [vertical, horizontal]

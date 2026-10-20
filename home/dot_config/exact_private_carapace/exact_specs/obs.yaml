@@ -1,0 +1,31 @@
+name: obs
+description: Open-source software for live streaming and screen recording
+
+flags:
+  -h, --help: Get list of available commands.
+
+  --startstreaming: Automatically start streaming.
+  --startrecording: Automatically start recording.
+  --startreplaybuffer: Start replay buffer.
+  --startvirtualcam: Start virtual camera (if available).
+
+  --collection=: Use specific scene collection.
+  --profile=: Use specific profile.
+  --scene=: Start with specific scene.
+
+  --studio-mode: Enable studio mode.
+  --minimize-to-tray: Minimize to system tray.
+  -m, --multi: Don't warn when launching multiple instances.
+
+  --safe-mode: Run in Safe Mode (disables third-party plugins, scripting, and WebSockets).
+  --only-bundled-plugins: Only load included (first-party) plugins
+  --verbose: Make log more verbose.
+  --always-on-top: Start in 'always on top' mode.
+
+  --unfiltered_log: Make log unfiltered.
+
+  --disable-updater: Disable built-in updater (Windows/Mac only)
+
+  --disable-missing-files-check: Disable the missing files dialog which can appear on startup.
+
+  -V, --version: Get current version.

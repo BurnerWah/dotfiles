@@ -1,39 +1,39 @@
 # keep-sorted start
-/asciinema
-/boxxy
-/gallery-dl
-/pdu
-/pnpm
-/pnpx
-/postybirb-plus
+asciinema
+boxxy
+gallery-dl
+pdu
+pnpm
+pnpx
+postybirb-plus
 # keep-sorted end
 
 {{- if eq .devicename "dell-g15-linux" }}
-/atuin
+atuin
 {{- end }}
 
 {{- if .device.lima }}
 # keep-sorted start
-/atuin
-/op-ssh-sign
-/trash
+atuin
+op-ssh-sign
+trash
 # keep-sorted end
 {{- end }}
 
 {{- if eq .osid "linux-alpine" }}
 # keep-sorted start case=no
-/atuin
-/eza
+atuin
+eza
 # keep-sorted end
 {{- end }}
 
 {{- if ne .chezmoi.os "linux" }}
-/op-ssh-sign
+op-ssh-sign
 {{- end }}
 
 {{- if eq .chezmoi.os "windows" }}
 # Almost everything in here won't work on windows
-/*
-!/*.cmd
-!/*.ps1
+*
+!*.cmd
+!*.ps1
 {{- end }}

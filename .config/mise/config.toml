@@ -35,25 +35,23 @@ rumdl = "latest"
 PRETTIER_EXPERIMENTAL_CLI = 1
 
 # tombi: format.rules.table-keys-order = "ascending"
-[prepare]
-[prepare.deno]
+[deps]
+[deps.deno]
 auto = true
 run = "deno install"
-depends = ["deno"]
 sources = ["deno.json*", "deno.lock", "package.json"]
 outputs = ["node_modules"]
 
-[prepare.lefthook]
-auto = false
+[deps.lefthook]
 run = "lefthook install"
-depends = ["lefthook"]
 sources = [".config/lefthook.*", ".config/lefthook-local.*"]
 outputs = [".git/hooks"]
 description = "Install git hooks for lefthook"
 
-[prepare.uv]
-# run is overridden because this is a workspace
+[deps.uv]
 run = "uv sync --all-packages"
+sources = ["pyproject.toml", "**/pyproject.toml", "uv.lock"]
+outputs = [".venv"]
 
 # tombi: format.rules.table-keys-order = "ascending"
 [tasks]

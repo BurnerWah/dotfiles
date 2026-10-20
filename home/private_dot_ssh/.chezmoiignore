@@ -1,4 +1,4 @@
-/*.pub
-/id_*
-/known_hosts*
-/podman-machine-*
+*.pub
+id_*
+known_hosts*
+podman-machine-*

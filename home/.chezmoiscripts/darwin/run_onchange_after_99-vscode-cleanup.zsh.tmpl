@@ -1,0 +1,6 @@
+# chezmoi:template:left-delimiter="# {{" right-delimiter=}}
+# {{- if stat "/Applications/Visual Studio Code.app/Contents/Resources/app/extensions/copilot" -}}
+#!/usr/bin/env zsh
+# # {{ now }}
+rm -rf "/Applications/Visual Studio Code.app/Contents/Resources/app/extensions/copilot"
+# {{ end -}}

@@ -1,13 +1,13 @@
 # keep-sorted start case=no
-/asdf
-/bpytop
-/devdash
-/gatsby
-/gh-copilot
-/github-copilot
-/litecli/log
-/neofetch
-/nodemon.json
-/shell_gpt
-/yamllint
+asdf
+bpytop
+devdash
+gatsby
+gh-copilot
+github-copilot
+litecli/log
+neofetch
+nodemon.json
+shell_gpt
+yamllint
 # keep-sorted end

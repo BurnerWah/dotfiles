@@ -1,10 +1,10 @@
 # keep-sorted start case=no
-/.vivaldi_reporting_data
-/asdf
-/bun
-/fnm
-/ops
-/pipx
-/turborepo
-/wasmer
+.vivaldi_reporting_data
+asdf
+bun
+fnm
+ops
+pipx
+turborepo
+wasmer
 # keep-sorted end

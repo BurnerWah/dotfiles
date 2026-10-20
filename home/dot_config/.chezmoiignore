@@ -1,172 +1,174 @@
 # keep-sorted start case=no
-/.gsd-keyboard.settings-ported
-/.semgrep
-/1Password
-/background
-/BraveSoftware
-/btop
-/chezmoi
-/chromium
-/configstore
-/Cypress
-/dconf
-/evolution
-/flutter
-/fly
-/gh/hosts.yml
-/gnome-boxes
-/gnome-initial-setup-done
-/gnome-session
-/goa-1.0
-/google-chrome
-/google-chrome-beta
-/google-chrome-unstable
-/gsconnect
-/ibus
-/iterm2
-/JetBrains
-/jgit
-/libvirt
-/litecli/history
-/menus
-/microsoft-edge-dev
-/monitors.xml*
-/MusicBrainz
-/ookla
-/op
-/postybirb
-/postybirb-plus
-/pulse
-/raycast
-/systemd/user/*.wants
-/toolbox
-/user-share
-/vivaldi
-/vivaldi-snapshot
-/zap
+.gsd-keyboard.settings-ported
+.semgrep
+1Password
+background
+BraveSoftware
+btop
+chezmoi
+chromium
+configstore
+Cypress
+dconf
+evolution
+flutter
+fly
+gh/hosts.yml
+gnome-boxes
+gnome-initial-setup-done
+gnome-session
+goa-1.0
+google-chrome
+google-chrome-beta
+google-chrome-unstable
+gsconnect
+ibus
+iterm2
+JetBrains
+jgit
+libvirt
+litecli/history
+menus
+microsoft-edge-dev
+monitors.xml*
+MusicBrainz
+ookla
+op
+postybirb
+postybirb-plus
+pulse
+raycast
+systemd/user/*.wants
+toolbox
+user-share
+vivaldi
+vivaldi-snapshot
+zap
+homebrew/trust.json.lock
+homebrew/trust.json
 # keep-sorted end
 
 {{- if or .ephemeral .headless }}
 # keep-sorted start case=no
-/autostart
-/karabiner
-/kitty
-/wezterm
+autostart
+karabiner
+kitty
+wezterm
 # keep-sorted end
 {{- end }}
 
 {{- if .ephemeral }}
 # keep-sorted start case=no
-/boxxy
-/brew-aliases
-/environment.d
-/firejail
-/homebrew
-/lima
-/systemd
-/user-tmpfiles.d
-/whalebrew
+boxxy
+brew-aliases
+environment.d
+firejail
+homebrew
+lima
+systemd
+user-tmpfiles.d
+whalebrew
 # keep-sorted end
 {{- end }}
 
 {{- if .device.wsl }}
 # keep-sorted start case=no
-/boxxy
-/firejail
-/lima
-/whalebrew
+boxxy
+firejail
+lima
+whalebrew
 # keep-sorted end
 {{- end }}
 
 {{- if .device.lima }}
 # keep-sorted start case=no
-/bat
-/bat/**/*
-/bottom
-/boxxy
-/brew-aliases
-/carapace/bridge/bash
-/carapace/bridge/fish
-/carapace/bridge/powershell
-/carapace/bridges.yaml
-/carapace/choices
-/carapace/overlays
-/carapace/specs
-/carapace/styles.json
-/carapace/variables
-/direnv
-/elvish
-/erdtree
-/exercism
-/eza
-/fastfetch
-/fd
-/firejail
-/fish/completions
-/fish/completions/**
-/gh
-/glab-cli
-/glow
-/go
-/homebrew
-/lima
-/litecli
-/nushell
-/nvim
-/powershell
-/rainbow
-/readline
-/silicon
-/starship.toml
-/tealdeer
-/vivid
-/whalebrew
-/xonsh
+bat
+bat/**/*
+bottom
+boxxy
+brew-aliases
+carapace/bridge/bash
+carapace/bridge/fish
+carapace/bridge/powershell
+carapace/bridges.yaml
+carapace/choices
+carapace/overlays
+carapace/specs
+carapace/styles.json
+carapace/variables
+direnv
+elvish
+erdtree
+exercism
+eza
+fastfetch
+fd
+firejail
+fish/completions
+fish/completions/**
+gh
+glab-cli
+glow
+go
+homebrew
+lima
+litecli
+nushell
+nvim
+powershell
+rainbow
+readline
+silicon
+starship.toml
+tealdeer
+vivid
+whalebrew
+xonsh
 # keep-sorted end
 {{- end }}
 
 {{- if eq .osid "linux-alpine" }}
 # keep-sorted start case=no
-/systemd
+systemd
 # keep-sorted end
 {{- end }}
 
 {{- if ne .chezmoi.os "linux" }}
 # keep-sorted start case=no
-/autostart
-/boxxy
-/environment.d
-/firejail
-/systemd
-/user-tmpfiles.d
+autostart
+boxxy
+environment.d
+firejail
+systemd
+user-tmpfiles.d
 # keep-sorted end
 {{- end }}
 
 {{- if ne .chezmoi.os "darwin" }}
 # keep-sorted start case=no
-/infat
-/karabiner
-/lima
+infat
+karabiner
+lima
 # keep-sorted end
 {{- end }}
 
 {{- if eq .chezmoi.os "windows" }}
 # keep-sorted start case=no
-/ansible.cfg
-/brew-aliases
-/fish
-/fish/**
-/homebrew
-/kitty
-/npm
-/rainbow
-/thefuck
-/topiary
-/vivid
-/wgetrc
-/whalebrew
-/yt-dlp
-/zsh
-/zsh/**/*
+ansible.cfg
+brew-aliases
+fish
+fish/**
+homebrew
+kitty
+npm
+rainbow
+thefuck
+topiary
+vivid
+wgetrc
+whalebrew
+yt-dlp
+zsh
+zsh/**/*
 # keep-sorted end
 {{- end }}

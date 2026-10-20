@@ -1,5 +1,4 @@
 # Taps
-tap "homebrew/autoupdate" if OS.mac?
 tap "buo/cask-upgrade" if OS.mac?
 tap "gromgit/fuse" if OS.mac?
 tap "homebrew-ffmpeg/ffmpeg" if OS.mac?
@@ -105,16 +104,16 @@ brew "yubikey-agent", restart_service: true if OS.mac? # SSH Agent for YubiKeys
 brew "zoxide" if OS.mac? # directory jumping
 # This is a somewhat excessive build of ffmpeg
 brew "homebrew-ffmpeg/ffmpeg/ffmpeg", args: [
-    "with-aribb24", "with-dvd", "with-fdk-aac", "with-game-music-emu",
+    "with-aribb24", "with-dvd", "with-game-music-emu",
     "with-jpeg-xl", "with-libaribb24", "with-libaribcaption", "with-libbluray",
-    "with-libbs2b", "with-libcaca", "with-libdvdnav", "with-libdvdread",
+    "with-libbs2b", "with-libcaca",
     "with-libgsm", "with-libmodplug", "with-libopenmpt", "with-libplacebo",
     "with-librist", "with-librsvg", "with-libsoxr", "with-libssh",
     "with-libvidstab", "with-libvmaf", "with-libxml2", "with-openal-soft",
     "with-opencore-amr", "with-openh264", "with-openjpeg", "with-openssl@3",
     "with-rav1e", "with-rtmpdump", "with-rubberband", "with-speex", "with-srt",
     "with-tesseract", "with-two-lame", "with-webp", "with-xvid", "with-xvid",
-    "with-zimg", "with-whisper-cpp",
+    "with-zimg",
   ] if OS.mac?
 
 cask_args require_sha: true
@@ -130,7 +129,7 @@ cask "firefox", greedy: true if OS.mac?
 cask "jetbrains-toolbox", greedy: true if OS.mac?
 cask "karabiner-elements", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac? # keyboard remapper
 cask "lulu", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac? # firewall
-cask "macfuse@dev", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac? # FUSE on Mac OS
+cask "macfuse", greedy: ENV["HOMEBREW_CHEZMOI"].nil? if OS.mac? # FUSE on Mac OS
 cask "podman-desktop", greedy: false if OS.mac?
 cask "signal", greedy: true if OS.mac?
 cask "tor-browser", greedy: true if OS.mac?

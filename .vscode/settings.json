@@ -92,6 +92,7 @@
     "https://carapace.sh/schemas/command.json": "home/dot_config/*_carapace/*_{specs,overlays}/*.yaml{,.tmpl}",
     "https://github.com/sharkdp/vivid/raw/refs/heads/master/schemas/filetypes.json": "home/dot_config/vivid/filetypes.yml{,.tmpl}",
     "https://github.com/sharkdp/vivid/raw/refs/heads/master/schemas/theme.json": "home/dot_config/vivid/themes/*",
+    "https://www.schemastore.org/pnpm-workspace.json": "home/dot_config/exact_private_pnpm/config.yaml",
   },
   "fish-lsp.initializationOptions": {
     "fish_lsp_prefer_builtin_fish_commands": true,

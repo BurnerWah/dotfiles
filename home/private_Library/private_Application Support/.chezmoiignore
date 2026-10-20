@@ -1,163 +1,163 @@
 # keep-sorted start case=no
-/*.data
-/*.padl
-/*.spadl
-/1Password
-/@bluebubbles
-/AddressBook
-/Adobe
-/Affinity
-/Animoji
-/App Store
-/Arc
-/AskPermission
-/Automator
-/AYA
-/BetterDisplay
-/BetterTouchTool
-/Binary Ninja
-/Blender
-/bluebubbles-server
-/Bootstrap Studio
-/bstudio
-/CallHistoryDB
-/CallHistoryTransactions
-/CEF
-/Celeste
-/chezmoi
-/Chromium
-/CleanMyMac X
-/CleanMyMac X Menu
-/CloudDocs
-/Code
-/com.adobe.dunamis
-/com.apple.*
-/com.bugsnag.Bugsnag
-/com.colliderli.iina
-/com.dmitrynikolaev.numi
-/com.edovia.Default-Handler
-/com.fournova.Tower3
-/com.github.domt4.homebrew-autoupdate
-/com.hegenberg.BetterTouchTool
-/com.isaacmarovitz.Whisky
-/com.lwouis.alt-tab-macos
-/com.malwarebytes.mbam
-/com.microsoft.SharePoint-mac
-/com.paragon-software.*
-/com.raycast.macos
-/com.raycast.shared
-/Compressor
-/ConfigurationProfiles
-/contactsd
-/ControlCenter
-/CrashReporter
-/cups
-/Cypress
-/default.store*
-/dev.slimevr.SlimeVR
-/DifferentialPrivacy
-/DiskImages
-/Dock
-/dura
-/Element
-/Epic
-/FaceTime
-/Fastmail
-/Figma
-/FileProvider
-/Firefox
-/firefoxpwa
-/gem
-/go
-/Google
-/gops
-/gradle
-/homeenergyd
-/HTTPie
-/HuionTablet
-/icdd
-/iCloud
-/icloudmailagent
-/identityservicesd
-/iLifeMediaBrowser
-/Instruments
-/io.sentry
-/IsolatedStorage
-/itch-setup
-/iTerm2
-/Jackbox Games
-/JetBrains
-/Knowledge
-/kpeoplevcard
-/krita
-/krita-sysinfo.log
-/krita.log
-/Launchpad Manager
-/legcord
-/LibreOffice
-/locationaccessstored
-/Logitech
-/Lunar
-/maven
-/MBHaxe-MBG
-/Microsoft
-/Microsoft Edge
-/Microsoft Edge Beta
-/Microsoft Edge Canary
-/Microsoft Edge Dev
-/Microsoft Visual Studio
-/Motion
-/Mozilla
-/networkserviceproxy
-/NuGet
-/Numi
-/nupm
-/NVIDIA
-/NVIDIA Corporation
-/obs-studio
-/obsidian
-/omnisharp
-/OpenTabletDriver
-/org.Sequoia-PGP.sequoia
-/org.videolan.vlc
-/pnpm
-/Podman Desktop
-/powershell
-/privatecloudcomputed
-/ProApps
-/RefSrcSymbols
-/Ryujinx
-/sh.atuin.app
-/Signal
-/spacedrive
-/Stats
-/Steam
-/stickersd
-/Sublime Text
-/summary-events
-/Symbols
-/SymbolSourceSymbols
-/Syncthing
-/TabNine
-/The Jackbox Megapicker
-/tipsd
-/TorBrowser-Data
-/Transmission
-/UninstallPKG
-/uv
-/Valve Corporation
-/vfkit
-/videosubscriptionsd
-/VirtualBuddy
-/Vivaldi
-/Vivaldi Snapshot
-/VMware Fusion
-/VMware Fusion Applications Menu
-/vscode-sqltools
-/Waterfox
-/wezterm
-/Xcode
-/yarn
-/zoom.us
-/ZoomUpdater
+*.data
+*.padl
+*.spadl
+1Password
+@bluebubbles
+AddressBook
+Adobe
+Affinity
+Animoji
+App Store
+Arc
+AskPermission
+Automator
+AYA
+BetterDisplay
+BetterTouchTool
+Binary Ninja
+Blender
+bluebubbles-server
+Bootstrap Studio
+bstudio
+CallHistoryDB
+CallHistoryTransactions
+CEF
+Celeste
+chezmoi
+Chromium
+CleanMyMac X
+CleanMyMac X Menu
+CloudDocs
+Code
+com.adobe.dunamis
+com.apple.*
+com.bugsnag.Bugsnag
+com.colliderli.iina
+com.dmitrynikolaev.numi
+com.edovia.Default-Handler
+com.fournova.Tower3
+com.github.domt4.homebrew-autoupdate
+com.hegenberg.BetterTouchTool
+com.isaacmarovitz.Whisky
+com.lwouis.alt-tab-macos
+com.malwarebytes.mbam
+com.microsoft.SharePoint-mac
+com.paragon-software.*
+com.raycast.macos
+com.raycast.shared
+Compressor
+ConfigurationProfiles
+contactsd
+ControlCenter
+CrashReporter
+cups
+Cypress
+default.store*
+dev.slimevr.SlimeVR
+DifferentialPrivacy
+DiskImages
+Dock
+dura
+Element
+Epic
+FaceTime
+Fastmail
+Figma
+FileProvider
+Firefox
+firefoxpwa
+gem
+go
+Google
+gops
+gradle
+homeenergyd
+HTTPie
+HuionTablet
+icdd
+iCloud
+icloudmailagent
+identityservicesd
+iLifeMediaBrowser
+Instruments
+io.sentry
+IsolatedStorage
+itch-setup
+iTerm2
+Jackbox Games
+JetBrains
+Knowledge
+kpeoplevcard
+krita
+krita-sysinfo.log
+krita.log
+Launchpad Manager
+legcord
+LibreOffice
+locationaccessstored
+Logitech
+Lunar
+maven
+MBHaxe-MBG
+Microsoft
+Microsoft Edge
+Microsoft Edge Beta
+Microsoft Edge Canary
+Microsoft Edge Dev
+Microsoft Visual Studio
+Motion
+Mozilla
+networkserviceproxy
+NuGet
+Numi
+nupm
+NVIDIA
+NVIDIA Corporation
+obs-studio
+obsidian
+omnisharp
+OpenTabletDriver
+org.Sequoia-PGP.sequoia
+org.videolan.vlc
+pnpm
+Podman Desktop
+powershell
+privatecloudcomputed
+ProApps
+RefSrcSymbols
+Ryujinx
+sh.atuin.app
+Signal
+spacedrive
+Stats
+Steam
+stickersd
+Sublime Text
+summary-events
+Symbols
+SymbolSourceSymbols
+Syncthing
+TabNine
+The Jackbox Megapicker
+tipsd
+TorBrowser-Data
+Transmission
+UninstallPKG
+uv
+Valve Corporation
+vfkit
+videosubscriptionsd
+VirtualBuddy
+Vivaldi
+Vivaldi Snapshot
+VMware Fusion
+VMware Fusion Applications Menu
+vscode-sqltools
+Waterfox
+wezterm
+Xcode
+yarn
+zoom.us
+ZoomUpdater
 # keep-sorted end

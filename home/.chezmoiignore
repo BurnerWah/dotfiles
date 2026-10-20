@@ -1,5 +1,5 @@
 # Project Files & Folders
-/README.md
+README.md
 **/.editorconfig
 **/.prettierrc
 **/.prettierrc.*
@@ -15,7 +15,7 @@
 
 # Application folders & files
 {{ range (compact .settings.chezmoi.ignored.home) }}
-/{{ . }}
+{{ . }}
 {{- end }}
 
 # Other stuff
@@ -28,22 +28,22 @@
 
 # OS-Specific exclusions
 {{- if or .ephemeral .headless }}
-/.var
+.var
 {{- end }}
 
 {{- if eq .chezmoi.os "linux" }}
-/.1password
+.1password
 {{- else }}
 # keep-sorted start case=no
 .chezmoiscripts/linux/**
-/.var
+.var
 # keep-sorted end
 {{- end }}
 
 {{- if .device.lima }}
 # keep-sorted start case=no
-/.bashrc
-/.zshrc
+.bashrc
+.zshrc
 # keep-sorted end
 {{- end }}
 
@@ -56,62 +56,62 @@
 
 {{- if eq .chezmoi.os "darwin" }}
 # keep-sorted start case=no
-/.CFUserTextEncoding
-/.gk
-/.Trash
-/.vscode
-/.vscode-oss
+.CFUserTextEncoding
+.gk
+.Trash
+.vscode
+.vscode-oss
 # keep-sorted end
 {{- else }}
 # keep-sorted start case=no
 .chezmoiscripts/darwin/**
-/.cache
-/.swiftpm
-/Library
+.cache
+.swiftpm
+Library
 # keep-sorted end
 {{- end }}
 
 {{- if eq .chezmoi.os "windows" }}
 # keep-sorted start case=no
-/.1password
-/.affinity
-/.chocolatey
-/.dbus-keyrings
-/.docker
-/.dotnet
-/.gitconfig
-/.gk
-/.insomniac
-/.matplotlib
-/.nvidia-omniverse
-/.redhat
-/.templateengine
-/.thumbnails
-/.vscode
-/3D Objects
-/Application Data
-/Contacts
-/Cookies
-/Favorites
-/Links
-/Local Settings
-/My Documents
-/NetHood
-/NTUSER.*
-/ntuser.*
-/PrintHood
-/Recent
-/Recorded Calls
-/Saved Games
-/Searches
-/SendTo
-/Start Menu
+.1password
+.affinity
+.chocolatey
+.dbus-keyrings
+.docker
+.dotnet
+.gitconfig
+.gk
+.insomniac
+.matplotlib
+.nvidia-omniverse
+.redhat
+.templateengine
+.thumbnails
+.vscode
+3D Objects
+Application Data
+Contacts
+Cookies
+Favorites
+Links
+Local Settings
+My Documents
+NetHood
+NTUSER.*
+ntuser.*
+PrintHood
+Recent
+Recorded Calls
+Saved Games
+Searches
+SendTo
+Start Menu
 # keep-sorted end
 {{- else }}
 # keep-sorted start case=no
 .chezmoiscripts/windows/**
-/.wslconfig
-/AppData
-/Documents
+.wslconfig
+AppData
+Documents
 # keep-sorted end
 {{- end }}

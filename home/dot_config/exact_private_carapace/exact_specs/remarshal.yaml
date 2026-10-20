@@ -1,0 +1,42 @@
+name: remarshal
+description: Convert between CBOR, JSON, MessagePack, TOML, and YAML.
+
+flags:
+  -h, --help: show this help message and exit
+  -v, --version: show program's version number and exit
+  -f, --from=: &from input format
+  --if=: *from
+  --input-format=: *from
+  -i, --input=: input file
+  --indent=: JSON and YAML indentation
+  -k, --stringify: turn into strings
+  --max-values=: maximum number of values in input data (default 1000000, negative for unlimited)
+  --multiline=: minimum number of items to make non-nested TOML array multiline (default 6)
+  -o, --output=: output file
+  -s, --sort-keys: sort JSON, Python, and TOML keys instead of preserving key order
+  -t, --to=: &to output format
+  --of=: *to
+  --output-format=: *to
+  --unwrap=: only output the data stored under the given key
+  --verbose: print debug information when an error occurs
+  --width=: Python line width and YAML line width for long strings (integer or 'inf')
+  --wrap=: wrap the data in a map type with the given key
+  --yaml-style=: YAML formatting style # {,',",|,>}
+  --yaml-style-newline=: YAML formatting style override for strings that contain a newline # {,',",|,>}
+exclusiveflags:
+  - [from, if, input-format]
+  - [to, of, output-format]
+completion:
+  flag:
+    from: &inputs [cbor, json, msgpack, toml, yaml, yaml-1.1, yaml-1.2]
+    if: *inputs
+    input-format: *inputs
+    to: &outputs [cbor, json, msgpack, python, toml, yaml, yaml-1.1, yaml-1.2]
+    of: *outputs
+    output-format: *outputs
+    input: [$files]
+    output: [$files]
+
+  positional:
+    - - $files
+    - - $files

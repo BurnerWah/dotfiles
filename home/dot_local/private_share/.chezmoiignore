@@ -1,81 +1,81 @@
 # keep-sorted start case=no
-/aquaproj-aqua
-/atuin
-/charm
-/chezmoi
-/containers
-/delta
-/direnv
-/dotnet
-/evolution
-/fish
-/folks
-/gem
-/gh
-/gnome-boxes
-/gnome-remote-desktop
-/gnome-settings-daemon
-/golang
-/grilo-plugins
-/gstreamer-1.0
-/gvfs-metadata
-/ibus-typing-booster
-/icc
-/IsolatedStorage
-/JetBrains
-/karabiner
-/keyrings
-/lesshst
-/man
-/mise
-/NuGet
-/nvim
-/org.gnome.NautilusPreviewer
-/pki
-/pnpm
-/recently-used.xbel
-/rv
-/systemd
-/Trash
-/uv
-/vscode
-/vscode-sqltools
-/webkitgtk
-/wezterm
-/wget
-/xonsh
-/zap
-/zoxide
+aquaproj-aqua
+atuin
+charm
+chezmoi
+containers
+delta
+direnv
+dotnet
+evolution
+fish
+folks
+gem
+gh
+gnome-boxes
+gnome-remote-desktop
+gnome-settings-daemon
+golang
+grilo-plugins
+gstreamer-1.0
+gvfs-metadata
+ibus-typing-booster
+icc
+IsolatedStorage
+JetBrains
+karabiner
+keyrings
+lesshst
+man
+mise
+NuGet
+nvim
+org.gnome.NautilusPreviewer
+pki
+pnpm
+recently-used.xbel
+rv
+systemd
+Trash
+uv
+vscode
+vscode-sqltools
+webkitgtk
+wezterm
+wget
+xonsh
+zap
+zoxide
 # keep-sorted end
 
 {{- if or .ephemeral .headless }}
 # keep-sorted start case=no
-/applications
-/flatpak
-/flatpak/**/*
-/fonts
-/fonts/**/*
+applications
+flatpak
+flatpak/**/*
+fonts
+fonts/**/*
 # keep-sorted end
 {{- end }}
 
 {{- if ne .chezmoi.os "linux" }}
 # keep-sorted start case=no
-/applications
-/flatpak
-/flatpak/**/*
-/fonts
-/fonts/**/*
-/mime
+applications
+flatpak
+flatpak/**/*
+fonts
+fonts/**/*
+mime
 # keep-sorted end
 {{- end }}
 
 {{- if eq .chezmoi.os "windows" }}
 # keep-sorted start case=no
-/gnupg
-/powershell
+gnupg
+powershell
 # keep-sorted end
 {{- end }}
 
 {{- if .device.lima }}
-/gnupg
+gnupg
 {{- end }}

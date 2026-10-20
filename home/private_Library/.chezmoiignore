@@ -1,107 +1,107 @@
 # keep-sorted start case=no
-/Accessibility
-/Accounts
-/AppleMediaServices
-/Application Scripts
-/Assistant
-/Assistants
-/Audio
-/Autosave Information
-/Biome
-/Calendars
-/CallServices
-/CloudStorage
-/Colors
-/com.apple.*
-/Compositions
-/Contacts
-/ContainerManager
-/Containers
-/Cookies
-/CoreFollowUp
-/Daemon Containers
-/DataAccess
-/DataDeliveryServices
-/DES
-/Developer
-/DoNotDisturb
-/DuetExpertCenter
-/Favorites
-/Finance
-/FinanceBackup
-/FontCollections
-/Frameworks
-/FrontBoard
-/GameKit
-/Google
-/Group Containers
-/GroupContainersAlias
-/homeenergyd
-/HomeKit
-/HTTPStorages
-/IdentityServices
-/IntelligencePlatform
-/Intents
-/Jupyter
-/Keyboard
-/KeyboardServices
-/Keychains
-/LanguageModeling
-/LockdownMode
-/Logs
-/Mail
-/MediaAnalysis
-/Messages
-/Metadata
-/Mobile Documents
-/Mozilla
-/News
-/NGL
-/org.swift.swiftpm
-/Passes
-/PDF Services
-/PersonalizationPortrait
-/Photos
-/Printers
-/PrivateCloudCompute
-/Python
-/Reminders
-/Safari
-/SafariSafeBrowsing
-/SafariSandboxBroker
-/Saved Application State
-/ScreenRecordings
-/Scripts
-/Sharing
-/Shortcuts
-/Sounds
-/Speech
-/Spelling
-/Spotlight
-/Staging
-/StatusKit
-/Stickers
-/studentd
-/Suggestions
-/SyncedPreferences
-/Thunderbird
-/Translation
-/Trial
-/UnifiedAssetFramework
-/virtualenvs
-/Weather
-/WebKit
-/Workflows
+Accessibility
+Accounts
+AppleMediaServices
+Application Scripts
+Assistant
+Assistants
+Audio
+Autosave Information
+Biome
+Calendars
+CallServices
+CloudStorage
+Colors
+com.apple.*
+Compositions
+Contacts
+ContainerManager
+Containers
+Cookies
+CoreFollowUp
+Daemon Containers
+DataAccess
+DataDeliveryServices
+DES
+Developer
+DoNotDisturb
+DuetExpertCenter
+Favorites
+Finance
+FinanceBackup
+FontCollections
+Frameworks
+FrontBoard
+GameKit
+Google
+Group Containers
+GroupContainersAlias
+homeenergyd
+HomeKit
+HTTPStorages
+IdentityServices
+IntelligencePlatform
+Intents
+Jupyter
+Keyboard
+KeyboardServices
+Keychains
+LanguageModeling
+LockdownMode
+Logs
+Mail
+MediaAnalysis
+Messages
+Metadata
+Mobile Documents
+Mozilla
+News
+NGL
+org.swift.swiftpm
+Passes
+PDF Services
+PersonalizationPortrait
+Photos
+Printers
+PrivateCloudCompute
+Python
+Reminders
+Safari
+SafariSafeBrowsing
+SafariSandboxBroker
+Saved Application State
+ScreenRecordings
+Scripts
+Sharing
+Shortcuts
+Sounds
+Speech
+Spelling
+Spotlight
+Staging
+StatusKit
+Stickers
+studentd
+Suggestions
+SyncedPreferences
+Thunderbird
+Translation
+Trial
+UnifiedAssetFramework
+virtualenvs
+Weather
+WebKit
+Workflows
 # keep-sorted end
 
 # Probaly managed by homebrew
-/ColorPickers
-/Dictionaries
-/Fonts
-/Input Methods
-/Internet Plug-Ins
-/Keyboard Layouts
-/PreferencePanes
-/QuickLook
-/Screen Savers
-/Services
+ColorPickers
+Dictionaries
+Fonts
+Input Methods
+Internet Plug-Ins
+Keyboard Layouts
+PreferencePanes
+QuickLook
+Screen Savers
+Services

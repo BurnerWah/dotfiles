@@ -11,6 +11,8 @@ homebrew.mxcl.pueue.plist
 homebrew.mxcl.runit.plist
 homebrew.mxcl.syncthing.plist
 homebrew.mxcl.yubikey-agent.plist
+io.lawand.last-window-quits.plist
 org.git-scm.git.*.plist
 pitchfork.plist
+UniClipboard.plist
 # keep-sorted end

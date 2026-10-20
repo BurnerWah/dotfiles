@@ -1,11 +1,11 @@
 # keep-sorted start case=no
-/ArmCord
-/com.kairos.duet
-/com.turborepo.turborepo
-/dotnet
-/fnm
-/frum
-/google-heartbeat-storage
-/Telegram Desktop
-/turborepo
+ArmCord
+com.kairos.duet
+com.turborepo.turborepo
+dotnet
+fnm
+frum
+google-heartbeat-storage
+Telegram Desktop
+turborepo
 # keep-sorted end
