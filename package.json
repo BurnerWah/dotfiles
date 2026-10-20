@@ -1,8 +1,19 @@
 {
+  "type": "module",
+  "scripts": {
+    "format:prettier": "prettier --experimental-cli --write --ignore-unknown .",
+    "lint:prettier": "prettier --experimental-cli --check --ignore-unknown .",
+    "prettier": "prettier --experimental-cli"
+  },
+  "dependencies": {
+    "zod": "^4.6.7"
+  },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@eslint/json": "^1.2.0",
     "@prettier/plugin-xml": "^3.4.2",
+    "@tsconfig/node26": "^26.0.1",
+    "@types/node": "^26.6.5",
     "eslint": "^10.1.0",
     "eslint-plugin-json-schema-validator": "^6.2.0",
     "eslint-plugin-yml": "^3.3.1",
@@ -11,6 +22,7 @@
     "oxlint": "^1.57.0",
     "prettier": "^3.8.1",
     "prettier-plugin-packagejson": "^3.0.2",
+    "typescript": "^7.0.2",
     "typescript-eslint": "^8.58.0"
   }
 }

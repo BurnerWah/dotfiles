@@ -11,6 +11,7 @@ export default defineConfig({
     'home/**/modify_*.yaml',
     'schemas/generated/',
     'schemas/vendor/',
+    '.config/mise/tasks/fix/carapace/*.ts',
   ],
   plugins: ['eslint', 'typescript', 'unicorn', 'oxc', 'import', 'promise'],
   categories: {
@@ -31,6 +32,8 @@ export default defineConfig({
     'import/no-named-export': 'allow',
     'sort-imports': 'allow', // I haven't got import sorting figured out yet
     'import/prefer-default-export': 'allow',
+    'import/no-nodejs-modules': 'allow',
+    'eslint/one-var': 'allow',
   },
   overrides: [
     {

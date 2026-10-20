@@ -1,5 +1,5 @@
-import * as z from '@zod/zod'
-import { strictObject } from '@zod/zod'
+import * as z from 'zod'
+import { strictObject } from 'zod'
 
 const Npmrc = z.record(z.string().nonempty(), z.any()).meta({
   'x-tombi-additional-key-label': 'setting',

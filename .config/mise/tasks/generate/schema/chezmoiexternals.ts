@@ -1,6 +1,7 @@
-#!/usr/bin/env -S deno run --allow-write=schemas/generated
+#!/usr/bin/env -S node --import jiti/register
 //MISE description="Generate a JSON schema for Chezmoi Externals"
-import * as z from '@zod/zod'
+import fs from 'node:fs/promises'
+import * as z from 'zod'
 import { GoDuration } from './shared/gotypes.ts'
 
 // This might not be fully functional right now
@@ -163,14 +164,14 @@ const schema = z.record(z.string(), ChezmoiExternal)
 
 const jsonSchema = z.toJSONSchema(
   schema.meta({
-    id: 'https://json-schema.furry.codes/chezmoiexternals.json',
+    // id: 'https://json-schema.furry.codes/chezmoiexternals.json',
     title: 'Chezmoi Externals',
     'x-tombi-toml-version': 'v1.1.0',
   }),
   { target: 'draft-2020-12', reused: 'ref' },
 )
 
-await Deno.writeTextFile(
+await fs.writeFile(
   'schemas/generated/chezmoiexternals.json',
   JSON.stringify(jsonSchema),
 )

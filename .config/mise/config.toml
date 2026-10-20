@@ -32,15 +32,17 @@ rumdl = "latest"
 
 # tombi: format.rules.table-keys-order = "ascending"
 [env]
+DENO_NO_PACKAGE_JSON = 1 # temporary, deno is just here for scripts
+DENO_NO_UPDATE_CHECK = 1
 PRETTIER_EXPERIMENTAL_CLI = 1
 
 # tombi: format.rules.table-keys-order = "ascending"
 [deps]
-[deps.deno]
-auto = true
-run = "deno install"
-sources = ["deno.json*", "deno.lock", "package.json"]
-outputs = ["node_modules"]
+# [deps.deno]
+# auto = true
+# run = "deno install"
+# sources = ["deno.json*", "deno.lock", "package.json"]
+# outputs = ["node_modules"]
 
 [deps.lefthook]
 run = "lefthook install"
@@ -72,30 +74,19 @@ run = "biome lint --fix -- ${usage_files}"
 description = "Lint files with Biome"
 wait_for = [
   "format:prettier", # formats biome's config file
-  "fix:deno", # operates on the same files
   "fix:oxlint",
 ]
 alias = ["format:biome-lint"]
-
-[tasks."fix:deno"]
-usage = '''
-arg "[files]" var=#true
-'''
-run = "deno lint --fix -- ${usage_files}"
-description = "Fix JS/TS with Deno"
-wait_for = ["format:prettier"] # Formats deno's config file
-alias = ["format:deno-lint"]
 
 [tasks."fix:eslint"]
 usage = '''
 arg "[files]" var=#true
 '''
-run = "deno task -q eslint --cache --fix --concurrency auto -- ${usage_files}"
+run = "npx eslint --cache --fix --concurrency auto -- ${usage_files}"
 description = "Fix code with ESLint"
 wait_for = [
   "generate:schema:*", # json schemas are used by an eslint plugin
   "format:prettier", # operates on the same files & eslint's config file
-  "fix:deno", # operates on the same files & eslint's config file
   "fix:biome", # operates on the same files & eslint's config file
   "fix:oxlint",
 ]
@@ -106,7 +97,7 @@ alias = ["format:eslint"]
 usage = '''
 arg "[files]" var=#true
 '''
-run = "deno task -q oxlint --fix -- ${usage_files}"
+run = "npx oxlint --fix -- ${usage_files}"
 description = "Fix JS/TS code with oxlint"
 wait_for = ["format:prettier"]
 alias = ["format:oxlint"]
@@ -150,7 +141,7 @@ description = "Sort lines in various files"
 usage = '''
 arg "[files]" var=#true default="."
 '''
-run = "deno task -q prettier --write --ignore-unknown -- ${usage_files}"
+run = "npx prettier --write --ignore-unknown -- ${usage_files}"
 description = "Format code with Prettier"
 wait_for = ["format:keep-sorted"] # runs on some yaml files
 
@@ -195,27 +186,11 @@ description = "Lint files with Biome"
 wait_for = ["format:prettier"]
 # biome is fast enough that sources aren't necessary
 
-[tasks."lint:deno"]
-usage = '''
-arg "[files]" var=#true
-'''
-run = "deno lint -- ${usage_files}"
-description = "Lint JS/TS with Deno"
-wait_for = ["format:prettier"]
-# deno is fast enough that sources aren't necessary
-
-[tasks."lint:deno:typecheck"]
-usage = '''
-arg "[files]" var=#true
-'''
-run = "deno check -- ${usage_files}"
-description = "Type-check JS/TS with Deno"
-
 [tasks."lint:eslint"]
 usage = '''
 arg "[files]" var=#true
 '''
-run = "deno task -q eslint --cache --concurrency auto -- ${usage_files}"
+run = "npx eslint --cache --concurrency auto -- ${usage_files}"
 description = "Lint files with ESLint"
 wait_for = ["generate:schema:*", "format:prettier"]
 depends = ["generate:schema:chezmoidata", "generate:schema:eza-theme"]
@@ -230,7 +205,7 @@ description = "Check git repo for secrets"
 usage = '''
 arg "[files]" var=#true
 '''
-run = "deno task -q oxlint -- ${usage_files}"
+run = "npx oxlint -- ${usage_files}"
 description = "Lint JS/TS code with oxlint"
 wait_for = ["format:prettier"]
 
@@ -238,7 +213,7 @@ wait_for = ["format:prettier"]
 usage = '''
 arg "[files]" var=#true default="."
 '''
-run = "deno task -q prettier --check --ignore-unknown -- ${usage_files}"
+run = "npx prettier --check --ignore-unknown -- ${usage_files}"
 description = "Lint code formatting with Prettier"
 # I'm now using prettier's experimental CLI, which is fast enough that sources
 # aren't needed
@@ -314,10 +289,6 @@ run = "yamllint --format ${usage_format} -- ${usage_files}"
 description = "Lint yaml files with yamllint"
 sources = [".yamllint.yaml", "**/*.yaml", "**/*.yml"]
 wait_for = ["format:prettier"]
-
-[tasks."update:deno"]
-run = "deno update --interactive"
-description = "Update npm & jsr packages"
 
 [tasks."update:nvim-plugins"]
 run = 'nvim --headless "+Lazy! sync" +qa'

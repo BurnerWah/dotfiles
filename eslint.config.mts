@@ -4,7 +4,7 @@ import jsonschema from 'eslint-plugin-json-schema-validator'
 import yml from 'eslint-plugin-yml'
 import { defineConfig, globalIgnores } from 'eslint/config'
 import globals from 'globals'
-import tseslint from 'typescript-eslint'
+// import tseslint from 'typescript-eslint'
 
 export default defineConfig([
   globalIgnores([
@@ -16,13 +16,14 @@ export default defineConfig([
     'home/**/modify_*.yaml',
     'schemas/generated/',
     'schemas/vendor/',
+    '.config/mise/tasks/fix/carapace/*.ts', // temporary
   ]),
   {
     files: ['**/*.{js,mjs,cjs,ts,mts,cts}'],
     plugins: { js },
     extends: ['js/recommended'],
   },
-  tseslint.configs.recommended,
+  // tseslint.configs.recommended,
   {
     files: ['.config/mise/tasks/**/*.{js,mjs,cjs,ts,mts,cts}'],
     languageOptions: {
@@ -48,6 +49,7 @@ export default defineConfig([
       '.vscode/*.json',
       '.vscode/*.code-snippets',
       'home/dot_config/*_fastfetch/config.jsonc',
+      'tsconfig.json',
     ],
     plugins: { json },
     language: 'json/jsonc',

@@ -15,7 +15,6 @@
     "redhat.vscode-yaml",
     "sharat.vscode-brewfile",
     "yy0931.gitconfig-lsp",
-    "denoland.vscode-deno",
     "tombi-toml.tombi",
     "charliermarsh.ruff",
     "astral-sh.ty",
@@ -23,5 +22,6 @@
     "dbaeumer.vscode-eslint",
     "biomejs.biome",
     "oxc.oxc-vscode",
+    "typescriptteam.native-preview",
   ],
 }

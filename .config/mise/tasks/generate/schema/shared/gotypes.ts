@@ -1,4 +1,4 @@
-import * as z from '@zod/zod'
+import * as z from 'zod'
 
 // This matches some invalid durations but it's accurate enough for now
 // A more precise one should only match negative durations that have a time included,

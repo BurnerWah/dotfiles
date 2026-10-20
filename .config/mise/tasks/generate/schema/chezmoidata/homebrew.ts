@@ -1,4 +1,4 @@
-import * as z from '@zod/zod'
+import * as z from 'zod'
 
 export const HomebrewSettings = z
   .strictObject({

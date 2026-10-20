@@ -1,4 +1,4 @@
-import * as z from '@zod/zod'
+import * as z from 'zod'
 
 const Environment = z.union([z.string(), z.int(), z.array(z.string())])
 

@@ -1,8 +1,9 @@
-#!/usr/bin/env -S deno run --allow-write=schemas/generated
+#!/usr/bin/env -S node --import jiti/register
 //MISE description="Generate a JSON schema for chezmoidata"
-//MISE sources=["deno.lock", ".config/mise/tasks/generate/schema/chezmoidata/*.ts", ".config/mise/tasks/generate/schema/shared/*.ts"]
+//MISE sources=["pnpm-lock.yaml", ".config/mise/tasks/generate/schema/chezmoidata/*.ts", ".config/mise/tasks/generate/schema/shared/*.ts"]
 //MISE outputs=["schemas/generated/chezmoidata.json"]
-import * as z from '@zod/zod'
+import fs from 'node:fs/promises'
+import * as z from 'zod'
 import { BatSettings } from './bat.ts'
 import { ChezmoiSettings } from './chezmoi.ts'
 import { CoreChezmoiData } from './core.ts'
@@ -36,7 +37,7 @@ const schema = z
 
 const jsonSchema = z.toJSONSchema(
   schema.meta({
-    id: 'https://json-schema.furry.codes/internal/chezmoidata.json',
+    // id: 'https://json-schema.furry.codes/internal/chezmoidata.json',
     title: 'Chezmoi data',
     'x-tombi-toml-version': 'v1.1.0',
   }),
@@ -44,7 +45,7 @@ const jsonSchema = z.toJSONSchema(
 )
 
 // console.log(JSON.stringify(jsonSchema))
-await Deno.writeTextFile(
+await fs.writeFile(
   'schemas/generated/chezmoidata.json',
   JSON.stringify(jsonSchema),
 )

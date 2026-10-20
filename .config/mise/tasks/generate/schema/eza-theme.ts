@@ -1,8 +1,9 @@
-#!/usr/bin/env -S deno run --allow-write=schemas/generated
+#!/usr/bin/env -S node --import jiti/register
 //MISE description="Generate a JSON schema for Eza themes"
-//MISE sources=["deno.lock", ".config/mise/tasks/generate/schema/eza-theme.ts"]
+//MISE sources=["pnpm-lock.yaml", ".config/mise/tasks/generate/schema/eza-theme.ts"]
 //MISE outputs=["schemas/generated/eza-theme.json"]
-import * as z from '@zod/zod'
+import fs from 'node:fs/promises'
+import * as z from 'zod'
 
 const Color = z.xor([
   z.enum([
@@ -88,7 +89,7 @@ const PrefixWithReset = z.boolean().optional().meta({
 })
 
 // Strong schema for styles that json schema can't handle
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// eslint-disable-next-line no-unused-vars
 const _StyleStrong = z.union([
   z.xor([z.object({ foreground: Foreground }), z.object({ fg: Foreground })]),
   z.xor([z.object({ background: Background }), z.object({ bg: Background })]),
@@ -268,7 +269,7 @@ const schema = z
 
 const jsonSchema = z.toJSONSchema(
   schema.meta({
-    id: 'https://json-schema.furry.codes/eza-theme.json',
+    // id: 'https://json-schema.furry.codes/eza-theme.json',
     title: 'Eza Theme',
   }),
   {
@@ -278,7 +279,7 @@ const jsonSchema = z.toJSONSchema(
 )
 
 // console.log(JSON.stringify(jsonSchema))
-await Deno.writeTextFile(
+await fs.writeFile(
   'schemas/generated/eza-theme.json',
   JSON.stringify(jsonSchema),
 )

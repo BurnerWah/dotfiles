@@ -1,5 +1,5 @@
-import * as z from '@zod/zod'
-import { record, strictObject } from '@zod/zod'
+import * as z from 'zod'
+import { record, strictObject } from 'zod'
 import { additionalPropsAscending } from '../shared/tombi-meta.ts'
 
 const abbrev = z.record(z.string().nonempty(), z.string()).meta({

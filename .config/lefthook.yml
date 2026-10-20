@@ -112,37 +112,22 @@ pre-commit:
             tags:
               - windows-incompatible
 
-          - name: deno lint
-            run: mise x -- deno lint --fix -- {staged_files}
-            stage_fixed: true
-            glob:
-              - '*.ts'
-              - '*.mts'
-              - '*.cts'
-              - '*.tsx'
-              - '*.js'
-              - '*.mjs'
-              - '*.cjs'
-              - '*.jsx'
-            exclude: ['**/symlink_*', '**/remove_*']
-            file_types: text
-
-          - name: deno typecheck
-            run: mise x -- deno check -- {staged_files}
-            glob:
-              - '*.ts'
-              - '*.mts'
-              - '*.cts'
-              - '*.tsx'
-              - '*.js'
-              - '*.mjs'
-              - '*.cjs'
-              - '*.jsx'
-            exclude: ['**/symlink_*', '**/remove_*']
-            file_types: text
+          # - name: deno typecheck
+          #   run: mise x -- deno check -- {staged_files}
+          #   glob:
+          #     - '*.ts'
+          #     - '*.mts'
+          #     - '*.cts'
+          #     - '*.tsx'
+          #     - '*.js'
+          #     - '*.mjs'
+          #     - '*.cjs'
+          #     - '*.jsx'
+          #   exclude: ['**/symlink_*', '**/remove_*']
+          #   file_types: text
 
           - name: oxlint
-            run: mise x -- deno task -q oxlint --fix -- {staged_files}
+            run: mise x -- npx oxlint --fix -- {staged_files}
             stage_fixed: true
             glob:
               - '*.ts'
@@ -157,7 +142,7 @@ pre-commit:
             file_types: text
 
           - name: eslint
-            run: mise x -- deno task -q eslint --cache --fix --concurrency auto -- {staged_files}
+            run: mise x -- npx eslint --cache --fix --concurrency auto -- {staged_files}
             stage_fixed: true
             glob:
               - '*.ts'
@@ -230,9 +215,6 @@ pre-commit:
                 - run: mise run -q validate:schema:fastfetch -- {staged_files}
                   glob: home/dot_config/*_fastfetch/*config.jsonc
 
-                - run: mise run -q validate:schema:deno -- {staged_files}
-                  glob: deno.jsonc
-
           - name: carapace choices
             file_types: text
             glob: [home/dot_config/*_carapace/*_choices/*.tmpl]
@@ -267,7 +249,7 @@ pre-commit:
         parallel: true
         jobs:
           - name: prettier
-            run: mise x -- deno task -q prettier --write --ignore-unknown -- {staged_files}
+            run: mise x -- npx prettier --write --ignore-unknown -- {staged_files}
             env:
               PRETTIER_EXPERIMENTAL_CLI: '1'
             stage_fixed: true

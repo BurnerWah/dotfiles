@@ -1,5 +1,5 @@
-import * as z from '@zod/zod'
-import { strictObject } from '@zod/zod'
+import * as z from 'zod'
+import { strictObject } from 'zod'
 
 const FontAdjust = strictObject({
   column_width: z.union([z.number(), z.string()]),

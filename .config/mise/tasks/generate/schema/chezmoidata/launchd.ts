@@ -1,4 +1,4 @@
-import * as z from '@zod/zod'
+import * as z from 'zod'
 
 export const LaunchdSettings = z.strictObject({
   environment: z.record(

@@ -14,6 +14,16 @@
                             "type": "null"
                         }
                     ]
+                },
+                "interface": {
+                    "oneOf": [
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
                 }
             },
             "additionalProperties": false,
@@ -268,6 +278,9 @@
                 },
                 "initrd": {
                     "$ref": "#/$defs/File"
+                },
+                "variant": {
+                    "type": "string"
                 }
             },
             "additionalProperties": false,
@@ -344,7 +357,8 @@
                         null,
                         "Linux",
                         "Darwin",
-                        "FreeBSD"
+                        "FreeBSD",
+                        "Windows"
                     ]
                 },
                 "arch": {
@@ -626,6 +640,19 @@
                 },
                 "user": {
                     "$ref": "#/$defs/User"
+                },
+                "tpm": {
+                    "oneOf": [
+                        {
+                            "type": "boolean"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "osOpts": {
+                    "$ref": "#/$defs/OsOpts"
                 }
             },
             "additionalProperties": false,
@@ -762,6 +789,9 @@
                 }
             },
             "additionalProperties": false,
+            "type": "object"
+        },
+        "OsOpts": {
             "type": "object"
         },
         "PortForward": {
@@ -1102,6 +1132,16 @@
                     "oneOf": [
                         {
                             "type": "integer"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ]
+                },
+                "passwordlessSudo": {
+                    "oneOf": [
+                        {
+                            "type": "boolean"
                         },
                         {
                             "type": "null"
